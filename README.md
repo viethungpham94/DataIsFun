@@ -9,7 +9,7 @@
 
 ## Bundle & Integrity
 
-- **Verification Status:** `PASS_ONLINE (2026-11-20 18:40 UTC)`
+- **Verification Status:** `PASS_ONLINE (2026-11-20 18:46 UTC)`
 - **Machine-Readable Inventory:** [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json)
 - **Live Feedback:** [Submit Feedback / Topic Ideas](https://forms.gle/A6FMCd4BTk83qVPE6)
 
