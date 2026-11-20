@@ -1,0 +1,144 @@
+{
+  "platform": "DataIsFun",
+  "release_version": "v1.0-issue01",
+  "packaged_at_utc": "2026-11-20 18:45 UTC",
+  "live_issues": [
+    {
+      "id": "issue-01",
+      "slug": "01-messi-vs-ronaldo",
+      "title": "Messi and Ronaldo: Who Is the Real GOAT?",
+      "date": "November 2026",
+      "entry_page": "issues/01-messi-vs-ronaldo/insights.html"
+    }
+  ],
+  "total_files": 22,
+  "total_bytes": 3548857,
+  "total_size_mb": 3.38,
+  "qa_status": {
+    "overall_status": "PASS_ONLINE",
+    "validated_at_utc": "2026-11-20 18:40 UTC",
+    "mode": "ONLINE",
+    "summary": {
+      "passed": 45,
+      "failed": 0,
+      "skipped": 1,
+      "manifests_checked": 16,
+      "raw_files_sha256_verified": 117,
+      "online_sources_verified": 15,
+      "online_sources_unreachable": 1,
+      "online_sources_skipped": 0
+    }
+  },
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "404.html",
+      "bytes": 4271,
+      "sha256": "dbb53648dfd64aa80b79dcee52a1136982d1a32053a374489aeef202890e9810"
+    },
+    {
+      "path": "appendix0.html",
+      "bytes": 1735,
+      "sha256": "3147f3f9e4daf4a2e3603ed5d95049c6e22085462cae699d6949272f8571fb9b"
+    },
+    {
+      "path": "assets/charts_engine.js",
+      "bytes": 24037,
+      "sha256": "453f8bdfd45c27ee02672c789f2031af788348691559e56919cbb03efa64bb74"
+    },
+    {
+      "path": "assets/og-card.png",
+      "bytes": 44037,
+      "sha256": "680e18dda12dc094f311fc702be08f3b85c2276bad7ab950f16e12a94c7dd75e"
+    },
+    {
+      "path": "assets/theme.css",
+      "bytes": 12383,
+      "sha256": "215da68aa19ca099fa4cff08fc814fdff1c38720aff7350ebe5ab346bcaf428d"
+    },
+    {
+      "path": "detail.html",
+      "bytes": 1720,
+      "sha256": "88f29e1c04d911c0dcb26ca03e56fed31a9f4f0deebfe436c8b074ebfa589091"
+    },
+    {
+      "path": "graphs.html",
+      "bytes": 1720,
+      "sha256": "19c9703693e28f72737fc7cf8ed07b6bc51c96bdaedc8e01e6e52ea027b9573d"
+    },
+    {
+      "path": "index.html",
+      "bytes": 17992,
+      "sha256": "8c12dbf88459390e801f694cbe25c80f2e9a63ef04474bc0e50dea1ba211af85"
+    },
+    {
+      "path": "insights.html",
+      "bytes": 1730,
+      "sha256": "8f9d3f1175d23d13665cc479a065a12f5737586f4b3fcd46da080948b32192cf"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/appendix0.html",
+      "bytes": 84831,
+      "sha256": "13d2eae5338fe231f4a294432b8a1e98f784bf7bcecd8cb85d8c1f835c37305d"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/analytics_data.js",
+      "bytes": 88777,
+      "sha256": "92f162727ed847894f87cc194ec5539efd92c8ed490a739b975471e2eed20c55"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/dribble_data.js",
+      "bytes": 184780,
+      "sha256": "db7e9daa98b97a137820d83dd5faa626fd3b614ac4ff27d325035d942b366bc4"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/gaming_data.js",
+      "bytes": 201425,
+      "sha256": "998e357f4a6c3bbaef93bed26582626fe87c3ab0a1db7ad0fc567c7608cb1063"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/goals_data.js",
+      "bytes": 1712667,
+      "sha256": "9faaab1c3adaa0da84b496aef19b2290871f03909156accd6766bba679220746"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/insights_data.js",
+      "bytes": 485431,
+      "sha256": "0898345e3f8362979ff8a00d38b256b1f5b2c04386ee5ba3b6d8f43386abca76"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/data/spatial_data.js",
+      "bytes": 162626,
+      "sha256": "acb6b532dd758dcc4ec13386cfa22948adeb2158d190f21243435c626424b3f8"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/detail.html",
+      "bytes": 98003,
+      "sha256": "0335192476a532d4cb81c11fa80cd24331abe3fe4d6dbfc9973c757a4ac925f5"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/graphs.html",
+      "bytes": 47074,
+      "sha256": "4c47af8c46e6b08daee22ba1b79ab4d5acbadc10647b84652e6b5c8e9187fbb9"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/index.html",
+      "bytes": 1668,
+      "sha256": "dc7266e597c22966986f7f62374b2db9af4cf126d76360507da7c25a4731aa3d"
+    },
+    {
+      "path": "issues/01-messi-vs-ronaldo/insights.html",
+      "bytes": 358597,
+      "sha256": "8d496d96c2b85796ba8c8805c1eb201c4824ab125a31a28de3c12170efb03aad"
+    },
+    {
+      "path": "issues.html",
+      "bytes": 13353,
+      "sha256": "3bc1cb257142f6d7e960ed016e74949010bb2b2e715bb03d2c4fa8509d80fbdd"
+    }
+  ]
+}

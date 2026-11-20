@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DataIsFun — Appendix 2: Methodology, Sources & Goal Database (Issue 01)</title>
+  <meta name="description" content="Complete data provenance manifests, 5-Gate validation ledger, metric definitions, and searchable 1,915 senior goals database for Issue 01.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="DataIsFun — Appendix 2: Methodology, Sources & Goal Database (Issue 01)">
+  <meta property="og:description" content="Complete data provenance manifests, 5-Gate validation ledger, metric definitions, and searchable 1,915 senior goals database for Issue 01.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataIsFun — Appendix 2: Methodology, Sources & Goal Database (Issue 01)">
+  <meta name="twitter:description" content="Complete data provenance manifests, 5-Gate validation ledger, metric definitions, and searchable 1,915 senior goals database for Issue 01.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <style>
+    :root {
+      --bg-dark: #000000;
+      --card-bg: #050505;
+      --card-hover: #09090c;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-border-active: #ffffff;
+      --border-hairline: rgba(255, 255, 255, 0.08);
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
+      --text-subtle: #71717a;
+      --messi-color: #38bdf8;
+      --ronaldo-color: #f97316;
+      --tied-color: #ffffff;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-cyan: #06b6d4;
+      --accent-blue: #3b82f6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Page Header - Exactly identical to insights.html */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .issue-date-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .page-intro {
+      font-size: 14.5px;
+      color: #a1a1aa;
+      line-height: 1.6;
+      max-width: 780px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dropdown-btn {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #a1a1aa;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 13px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+
+    .dropdown-btn:hover {
+      background: #111114;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .dropdown-btn.active {
+      background: #ffffff !important;
+      color: #000000 !important;
+      border-color: #ffffff !important;
+      font-weight: 700;
+    }
+
+    .btn-back {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-back:hover {
+      background: #111114;
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    /* Scroll animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateX(-64px);
+      transition: opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1), transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.card-slide-right {
+      transform: translateX(64px);
+    }
+
+    .reveal-on-scroll.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Methodology Section Cards */
+    .methodology-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 22px 24px;
+      transition: border-color 0.15s ease;
+    }
+
+    .methodology-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .methodology-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+      margin-bottom: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .methodology-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 10px;
+      letter-spacing: -0.015em;
+    }
+
+    .methodology-desc {
+      font-size: 13.5px;
+      color: #a1a1aa;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .methodology-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .methodology-table th {
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: #71717a;
+      text-transform: uppercase;
+      font-size: 10.5px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .methodology-table td {
+      padding: 10px 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #e4e4e7;
+    }
+
+    .methodology-list {
+      font-size: 13px;
+      color: #d4d4d8;
+      line-height: 1.65;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* KPI Summary Strip */
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .kpi-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .kpi-card .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+    }
+
+    .kpi-card .val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 2px 0;
+    }
+
+    .kpi-card .sub {
+      font-size: 11.5px;
+      color: #71717a;
+    }
+
+    /* Control Panel */
+    .control-panel {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .control-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .filter-group label {
+      font-size: 11.5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.05em;
+    }
+
+    select, .search-box {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 7px 11px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      outline: none;
+      transition: border-color 0.15s ease;
+      font-family: inherit;
+    }
+
+    select:focus, .search-box:focus {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .search-box {
+      width: 100%;
+    }
+
+    .random-btn {
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .random-btn:hover {
+      background: #e4e4e7;
+      transform: translateY(-1px);
+    }
+
+    /* Match Inspector Audit Card */
+    .audit-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .match-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .player-tag {
+      font-size: 20px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .player-tag.messi { color: var(--messi-color); }
+    .player-tag.ronaldo { color: var(--ronaldo-color); }
+
+    .badge-official {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge-friendly {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .match-score-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .team-display {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.015em;
+    }
+
+    .score-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      background: #000000;
+      padding: 4px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hairline);
+    }
+
+    .match-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+      background: #000000;
+      padding: 14px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hairline);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .meta-item .m-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #71717a;
+    }
+
+    .meta-item .m-val {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .goals-section-title {
+      font-size: 12.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #a1a1aa;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .goal-pill-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .goal-pill {
+      background: #000000;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      transition: border-color 0.15s ease;
+    }
+
+    .goal-pill:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .goal-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .goal-minute {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      min-width: 44px;
+    }
+
+    .goal-specs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .spec-tag {
+      font-size: 11px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-hairline);
+      padding: 4px 9px;
+      border-radius: 4px;
+      color: #a1a1aa;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .spec-tag.distance-tag {
+      background: rgba(168, 85, 247, 0.1);
+      color: var(--accent-purple);
+      border-color: rgba(168, 85, 247, 0.3);
+      font-weight: 700;
+    }
+
+    .spec-tag.xg-tag {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--accent-green);
+      border-color: rgba(16, 185, 129, 0.3);
+      font-weight: 700;
+    }
+
+    .spec-tag.highlight {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.2);
+      font-weight: 600;
+    }
+
+    .audit-action-row {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-hairline);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .verify-btn {
+      background: #000000;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+
+    .verify-btn:hover {
+      background: #111114;
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    /* Sample Cards in Mini Feed */
+    .sample-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .sample-card:hover {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: #09090c;
+      transform: translateY(-2px);
+    }
+
+    /* Database Table View */
+    .table-container {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      text-align: left;
+    }
+
+    .data-table th {
+      background: #08080a;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-hairline);
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .data-table th:hover {
+      color: #ffffff;
+    }
+
+    .data-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: #d4d4d8;
+    }
+
+    .data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .pagination-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #000000;
+      border-top: 1px solid var(--border-hairline);
+      font-size: 12.5px;
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .nav-btn {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #a1a1aa;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn:hover {
+      background: #111114;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link ">Issues</a>
+        
+        <a href="insights.html" class="nav-back-issue-btn" title="Return to Issue Deep-Dive">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back to Issue 01</span>
+        </a>
+        
+      </div>
+    </nav>
+    
+
+    <div class="page-header">
+      <div style="flex: 1;">
+        <div class="issue-date-tag">Appendix 2</div>
+        <h1 class="page-title">Methodology, Sources & Goal Database</h1>
+        <p class="page-intro">
+          Complete data provenance manifests, metric definitions, coverage boundaries, and interactive 1,915 senior goals database.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button class="dropdown-btn" onclick="document.getElementById('methodology-section').style.display = document.getElementById('methodology-section').style.display === 'none' ? 'flex' : 'none'">Toggle Methodology</button>
+        <button id="view-inspector-btn" class="dropdown-btn active">Match Inspector</button>
+        <button id="view-table-btn" class="dropdown-btn">Database Table</button>
+        <button class="dropdown-btn" onclick="exportFilteredCSV()">Export CSV</button>
+        <a href="insights.html" class="btn-back">← Back to Issue</a>
+      </div>
+    </div>
+
+
+    <!-- ================================================================= -->
+    <!-- METHODOLOGY, DATA SOURCES & AUDIT PROVENANCE SECTION              -->
+    <!-- ================================================================= -->
+    <div id="methodology-section" class="reveal-on-scroll" style="margin-bottom: 32px; display: flex; flex-direction: column; gap: 20px;">
+      
+      <div id="validation-audit" class="methodology-card">
+        <div class="methodology-eyebrow">Appendix 2 · Automated Source &amp; Data Validation Status</div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;">
+          <h2 class="methodology-title" style="margin-bottom:0;">Last Validated: 2026-11-20 18:40 UTC</h2>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;background:rgba(16, 185, 129, 0.12);color:#10b981;border:1px solid #10b98144;">PASS_ONLINE · Online + Local SHA-256 Audit</span>
+        </div>
+        <p class="methodology-desc" style="margin-bottom:10px;">
+          Generated dynamically from <code>data/processed/qa_spotcheck_report.json</code> (<code>src/pipeline/run_qa_spotcheck.py</code>).
+          Verified <strong>117 immutable raw files across 16 SHA-256 manifests</strong>.
+          Live upstream probes: <strong>15 verified online</strong>, <strong>1 unreachable/inaccessible</strong> (archived SHA-256 snapshot retained), <strong>0 skipped</strong>.
+        </p>
+        <div style="overflow-x:auto;margin-top:14px;"><table class="methodology-table"><thead><tr><th>External Upstream Database</th><th>Live Online Status</th><th>Validation Note / Accessibility</th></tr></thead><tbody><tr><td style="font-weight:600;color:#ffffff;"><a href="https://raw.githubusercontent.com/martj42/international_results/master/goalscorers.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">martj42 International Results (GitHub)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live CSV fetched (47,914 goalscorer rows)</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://raw.githubusercontent.com/sharmaabhishekk/undershot_backup/master/understat_all_shots.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Understat Shot Mirror (GitHub undershot_backup)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://huggingface.co/datasets/aloobun/fbref_understat_combined/resolve/main/data/understat_xg/understat_xg_data.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Understat Season xG/xA Mirror (HuggingFace)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://github.com/JaseZiv/worldfootballR_data/releases/download/fb_match_shooting/ESP_M_1st_match_shooting.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">FBref Match Shooting Release (worldfootballR_data)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://github.com/JaseZiv/worldfootballR_data/releases/download/fotmob_match_details/42_match_details.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">FotMob Match Details Release (worldfootballR_data)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://huggingface.co/datasets/jsulz/FIFA23/resolve/main/male_players%20(legacy).csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">HuggingFace SoFIFA Legacy (FIFA 15-23)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://huggingface.co/datasets/jmacd867/SoFifa-Dataset-2024/resolve/main/all_fifa_players.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">HuggingFace SoFIFA 2024 (EA FC 24)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://www.pesmaster.com/messi/pes-2013/player/7511/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">PESMaster Live Profile (Messi PES 2013)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 200; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://www.pesmaster.com/c-ronaldo/pes-2013/player/4522/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">PESMaster Live Profile (Ronaldo PES 2013)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 200; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://fmdataba.com/8/p/274395/lionel-messi/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">FmDataba Live Profile (Messi FM08)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 200; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://fmdataba.com/21/p/579599/cristiano-ronaldo/" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">FmDataba Live Profile (Ronaldo FM21)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 200; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://raw.githubusercontent.com/statsbomb/open-data/master/data/events/68313.json" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">StatsBomb Open Data Events (GitHub)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://raw.githubusercontent.com/jfjelstul/worldcup/master/data-csv/squads.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Fjelstul World Cup Squads (GitHub)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://raw.githubusercontent.com/Dato-Futbol/fifa-ranking/refs/heads/master/ranking_fifa_historical.csv" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Historical FIFA World Rankings (GitHub)</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 206; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://www.transfermarkt.com/argentina/kader/verein/3437/saison_id/2005/plus/1" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Transfermarkt Historical Squad Archive</a></td><td><span style="color:#10b981;font-weight:700;">VERIFIED ONLINE</span></td><td style="color:#a1a1aa;">Live HTTP 200; schema/content tokens confirmed</td></tr><tr><td style="font-weight:600;color:#ffffff;"><a href="https://understat.com/player/2097" target="_blank" rel="noopener" style="color:#ffffff;text-decoration:underline;">Understat Direct Origin (understat.com)</a></td><td><span style="color:#f59e0b;font-weight:700;">UNREACHABLE (Archived SHA-256 Used)</span></td><td style="color:#a1a1aa;">Cannot access live database: HTTP 200 (blocked/error stub or missing tokens); local SHA-256 archive remains primary</td></tr></tbody></table></div>
+      </div>
+      <div id="sources" class="methodology-card">
+        <div class="methodology-eyebrow">Appendix 2 Part I · Data Provenance &amp; Primary Sources</div>
+        <h2 class="methodology-title">1. Primary Verified Data Sources &amp; Acquisition Methodology</h2>
+        <p class="methodology-desc">
+          Every figure in Issue 01 is computed dynamically from verified primary archives, official API feeds, cross-reconciled open mirrors, and telemetry datasets. To maintain complete transparency, the registry below documents the provider, acquisition channel, verified scope, and derived analytical domain. Hand-edited or synthetic estimates are strictly prohibited (<code>Priority #0 Hard Rule</code>).
+        </p>
+        <div style="overflow-x: auto;">
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Data Source &amp; Organization</th>
+                <th>Acquisition Channel</th>
+                <th>Verified Scope &amp; Sample</th>
+                <th>Metrics &amp; Analytical Domain</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Transfermarkt Match Performance API</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.25); color: #38bdf8; font-size: 11px; font-weight: 600;">Official JSON API</span></td>
+                <td>3,260 senior match records across 25 seasons (2002–2027) in <code>data/raw/transfermarkt_direct/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">Match-by-match playing time (exact minutes), career G/90, assists, passing totals, tackle attempts, World Cup splits, and on/off pitch team PPG.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Transfermarkt Profile &amp; Match Logs</a> (<a href="https://www.transfermarkt.com/cristiano-ronaldo/alletore/spieler/8198" target="_blank" rel="noopener" style="color: #93c5fd; text-decoration: underline;">Ronaldo</a>)
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25); color: #f59e0b; font-size: 11px; font-weight: 600;">Direct Web Scrape</span></td>
+                <td>1,915 senior goals, 186/119 career penalties taken, all-time knockout stages in the underlying dataset</td>
+                <td style="color: #a1a1aa;">Goal classification, body-part tags (head/left/right), tactical zones, penalty conversion, senior knockout stages, and game-winning goals (<code>is_gwg</code>).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://github.com/sharmaabhishekk/undershot_backup" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Understat Shot Mirror (GitHub)</a> &amp; <a href="https://huggingface.co/datasets/aloobun/fbref_understat_combined" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Seasonal xG/xA Mirror (HuggingFace)</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.25); color: #22c55e; font-size: 11px; font-weight: 600;">Reconciled Open Mirrors</span></td>
+                <td>1,867 player shots (2014–2019; 264,837 league shots) &amp; 9-season xG/xA table (2014–2023) in <code>data/raw/understat_mirror/2026-11-11/</code></td>
+                <td style="color: #a1a1aa;">Primary Tier 1 shot-level <code>[X, Y]</code> pitch coordinates, Euclidean goal distance, individual goal xG (N=327 matched goals), spatial heatmaps, missed-shot xG, and 9-season xG/xA outperformance (reconciled in <code>understat_reconciliation.csv</code>; direct <a href="https://understat.com/" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">understat.com</a> returns error stub).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://www.messivsronaldo.app/detailed-stats/" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Opta / WhoScored / SofaScore Event Telemetry</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25); color: #f59e0b; font-size: 11px; font-weight: 600;">Direct Telemetry Scrape</span></td>
+                <td>European League &amp; UCL careers (2009–2026; 6,586 shots, 4,700+ dribbles, 850+ aerial duels) in <code>data/raw/match_ratings/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">European shot conversion, successful dribbles per 90, aerial duels won, defensive actions, throughballs, big chances created, key passes, MOTM awards, and match ratings.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://huggingface.co/datasets/julien-c/kaggle-hugomathien-soccer" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">SoFIFA / European Soccer DB</a>, <a href="https://www.pesmaster.com/" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">PESMaster</a> &amp; <a href="https://fmdataba.com/" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">FmDataba</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.25); color: #c084fc; font-size: 11px; font-weight: 600;">Direct DB &amp; HTML Scrape</span></td>
+                <td>18 FIFA/EA FC editions (07–24 via <a href="https://huggingface.co/datasets/jsulz/FIFA23" target="_blank" rel="noopener" style="color: #93c5fd;">FIFA23</a> &amp; <a href="https://huggingface.co/datasets/jmacd867/SoFifa-Dataset-2024" target="_blank" rel="noopener" style="color: #93c5fd;">FC24</a>), 16 PES sheets, 4 FM profiles in <code>data/raw/gaming/2026-11-11/</code></td>
+                <td style="color: #a1a1aa;">Official Overall Ratings (OVR) and sub-attribute trajectories (29 FIFA attributes, 16 PES attributes, 36 Football Manager 1–20 scouted attributes).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://github.com/martj42/international_results" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Mart Jürisoo International Results</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.25); color: #22c55e; font-size: 11px; font-weight: 600;">Public Archive Download</span></td>
+                <td>47,000+ international match results (1872–2026; 397 senior international appearances) in <code>data/raw/martj42_international/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">Official competitive vs international friendly goal verification and historical national-team opponent records.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://www.fifa.com/fifa-world-ranking/men" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">FIFA Official Men's World Rankings</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.25); color: #c084fc; font-size: 11px; font-weight: 600;">Official Release Download</span></td>
+                <td>67,894 rankings across 335 official monthly releases (1992–2026) in <code>data/raw/fifa_rankings/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">Exact match-day opponent FIFA world ranking at kickoff across all 397 international appearances (Top 10, Top 20, Top 50, and outside-50 splits).</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://github.com/dcaribou/transfermarkt-datasets" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Transfermarkt Datasets (dcaribou)</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.25); color: #22c55e; font-size: 11px; font-weight: 600;">Open Data Dump Download</span></td>
+                <td>1,014 appearances, 85,530 minutes, 301 shared teammates in <code>data/raw/transfermarkt_datasets/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">Contemporary teammate market valuations at match date (<code>player_valuations</code>), domestic Top-6 / league opponent ranks, and club on/off win shares.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://www.fifa.com/the-best-fifa-football-awards" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">France Football, FIFA &amp; UEFA Official Records</a> (<a href="https://www.uefa.com/uefachampionsleague/history/winners/" target="_blank" rel="noopener" style="color: #93c5fd; text-decoration: underline;">UCL Archive</a>)
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.25); color: #c084fc; font-size: 11px; font-weight: 600;">Official Registry Audit</span></td>
+                <td>Ballon d'Or, FIFA The Best, Golden Shoe, Laureus, &amp; Senior Trophies in <code>data/raw/accolades/2026-11-09/</code></td>
+                <td style="color: #a1a1aa;">Peer/journalist voting awards, Golden Boot league diversity, World Cup Golden Balls, senior international &amp; club silverware, and European trebles.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Meta/X/YouTube</a>, <a href="https://en.wikipedia.org/wiki/List_of_most-liked_Instagram_posts" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Guinness</a> &amp; <a href="https://www.mlssoccer.com/news/lionel-messi-effect-inter-miami-ticket-surge" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">MLS/SPL Attendance</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.25); color: #f59e0b; font-size: 11px; font-weight: 600;">Platform &amp; Broadcast Audit</span></td>
+                <td>Verified social reach, cultural records, and turnstile gate surge in <code>data/raw/influence/2026-11-09/</code></td>
+                <td style="color: #a1a1aa;">Cross-platform audience reach, most-liked social post records, global broadcast distribution, and MLS / Saudi Pro League matchday attendance uplift.</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 700; color: #ffffff;">
+                  <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">StatsBomb Open Data</a>
+                </td>
+                <td><span style="display: inline-block; padding: 2px 8px; border-radius: 4px; background: rgba(161, 161, 170, 0.14); border: 1px solid rgba(161, 161, 170, 0.35); color: #d4d4d8; font-size: 11px; font-weight: 600;">Supplementary (Deprioritised)</span></td>
+                <td>143,379 events across 668 open-data matches (asymmetric: 648 Messi vs 20 Ronaldo) &amp; 27 shared H2H fixtures in <code>data/raw/statsbomb/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;"><strong>Deprioritised</strong> as primary shot/xG source due to 32× club sample asymmetry. Retained strictly for symmetric 27-match H2H passing ranges/heights/progressive passes, World Cup 2018/2022 pressing/dribbles, dribble carries, and non-Understat spatial fallback (<code>sb_xg</code> audit columns only).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="analysis-source-matrix" class="methodology-card">
+        <div class="methodology-eyebrow" style="color: #38bdf8;">Appendix 2 Part II · Complete Analytical Traceability</div>
+        <h2 class="methodology-title">2. Analysis-by-Analysis Source &amp; Provenance Matrix</h2>
+        <p class="methodology-desc">
+          Direct mapping from every analytical criterion and interactive arena in Issue 01 to its external source link(s), immutable raw snapshot in <code>data/raw/</code>, and compiled dataset in <code>data/processed/</code>.
+        </p>
+        <div style="overflow-x: auto;">
+          <table class="methodology-table">
+            <thead>
+              <tr>
+                <th>Analysis / Section</th>
+                <th>External Source Links</th>
+                <th>Local Raw &amp; Processed Provenance</th>
+                <th>Verified Scope &amp; Method Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="insights.html#chapter-1-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.1 · Goalscoring &amp; Finishing</a><br><span style="color: #71717a; font-size: 11px;">Refs 1.1.1–1.1.4 (q1, q1_6, q2, q3)</span></td>
+                <td><a href="https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Logs/API</a> · <a href="https://github.com/sharmaabhishekk/undershot_backup" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Understat Shots</a> · <a href="https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_match_shooting" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FBref/Opta Shooting</a> · <a href="https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FotMob Shots</a> · <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">StatsBomb</a> · <a href="https://www.messivsronaldo.app/detailed-stats/xg-expected-goals/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta 13Y xG &amp; Conversion</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/understat_mirror/2026-11-11/</code>, <code>data/raw/worldfootballr/2026-11-14/</code>, <code>data/raw/statsbomb/2026-11-02/</code>, <code>data/raw/match_ratings/2026-11-02/</code> &rarr; <code>goals.csv</code>, <code>combined_shots.csv</code>, <code>opta_xg_seasons.csv</code>, <code>opta_shots_conversion.csv</code></td>
+                <td style="color: #a1a1aa;">1,915 goals; 814 shot-telemetry goals (Understat=331, FBref=178, FotMob=41, StatsBomb=264) + 167 IFAB penalties; 934 uninstrumented <code>NaN</code>; 4,609 deduplicated shots (3,792 misses) for missed-shot xG; 13-season Opta xG &amp; Opta 6,586-shot conversion.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-1-2" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.2 · Playmaking &amp; Passing</a><br><span style="color: #71717a; font-size: 11px;">Refs 1.2.1–1.2.4 (q2_1, q2_3, q2_2, q2_team)</span></td>
+                <td><a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt API</a> · <a href="https://www.messivsronaldo.app/detailed-stats/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Playmaking</a> · <a href="https://huggingface.co/datasets/aloobun/fbref_understat_combined" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Understat xA (HF)</a> · <a href="https://github.com/dcaribou/transfermarkt-datasets" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">TM Datasets</a> · <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">StatsBomb (Suppl.)</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/match_ratings/2026-11-02/</code>, <code>data/raw/understat_mirror/2026-11-11/</code> &rarr; <code>special_assists.csv</code>, <code>understat_xg_xa.csv</code>, <code>progressive_passes.csv</code></td>
+                <td style="color: #a1a1aa;">Transfermarkt N=3,260 appearances, Understat 9-season xA, Opta throughballs/big chances/key passes; StatsBomb restricted to 27 shared H2H fixtures for pass ranges/heights/progressive passes.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-1-3" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.3 · Dribbling &amp; 1v1 Progression</a><br><span style="color: #71717a; font-size: 11px;">Ref 1.3.1 (q4_1)</span></td>
+                <td><a href="https://www.messivsronaldo.app/detailed-stats/successful-dribbles/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Dribbles</a> · <a href="https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Big-5 Peer Benchmarks</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>opta_dribbles.csv</code>, <code>dribble_telemetry_seasons.csv</code>, <code>peer_season_benchmarks.csv</code></td>
+                <td style="color: #a1a1aa;">Opta European League &amp; UCL successful dribbles &amp; seasonal p90 rates (2009–24) benchmarked against Big-5 peers. Sub-dimension 1.3.2 excluded for cross-player comparability parity (see Appendix 2 Part IV).</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-1-4" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.4 · Combined G+A Output</a><br><span style="color: #71717a; font-size: 11px;">Refs 1.4.1–1.4.2 (q3_1, q3_team)</span></td>
+                <td><a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Performance API</a> · <a href="https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Goal Logs</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/transfermarkt_direct/2026-11-02/{messi,ronaldo}_performance_game.json</code> &rarr; the underlying dataset, <code>team_goals.csv</code>, <code>appearances.csv</code></td>
+                <td style="color: #a1a1aa;">Senior career G+A totals, per-90 efficiency, biological-age curves, and team goal involvement share across club &amp; country.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-1-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.1.4 · Clutch &amp; High-Stakes</a><br><span style="color: #71717a; font-size: 11px;">Refs 1.1.4 &amp; WC.1 (q1_4_team, wc_1)</span></td>
+                <td><a href="https://www.transfermarkt.com/cristiano-ronaldo/alletore/spieler/8198" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Knockout &amp; Goal Logs</a> · <a href="https://github.com/dcaribou/transfermarkt-datasets" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">TM Datasets (dcaribou)</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>goals.csv</code>, <code>top6_gwg.csv</code>, <code>data/raw/transfermarkt_direct/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">All-competition knockout stages, match-state game-winning goals (<code>is_gwg</code>), Top-6 league deciders, and World Cup group vs knockout scoring.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-1-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 1.1.4 / WC · Opposition Strength</a><br><span style="color: #71717a; font-size: 11px;">Refs 1.1.4 &amp; WC.2–WC.4 (q1_4_team, wc_2, wc_4)</span></td>
+                <td><a href="https://www.fifa.com/fifa-world-ranking/men" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FIFA World Rankings</a> · <a href="https://github.com/martj42/international_results" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">martj42 International Results</a> · <a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt API</a> · <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">StatsBomb WC (Suppl.)</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/fifa_rankings/2026-11-02/fifa_rankings.csv</code>, <code>data/raw/martj42_international/2026-11-02/</code>, <code>appearances.csv</code></td>
+                <td style="color: #a1a1aa;">Matchday FIFA ranking stratification (Top 20/50/100) across 397 caps, eventual Top-4 domestic club splits, and World Cup knockout progression / xA.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-0-0" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 0.0.3 / 1.1.3 · Supporting Cast &amp; Autonomy</a><br><span style="color: #71717a; font-size: 11px;">Refs 0.0.3, 1.1.3 &amp; WC.5–WC.6 (q0_3, q3, wc_5, wc_6)</span></td>
+                <td><a href="https://github.com/dcaribou/transfermarkt-datasets" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Datasets (dcaribou)</a> · <a href="https://www.transfermarkt.com/lionel-messi/elfmetertore/spieler/28003" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Penalties &amp; Logs</a> · <a href="https://www.fifa.com/fifa-world-ranking/men" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FIFA Rankings</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>teammates_valuation.csv</code>, <code>player_valuations.csv.gz</code>, <code>squads.csv</code></td>
+                <td style="color: #a1a1aa;">On-pitch club teammates valued at match date, World Cup squad valuations, non-penalty scoring autonomy, and solo/unassisted goal creation.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-2-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 2.1 · Ground Defending &amp; Pressing</a><br><span style="color: #71717a; font-size: 11px;">Ref 2.1.1 (q4_2)</span></td>
+                <td><a href="https://www.messivsronaldo.app/detailed-stats/defensive-stats/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Defensive Telemetry</a> · <a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt API</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>opta_defense.csv</code>, <code>opta_defense_seasons.csv</code>, <code>data/raw/transfermarkt_direct/2026-11-02/</code></td>
+                <td style="color: #a1a1aa;">Opta European tackles, interceptions, pressures &amp; passes blocked per 90 across 2009–2023, plus Transfermarkt tackles won/90 across 2018–2026.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-2-2" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 2.2 · Physical &amp; Aerial Contests</a><br><span style="color: #71717a; font-size: 11px;">Ref 2.2.1 (q4_3)</span></td>
+                <td><a href="https://www.messivsronaldo.app/detailed-stats/aerial-duels/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Aerial Duels</a> · <a href="https://www.messivsronaldo.app/detailed-stats/defensive-stats/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Clearances</a> · <a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt API</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>opta_aerial_duels.csv</code>, <code>opta_aerial_seasons.csv</code>, <code>opta_defense_seasons.csv</code></td>
+                <td style="color: #a1a1aa;">Opta European League &amp; UCL aerial duels won (total &amp; per 90 by season, 2009–2025), defensive clearances/90 by season (2009–2023), and fouls drawn/90 by season (2018–2026).</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-3-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Pillar 3.0 / Criteria 3.1 · Overall On-Pitch Impact</a><br><span style="color: #71717a; font-size: 11px;">Refs 3.1.1–3.1.2 (q4_4, q4_5)</span></td>
+                <td><a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Performance API</a> · <a href="https://www.messivsronaldo.app/detailed-stats/average-match-ratings/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta / WhoScored Ratings</a> · <a href="https://www.messivsronaldo.app/detailed-stats/man-of-the-match-awards/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">MOTM Awards</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/transfermarkt_direct/2026-11-02/</code>, <code>season_match_ratings.csv</code>, <code>man_of_the_match.csv</code></td>
+                <td style="color: #a1a1aa;">Team PPG and win-rate differential with vs without each player (N=2,521 senior club fixtures), plus 18-season algorithmic match ratings &amp; MOTM awards.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-4-1" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 4.1 · Individual Accolades &amp; Scoring Crowns</a><br><span style="color: #71717a; font-size: 11px;">Refs 4.1.1–4.1.2 (q8_1, q8_2)</span></td>
+                <td><a href="https://www.fifa.com/the-best-fifa-football-awards" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FIFA / France Football / ESM / Laureus Archives</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>individual_honours.csv</code></td>
+                <td style="color: #a1a1aa;">Ballon d'Or, FIFA World Player, Laureus &amp; World Cup Golden Balls, European Golden Shoes, and club-highlighted timeline of national league top-scorer crowns.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-4-2" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 4.2 · Trophies &amp; Championship Pedigree</a><br><span style="color: #71717a; font-size: 11px;">Ref 4.2.1 (q8_4)</span></td>
+                <td><a href="https://www.uefa.com/uefachampionsleague/history/winners/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">UEFA / FIFA Official Competition Archives</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>trophies.csv</code></td>
+                <td style="color: #a1a1aa;">Side-by-side pie breakdown by trophy type (Domestic League, Cup, Supercup, UCL, CWC/Super Cup, Senior Intl), international titles, trebles, and cumulative trajectory.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-4-3" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Criteria 4.3 · Cultural Reach, Live Attendance &amp; Economics</a><br><span style="color: #71717a; font-size: 11px;">Refs 4.3.1–4.3.2 (q8_7, q8_9)</span></td>
+                <td><a href="https://www.instagram.com/cristiano/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Meta/X/YouTube</a> · <a href="https://www.transfermarkt.com/lionel-messi/leistungsdatendetails/spieler/28003" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt Attendance Logs</a> · <a href="https://www.mlssoccer.com/news/lionel-messi-effect-inter-miami-ticket-surge" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">MLS &amp; SPL Gate Reports</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>social_media_metrics.csv</code>, <code>cultural_records.csv</code>, <code>attendance_impact.csv</code>, <code>games.csv.gz</code></td>
+                <td style="color: #a1a1aa;">Cross-platform followers &amp; record post engagement, overall/home/away &amp; seasonal turnstile attendance (2012–2023), MLS/SPL road lift, and global broadcast territories.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-extra-3" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Extra Analysis 3 · Spatial Heatmap Evolution</a><br><span style="color: #71717a; font-size: 11px;">Interactive Pitch Coordinate Lab</span></td>
+                <td><a href="https://github.com/sharmaabhishekk/undershot_backup" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Understat Mirror</a> · <a href="https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FotMob Telemetry</a> · <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">StatsBomb Open Data</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>understat_shots.csv</code>, <code>fotmob_shots</code>, <code>career_open_data_events.csv</code> &rarr; <code>spatial_telemetry_seasons.csv</code>, <code>data/spatial_data.js</code></td>
+                <td style="color: #a1a1aa;">Combines Understat (<code>2014/15–2018/19</code>), FotMob (<code>2020/21–2023/24</code> UCL, Euro, EPL, Serie A, Ligue 1, La Liga, MLS; <code>ny=(1-y/68)*100</code>), and StatsBomb multi-action open samples whenever full-league sources lack coverage; season pills colour-code full vs partial vs uninstrumented years.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-extra-4" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Extra Analysis 4 · Virtual Ratings Arena</a><br><span style="color: #71717a; font-size: 11px;">FIFA/EA FC · PES/eFootball · Football Manager</span></td>
+                <td><a href="https://huggingface.co/datasets/julien-c/kaggle-hugomathien-soccer" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">SoFIFA/SQLite (FIFA 07–16)</a> · <a href="https://huggingface.co/datasets/jsulz/FIFA23" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FIFA 15–23</a> · <a href="https://huggingface.co/datasets/jmacd867/SoFifa-Dataset-2024" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">EA FC 24</a> · <a href="https://www.pesmaster.com/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">PESMaster</a> · <a href="https://fmdataba.com/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">FmDataba</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>data/raw/gaming/2026-11-11/</code> (46 SHA-256 verified extracts/HTML files in <code>MANIFEST.md</code>) &rarr; <code>fifa_ratings.csv</code>, <code>pes_ratings.csv</code>, <code>fm_ratings.csv</code>, <code>data/gaming_data.js</code></td>
+                <td style="color: #a1a1aa;">18 FIFA editions, 16 PES editions, and 4 FM editions (FM 08, 19, 20, 21) parsed dynamically with explicit coverage gaps where historical editions lack raw files.</td>
+              </tr>
+              <tr>
+                <td><a href="insights.html#chapter-dribble-arena" style="color: #38bdf8; font-weight: 700; text-decoration: underline;">Extra Analysis 5 · Dribble &amp; Carry Vector Arena</a><br><span style="color: #71717a; font-size: 11px;">Interactive Spatial Carry Lab</span></td>
+                <td><a href="https://www.messivsronaldo.app/detailed-stats/successful-dribbles/" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Opta Dribbles</a> · <a href="https://tmapi.transfermarkt.technology/player/28003/performance-game" target="_blank" rel="noopener" style="color: #e4e4e7; text-decoration: underline;">Transfermarkt API</a> · <a href="https://github.com/statsbomb/open-data" target="_blank" rel="noopener" style="color: #a1a1aa; text-decoration: underline;">StatsBomb Carries (Suppl.)</a></td>
+                <td style="color: #a1a1aa; font-family: 'JetBrains Mono', monospace; font-size: 11px;"><code>opta_dribbles_seasons.csv</code>, <code>career_open_data_events.csv</code> &rarr; <code>dribble_telemetry_seasons.csv</code>, <code>data/dribble_data.js</code></td>
+                <td style="color: #a1a1aa;">Opta European seasonal dribble rates + Transfermarkt minutes across 18 seasons; carry vector geometry shown strictly where open-data carry coordinates exist (gap notice for missing Ronaldo club seasons).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
+        <div class="methodology-card">
+          <div class="methodology-eyebrow" style="color: var(--messi-color);">Appendix 2 Part III · Metric Definitions &amp; Calibration</div>
+          <h3 class="methodology-title" style="font-size: 17px;">3. Standardized Definitions &amp; Calibration</h3>
+          <ul class="methodology-list">
+            <li><strong>Gross vs Official Competitive Goals (D-001, D-009):</strong> Gross senior goals (<code>N=1,915</code>: 936 Messi, 979 Ronaldo) include senior international friendlies (55 Messi, 22 Ronaldo). Official competitive goals (<code>N=1,838</code>: 881 Messi, 957 Ronaldo) exclude all club/international friendlies and penalty shootouts.</li>
+            <li><strong>Season Calendar Mapping (D-002):</strong> European &amp; Saudi clubs follow Aug–Jul seasons (<code>2002-03</code> to <code>2026-27*</code>); MLS calendar-year seasons (<code>2023</code>–<code>2026</code>) and summer international tournaments map to the corresponding unified campaign.</li>
+            <li><strong>Biological Age &amp; Breakthrough Year:</strong> Exact age on match date is <code>(match_date - dob) / 365.25</code>. Breakthrough Year 1 is defined as first top-flight senior season (<code>2002-03</code> Sporting CP for Ronaldo; <code>2004-05</code> FC Barcelona for Messi).</li>
+            <li><strong>Zero-Estimation Multi-Source Distance &amp; Expected Goals (xG) Policy (<code>enrich_goals_xg_distance.py</code>):</strong>
+              <br>1) <em>Tier 1 (Understat Shot-Level Archive):</em> Validated <code>2014/15–2018/19</code> <code>[X, Y]</code> shot coordinates (<strong>N=331</strong> goals: 176 Messi, 155 Ronaldo).
+              <br>2) <em>Tier 2 (FBref / Opta Shooting Logs via worldfootballR_data):</em> Domestic league <code>2017/18–2024</code> xG and yardage (converted via <code>&times; 0.9144 m/yd</code>, empirical ratio vs FotMob <code>0.9125</code>) for <strong>N=178</strong> additional goals (99 Messi, 79 Ronaldo).
+              <br>3) <em>Tier 3 (FotMob Shot Details via worldfootballR_data):</em> <code>2020/21–2024</code> UCL, UEFA Euro, UEL, MLS &amp; league <code>105m &times; 68m</code> coordinates (excluding shootouts &amp; own goals) for <strong>N=41</strong> additional goals (14 Messi, 27 Ronaldo).
+              <br>4) <em>Tier 4 (StatsBomb Open Data):</em> Historical La Liga (Messi 2004–2021), UCL Finals, World Cup &amp; Euro events for <strong>N=264</strong> additional goals (251 Messi, 13 Ronaldo).
+              <br>5) <em>Tier 5 &amp; Uninstrumented Policy:</em> External penalties (<strong>N=167</strong>) receive IFAB Law 14 spot geometry (<code>11.0m</code>, <code>0.7564 xG</code>); remaining <strong>N=934</strong> goals stay <code>NaN</code>. Seasonal Avg xG/Goal and Avg Distance curves include only <code>is_telemetry == True</code> goals in seasons with &ge;5 telemetry goals and &ge;3 non-penalty telemetry goals so uninstrumented eras never collapse to flat <code>0.756 xG</code> / <code>11.0m</code> lines.
+            </li>
+            <li><strong>Game Winning Goals (<code>is_gwg</code>):</strong> A goal that broke a tie score (<code>team_at_score == opp_at_score + 1</code>) in a match won by the player's team (<code>team_final_score &gt; opp_final_score</code>), verified across 100% (1,915/1,915) of goals.</li>
+          </ul>
+        </div>
+
+        <div class="methodology-card">
+          <div class="methodology-eyebrow">Appendix 2 Part IV · Multi-Source Fusion &amp; Coverage Boundaries</div>
+          <h3 class="methodology-title" style="font-size: 17px;">4. Explicit Coverage Gaps &amp; Multi-Source Fusion Policy</h3>
+          <ul class="methodology-list">
+            <li><strong>Multi-Source Telemetry Fusion (Overcoming StatsBomb's Asymmetry):</strong> Relying on StatsBomb Open Data alone creates severe bias (648 Messi vs 20 Ronaldo matches), while relying on Understat alone restricts telemetry to 2014–2019. Therefore, we combine <strong>all 4 shot-telemetry providers</strong> in strict fixture priority (<code>Understat &gt; FBref/Opta &gt; FotMob &gt; StatsBomb</code>) to lift shot-level goal coverage from 327 to <strong>814 goals (42.5%)</strong> and assemble <strong>4,609 deduplicated shots</strong> (<code>combined_shots.csv</code>, including <strong>3,792 missed shots</strong>) across 2004–2025, paired with explicit seasonal coverage charts (<code>1.1.3</code>) and Spatial pill indicators (<code>Extra 3</code>).</li>
+            <li><strong>Understat Mirror Verification &amp; 2019–2020 Discrepancy Exclusion:</strong> Because direct scraping of <code>understat.com</code> returns an error stub, raw mirrors in <code>data/raw/understat_mirror/2026-11-11/</code> are SHA-256 hashed in <code>MANIFEST.md</code> and cross-reconciled season-by-season in <code>data/validation/understat_reconciliation.csv</code>. Seasons <code>2015/16–2018/19</code> reconcile to 0.0 shot / 0.000 xG variance; Ronaldo's <code>2019-2020</code> slice in <code>understat_all_shots.csv</code> is truncated (10 vs 208 shots), flagged <code>DISCREPANCY</code>, and automatically excluded from all downstream xG, conversion, and spatial charts.</li>
+            <li><strong>Goals per 90 Minutes (G/90) Window:</strong> Match-level minutes played in <code>messi_performance_game.json</code> and <code>ronaldo_performance_game.json</code> from Transfermarkt Direct API cover the entire <strong>2002–2027 career span (N=3,260 match records)</strong> across every season with &ge;400 minutes.</li>
+            <li><strong>Body-Part &amp; Direct Free Kick Audit:</strong> Of 1,915 career goals, <code>1,682</code> have explicit body-part tags (<code>855</code> Messi, <code>827</code> Ronaldo) and <code>233</code> remain <code>unspecified</code>. Verified senior direct free kicks total <strong>65</strong> (Messi) vs <strong>55</strong> (Ronaldo), excluding youth/reserve/friendly claims.</li>
+            <li><strong>Excluded Metrics &amp; Methodological Parity Policy (Removal of <code>1.3.2</code> Carry Progression / Multiple Take-On Efficiency &amp; Matchday Rank):</strong>
+              <br>1) <em>Dribble Effectiveness &amp; Carry Progression (<code>1.3.2</code> / <code>q4_1_eff</code>):</em> Removed because underlying FBref/Opta match logs omitted Serie A take-on event tracking throughout <code>2018/19–2020/21</code> (covering Ronaldo's entire Juventus tenure) and lack pre-2017 wing-era data, while StatsBomb Open Data only covers a single club season (<code>2015/16</code>) for Ronaldo alongside extensive Barcelona history. Keeping non-comparable seasonal carry progression and multi-take-on averages across mismatched windows would violate cross-player methodological parity; Criteria <code>1.3</code> now relies strictly on balanced Opta European dribble totals &amp; per-90 rates (<code>1.3.1</code>).
+              <br>2) <em>League Goals by Matchday Rank vs Eventual Top-4:</em> Live matchday table rank is noisy early in a season before table positions settle; analysis was consolidated onto eventual end-of-season Top-4 standings (noting the analytical caveat that full-season Top-4 standing does not capture short-term opponent form on matchday).
+              <br>3) <em>Unstandardized Commercial &amp; Proprietary Aggregates:</em> Multi-season per-game live TV viewership, confidential Adidas/Nike jersey unit sales, and league-wide 2009–2026 seasonal WhoScored match-rating percentiles are omitted under our zero-estimation policy.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- KPI Summary Strip -->
+    <div class="kpi-strip reveal-on-scroll">
+      <div class="kpi-card">
+        <div class="label">Total Database Goals</div>
+        <div class="val" id="kpi-total">1,915</div>
+        <div class="sub">1,838 Official · 77 Friendlies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label" style="color: var(--messi-color);">Lionel Messi</div>
+        <div class="val" style="color: var(--messi-color);" id="kpi-messi">936</div>
+        <div class="sub">881 Official · 55 Friendlies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label" style="color: var(--ronaldo-color);">Cristiano Ronaldo</div>
+        <div class="val" style="color: var(--ronaldo-color);" id="kpi-ronaldo">979</div>
+        <div class="sub">957 Official · 22 Friendlies</div>
+      </div>
+      <div class="kpi-card">
+        <div class="label">Telemetry & xG Available</div>
+        <div class="val" style="color: var(--accent-green);" id="kpi-tel-pct">—</div>
+        <div class="sub" id="kpi-tel-sub">Verified shot-level xG telemetry</div>
+      </div>
+    </div>
+
+    <!-- Filter Control Bar -->
+    <div class="control-panel reveal-on-scroll">
+      <div class="control-row">
+        <button id="random-btn" class="random-btn">
+          
+          <span>Pick Random Match</span>
+        </button>
+
+        <div class="filter-group">
+          <label>Player:</label>
+          <select id="filter-player">
+            <option value="all">Both Icons</option>
+            <option value="messi">Lionel Messi</option>
+            <option value="ronaldo">Cristiano Ronaldo</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Match Type:</label>
+          <select id="filter-match-type">
+            <option value="all">All Matches</option>
+            <option value="official">Official Only</option>
+            <option value="friendly">Friendlies Only</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label>Situation:</label>
+          <select id="filter-situation">
+            <option value="all">All Situations</option>
+            <option value="open_play">Open Play</option>
+            <option value="penalty">Penalties (11m)</option>
+            <option value="direct_free_kick">Direct Free Kicks</option>
+          </select>
+        </div>
+
+        <div class="filter-group" style="flex: 1;">
+          <label>Search:</label>
+          <input type="text" id="filter-search" class="search-box" placeholder="Search opponent, date, competition...">
+        </div>
+      </div>
+
+      <!-- Match Dropdown Picker (for Inspector Mode) -->
+      <div class="control-row" id="match-select-row">
+        <div class="filter-group" style="flex: 1;">
+          <label>Select Match:</label>
+          <select id="match-select" style="flex: 1; max-width: 100%;">
+            <option value="">-- Choose or search a match below --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 1: Match Inspector Card View -->
+    <div id="inspector-view">
+      <div id="audit-card-container">
+        <!-- Dynamically populated via JS -->
+      </div>
+
+      <!-- Quick Samples Strip -->
+      <div style="margin-top: 36px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <span style="font-size: 15px; font-weight: 700;">Featured Goal Samples (Click to Inspect)</span>
+          <button id="shuffle-samples-btn" class="nav-btn" style="padding: 4px 10px; font-size: 11px;">Shuffle Samples</button>
+        </div>
+        <div id="mini-feed-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px;">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- VIEW 2: Full Database Table View -->
+    <div id="table-view" style="display: none;">
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable('date')">Date</th>
+              <th onclick="sortTable('player_name')">Player</th>
+              <th onclick="sortTable('opponent')">Opponent</th>
+              <th onclick="sortTable('competition')">Competition</th>
+              <th onclick="sortTable('minute')">Minute</th>
+              <th>Goal Type</th>
+              <th onclick="sortTable('distance_m')">Distance</th>
+              <th onclick="sortTable('xg')">xG</th>
+              <th>Situation</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Dynamically populated via JS -->
+          </tbody>
+        </table>
+        <div class="pagination-bar">
+          <span id="table-count-label">Showing 0 of 0 goals</span>
+          <div style="display: flex; gap: 8px;">
+            <button id="prev-page-btn" class="nav-btn" style="padding: 4px 10px; font-size: 11px;">Prev 50</button>
+            <button id="next-page-btn" class="nav-btn" style="padding: 4px 10px; font-size: 11px;">Next 50</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Data -->
+  <script src="data/goals_data.js"></script>
+  <script>
+    let allGoals = window.GOALS_DATA || [];
+    let matchesMap = new Map();
+    let currentView = 'inspector'; // 'inspector' | 'table'
+    let currentPage = 1;
+    const pageSize = 50;
+    let sortColumn = 'date';
+    let sortAsc = false;
+
+    function init() {
+      if (!allGoals || allGoals.length === 0) {
+        document.getElementById('audit-card-container').innerHTML = `<p style="color: #ef4444;">Error: goals dataset not loaded.</p>`;
+        return;
+      }
+
+      // Group into matches
+      allGoals.forEach(g => {
+        const key = `${g.player_id}_${g.date}_${g.opponent}`;
+        if (!matchesMap.has(key)) {
+          matchesMap.set(key, {
+            player_id: g.player_id,
+            player_name: g.player_name,
+            date: g.date,
+            season: g.season,
+            age_exact: g.age_exact,
+            team: g.team,
+            team_type: g.team_type,
+            opponent: g.opponent,
+            venue: g.venue,
+            competition: g.competition,
+            result: g.result,
+            is_friendly: g.is_friendly,
+            match_type: g.match_type,
+            goals: []
+          });
+        }
+        matchesMap.get(key).goals.push(g);
+      });
+
+      // View Switcher events
+      document.getElementById('view-inspector-btn').addEventListener('click', () => switchView('inspector'));
+      document.getElementById('view-table-btn').addEventListener('click', () => switchView('table'));
+
+      // Filter events
+      document.getElementById('random-btn').addEventListener('click', pickRandomMatch);
+      document.getElementById('filter-player').addEventListener('change', onFilterChange);
+      document.getElementById('filter-match-type').addEventListener('change', onFilterChange);
+      document.getElementById('filter-situation').addEventListener('change', onFilterChange);
+      document.getElementById('filter-search').addEventListener('input', onFilterChange);
+      document.getElementById('match-select').addEventListener('change', (e) => {
+        if (e.target.value) renderMatchCard(matchesMap.get(e.target.value));
+      });
+      document.getElementById('shuffle-samples-btn').addEventListener('click', renderMiniFeed);
+      document.getElementById('prev-page-btn').addEventListener('click', () => changePage(-1));
+      document.getElementById('next-page-btn').addEventListener('click', () => changePage(1));
+
+      // Update dynamic KPI values
+      const mGoals = allGoals.filter(g => g.player_id === 'messi');
+      const rGoals = allGoals.filter(g => g.player_id === 'ronaldo');
+      const offCount = allGoals.filter(g => !g.is_friendly).length;
+      const frCount = allGoals.filter(g => g.is_friendly).length;
+      document.getElementById('kpi-total').textContent = allGoals.length.toLocaleString();
+      document.getElementById('kpi-messi').textContent = mGoals.length.toLocaleString();
+      document.getElementById('kpi-ronaldo').textContent = rGoals.length.toLocaleString();
+
+      onFilterChange();
+      pickRandomMatch();
+      renderMiniFeed();
+    }
+
+    function switchView(view) {
+      currentView = view;
+      document.getElementById('view-inspector-btn').classList.toggle('active', view === 'inspector');
+      document.getElementById('view-table-btn').classList.toggle('active', view === 'table');
+      document.getElementById('inspector-view').style.display = view === 'inspector' ? 'block' : 'none';
+      document.getElementById('table-view').style.display = view === 'table' ? 'block' : 'none';
+      document.getElementById('match-select-row').style.display = view === 'inspector' ? 'flex' : 'none';
+
+      if (view === 'table') {
+        renderTable();
+      }
+    }
+
+    function getFilteredGoals() {
+      const p = document.getElementById('filter-player').value;
+      const mType = document.getElementById('filter-match-type').value;
+      const sit = document.getElementById('filter-situation').value;
+      const q = document.getElementById('filter-search').value.toLowerCase().trim();
+
+      return allGoals.filter(g => {
+        if (p !== 'all' && g.player_id !== p) return false;
+        if (mType === 'official' && g.is_friendly) return false;
+        if (mType === 'friendly' && !g.is_friendly) return false;
+        if (sit !== 'all' && g.situation !== sit) return false;
+        if (q) {
+          const combined = `${g.player_name} ${g.team || ''} ${g.opponent} ${g.date} ${g.competition} ${g.goal_type_raw}`.toLowerCase();
+          if (!combined.includes(q)) return false;
+        }
+        return true;
+      });
+    }
+
+    function onFilterChange() {
+      const filteredGoals = getFilteredGoals();
+      // Update match select
+      const matchesSet = new Set();
+      const matchItems = [];
+      filteredGoals.forEach(g => {
+        const key = `${g.player_id}_${g.date}_${g.opponent}`;
+        if (!matchesSet.has(key)) {
+          matchesSet.add(key);
+          matchItems.push({ key, match: matchesMap.get(key) });
+        }
+      });
+
+      matchItems.sort((a, b) => b.match.date.localeCompare(a.match.date));
+      const select = document.getElementById('match-select');
+      select.innerHTML = `<option value="">-- ${matchItems.length} matches found (${filteredGoals.length} goals) --</option>`;
+      matchItems.slice(0, 150).forEach(item => {
+        const m = item.match;
+        const opt = document.createElement('option');
+        opt.value = item.key;
+        opt.textContent = `[${m.date}] ${m.player_name} vs ${m.opponent} (${m.result}) — ${m.goals.length} goal${m.goals.length > 1 ? 's' : ''}`;
+        select.appendChild(opt);
+      });
+
+      if (currentView === 'table') {
+        currentPage = 1;
+        renderTable();
+      }
+    }
+
+    function pickRandomMatch() {
+      const goals = getFilteredGoals();
+      if (goals.length === 0) return;
+      const randGoal = goals[Math.floor(Math.random() * goals.length)];
+      const matchKey = `${randGoal.player_id}_${randGoal.date}_${randGoal.opponent}`;
+      document.getElementById('match-select').value = matchKey;
+      renderMatchCard(matchesMap.get(matchKey));
+    }
+
+    function renderMatchCard(m) {
+      if (!m) return;
+      const container = document.getElementById('audit-card-container');
+      const isMessi = m.player_id === 'messi';
+      const playerColorClass = isMessi ? 'messi' : 'ronaldo';
+      const matchBadge = m.is_friendly 
+        ? `<span class="badge-friendly">Friendly Match</span>` 
+        : `<span class="badge-official">Official Competition</span>`;
+
+      const searchQuery = encodeURIComponent(`${m.player_name} ${m.date} ${m.opponent} goal ${m.competition}`);
+      const googleUrl = `https://www.google.com/search?q=${searchQuery}`;
+      const youtubeUrl = `https://www.youtube.com/results?search_query=${searchQuery}`;
+
+      const trackedXgGoals = m.goals.filter(g => g.xg !== null && g.xg !== undefined && !isNaN(Number(g.xg)));
+      const trackedDistGoals = m.goals.filter(g => g.distance_m !== null && g.distance_m !== undefined && !isNaN(Number(g.distance_m)));
+      const matchTotalXG = trackedXgGoals.reduce((acc, g) => acc + Number(g.xg), 0);
+      const matchTotalXGStr = trackedXgGoals.length > 0 ? `${Number(matchTotalXG).toFixed(2)} xG (${trackedXgGoals.length}/${m.goals.length})` : 'N/A (Untracked)';
+      const matchOutperfVal = trackedXgGoals.length - matchTotalXG;
+      const matchOutperfStr = trackedXgGoals.length > 0 ? `${matchOutperfVal >= 0 ? '+' : ''}${Number(matchOutperfVal).toFixed(2)} G` : 'N/A';
+      const avgDistance = trackedDistGoals.length > 0 ? (trackedDistGoals.reduce((acc, g) => acc + Number(g.distance_m), 0) / trackedDistGoals.length).toFixed(1) + 'm' : 'N/A';
+
+      let goalsHtml = m.goals.map(g => `
+        <div class="goal-pill">
+          <div class="goal-left">
+            <span class="goal-minute">${g.minute}'</span>
+            <div>
+              <div style="font-weight: 700; font-size: 15px;">${g.goal_type_raw || 'Goal'}</div>
+              <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                ${g.at_score ? `Running Score: ${g.at_score} · ` : ''}Source: ${g.xg_source}
+              </div>
+            </div>
+          </div>
+          <div class="goal-specs">
+            <span class="spec-tag distance-tag">Dist:  ${g.distance_m !== null && g.distance_m !== undefined ? `${g.distance_m}m (${g.distance_yards ?? '—'} yds)` : 'Dist N/A'}</span>
+            <span class="spec-tag xg-tag">${g.xg !== null && g.xg !== undefined ? `xG: ${Number(g.xg).toFixed(2)} xG` : 'xG N/A (Untracked)'}</span>
+            <span class="spec-tag highlight">${g.body_part}</span>
+            <span class="spec-tag">${g.situation}</span>
+            ${g.is_penalty ? `<span class="spec-tag highlight" style="color: var(--accent-amber);">Penalty</span>` : ''}
+            ${g.is_free_kick ? `<span class="spec-tag highlight" style="color: var(--accent-cyan);">Direct Free Kick</span>` : ''}
+          </div>
+        </div>
+      `).join('');
+
+      container.innerHTML = `
+        <div class="audit-card">
+          <div class="match-header">
+            <div class="player-tag ${playerColorClass}">
+              <span>${m.player_name}</span>
+              <span style="font-size: 13px; font-weight: 500; color: var(--text-muted);">(${m.team})</span>
+            </div>
+            <div>${matchBadge}</div>
+          </div>
+
+          <div class="match-score-row">
+            <div class="team-display">${m.team}</div>
+            <div class="score-badge">${m.result || 'Match'}</div>
+            <div class="team-display">${m.opponent}</div>
+          </div>
+
+          <div class="match-meta-grid">
+            <div class="meta-item">
+              <div class="m-label">Match Date</div>
+              <div class="m-val">${m.date}</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">Season & Age</div>
+              <div class="m-val">${m.season} (${m.age_exact} yrs)</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">Competition</div>
+              <div class="m-val">${m.competition}</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">Goals Scored</div>
+              <div class="m-val" style="color: var(--accent-cyan); font-weight: 800;">${m.goals.length} Goal${m.goals.length > 1 ? 's' : ''}</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">Total Match xG</div>
+              <div class="m-val" style="color: var(--accent-green); font-family: 'JetBrains Mono', monospace;">${matchTotalXGStr}</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">xG Outperformance</div>
+              <div class="m-val" style="color: var(--accent-cyan); font-family: 'JetBrains Mono', monospace;">${matchOutperfStr}</div>
+            </div>
+            <div class="meta-item">
+              <div class="m-label">Avg Distance</div>
+              <div class="m-val" style="color: var(--accent-purple); font-family: 'JetBrains Mono', monospace;">${avgDistance}</div>
+            </div>
+          </div>
+
+          <div class="goals-section-title">
+            <span>Goals Breakdown & Shot Telemetry (${m.goals.length})</span>
+            <span style="font-size: 11px; text-transform: none; color: var(--text-muted);">Distance & xG tracked</span>
+          </div>
+          <div class="goal-pill-list">
+            ${goalsHtml}
+          </div>
+
+          <div class="audit-action-row">
+            <div style="font-size: 12px; color: var(--text-muted);">
+              Data integrity check: Click below to verify match report and video highlights externally.
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <a href="${googleUrl}" target="_blank" class="verify-btn">
+                <span>🔍</span> Verify on Google
+              </a>
+              <a href="${youtubeUrl}" target="_blank" class="verify-btn">
+                <span>▶</span> Search Video Clip
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderTable() {
+      const goals = getFilteredGoals();
+
+      // Sort
+      goals.sort((a, b) => {
+        let valA = a[sortColumn];
+        let valB = b[sortColumn];
+        if (valA === null || valA === undefined) return 1;
+        if (valB === null || valB === undefined) return -1;
+        if (typeof valA === 'string') {
+          return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        }
+        return sortAsc ? valA - valB : valB - valA;
+      });
+
+      const total = goals.length;
+      const start = (currentPage - 1) * pageSize;
+      const pageGoals = goals.slice(start, start + pageSize);
+
+      document.getElementById('table-count-label').textContent = 
+        `Showing ${start + 1}–${Math.min(start + pageSize, total)} of ${total.toLocaleString()} goals`;
+
+      const tbody = document.getElementById('table-body');
+      tbody.innerHTML = pageGoals.map(g => `
+        <tr>
+          <td class="mono">${g.date}</td>
+          <td style="font-weight: 700; color: ${g.player_id === 'messi' ? 'var(--messi-color)' : 'var(--ronaldo-color)'};">
+            ${g.player_name}
+          </td>
+          <td>${g.opponent}</td>
+          <td>${g.competition}</td>
+          <td class="mono" style="font-weight: 700;">${g.minute}'</td>
+          <td>${g.goal_type_raw || 'Goal'}</td>
+          <td class="mono" style="color: var(--accent-purple); font-weight: 700;">${g.distance_m !== null && g.distance_m !== undefined ? g.distance_m + 'm' : '—'}</td>
+          <td class="mono" style="color: var(--accent-green); font-weight: 700;">${g.xg !== null && g.xg !== undefined ? Number(g.xg).toFixed(2) : '—'}</td>
+          <td><span class="spec-tag">${g.situation}</span></td>
+          <td>${g.is_friendly ? '<span class="badge-friendly" style="font-size: 10px; padding: 2px 6px;">Friendly</span>' : '<span class="badge-official" style="font-size: 10px; padding: 2px 6px;">Official</span>'}</td>
+        </tr>
+      `).join('');
+    }
+
+    window.sortTable = function(col) {
+      if (sortColumn === col) {
+        sortAsc = !sortAsc;
+      } else {
+        sortColumn = col;
+        sortAsc = false;
+      }
+      renderTable();
+    };
+
+    function changePage(delta) {
+      const goals = getFilteredGoals();
+      const maxPage = Math.ceil(goals.length / pageSize);
+      currentPage = Math.max(1, Math.min(maxPage, currentPage + delta));
+      renderTable();
+    }
+
+    function renderMiniFeed() {
+      const goals = getFilteredGoals();
+      const container = document.getElementById('mini-feed-container');
+      if (goals.length === 0) return;
+
+      const sample = [];
+      const copy = [...goals];
+      for (let i = 0; i < Math.min(8, copy.length); i++) {
+        const rand = Math.floor(Math.random() * copy.length);
+        sample.push(copy.splice(rand, 1)[0]);
+      }
+
+      container.innerHTML = sample.map(g => {
+        const color = g.player_id === 'messi' ? 'var(--messi-color)' : 'var(--ronaldo-color)';
+        const matchKey = `${g.player_id}_${g.date}_${g.opponent}`;
+        return `
+          <div class="sample-card" onclick="selectSample('${matchKey}')" >
+            <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted);">
+              <span style="color: ${color}; font-weight: 700;">${g.player_name.toUpperCase()}</span>
+              <span>${g.date}</span>
+            </div>
+            <div style="font-size: 13px; font-weight: 700; margin: 6px 0 2px 0;">vs ${g.opponent} (${g.minute}')</div>
+            <div style="font-size: 11px; display: flex; gap: 6px; margin-top: 4px;">
+              <span style="color: var(--accent-purple); font-weight: 700;">Dist: ${g.distance_m !== null && g.distance_m !== undefined ? g.distance_m + 'm' : '—'}</span>
+              <span style="color: var(--accent-green); font-weight: 700;">${g.xg !== null && g.xg !== undefined ? `xG: ${Number(g.xg).toFixed(2)} xG` : 'xG N/A (Untracked)'}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    window.selectSample = function(matchKey) {
+      switchView('inspector');
+      document.getElementById('match-select').value = matchKey;
+      renderMatchCard(matchesMap.get(matchKey));
+      window.scrollTo({ top: 380, behavior: 'smooth' });
+    };
+
+    window.addEventListener('DOMContentLoaded', init);
+  </script>
+
+    <script>
+      window.exportFilteredCSV = function() {
+        if (typeof getFilteredGoals !== 'function') return;
+        const rows = getFilteredGoals();
+        const cols = ['goal_id', 'date', 'player_name', 'team', 'opponent', 'competition', 'minute', 'distance_m', 'xg', 'xg_source', 'situation', 'is_friendly'];
+        const csvLines = [cols.join(',')];
+        rows.forEach(r => {
+          csvLines.push(cols.map(c => {
+            const v = r[c] === null || r[c] === undefined ? '' : String(r[c]);
+            return '"' + v.replace(/"/g, '""') + '"';
+          }).join(','));
+        });
+        const blob = new Blob([csvLines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'statisfun_filtered_goals.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      };
+
+      // Scroll reveal observer matching insights.html (low threshold so tall panels always appear)
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.GOALS_DATA && window.GOALS_DATA.length) {
+          const telN = window.GOALS_DATA.filter(g => g.xg !== null && g.xg !== undefined).length;
+          const pctEl = document.getElementById('kpi-tel-pct');
+          const subEl = document.getElementById('kpi-tel-sub');
+          if (pctEl) pctEl.textContent = `${((telN / window.GOALS_DATA.length) * 100).toFixed(1)}%`;
+          if (subEl) subEl.textContent = `${telN.toLocaleString()} / ${window.GOALS_DATA.length.toLocaleString()} instrumented (rest strict null)`;
+        }
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+              } else {
+                entry.target.classList.remove('in-view');
+              }
+            });
+          }, { threshold: 0.02, rootMargin: '0px 0px -20px 0px' });
+
+          document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+            const r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in-view');
+            observer.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('in-view'));
+        }
+      });
+    </script>
+    
+</body>
+</html>
