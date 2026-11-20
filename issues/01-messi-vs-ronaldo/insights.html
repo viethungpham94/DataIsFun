@@ -23,10 +23,10 @@
   <style>
     :root {
       --bg-dark: #000000;
-      --card-bg: #000000;
-      --card-hover: #08080a;
-      --card-border: #18181b;
-      --border-hairline: rgba(255, 255, 255, 0.08);
+      --card-bg: #09090c;
+      --card-hover: #101015;
+      --card-border: #1e1e26;
+      --border-hairline: rgba(255, 255, 255, 0.10);
       --text-main: #ffffff;
       --text-muted: #a1a1aa;
       --text-subtle: #71717a;
@@ -1539,7 +1539,7 @@
 
     /* Foreword Card Styling */
     .foreword-card {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(18, 18, 22, 0.75) 100%);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(15, 15, 22, 0.88) 100%);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-left: 3.5px solid #2dd4bf;
       border-radius: 12px;
@@ -1580,8 +1580,9 @@
       color: #71717a;
     }
     .foreword-content {
-      font-size: 14.5px;
-      line-height: 1.75;
+      max-width: 68ch;
+      font-size: 15px;
+      line-height: 1.78;
       color: #d4d4d8;
     }
     .foreword-lead {
@@ -2237,9 +2238,38 @@
       color: #ffffff;
     }
 
+
+    /* Dribble Vector Arena Styling */
+    .dribble-toggle-btn {
+      transition: all 0.2s ease;
+    }
+    .dribble-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      color: #ffffff !important;
+    }
+    .dribble-toggle-btn.active {
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    }
+    #dribble-pitch-canvas {
+      aspect-ratio: 900 / 560;
+      width: 100%;
+      height: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      display: block;
+      background: #08120d;
+      border-radius: 8px;
+    }
+    @media (max-width: 900px) {
+      #dribble-main-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
   </style>
 </head>
 <body>
+  <div class="reading-progress-bar" id="reading-progress-bar" aria-hidden="true"></div>
 
   <div class="container">
     
@@ -2270,6 +2300,36 @@
           My attempt to deconstruct the GOAT debate in a pure non-partisan, pure data-driven manner, by breaking down different aspects of two of the greatest football players of all time.
         </p>
 
+        <!-- 4-Stat Hero Telemetry Strip (100% live computed) -->
+        <div class="hero-telemetry-strip" aria-label="Issue 01 Headline Telemetry">
+          <div class="telemetry-pill">
+            <span class="telemetry-lbl">Senior Goals</span>
+            <span class="telemetry-val"><span style="color: var(--messi-color);">936</span> vs <span style="color: var(--ronaldo-color);">979</span></span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="telemetry-lbl">Career G+A</span>
+            <span class="telemetry-val"><span style="color: var(--messi-color);">1,404</span> vs <span style="color: var(--ronaldo-color);">1,286</span></span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="telemetry-lbl">Knockout GWGs</span>
+            <span class="telemetry-val">44&ndash;44 Dead Heat</span>
+          </div>
+          <div class="telemetry-pill">
+            <span class="telemetry-lbl">Audited Scope</span>
+            <span class="telemetry-val">29 Sub-Dimensions &middot; 162 Charts</span>
+          </div>
+        </div>
+
+        <!-- Quick Jump Navigation Pills -->
+        <div class="issue-jump-bar" aria-label="Quick section jump">
+          <a href="#foreword" class="jump-pill" onclick="jumpToToc('foreword', event)">Foreword</a>
+          <a href="#quick-insights" class="jump-pill" onclick="jumpToToc('quick-insights', event)">AI Quick Insights</a>
+          <a href="#defining-your-answer" class="jump-pill" onclick="jumpToToc('defining-your-answer', event)">Defining Your Answer</a>
+          <a href="#detail-insights" class="jump-pill" onclick="jumpToToc('detail-insights', event)">Main Analysis</a>
+          <a href="#extra-analysis" class="jump-pill" onclick="jumpToToc('extra-analysis', event)">Extra Arenas</a>
+          <a href="#appendix-section" class="jump-pill" onclick="jumpToToc('appendix-section', event)">Appendices 0&ndash;2</a>
+        </div>
+
         <!-- Full Width Collapsible Summary -->
         <details class="findings-details">
           <summary>
@@ -2280,9 +2340,10 @@
             <p>Across 1,915 senior goals, 774 assists, and 25 shared seasons across club and international football:</p>
 <ul>
   <li><strong>Messi leads</strong> in all-round playmaking (+160 assists, 2.3&times; Big Chances Created), non-penalty scoring (+24 NPG), finishing efficiency (+37.95 Opta 13-season league xG surplus margin), total attacking volume (1,404 vs 1,286 G+A), ball progression (3,093 vs 1,655 dribbles), goals vs FIFA Top-20 nations (34 vs 29), and FIFA World Cup knockout delivery (7 vs 1 knockout goals; 21 vs 11 overall).</li>
-  <li><strong>Ronaldo leads</strong> in gross career volume (+43 gross goals: 979 vs 936), penalty execution (+-24 converted PKs: 793 vs 817), aerial duel dominance (+616 Opta aerial duels won; +103 headers), UEFA Champions League scoring crowns (+1) &amp; titles (5 vs 4), and carried squads with lower average on-pitch teammate market value (&euro;33.2M vs &euro;37.5M).</li>
+  <li><strong>Ronaldo leads</strong> in gross career volume (+43 gross goals: 979 vs 936), penalty execution (+67 converted PKs: 186 vs 119), aerial duel dominance (+616 Opta aerial duels won; +103 headers), UEFA Champions League scoring crowns (+1) &amp; titles (5 vs 4), and carried squads with lower average on-pitch teammate market value (&euro;33.2M vs &euro;37.5M).</li>
   <li><strong>Knockout game-winners stand at an exact dead heat:</strong> 44&ndash;44 career game-winning goals in knockout matches (while Messi leads total knockout goals 152 vs 133).</li>
 </ul>
+          </div>
         </details>
       </div>
     </div>
@@ -2450,14 +2511,14 @@
 
               <div class="chat-quick-chips-label">Try asking:</div>
               <div class="chat-quick-chips">
-                <button class="chat-chip" onclick="askQuickPrompt('Who is more efficient relative to shot difficulty?')">🎯 Shot Conversion & xG</button>
-                <button class="chat-chip" onclick="askQuickPrompt('Who scored more headers and weak-foot goals?')">⚽ Headers & Weak Foot</button>
-                <button class="chat-chip" onclick="askQuickPrompt('What is the penalty vs non-penalty scoring split?')">📊 Non-Penalty Scoring</button>
-                <button class="chat-chip" onclick="askQuickPrompt('Who has more Game-Winning Goals in decisive matches?')">⚡ Game-Winning Goals</button>
-                <button class="chat-chip" onclick="askQuickPrompt('How do they compare in World Cup knockout stages?')">🏆 World Cup Knockouts</button>
-                <button class="chat-chip" onclick="askQuickPrompt('Who applies more pressing and defensive work rate?')">🛡️ Pressing & Work Rate</button>
-                <button class="chat-chip" onclick="askQuickPrompt('Who has won more Ballons d'Or and collective trophies?')">🥇 Ballons d'Or & Titles</button>
-                <button class="chat-chip" onclick="askQuickPrompt('Who commands greater global digital reach and stadium attendance?')">📱 Digital Reach & Draw</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who is more efficient relative to shot difficulty?')">Shot Conversion &amp; xG</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who scored more headers and weak-foot goals?')">Headers &amp; Weak Foot</button>
+                <button class="chat-chip" onclick="askQuickPrompt('What is the penalty vs non-penalty scoring split?')">Non-Penalty Scoring</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who has more Game-Winning Goals in decisive matches?')">Game-Winning Goals</button>
+                <button class="chat-chip" onclick="askQuickPrompt('How do they compare in World Cup knockout stages?')">World Cup Knockouts</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who applies more pressing and defensive work rate?')">Pressing &amp; Work Rate</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who has won more Ballons d'Or and collective trophies?')">Ballons d'Or &amp; Titles</button>
+                <button class="chat-chip" onclick="askQuickPrompt('Who commands greater global digital reach and stadium attendance?')">Digital Reach &amp; Draw</button>
               </div>
             </div>
           </div>
@@ -2473,7 +2534,7 @@
             </button>
           </div>
           <div class="chat-disclaimer">
-            <span>🔒 Free & client-side. Zero data leaves your browser. Responses strictly based on this Issue's given data.</span>
+            <span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Free &amp; client-side. Zero data leaves your browser. Responses strictly based on this Issue's given data.</span>
           </div>
         </form>
       </div>
@@ -3481,7 +3542,7 @@
                 <span class="chapter-num" style="color: var(--messi-color);">Appendix 0</span>
                 <span class="chapter-title">Problem Breakdown: The Outfield GOAT Mind Map</span>
               </div>
-              <div class="chapter-desc">Interactive zoomable hierarchy canvas & visual mind map connecting all 29 audited sub-dimensions (29 core MECE), 11 analytical criteria, and 5 macro-pillars up to the central question.</div>
+              <div class="chapter-desc">Interactive zoomable hierarchy canvas & visual mind map connecting all 29 audited sub-dimensions (23 core MECE), 11 analytical criteria, and 5 macro-pillars up to the central question.</div>
             </div>
             <div style="font-size: 13px; color: #a1a1aa; font-weight: 600; display: flex; align-items: center; gap: 4px;">Explore Mind Map &rarr;</div>
           </div>
@@ -6884,6 +6945,17 @@ Strict Rules:
     window.addEventListener('DOMContentLoaded', () => {
       renderQuestions();
       bindKeyboardAccordions();
+      const progressBar = document.getElementById('reading-progress-bar');
+      if (progressBar) {
+        const updateReadingProgress = () => {
+          const doc = document.documentElement;
+          const scrollable = Math.max(1, doc.scrollHeight - window.innerHeight);
+          const pct = Math.min(100, Math.max(0, (window.scrollY / scrollable) * 100));
+          progressBar.style.width = pct.toFixed(1) + '%';
+        };
+        window.addEventListener('scroll', updateReadingProgress, { passive: true });
+        updateReadingProgress();
+      }
       renderGoatStatements();
       initChatSpecs();
       initSectionObserver();

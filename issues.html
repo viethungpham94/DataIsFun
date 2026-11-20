@@ -49,22 +49,45 @@
     </div>
 
     
-    <div class="issue-presentation-card card-slide-left">
+    <div class="issue-presentation-card reveal-on-scroll">
       <div class="issue-date">November 2026</div>
       <h2 class="issue-heading">
         <a href="issues/01-messi-vs-ronaldo/insights.html">Messi and Ronaldo: Who Is the Real GOAT?</a>
       </h2>
 
-      <!-- Prominent AI Quick Insights Chat Shortcut -->
+      <!-- 4-Stat Hero Telemetry Strip (100% live computed) -->
+      <div class="hero-telemetry-strip" aria-label="Issue 01 Headline Telemetry">
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Senior Goals</span>
+          <span class="telemetry-val"><span style="color: var(--messi-color);">936</span> vs <span style="color: var(--ronaldo-color);">979</span></span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Career G+A</span>
+          <span class="telemetry-val"><span style="color: var(--messi-color);">1,404</span> vs <span style="color: var(--ronaldo-color);">1,286</span></span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Knockout GWGs</span>
+          <span class="telemetry-val">44&ndash;44 Dead Heat</span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Audited Scope</span>
+          <span class="telemetry-val">29 Sub-Dims &middot; 162 Charts</span>
+        </div>
+      </div>
+
+      <!-- Prominent Issue Actions + AI Quick Insights Shortcut -->
       <div class="issue-chat-shortcut-bar">
-        <a href="issues/01-messi-vs-ronaldo/insights.html#quick-insights" class="btn-chat-shortcut">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-          <span>Ask Issue 01 AI · Quick Insights</span>
-        </a>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <a href="issues/01-messi-vs-ronaldo/insights.html" class="btn-primary">Read Issue 01 &rarr;</a>
+          <a href="issues/01-messi-vs-ronaldo/insights.html#quick-insights" class="btn-chat-shortcut">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Ask Issue 01 AI</span>
+          </a>
+        </div>
         <div class="chat-shortcut-tagline">
-          Free, 100% client-side AI strictly grounded in our 29 empirical sub-dimensions, 162 verified charts &amp; 1,915 goals
+          100% client-side telemetry engine &middot; 1,915 goals &middot; Zero hardcoded claims
         </div>
       </div>
 
@@ -77,13 +100,18 @@
           <p>Across 1,915 senior goals, 774 assists, and 25 shared seasons across club and international football:</p>
 <ul>
   <li><strong>Messi leads</strong> in all-round playmaking (+160 assists, 2.3&times; Big Chances Created), non-penalty scoring (+24 NPG), finishing efficiency (+37.95 Opta 13-season league xG surplus margin), total attacking volume (1,404 vs 1,286 G+A), ball progression (3,093 vs 1,655 dribbles), goals vs FIFA Top-20 nations (34 vs 29), and FIFA World Cup knockout delivery (7 vs 1 knockout goals; 21 vs 11 overall).</li>
-  <li><strong>Ronaldo leads</strong> in gross career volume (+43 gross goals: 979 vs 936), penalty execution (+-24 converted PKs: 793 vs 817), aerial duel dominance (+616 Opta aerial duels won; +103 headers), UEFA Champions League scoring crowns (+1) &amp; titles (5 vs 4), and carried squads with lower average on-pitch teammate market value (&euro;33.2M vs &euro;37.5M).</li>
+  <li><strong>Ronaldo leads</strong> in gross career volume (+43 gross goals: 979 vs 936), penalty execution (+67 converted PKs: 186 vs 119), aerial duel dominance (+616 Opta aerial duels won; +103 headers), UEFA Champions League scoring crowns (+1) &amp; titles (5 vs 4), and carried squads with lower average on-pitch teammate market value (&euro;33.2M vs &euro;37.5M).</li>
   <li><strong>Knockout game-winners stand at an exact dead heat:</strong> 44&ndash;44 career game-winning goals in knockout matches (while Messi leads total knockout goals 152 vs 133).</li>
 </ul>
         </div>
       </details>
 
-      <div class="issue-toc" aria-label="Issue 01 Table of Contents">
+      <details class="toc-details" open>
+        <summary>
+          <span>Full 22-Section Issue Outline</span>
+          <span style="font-size: 11px; color: #71717a; margin-left: auto;">(Click to expand / hide)</span>
+        </summary>
+        <div class="issue-toc" aria-label="Issue 01 Table of Contents">
         <a href="issues/01-messi-vs-ronaldo/insights.html#foreword" class="toc-row">
           <span class="toc-row-num">Section X</span>
           <span class="toc-row-title">Foreword</span>
@@ -194,7 +222,8 @@
           <span class="toc-row-title">Methodology, Sources &amp; Goal Database</span>
           <span class="toc-row-arrow">→</span>
         </a>
-      </div>
+        </div>
+      </details>
     </div>
     
 
@@ -205,19 +234,29 @@
 
   <script>
     window.addEventListener('DOMContentLoaded', () => {
-      const els = document.querySelectorAll('.card-slide-left, .card-slide-right, .issue-presentation-card, .foreword-section, .principle-card');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-          }
-        });
-      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-      els.forEach(el => {
+      const els = document.querySelectorAll('.card-slide-left, .card-slide-right, .reveal-on-scroll, .issue-presentation-card, .foreword-section, .principle-card');
+      const revealVisible = (el) => {
         const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in-view');
-        observer.observe(el);
-      });
+        if (r.top < (window.innerHeight || 900) + 40 && r.bottom > -20) {
+          el.classList.add('in-view');
+        }
+      };
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.02, rootMargin: '0px 0px 40px 0px' });
+        els.forEach(el => {
+          revealVisible(el);
+          if (!el.classList.contains('in-view')) observer.observe(el);
+        });
+      } else {
+        els.forEach(el => el.classList.add('in-view'));
+      }
     });
   </script>
 </body>

@@ -1,10 +1,10 @@
 /* DataIsFun Shared Platform Theme & Component Stylesheet */
 :root {
   --bg-dark: #000000;
-  --card-bg: #050505;
-  --card-hover: #0c0c0e;
-  --card-border: #18181b;
-  --border-hairline: rgba(255, 255, 255, 0.08);
+  --card-bg: #09090c;
+  --card-hover: #101015;
+  --card-border: #1e1e26;
+  --border-hairline: rgba(255, 255, 255, 0.10);
   --text-main: #ffffff;
   --text-muted: #a1a1aa;
   --text-subtle: #71717a;
@@ -22,6 +22,8 @@
 
 body {
   background-color: var(--bg-dark);
+  background-image: radial-gradient(ellipse 80% 380px at 50% -110px, rgba(56, 189, 248, 0.08), transparent 72%);
+  background-repeat: no-repeat;
   color: var(--text-main);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
@@ -138,24 +140,13 @@ body {
   50% { border-color: rgba(255, 255, 255, 0.38); box-shadow: 0 0 8px rgba(255, 255, 255, 0.12); }
 }
 
-/* Scroll Animations */
+/* Scroll Animations (GPU-friendly vertical ease without permanent layer promotion) */
 .card-slide-left,
 .card-slide-right,
 .reveal-on-scroll {
   opacity: 0;
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
-.card-slide-left,
-.reveal-on-scroll:not(.card-slide-right):not(.lean-right):not(.right-card) {
-  transform: translateX(-40px);
-}
-
-.card-slide-right,
-.lean-right,
-.right-card {
-  transform: translateX(40px);
+  transform: translateY(14px);
+  transition: opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1), transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card-slide-left.in-view,
@@ -165,7 +156,25 @@ body {
 .chapter-card.open,
 .q-card.open {
   opacity: 1 !important;
-  transform: translateX(0) !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-slide-left,
+  .card-slide-right,
+  .reveal-on-scroll,
+  .hero-title,
+  .hero-subtitle,
+  .hero-actions,
+  .foreword-section,
+  .container,
+  .catalog-header,
+  .brand-title span.badge {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 /* Keyboard focus visibility */
@@ -251,11 +260,12 @@ input:focus-visible {
 .foreword-section {
   margin-top: 8px;
   margin-bottom: 40px;
-  background: #050505;
+  background: var(--card-bg);
   border: 1px solid var(--border-hairline);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 30px 32px;
-  animation: heroFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: heroFadeUp 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.14s both;
 }
 
 .foreword-title {
@@ -267,9 +277,10 @@ input:focus-visible {
 }
 
 .foreword-body p {
-  font-size: 14.5px;
+  font-size: 15px;
   color: #d4d4d8;
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 68ch;
   margin-bottom: 14px;
 }
 
@@ -343,20 +354,21 @@ input:focus-visible {
 }
 
 .principle-card {
-  background: #050505;
+  background: var(--card-bg);
   border: 1px solid var(--border-hairline);
   border-radius: 8px;
   padding: 18px 20px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, background 0.2s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, background 0.2s ease;
 }
 
 .principle-card:hover {
-  border-color: rgba(255, 255, 255, 0.25);
-  background: #08080a;
-  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.24);
+  background: var(--card-hover);
+  transform: translateY(-2px);
 }
 
 .principle-num {
@@ -381,17 +393,18 @@ input:focus-visible {
 
 /* Lean Issue Presentation Card */
 .issue-presentation-card {
-  background: #050505;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--border-hairline);
   border-radius: 10px;
   padding: 28px 30px;
   margin-bottom: 40px;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.22s ease, box-shadow 0.25s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .issue-presentation-card:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55), 0 0 15px rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 32px rgba(0, 0, 0, 0.55);
   transform: translateY(-2px);
 }
 
@@ -580,6 +593,119 @@ input:focus-visible {
   max-width: 760px;
 }
 
+/* Reading Progress Bar (Editorial Issue Top Hairline) */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  z-index: 10050;
+  background: linear-gradient(90deg, #38bdf8, #ffffff 55%, #f97316);
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
+
+/* 4-Stat Hero Telemetry Strip */
+.hero-telemetry-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.telemetry-pill {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  transition: border-color 0.16s ease, background 0.16s ease;
+}
+
+.telemetry-pill:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.telemetry-lbl {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #71717a;
+}
+
+.telemetry-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Horizontal Section Quick-Jump Bar */
+.issue-jump-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 18px;
+}
+
+.jump-pill {
+  background: #09090c;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  color: #d4d4d8;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.jump-pill:hover {
+  background: #14141a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.30);
+  transform: translateY(-1px);
+}
+
+/* Collapsible 22-Section Outline on Home / Issues Cards */
+.toc-details {
+  margin-top: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: #070709;
+  overflow: hidden;
+}
+
+.toc-details summary {
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0b0b0e;
+  transition: background 0.15s ease;
+}
+
+.toc-details summary:hover {
+  background: #121217;
+}
+
+.toc-details[open] summary {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 footer {
   margin-top: 48px;
   padding-top: 20px;
@@ -592,6 +718,7 @@ footer {
 @media (max-width: 768px) {
   body { padding: 14px; }
   .hero-title { font-size: 29px; }
+  .hero-telemetry-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .foreword-section, .issue-presentation-card { padding: 20px 18px; }
   .issue-heading { font-size: 22px; }
   .toc-row { gap: 10px; padding: 10px 8px; }

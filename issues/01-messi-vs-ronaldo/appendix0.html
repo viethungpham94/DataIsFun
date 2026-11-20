@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Appendix 0 · Interactive Mind Map & Problem Hierarchy — DataIsFun</title>
-  <meta name="description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 29 main sub-dimensions (29 total audited including World Cup) for Issue 01.">
+  <meta name="description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 23 core MECE sub-dimensions (29 total audited including 6 World Cup deep-dives) for Issue 01.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DataIsFun">
   <meta property="og:title" content="Appendix 0 · Interactive Mind Map & Problem Hierarchy — DataIsFun">
-  <meta property="og:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 29 main sub-dimensions (29 total audited including World Cup) for Issue 01.">
+  <meta property="og:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 23 core MECE sub-dimensions (29 total audited including 6 World Cup deep-dives) for Issue 01.">
   <meta property="og:image" content="../../assets/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Appendix 0 · Interactive Mind Map & Problem Hierarchy — DataIsFun">
-  <meta name="twitter:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 29 main sub-dimensions (29 total audited including World Cup) for Issue 01.">
+  <meta name="twitter:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 23 core MECE sub-dimensions (29 total audited including 6 World Cup deep-dives) for Issue 01.">
   <meta name="twitter:image" content="../../assets/og-card.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -592,25 +592,27 @@
     /* Filter Pills & Branch Selector Toolbar */
     .filter-hud {
       position: absolute;
-      top: 20px;
-      left: 20px;
+      top: 16px;
+      left: 16px;
+      right: 16px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      background: rgba(18, 18, 22, 0.88);
+      flex-wrap: wrap;
+      gap: 6px;
+      background: rgba(14, 14, 18, 0.90);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
-      padding: 6px 10px;
+      padding: 8px 10px;
       z-index: 25;
-      max-width: calc(100% - 340px);
+      max-width: calc(100% - 32px);
     }
 
     .filter-pill {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
       font-weight: 600;
-      padding: 5px 11px;
+      padding: 5px 10px;
       border-radius: 5px;
       background: transparent;
       border: 1px solid transparent;
@@ -642,7 +644,7 @@
       color: #ffffff;
       outline: none;
       cursor: pointer;
-      max-width: 220px;
+      max-width: 210px;
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -659,7 +661,7 @@
       padding: 5px 10px;
       font-size: 11px;
       color: #ffffff;
-      width: 180px;
+      width: 165px;
       outline: none;
     }
 
@@ -686,15 +688,17 @@
       color: #ffffff;
     }
 
-    /* Legend Bar at top right */
+    /* Legend Bar at bottom-left opposite zoom HUD */
     .legend-hud {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: auto;
+      bottom: 20px;
+      left: 20px;
+      right: auto;
       display: flex;
       align-items: center;
       gap: 12px;
-      background: rgba(18, 18, 22, 0.88);
+      background: rgba(14, 14, 18, 0.90);
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
@@ -735,8 +739,8 @@
       .legend-hud {
         top: auto;
         bottom: 64px;
-        right: 10px;
-        left: auto;
+        left: 10px;
+        right: auto;
       }
       .hud-controls {
         bottom: 10px;
@@ -808,7 +812,7 @@
       <h1 class="header-title">Appendix 0 · Problem Breakdown: The Outfield GOAT Mind Map</h1>
       <p class="header-desc">
         A completely MECE (Mutually Exclusive, Collectively Exhaustive) hierarchy breaking down the central question 
-        <strong>"Who is the Real Outfield GOAT?"</strong> across 5 Macro-Pillars, 11 Analytical Criteria, and all 29 main sub-dimensions (29 total audited including Extra World Cup hypotheses).
+        <strong>"Who is the Real Outfield GOAT?"</strong> across 5 Macro-Pillars, 11 Analytical Criteria, and all 23 core MECE sub-dimensions (29 total audited including 6 World Cup deep-dives).
         Boxes default to headline and winner only — click any box to expand its summarized telemetry insights.
       </p>
     </div>
@@ -819,12 +823,12 @@
 
       <!-- Filters & Branch Selector Toolbar -->
       <div class="filter-hud">
-        <button class="filter-pill active" data-filter="all" onclick="setMacroFilter('all')">All (29)</button>
-        <button class="filter-pill" data-filter="pillar_context" onclick="setMacroFilter('pillar_context')">0.0 Context Setting (3)</button>
-        <button class="filter-pill" data-filter="pillar_attack" onclick="setMacroFilter('pillar_attack')">1.0 Contribution to Attack (11)</button>
-        <button class="filter-pill" data-filter="pillar_defence" onclick="setMacroFilter('pillar_defence')">2.0 Contribution to Defence (2)</button>
-        <button class="filter-pill" data-filter="pillar_overall" onclick="setMacroFilter('pillar_overall')">3.0 Overall On-Pitch Impact (2)</button>
-        <button class="filter-pill" data-filter="pillar_inspiration" onclick="setMacroFilter('pillar_inspiration')">4.0 Accolades, Recognition & Ability to Inspire (5)</button>
+        <button class="filter-pill active" data-filter="all" onclick="setMacroFilter('all')">All (23)</button>
+        <button class="filter-pill" data-filter="pillar_context" onclick="setMacroFilter('pillar_context')">0.0 Context (3)</button>
+        <button class="filter-pill" data-filter="pillar_attack" onclick="setMacroFilter('pillar_attack')">1.0 Attack (11)</button>
+        <button class="filter-pill" data-filter="pillar_defence" onclick="setMacroFilter('pillar_defence')">2.0 Defence (2)</button>
+        <button class="filter-pill" data-filter="pillar_overall" onclick="setMacroFilter('pillar_overall')">3.0 Impact (2)</button>
+        <button class="filter-pill" data-filter="pillar_inspiration" onclick="setMacroFilter('pillar_inspiration')">4.0 Accolades (5)</button>
         
         <select id="branch-select" class="branch-select" onchange="setBranchSelect(this.value)">
           <option value="all">⚡ Filter by Criteria Branch...</option>
@@ -877,7 +881,7 @@
     </div>
 
     <footer>
-      DataIsFun Problem Breakdown Framework · 100% Dynamically Verified Across 29 Audited Sub-Dimensions (29 Core MECE) · Zero Hallucination Standard
+      DataIsFun Problem Breakdown Framework · 100% Dynamically Verified Across 29 Audited Sub-Dimensions (23 Core MECE) · Zero Hallucination Standard
     </footer>
   </div>
 
@@ -1452,7 +1456,7 @@
         <div class="node-root-meta">
           <span>5 Macro Pillars</span>
           <span>11 Criteria</span>
-          <span>29 Main (29 Total)</span>
+          <span>23 Main (29 Total)</span>
         </div>
       `;
       nodesContainer.appendChild(rootNode);

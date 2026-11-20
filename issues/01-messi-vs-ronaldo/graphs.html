@@ -23,11 +23,11 @@
   <style>
     :root {
       --bg-dark: #000000;
-      --card-bg: #050505;
-      --card-hover: #09090c;
-      --card-border: rgba(255, 255, 255, 0.08);
+      --card-bg: #09090c;
+      --card-hover: #101015;
+      --card-border: rgba(255, 255, 255, 0.10);
       --card-border-active: #ffffff;
-      --border-hairline: rgba(255, 255, 255, 0.08);
+      --border-hairline: rgba(255, 255, 255, 0.10);
       --text-main: #ffffff;
       --text-muted: #a1a1aa;
       --text-subtle: #71717a;
@@ -420,9 +420,6 @@
           Macro visual analytics: cumulative career curves, biological age alignment, anatomical body silhouette filters, and team goal involvement shares.
         </p>
       </div>
-      <div>
-        <a href="insights.html" class="btn-back">← Back to Issue</a>
-      </div>
     </div>
 
     <!-- Top KPI Comparison Strip -->
@@ -442,7 +439,7 @@
           <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-npg">713</span></div>
           <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-npg">698</span></div>
         </div>
-        <div class="diff-tag">Messi +15 Non-Penalty Goal lead</div>
+        <div class="diff-tag">Messi +24 Non-Penalty Goal lead</div>
       </div>
 
       <div class="kpi-card">
@@ -460,7 +457,7 @@
           <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-pens">114</span></div>
           <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-pens">158</span></div>
         </div>
-        <div class="diff-tag">Ronaldo +44 penalty goal margin</div>
+        <div class="diff-tag">Ronaldo +67 penalty goal margin</div>
       </div>
     </div>
 
@@ -763,13 +760,14 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
+          layout: { padding: { left: 6, right: 8, top: 8, bottom: 0 } },
           interaction: { mode: 'index', intersect: false },
           plugins: {
             legend: { labels: { color: '#e5e7eb', font: { family: 'Inter', size: 12, weight: 600 } } }
           },
           scales: {
             x: { grid: { color: 'rgba(255, 255, 255, 0.04)' }, ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } } },
-            y: { grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono', size: 11 } } }
+            y: { afterFit: (s) => { s.width = Math.max(s.width, 58); }, grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', padding: 6, font: { family: 'JetBrains Mono', size: 11 } } }
           }
         }
       });
@@ -846,7 +844,7 @@
           },
           scales: {
             x: { grid: { color: 'rgba(255, 255, 255, 0.04)' }, ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } } },
-            y: { grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono', size: 11 } } }
+            y: { afterFit: (s) => { s.width = Math.max(s.width, 58); }, grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', padding: 6, font: { family: 'JetBrains Mono', size: 11 } } }
           }
         }
       });
@@ -1059,6 +1057,14 @@
           setTxt('kpi-r-xg', tr.xg);
           setTxt('kpi-m-pens', tm.penalties);
           setTxt('kpi-r-pens', tr.penalties);
+        }
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            [overtimeChartInstance, bodyChartInstance, seasonsChartInstance].forEach(inst => {
+              if (inst) inst.resize();
+            });
+          });
         }
 
         // Standardized Filter Handlers for Appendix 1 Cards
