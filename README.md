@@ -1,33 +1,32 @@
-# DataIsFun — Empirical Investigations & Telemetry
+# DataIsFun
 
-> **Deconstructing Popular Narratives with Data**  
-> Live interactive visual essays breaking polarizing debates into MECE testable claims grounded in verified primary telemetry.
+> **An interactive and digestible deconstruction of popular narratives.**  
+> Big debates unpacked with real numbers, clear visuals, and charts you can explore yourself.
 
-🌐 **Live Site:** https://viethungpham94.github.io/DataIsFun/  
-💬 **Feedback & Topic Requests:** [Submit via Google Form](https://forms.gle/A6FMCd4BTk83qVPE6)
+🌐 **Read Live:** https://viethungpham94.github.io/DataIsFun/  
+💬 **Feedback & Topic Ideas:** [Send a note via Google Form](https://forms.gle/A6FMCd4BTk83qVPE6)
 
 ---
 
-## Live Issues
+## Published Issues
 
 - **Issue 01 — [Messi and Ronaldo: Who Is the Real GOAT?](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/insights.html)** (November 2026)  
   5 Macro-Pillars · 29 Audited Sub-Dimensions · 162 Verified Charts · 1,915 Senior Goals
 
-### Issue 01 Interactive Views
-- [Main Investigation & Client-Side AI Quick Insights](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/insights.html)
-- [Appendix 0 — Interactive MECE Problem Breakdown Mind Map](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/appendix0.html)
-- [Appendix 1 — Interactive Key Graphs & Shot Silhouette](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/graphs.html)
-- [Appendix 2 — Methodology, Online Audit Ledger & 1,915-Goal Database](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/detail.html)
+### Explore Issue 01
+- [Main Story & Quick Insights](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/insights.html)
+- [Interactive Topic Map](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/appendix0.html)
+- [Key Charts & Shot Breakdown](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/graphs.html)
+- [How We Checked the Numbers & Full Goal List](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/detail.html)
 
 ---
 
-## Data Integrity Standard
+## How the Numbers Work
 
-- **Verification Status:** `PASS_ONLINE (2026-11-20 22:14 UTC)`
-- **Zero Synthetic Estimates:** Every chart array and metric in this release is computed programmatically from immutable raw snapshots verified across SHA-256 manifests and automated headless browser checks.
-- **Inventory:** [`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json)
+- **Real records only:** Every chart is calculated straight from recorded match data and cross-checked against public sources—no guessed or made-up numbers.
+- **Latest automated check:** `PASS_ONLINE (2026-11-20 22:14 UTC)` ([`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json))
 
-## Local Preview
+## Preview on Your Computer
 
 ```bash
 python -m http.server 8000
@@ -37,7 +36,8 @@ Then open `http://localhost:8000/`.
 
 ---
 
-## Attribution & License Notice
+## License & Data Credits
 
-- Underlying historical match, event, and ranking datasets remain the property of their respective primary sources (Transfermarkt, StatsBomb Open Data, FIFA, Understat/FBref/FotMob open mirrors, Opta, and cited archives).
-- Code, visualizations, and original editorial prose: **All Rights Reserved** pending explicit open-source/Creative Commons license selection in `LICENSE`.
+- **Writing, stories & chart visuals:** [CC BY-NC 4.0](LICENSE) (free to share with credit, non-commercial use).
+- **Website code (HTML, CSS, JS):** [MIT License](LICENSE).
+- **Sports & historical data:** Match stats and rankings belong to their original publishers (Transfermarkt, StatsBomb Open Data, FIFA, Understat/FBref/FotMob open mirrors, Opta, and cited archives).
