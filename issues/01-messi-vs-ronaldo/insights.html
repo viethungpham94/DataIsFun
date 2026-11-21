@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DataIsFun — Messi and Ronaldo: Who Is the Real GOAT?</title>
-  <meta name="description" content="Empirical investigation deconstructing the GOAT debate across 5 macro-pillars, 29 audited sub-dimensions, 162 verified charts, and 1,915 senior goals.">
+  <title>DataIsFun: Messi and Ronaldo: Who Is the Real GOAT?</title>
+  <meta name="description" content="An interactive and digestible deconstruction of the GOAT debate across 5 pillars, 29 sub-dimensions, 162 charts, and 1,915 senior goals.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DataIsFun">
-  <meta property="og:title" content="DataIsFun — Messi and Ronaldo: Who Is the Real GOAT?">
-  <meta property="og:description" content="Empirical investigation deconstructing the GOAT debate across 5 macro-pillars, 29 audited sub-dimensions, 162 verified charts, and 1,915 senior goals.">
+  <meta property="og:title" content="DataIsFun: Messi and Ronaldo: Who Is the Real GOAT?">
+  <meta property="og:description" content="An interactive and digestible deconstruction of the GOAT debate across 5 pillars, 29 sub-dimensions, 162 charts, and 1,915 senior goals.">
   <meta property="og:image" content="../../assets/og-card.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DataIsFun — Messi and Ronaldo: Who Is the Real GOAT?">
-  <meta name="twitter:description" content="Empirical investigation deconstructing the GOAT debate across 5 macro-pillars, 29 audited sub-dimensions, 162 verified charts, and 1,915 senior goals.">
+  <meta name="twitter:title" content="DataIsFun: Messi and Ronaldo: Who Is the Real GOAT?">
+  <meta name="twitter:description" content="An interactive and digestible deconstruction of the GOAT debate across 5 pillars, 29 sub-dimensions, 162 charts, and 1,915 senior goals.">
   <meta name="twitter:image" content="../../assets/og-card.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,14 +36,14 @@
     }
 
     .container {
-      max-width: 1140px;
+      max-width: 1220px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 22px;
     }
 
-    @media (min-width: 1025px) and (max-width: 1260px) {
+    @media (max-width: 768px) {
       .container {
-        padding-right: 56px;
+        padding: 0 10px;
       }
     }
 
@@ -135,19 +135,22 @@
     }
 
     /* ===================================================================== */
-    /* LEFT-RIGHT INTERACTIVE STATEMENT SELECTOR (PERSONAL INTRO + CAPPED SCROLL) */
+    /* LEFT-RIGHT INTERACTIVE STATEMENT SELECTOR (SECTION B)                  */
     /* ===================================================================== */
     .goat-split-section {
       margin-bottom: 24px;
       padding: 18px 20px;
-      background: #050505;
-      border: 1px solid var(--border-hairline);
-      border-radius: 8px;
+      background: #050508;
+      border: none;
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+      border-left: 3px solid #fbbf24;
+      border-radius: 0;
     }
 
     .goat-intro-block {
-      margin-bottom: 10px;
-      padding-bottom: 6px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--border-hairline);
     }
 
@@ -156,35 +159,36 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.015em;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
 
     .goat-intro-desc {
-      font-size: 12px;
+      font-size: 12.5px;
       color: #a1a1aa;
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
     .goat-split-grid {
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 14px;
-      height: 460px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 16px;
+      height: auto;
+      align-items: start;
     }
 
     @media (max-width: 860px) {
       .goat-split-grid {
         grid-template-columns: 1fr;
-        height: auto;
+      }
+      .goat-split-section {
+        padding: 14px 12px;
       }
     }
 
     .goat-left-col {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      min-height: 0;
+      min-width: 0;
     }
 
     .goat-col-eyebrow {
@@ -232,15 +236,18 @@
     }
 
     .goat-stmts-list {
-      flex: 1 1 auto;
-      height: 100%;
-      max-height: none !important;
-      min-height: 0;
+      max-height: 460px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
       gap: 4px;
       padding-right: 6px;
+    }
+
+    @media (max-width: 860px) {
+      .goat-stmts-list {
+        max-height: 320px;
+      }
     }
 
     .goat-stmts-list::-webkit-scrollbar {
@@ -344,9 +351,8 @@
     .goat-right-col {
       display: flex;
       flex-direction: column;
-      height: 100%;
-      min-height: 0;
-      gap: 8px;
+      min-width: 0;
+      gap: 10px;
     }
 
     @keyframes verdictPop {
@@ -518,15 +524,13 @@
     }
 
     .goat-summary-tags-container {
-      flex: 1 1 auto;
-      min-height: 0;
-      max-height: none !important;
+      max-height: 220px;
       overflow-y: auto;
       display: flex;
       flex-wrap: wrap;
       align-content: flex-start;
-      gap: 3.5px;
-      padding: 1px 3px 1px 0;
+      gap: 4px;
+      padding: 2px 3px 2px 0;
     }
 
     .goat-summary-tags-container::-webkit-scrollbar {
@@ -586,41 +590,45 @@
     }
 
     /* ===================================================================== */
-    /* PILLAR ACCORDION & CRITERIA STACK                                     */
+    /* PILLAR ACCORDION & CRITERIA STACK (1, 2, 3 VERTICAL RAIL SYSTEM)      */
     /* ===================================================================== */
     .pillar-accordion {
-      margin: 32px 0 20px 0;
+      --rail-color: #38bdf8;
+      margin: 24px 0 18px 0;
       scroll-margin-top: 80px;
-      border: 1px solid var(--border-hairline);
-      border-radius: 10px;
-      background: #050505;
+      border: none;
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+      border-left: 3px solid var(--rail-color);
+      border-radius: 0;
+      background: #050508;
       overflow: hidden;
       transition: border-color 0.2s ease;
     }
     .pillar-accordion.attack {
-      border-left: 4px solid var(--messi-color);
+      --rail-color: var(--messi-color);
     }
     .pillar-accordion.defence {
-      border-left: 4px solid #10b981;
+      --rail-color: #10b981;
     }
     .pillar-accordion.overall {
-      border-left: 4px solid #f59e0b;
+      --rail-color: #f59e0b;
     }
     .pillar-accordion.inspiration {
-      border-left: 4px solid #ec4899;
+      --rail-color: #ec4899;
     }
     .pillar-header {
       display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
       cursor: pointer;
       user-select: none;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.6) 100%);
+      background: rgba(255, 255, 255, 0.02);
       transition: background 0.15s ease;
     }
     .pillar-header:hover {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.045);
     }
     .pillar-badge {
       font-family: 'JetBrains Mono', monospace;
@@ -630,6 +638,7 @@
       padding: 4px 10px;
       border-radius: 6px;
       white-space: nowrap;
+      margin-top: 2px;
     }
     .pillar-accordion.attack .pillar-badge {
       background: rgba(56, 189, 248, 0.15);
@@ -653,23 +662,39 @@
     }
     .pillar-info {
       flex: 1;
+      min-width: 0;
+    }
+    .pillar-title-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
     }
     .pillar-title {
       font-size: 16px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.02em;
-      margin-bottom: 2px;
+      margin: 0;
     }
-    .pillar-desc {
-      font-size: 12.5px;
+    .framework-summary {
+      font-size: 13.5px;
+      color: #e4e4e7;
+      line-height: 1.48;
+      margin: 4px 0 3px;
+    }
+    .framework-key-q {
+      font-size: 11.5px;
       color: #a1a1aa;
-      line-height: 1.45;
+      line-height: 1.4;
+      margin: 0;
     }
     .pillar-header-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
+      flex-shrink: 0;
     }
     .pillar-count-pill {
       font-family: 'JetBrains Mono', monospace;
@@ -695,14 +720,28 @@
     }
     .pillar-body {
       display: none;
-      padding: 16px;
-      background: #020202;
-      border-top: 1px solid var(--border-hairline);
+      padding: 8px 0 10px 14px;
+      background: transparent;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
     }
     .pillar-accordion.open > .pillar-body {
       display: flex;
+    }
+    @media (max-width: 640px) {
+      .pillar-header {
+        flex-wrap: wrap;
+        padding: 14px 12px;
+        gap: 10px;
+      }
+      .pillar-body {
+        padding: 6px 0 8px 8px;
+      }
+      .pillar-header-right {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
 
     /* Criteria Framework Summary */
@@ -839,45 +878,63 @@
     }
 
     /* ===================================================================== */
-    /* CHAPTER ACCORDIONS (Monochrome Black & White)                         */
+    /* CHAPTER / CRITERIA ACCORDIONS (2 VERTICAL RAIL LINES, FULL WIDTH)     */
     /* ===================================================================== */
     .chapters-stack {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
     }
 
     .chapter-card {
-      background: #000000;
-      border: 1px solid var(--border-hairline);
-      border-radius: 8px;
+      --rail2-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.015);
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 0;
+      box-shadow: inset 2px 0 0 var(--rail2-color), inset 4px 0 0 #000000, inset 6px 0 0 var(--rail2-color);
+      padding-left: 8px;
       overflow: hidden;
-      transition: border-color 0.15s ease;
+      transition: background 0.15s ease;
+    }
+    .pillar-accordion.attack .chapter-card { --rail2-color: rgba(56, 189, 248, 0.72); }
+    .pillar-accordion.defence .chapter-card { --rail2-color: rgba(16, 185, 129, 0.72); }
+    .pillar-accordion.overall .chapter-card { --rail2-color: rgba(245, 158, 11, 0.72); }
+    .pillar-accordion.inspiration .chapter-card { --rail2-color: rgba(236, 72, 153, 0.72); }
+    .chapter-card.lean-right {
+      padding-left: 0;
+      padding-right: 8px;
+      box-shadow: inset -2px 0 0 var(--ronaldo-color), inset -4px 0 0 #000000, inset -6px 0 0 var(--ronaldo-color);
     }
 
     .chapter-card.open {
-      border-color: #3f3f46;
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .chapter-header {
-      padding: 16px 20px;
+      padding: 14px 16px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      background: #050505;
+      gap: 14px;
+      background: transparent;
       border-bottom: 1px solid transparent;
       user-select: none;
       transition: background 0.15s ease;
     }
 
     .chapter-card.open .chapter-header {
-      border-bottom-color: var(--border-hairline);
+      border-bottom-color: rgba(255, 255, 255, 0.07);
     }
 
     .chapter-header:hover {
-      background: #09090c;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .ch-header-main {
+      flex: 1;
+      min-width: 0;
     }
 
     .chapter-title-row {
@@ -900,7 +957,7 @@
     }
 
     .chapter-title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: -0.015em;
@@ -915,8 +972,8 @@
 
     .chapter-body {
       display: none;
-      padding: 20px;
-      background: #000000;
+      padding: 10px 0 12px 12px;
+      background: transparent;
     }
 
     .chapter-card.open .chapter-body {
@@ -924,56 +981,87 @@
     }
 
     /* ===================================================================== */
-    /* SUB-DIMENSION QUESTION CARDS                                          */
+    /* SUB-DIMENSION QUESTION CARDS (3 VERTICAL RAIL LINES, LEFT OR RIGHT)   */
     /* ===================================================================== */
     .questions-stack {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
 
     .q-card {
-      background: #000000;
-      border: 1px solid var(--border-hairline);
-      border-radius: 6px;
+      --q-rail-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.012);
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0;
+      box-shadow:
+        inset 2px 0 0 var(--q-rail-color),
+        inset 4px 0 0 #000000,
+        inset 6px 0 0 var(--q-rail-color),
+        inset 8px 0 0 #000000,
+        inset 10px 0 0 var(--q-rail-color);
+      padding-left: 12px;
       overflow: hidden;
-      transition: border-color 0.15s ease;
+      transition: background 0.15s ease;
+    }
+
+    .q-card.lean-messi {
+      --q-rail-color: rgba(56, 189, 248, 0.78);
+    }
+
+    .q-card.lean-ronaldo {
+      --q-rail-color: rgba(249, 115, 22, 0.85);
+      padding-left: 0;
+      padding-right: 12px;
+      box-shadow:
+        inset -2px 0 0 var(--q-rail-color),
+        inset -4px 0 0 #000000,
+        inset -6px 0 0 var(--q-rail-color),
+        inset -8px 0 0 #000000,
+        inset -10px 0 0 var(--q-rail-color);
     }
 
     .q-card:hover {
-      border-color: #3f3f46;
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .q-card.open {
-      border-color: #52525b;
+      background: rgba(255, 255, 255, 0.02);
     }
 
-    /* Closed Header: Clean Question Title + Chevron on top row, Multi-Metric Summary Tags Row Below */
     .q-header {
-      padding: 14px 18px;
+      padding: 12px 14px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       user-select: none;
-      background: #050505;
+      background: transparent;
       transition: background 0.15s ease;
     }
 
     .q-header:hover {
-      background: #09090c;
+      background: rgba(255, 255, 255, 0.025);
     }
 
     .q-header-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       width: 100%;
     }
 
+    .q-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
     .q-title {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
       color: #ffffff;
       letter-spacing: -0.01em;
@@ -981,6 +1069,8 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 8px;
+      flex: 1;
+      min-width: 0;
     }
 
     .q-summary-tags-row {
@@ -1011,10 +1101,19 @@
 
     .q-body {
       display: none;
-      padding: 20px;
-      border-top: 1px solid var(--border-hairline);
-      background: #000000;
+      padding: 12px 10px 16px 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: transparent;
       overflow-x: clip;
+    }
+
+    @media (max-width: 640px) {
+      .chapter-header { padding: 12px 10px; }
+      .chapter-body { padding: 8px 0 8px 8px; }
+      .q-card { padding-left: 10px; }
+      .q-card.lean-ronaldo { padding-right: 10px; }
+      .q-header { padding: 10px 8px; }
+      .q-body { padding: 10px 6px 12px 8px; }
     }
 
     .q-card.open .q-body {
@@ -1141,70 +1240,70 @@
     }
 
     /* ===================================================================== */
-    /* INSIGHT CHARTS: RESTORED ALTERNATING RHYTHM & SCROLL ANIMATIONS       */
+    /* INSIGHT CHARTS: FULL-WIDTH WITH LEFT / RIGHT TRIPLE VERTICAL RAILS    */
     /* ===================================================================== */
     .insights-flow {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 18px;
       width: 100%;
       overflow-x: clip;
     }
 
     .insight-box {
-      width: 82%;
-      background: #06070a;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 22px rgba(255, 255, 255, 0.06), 0 8px 24px rgba(0, 0, 0, 0.55);
-      border-radius: 8px;
-      padding: 20px 22px;
+      width: 100%;
+      align-self: stretch;
+      margin: 0;
+      background: #06080c;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 0;
+      padding: 16px 18px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1), transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: transform, opacity;
+      transition: background 0.15s ease, opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .insight-box:hover {
-      border-color: rgba(255, 255, 255, 0.28);
-      box-shadow: 0 6px 28px rgba(255, 255, 255, 0.09), 0 10px 28px rgba(0, 0, 0, 0.65);
+      background: #0a0c12;
     }
 
-    /* Left boxes: slide in/out on the left; Right boxes: slide in/out on the right */
     .insight-box.lean-left {
-      align-self: flex-start;
-      margin-left: 0;
-      margin-right: auto;
+      padding-left: 22px;
+      box-shadow:
+        inset 2px 0 0 rgba(56, 189, 248, 0.85),
+        inset 4px 0 0 #000000,
+        inset 6px 0 0 rgba(56, 189, 248, 0.85),
+        inset 8px 0 0 #000000,
+        inset 10px 0 0 rgba(56, 189, 248, 0.85);
       opacity: 0;
-      transform: translateX(-72px);
+      transform: translateY(14px);
     }
 
     .insight-box.lean-right {
-      align-self: flex-end;
-      margin-left: auto;
-      margin-right: 0;
+      padding-right: 22px;
+      box-shadow:
+        inset -2px 0 0 rgba(249, 115, 22, 0.85),
+        inset -4px 0 0 #000000,
+        inset -6px 0 0 rgba(249, 115, 22, 0.85),
+        inset -8px 0 0 #000000,
+        inset -10px 0 0 rgba(249, 115, 22, 0.85);
       opacity: 0;
-      transform: translateX(72px);
+      transform: translateY(14px);
     }
 
-    /* When in view */
     .insight-box.in-view {
       opacity: 1 !important;
-      transform: translateX(0) !important;
+      transform: translateY(0) !important;
     }
 
-    @media (max-width: 900px) {
-      .insight-box {
-        width: 100% !important;
-        align-self: stretch !important;
-        margin: 0 !important;
-      }
-      .insight-box.lean-left, .insight-box.lean-right {
-        transform: translateY(25px);
-      }
-      .insight-box.in-view {
-        transform: translateY(0) !important;
-      }
+    @media (max-width: 768px) {
+      .insight-box { padding: 14px 12px; }
+      .insight-box.lean-left { padding-left: 16px; padding-right: 8px; }
+      .insight-box.lean-right { padding-right: 16px; padding-left: 8px; }
+      .dual-pie-wrap { flex-direction: column !important; }
+      .dual-pie-wrap > div { border-left: none !important; padding-left: 0 !important; }
     }
 
     .insight-headline {
@@ -1288,6 +1387,36 @@
       transform: translateX(0);
     }
 
+    .drawer-drag-handle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .insight-discussion-drawer {
+        width: 100vw;
+        max-width: 100vw;
+        height: 100dvh;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-left: none;
+        box-shadow: none;
+      }
+      .drawer-drag-handle {
+        display: flex;
+        justify-content: center;
+        padding: 10px 0 4px;
+        background: #111722;
+        touch-action: none;
+      }
+      .drawer-drag-handle span {
+        width: 42px;
+        height: 4px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.28);
+      }
+    }
+
     .drawer-def-card {
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1332,12 +1461,12 @@
     /* ===================================================================== */
     .side-toc {
       position: fixed;
-      right: 18px;
+      right: 6px;
       top: 50%;
       transform: translateY(-50%);
       z-index: 999;
       pointer-events: none;
-      width: 24px;
+      width: 22px;
     }
 
     .toc-rail {
@@ -1580,7 +1709,8 @@
       color: #71717a;
     }
     .foreword-content {
-      max-width: 68ch;
+      width: 100%;
+      max-width: none;
       font-size: 15px;
       line-height: 1.78;
       color: #d4d4d8;
@@ -2312,7 +2442,7 @@
           </div>
           <div class="telemetry-pill">
             <span class="telemetry-lbl">Knockout GWGs</span>
-            <span class="telemetry-val">44&ndash;44 Dead Heat</span>
+            <span class="telemetry-val">44-44 Dead Heat</span>
           </div>
           <div class="telemetry-pill">
             <span class="telemetry-lbl">Audited Scope</span>
@@ -2327,7 +2457,7 @@
           <a href="#defining-your-answer" class="jump-pill" onclick="jumpToToc('defining-your-answer', event)">Defining Your Answer</a>
           <a href="#detail-insights" class="jump-pill" onclick="jumpToToc('detail-insights', event)">Main Analysis</a>
           <a href="#extra-analysis" class="jump-pill" onclick="jumpToToc('extra-analysis', event)">Extra Arenas</a>
-          <a href="#appendix-section" class="jump-pill" onclick="jumpToToc('appendix-section', event)">Appendices 0&ndash;2</a>
+          <a href="#appendix-section" class="jump-pill" onclick="jumpToToc('appendix-section', event)">Appendices 0-2</a>
         </div>
 
         <!-- Full Width Collapsible Summary -->
@@ -2348,58 +2478,8 @@
       </div>
     </div>
 
-    <!-- Right-Hand Floating Table of Contents (ToC) Dots Rail -->
-    <nav class="side-toc" id="side-toc" aria-label="Table of Contents">
-      <div class="toc-rail">
-        <a href="#foreword" class="toc-item active" data-target="foreword" data-color="teal" onclick="jumpToToc('foreword', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-teal">SEC X</span> Foreword</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#quick-insights" class="toc-item" data-target="quick-insights" data-color="cyan" onclick="jumpToToc('quick-insights', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-cyan">SEC A</span> Quick Insights</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#defining-your-answer" class="toc-item" data-target="defining-your-answer" data-color="amber" onclick="jumpToToc('defining-your-answer', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-amber">SEC B</span> Defining Your Answer</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#detail-insights" class="toc-item" data-target="detail-insights" data-color="blue" onclick="jumpToToc('detail-insights', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-blue">SEC C</span> Detail Insights</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#pillar-0-0" class="toc-item toc-sub" data-target="pillar-0-0" data-color="violet" onclick="jumpToToc('pillar-0-0', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-violet">0.0</span> Context Setting</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#pillar-1-0" class="toc-item toc-sub" data-target="pillar-1-0" data-color="emerald" onclick="jumpToToc('pillar-1-0', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-emerald">1.0</span> Attack (In Possession)</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#pillar-2-0" class="toc-item toc-sub" data-target="pillar-2-0" data-color="emerald" onclick="jumpToToc('pillar-2-0', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-emerald">2.0</span> Defence</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#pillar-3-0" class="toc-item toc-sub" data-target="pillar-3-0" data-color="orange" onclick="jumpToToc('pillar-3-0', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-orange">3.0</span> On-Pitch Impact</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#pillar-4-0" class="toc-item toc-sub" data-target="pillar-4-0" data-color="rose" onclick="jumpToToc('pillar-4-0', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-rose">4.0</span> Accolades & Impact</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#extra-analysis" class="toc-item" data-target="extra-analysis" data-color="violet" onclick="jumpToToc('extra-analysis', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-violet">SEC D</span> Extra Analysis</span>
-          <span class="toc-dot"></span>
-        </a>
-        <a href="#appendix-section" class="toc-item" data-target="appendix-section" data-color="indigo" onclick="jumpToToc('appendix-section', event)">
-          <span class="toc-label"><span class="toc-prefix prefix-indigo">SEC E</span> Appendix</span>
-          <span class="toc-dot"></span>
-        </a>
-      </div>
-    </nav>
-
     <!-- ================================================================= -->
-    <!-- FOREWORD — SECTION X                                              -->
+    <!-- FOREWORD: SECTION X                                               -->
     <!-- ================================================================= -->
     <section class="release-section" id="foreword">
       <div class="section-title-wrap sec-collapse-header" onclick="toggleReleaseSection('foreword')">
@@ -2408,7 +2488,7 @@
       </div>
 
       <div class="sec-collapse-body">
-      <div class="foreword-card card-slide-left">
+      <div class="foreword-card">
         <div class="foreword-header">
           <div class="foreword-quote-icon">“</div>
           <div class="foreword-meta">
@@ -2463,7 +2543,7 @@
       </div>
 
       <div class="sec-collapse-body">
-      <div class="chat-wrapper card-slide-left">
+      <div class="chat-wrapper">
         <!-- Control / Specs Header Bar -->
         <div class="chat-controls-bar">
           <div class="chat-specs-left">
@@ -2476,7 +2556,7 @@
           <div class="chat-engine-controls">
             <label for="chat-engine-select" class="engine-select-lbl">Engine:</label>
             <select id="chat-engine-select" class="chat-select" onchange="onChatEngineChanged()">
-              <option value="telemetry" selected>Instant Verified Telemetry (0MB · 0ms · Zero Hallucination)</option>
+              <option value="telemetry" selected>Instant Telemetry Engine (0MB · 0ms)</option>
               <option value="webllm-smol">In-Browser Neural LLM: SmolLM2-360M (~200MB WebGPU)</option>
               <option value="webllm-qwen">In-Browser Neural LLM: Qwen2.5-0.5B (~350MB WebGPU)</option>
               <option value="webllm-llama">In-Browser Neural LLM: Llama-3.2-1B (~800MB WebGPU)</option>
@@ -2506,7 +2586,7 @@
                 <span class="chat-badge-ai">DataIsFun AI · Quick Insights</span>
                 <span class="chat-date-stamp">Issue 01 Telemetry</span>
               </div>
-              <p>Welcome! I am your <strong>analytic assistant</strong> — here to help you explore data with zero speculation.</p>
+              <p>Welcome! I am your <strong>analytic assistant</strong>, here to help you explore data with zero speculation.</p>
               <p>For <strong>Issue 01 (Messi vs Ronaldo: Who Is the Real GOAT?)</strong>, I cite our 29 audited sub-dimensions, 162 verified charts, and 1,915 senior goals database. What would you like to explore?</p>
 
               <div class="chat-quick-chips-label">Try asking:</div>
@@ -2548,7 +2628,7 @@
       <div class="goat-intro-block sec-collapse-header" onclick="toggleReleaseSection('defining-your-answer')">
         <div>
           <div class="section-eyebrow">Section B</div>
-          <h2 class="goat-intro-title">Defining Your Answer — How do you define greatness?</h2>
+          <h2 class="goat-intro-title">Defining Your Answer: How do you define greatness?</h2>
           <p class="goat-intro-desc">
             Everyone defines the GOAT differently. For some, it is the one who scores the most goals; for others, it is ruthless efficiency in knockout finals, sublime playmaking, conquering the World Cup, or commanding global digital inspiration. Select multiple definitions below to see who wins out under your custom criteria, or click any single definition to inspect verified telemetry.
           </p>
@@ -2559,7 +2639,7 @@
       <div class="sec-collapse-body">
       <div class="goat-split-grid">
         <!-- Left: Multi-select Definition Selector with Select/Deselect All -->
-        <div class="card-slide-left goat-left-col">
+        <div class="goat-left-col">
           <div class="goat-toolbar-header">
             <div class="goat-col-eyebrow">Choose Definitions (<span id="goat-selected-count">0</span> ticked)</div>
             <div class="goat-toolbar-actions">
@@ -2573,7 +2653,7 @@
         </div>
 
         <!-- Right: 2 Sub-Windows on top of one another (a: Current Click, b: Aggregated Summary of All Ticked) -->
-        <div class="card-slide-right goat-right-col">
+        <div class="goat-right-col">
           
           <!-- Sub-Window A: Current Definition Focus -->
           <div class="goat-sub-window goat-focus-window" id="goat-verdict-panel">
@@ -2642,12 +2722,16 @@
 
 
       <!-- PILLAR 0.0 ACCORDION -->
-      <div class="pillar-accordion defence open card-slide-left" id="pillar-0-0">
+      <div class="pillar-accordion defence open" id="pillar-0-0">
         <div class="pillar-header" onclick="togglePillar('pillar-0-0')">
           <div class="pillar-badge">PILLAR 0.0</div>
           <div class="pillar-info">
-            <h3 class="pillar-title">Context Setting (Tactical Baseline)</h3>
-            <p class="pillar-desc">Establishing where both players operate on the ball, their starting tactical roles, and their teams' playing styles (possession vs counter-attack) before comparing output.</p>
+            <div class="pillar-title-row">
+              <h3 class="pillar-title">Context Setting (Tactical Baseline)</h3>
+              <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('pillar', '0.0')" title="View Who, Defined By and Metrics" aria-label="Open pillar details">?</button>
+            </div>
+            <p class="framework-summary">Maps where both players operated on the pitch, their roles, and team playing styles before comparing stats.</p>
+            <p class="framework-key-q">Key question: Did they play in different tactical roles, zones, and team systems?</p>
           </div>
           <div class="pillar-header-right">
             <span class="pillar-count-pill">1 Criteria · 3 Statements</span>
@@ -2657,17 +2741,16 @@
         <div class="pillar-body">
 
         <!-- CRITERIA 0.0: Context Setting: Operating Zones, Tactical Roles & Team Style -->
-        <div class="chapter-card open card-slide-left" id="chapter-0-0">
+        <div class="chapter-card open" id="chapter-0-0">
           <div class="chapter-header" onclick="toggleChapter('chapter-0-0')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 0.0</span>
                 <span class="chapter-title">Context Setting: Operating Zones, Tactical Roles & Team Style</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '0.0')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Operated in different tactical zones, positional roles, and team playing styles?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Baseline pitch operating zones (on-ball centroid trajectory), starting positional roles (Right Wing, Centre-Forward, Left Wing, False 9/Second Striker, Attacking Midfield), and team tactical style (team vs opponent passes, goals scored vs conceded, and possession vs counter-attacking directness). <span class="fw-metrics-inline">Metrics: Seasonal on-ball (centroid_x, centroid_y), matches by position (RW, CF, LW, SS, AM/CM), team vs opponent passes/match, team pass share (%), team goals for vs against/match, vertical carry directness (%), progressive pass ratio (%), and fast-break counter-attack shot share (%).</span></span></div>
-              </div>
+              <p class="framework-summary">Compares career pitch positions, team possession style, and supporting cast value.</p>
+              <p class="framework-key-q">Key question: How different were their starting roles, team styles, and teammates?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2681,12 +2764,16 @@
         
 
       <!-- PILLAR 1.0 ACCORDION -->
-      <div class="pillar-accordion attack open card-slide-left" id="pillar-1-0">
+      <div class="pillar-accordion attack open" id="pillar-1-0">
         <div class="pillar-header" onclick="togglePillar('pillar-1-0')">
           <div class="pillar-badge">PILLAR 1.0</div>
           <div class="pillar-info">
-            <h3 class="pillar-title">Contribution to Attack (In Possession)</h3>
-            <p class="pillar-desc">Generating positive goal differential (Expected Goals For / xGF) through scoring, playmaking, ball carrying, and robust execution across all environments.</p>
+            <div class="pillar-title-row">
+              <h3 class="pillar-title">Contribution to Attack (In Possession)</h3>
+              <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('pillar', '1.0')" title="View Who, Defined By and Metrics" aria-label="Open pillar details">?</button>
+            </div>
+            <p class="framework-summary">Measures everything they create on the ball: goals, finishing quality, assists, and dribbling.</p>
+            <p class="framework-key-q">Key question: Who creates and finishes more attacking value for their team?</p>
           </div>
           <div class="pillar-header-right">
             <span class="pillar-count-pill">4 Criteria · 11 Statements</span>
@@ -2696,17 +2783,16 @@
         <div class="pillar-body">
 
         <!-- CRITERIA 1.1: Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance) -->
-        <div class="chapter-card card-slide-left" id="chapter-1-1">
+        <div class="chapter-card" id="chapter-1-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-1-1')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 1.1</span>
                 <span class="chapter-title">Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '1.1')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Is the superior and more influential goalscorer?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Career scoring volume, age-aligned pace, finishing efficiency above Expected Goals (xG), multi-goal match feats, goal variety across body parts and set pieces, and match-winning team impact. <span class="fw-metrics-inline">Metrics: Gross/official goals, age-curve totals, shot conversion %, G/90, xG outperformance, hat-tricks/manitas, free-kick & penalty conversion, team goal share %, and game-winning goals.</span></span></div>
-              </div>
+              <p class="framework-summary">Breaks down career goal totals, finishing efficiency, scoring variety, and clutch game-winners.</p>
+              <p class="framework-key-q">Key question: Who is the superior and more influential goalscorer?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2717,17 +2803,16 @@
             
 
         <!-- CRITERIA 1.2: Playmaking & Passing (Volume, Efficiency, Variety & Importance) -->
-        <div class="chapter-card card-slide-left" id="chapter-1-2">
+        <div class="chapter-card" id="chapter-1-2">
           <div class="chapter-header" onclick="toggleChapter('chapter-1-2')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 1.2</span>
                 <span class="chapter-title">Playmaking & Passing (Volume, Efficiency, Variety & Importance)</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '1.2')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Is the superior playmaker and passer?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Career assist volume and multi-assist feats, chance creation quality (xA, Big Chances, Throughballs, Key Passes), passing range, and team build-up share. <span class="fw-metrics-inline">Metrics: Total & official assists, assists/90, Expected Assists (xA), Big Chances created, throughballs, key passes, passing volume & accuracy by range, and % of team build-up & big-game assists.</span></span></div>
-              </div>
+              <p class="framework-summary">Evaluates total assists, chance quality, passing range, and share of team build-up.</p>
+              <p class="framework-key-q">Key question: Who is the better creator and passer?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2738,17 +2823,16 @@
             
 
         <!-- CRITERIA 1.3: Dribbling & 1v1 Ball Progression (Opta European Telemetry) -->
-        <div class="chapter-card card-slide-left" id="chapter-1-3">
+        <div class="chapter-card" id="chapter-1-3">
           <div class="chapter-header" onclick="toggleChapter('chapter-1-3')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 1.3</span>
                 <span class="chapter-title">Dribbling & 1v1 Ball Progression (Opta European Telemetry)</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '1.3')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Is the superior dribbler and more frequent 1v1 ball carrier?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Total and per-90 successful dribbles across European League and UEFA Champions League competition (2009/10–2023/24, Opta telemetry), benchmarked against Big-5 attackers/midfielders. <span class="fw-metrics-inline">Metrics: Opta career successful dribbles, dribbles/90, and seasonal dribble volume & per-90 trajectories.</span></span></div>
-              </div>
+              <p class="framework-summary">Tracks successful take-ons and per-90 ball carrying across 15 European seasons.</p>
+              <p class="framework-key-q">Key question: Who beats more defenders 1v1 and progresses the ball?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2759,17 +2843,16 @@
             
 
         <!-- CRITERIA 1.4: Combined Attacking Output (G+A Aggregator of 1.1 & 1.2) -->
-        <div class="chapter-card card-slide-left" id="chapter-1-4">
+        <div class="chapter-card" id="chapter-1-4">
           <div class="chapter-header" onclick="toggleChapter('chapter-1-4')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 1.4</span>
                 <span class="chapter-title">Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '1.4')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Produces greater total direct goal involvement (Goals + Assists) and team offensive share?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Aggregating scoring (1.1) and playmaking (1.2) into combined Goals + Assists across career totals, competition tiers, seasons, biological ages, and on-pitch team goal share. <span class="fw-metrics-inline">Metrics: Career G+A, G+A per match & per 90, seasonal & age-matched G+A curves, competition splits, on-pitch team goal involvement %, and Top-4 G+A.</span></span></div>
-              </div>
+              <p class="framework-summary">Combines goals and assists across career totals, seasons, ages, and on-pitch team share.</p>
+              <p class="framework-key-q">Key question: Who delivers more combined Goals + Assists overall?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2783,12 +2866,16 @@
         
 
       <!-- PILLAR 2.0 ACCORDION -->
-      <div class="pillar-accordion defence open card-slide-left" id="pillar-2-0">
+      <div class="pillar-accordion defence open" id="pillar-2-0">
         <div class="pillar-header" onclick="togglePillar('pillar-2-0')">
           <div class="pillar-badge">PILLAR 2.0</div>
           <div class="pillar-info">
-            <h3 class="pillar-title">Contribution to Defence (Out of Possession)</h3>
-            <p class="pillar-desc">Suppressing negative goal differential (Expected Goals Against / xGA) through ground pressing disruptions, tackling, interceptions, aerial contests, and box clearances.</p>
+            <div class="pillar-title-row">
+              <h3 class="pillar-title">Contribution to Defence (Out of Possession)</h3>
+              <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('pillar', '2.0')" title="View Who, Defined By and Metrics" aria-label="Open pillar details">?</button>
+            </div>
+            <p class="framework-summary">Tracks out-of-possession work rate, pressing, tackles, aerial duels, and defensive clearances.</p>
+            <p class="framework-key-q">Key question: Who contributes more defensive work when their team does not have the ball?</p>
           </div>
           <div class="pillar-header-right">
             <span class="pillar-count-pill">2 Criteria · 2 Statements</span>
@@ -2798,17 +2885,16 @@
         <div class="pillar-body">
 
         <!-- CRITERIA 2.1: Active Ground Defending & Pressing Disruptions -->
-        <div class="chapter-card card-slide-left" id="chapter-2-1">
+        <div class="chapter-card" id="chapter-2-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-2-1')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 2.1</span>
                 <span class="chapter-title">Active Ground Defending & Pressing Disruptions</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '2.1')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Provides greater ground disruption and out-of-possession defensive work rate?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Disrupting opponent possession build-up through active ground pressing, tackling, interceptions, and pass blocks across career totals and seasons. <span class="fw-metrics-inline">Metrics: Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m (Opta 2009–2023), and tackles won/90m (Transfermarkt 2018–2026).</span></span></div>
-              </div>
+              <p class="framework-summary">Compares pressing, tackling, interceptions, and blocked passes per 90 minutes.</p>
+              <p class="framework-key-q">Key question: Who presses and disrupts opponents more on the ground?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2819,17 +2905,16 @@
             
 
         <!-- CRITERIA 2.2: Physical Contests & Aerial Box Defending -->
-        <div class="chapter-card card-slide-left" id="chapter-2-2">
+        <div class="chapter-card" id="chapter-2-2">
           <div class="chapter-header" onclick="toggleChapter('chapter-2-2')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 2.2</span>
                 <span class="chapter-title">Physical Contests & Aerial Box Defending</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '2.2')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Contributes more aerial dominance, box clearances, and physical duel resistance?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Winning aerial duels across seasons, clearing dangerous balls inside the defensive penalty area, and drawing fouls in physical ground contests. <span class="fw-metrics-inline">Metrics: Aerial duels won (total & per 90m by season), defensive clearances/90m by season, and fouls drawn/90m by season.</span></span></div>
-              </div>
+              <p class="framework-summary">Covers aerial duels won, defensive box clearances, and fouls drawn per 90.</p>
+              <p class="framework-key-q">Key question: Who wins more aerial battles and physical contests?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2843,12 +2928,16 @@
         
 
       <!-- PILLAR 3.0 ACCORDION -->
-      <div class="pillar-accordion overall open card-slide-left" id="pillar-3-0">
+      <div class="pillar-accordion overall open" id="pillar-3-0">
         <div class="pillar-header" onclick="togglePillar('pillar-3-0')">
           <div class="pillar-badge">PILLAR 3.0</div>
           <div class="pillar-info">
-            <h3 class="pillar-title">Overall On-Pitch Impact</h3>
-            <p class="pillar-desc">Measuring net collective pitch impact across all in- and out-of-possession phases: team win-rate and points-per-game lift (on vs off the pitch), algorithmic multi-event match ratings, and Man-of-the-Match honours.</p>
+            <div class="pillar-title-row">
+              <h3 class="pillar-title">Overall On-Pitch Impact</h3>
+              <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('pillar', '3.0')" title="View Who, Defined By and Metrics" aria-label="Open pillar details">?</button>
+            </div>
+            <p class="framework-summary">Measures net team win lift when playing versus absent alongside overall match ratings.</p>
+            <p class="framework-key-q">Key question: Does the team win more and perform better when they are on the pitch?</p>
           </div>
           <div class="pillar-header-right">
             <span class="pillar-count-pill">1 Criteria · 2 Statements</span>
@@ -2858,17 +2947,16 @@
         <div class="pillar-body">
 
         <!-- CRITERIA 3.1: Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance -->
-        <div class="chapter-card card-slide-left" id="chapter-3-1">
+        <div class="chapter-card" id="chapter-3-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-3-1')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 3.1</span>
                 <span class="chapter-title">Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '3.1')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Provides greater holistic two-way match dominance and team win-rate impact?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">The net holistic impact on match outcomes across all on-ball actions (shots, passes, dribbles, tackles, duels) and the team's record with the player on vs off the pitch. <span class="fw-metrics-inline">Metrics: Team on/off points-per-game (PPG) differential, team win % on vs off the pitch, Opta average match rating across 18 seasons, and Man-of-the-Match award percentage (%).</span></span></div>
-              </div>
+              <p class="framework-summary">Evaluates team PPG on/off differential, win-rate lift, match ratings, and MOTM share.</p>
+              <p class="framework-key-q">Key question: Who lifts team results and earns higher match ratings more consistently?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2882,12 +2970,16 @@
         
 
       <!-- PILLAR 4.0 ACCORDION -->
-      <div class="pillar-accordion inspiration open card-slide-left" id="pillar-4-0">
+      <div class="pillar-accordion inspiration open" id="pillar-4-0">
         <div class="pillar-header" onclick="togglePillar('pillar-4-0')">
           <div class="pillar-badge">PILLAR 4.0</div>
           <div class="pillar-info">
-            <h3 class="pillar-title">Accolades, Recognition & Ability to Inspire (Institutional & Cultural Legacy)</h3>
-            <p class="pillar-desc">Evaluating historical standing beyond match telemetry: peer and institutional voting consensus (Ballon d'Or, FIFA The Best), collective trophy pedigree, and global cultural inspiration (digital reach, world records, stadium draw).</p>
+            <div class="pillar-title-row">
+              <h3 class="pillar-title">Accolades, Recognition & Ability to Inspire (Institutional & Cultural Legacy)</h3>
+              <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('pillar', '4.0')" title="View Who, Defined By and Metrics" aria-label="Open pillar details">?</button>
+            </div>
+            <p class="framework-summary">Compares major individual awards, collective silverware, global following, and live stadium draw.</p>
+            <p class="framework-key-q">Key question: Who left the bigger mark through trophies, awards, and global reach?</p>
           </div>
           <div class="pillar-header-right">
             <span class="pillar-count-pill">3 Criteria · 5 Statements</span>
@@ -2897,17 +2989,16 @@
         <div class="pillar-body">
 
         <!-- CRITERIA 4.1: Institutional Accolades & Scoring Crowns -->
-        <div class="chapter-card card-slide-left" id="chapter-4-1">
+        <div class="chapter-card" id="chapter-4-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-4-1')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 4.1</span>
                 <span class="chapter-title">Institutional Accolades & Scoring Crowns</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '4.1')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Commands higher recognition in individual voting awards, scoring crowns, and universal honours?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Official global individual voting awards (Ballon d'Or, FIFA World Player), European Golden Shoes, league top-scorer crowns across distinct countries, FIFA World Cup Golden Balls, and Laureus multi-sport awards. <span class="fw-metrics-inline">Metrics: Ballon d'Or wins & podiums, FIFA World Player wins, Laureus & tournament MVPs, European Golden Shoes, and club-coded league top-scorer timeline.</span></span></div>
-              </div>
+              <p class="framework-summary">Covers Ballon d'Or wins, World Cup Golden Balls, European Golden Shoes, and league crowns.</p>
+              <p class="framework-key-q">Key question: Who won more individual awards and scoring titles across leagues?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2918,17 +3009,16 @@
             
 
         <!-- CRITERIA 4.2: Championship Pedigree & Collective Trophy Haul -->
-        <div class="chapter-card card-slide-left" id="chapter-4-2">
+        <div class="chapter-card" id="chapter-4-2">
           <div class="chapter-header" onclick="toggleChapter('chapter-4-2')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 4.2</span>
                 <span class="chapter-title">Championship Pedigree & Collective Trophy Haul</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '4.2')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Has accumulated the more decorated senior silverware collection across club and country?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Official team championships broken down by trophy category (domestic leagues, cups, supercups, UCL, CWC/Super Cups, and senior international trophies), European trebles, and cumulative trajectory. <span class="fw-metrics-inline">Metrics: Side-by-side trophy type distribution pies, senior international titles, UEFA Champions League titles, European trebles, and cumulative trophies (2003–2024).</span></span></div>
-              </div>
+              <p class="framework-summary">Breaks down senior team trophies across leagues, cups, UCL, trebles, and international titles.</p>
+              <p class="framework-key-q">Key question: Who built the deeper trophy cabinet for club and country?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2939,17 +3029,16 @@
             
 
         <!-- CRITERIA 4.3: Cultural Reach, Live Attendance & Global Inspiration -->
-        <div class="chapter-card card-slide-left" id="chapter-4-3">
+        <div class="chapter-card" id="chapter-4-3">
           <div class="chapter-header" onclick="toggleChapter('chapter-4-3')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Criteria 4.3</span>
                 <span class="chapter-title">Cultural Reach, Live Attendance & Global Inspiration</span>
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('criteria', '4.3')" title="View Who, Defined By and Metrics" aria-label="Open criteria details">?</button>
               </div>
-              <div class="chapter-framework-summary">
-                <div class="ch-fw-item"><span class="ch-fw-lbl">WHO</span> <span class="ch-fw-val">Commands greater global cultural reach, live stadium draw, and matchday economic impact?</span></div>
-                <div class="ch-fw-item"><span class="ch-fw-lbl">DEFINE BY</span> <span class="ch-fw-val">Verified cross-platform digital reach and peak social cultural moments, paired with matchday stadium turnstile attendance across European & late-career leagues (before vs after league baseline arrival crowds). <span class="fw-metrics-inline">Metrics: Cross-platform social followers, most-liked post record, career & seasonal match attendance (Home/Away), MLS vs SPL before-and-after road attendance, and peak stadium crowd.</span></span></div>
-              </div>
+              <p class="framework-summary">Compares social media reach, viral milestones, and live stadium attendance pull.</p>
+              <p class="framework-key-q">Key question: Who commands a bigger global audience online and in stadiums?</p>
             </div>
             <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
@@ -2971,15 +3060,15 @@
     <section class="release-section" id="extra-analysis">
       <div class="section-title-wrap">
         <div class="section-eyebrow" style="color: #c084fc;">Section D · Special Deep Dives</div>
-        <h2 class="section-heading-lg">Extra Analysis — Mythbusting & Tournament Deconstruction</h2>
+        <h2 class="section-heading-lg">Extra Analysis: Mythbusting &amp; Tournament Deconstruction</h2>
         <p class="section-desc-text">
-          Targeted empirical investigations dissecting prevailing footballing narratives: minnow stat-padding, knockout deadlock, tournament legacy, and systemic team context.
+          Targeted investigations dissecting enduring football debates: international minnow scoring, knockout impact, tournament legacy, and team context.
         </p>
       </div>
 
       <div class="chapters-stack">
         <!-- EXTRA ANALYSIS 1: MYTHBUSTING LIGHTNING RODS -->
-        <div class="chapter-card card-slide-left" id="chapter-extra-1">
+        <div class="chapter-card" id="chapter-extra-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-extra-1')">
             <div>
               <div class="chapter-title-row">
@@ -3526,16 +3615,16 @@
     <!-- ================================================================= -->
     <section class="release-section" id="appendix-section">
       <div class="section-title-wrap">
-        <div class="section-eyebrow" style="color: #818cf8;">Section E · Reference & Methodology</div>
-        <h2 class="section-heading-lg">Appendix — Problem Breakdown, Key Graphs & Database</h2>
+        <div class="section-eyebrow" style="color: #818cf8;">Section E · Reference &amp; Methodology</div>
+        <h2 class="section-heading-lg">Appendix: Problem Breakdown, Key Graphs &amp; Database</h2>
         <p class="section-desc-text">
-          Explore the full visual hierarchy, interactive multi-view trajectories, and the complete 1,915-goal raw telemetry database.
+          Explore the full visual hierarchy, interactive career curves, and the complete 1,915-goal match database.
         </p>
       </div>
       <div class="chapters-stack">
 
         <!-- APPENDIX 0: PROBLEM BREAKDOWN (MIND MAP) -->
-        <div class="chapter-card card-slide-right" id="appendix-0-link">
+        <div class="chapter-card" id="appendix-0-link">
           <div class="chapter-header" onclick="window.location.href='appendix0.html'">
             <div>
               <div class="chapter-title-row">
@@ -3580,10 +3669,59 @@
     </section>
 
     <footer>
-      <p>DataIsFun Platform for Sir · Issue 01 (November 2026) · 1,915 Verified Senior Goals · Zero Synthetic Estimates</p>
-      <p style="margin-top: 6px; font-size: 11.5px; color: #71717a;">Deconstructing Popular Narratives with Data · Full methodology in <a href="detail.html" style="color: #ffffff;">Appendix 2</a> · <a href="https://forms.gle/A6FMCd4BTk83qVPE6" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Share Feedback</a></p>
+      <p style="font-size: 11.5px; color: #71717a;">DataIsFun · Deconstructing Popular Narratives · Full methodology in <a href="detail.html" style="color: #ffffff;">Appendix 2</a> · <a href="https://forms.gle/A6FMCd4BTk83qVPE6" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline;">Share Feedback</a></p>
     </footer>
   </div>
+
+  <!-- Viewport-Fixed Right-Hand Table of Contents (ToC) Dots Rail (outside .container so transform never traps fixed) -->
+  <nav class="side-toc" id="side-toc" aria-label="Table of Contents">
+    <div class="toc-rail">
+      <a href="#foreword" class="toc-item active" data-target="foreword" data-color="teal" onclick="jumpToToc('foreword', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-teal">SEC X</span> Foreword</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#quick-insights" class="toc-item" data-target="quick-insights" data-color="cyan" onclick="jumpToToc('quick-insights', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-cyan">SEC A</span> Quick Insights</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#defining-your-answer" class="toc-item" data-target="defining-your-answer" data-color="amber" onclick="jumpToToc('defining-your-answer', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-amber">SEC B</span> Defining Your Answer</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#detail-insights" class="toc-item" data-target="detail-insights" data-color="blue" onclick="jumpToToc('detail-insights', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-blue">SEC C</span> Detail Insights</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#pillar-0-0" class="toc-item toc-sub" data-target="pillar-0-0" data-color="violet" onclick="jumpToToc('pillar-0-0', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-violet">0.0</span> Context Setting</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#pillar-1-0" class="toc-item toc-sub" data-target="pillar-1-0" data-color="emerald" onclick="jumpToToc('pillar-1-0', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-emerald">1.0</span> Attack (In Possession)</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#pillar-2-0" class="toc-item toc-sub" data-target="pillar-2-0" data-color="emerald" onclick="jumpToToc('pillar-2-0', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-emerald">2.0</span> Defence</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#pillar-3-0" class="toc-item toc-sub" data-target="pillar-3-0" data-color="orange" onclick="jumpToToc('pillar-3-0', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-orange">3.0</span> On-Pitch Impact</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#pillar-4-0" class="toc-item toc-sub" data-target="pillar-4-0" data-color="rose" onclick="jumpToToc('pillar-4-0', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-rose">4.0</span> Accolades &amp; Impact</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#extra-analysis" class="toc-item" data-target="extra-analysis" data-color="violet" onclick="jumpToToc('extra-analysis', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-violet">SEC D</span> Extra Analysis</span>
+        <span class="toc-dot"></span>
+      </a>
+      <a href="#appendix-section" class="toc-item" data-target="appendix-section" data-color="indigo" onclick="jumpToToc('appendix-section', event)">
+        <span class="toc-label"><span class="toc-prefix prefix-indigo">SEC E</span> Appendix</span>
+        <span class="toc-dot"></span>
+      </a>
+    </div>
+  </nav>
 
   <script src="data/insights_data.js"></script>
   <script src="../../assets/charts_engine.js"></script>
@@ -4399,7 +4537,7 @@
       const categories = Object.keys(mSub);
       container.innerHTML = `
         <div style="font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 12px; display: flex; justify-content: space-between;">
-          <span>${ed.edition} (${ed.year}) — Complete 29 In-Game Sub-Attributes Breakdown</span>
+          <span>${ed.edition} (${ed.year}): Complete 29 In-Game Sub-Attributes Breakdown</span>
           <span style="font-size: 11px; color: #a1a1aa; font-family: monospace;">Scale 1–99</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
@@ -4591,7 +4729,7 @@
 
       container.innerHTML = `
         <div style="font-size: 13px; font-weight: 800; color: #fff; margin-bottom: 12px; display: flex; justify-content: space-between;">
-          <span>${ed.edition} (${ed.year}) — In-Depth 16 Sub-Ratings Breakdown</span>
+          <span>${ed.edition} (${ed.year}): In-Depth 16 Sub-Ratings Breakdown</span>
           <span style="font-size: 11px; color: #a1a1aa; font-family: monospace;">Scale 40–99</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
@@ -5415,7 +5553,8 @@ const POPULAR_NARRATIVES = {
 };
 
     // Curated GOAT Criteria Statements mapped to verified telemetry (Pillars 1.0, 2.0, 3.0, 4.0 + Extra Analysis)
-    const GOAT_STATEMENTS = [{"id": "volume", "targetId": "q1", "chapterId": "chapter-1-1", "title": "Career Goal Volume", "subtitle": "The one who scores the most career goals", "leader": "ronaldo", "badge": "Ronaldo Leads With +43 Gross Goals", "verdict": "Ronaldo leads gross senior goals 979 to 936 (+43) across 1,363 tactical appearances. However, Messi holds a higher scoring rate (0.76 vs 0.72 G/App) in 134 fewer appearances (1,229)."}, {"id": "npg", "targetId": "q3", "chapterId": "chapter-1-1", "title": "Non-Penalty Scoring", "subtitle": "The one who scores without relying on spot-kicks", "leader": "messi", "badge": "Messi Leads With +24 Non-Penalty Goals", "verdict": "Messi leads career non-penalty goals 817 to 793 (+24) in 134 fewer matches. Removing spot-kicks inverts the career scoring lead."}, {"id": "efficiency", "targetId": "q2", "chapterId": "chapter-1-1", "title": "Finishing Quality & xG Surplus", "subtitle": "The most clinical finisher relative to shot difficulty", "leader": "messi", "badge": "Messi Leads With +2.80% Shot Conversion Rates", "verdict": "Across 6,586 European league & UCL Opta shots, Messi converted 18.35% vs Ronaldo's 15.55% (+2.80%) and outperformed Opta's 13-season league xG model by +52.74 vs +14.79 (+37.95 margin)."}, {"id": "explosions", "targetId": "q2", "chapterId": "chapter-1-1", "title": "Hat-Tricks & Explosive Feats", "subtitle": "The one who produces explosive multi-goal matches", "leader": "ronaldo", "badge": "Ronaldo Leads With +5 Multi-Goal Hat-Trick Games", "verdict": "Ronaldo leads career 3+ goal matches 67 to 62 (+5), while Messi leads non-penalty hat-tricks 45 to 34 (+11)."}, {"id": "diversity", "targetId": "q3", "chapterId": "chapter-1-1", "title": "Scoring Arsenal & Diversity", "subtitle": "The most complete scorer across all body parts & distances", "leader": "tied", "badge": "Ronaldo Leads With +103 Headers · Messi Leads With +10 Free Kicks", "verdict": "Ronaldo leads headers (+103: 134 vs 31) and weak-foot goals (+47: 144 vs 97); Messi leads direct free kicks (+10: 65 vs 55) and strong-foot strikes (+176)."}, {"id": "playmaking", "targetId": "q2_1", "chapterId": "chapter-1-2", "title": "Playmaking & Assists", "subtitle": "The greatest creator, vision & through-ball master", "leader": "messi", "badge": "Messi Leads With +160 Career Assists", "verdict": "Messi holds a decisive career assist lead (467 to 307, +160 assists), creating +240 more Big Chances and +77.78 more Expected Assists (xA)."}, {"id": "progression", "targetId": "q4_1", "chapterId": "chapter-1-3", "title": "Progression & Take-Ons", "subtitle": "The dribbler who breaks defensive lines and carries play", "leader": "messi", "badge": "Messi Leads With +1,438 Successful Dribbles", "verdict": "Opta telemetry records 3,093 completed take-ons for Messi (4.58/90m) vs Ronaldo's 1,655 (2.22/90m), delivering +2.36 more dribbles/90m and +68.5m/90 weighted progressive carry distance."}, {"id": "combined", "targetId": "q3_1", "chapterId": "chapter-1-4", "title": "Total Direct Output (Goals + Assists)", "subtitle": "The highest aggregated direct attacking contribution", "leader": "messi", "badge": "Messi Leads With +118 Career G+A", "verdict": "Messi leads career senior direct goal involvements with 1,404 G+A vs Ronaldo's 1,286 (+118 G+A) at +0.24 higher G+A per 90 minutes (1.30 vs 1.06)."}, {"id": "clutch", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "Knockout Match Decisiveness", "subtitle": "The one who steps up with game-winning goals in knockouts", "leader": "tied", "badge": "Dead Heat With 44–44 Knockout GWG", "verdict": "Across all senior club and international knockouts, both stand in an exact dead heat with 44–44 career Game-Winning Goals, while Messi leads total knockout goals (+19: 152 vs 133) and Ronaldo leads overall GWGs (+63: 350 vs 287)."}, {"id": "worldcup", "targetId": "wc_1", "chapterId": "chapter-extra-2", "title": "FIFA World Cup Conquest", "subtitle": "The one who conquered the definitive international tournament", "leader": "messi", "badge": "Messi Leads With +10 World Cup Goals", "verdict": "Across World Cup campaigns (2006–2026), Messi holds +10 more goals (21 vs 11; +6 knockout: 7 vs 1) and +10 more assists (12 vs 2), captaining Argentina to the 2022 trophy."}, {"id": "opponents", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "FIFA Top-20 Opponent Caliber", "subtitle": "The one who produces against elite international teams", "leader": "messi", "badge": "Messi Leads With +5 Goals vs FIFA Top 20", "verdict": "Against FIFA Top-20 ranked nations, Messi scored 34 goals vs Ronaldo's 29 (+5), while both posted nearly identical per-90 rates (0.43 vs 0.45 G/90) against Top-20 opposition."}, {"id": "ucl", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "Champions League Knockout & Top-6 Pedigree", "subtitle": "The decisive performer in UEFA Champions League elimination nights", "leader": "ronaldo", "badge": "Ronaldo Leads With +10 UCL Top-6 GWGs & +1 UCL Title", "verdict": "In Champions League clashes vs Top-6 European clubs, Ronaldo leads Game-Winning Goals 31 to 21 (+10), alongside 5 vs 4 UCL titles and 7 vs 6 UCL top-scorer crowns."}, {"id": "adaptability", "targetId": "q8_2", "chapterId": "chapter-4-1", "title": "Multi-League Mastery", "subtitle": "The one who conquered diverse football leagues & cultures", "leader": "ronaldo", "badge": "Ronaldo Leads With +3 Distinct Top-Scorer Leagues", "verdict": "Ronaldo won domestic league titles and Golden Boots across England, Spain, Italy, and Saudi Arabia (+3 distinct leagues over Messi)."}, {"id": "support", "targetId": "q0_3", "chapterId": "chapter-0-0", "title": "Supporting Cast Valuation Context", "subtitle": "The one who played alongside higher-valued club teammates", "leader": "messi", "badge": "Messi Teams Lead With +€4.3M Avg Teammate Value", "verdict": "Across shared European club seasons (2012/13–2022/23), Messi's on-pitch teammates averaged €37.5M contemporary market value vs €33.2M for Ronaldo's (+€4.3M difference)."}, {"id": "defending_ground", "targetId": "q4_2", "chapterId": "chapter-2-1", "title": "Ground Defending & Pressing Work Rate", "subtitle": "The one who works harder without the ball in ground defense", "leader": "messi", "badge": "Messi Leads With +2.10 Pressures/90 & +0.27 Tackles/90", "verdict": "In Opta European tracking, Messi leads in pressures/90 (+2.10), tackles/90 (+0.27), interceptions/90 (+0.05), and passes blocked/90 (+0.08)."}, {"id": "defending_air", "targetId": "q4_3", "chapterId": "chapter-2-2", "title": "Aerial Duels & Box Defending", "subtitle": "The one who dominates aerial contests and set-piece box clearance", "leader": "ronaldo", "badge": "Ronaldo Leads With +1.18 Aerial Duels/90 & +0.64 Clearances/90", "verdict": "Ronaldo dominates aerial duels (+616 total: 737 vs 121; +1.18 per 90m) and defensive box clearances (+0.64 per 90m) across tracked European campaigns."}, {"id": "team_boost", "targetId": "q4_4", "chapterId": "chapter-3-1", "title": "Net Team Win Rate & PPG Lift", "subtitle": "The one who provides greater on-pitch win rate lift & points boost", "leader": "messi", "badge": "Messi Leads With +0.16 PPG & +5.4% Win-Rate Lift", "verdict": "Club teams experienced a +0.16 PPG larger on/off boost (+0.18 vs +0.02) and +5.4% larger win-rate lift with Messi compared to Ronaldo."}, {"id": "spatial_evolution", "targetId": "chapter-extra-3", "chapterId": "chapter-extra-3", "isExtra": true, "title": "Spatial Evolution & Positional Centroids", "subtitle": "22-year pitch migration from touchline winger to central orchestrator / box poacher", "leader": "tied", "badge": "Split Profile With Deep Playmaker vs Box Striker Migration", "verdict": "Messi migrated into deep central playmaking zones while Ronaldo transitioned from flank winger to pure penalty-box striker across five mapped eras."}, {"id": "virtual_arena", "targetId": "chapter-extra-4", "chapterId": "chapter-extra-4", "isExtra": true, "title": "Video Game & Scouting Consensus", "subtitle": "20 years of ratings across FIFA, PES, and Football Manager", "leader": "tied", "badge": "Split Consensus With Dribbling/Passing vs Shooting/Physicality", "verdict": "Across FIFA/FC, PES, and Football Manager editions, Messi holds all-time peaks in Dribbling & Passing while Ronaldo leads in Physicality & Shooting."}, {"id": "accolades", "targetId": "q8_1", "chapterId": "chapter-4-1", "title": "Voting Accolades & Tournament MVPs", "subtitle": "The one recognized most by peers, coaches, multi-sport & World Cup voting", "leader": "messi", "badge": "Messi Leads With +3 Ballons d'Or & +2 WC Golden Balls", "verdict": "Messi holds all-time records with 8 Ballons d'Or vs 5 (+3), +2 Top-3 podiums (14 vs 12), +3 FIFA World Player titles, +2 Laureus awards, and +2 WC Golden Balls."}, {"id": "scoring_crowns", "targetId": "q8_2", "chapterId": "chapter-4-1", "title": "European Golden Shoes & League Scoring Timeline", "subtitle": "Total Golden Shoes vs club-coded national league top-scorer diversity", "leader": "tied", "badge": "Messi Leads With +2 Golden Shoes · Ronaldo Leads With +3 Leagues", "verdict": "Messi won +2 more European Golden Shoes (6 vs 4); Ronaldo topped scoring charts across +3 more distinct national leagues and clubs."}, {"id": "silverware", "targetId": "q8_4", "chapterId": "chapter-4-2", "title": "Complete Senior Silverware, UCL & Trebles", "subtitle": "All-time trophy type composition, FIFA/Continental titles & UCL sweeps", "leader": "messi", "badge": "Messi Leads With +9 Senior Trophies · Ronaldo Leads With +1 UCL", "verdict": "Messi leads overall senior silverware by +9 trophies (43 vs 34, including 2 European Trebles to 0); Ronaldo leads Champions League titles by +1 (5 vs 4)."}, {"id": "social_reach", "targetId": "q8_7", "chapterId": "chapter-4-3", "title": "Global Digital Reach & Cultural Moments", "subtitle": "The one who commands largest social ecosystems vs viral record post impact", "leader": "tied", "badge": "Ronaldo Leads With +373.4M Followers · Messi Leads With +32.9M Post Record", "verdict": "Ronaldo commands +373.4M more verified cross-platform followers (998.9M vs 625.5M), while Messi's 2022 World Cup celebration post holds the +32.9M all-time record (75.7M vs 42.8M)."}, {"id": "attendance_draw", "targetId": "q8_9", "chapterId": "chapter-4-3", "title": "Live Match Attendance & Road Surge", "subtitle": "Career & seasonal matchday stadium crowds, away draw, MLS/SPL surge & peak gates", "leader": "tied", "badge": "Messi Leads Overall Crowd (+1,297) · Ronaldo Leads Away (+1,270) & SPL % Lift (+49.0%)", "verdict": "Messi averaged +1,297 higher overall turnstile attendance (54,040 vs 52,743) and +22,139 road MLS fans per game, while Ronaldo drew +1,270 higher European away averages (39,008 vs 37,738) and a +49.0pp sharper relative road lift (+149.1% vs +100.1%)."}];
+    const GOAT_STATEMENTS = [{"id": "volume", "targetId": "q1", "chapterId": "chapter-1-1", "title": "Career Goal Volume", "subtitle": "The one who scores the most career goals", "leader": "ronaldo", "badge": "Ronaldo +43 Goals", "verdict": "Ronaldo leads gross senior goals 979 to 936 (+43) across 1,363 tactical appearances. However, Messi holds a higher scoring rate (0.76 vs 0.72 G/App) in 134 fewer appearances (1,229)."}, {"id": "npg", "targetId": "q3", "chapterId": "chapter-1-1", "title": "Non-Penalty Scoring", "subtitle": "The one who scores without relying on spot-kicks", "leader": "messi", "badge": "Messi +24 NPG", "verdict": "Messi leads career non-penalty goals 817 to 793 (+24) in 134 fewer matches. Removing spot-kicks inverts the career scoring lead."}, {"id": "efficiency", "targetId": "q2", "chapterId": "chapter-1-1", "title": "Finishing Quality & xG Surplus", "subtitle": "The most clinical finisher relative to shot difficulty", "leader": "messi", "badge": "Messi +2.80% Conv Rate", "verdict": "Across 6,586 European league & UCL Opta shots, Messi converted 18.35% vs Ronaldo's 15.55% (+2.80%) and outperformed Opta's 13-season league xG model by +52.74 vs +14.79 (+37.95 margin)."}, {"id": "explosions", "targetId": "q2", "chapterId": "chapter-1-1", "title": "Hat-Tricks & Explosive Feats", "subtitle": "The one who produces explosive multi-goal matches", "leader": "ronaldo", "badge": "Ronaldo +5 Hat-Tricks", "verdict": "Ronaldo leads career 3+ goal matches 67 to 62 (+5), while Messi leads non-penalty hat-tricks 45 to 34 (+11)."}, {"id": "diversity", "targetId": "q3", "chapterId": "chapter-1-1", "title": "Scoring Arsenal & Diversity", "subtitle": "The most complete scorer across all body parts & distances", "leader": "tied", "badge": "Ronaldo +103 Headers", "verdict": "Ronaldo leads headers (+103: 134 vs 31) and weak-foot goals (+47: 144 vs 97); Messi leads direct free kicks (+10: 65 vs 55) and strong-foot strikes (+176)."}, {"id": "playmaking", "targetId": "q2_1", "chapterId": "chapter-1-2", "title": "Playmaking & Assists", "subtitle": "The greatest creator, vision & through-ball master", "leader": "messi", "badge": "Messi +160 Assists", "verdict": "Messi holds a decisive career assist lead (467 to 307, +160 assists), creating +240 more Big Chances and +77.78 more Expected Assists (xA)."}, {"id": "progression", "targetId": "q4_1", "chapterId": "chapter-1-3", "title": "Progression & Take-Ons", "subtitle": "The dribbler who breaks defensive lines and carries play", "leader": "messi", "badge": "Messi +1,438 Dribbles", "verdict": "Opta telemetry records 3,093 completed take-ons for Messi (4.58/90m) vs Ronaldo's 1,655 (2.22/90m), delivering +2.36 more dribbles/90m and +68.5m/90 weighted progressive carry distance."}, {"id": "combined", "targetId": "q3_1", "chapterId": "chapter-1-4", "title": "Total Direct Output (Goals + Assists)", "subtitle": "The highest aggregated direct attacking contribution", "leader": "messi", "badge": "Messi +118 G+A", "verdict": "Messi leads career senior direct goal involvements with 1,404 G+A vs Ronaldo's 1,286 (+118 G+A) at +0.24 higher G+A per 90 minutes (1.30 vs 1.06)."}, {"id": "clutch", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "Knockout Match Decisiveness", "subtitle": "The one who steps up with game-winning goals in knockouts", "leader": "tied", "badge": "Tied 44-44 KO GWG", "verdict": "Across all senior club and international knockouts, both stand in an exact dead heat with 44-44 career Game-Winning Goals, while Messi leads total knockout goals (+19: 152 vs 133) and Ronaldo leads overall GWGs (+63: 350 vs 287)."}, {"id": "worldcup", "targetId": "wc_1", "chapterId": "chapter-extra-2", "title": "FIFA World Cup Conquest", "subtitle": "The one who conquered the definitive international tournament", "leader": "messi", "badge": "Messi +10 WC Goals", "verdict": "Across World Cup campaigns (2006-2026), Messi holds +10 more goals (21 vs 11; +6 knockout: 7 vs 1) and +10 more assists (12 vs 2), captaining Argentina to the 2022 trophy."}, {"id": "opponents", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "FIFA Top-20 Opponent Caliber", "subtitle": "The one who produces against elite international teams", "leader": "messi", "badge": "Messi +5 Top-20 Goals", "verdict": "Against FIFA Top-20 ranked nations, Messi scored 34 goals vs Ronaldo's 29 (+5), while both posted nearly identical per-90 rates (0.43 vs 0.45 G/90) against Top-20 opposition."}, {"id": "ucl", "targetId": "q1_4_team", "chapterId": "chapter-1-1", "title": "Champions League Knockout & Top-6 Pedigree", "subtitle": "The decisive performer in UEFA Champions League elimination nights", "leader": "ronaldo", "badge": "Ronaldo +10 UCL Top-6 GWGs", "verdict": "In Champions League clashes vs Top-6 European clubs, Ronaldo leads Game-Winning Goals 31 to 21 (+10), alongside 5 vs 4 UCL titles and 7 vs 6 UCL top-scorer crowns."}, {"id": "adaptability", "targetId": "q8_2", "chapterId": "chapter-4-1", "title": "Multi-League Mastery", "subtitle": "The one who conquered diverse football leagues & cultures", "leader": "ronaldo", "badge": "Ronaldo +3 Top-Scorer Leagues", "verdict": "Ronaldo won domestic league titles and Golden Boots across England, Spain, Italy, and Saudi Arabia (+3 distinct leagues over Messi)."}, {"id": "support", "targetId": "q0_3", "chapterId": "chapter-0-0", "title": "Supporting Cast Valuation Context", "subtitle": "The one who played alongside higher-valued club teammates", "leader": "messi", "badge": "Messi +€4.3M Teammate Value", "verdict": "Across shared European club seasons (2012/13-2022/23), Messi's on-pitch teammates averaged €37.5M contemporary market value vs €33.2M for Ronaldo's (+€4.3M difference)."}, {"id": "defending_ground", "targetId": "q4_2", "chapterId": "chapter-2-1", "title": "Ground Defending & Pressing Work Rate", "subtitle": "The one who works harder without the ball in ground defense", "leader": "messi", "badge": "Messi +2.10 Pressures/90", "verdict": "In Opta European tracking, Messi leads in pressures/90 (+2.10), tackles/90 (+0.27), interceptions/90 (+0.05), and passes blocked/90 (+0.08)."}, {"id": "defending_air", "targetId": "q4_3", "chapterId": "chapter-2-2", "title": "Aerial Duels & Box Defending", "subtitle": "The one who dominates aerial contests and set-piece box clearance", "leader": "ronaldo", "badge": "Ronaldo +1.18 Aerials/90", "verdict": "Ronaldo dominates aerial duels (+616 total: 737 vs 121; +1.18 per 90m) and defensive box clearances (+0.64 per 90m) across tracked European campaigns."}, {"id": "team_boost", "targetId": "q4_4", "chapterId": "chapter-3-1", "title": "Net Team Win Rate & PPG Lift", "subtitle": "The one who provides greater on-pitch win rate lift & points boost", "leader": "messi", "badge": "Messi +0.16 PPG Lift", "verdict": "Club teams experienced a +0.16 PPG larger on/off boost (+0.18 vs +0.02) and +5.4% larger win-rate lift with Messi compared to Ronaldo."}, {"id": "spatial_evolution", "targetId": "chapter-extra-3", "chapterId": "chapter-extra-3", "isExtra": true, "title": "Spatial Evolution & Positional Centroids", "subtitle": "22-year pitch migration from touchline winger to central orchestrator / box poacher", "leader": "tied", "badge": "Split Tactical Roles", "verdict": "Messi migrated into deep central playmaking zones while Ronaldo transitioned from flank winger to pure penalty-box striker across five mapped eras."}, {"id": "virtual_arena", "targetId": "chapter-extra-4", "chapterId": "chapter-extra-4", "isExtra": true, "title": "Video Game & Scouting Consensus", "subtitle": "20 years of ratings across FIFA, PES, and Football Manager", "leader": "tied", "badge": "Split Game Ratings", "verdict": "Across FIFA/FC, PES, and Football Manager editions, Messi holds all-time peaks in Dribbling & Passing while Ronaldo leads in Physicality & Shooting."}, {"id": "accolades", "targetId": "q8_1", "chapterId": "chapter-4-1", "title": "Voting Accolades & Tournament MVPs", "subtitle": "The one recognized most by peers, coaches, multi-sport & World Cup voting", "leader": "messi", "badge": "Messi +3 Ballons d'Or", "verdict": "Messi holds all-time records with 8 Ballons d'Or vs 5 (+3), +2 Top-3 podiums (14 vs 12), +3 FIFA World Player titles, +2 Laureus awards, and +2 WC Golden Balls."}, {"id": "scoring_crowns", "targetId": "q8_2", "chapterId": "chapter-4-1", "title": "European Golden Shoes & League Scoring Timeline", "subtitle": "Total Golden Shoes vs club-coded national league top-scorer diversity", "leader": "tied", "badge": "Messi +2 Golden Shoes", "verdict": "Messi won +2 more European Golden Shoes (6 vs 4); Ronaldo topped scoring charts across +3 more distinct national leagues and clubs."}, {"id": "silverware", "targetId": "q8_4", "chapterId": "chapter-4-2", "title": "Complete Senior Silverware, UCL & Trebles", "subtitle": "All-time trophy type composition, FIFA/Continental titles & UCL sweeps", "leader": "messi", "badge": "Messi +9 Trophies", "verdict": "Messi leads overall senior silverware by +9 trophies (43 vs 34, including 2 European Trebles to 0); Ronaldo leads Champions League titles by +1 (5 vs 4)."}, {"id": "social_reach", "targetId": "q8_7", "chapterId": "chapter-4-3", "title": "Global Digital Reach & Cultural Moments", "subtitle": "The one who commands largest social ecosystems vs viral record post impact", "leader": "tied", "badge": "Ronaldo +373.4M Followers", "verdict": "Ronaldo commands +373.4M more verified cross-platform followers (998.9M vs 625.5M), while Messi's 2022 World Cup celebration post holds the +32.9M all-time record (75.7M vs 42.8M)."}, {"id": "attendance_draw", "targetId": "q8_9", "chapterId": "chapter-4-3", "title": "Live Match Attendance & Road Surge", "subtitle": "Career & seasonal matchday stadium crowds, away draw, MLS/SPL surge & peak gates", "leader": "tied", "badge": "Messi +1,297 Avg Crowd", "verdict": "Messi averaged +1,297 higher overall turnstile attendance (54,040 vs 52,743) and +22,139 road MLS fans per game, while Ronaldo drew +1,270 higher European away averages (39,008 vs 37,738) and a +49.0pp sharper relative road lift (+149.1% vs +100.1%)."}];
+    const FRAMEWORK_META = {"pillars": {"0.0": {"num": "0.0", "title": "Context Setting (Tactical Baseline)", "summary": "Maps where both players operated on the pitch, their roles, and team playing styles before comparing stats.", "key_question": "Did they play in different tactical roles, zones, and team systems?", "categories": [{"num": "0.0", "title": "Context Setting: Operating Zones, Tactical Roles & Team Style", "summary": "Compares career pitch positions, team possession style, and supporting cast value.", "key_question": "How different were their starting roles, team styles, and teammates?", "who_is": "Operated in different tactical zones, positional roles, and team playing styles?", "define_by": "Baseline pitch operating zones (on-ball centroid trajectory), starting positional roles (Right Wing, Centre-Forward, Left Wing, False 9/Second Striker, Attacking Midfield), and team tactical style (team vs opponent passes, goals scored vs conceded, and possession vs counter-attacking directness).", "metrics": "Seasonal on-ball (centroid_x, centroid_y), matches by position (RW, CF, LW, SS, AM/CM), team vs opponent passes/match, team pass share (%), team goals for vs against/match, vertical carry directness (%), progressive pass ratio (%), and fast-break counter-attack shot share (%)."}]}, "1.0": {"num": "1.0", "title": "Contribution to Attack (In Possession)", "summary": "Measures everything they create on the ball: goals, finishing quality, assists, and dribbling.", "key_question": "Who creates and finishes more attacking value for their team?", "categories": [{"num": "1.1", "title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)", "summary": "Breaks down career goal totals, finishing efficiency, scoring variety, and clutch game-winners.", "key_question": "Who is the superior and more influential goalscorer?", "who_is": "Is the superior and more influential goalscorer?", "define_by": "Career scoring volume, age-aligned pace, finishing efficiency above Expected Goals (xG), multi-goal match feats, goal variety across body parts and set pieces, and match-winning team impact.", "metrics": "Gross/official goals, age-curve totals, shot conversion %, G/90, xG outperformance, hat-tricks/manitas, free-kick & penalty conversion, team goal share %, and game-winning goals."}, {"num": "1.2", "title": "Playmaking & Passing (Volume, Efficiency, Variety & Importance)", "summary": "Evaluates total assists, chance quality, passing range, and share of team build-up.", "key_question": "Who is the better creator and passer?", "who_is": "Is the superior playmaker and passer?", "define_by": "Career assist volume and multi-assist feats, chance creation quality (xA, Big Chances, Throughballs, Key Passes), passing range, and team build-up share.", "metrics": "Total & official assists, assists/90, Expected Assists (xA), Big Chances created, throughballs, key passes, passing volume & accuracy by range, and % of team build-up & big-game assists."}, {"num": "1.3", "title": "Dribbling & 1v1 Ball Progression (Opta European Telemetry)", "summary": "Tracks successful take-ons and per-90 ball carrying across 15 European seasons.", "key_question": "Who beats more defenders 1v1 and progresses the ball?", "who_is": "Is the superior dribbler and more frequent 1v1 ball carrier?", "define_by": "Total and per-90 successful dribbles across European League and UEFA Champions League competition (2009/10–2023/24, Opta telemetry), benchmarked against Big-5 attackers/midfielders.", "metrics": "Opta career successful dribbles, dribbles/90, and seasonal dribble volume & per-90 trajectories."}, {"num": "1.4", "title": "Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)", "summary": "Combines goals and assists across career totals, seasons, ages, and on-pitch team share.", "key_question": "Who delivers more combined Goals + Assists overall?", "who_is": "Produces greater total direct goal involvement (Goals + Assists) and team offensive share?", "define_by": "Aggregating scoring (1.1) and playmaking (1.2) into combined Goals + Assists across career totals, competition tiers, seasons, biological ages, and on-pitch team goal share.", "metrics": "Career G+A, G+A per match & per 90, seasonal & age-matched G+A curves, competition splits, on-pitch team goal involvement %, and Top-4 G+A."}]}, "2.0": {"num": "2.0", "title": "Contribution to Defence (Out of Possession)", "summary": "Tracks out-of-possession work rate, pressing, tackles, aerial duels, and defensive clearances.", "key_question": "Who contributes more defensive work when their team does not have the ball?", "categories": [{"num": "2.1", "title": "Active Ground Defending & Pressing Disruptions", "summary": "Compares pressing, tackling, interceptions, and blocked passes per 90 minutes.", "key_question": "Who presses and disrupts opponents more on the ground?", "who_is": "Provides greater ground disruption and out-of-possession defensive work rate?", "define_by": "Disrupting opponent possession build-up through active ground pressing, tackling, interceptions, and pass blocks across career totals and seasons.", "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m (Opta 2009–2023), and tackles won/90m (Transfermarkt 2018–2026)."}, {"num": "2.2", "title": "Physical Contests & Aerial Box Defending", "summary": "Covers aerial duels won, defensive box clearances, and fouls drawn per 90.", "key_question": "Who wins more aerial battles and physical contests?", "who_is": "Contributes more aerial dominance, box clearances, and physical duel resistance?", "define_by": "Winning aerial duels across seasons, clearing dangerous balls inside the defensive penalty area, and drawing fouls in physical ground contests.", "metrics": "Aerial duels won (total & per 90m by season), defensive clearances/90m by season, and fouls drawn/90m by season."}]}, "3.0": {"num": "3.0", "title": "Overall On-Pitch Impact", "summary": "Measures net team win lift when playing versus absent alongside overall match ratings.", "key_question": "Does the team win more and perform better when they are on the pitch?", "categories": [{"num": "3.1", "title": "Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance", "summary": "Evaluates team PPG on/off differential, win-rate lift, match ratings, and MOTM share.", "key_question": "Who lifts team results and earns higher match ratings more consistently?", "who_is": "Provides greater holistic two-way match dominance and team win-rate impact?", "define_by": "The net holistic impact on match outcomes across all on-ball actions (shots, passes, dribbles, tackles, duels) and the team's record with the player on vs off the pitch.", "metrics": "Team on/off points-per-game (PPG) differential, team win % on vs off the pitch, Opta average match rating across 18 seasons, and Man-of-the-Match award percentage (%)."}]}, "4.0": {"num": "4.0", "title": "Accolades, Recognition & Ability to Inspire (Institutional & Cultural Legacy)", "summary": "Compares major individual awards, collective silverware, global following, and live stadium draw.", "key_question": "Who left the bigger mark through trophies, awards, and global reach?", "categories": [{"num": "4.1", "title": "Institutional Accolades & Scoring Crowns", "summary": "Covers Ballon d'Or wins, World Cup Golden Balls, European Golden Shoes, and league crowns.", "key_question": "Who won more individual awards and scoring titles across leagues?", "who_is": "Commands higher recognition in individual voting awards, scoring crowns, and universal honours?", "define_by": "Official global individual voting awards (Ballon d'Or, FIFA World Player), European Golden Shoes, league top-scorer crowns across distinct countries, FIFA World Cup Golden Balls, and Laureus multi-sport awards.", "metrics": "Ballon d'Or wins & podiums, FIFA World Player wins, Laureus & tournament MVPs, European Golden Shoes, and club-coded league top-scorer timeline."}, {"num": "4.2", "title": "Championship Pedigree & Collective Trophy Haul", "summary": "Breaks down senior team trophies across leagues, cups, UCL, trebles, and international titles.", "key_question": "Who built the deeper trophy cabinet for club and country?", "who_is": "Has accumulated the more decorated senior silverware collection across club and country?", "define_by": "Official team championships broken down by trophy category (domestic leagues, cups, supercups, UCL, CWC/Super Cups, and senior international trophies), European trebles, and cumulative trajectory.", "metrics": "Side-by-side trophy type distribution pies, senior international titles, UEFA Champions League titles, European trebles, and cumulative trophies (2003–2024)."}, {"num": "4.3", "title": "Cultural Reach, Live Attendance & Global Inspiration", "summary": "Compares social media reach, viral milestones, and live stadium attendance pull.", "key_question": "Who commands a bigger global audience online and in stadiums?", "who_is": "Commands greater global cultural reach, live stadium draw, and matchday economic impact?", "define_by": "Verified cross-platform digital reach and peak social cultural moments, paired with matchday stadium turnstile attendance across European & late-career leagues (before vs after league baseline arrival crowds).", "metrics": "Cross-platform social followers, most-liked post record, career & seasonal match attendance (Home/Away), MLS vs SPL before-and-after road attendance, and peak stadium crowd."}]}}, "criteria": {"0.0": {"num": "0.0", "title": "Context Setting: Operating Zones, Tactical Roles & Team Style", "summary": "Compares career pitch positions, team possession style, and supporting cast value.", "key_question": "How different were their starting roles, team styles, and teammates?", "who_is": "Operated in different tactical zones, positional roles, and team playing styles?", "define_by": "Baseline pitch operating zones (on-ball centroid trajectory), starting positional roles (Right Wing, Centre-Forward, Left Wing, False 9/Second Striker, Attacking Midfield), and team tactical style (team vs opponent passes, goals scored vs conceded, and possession vs counter-attacking directness).", "metrics": "Seasonal on-ball (centroid_x, centroid_y), matches by position (RW, CF, LW, SS, AM/CM), team vs opponent passes/match, team pass share (%), team goals for vs against/match, vertical carry directness (%), progressive pass ratio (%), and fast-break counter-attack shot share (%)."}, "1.1": {"num": "1.1", "title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)", "summary": "Breaks down career goal totals, finishing efficiency, scoring variety, and clutch game-winners.", "key_question": "Who is the superior and more influential goalscorer?", "who_is": "Is the superior and more influential goalscorer?", "define_by": "Career scoring volume, age-aligned pace, finishing efficiency above Expected Goals (xG), multi-goal match feats, goal variety across body parts and set pieces, and match-winning team impact.", "metrics": "Gross/official goals, age-curve totals, shot conversion %, G/90, xG outperformance, hat-tricks/manitas, free-kick & penalty conversion, team goal share %, and game-winning goals."}, "1.2": {"num": "1.2", "title": "Playmaking & Passing (Volume, Efficiency, Variety & Importance)", "summary": "Evaluates total assists, chance quality, passing range, and share of team build-up.", "key_question": "Who is the better creator and passer?", "who_is": "Is the superior playmaker and passer?", "define_by": "Career assist volume and multi-assist feats, chance creation quality (xA, Big Chances, Throughballs, Key Passes), passing range, and team build-up share.", "metrics": "Total & official assists, assists/90, Expected Assists (xA), Big Chances created, throughballs, key passes, passing volume & accuracy by range, and % of team build-up & big-game assists."}, "1.3": {"num": "1.3", "title": "Dribbling & 1v1 Ball Progression (Opta European Telemetry)", "summary": "Tracks successful take-ons and per-90 ball carrying across 15 European seasons.", "key_question": "Who beats more defenders 1v1 and progresses the ball?", "who_is": "Is the superior dribbler and more frequent 1v1 ball carrier?", "define_by": "Total and per-90 successful dribbles across European League and UEFA Champions League competition (2009/10–2023/24, Opta telemetry), benchmarked against Big-5 attackers/midfielders.", "metrics": "Opta career successful dribbles, dribbles/90, and seasonal dribble volume & per-90 trajectories."}, "1.4": {"num": "1.4", "title": "Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)", "summary": "Combines goals and assists across career totals, seasons, ages, and on-pitch team share.", "key_question": "Who delivers more combined Goals + Assists overall?", "who_is": "Produces greater total direct goal involvement (Goals + Assists) and team offensive share?", "define_by": "Aggregating scoring (1.1) and playmaking (1.2) into combined Goals + Assists across career totals, competition tiers, seasons, biological ages, and on-pitch team goal share.", "metrics": "Career G+A, G+A per match & per 90, seasonal & age-matched G+A curves, competition splits, on-pitch team goal involvement %, and Top-4 G+A."}, "2.1": {"num": "2.1", "title": "Active Ground Defending & Pressing Disruptions", "summary": "Compares pressing, tackling, interceptions, and blocked passes per 90 minutes.", "key_question": "Who presses and disrupts opponents more on the ground?", "who_is": "Provides greater ground disruption and out-of-possession defensive work rate?", "define_by": "Disrupting opponent possession build-up through active ground pressing, tackling, interceptions, and pass blocks across career totals and seasons.", "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m (Opta 2009–2023), and tackles won/90m (Transfermarkt 2018–2026)."}, "2.2": {"num": "2.2", "title": "Physical Contests & Aerial Box Defending", "summary": "Covers aerial duels won, defensive box clearances, and fouls drawn per 90.", "key_question": "Who wins more aerial battles and physical contests?", "who_is": "Contributes more aerial dominance, box clearances, and physical duel resistance?", "define_by": "Winning aerial duels across seasons, clearing dangerous balls inside the defensive penalty area, and drawing fouls in physical ground contests.", "metrics": "Aerial duels won (total & per 90m by season), defensive clearances/90m by season, and fouls drawn/90m by season."}, "3.1": {"num": "3.1", "title": "Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance", "summary": "Evaluates team PPG on/off differential, win-rate lift, match ratings, and MOTM share.", "key_question": "Who lifts team results and earns higher match ratings more consistently?", "who_is": "Provides greater holistic two-way match dominance and team win-rate impact?", "define_by": "The net holistic impact on match outcomes across all on-ball actions (shots, passes, dribbles, tackles, duels) and the team's record with the player on vs off the pitch.", "metrics": "Team on/off points-per-game (PPG) differential, team win % on vs off the pitch, Opta average match rating across 18 seasons, and Man-of-the-Match award percentage (%)."}, "4.1": {"num": "4.1", "title": "Institutional Accolades & Scoring Crowns", "summary": "Covers Ballon d'Or wins, World Cup Golden Balls, European Golden Shoes, and league crowns.", "key_question": "Who won more individual awards and scoring titles across leagues?", "who_is": "Commands higher recognition in individual voting awards, scoring crowns, and universal honours?", "define_by": "Official global individual voting awards (Ballon d'Or, FIFA World Player), European Golden Shoes, league top-scorer crowns across distinct countries, FIFA World Cup Golden Balls, and Laureus multi-sport awards.", "metrics": "Ballon d'Or wins & podiums, FIFA World Player wins, Laureus & tournament MVPs, European Golden Shoes, and club-coded league top-scorer timeline."}, "4.2": {"num": "4.2", "title": "Championship Pedigree & Collective Trophy Haul", "summary": "Breaks down senior team trophies across leagues, cups, UCL, trebles, and international titles.", "key_question": "Who built the deeper trophy cabinet for club and country?", "who_is": "Has accumulated the more decorated senior silverware collection across club and country?", "define_by": "Official team championships broken down by trophy category (domestic leagues, cups, supercups, UCL, CWC/Super Cups, and senior international trophies), European trebles, and cumulative trajectory.", "metrics": "Side-by-side trophy type distribution pies, senior international titles, UEFA Champions League titles, European trebles, and cumulative trophies (2003–2024)."}, "4.3": {"num": "4.3", "title": "Cultural Reach, Live Attendance & Global Inspiration", "summary": "Compares social media reach, viral milestones, and live stadium attendance pull.", "key_question": "Who commands a bigger global audience online and in stadiums?", "who_is": "Commands greater global cultural reach, live stadium draw, and matchday economic impact?", "define_by": "Verified cross-platform digital reach and peak social cultural moments, paired with matchday stadium turnstile attendance across European & late-career leagues (before vs after league baseline arrival crowds).", "metrics": "Cross-platform social followers, most-liked post record, career & seasonal match attendance (Home/Away), MLS vs SPL before-and-after road attendance, and peak stadium crowd."}}};
     let selectedGoatStmtIdx = 0;
     let tickedGoatStmtIds = new Set(GOAT_STATEMENTS.map(s => s.id));
 
@@ -5539,13 +5678,13 @@ const POPULAR_NARRATIVES = {
           aggBadge.textContent = 'NO DEFINITIONS TICKED';
         } else if (messiWins > ronaldoWins) {
           aggBadge.className = 'leader-badge leader-messi';
-          aggBadge.textContent = `MESSI WINS OUT (${messiWins}–${ronaldoWins})`;
+          aggBadge.textContent = `MESSI WINS (${messiWins}-${ronaldoWins})`;
         } else if (ronaldoWins > messiWins) {
           aggBadge.className = 'leader-badge leader-ronaldo';
-          aggBadge.textContent = `RONALDO WINS OUT (${ronaldoWins}–${messiWins})`;
+          aggBadge.textContent = `RONALDO WINS (${ronaldoWins}-${messiWins})`;
         } else {
           aggBadge.className = 'leader-badge leader-tied';
-          aggBadge.textContent = `DEAD HEAT TIE (${messiWins}–${ronaldoWins})`;
+          aggBadge.textContent = `TIED (${messiWins}-${ronaldoWins})`;
         }
       }
 
@@ -5865,7 +6004,8 @@ const POPULAR_NARRATIVES = {
         if (!targetContainer) return;
 
         const card = document.createElement('div');
-        card.className = 'q-card';
+        const leanCardCls = q.leader === 'ronaldo' ? ' lean-ronaldo' : (q.leader === 'messi' ? ' lean-messi' : '');
+        card.className = 'q-card' + leanCardCls;
         card.id = `card-${q.id}`;
 
         const leaderBoxClass = q.leader === 'messi' ? 'leader-messi-box' : (q.leader === 'ronaldo' ? 'leader-ronaldo-box' : 'leader-tied-box');
@@ -6070,27 +6210,26 @@ const POPULAR_NARRATIVES = {
         }).join('');
 
         card.innerHTML = `
-          <!-- Closed Header: Aligned Reference (e.g. 1.1.1) + Who is ... Title on top row, Multi-Metric Summary Tags Row Below -->
+          <!-- Closed Header: Aligned Reference + Question Title + ? Info + Chevron, Single-Metric Tags Below -->
           <div class="q-header" onclick="toggleCard('${q.id}')">
             <div class="q-header-top">
               <div class="q-title">
                 <span class="q-ref-pill">${q.ref || ''}</span>
                 <span class="q-who-text">${q.question || ('Who ' + (q.who_is || '').charAt(0).toLowerCase() + (q.who_is || '').slice(1))}</span>
               </div>
-              <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+              <div class="q-header-actions">
+                <button type="button" class="insight-help-btn" onclick="event.stopPropagation(); openFrameworkDrawer('question', '${q.id}')" title="View Who, Defined By and Metrics" aria-label="Open question methodology">?</button>
+                <div class="chevron-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+              </div>
             </div>
             <div class="q-summary-tags-row">
               ${tagsHtml}
             </div>
           </div>
 
-          <!-- Open Body: Unified Operational Framework: Who / Answer / Define by (with Metrics) -->
+          <!-- Open Body: Concise Verdict Answer + Verified Charts (Who / Define by / Metrics live in ?) -->
           <div class="q-body">
-            <div class="q-framework-box" style="margin-bottom: 22px;">
-              <div class="fw-row">
-                <span class="fw-lbl">WHO</span>
-                <span class="fw-val fw-val-who">${q.who_is || q.question}</span>
-              </div>
+            <div class="q-framework-box" style="margin-bottom: 18px;">
               <div class="fw-row fw-row-answer ${leaderBoxClass}">
                 <span class="fw-lbl">ANSWER</span>
                 <div class="fw-val">
@@ -6098,13 +6237,9 @@ const POPULAR_NARRATIVES = {
                   <div style="color: #f4f4f5; line-height: 1.55;">${q.answer || q.summary || ''}</div>
                 </div>
               </div>
-              <div class="fw-row">
-                <span class="fw-lbl">DEFINE BY</span>
-                <span class="fw-val">${q.define_by || ''}${q.metrics ? `<span class="fw-metrics-inline">Metrics: ${q.metrics}</span>` : ''}</span>
-              </div>
             </div>
 
-            <!-- Verified Telemetry Flow (Alternating Left & Right Animation) -->
+            <!-- Full-Width Telemetry Flow -->
             <div class="insights-flow">
               ${boxesHtml}
             </div>
@@ -6210,13 +6345,8 @@ const POPULAR_NARRATIVES = {
         window.addEventListener('resize', scheduleGraphCardUpdate, { passive: true });
       }
 
-      document.querySelectorAll('.card-slide-left, .card-slide-right, .insight-box, .chapter-card, .q-card').forEach((box, idx) => {
-        if (!box.classList.contains('card-slide-left') && !box.classList.contains('card-slide-right')) {
-          box.classList.add(idx % 2 === 0 ? 'card-slide-left' : 'card-slide-right');
-        }
-        if (box.classList.contains('insight-box')) {
-          boxObserver.unobserve(box);
-        }
+      document.querySelectorAll('.insight-box').forEach((box) => {
+        boxObserver.unobserve(box);
         boxObserver.observe(box);
       });
 
@@ -6812,7 +6942,7 @@ const POPULAR_NARRATIVES = {
 
 Persona & Style:
 - Enthusiastic, sharp, sports-journalistic, and directly to the point.
-- Energetic yet authoritative — speak like an elite sports analytics columnist breaking down the numbers on live TV.
+- Energetic yet authoritative: speak like a sharp sports writer breaking down the numbers on live TV.
 
 Strict Rules:
 1. PUNCHY & CONCISE: Limit your entire response strictly to 100–140 words (maximum 2 compact paragraphs). Never ramble, lecture, or repeat yourself.
@@ -6990,6 +7120,8 @@ Strict Rules:
               initExtraArena(resolvedHash);
               el.scrollIntoView({ behavior: 'smooth' });
             }
+          } else if (['foreword', 'quick-insights', 'defining-your-answer', 'detail-insights', 'extra-analysis', 'appendix-section'].includes(resolvedHash) || resolvedHash.startsWith('pillar-')) {
+            jumpToToc(resolvedHash);
           } else {
             const cardId = resolvedHash.startsWith('card-') ? resolvedHash.substring(5) : resolvedHash;
             jumpToCard(cardId);
@@ -7197,17 +7329,17 @@ const METRIC_GLOSSARY = [
     bullets: [
       {
         term: "Team Possession Share (%)",
-        def: "<code>sum(team_touches) ÷ sum(team_touches + opp_touches) × 100</code> — Share of total match ball touches controlled by the player's team vs the opponent."
+        def: "<code>sum(team_touches) ÷ sum(team_touches + opp_touches) × 100</code>: share of total match ball touches controlled by the player's team vs the opponent."
       }
     ],
-    nuance: "Measures overall ball-control dominance across 2017/18–2024/25 league fixtures."
+    nuance: "Measures overall ball-control dominance across 2017/18-2024/25 league fixtures."
   },
   {
     match: /passing.*distance range|passing range mix/i,
     bullets: [
       {
         term: "Short / Medium / Long Pass Ranges",
-        def: "FBref/Opta distance buckets: Short (<15 yards), Medium (15–30 yards), and Long (>=30 yards)."
+        def: "FBref/Opta distance buckets: Short (<15 yards), Medium (15-30 yards), and Long (>=30 yards)."
       },
       {
         term: "Range Share (%)",
@@ -7221,23 +7353,23 @@ const METRIC_GLOSSARY = [
     bullets: [
       {
         term: "Team Pass Dominance %",
-        def: "<code>sum(team_att_passes) ÷ sum(team_att_passes + opp_att_passes) × 100</code> — Share of total match passes attempted by the player's team vs opponent."
+        def: "<code>sum(team_att_passes) ÷ sum(team_att_passes + opp_att_passes) × 100</code>: share of total match passes attempted by the player's team vs opponent."
       },
       {
         term: "Vertical Carry Directness %",
-        def: "<code>sum(team_prgdist_carries_yd) ÷ sum(team_totdist_carries_yd) × 100</code> — Fraction of total team carry distance advancing directly toward goal."
+        def: "<code>sum(team_prgdist_carries_yd) ÷ sum(team_totdist_carries_yd) × 100</code>: fraction of total team carry distance advancing directly toward goal."
       },
       {
         term: "Attacking-3rd Touch Share %",
-        def: "<code>sum(team_att_3rd_touches) ÷ sum(team_touches) × 100</code> — Percentage of team ball touches occurring in the attacking third."
+        def: "<code>sum(team_att_3rd_touches) ÷ sum(team_touches) × 100</code>: percentage of team ball touches occurring in the attacking third."
       },
       {
         term: "Progressive Pass Directness %",
-        def: "<code>sum(team_prgp_passes) ÷ sum(team_att_passes) × 100</code> — Share of team passes moving >=10 yards toward goal or into the box."
+        def: "<code>sum(team_prgp_passes) ÷ sum(team_att_passes) × 100</code>: share of team passes moving >=10 yards toward goal or into the box."
       },
       {
         term: "Fast-Break Shot Share %",
-        def: `<code>Count(situation == "FastBreak") ÷ Count(valid shots) × 100</code> — Share of shots from rapid counter-attacks before the opponent's defense resets (excludes shootouts and own goals).`
+        def: `<code>Count(situation == "FastBreak") ÷ Count(valid shots) × 100</code>: share of shots from rapid counter-attacks before the opponent's defense resets (excludes shootouts and own goals).`
       }
     ],
     nuance: "High pass dominance + attacking-third touch share marks sustained territorial possession; higher vertical carry/pass directness and fast-break shot share mark rapid vertical transitions."
@@ -7247,7 +7379,7 @@ const METRIC_GLOSSARY = [
     bullets: [
       {
         term: "Per-90 Normalization (/90m)",
-        def: "<code>(Metric Count ÷ Exact Minutes Played) × 90</code> — Scales raw counts to a standard 90-minute match."
+        def: "<code>(Metric Count ÷ Exact Minutes Played) × 90</code>: scales raw counts to a standard 90-minute match."
       }
     ],
     nuance: "Controls for substitute appearances, injuries, extra time, and differing match counts."
@@ -7343,25 +7475,149 @@ const METRIC_GLOSSARY = [
       document.getElementById('insight-discussion-drawer')?.classList.add('open');
     }
 
+    function openFrameworkDrawer(kind, key) {
+      const bodyEl = document.getElementById('insight-drawer-body');
+      const titleEl = document.getElementById('insight-drawer-title');
+      const refEl = document.getElementById('insight-drawer-ref');
+      if (!bodyEl || !titleEl || !refEl) return;
+
+      const esc = (s) => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      let cardsHtml = '';
+
+      if (kind === 'pillar' && FRAMEWORK_META && FRAMEWORK_META.pillars && FRAMEWORK_META.pillars[key]) {
+        const p = FRAMEWORK_META.pillars[key];
+        refEl.textContent = `Pillar ${p.num} Framework`;
+        titleEl.textContent = p.title;
+        cardsHtml += `
+          <div class="drawer-def-card">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #38bdf8; margin-bottom: 6px;">Summary &amp; Key Question</div>
+            <p style="font-size: 12.5px; color: #e4e4e7; line-height: 1.55; margin-bottom: 6px;">${esc(p.summary)}</p>
+            <p style="font-size: 12px; color: #a1a1aa; line-height: 1.45; margin: 0;"><strong>Key question:</strong> ${esc(p.key_question)}</p>
+          </div>
+        `;
+        (p.categories || []).forEach(c => {
+          cardsHtml += `
+            <div class="drawer-def-card" style="border-left-color: #c084fc;">
+              <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #c084fc; margin-bottom: 6px;">Criteria ${esc(c.num)}: ${esc(c.title)}</div>
+              <ul style="margin: 0; padding-left: 16px; font-size: 12px; color: #e4e4e7; line-height: 1.55;">
+                <li style="margin-bottom: 5px;"><strong>Who:</strong> ${esc(c.who_is)}</li>
+                <li style="margin-bottom: 5px;"><strong>Defined By:</strong> ${esc(c.define_by)}</li>
+                <li><strong>Metrics:</strong> <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #d4d4d8;">${esc(c.metrics)}</span></li>
+              </ul>
+            </div>
+          `;
+        });
+      } else if (kind === 'criteria' && FRAMEWORK_META && FRAMEWORK_META.criteria && FRAMEWORK_META.criteria[key]) {
+        const c = FRAMEWORK_META.criteria[key];
+        refEl.textContent = `Criteria ${c.num} Methodology`;
+        titleEl.textContent = c.title;
+        cardsHtml = `
+          <div class="drawer-def-card">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #38bdf8; margin-bottom: 8px;">Who, Defined By &amp; Metrics</div>
+            <ul style="margin: 0; padding-left: 16px; font-size: 12.5px; color: #e4e4e7; line-height: 1.6;">
+              <li style="margin-bottom: 8px;"><strong>Who:</strong> ${esc(c.who_is)}</li>
+              <li style="margin-bottom: 8px;"><strong>Defined By:</strong> ${esc(c.define_by)}</li>
+              <li><strong>Metrics:</strong> <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #d4d4d8;">${esc(c.metrics)}</span></li>
+            </ul>
+          </div>
+        `;
+      } else if (kind === 'question') {
+        const q = (window.INSIGHTS_DATA || []).find(item => item.id === key);
+        if (!q) return;
+        refEl.textContent = `${q.ref || q.id} Methodology`;
+        titleEl.textContent = q.question || q.who_is || 'Question Methodology';
+        cardsHtml = `
+          <div class="drawer-def-card">
+            <div style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #38bdf8; margin-bottom: 8px;">Who, Defined By &amp; Metrics</div>
+            <ul style="margin: 0; padding-left: 16px; font-size: 12.5px; color: #e4e4e7; line-height: 1.6;">
+              <li style="margin-bottom: 8px;"><strong>Who:</strong> ${esc(q.who_is || q.question)}</li>
+              <li style="margin-bottom: 8px;"><strong>Defined By:</strong> ${esc(q.define_by || '')}</li>
+              <li><strong>Metrics:</strong> <span style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #d4d4d8;">${esc(q.metrics || '')}</span></li>
+            </ul>
+          </div>
+        `;
+      } else {
+        return;
+      }
+
+      bodyEl.innerHTML = cardsHtml;
+      bodyEl.scrollTop = 0;
+      document.getElementById('insight-drawer-backdrop')?.classList.add('open');
+      document.getElementById('insight-discussion-drawer')?.classList.add('open');
+    }
+
     function closeInsightDrawer() {
+      const drawer = document.getElementById('insight-discussion-drawer');
+      if (drawer) {
+        drawer.style.transition = '';
+        drawer.style.transform = '';
+      }
       document.getElementById('insight-drawer-backdrop')?.classList.remove('open');
-      document.getElementById('insight-discussion-drawer')?.classList.remove('open');
+      drawer?.classList.remove('open');
     }
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeInsightDrawer();
     });
+
+    (function bindDrawerSwipeClose() {
+      const drawer = document.getElementById('insight-discussion-drawer');
+      const bodyEl = document.getElementById('insight-drawer-body');
+      if (!drawer) return;
+      let startX = 0, startY = 0, dx = 0, dy = 0, dragging = false, axis = null, startAtTop = true;
+
+      drawer.addEventListener('touchstart', (e) => {
+        if (!drawer.classList.contains('open') || !e.touches || !e.touches.length) return;
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        dx = 0; dy = 0; axis = null;
+        startAtTop = !bodyEl || bodyEl.scrollTop <= 2;
+        dragging = true;
+      }, { passive: true });
+
+      drawer.addEventListener('touchmove', (e) => {
+        if (!dragging || !e.touches || !e.touches.length) return;
+        dx = e.touches[0].clientX - startX;
+        dy = e.touches[0].clientY - startY;
+        if (!axis) {
+          if (Math.abs(dx) > 12 && Math.abs(dx) > Math.abs(dy) * 1.2 && dx > 0) axis = 'x';
+          else if (startAtTop && dy > 12 && Math.abs(dy) > Math.abs(dx) * 1.2) axis = 'y';
+          else if (Math.abs(dx) > 14 || Math.abs(dy) > 14) { dragging = false; return; }
+        }
+        if (axis === 'x' && dx > 0) {
+          drawer.style.transition = 'none';
+          drawer.style.transform = `translateX(${dx}px)`;
+        } else if (axis === 'y' && dy > 0) {
+          drawer.style.transition = 'none';
+          drawer.style.transform = `translateY(${dy}px)`;
+        }
+      }, { passive: true });
+
+      const finishSwipe = () => {
+        if (!dragging && !axis) return;
+        drawer.style.transition = '';
+        if ((axis === 'x' && dx > 75) || (axis === 'y' && dy > 80)) {
+          closeInsightDrawer();
+        } else {
+          drawer.style.transform = '';
+        }
+        dragging = false; axis = null; dx = 0; dy = 0;
+      };
+      drawer.addEventListener('touchend', finishSwipe, { passive: true });
+      drawer.addEventListener('touchcancel', finishSwipe, { passive: true });
+    })();
   </script>
 
   <!-- Slide-in Advanced Metric & Methodological Discussion Drawer -->
   <div id="insight-drawer-backdrop" class="insight-drawer-backdrop" onclick="closeInsightDrawer()"></div>
   <aside id="insight-discussion-drawer" class="insight-discussion-drawer" aria-label="Advanced Chart Discussion">
-    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 16px 18px; border-bottom: 1px solid rgba(255,255,255,0.09); background: #111722;">
+    <div class="drawer-drag-handle" aria-hidden="true"><span></span></div>
+    <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(255,255,255,0.09); background: #111722;">
       <div>
         <div id="insight-drawer-ref" style="font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: #38bdf8; margin-bottom: 3px;">Methodological Guide</div>
         <div id="insight-drawer-title" style="font-size: 15px; font-weight: 800; color: #ffffff; line-height: 1.35;">Chart Discussion</div>
       </div>
-      <button type="button" onclick="closeInsightDrawer()" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #e4e4e7; width: 28px; height: 28px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 700; flex-shrink: 0;">✕</button>
+      <button type="button" onclick="closeInsightDrawer()" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #e4e4e7; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 700; flex-shrink: 0;">✕</button>
     </div>
     <div id="insight-drawer-body" style="padding: 16px 18px; overflow-y: auto; flex: 1;"></div>
   </aside>

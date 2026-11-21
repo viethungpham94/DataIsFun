@@ -1,7 +1,7 @@
 {
   "platform": "DataIsFun",
   "release_version": "v1.0-issue01",
-  "packaged_at_utc": "2026-11-20 23:14 UTC",
+  "packaged_at_utc": "2026-11-21 09:40 UTC",
   "live_issues": [
     {
       "id": "issue-01",
@@ -12,11 +12,11 @@
     }
   ],
   "total_files": 22,
-  "total_bytes": 3559904,
-  "total_size_mb": 3.39,
+  "total_bytes": 3584845,
+  "total_size_mb": 3.42,
   "qa_status": {
     "overall_status": "PASS_ONLINE",
-    "validated_at_utc": "2026-11-20 22:14 UTC",
+    "validated_at_utc": "2026-11-21 09:39 UTC",
     "mode": "ONLINE",
     "summary": {
       "passed": 45,
@@ -42,8 +42,8 @@
     },
     {
       "path": "appendix0.html",
-      "bytes": 1735,
-      "sha256": "3147f3f9e4daf4a2e3603ed5d95049c6e22085462cae699d6949272f8571fb9b"
+      "bytes": 1732,
+      "sha256": "8b83dfd23e410b73e10637f899d308bb191e917a72109d5fe5c263c62ee9c5cf"
     },
     {
       "path": "assets/charts_engine.js",
@@ -57,33 +57,33 @@
     },
     {
       "path": "assets/theme.css",
-      "bytes": 15376,
-      "sha256": "1705fd0ac43e8840f10e09263e82683cf5b5522dd87702236e0316e41e578240"
+      "bytes": 15613,
+      "sha256": "31524ed8844b6ed5039fb3eb79140d0e732e0a92af84d9d66d46d2d18ba3c019"
     },
     {
       "path": "detail.html",
-      "bytes": 1720,
-      "sha256": "88f29e1c04d911c0dcb26ca03e56fed31a9f4f0deebfe436c8b074ebfa589091"
+      "bytes": 1717,
+      "sha256": "286b65072407186d5560fd94180846ae246e4c1f5088880560fee562c4ad4e96"
     },
     {
       "path": "graphs.html",
-      "bytes": 1720,
-      "sha256": "19c9703693e28f72737fc7cf8ed07b6bc51c96bdaedc8e01e6e52ea027b9573d"
+      "bytes": 1717,
+      "sha256": "ef8d858afd6dd7a9acfc2c04748a208611374427d58c2a94c60280fc39543bda"
     },
     {
       "path": "index.html",
-      "bytes": 19887,
-      "sha256": "ce1561803295fffbe40836c33df6b72227cebca7a76c14747708adad19406af9"
+      "bytes": 19769,
+      "sha256": "b678d3c35028cb4b30834a3c4096ae11f6dfbc3d88943b3eb6710a4fb8b22a2a"
     },
     {
       "path": "insights.html",
-      "bytes": 1730,
-      "sha256": "8f9d3f1175d23d13665cc479a065a12f5737586f4b3fcd46da080948b32192cf"
+      "bytes": 1727,
+      "sha256": "65e595476c396636e2b9cc9a4b1d1c29ab86bc576217a22233723a9d9228d747"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/appendix0.html",
-      "bytes": 84898,
-      "sha256": "69ccea90562cbed997d4f379042545a239de6e7f43ca32a47543f1c933a20cbf"
+      "bytes": 87744,
+      "sha256": "60d2322e68ae4d6fed33248cd8cce75cbc9ca741d144a804c07bbc9b826a99a6"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/data/analytics_data.js",
@@ -107,8 +107,8 @@
     },
     {
       "path": "issues/01-messi-vs-ronaldo/data/insights_data.js",
-      "bytes": 485431,
-      "sha256": "0898345e3f8362979ff8a00d38b256b1f5b2c04386ee5ba3b6d8f43386abca76"
+      "bytes": 482763,
+      "sha256": "fd122417b595da730df14bb85e287caea1f6cd3fc4716c24f5634a9e1780d452"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/data/spatial_data.js",
@@ -117,28 +117,28 @@
     },
     {
       "path": "issues/01-messi-vs-ronaldo/detail.html",
-      "bytes": 98109,
-      "sha256": "cf3f74703be789b0cae9460d4feb596f2a2d48a0b8f2198ca687bb21d9849380"
+      "bytes": 98097,
+      "sha256": "8be3136690808b9f1bab65952c087dbec1e58fffa7f5cf554d4db99ae0b0f9de"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/graphs.html",
-      "bytes": 47464,
-      "sha256": "c378fe2ca92286aeb77e44fee128fdfd1faa3fa1ba332bc0aafc658984d66881"
+      "bytes": 47452,
+      "sha256": "8828d6bf4d69307c416868b3eb3bb2f0c765a45b0e26bed332e859b99cf27864"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/index.html",
-      "bytes": 1668,
-      "sha256": "dc7266e597c22966986f7f62374b2db9af4cf126d76360507da7c25a4731aa3d"
+      "bytes": 1665,
+      "sha256": "8e92eec031126d0deea49d99d0bb2cd0aa8d23e2c944138bb50ec776fb946932"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/insights.html",
-      "bytes": 362294,
-      "sha256": "07d6178456af1c0696eb9f0a081fc4df4e039d2e4985cdc22c64a187f6858cf2"
+      "bytes": 387109,
+      "sha256": "1ce8a2d8e0f9828d9509194c0f2cff7b0f2237551081222f5725b15bc2dea030"
     },
     {
       "path": "issues.html",
-      "bytes": 15252,
-      "sha256": "bbfd7304b021786b7461a46267fdbac26a871ef0672c80e9794eb8895e53f299"
+      "bytes": 15120,
+      "sha256": "4e13b3cf16ad675a0633d15d3e04e32aec97cc7e6eec502417b5b97101eaa933"
     }
   ]
 }

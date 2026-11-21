@@ -10,7 +10,7 @@
 
 ## Published Issues
 
-- **Issue 01 — [Messi and Ronaldo: Who Is the Real GOAT?](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/insights.html)** (November 2026)  
+- **Issue 01: [Messi and Ronaldo: Who Is the Real GOAT?](https://viethungpham94.github.io/DataIsFun/issues/01-messi-vs-ronaldo/insights.html)** (November 2026)  
   5 Macro-Pillars · 29 Audited Sub-Dimensions · 162 Verified Charts · 1,915 Senior Goals
 
 ### Explore Issue 01
@@ -23,8 +23,8 @@
 
 ## How the Numbers Work
 
-- **Real records only:** Every chart is calculated straight from recorded match data and cross-checked against public sources—no guessed or made-up numbers.
-- **Latest automated check:** `PASS_ONLINE (2026-11-20 22:14 UTC)` ([`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json))
+- **Real records only:** Every chart is calculated straight from recorded match data and cross-checked against public sources. No guessed or made-up numbers.
+- **Latest automated check:** `PASS_ONLINE (2026-11-21 09:39 UTC)` ([`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json))
 
 ## Preview on Your Computer
 

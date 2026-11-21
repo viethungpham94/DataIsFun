@@ -92,7 +92,7 @@ window.INSIGHTS_DATA = [
         "headline": "Messi started from the Right Wing before spearheading modern False 9 trend, and then remains flexible between both roles towards the end of this career",
         "footnote": "*Stacked 100% area chart of Messi's starting tactical role share across all seasons with >=5 played appearances. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
-          "title": "Messi \u2014 5-Position Tactical Role Share (%) by Season",
+          "title": "Messi: 5-Position Tactical Role Share (%) by Season",
           "type": "line",
           "stacked": true,
           "labels": [
@@ -468,7 +468,7 @@ window.INSIGHTS_DATA = [
         "headline": "Ronaldo's years can be broken down into three disctint eras of positional focus - started as explosive Right Winger, before becoming a Left Wing Forward, and then settling into a Central Forward Goal Machine",
         "footnote": "*Stacked 100% area chart of Ronaldo's starting tactical role share across all seasons with >=5 played appearances. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
-          "title": "Ronaldo \u2014 5-Position Tactical Role Share (%) by Season",
+          "title": "Ronaldo: 5-Position Tactical Role Share (%) by Season",
           "type": "line",
           "stacked": true,
           "labels": [
@@ -842,20 +842,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "split",
-    "leader_badge": "Split Profile With Distinct Tactical Operating Zones",
+    "leader_badge": "Split Tactical Zones",
     "answer": "Messi started primarily on the right wing before drifting into central False Nine and playmaking pockets; Ronaldo evolved from a touchline winger across both flanks into a dedicated central box striker.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +277 RW Starts & +182 False 9 Starts"
+        "Messi +277 RW Starts"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +509 LW Starts & +139 CF Starts"
+        "Ronaldo +139 CF Starts"
       ],
       [
         "tied",
-        "Opponent-Half Event Migration (2004\u20132024)"
+        "2004-2024 Pitch Shift"
       ]
     ],
     "ref": "0.0.1",
@@ -1668,20 +1668,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "split",
-    "leader_badge": "Messi Teams Lead With +7.1% Pass Share \u00b7 Ronaldo Teams Lead With +1.9% Fast-Break Shots",
+    "leader_badge": "Messi +7.1% Pass Share",
     "answer": "Both played in dominant, high-scoring sides; Messi's teams were only slightly more possession-oriented, while Ronaldo's teams had slightly higher direct and fast-break counter-attacking tendencies.",
     "metric_tags": [
       [
         "messi",
-        "Messi Teams Lead With +7.1% Pass Share"
+        "Messi +7.1% Pass Share"
       ],
       [
         "messi",
-        "Messi Teams Lead With +0.14 Team GD/Match"
+        "Messi +0.14 Team GD/Game"
       ],
       [
         "ronaldo",
-        "Ronaldo Teams Lead With +1.9% Fast-Break Shots"
+        "Ronaldo +1.9% Fast-Break Shots"
       ]
     ],
     "ref": "0.0.2",
@@ -1852,15 +1852,15 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Teams Lead With +\u20ac4.3M Average On-Pitch Teammate Value",
+    "leader_badge": "Messi +\u20ac4.3M Teammate Value",
     "metric_tags": [
       [
         "messi",
-        "Messi Teams Lead With +\u20ac4.3M Avg Teammate Value"
+        "Messi +\u20ac4.3M Avg Teammate"
       ],
       [
         "messi",
-        "Messi Teams Lead With +\u20ac2.7M Peak Teammate Value"
+        "Messi +\u20ac2.7M Peak Teammate"
       ]
     ],
     "ref": "0.0.3",
@@ -2618,20 +2618,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "ronaldo",
-    "leader_badge": "Ronaldo Leads With +43 Gross Goals",
+    "leader_badge": "Ronaldo +43 Goals",
     "answer": "Ronaldo holds the higher gross and official senior goal totals across more seasons, though Messi maintained a higher cumulative tally at every shared biological age mark.",
     "metric_tags": [
       [
         "ronaldo",
-        "Ronaldo Leads With +43 Gross Goals"
+        "Ronaldo +43 Goals"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +76 Official Goals"
+        "Ronaldo +76 Official Goals"
       ],
       [
         "messi",
-        "Messi Leads With +19 Goals At Age 39"
+        "Messi +19 Goals (Age 39)"
       ]
     ],
     "ref": "1.1.1",
@@ -3727,20 +3727,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +2.80% Shot Conversion Rates",
+    "leader_badge": "Messi +2.80% Shot Conv",
     "answer": "Messi converts a higher share of his shots and consistently outperforms expected goals (xG) both in total volume and on a per-shot basis. Ronaldo has more multi-goal matches while Messi leads in non-penalty hat-tricks",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +2.80% Shot Conversion Rates"
+        "Messi +2.80% Shot Conv"
       ],
       [
         "messi",
-        "Messi Leads With +37.95 Opta 13Y Goals Above xG"
+        "Messi +37.95 Goals vs xG"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +308 European Shots"
+        "Ronaldo +308 Shots"
       ]
     ],
     "ref": "1.1.2",
@@ -5373,24 +5373,24 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "ronaldo",
-    "leader_badge": "Ronaldo Leads With +103 Headed Goals",
+    "leader_badge": "Ronaldo +103 Headers",
     "answer": "Ronaldo dominates in headed goals, weak-foot finishes, and penalties, whereas Messi leads in left-footed strikes, direct free kicks, and open-play outside-the-box goals.",
     "metric_tags": [
       [
         "ronaldo",
-        "Ronaldo Leads With +103 Headed Goals"
+        "Ronaldo +103 Headers"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +47 Weak-Foot Goals"
+        "Ronaldo +47 Weak Foot"
       ],
       [
         "messi",
-        "Messi Leads With +10 Direct Free Kicks"
+        "Messi +10 Free Kicks"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +67 Penalties Scored"
+        "Ronaldo +67 Penalties"
       ]
     ],
     "ref": "1.1.3",
@@ -6388,28 +6388,28 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "tied",
-    "leader_badge": "Ronaldo Leads With +59 GWG \u00b7 Messi Leads With +19 Knockout Goals \u00b7 Dead Heat With 44\u201344 KO GWG",
+    "leader_badge": "Tied 44-44 KO GWG",
     "answer": "Both peaked at an identical share of their team's full-season goals and stand completely tied in career knockout game-winners; Ronaldo leads in total game-winning goals and share of team wins decided by his winner, while Messi leads total knockout goals.",
     "metric_tags": [
       [
         "tied",
-        "Dead Heat With 38.7% Peak Team Goal Share Each"
+        "Tied 38.7% Peak Share"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +59 Game-Winning Goals"
+        "Ronaldo +59 GWG"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +11.7% Win-Deciding GWG Share"
+        "Ronaldo +11.7% Win Share"
       ],
       [
         "messi",
-        "Messi Leads With +19 All-Comp Knockout Goals"
+        "Messi +19 KO Goals"
       ],
       [
         "tied",
-        "Dead Heat With 44\u201344 Knockout GWG"
+        "Tied 44-44 KO GWG"
       ]
     ],
     "ref": "1.1.4",
@@ -6951,20 +6951,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +160 Career Assists",
+    "leader_badge": "Messi +160 Assists",
     "answer": "Messi leads decisively in total career assists, per-match assist rate, and seasons out-assisting Ronaldo.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +160 Gross Assists"
+        "Messi +160 Assists"
       ],
       [
         "messi",
-        "Messi Leads With +149 Official Assists"
+        "Messi +149 Official Assists"
       ],
       [
         "messi",
-        "Messi Leads With +13 Seasons Out-Assisting Rival"
+        "Messi +13 Assist Seasons"
       ]
     ],
     "ref": "1.2.1",
@@ -6980,7 +6980,7 @@ window.INSIGHTS_DATA = [
     "id": "q2_3",
     "chapter": 2,
     "leader": "messi",
-    "leader_badge": "Messi Leads With +77.78 Expected Assists (xA)",
+    "leader_badge": "Messi +77.78 xA",
     "question": "Who generates higher chance-creation efficiency and creative pass quality?",
     "myth": "Ronaldo creates as many chances as Messi.",
     "insight_badge": "Expected Assists (xA): Messi 129.86 vs Ronaldo 52.08",
@@ -7225,15 +7225,15 @@ window.INSIGHTS_DATA = [
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +77.78 Expected Assists (xA)"
+        "Messi +77.78 xA"
       ],
       [
         "messi",
-        "Messi Leads With +240 Big Chances Created"
+        "Messi +240 Big Chances"
       ],
       [
         "messi",
-        "Messi Leads With +424 Throughballs"
+        "Messi +424 Throughballs"
       ]
     ],
     "ref": "1.2.2",
@@ -7718,20 +7718,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +25.1 Passes/Match",
+    "leader_badge": "Messi +25.1 Passes/Match",
     "answer": "Messi attempts and completes far more passes per match across short, medium, and long ranges, accounting for a larger share of his team's total distribution.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +25.1 Passes/Match"
+        "Messi +25.1 Passes/Match"
       ],
       [
         "messi",
-        "Messi Leads With +4.4% Short Pass Accuracy"
+        "Messi +4.4% Short Pass Acc"
       ],
       [
         "messi",
-        "Messi Leads With +59 Completed Long Passes (H2H)"
+        "Messi +59 Long Passes"
       ]
     ],
     "ref": "1.2.3",
@@ -8366,24 +8366,24 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +23.3% Team Dribble Share",
+    "leader_badge": "Messi +23.3% Team Dribbles",
     "answer": "Messi accounted for a substantially larger share of his teams' passes, completed dribbles, and ball-carrying distance, while assisting a wider set of teammates across Europe.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +3.3% Team Pass Share"
+        "Messi +3.3% Pass Share"
       ],
       [
         "messi",
-        "Messi Leads With +23.3% Team Dribble Share"
+        "Messi +23.3% Dribble Share"
       ],
       [
         "messi",
-        "Messi Leads With +21 Unique Teammates Assisted"
+        "Messi +21 Assisted Mates"
       ],
       [
         "messi",
-        "Messi Leads With +25 Tracked Knockout Assists"
+        "Messi +25 KO Assists"
       ]
     ],
     "ref": "1.2.4",
@@ -8777,16 +8777,16 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +1,438 Career Dribbles",
+    "leader_badge": "Messi +1,438 Dribbles",
     "answer": "Messi completed roughly twice as many successful dribbles as Ronaldo across European competition and sustained a much higher per-ninety rate across every tracked season.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +1,438 Successful Dribbles"
+        "Messi +1,438 Dribbles"
       ],
       [
         "messi",
-        "Messi Leads With +2.36 Dribbles/90"
+        "Messi +2.36 Dribbles/90"
       ]
     ],
     "ref": "1.3.1",
@@ -9626,20 +9626,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +118 Career G+A",
+    "leader_badge": "Messi +118 G+A",
     "answer": "Messi leads in total combined Goals + Assists across both gross and official competitions, achieving higher output in fewer career appearances.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +118 Career G+A"
+        "Messi +118 G+A"
       ],
       [
         "messi",
-        "Messi Leads With +0.24 G+A/90"
+        "Messi +0.24 G+A/90"
       ],
       [
         "messi",
-        "Messi Leads With +0.23 G+A/Match"
+        "Messi +0.23 G+A/Match"
       ]
     ],
     "ref": "1.4.1",
@@ -10056,16 +10056,16 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +11 Seasons Leading On-Pitch Team Share",
+    "leader_badge": "Messi +11 Team Share Seasons",
     "answer": "Messi was directly involved in a higher share of his team's goals while on the pitch across the vast majority of their shared seasons.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +11 Seasons Leading On-Pitch G+A Share"
+        "Messi +11 Team Share Seasons"
       ],
       [
         "messi",
-        "Messi Leads With +7 G+A vs Eventual Top-4 Clubs"
+        "Messi +7 Top-4 G+A"
       ]
     ],
     "ref": "1.4.2",
@@ -10081,7 +10081,7 @@ window.INSIGHTS_DATA = [
     "id": "q4_2",
     "chapter": 4,
     "leader": "messi",
-    "leader_badge": "Messi Leads With +2.10 Pressures/90 & +0.27 Tackles/90",
+    "leader_badge": "Messi +2.10 Pressures/90",
     "question": "Who works harder without the ball across tackles, interceptions, pressures, and seasonal defensive tracking?",
     "myth": "Messi walks and never contributes defensively; Ronaldo presses continuously.",
     "insight_badge": "Pressures/90: Messi 10.04 vs Ronaldo 7.94; Tackles/90: Messi 0.65 vs Ronaldo 0.38",
@@ -10492,15 +10492,15 @@ window.INSIGHTS_DATA = [
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +0.27 Tackles/90"
+        "Messi +0.27 Tackles/90"
       ],
       [
         "messi",
-        "Messi Leads With +2.10 Pressures/90"
+        "Messi +2.10 Pressures/90"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +0.64 Defensive Clearances/90"
+        "Ronaldo +0.64 Clearances/90"
       ]
     ],
     "ref": "2.1.1",
@@ -10516,7 +10516,7 @@ window.INSIGHTS_DATA = [
     "id": "q4_3",
     "chapter": 2,
     "leader": "ronaldo",
-    "leader_badge": "Ronaldo Leads With +616 Aerial Duels Won",
+    "leader_badge": "Ronaldo +616 Aerials Won",
     "question": "Who commands greater aerial duel dominance, defensive box clearances, and physical duels?",
     "myth": "Both players contest and win individual duels in identical areas of the pitch.",
     "insight_badge": "Aerial duels won: Ronaldo 737 (1.38/90m) vs Messi 121 (0.2/90m)",
@@ -10925,15 +10925,15 @@ window.INSIGHTS_DATA = [
     "metric_tags": [
       [
         "ronaldo",
-        "Ronaldo Leads With +616 Aerial Duels Won"
+        "Ronaldo +616 Aerials"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +1.18 Aerial Duels/90"
+        "Ronaldo +1.18 Aerials/90"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +0.64 Clearances/90"
+        "Ronaldo +0.64 Clearances/90"
       ]
     ],
     "ref": "2.2.1",
@@ -12007,16 +12007,16 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +0.16 PPG Team On/Off Lift",
+    "leader_badge": "Messi +0.16 PPG Lift",
     "answer": "Messi's teams experience a larger points-per-game and win-rate lift when he is on the pitch compared to matches he misses.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +0.16 PPG On/Off Team Boost"
+        "Messi +0.16 PPG Lift"
       ],
       [
         "messi",
-        "Messi Leads With +5.4% On/Off Win-Rate Lift"
+        "Messi +5.4% Win Lift"
       ]
     ],
     "ref": "3.1.1",
@@ -12390,20 +12390,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +0.62 Avg Match Rating & +165 MOTMs",
+    "leader_badge": "Messi +0.62 Match Rating",
     "answer": "Messi holds a higher career average algorithmic match rating and won Man-of-the-Match awards at a higher rate.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +0.62 Average Match Rating"
+        "Messi +0.62 Match Rating"
       ],
       [
         "messi",
-        "Messi Leads With +165 Official MOTM Awards"
+        "Messi +165 MOTMs"
       ],
       [
         "messi",
-        "Messi Leads With +21.0% MOTM Win Rate"
+        "Messi +21.0% MOTM Rate"
       ]
     ],
     "ref": "3.1.2",
@@ -12599,20 +12599,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +3 Ballons d'Or & +2 WC Golden Balls",
+    "leader_badge": "Messi +3 Ballons d'Or",
     "answer": "Messi holds all-time records in Ballon d'Or wins, podium finishes, FIFA World Player awards, Laureus World Sportsman honors, and FIFA World Cup Golden Balls.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +3 Ballons d'Or"
+        "Messi +3 Ballons d'Or"
       ],
       [
         "messi",
-        "Messi Leads With +2 Laureus Sportsman Awards"
+        "Messi +2 Laureus Awards"
       ],
       [
         "messi",
-        "Messi Leads With +2 World Cup Golden Balls"
+        "Messi +2 WC Golden Balls"
       ]
     ],
     "ref": "4.1.1",
@@ -12880,21 +12880,21 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "leader": "split",
-    "leader_badge": "Messi Leads With +2 Golden Shoes \u00b7 Ronaldo Leads With +3 Distinct Leagues",
+    "leader": "messi",
+    "leader_badge": "Messi +2 Golden Shoes",
     "answer": "Messi won more European Golden Shoes and Pichichi trophies with Barcelona, while Ronaldo topped the scoring charts across four distinct national leagues and clubs.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +2 European Golden Shoes"
+        "Messi +2 Golden Shoes"
       ],
       [
         "messi",
-        "Messi Leads With +2 League Top-Scorer Crowns"
+        "Messi +2 League Crowns"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +3 Distinct National Leagues"
+        "Ronaldo +3 Leagues"
       ]
     ],
     "ref": "4.1.2",
@@ -13185,24 +13185,24 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +9 Senior Trophies",
+    "leader_badge": "Messi +9 Trophies",
     "answer": "Messi holds the all-time senior career silverware record including domestic leagues, cups, FIFA World Cup, Copa Am\u00e9rica, and multiple European trebles, while Ronaldo leads in UEFA Champions League titles.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +9 Senior Career Trophies"
+        "Messi +9 Trophies"
       ],
       [
         "messi",
-        "Messi Leads With +1 Senior Intl Trophies"
+        "Messi +1 Intl Trophies"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +1 UEFA Champions League Title"
+        "Ronaldo +1 UCL Title"
       ],
       [
         "messi",
-        "Messi Leads With +2 European Continental Trebles"
+        "Messi +2 Trebles"
       ]
     ],
     "ref": "4.2.1",
@@ -13336,17 +13336,17 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "leader": "split",
-    "leader_badge": "Ronaldo Leads With +373.4M Followers \u00b7 Messi Leads With +32.9M Post Record",
+    "leader": "ronaldo",
+    "leader_badge": "Ronaldo +373.4M Followers",
     "answer": "Ronaldo commands the largest cross-platform social following on Earth, whereas Messi holds the world record for the most-liked social post in internet history.",
     "metric_tags": [
       [
         "ronaldo",
-        "Ronaldo Leads With +373.4M Cross-Platform Reach"
+        "Ronaldo +373.4M Followers"
       ],
       [
         "messi",
-        "Messi Leads With +32.9M Record Instagram Post Likes"
+        "Messi +32.9M IG Post Likes"
       ]
     ],
     "ref": "4.3.1",
@@ -13611,25 +13611,25 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "leader": "split",
-    "leader_badge": "Messi Leads With +1,297 Avg Attendance & +22,139 MLS Gain \u00b7 Ronaldo Leads With +49.0% SPL Lift",
+    "leader": "messi",
+    "leader_badge": "Messi +1,297 Avg Crowd",
     "answer": "Messi averaged higher overall and home matchday stadium crowds and added a larger absolute road attendance gain upon arriving in MLS, while Ronaldo drew larger away averages and a higher percentage lift off a lower Saudi baseline; audited seasonal TV viewership and manufacturer shirt unit logs remain unstandardized.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +1,297 Avg Career Attendance"
+        "Messi +1,297 Avg Crowd"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +1,270 Avg Away Attendance"
+        "Ronaldo +1,270 Away Crowd"
       ],
       [
         "messi",
-        "Messi Leads With +9,089 Absolute Road Crowd Gain (+22,139 vs +13,050)"
+        "Messi +9,089 MLS Road Gain"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +49.0% Relative Road Surge"
+        "Ronaldo +49.0% SPL Lift"
       ]
     ],
     "ref": "4.3.2",
@@ -13766,16 +13766,16 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +10 World Cup Goals",
+    "leader_badge": "Messi +10 WC Goals",
     "answer": "Messi leads decisively in FIFA World Cup goals and knockout-stage strikes, whereas Ronaldo never scored in a World Cup knockout fixture.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +10 World Cup Goals"
+        "Messi +10 WC Goals"
       ],
       [
         "messi",
-        "Messi Leads With +6 WC Knockout Goals"
+        "Messi +6 WC KO Goals"
       ]
     ],
     "ref": "WC.1",
@@ -13911,20 +13911,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +10 World Cup Assists",
+    "leader_badge": "Messi +10 WC Assists",
     "answer": "Messi leads in World Cup assists, knockout assists, key passes, and Expected Assists across tournament play.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +10 World Cup Assists"
+        "Messi +10 WC Assists"
       ],
       [
         "messi",
-        "Messi Leads With +10 WC KO Assists"
+        "Messi +10 WC KO Assists"
       ],
       [
         "messi",
-        "Messi Leads With +20 WC Key Passes"
+        "Messi +20 WC Key Passes"
       ]
     ],
     "ref": "WC.2",
@@ -14098,20 +14098,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +39 World Cup Dribbles",
+    "leader_badge": "Messi +39 WC Dribbles",
     "answer": "Messi completed more dribbles, passes, pressures, tackles, and ball recoveries across World Cup matches.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +39 WC Dribbles"
+        "Messi +39 WC Dribbles"
       ],
       [
         "messi",
-        "Messi Leads With +103 WC Pressures"
+        "Messi +103 WC Pressures"
       ],
       [
         "messi",
-        "Messi Leads With +504 Completed WC Passes"
+        "Messi +504 WC Passes"
       ]
     ],
     "ref": "WC.3",
@@ -14233,20 +14233,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +20 World Cup G+A",
+    "leader_badge": "Messi +20 WC G+A",
     "answer": "Ronaldo scored across more distinct World Cup editions, while Messi leads in total World Cup Goals + Assists and knockout contributions.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +20 World Cup G+A"
+        "Messi +20 WC G+A"
       ],
       [
         "messi",
-        "Messi Leads With +16 WC Knockout G+A"
+        "Messi +16 WC KO G+A"
       ],
       [
         "ronaldo",
-        "Ronaldo Leads With +1 Scoring World Cup Edition"
+        "Ronaldo +1 Scoring WC"
       ]
     ],
     "ref": "WC.4",
@@ -14385,20 +14385,20 @@ window.INSIGHTS_DATA = [
       }
     ],
     "leader": "messi",
-    "leader_badge": "Messi Leads With +17.9% On-Pitch WC Share",
+    "leader_badge": "Messi +17.9% WC Share",
     "answer": "Messi shouldered a larger share of his national team's World Cup goal involvement and achieved a higher tournament win rate.",
     "metric_tags": [
       [
         "messi",
-        "Messi Leads With +17.9% On-Pitch WC Share"
+        "Messi +17.9% WC Share"
       ],
       [
         "messi",
-        "Messi Leads With +32.1% WC Win Rate"
+        "Messi +32.1% WC Win Rate"
       ],
       [
         "messi",
-        "Messi Leads With +0.76 WC PPG"
+        "Messi +0.76 WC PPG"
       ]
     ],
     "ref": "WC.5",
@@ -14749,21 +14749,21 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "leader": "split",
-    "leader_badge": "Tied 3\u20133 in Squad Value Editions \u00b7 Portugal Leads Mean Avg (\u20ac22.58M vs \u20ac21.49M)",
+    "leader": "tied",
+    "leader_badge": "Tied 3-3 Squad Value",
     "answer": "Both nations split the six World Cup editions evenly in total and per-player squad market value, with Argentina peaking higher mid-career and Portugal arriving with the pricier modern squad, while pre-tournament ten-match form swung from Portugal early to Argentina entering Qatar and North America.",
     "metric_tags": [
       [
         "tied",
-        "Dead Heat 3\u20133 in Editions With Pricier Squad"
+        "Tied 3-3 Squad Value"
       ],
       [
         "ronaldo",
-        "Portugal Leads 2022 Qatar Squad Value With +\u20ac291.8M"
+        "Ronaldo +\u20ac291.8M 2022 Squad"
       ],
       [
         "messi",
-        "Argentina Leads 2018 Russia Squad Value With +\u20ac204.5M"
+        "Messi +\u20ac204.5M 2018 Squad"
       ]
     ],
     "ref": "WC.6",
