@@ -43,8 +43,51 @@
 
     @media (max-width: 768px) {
       .container {
-        padding: 0 10px;
+        padding: 0 6px;
       }
+    }
+
+    /* Smooth Section & Card Scroll-Reveal Animation */
+    .issue-reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .issue-reveal.in-view {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .issue-reveal, .insight-box {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Uniform Appendix CTA Pill Box */
+    .appendix-cta-btn {
+      width: 112px;
+      min-width: 112px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.04);
+      color: #e4e4e7;
+      font-size: 12px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+    }
+    .chapter-header:hover .appendix-cta-btn {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.28);
+      color: #ffffff;
     }
 
     .page-header {
@@ -594,16 +637,16 @@
     /* ===================================================================== */
     .pillar-accordion {
       --pillar-color: #38bdf8;
-      margin: 14px 0 10px 0;
+      margin: 6px 0 4px 0;
       scroll-margin-top: 80px;
       border: none;
       border-top: 1px solid var(--border-hairline);
       border-bottom: 1px solid var(--border-hairline);
-      border-left: 2.5px solid var(--pillar-color);
+      border-left: 2px solid var(--pillar-color);
       border-radius: 0;
       background: #050508;
       overflow: hidden;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease, opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .pillar-accordion.context { --pillar-color: #c084fc; }
     .pillar-accordion.attack { --pillar-color: var(--messi-color); }
@@ -613,8 +656,8 @@
     .pillar-header {
       display: flex;
       align-items: flex-start;
-      gap: 12px;
-      padding: 12px 14px;
+      gap: 8px;
+      padding: 9px 11px;
       cursor: pointer;
       user-select: none;
       background: rgba(255, 255, 255, 0.02);
@@ -712,27 +755,27 @@
     }
     .pillar-body {
       display: none;
-      padding: 4px 0 6px 8px;
+      padding: 2px 0 3px 4px;
       background: transparent;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
     .pillar-accordion.open > .pillar-body {
       display: flex;
+      animation: cardExpand 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
     @media (max-width: 640px) {
       .pillar-header {
         flex-wrap: wrap;
-        padding: 10px 10px;
-        gap: 8px;
+        padding: 8px 9px;
+        gap: 6px;
       }
       .pillar-body {
-        padding: 4px 0 6px 6px;
+        padding: 2px 0 2px 3px;
       }
       .pillar-header-right {
-        width: 100%;
-        justify-content: space-between;
+        margin-left: auto;
       }
     }
 
@@ -875,17 +918,17 @@
     .chapters-stack {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
     }
 
     .chapter-card {
       background: rgba(255, 255, 255, 0.015);
       border: none;
       border-top: 1px solid rgba(255, 255, 255, 0.07);
-      border-left: 2.5px solid var(--pillar-color, rgba(255, 255, 255, 0.35));
+      border-left: 1.5px solid var(--pillar-color, rgba(255, 255, 255, 0.35));
       border-radius: 0;
       overflow: hidden;
-      transition: background 0.15s ease;
+      transition: background 0.15s ease, opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1), transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .chapter-card.open {
@@ -893,12 +936,12 @@
     }
 
     .chapter-header {
-      padding: 10px 12px;
+      padding: 8px 10px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       background: transparent;
       border-bottom: 1px solid transparent;
       user-select: none;
@@ -953,12 +996,13 @@
 
     .chapter-body {
       display: none;
-      padding: 4px 0 6px 8px;
+      padding: 2px 0 3px 4px;
       background: transparent;
     }
 
     .chapter-card.open .chapter-body {
       display: block;
+      animation: cardExpand 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
 
     /* ===================================================================== */
@@ -967,14 +1011,14 @@
     .questions-stack {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
     }
 
     .q-card {
       background: rgba(255, 255, 255, 0.012);
       border: none;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
-      border-left: 2.5px solid var(--pillar-color, rgba(255, 255, 255, 0.4));
+      border-left: 1.5px solid var(--pillar-color, rgba(255, 255, 255, 0.4));
       border-radius: 0;
       overflow: hidden;
       transition: background 0.15s ease;
@@ -989,11 +1033,11 @@
     }
 
     .q-header {
-      padding: 9px 12px;
+      padding: 7px 9px;
       cursor: pointer;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 4px;
       user-select: none;
       background: transparent;
       transition: background 0.15s ease;
@@ -1059,17 +1103,17 @@
 
     .q-body {
       display: none;
-      padding: 10px 8px 12px 10px;
+      padding: 7px 5px 8px 5px;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       background: transparent;
       overflow-x: clip;
     }
 
     @media (max-width: 640px) {
-      .chapter-header { padding: 9px 10px; }
-      .chapter-body { padding: 4px 0 6px 6px; }
-      .q-header { padding: 8px 10px; }
-      .q-body { padding: 8px 4px 10px 6px; }
+      .chapter-header { padding: 7px 8px; }
+      .chapter-body { padding: 2px 0 2px 3px; }
+      .q-header { padding: 6px 7px; }
+      .q-body { padding: 6px 2px 6px 3px; }
     }
 
     .q-card.open .q-body {
@@ -1210,9 +1254,9 @@
       width: 68%;
       background: #06080c;
       border: 1px solid rgba(255, 255, 255, 0.09);
-      border-left: 2.5px solid var(--pillar-color, #38bdf8);
+      border-left: 2px solid var(--pillar-color, #38bdf8);
       border-radius: 6px;
-      padding: 16px 18px;
+      padding: 14px 16px;
       display: flex;
       flex-direction: column;
       gap: 10px;
@@ -2445,7 +2489,7 @@
       </div>
 
       <div class="sec-collapse-body">
-      <div class="foreword-card">
+      <div class="foreword-card issue-reveal">
         <div class="foreword-header">
           <div class="foreword-quote-icon">“</div>
           <div class="foreword-meta">
@@ -2500,7 +2544,7 @@
       </div>
 
       <div class="sec-collapse-body">
-      <div class="chat-wrapper">
+      <div class="chat-wrapper issue-reveal">
         <!-- Control / Specs Header Bar -->
         <div class="chat-controls-bar">
           <div class="chat-specs-left">
@@ -2581,7 +2625,7 @@
     <!-- ================================================================= -->
     <!-- SECTION B: DEFINING YOUR ANSWER                                   -->
     <!-- ================================================================= -->
-    <section class="release-section goat-split-section" id="defining-your-answer">
+    <section class="release-section goat-split-section issue-reveal" id="defining-your-answer">
       <div class="goat-intro-block sec-collapse-header" onclick="toggleReleaseSection('defining-your-answer')">
         <div>
           <div class="section-eyebrow">Section B</div>
@@ -2665,21 +2709,11 @@
         <div class="section-eyebrow">Section C</div>
         <h2 class="section-heading-lg">Main Analysis</h2>
       </div>
-      <div class="reading-mode-toolbar" role="toolbar" aria-label="Main analysis reading controls">
-        <div class="reading-mode-group">
-          <button type="button" class="reading-mode-btn active" id="btn-mode-full" onclick="setReadingMode('full')">Full Telemetry (All 162 Charts)</button>
-          <button type="button" class="reading-mode-btn" id="btn-mode-compact" onclick="setReadingMode('compact')">Verdicts Only (Compact)</button>
-        </div>
-        <div class="reading-mode-group">
-          <button type="button" class="reading-mode-btn" onclick="expandAllCriteria(true)">Expand All</button>
-          <button type="button" class="reading-mode-btn" onclick="expandAllCriteria(false)">Collapse All</button>
-        </div>
-      </div>
       <div class="chapters-stack">
 
 
       <!-- PILLAR 0.0 ACCORDION -->
-      <div class="pillar-accordion context open" id="pillar-0-0">
+      <div class="pillar-accordion context issue-reveal" id="pillar-0-0">
         <div class="pillar-header" onclick="togglePillar('pillar-0-0')">
           <div class="pillar-badge">PILLAR 0.0 &middot; Context Setting</div>
           <div class="pillar-info">
@@ -2690,14 +2724,13 @@
             <p class="framework-key-q">Key Question: Did they play in different tactical roles, zones, and team systems?</p>
           </div>
           <div class="pillar-header-right">
-            <span class="pillar-count-pill">1 Criteria · 3 Statements</span>
             <div class="pillar-chevron-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
         </div>
         <div class="pillar-body">
 
         <!-- CRITERIA 0.0: Context Setting: Operating Zones, Tactical Roles & Team Style -->
-        <div class="chapter-card open" id="chapter-0-0">
+        <div class="chapter-card" id="chapter-0-0">
           <div class="chapter-header" onclick="toggleChapter('chapter-0-0')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
@@ -2719,7 +2752,7 @@
         
 
       <!-- PILLAR 1.0 ACCORDION -->
-      <div class="pillar-accordion attack open" id="pillar-1-0">
+      <div class="pillar-accordion attack issue-reveal" id="pillar-1-0">
         <div class="pillar-header" onclick="togglePillar('pillar-1-0')">
           <div class="pillar-badge">PILLAR 1.0 &middot; Attack</div>
           <div class="pillar-info">
@@ -2730,7 +2763,6 @@
             <p class="framework-key-q">Key Question: Who creates and finishes more attacking value for their team?</p>
           </div>
           <div class="pillar-header-right">
-            <span class="pillar-count-pill">4 Criteria · 11 Statements</span>
             <div class="pillar-chevron-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
         </div>
@@ -2816,7 +2848,7 @@
         
 
       <!-- PILLAR 2.0 ACCORDION -->
-      <div class="pillar-accordion defence open" id="pillar-2-0">
+      <div class="pillar-accordion defence issue-reveal" id="pillar-2-0">
         <div class="pillar-header" onclick="togglePillar('pillar-2-0')">
           <div class="pillar-badge">PILLAR 2.0 &middot; Defence</div>
           <div class="pillar-info">
@@ -2827,7 +2859,6 @@
             <p class="framework-key-q">Key Question: Who contributes more defensive work when their team does not have the ball?</p>
           </div>
           <div class="pillar-header-right">
-            <span class="pillar-count-pill">2 Criteria · 2 Statements</span>
             <div class="pillar-chevron-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
         </div>
@@ -2875,7 +2906,7 @@
         
 
       <!-- PILLAR 3.0 ACCORDION -->
-      <div class="pillar-accordion overall open" id="pillar-3-0">
+      <div class="pillar-accordion overall issue-reveal" id="pillar-3-0">
         <div class="pillar-header" onclick="togglePillar('pillar-3-0')">
           <div class="pillar-badge">PILLAR 3.0 &middot; Overall Impact</div>
           <div class="pillar-info">
@@ -2886,7 +2917,6 @@
             <p class="framework-key-q">Key Question: Does the team win more with Messi on-pitch? What are overall performance ratings for Messi vs Ronaldo?</p>
           </div>
           <div class="pillar-header-right">
-            <span class="pillar-count-pill">1 Criteria · 2 Statements</span>
             <div class="pillar-chevron-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
         </div>
@@ -2915,7 +2945,7 @@
         
 
       <!-- PILLAR 4.0 ACCORDION -->
-      <div class="pillar-accordion inspiration open" id="pillar-4-0">
+      <div class="pillar-accordion inspiration issue-reveal" id="pillar-4-0">
         <div class="pillar-header" onclick="togglePillar('pillar-4-0')">
           <div class="pillar-badge">PILLAR 4.0 &middot; Accolades & Reach</div>
           <div class="pillar-info">
@@ -2926,7 +2956,6 @@
             <p class="framework-key-q">Key Question: Who left the bigger mark through trophies, awards, and global reach?</p>
           </div>
           <div class="pillar-header-right">
-            <span class="pillar-count-pill">3 Criteria · 5 Statements</span>
             <div class="pillar-chevron-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
           </div>
         </div>
@@ -3009,7 +3038,7 @@
 
       <div class="chapters-stack">
         <!-- EXTRA ANALYSIS 1: MYTHBUSTING LIGHTNING RODS -->
-        <div class="chapter-card" id="chapter-extra-1">
+        <div class="chapter-card issue-reveal" id="chapter-extra-1">
           <div class="chapter-header" onclick="toggleChapter('chapter-extra-1')">
             <div>
               <div class="chapter-title-row">
@@ -3064,7 +3093,7 @@
         </div>
 
         <!-- EXTRA ANALYSIS 2: FIFA WORLD CUP ARENA -->
-        <div class="chapter-card" id="chapter-extra-2">
+        <div class="chapter-card issue-reveal" id="chapter-extra-2">
           <div class="chapter-header" onclick="toggleChapter('chapter-extra-2')">
             <div>
               <div class="chapter-title-row">
@@ -3084,7 +3113,7 @@
 
 
         <!-- EXTRA ANALYSIS 3: SPATIAL EVOLUTION HEATMAP -->
-        <div class="chapter-card" id="chapter-extra-3">
+        <div class="chapter-card issue-reveal" id="chapter-extra-3">
           <div class="chapter-header" onclick="toggleChapter('chapter-extra-3')">
             <div>
               <div class="chapter-title-row">
@@ -3214,7 +3243,7 @@
     
 
         <!-- EXTRA ANALYSIS 4: THE VIRTUAL ARENA -->
-        <div class="chapter-card" id="chapter-extra-4">
+        <div class="chapter-card issue-reveal" id="chapter-extra-4">
           <div class="chapter-header" onclick="toggleChapter('chapter-extra-4')">
             <div>
               <div class="chapter-title-row">
@@ -3428,7 +3457,7 @@
     
 
         <!-- EXTRA ANALYSIS 5: DRIBBLE TRAJECTORIES & VECTOR ARENA -->
-        <div class="chapter-card" id="chapter-dribble-arena">
+        <div class="chapter-card issue-reveal" id="chapter-dribble-arena">
           <div class="chapter-header" onclick="toggleChapter('chapter-dribble-arena')">
             <div class="ch-header-main">
               <div class="chapter-title-row">
@@ -3565,44 +3594,44 @@
       <div class="chapters-stack">
 
         <!-- APPENDIX 0: PROBLEM BREAKDOWN (MIND MAP) -->
-        <div class="chapter-card" id="appendix-0-link">
+        <div class="chapter-card issue-reveal" id="appendix-0-link">
           <div class="chapter-header" onclick="window.location.href='appendix0.html'">
-            <div>
+            <div class="ch-header-main">
               <div class="chapter-title-row">
-                <span class="chapter-num" style="color: var(--messi-color);">Appendix 0</span>
+                <span class="chapter-num">Appendix 0</span>
                 <span class="chapter-title">Problem Breakdown: The Outfield GOAT Mind Map</span>
               </div>
               <div class="chapter-desc">Interactive zoomable hierarchy canvas & visual mind map connecting all 29 audited sub-dimensions (23 core MECE), 11 analytical criteria, and 5 macro-pillars up to the central question.</div>
             </div>
-            <div style="font-size: 13px; color: #a1a1aa; font-weight: 600; display: flex; align-items: center; gap: 4px; flex-shrink: 0;">Explore &rarr;</div>
+            <div class="appendix-cta-btn">Explore &rarr;</div>
           </div>
         </div>
 
         <!-- APPENDIX 1: KEY GRAPHS -->
-        <div class="chapter-card" id="appendix-1">
+        <div class="chapter-card issue-reveal" id="appendix-1">
           <div class="chapter-header" onclick="window.location.href='graphs.html'">
-            <div>
+            <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Appendix 1</span>
                 <span class="chapter-title">Interactive Key Graphs</span>
               </div>
               <div class="chapter-desc">Explore multi-view visual telemetry: career cumulative curves, body silhouette anatomy filters, and team goal involvement shares.</div>
             </div>
-            <div style="font-size: 13px; color: #a1a1aa; font-weight: 600; display: flex; align-items: center; gap: 4px; flex-shrink: 0;">Go to Page &rarr;</div>
+            <div class="appendix-cta-btn">Go to Page &rarr;</div>
           </div>
         </div>
 
         <!-- APPENDIX 2: METHODOLOGY & DATABASE -->
-        <div class="chapter-card" id="appendix-2">
+        <div class="chapter-card issue-reveal" id="appendix-2">
           <div class="chapter-header" onclick="window.location.href='detail.html'">
-            <div>
+            <div class="ch-header-main">
               <div class="chapter-title-row">
                 <span class="chapter-num">Appendix 2</span>
                 <span class="chapter-title">Methodology, Sources & Goal Database</span>
               </div>
               <div class="chapter-desc">Full primary source manifests in data/raw/, standardized metric definitions, coverage boundaries, and interactive 1,915 senior goals master table.</div>
             </div>
-            <div style="font-size: 13px; color: #a1a1aa; font-weight: 600; display: flex; align-items: center; gap: 4px;">Go to Page &rarr;</div>
+            <div class="appendix-cta-btn">Go to Page &rarr;</div>
           </div>
         </div>
 
@@ -6235,6 +6264,13 @@ const POPULAR_NARRATIVES = {
       const exitTopPx = Math.min(96, Math.round(vh * 0.12));
       const enterBottomPx = vh - 20;
 
+      document.querySelectorAll('.issue-reveal').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.height > 0 && r.top < vh * 1.05 && r.bottom > 0) {
+          el.classList.add('in-view');
+        }
+      });
+
       document.querySelectorAll('.insight-box').forEach(box => {
         if (box.offsetParent === null) {
           box.classList.remove('in-view');
@@ -6258,7 +6294,7 @@ const POPULAR_NARRATIVES = {
       });
     }
 
-    /* Scroll Animation: Left boxes slide from/to left, Right boxes from/to right */
+    /* Scroll Animation: Issue sections/cards reveal cleanly; 2/3 Graph boxes slide in/out */
     function setupScrollAnimations() {
       if (!boxObserver) {
         boxObserver = new IntersectionObserver((entries) => {
@@ -6283,7 +6319,7 @@ const POPULAR_NARRATIVES = {
         window.addEventListener('resize', scheduleGraphCardUpdate, { passive: true });
       }
 
-      document.querySelectorAll('.insight-box, .card-slide-left, .card-slide-right').forEach((box) => {
+      document.querySelectorAll('.insight-box, .issue-reveal, .card-slide-left, .card-slide-right').forEach((box) => {
         boxObserver.unobserve(box);
         boxObserver.observe(box);
       });
