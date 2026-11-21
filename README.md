@@ -24,7 +24,7 @@
 ## How the Numbers Work
 
 - **Real records only:** Every chart is calculated straight from recorded match data and cross-checked against public sources. No guessed or made-up numbers.
-- **Latest automated check:** `PASS_ONLINE (2026-11-21 09:39 UTC)` ([`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json))
+- **Latest automated check:** `PASS_ONLINE (2026-11-21 10:04 UTC)` ([`RELEASE_MANIFEST.json`](RELEASE_MANIFEST.json))
 
 ## Preview on Your Computer
 

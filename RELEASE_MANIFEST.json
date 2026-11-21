@@ -1,7 +1,7 @@
 {
   "platform": "DataIsFun",
   "release_version": "v1.0-issue01",
-  "packaged_at_utc": "2026-11-21 09:40 UTC",
+  "packaged_at_utc": "2026-11-21 10:06 UTC",
   "live_issues": [
     {
       "id": "issue-01",
@@ -12,11 +12,11 @@
     }
   ],
   "total_files": 22,
-  "total_bytes": 3584845,
+  "total_bytes": 3583472,
   "total_size_mb": 3.42,
   "qa_status": {
     "overall_status": "PASS_ONLINE",
-    "validated_at_utc": "2026-11-21 09:39 UTC",
+    "validated_at_utc": "2026-11-21 10:04 UTC",
     "mode": "ONLINE",
     "summary": {
       "passed": 45,
@@ -82,8 +82,8 @@
     },
     {
       "path": "issues/01-messi-vs-ronaldo/appendix0.html",
-      "bytes": 87744,
-      "sha256": "60d2322e68ae4d6fed33248cd8cce75cbc9ca741d144a804c07bbc9b826a99a6"
+      "bytes": 89606,
+      "sha256": "af4cf09f5527435b2ae827898ad48eb641485e82d2a4f3e82f62c71f4daa82ba"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/data/analytics_data.js",
@@ -118,7 +118,7 @@
     {
       "path": "issues/01-messi-vs-ronaldo/detail.html",
       "bytes": 98097,
-      "sha256": "8be3136690808b9f1bab65952c087dbec1e58fffa7f5cf554d4db99ae0b0f9de"
+      "sha256": "28113261060a2cd2abcb891f224ff903a8388a5bcc56a7ebc0dd2b771944af91"
     },
     {
       "path": "issues/01-messi-vs-ronaldo/graphs.html",
@@ -132,8 +132,8 @@
     },
     {
       "path": "issues/01-messi-vs-ronaldo/insights.html",
-      "bytes": 387109,
-      "sha256": "1ce8a2d8e0f9828d9509194c0f2cff7b0f2237551081222f5725b15bc2dea030"
+      "bytes": 383874,
+      "sha256": "5ae1d87c8394fc28a70a8fd069ac13f0c8f1829f45420b6663cf64dac15afa11"
     },
     {
       "path": "issues.html",
