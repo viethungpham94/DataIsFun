@@ -8,7 +8,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across 1,229 Messi and 1,363 Ronaldo senior appearances with tactical role logs, Messi split his career between Right Wing (569 apps), Centre-Forward (365), Second Striker / False 9 (213), and Attacking/Central Midfield (64), with his average on-ball position migrating deeper into the right-central playmaking pocket. Ronaldo evolved from a touchline Right Winger (292 apps) and inside-left forward (519 LW apps) into a dedicated Centre-Forward (504 CF apps, 100% of appearances from 2022/23 onward).",
     "insights": [
       {
-        "headline": "Messi stays central and deeper for most of his career compared to Ronaldo who stayed wider in his early career before moving towards goal.",
+        "headline": "Messi stayed deeper and central; Ronaldo shifted from wide flank to central box.",
         "footnote": "*Static on-ball baseline mapping each instrumented season's mean normalised on-ball event coordinates (centroid_x, centroid_y) cropped to the opponent half (50% halfway line to 100% goal line, 105m \u00d7 68m FIFA pitch). Reflects on-ball event telemetry only (all on-ball events in StatsBomb; shots in Understat & FotMob \u2014 no off-ball optical tracking). Hover over any point for player, season, and exact coordinates. Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "type": "spatial_baseline",
@@ -16,7 +16,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo actually shown stronger diversity as he has played across the 3 front positions throughis career, while Messi has mainly played either RW or CF/SS",
+        "headline": "Ronaldo played across all three front roles; Messi mainly split RW and CF/SS.",
         "footnote": "*Extracted from Transfermarkt match performance logs (1,229 Messi and 1,363 Ronaldo played appearances). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "type": "dual_pie",
@@ -89,7 +89,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi started from the Right Wing before spearheading modern False 9 trend, and then remains flexible between both roles towards the end of this career",
+        "headline": "Messi: Right Wing to False Nine, then flexible between both.",
         "footnote": "*Stacked 100% area chart of Messi's starting tactical role share across all seasons with >=5 played appearances. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Messi: 5-Position Tactical Role Share (%) by Season",
@@ -465,7 +465,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo's years can be broken down into three disctint eras of positional focus - started as explosive Right Winger, before becoming a Left Wing Forward, and then settling into a Central Forward Goal Machine",
+        "headline": "Ronaldo: three distinct eras \u2014 Right Wing, Left Wing Forward, then Central Striker.",
         "footnote": "*Stacked 100% area chart of Ronaldo's starting tactical role share across all seasons with >=5 played appearances. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Ronaldo: 5-Position Tactical Role Share (%) by Season",
@@ -843,7 +843,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "split",
     "leader_badge": "Split Tactical Zones",
-    "answer": "Messi started primarily on the right wing before drifting into central False Nine and playmaking pockets; Ronaldo evolved from a touchline winger across both flanks into a dedicated central box striker.",
+    "answer": "Messi: right wing to central False Nine & playmaker vs Ronaldo: flank winger to penalty-box striker.",
     "metric_tags": [
       [
         "messi",
@@ -876,7 +876,7 @@ window.INSIGHTS_DATA = [
     "summary": "In 195 Messi and 165 Ronaldo league matches with paired team-vs-opponent passing telemetry (2017/18\u20132024/25), Messi's teams averaged 713.6 passes/match vs opponents' 405.9 (63.7% pass share), whereas Ronaldo's teams averaged 593.5 vs opponents' 455.1 (56.6% pass share). Across all 25 career seasons (1,229 Messi, 1,363 Ronaldo matches), Messi's teams averaged 2.39 goals scored vs 0.96 conceded (+1.43 GD/match), compared to Ronaldo's 2.26 scored vs 0.97 conceded (+1.29 GD/match). Counter-attacking vs possession indicators show Messi's teams held higher pass dominance (63.7% vs 56.6%), while Ronaldo generated nearly double the share of shots from fast-break counter-attacks (4.3% vs 2.4%).",
     "insights": [
       {
-        "headline": "As they both played in bigger clubs, their team usually dominate in possession, with Messi's teams holding the ball more on average than Ronaldo's.",
+        "headline": "Both played for dominant sides; Messi's teams held higher average possession.",
         "footnote": "*Combines European Soccer Database match possession (2008/09\u20132015/16; Barcelona, Man Utd 08/09, Real Madrid 09/10\u201315/16; 2012/13 & 2013/14 unavailable) and FBref/Opta paired touches (2017/18\u20132022/23; 2016/17 unavailable). Total N=422 Messi team matches, N=395 Ronaldo team matches. Source: <a href=\"https://huggingface.co/datasets/julien-c/kaggle-hugomathien-soccer\" target=\"_blank\" rel=\"noopener noreferrer\">European Soccer Database Match Possession Telemetry (2008/09\u20132015/16)</a> (Open Data Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release)",
         "chart": {
           "type": "dual_bar",
@@ -920,7 +920,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's clubs consistently held higher possession each season, though both dropped over the years as they left La Liga.",
+        "headline": "Messi's clubs led seasonal possession; both dipped after leaving La Liga.",
         "footnote": "*2008/09\u20132015/16 from European Soccer Database (Barcelona, Man Utd 08/09, Real Madrid 09/10\u201315/16); 2017/18\u20132022/23 from FBref/Opta paired touches. Coverage gaps in 2012/13, 2013/14, and 2016/17 are left blank. Source: <a href=\"https://huggingface.co/datasets/julien-c/kaggle-hugomathien-soccer\" target=\"_blank\" rel=\"noopener noreferrer\">European Soccer Database Match Possession Telemetry (2008/09\u20132015/16)</a> (Open Data Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release)",
         "chart": {
           "title": "Team Possession Share (%) by Season (2008/09\u20132022/23)",
@@ -1005,7 +1005,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Similarly to possession, Messi's teams usually circulated more passes per match.",
+        "headline": "Messi's teams circulated more passes per match.",
         "footnote": "*Mean team passes attempted per match in shared league seasons (2017/18\u20132022/23). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release)",
         "chart": {
           "title": "Player's Team Total Passes per Match by Season (2017/18\u20132022/23)",
@@ -1063,7 +1063,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "In the limited years where see the data, Messi's Barcelona leaned just slightly more toward short passes, but could be statistically neglecgible.",
+        "headline": "Pass-range splits are nearly identical; Barcelona leaned marginally shorter.",
         "footnote": "*Percentage share of team pass attempts by distance range (Short <15y, Medium 15\u201330y, Long >=30y). Barcelona (N=102 La Liga matches, 2018/19\u20132020/21) comes from StatsBomb Open Data; Juventus (N=98 Serie A matches, 2018/19\u20132021/22) comes from FBref / Opta. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample)) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release)",
         "chart": {
           "type": "dual_pie",
@@ -1120,7 +1120,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Averaged across 25 seasons, differences are minimal between Messi's and Ronaldo's teams on goal and defence performance.",
+        "headline": "Across 25 seasons, team scoring and defence averages are nearly identical.",
         "footnote": "*Computed across all 1,229 Messi (2,943 GF, 1,181 GA) and 1,363 Ronaldo (3,075 GF, 1,316 GA) appearances. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Career Team Goals Scored vs Conceded per Match (2002/03\u20132026/27*)",
@@ -1170,7 +1170,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Even if we look season by season, their teams are mostly closely matched in performance across the years.",
+        "headline": "Season by season, their teams stayed closely matched in goals and defence.",
         "footnote": "*Season-by-season team goals scored per match in matches played by Messi and Ronaldo. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Team Goals Scored per Match by Season",
@@ -1599,7 +1599,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Overall tactical differences are modest: Messi's teams were slightly more possession-oriented, while Ronaldo's teams relied marginally more on fast breaks.",
+        "headline": "Modest tactical split: Messi teams slightly more possession-based; Ronaldo teams slightly faster on the break.",
         "footnote": "*Indicators 1\u20135 (Possession Share %, Team Pass Dominance %, Vertical Carry Directness %, Attacking-3rd Touch Share %, Progressive Pass Directness %) come from FBref / Opta league matches over 2017/18\u20132022/23 (Messi N=195 matches; Ronaldo N=165 matches). Indicator 6 (Fast-Break Counter Shot Share %) comes from FotMob shot telemetry over 2020\u20132024 (Messi N=582 shots across 130 matches; Ronaldo N=464 shots across 106 matches). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release)",
         "chart": {
           "title": "Possession vs Counter-Attacking Style Indicators (%)",
@@ -1669,7 +1669,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "split",
     "leader_badge": "Messi +7.1% Pass Share",
-    "answer": "Both played in dominant, high-scoring sides; Messi's teams were only slightly more possession-oriented, while Ronaldo's teams had slightly higher direct and fast-break counter-attacking tendencies.",
+    "answer": "Both led dominant sides; Messi: slightly more possession-oriented vs Ronaldo: slightly more vertical & counter-attacking.",
     "metric_tags": [
       [
         "messi",
@@ -1702,7 +1702,7 @@ window.INSIGHTS_DATA = [
     "summary": "Excluding Messi and Ronaldo themselves, on-pitch teammates averaged \u20ac37.5M contemporary value for Messi vs \u20ac33.2M for Ronaldo across shared European club seasons (Best XI teammates: \u20ac45.2M vs \u20ac39.6M), while Messi accounted for 20.7% of his on-pitch club squad value vs 17.8% for Ronaldo.",
     "insights": [
       {
-        "headline": "Excluding themselves, Messi played alongside slightly higher-valued teammates across both on-pitch appearances and most-played Best XI starters.",
+        "headline": "Excl. self: Messi played with slightly higher-valued teammates on pitch and in Best XI.",
         "footnote": "*Contemporary market valuation of teammates sharing the pitch on match day (strictly excluding Messi & Ronaldo) plus each season's most-played positional Best XI supporting cast (1 GK, 4 DEF, 3 MID, 2 ATT) from Transfermarkt player valuations & appearances. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Contemporary Teammate Valuation at Match Date (Excl. Self)",
@@ -1743,7 +1743,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both stars routinely represented a sizeable share of their own club squad's market value, with Messi's percentage share slightly higher across shared European seasons.",
+        "headline": "Both represented a large share of club squad value, Messi slightly higher.",
         "footnote": "*Player's own contemporary Transfermarkt market value divided by total contemporary value of the player plus his on-pitch (or Best XI) teammates across shared European club seasons (2012/13\u20132022/23). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Player's Own Contribution to Club Squad Market Value (%)",
@@ -1781,7 +1781,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season, Messi's share of his club's on-pitch market value peaked higher in Barcelona's transition years while Ronaldo's share surged at Juventus.",
+        "headline": "Messi's squad-value share peaked in late Barcelona years; Ronaldo's surged at Juventus.",
         "footnote": "*Mean matchday ratio of player's own contemporary Transfermarkt valuation to total on-pitch starting/appearing squad valuation (self + teammates) by European season (2012/13\u20132022/23). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Own Contribution to On-Pitch Club Squad Value by Season (% \u00b7 Europe 2012/13\u20132022/23)",
@@ -1899,7 +1899,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Average peak teammate values (excluding themselves) are fairly close, though Messi's shared-match weighting tilts higher.",
+        "headline": "Peak teammate values (excl. self) are close, tilting slightly to Messi.",
         "footnote": "*Peak career market value of each teammate (excluding Messi & Ronaldo) with \u226510 shared matches. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Contemporary Player Valuations</a> (Open Data Release Download)",
         "chart": {
           "title": "Teammate Peak Market Value (Excl. Self \u00b7 \u20acM)",
@@ -1937,7 +1937,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Including Messi and Ronaldo themselves, overall on-pitch team valuations climbed steadily across European campaigns before converging in later seasons.",
+        "headline": "Incl. self: on-pitch team values climbed across European eras before converging.",
         "footnote": "*Mean contemporary Transfermarkt market value (\u20acM) of all on-pitch club players including Messi and Ronaldo themselves across shared European club seasons (2012/13\u20132022/23). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Average On-Pitch Team Market Value by Season (Incl. Self \u00b7 \u20acM)",
@@ -2010,7 +2010,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Average on-pitch teammate market value (excluding themselves) rose across European club eras before converging in their final European campaigns.",
+        "headline": "Excl. self: teammate values rose across European eras before converging.",
         "footnote": "*Mean contemporary Transfermarkt market value (\u20acM) of on-pitch club teammates (excluding Messi & Ronaldo) across shared European club seasons (2012/13\u20132022/23; excludes national-team fixtures and post-Europe MLS / Saudi Pro League moves). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Average On-Pitch Teammate Market Value by Season (Excl. Self \u00b7 \u20acM)",
@@ -2083,7 +2083,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both stars played alongside world-class focal teammates, with Messi's Best XI led by Neymar, Su\u00e1rez, Griezmann, and Mbapp\u00e9 and Ronaldo's by Bale, Modri\u0107, Benzema, and Dybala.",
+        "headline": "Elite Best XI casts: Messi with Neymar, Su\u00e1rez, Mbapp\u00e9; Ronaldo with Bale, Modri\u0107, Benzema.",
         "footnote": "*Top 3 highest-valued teammates (excluding Messi & Ronaldo) selected from each season's most-played positional Best XI (1 GK, 4 DEF, 3 MID, 2 ATT) by minutes played in Transfermarkt appearances. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "type": "table",
@@ -2153,7 +2153,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across shared European seasons, both players faced remarkably similar average opponent on-pitch squad market values.",
+        "headline": "Both faced nearly identical average opponent squad values across Europe.",
         "footnote": "*Mean contemporary Transfermarkt market value (\u20acM) of opposing on-pitch players faced across European club fixtures (2012/13\u20132022/23; Messi N=516 fixtures, Ronaldo N=461 fixtures). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Average Opponent On-Pitch Squad Market Value Faced by Season (Europe \u00b7 \u20acM)",
@@ -2228,7 +2228,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +\u20ac4.3M Teammate Value",
-    "answer": "Excluding themselves, Messi's teammates carried a slightly higher average contemporary market valuation on the pitch and in Best XI starters, while Messi also accounted for a slightly larger percentage of his own club squad's total valuation across shared European seasons.",
+    "answer": "Excl. self: Messi had slightly higher-valued teammates & accounted for a slightly larger share of club squad value.",
     "metric_tags": [
       [
         "messi",
@@ -2257,7 +2257,7 @@ window.INSIGHTS_DATA = [
     "summary": "Ronaldo leads gross senior goals 979-936 and official goals 957-881. He out-scored Messi in 16 of 25 charted campaigns (Messi 9; 2 campaigns pre-date Messi's debut). Aligned by age, Messi's cumulative tally was ahead at 22 of 22 age marks from 18 to 39 (936 vs 917 by age 39).",
     "insights": [
       {
-        "headline": "Ronaldo leads in both gross senior and official competitive goals, though the margin remains narrow relative to their career totals.",
+        "headline": "Ronaldo leads gross and official senior goals by a narrow career margin.",
         "footnote": "*Gross = all senior goals incl. international friendlies; Official = excludes friendlies (D-001). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Gross Senior Goals vs Official Competitive",
@@ -2295,7 +2295,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "While Messi reached a higher single-season scoring peak, both sustained output far above Top 10 European forwards and the 90th percentile for over a decade.",
+        "headline": "Messi hit the higher single-season peak; both cleared Top-10 forwards for a decade.",
         "footnote": "*Senior goals per season (Aug-Jul), club + country. 2026-27* is in progress. Dashed benchmarks (2012/13\u20132025/26): Transfermarkt Top-10 attackers mean & 90th percentile across European club competitions (N=909\u20131,066 attackers/season with >=900 mins). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive) Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Senior Goals per Season",
@@ -2490,7 +2490,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo out-scored Messi in more seasons overall, aided by an earlier senior debut and late-career volume.",
+        "headline": "Ronaldo out-scored Messi in more seasons, aided by earlier debut and late-career volume.",
         "footnote": "*Bar = Messi goals - Ronaldo goals in that season. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Season Goal Difference (Messi - Ronaldo)",
@@ -2685,7 +2685,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Aligned by biological age, Messi hit his scoring peak earlier and higher, while Ronaldo peaked slightly later.",
+        "headline": "By biological age, Messi peaked earlier and higher; Ronaldo peaked slightly later.",
         "footnote": "*Goals scored while the player was each integer age (age at match date). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Goals Scored at Each Biological Age",
@@ -2881,7 +2881,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi stayed ahead in cumulative goals at every same-age milestone throughout their careers. But Ronaldo's later year goals closed the gap.",
+        "headline": "Messi led cumulative goals at every shared age; Ronaldo closed the gap later.",
         "footnote": "*Cumulative senior goals scored up to and including each age. Messi has not yet played beyond age 39. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Cumulative Goals by Biological Age",
@@ -2995,7 +2995,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "ronaldo",
     "leader_badge": "Ronaldo +43 Goals",
-    "answer": "Ronaldo holds the higher gross and official senior goal totals across more seasons, though Messi maintained a higher cumulative tally at every shared biological age mark.",
+    "answer": "Ronaldo: higher gross & official goal totals across more seasons vs Messi: ahead at every shared biological age.",
     "metric_tags": [
       [
         "ronaldo",
@@ -3028,7 +3028,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across 6,586 all-time shots tracked by Opta in European league and Champions League matches, Messi converted 18.35% (576 goals / 3139 shots) vs Ronaldo's 15.55% (536 goals / 3447 shots) \u2014 scoring once every 5.45 shots compared to Ronaldo's 6.43. Across 814 shot-telemetry goals combining Understat, FBref/Opta, FotMob, and StatsBomb (19 instrumented Messi seasons vs 9 Ronaldo seasons), Messi's goals came from lower-probability chances (0.334 vs 0.427 mean xG/goal), while their missed-shot quality was virtually identical (0.104 xG across 2,317 Messi misses vs 0.104 across 1,475 Ronaldo misses). Across Opta's 13-season league xG model (2014/15\u20132026/27), Messi outperformed xG by +52.74 goals vs Ronaldo's +14.79.",
     "insights": [
       {
-        "headline": "Messi converted a noticeably higher share of his shots than Ronaldo across their European club careers.",
+        "headline": "Messi converted a higher share of shots across European club play.",
         "footnote": "*Opta / WhoScored all-time European League & Champions League shot records (Messi: 576 goals / 3139 shots; Ronaldo: 536 goals / 3447 shots). Dashed benchmark (14.83%) = empirical mean conversion across 730 Big-5 league high-volume forward seasons (>=75 shots/season, 2014\u20132023) in Understat. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/shot-conversion/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Shot Conversion Telemetry</a> (Opta Telemetry Scrape) | <a href=\"https://huggingface.co/datasets/aloobun/fbref_understat_combined\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Predictive Shot & Assist Models (2014\u20132023)</a> (Verified Open Mirror)",
         "chart": {
           "title": "All-Time Career Shot Conversion (%) \u2014 Opta Telemetry",
@@ -3090,7 +3090,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season, Messi routinely matched or cleared Top-10 high-volume shooters in shot conversion (%) across his peak European decade.",
+        "headline": "Messi routinely matched or beat Top-10 shooters in seasonal conversion (%).",
         "footnote": "*Seasonal shot conversion (%) = Goals \u00f7 Shots \u00d7 100 across the deduplicated shot-level database (>=25 tracked shots/season). Dashed benchmarks (2015/16\u20132024/25): Top-10 mean & 90th percentile among Big-5 league high-volume shooters (N=189\u2013260 players/season with >=50 shots in Understat). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://huggingface.co/datasets/aloobun/fbref_understat_combined\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Predictive Shot & Assist Models (2014\u20132023)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Shot Conversion Rate (%) by Season (2005/06\u20132024/25)",
@@ -3260,7 +3260,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Goals per ninety minutes is a virtual dead heat across their careers, with both operating near or above the Top 10 strikers benchmark for over a decade.",
+        "headline": "Career G/90 is a near dead heat, both above Top-10 strikers for a decade.",
         "footnote": "*Senior club & international matches with exact minutes from Transfermarkt match logs (N=3,260 senior appearances; >=400 mins). Benchmarks (2012/13\u20132025/26): Transfermarkt Top-10 attackers & 90th percentile G/90 (N=909\u20131,066 attackers/season with >=900 mins). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Goals per 90 Minutes by Season",
@@ -3542,7 +3542,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Though Messi's scored goals came from harder chances on average than Ronaldo's.",
+        "headline": "Messi's scored goals came from harder chances (lower avg xG) than Ronaldo's.",
         "footnote": "*Season-by-season average xG per goal across verified shot-level telemetry (Understat 2014\u201319 + FBref/Opta 2017\u201324 + FotMob 2020\u201324 + StatsBomb 2004\u201324). Seasons with <33% goal-level telemetry coverage, <5 telemetry goals, or <3 non-penalty telemetry goals are omitted as NaN (full seasonal coverage breakdown in Appendix 1). 167 external IFAB Law 14 penalties at 0.7564 xG and 934 uninstrumented goals excluded. Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_match_shooting\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Match Shooting Logs (2017\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Sample)) | <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Average xG per Scored Goal by Season (Lower = Harder Chances)",
@@ -3754,7 +3754,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Converting to total career efficiency, Messi outperformed expected goals by a wide margin and converted far more low-probability screamers, whereas Ronaldo finished closer to expectation.",
+        "headline": "Messi far outperformed xG and hit more low-xG screamers; Ronaldo finished near expectation.",
         "footnote": "*Understat predictive shot-quality model across all European league appearances (2014\u20132023; Messi: 253.0 goals from 219.91 xG; Ronaldo: 234.0 goals from 229.38 xG). Low-xG Screamers (xG <= 0.08) reflect instrumented shot-telemetry sample sizes (540 Messi / 274 Ronaldo telemetry goals). Source: <a href=\"https://huggingface.co/datasets/aloobun/fbref_understat_combined\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Predictive Shot & Assist Models (2014\u20132023)</a> (Verified Open Mirror) | <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_match_shooting\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Match Shooting Logs (2017\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Sample))",
         "chart": {
           "title": "9-Season Expected Goals (xG), Actual Goals & Low-xG Screamers",
@@ -3810,7 +3810,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi consistently outperformed expected goals by a substantial margin, while Ronaldo perform closer to expectation across his career.",
+        "headline": "Messi consistently beat seasonal xG by a wide margin; Ronaldo tracked near expectation.",
         "footnote": "*Season-by-season Opta domestic league xG outperformance (Actual Goals minus Expected Goals) across the 13 non-overlapping Aug\u2013Jul seasons since xG tracking began in 2014/15 (La Liga, Ligue 1, MLS; Serie A, Premier League, Saudi Pro League). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/xg-expected-goals/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored 13-Season League Expected Goals Model (2014\u20132027)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "League xG Outperformance per Season (Actual Goals - xG, 2014/15\u20132026/27)",
@@ -3940,7 +3940,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Normalised per shot and per goal, Messi's finishing efficiency above expectation far exceeds Ronaldo's.",
+        "headline": "Per shot and per goal, Messi's xG outperformance far exceeds Ronaldo's.",
         "footnote": "*Removes shot-volume bias by dividing net (Goals - xG) by total tracked shots (scored + missed) and by total goals in the deduplicated shot-level database (Messi: 2,860 shots, 543 goals, net +120.23; Ronaldo: 1,749 shots, 274 goals, net +3.84). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_match_shooting\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Match Shooting Logs (2017\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Sample))",
         "chart": {
           "title": "Volume-Normalised xG Outperformance: Per Shot & Per Goal",
@@ -3978,7 +3978,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo holds a narrow edge in total hat-trick matches, while Messi leads in non-penalty hat-tricks.",
+        "headline": "Ronaldo: slight edge in total hat-tricks; Messi: clear lead in non-penalty hat-tricks.",
         "footnote": "*All senior official and friendly appearances. Matches with 3+ goals and zero-penalty hat-tricks evaluated from verified match logs. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & Match Reports</a> (Direct Web Scrape)",
         "chart": {
           "title": "Multi-Goal Match Feats (Hat-tricks, Pokers, Manitas)",
@@ -4040,7 +4040,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both maintained elite club scoring rates across environments, with Ronaldo peaking at Real Madrid and Messi matching that pace at Barcelona and Inter Miami.",
+        "headline": "Both scored at elite rates across clubs; Ronaldo peaked at Real Madrid, Messi at Barcelona & Inter Miami.",
         "footnote": "*Senior goals divided by played appearances per club and national team from Transfermarkt match performance logs. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "type": "dual_bar",
@@ -4104,7 +4104,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +2.80% Shot Conv",
-    "answer": "Messi converts a higher share of his shots and consistently outperforms expected goals (xG) both in total volume and on a per-shot basis. Ronaldo has more multi-goal matches while Messi leads in non-penalty hat-tricks",
+    "answer": "Messi: higher shot conversion & xG outperformance vs Ronaldo: more hat-trick matches (Messi leads non-penalty hat-tricks).",
     "metric_tags": [
       [
         "messi",
@@ -4137,7 +4137,7 @@ window.INSIGHTS_DATA = [
     "summary": "Ronaldo scored 134 headers (Messi 31) and 186 penalties (Messi 119). Messi scored 65 direct free kicks (Ronaldo 55), a higher share of non-penalty inside-box goals (80.2% vs 74.5%), and averaged greater shooting distance on telemetry-tracked goals (13.12m across 540 goals vs Ronaldo's 11.77m across 274 goals).",
     "insights": [
       {
-        "headline": "Ronaldo's goals are spread more evenly across headers and weaker foot, while Messi's scoring is heavily concentrated on his strong foot.",
+        "headline": "Ronaldo: more headers and weak-foot goals; Messi: heavily concentrated on his left foot.",
         "footnote": "*Goals with a recorded body part only (855 Messi, 827 Ronaldo; 233 without a tag excluded). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Goals by Body Part",
@@ -4181,7 +4181,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both scored predominantly inside the box, with Ronaldo leading decisively in penalties and Messi holding a narrow edge in free kicks.",
+        "headline": "Both scored mostly inside the box; Ronaldo leads penalties, Messi edges free kicks.",
         "footnote": "*Tactical zones determined from verified shot coordinates, penalty spot, and free-kick telemetry. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Goals by Scoring Zone",
@@ -4243,7 +4243,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "They are both, in a way, 'tap-in' merchant with majority of their goals are Non-Penalty Inside-Box; Messi scored a slightly higher share of his goals that way.",
+        "headline": "Majority of goals for both are non-penalty inside the box, Messi slightly higher.",
         "footnote": "*Non-penalty, non-free-kick goals from inside the box as % of all season goals. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Non-Penalty Inside-Box Goal Share (%) per Season",
@@ -4358,7 +4358,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "In the limited window where we have strong data observation, Messi scored from slightly further out on average than Ronaldo.",
+        "headline": "Across tracked shots, Messi scored from slightly further out on average.",
         "footnote": "*Mean goal distance in metres computed exclusively from verified shot-level coordinates & Opta yardage (Understat + FBref/Opta*0.9144 + FotMob + StatsBomb; N=814 telemetry goals). Seasons with <5 telemetry goals or <3 non-penalty telemetry goals are omitted, and only paired seasons with data for both players are shown. Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_match_shooting\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Match Shooting Logs (2017\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fotmob_match_details\" target=\"_blank\" rel=\"noopener noreferrer\">FotMob Shot Coordinate Telemetry (2020\u20132024)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Sample)) | <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Average Goal Distance (m) per Telemetry-Tracked Season",
@@ -4464,7 +4464,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Despite setting a wide gap on freekick goals early on his carrier, Ronaldo has been surpassed by Messi in the mid-to-late career.",
+        "headline": "Ronaldo led free kicks early; Messi overtook him mid-to-late career.",
         "footnote": "*Senior matches only. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Cumulative Direct Free-Kick Goals",
@@ -4666,7 +4666,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "This is partically because Messi took consistently more direct free-kick attempts per season.",
+        "headline": "Messi took consistently more direct free-kick attempts per season.",
         "footnote": "*Direct free-kick attempts in European league matches from Understat shot-level telemetry (2014/15\u20132018/19; Messi: 201 attempts; Ronaldo: 105 attempts). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror)",
         "chart": {
           "title": "Direct Free-Kick Attempts by Season (2014/15\u20132018/19)",
@@ -4721,7 +4721,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "But more importantly, Messi improves his freekick efficiency whereas Ronaldo dropped it.",
+        "headline": "Crucially, Messi's free-kick conversion rose while Ronaldo's declined.",
         "footnote": "*Direct free-kick conversion (%) = Goals \u00f7 Attempts \u00d7 100 in European league matches from Understat shot-level telemetry (2014/15\u20132018/19; Messi: 20/201; Ronaldo: 4/105). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror)",
         "chart": {
           "title": "Direct Free-Kick Conversion Rate (%) by Season (2014/15\u20132018/19)",
@@ -4776,7 +4776,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "On the other hand, while both scored many penalties, Ronaldo has scored substantially more.",
+        "headline": "Ronaldo scored substantially more career penalties than Messi.",
         "footnote": "*Excludes shoot-outs. Transfermarkt penalty records. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/elfmetertore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Penalty Record (2002\u20132026; N=377 penalties)</a> (Direct Web Scrape)",
         "chart": {
           "title": "Cumulative Penalty Goals",
@@ -4978,7 +4978,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo generally earned slightly more league penalty attempts per season than Messi across the tracked window.",
+        "headline": "Ronaldo averaged slightly more league penalty attempts per season.",
         "footnote": "*Penalty attempts in European league matches from Understat shot-level telemetry (2014/15\u20132018/19; Messi: 29 attempts; Ronaldo: 39 attempts). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror)",
         "chart": {
           "title": "Penalty Attempts by Season (2014/15\u20132018/19)",
@@ -5033,7 +5033,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across tracked league seasons, Ronaldo's penalty conversion stayed steadier while Messi's dipped in two campaigns.",
+        "headline": "Ronaldo's league penalty conversion stayed steadier across tracked seasons.",
         "footnote": "*Seasonal penalty conversion (%) = Goals \u00f7 Attempts \u00d7 100 in European league matches from Understat shot-level telemetry (2014/15\u20132018/19; Messi: 20/29; Ronaldo: 30/39). Source: <a href=\"https://github.com/sharmaabhishekk/undershot_backup\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Shot-Level Archive (2014\u20132019)</a> (Verified Open Mirror)",
         "chart": {
           "title": "Penalty Conversion Rate (%) by Season (2014/15\u20132018/19)",
@@ -5088,7 +5088,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi holds a narrow lead in non-penalty goals, while Ronaldo's overall goal lead is driven by penalties.",
+        "headline": "Messi edges non-penalty goals; Ronaldo's overall goal lead comes from penalties.",
         "footnote": "Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Non-Penalty vs Penalty Goals",
@@ -5126,7 +5126,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's goal creation has consistently been dominated by ground build-up throughout his career.",
+        "headline": "Messi's goals came consistently from ground build-up throughout his career.",
         "footnote": "*Goal creation mechanism from verified match telemetry; penalties and direct set pieces separated. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Messi Goal Creation Mix by Season (%)",
@@ -5350,7 +5350,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo's goal creation relies noticeably more on crosses and penalties, with that share rising over time.",
+        "headline": "Ronaldo's goals rely more on crosses and penalties, rising over time.",
         "footnote": "*Goal creation mechanism from verified match telemetry; penalties and direct set pieces separated. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Ronaldo Goal Creation Mix by Season (%)",
@@ -5574,7 +5574,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's goals stem primarily from ground passes and solo play, whereas Ronaldo's rely noticeably more on crosses and penalties.",
+        "headline": "Messi: ground passes & solo play vs Ronaldo: crosses & penalties.",
         "footnote": "*All senior goals (Messi N=936, Ronaldo N=979) classified into five mutually exclusive creation mechanisms. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "type": "dual_pie",
@@ -5648,7 +5648,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's assisted goals were concentrated among fewer core playmakers, while Ronaldo's came from a wider cast of teammates.",
+        "headline": "Messi's assists came from fewer core partners; Ronaldo's from a wider cast.",
         "footnote": "*Named assists only (575 Messi, 571 Ronaldo). Rows where the scorer is listed as his own 'assister' (penalties he won) are counted as unassisted. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Top 10 Assist Partners",
@@ -5750,7 +5750,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "ronaldo",
     "leader_badge": "Ronaldo +103 Headers",
-    "answer": "Ronaldo dominates in headed goals, weak-foot finishes, and penalties, whereas Messi leads in left-footed strikes, direct free kicks, and open-play outside-the-box goals.",
+    "answer": "Ronaldo: headers, weak foot & penalties vs Messi: strong foot, direct free kicks & open-play outside-box strikes.",
     "metric_tags": [
       [
         "ronaldo",
@@ -5787,7 +5787,7 @@ window.INSIGHTS_DATA = [
     "summary": "Measures each player's share of full-season team goals and the percentage of team victories decided by their game-winning goal.",
     "insights": [
       {
-        "headline": "Both shouldered a virtually identical peak share of their team's scoring, with Ronaldo leading slightly more seasons overall.",
+        "headline": "Equal peak team goal share; Ronaldo led slightly more seasons.",
         "footnote": "*Player goals \u00c3\u00b7 all goals scored by his teams (club + country) in every match in his Transfermarkt match log that season, including matches he missed. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Share of Team's Full-Season Goals (%)",
@@ -5989,7 +5989,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo has scored more game-winning goals overall, though they split season-by-season leads almost evenly.",
+        "headline": "Ronaldo leads total game-winning goals; seasonal leads split evenly.",
         "footnote": "*Game-winning goals per season since 2004-05 (Messi 287 vs Ronaldo 346). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Game-Winning Goals per Season",
@@ -6191,7 +6191,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo's goals served as the match-winner in a noticeably higher share of his team's victories.",
+        "headline": "Ronaldo's goals decided a higher share of his teams' victories.",
         "footnote": "*Metric: of all matches the player appeared in that his team won, the share where he scored the game-winning goal. Sample: European club & continental matches with appearance data (529 Messi, 485 Ronaldo). Higher = team relied more on him to decide wins; lower can also mean more teammates scored winners. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download) | <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Team Wins Decided by the Player's Winner (%)",
@@ -6226,7 +6226,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi holds a modest lead in total career knockout goals across all competitions.",
+        "headline": "Messi holds a modest lead in total knockout goals.",
         "footnote": "*Senior knockout rounds from the stage column of Transfermarkt goal logs; youth/Olympic/friendlies excluded. Source: <a href=\"https://www.transfermarkt.com/cristiano-ronaldo/alletore/spieler/8198\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Knockout Match Log</a> (Direct Web Scrape)",
         "chart": {
           "title": "Knockout Goals by Round",
@@ -6270,7 +6270,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "They are neck and neck in the opening knockout round, while Ronaldo scores at a higher rate from the Quarter-Finals onward.",
+        "headline": "Neck-and-neck in Round of 16; Ronaldo scores faster from Quarter-Finals onward.",
         "footnote": "*Knockout rounds in European club & continental matches with minutes recorded. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Knockout Goals per 90 by Round",
@@ -6314,7 +6314,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season in tracked knockout stages, both produced bursts of decisive goals with Ronaldo peaking in his Real Madrid Champions League runs.",
+        "headline": "Both produced knockout bursts; Ronaldo peaked in Real Madrid UCL runs.",
         "footnote": "*Senior knockout-round goals per season across European club and cup ties in Transfermarkt datasets (2012/13\u20132022/23). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Knockout-Stage Goals per Season (2012/13\u20132022/23)",
@@ -6387,7 +6387,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "As a percentage of their team's goals scored in knockout rounds and vs Top-4 clubs, Ronaldo carried a notably larger share in Quarter-Finals & Semi-Finals while both were dead even in Round of 16 and Finals.",
+        "headline": "Ronaldo carried a larger team goal share in QF & SF; dead even in R16 & Finals.",
         "footnote": "*Player goals divided by total team goals scored in appearances played across those stages (2012/13\u20132024/25, Transfermarkt club & cup logs). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Share of Team Goals Scored (%) in Knockouts & vs Top-4 Opponents",
@@ -6440,7 +6440,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both are completely tied in career knockout game-winning goals.",
+        "headline": "Exact dead heat in career knockout game-winning goals.",
         "footnote": "*Game-winning goals in knockout rounds. Source: <a href=\"https://www.transfermarkt.com/cristiano-ronaldo/alletore/spieler/8198\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Knockout Match Log</a> (Direct Web Scrape)",
         "chart": {
           "title": "Knockout Game-Winning Goals by Round",
@@ -6484,7 +6484,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "They are virtually tied in league game-winners against top-six European opposition, while Ronaldo leads in the Champions League.",
+        "headline": "Virtually tied in league Top-6 winners; Ronaldo leads in the Champions League.",
         "footnote": "*Decisive game-winning goals scored against opponents that finished in the Top 6 of England, Spain, Italy, Germany, France, or Portugal in that season. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European League Records (2004\u20132026; N=138 Top-6 GWGs)</a> (Open Data Release Download) | <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "Game-Winning Goals vs Top-6 European Clubs by Competition",
@@ -6525,7 +6525,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Against eventual Top-4 clubs both scored the exact same number of league goals, while Messi scored slightly more against eventual Bottom-4 clubs.",
+        "headline": "Identical league goal totals vs Top-4 clubs; Messi slightly ahead vs Bottom-4.",
         "footnote": "*Goals vs clubs finishing in that season's eventual Top 4 (Messi N=61, Ronaldo N=57 matches) and eventual Bottom 4 (Messi N=71, Ronaldo N=64 matches) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Goals vs Eventual Season Top-4 & Bottom-4 Clubs (2012/13\u20132024/25)",
@@ -6563,7 +6563,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per match, Ronaldo edges scoring rate against eventual Top-4 clubs while Messi holds the higher rate against eventual Bottom-4 clubs.",
+        "headline": "Per match: Ronaldo edges Top-4 scoring rate; Messi leads vs Bottom-4.",
         "footnote": "*Goals per match vs eventual Top-4 (Messi N=61, Ronaldo N=57) and eventual Bottom-4 league clubs (Messi N=71, Ronaldo N=64) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Goals per Match vs Eventual Season Top-4 & Bottom-4 Clubs",
@@ -6601,7 +6601,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season-by-season goals against eventual Top-4 league finishers fluctuated closely between both across matched campaigns.",
+        "headline": "Seasonal goals vs eventual Top-4 clubs tracked closely across matched campaigns.",
         "footnote": "*Goals per season vs clubs finishing in that season's eventual Top 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Goals vs Eventual Season Top-4 Clubs by Season (2012/13\u20132022/23)",
@@ -6674,7 +6674,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season-by-season goals against eventual Bottom-4 clubs show both capitalised heavily on relegation-tier opposition across matched campaigns.",
+        "headline": "Both scored heavily against eventual Bottom-4 clubs across matched seasons.",
         "footnote": "*Goals per season vs clubs finishing in that season's eventual Bottom 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Goals vs Eventual Season Bottom-4 Clubs by Season (2012/13\u20132022/23)",
@@ -6747,7 +6747,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi scored more international goals against FIFA Top-20 nations, while Ronaldo scored nearly twice as many against Rank 101+ opponents.",
+        "headline": "Messi: more goals vs FIFA Top-20 nations; Ronaldo: nearly 2\u00d7 vs Rank 101+.",
         "footnote": "*Senior international goals mapped to historical FIFA World Rankings at match date. Source: <a href=\"https://github.com/martj42/international_results\" target=\"_blank\" rel=\"noopener noreferrer\">martj42 International Football Results</a> (Public Git Archive Download) | <a href=\"https://www.fifa.com/fifa-world-ranking/men\" target=\"_blank\" rel=\"noopener noreferrer\">Historical FIFA Men's World Rankings (1992\u20132026)</a> (Official Release Download)",
         "chart": {
           "type": "dual_pie",
@@ -6801,7 +6801,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per ninety minutes, both scored at virtually identical rates against FIFA Top-20 nations, while Messi scored faster in his fewer matches against lower-ranked sides.",
+        "headline": "Equal per-90 rate vs FIFA Top-20; Messi faster vs lower-ranked sides.",
         "footnote": "*Senior international goals per 90 minutes played across matched caps with exact minutes and FIFA ranking at match date (Messi N=208 caps, 17,210 mins; Ronaldo N=234 caps, 18,604 mins). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint) | <a href=\"https://github.com/martj42/international_results\" target=\"_blank\" rel=\"noopener noreferrer\">martj42 International Football Results</a> (Public Git Archive Download) | <a href=\"https://www.fifa.com/fifa-world-ranking/men\" target=\"_blank\" rel=\"noopener noreferrer\">Historical FIFA Men's World Rankings (1992\u20132026)</a> (Official Release Download)",
         "chart": {
           "title": "International Goals per 90 Minutes by Opponent FIFA Rank",
@@ -6847,7 +6847,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "tied",
     "leader_badge": "Tied 44-44 KO GWG",
-    "answer": "Both peaked at an identical share of their team's full-season goals and stand completely tied in career knockout game-winners; Ronaldo leads in total game-winning goals and share of team wins decided by his winner, while Messi leads total knockout goals.",
+    "answer": "Both peaked at equal team goal share & tie in knockout winners; Ronaldo: more total GWGs vs Messi: more total knockout goals.",
     "metric_tags": [
       [
         "tied",
@@ -6888,7 +6888,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi has 467 senior assists (444 official) vs Ronaldo's 307 (295 official). Messi out-assisted Ronaldo in 18 charted seasons, Ronaldo in 5. Peaks: 36 (2011-12) vs 24 (2006-07).",
     "insights": [
       {
-        "headline": "Messi holds a decisive career lead in both total and official assists.",
+        "headline": "Messi holds a decisive lead in gross and official career assists.",
         "footnote": "*Official excludes friendlies. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Senior Assists: Gross vs Official",
@@ -6926,7 +6926,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi out-assisted Ronaldo in the vast majority of their shared campaigns and routinely exceeded the Top 10 European attackers & midfielders benchmark.",
+        "headline": "Messi led most shared seasons and routinely cleared Top-10 European creators.",
         "footnote": "*Season = Aug-Jul. Dashed benchmarks (2012/13\u20132025/26): Transfermarkt Top-10 attackers/midfielders avg & 90th percentile assists in club competitions (N=2,070\u20132,278 players/season with >=900 mins). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint) Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Senior Assists per Season",
@@ -7208,7 +7208,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi pulled away steadily in cumulative assists from early in their careers.",
+        "headline": "Messi pulled away in cumulative assists from early in their careers.",
         "footnote": "Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Cumulative Senior Assists",
@@ -7323,7 +7323,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi leads decisively in league assists, while Ronaldo holds a narrow edge in Champions League assists.",
+        "headline": "Messi dominates league assists; Ronaldo edges Champions League assists.",
         "footnote": "*Official competitions; friendlies excluded from the international column. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Assists by Competition",
@@ -7367,7 +7367,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi has produced more than twice as many multi-assist matches and three times as many assist hat-tricks as Ronaldo.",
+        "headline": "Messi: 2\u00d7+ multi-assist matches and 3\u00d7 assist hat-tricks.",
         "footnote": "*Senior club and international matches with assist tracking from Transfermarkt match performance logs. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta Playmaking Archive & Transfermarkt Logs (2004\u20132026; N=774 career assists)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Multi-Assist Matches & Single-Game Feats",
@@ -7410,7 +7410,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +160 Assists",
-    "answer": "Messi leads decisively in total career assists, per-match assist rate, and seasons out-assisting Ronaldo.",
+    "answer": "Messi leads decisively in career assists, assist rate & seasons out-assisting Ronaldo.",
     "metric_tags": [
       [
         "messi",
@@ -7445,7 +7445,7 @@ window.INSIGHTS_DATA = [
     "summary": "In Understat's 9-season predictive xA model (2014-2023), Messi generated 129.86 expected assists (delivering 128.0 actual assists) vs Ronaldo's 52.08 xA (57.0 actual assists) \u2014 producing 2.5x more creative expected assists. In Opta telemetry since 2009/10, Messi created 419 big chances vs 179 (2.3x) and delivered 505 defence-splitting throughballs vs 81 (6.2x).",
     "insights": [
       {
-        "headline": "Messi averages nearly double Ronaldo's assist rate per ninety minutes.",
+        "headline": "Messi averages nearly double Ronaldo's assists per 90 minutes.",
         "footnote": "*European club & continental appearances with minutes (529 Messi, 485 Ronaldo). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Assists per 90 (European Club Sample)",
@@ -7480,7 +7480,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi generated more than double Ronaldo's expected assists, with both finishing close to their underlying creation.",
+        "headline": "Messi generated 2\u00d7+ Ronaldo's Expected Assists (xA); both matched xA.",
         "footnote": "*Understat predictive shot-assist model across European league campaigns (2014-2023). Source: <a href=\"https://huggingface.co/datasets/aloobun/fbref_understat_combined\" target=\"_blank\" rel=\"noopener noreferrer\">Understat Predictive Shot & Assist Models (2014\u20132023)</a> (Verified Open Mirror)",
         "chart": {
           "title": "9-Season Expected Assists (xA) & Actual Assists \u2014 Understat Model",
@@ -7518,7 +7518,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi created more than twice as many big chances and over six times as many throughballs as Ronaldo.",
+        "headline": "Messi: 2\u00d7+ Big Chances and 6\u00d7+ accurate throughballs.",
         "footnote": "*Opta event telemetry across European League & UEFA Champions League fixtures. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta Playmaking Archive & Transfermarkt Logs (2004\u20132026; N=774 career assists)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Creative Quality Metrics (Opta All-Time)",
@@ -7556,7 +7556,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi delivered more than six times as many accurate throughballs as Ronaldo in European competition.",
+        "headline": "Messi delivered 6\u00d7+ more accurate throughballs across Europe.",
         "footnote": "*Opta event telemetry across European league and UEFA Champions League fixtures since 2009/10. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta Playmaking Archive & Transfermarkt Logs (2004\u20132026; N=774 career assists)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Accurate Defence-Splitting Throughballs (Opta)",
@@ -7597,7 +7597,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi created more than twice as many big chances as Ronaldo in European league and Champions League play.",
+        "headline": "Messi created 2\u00d7+ more Big Chances in European club play.",
         "footnote": "*Opta definition: clear-cut opportunity where a player is reasonably expected to score. Tracked since 2010/11. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta Playmaking Archive & Transfermarkt Logs (2004\u20132026; N=774 career assists)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Big Chances Created (Opta)",
@@ -7638,7 +7638,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi delivered substantially more key passes than Ronaldo across European league and Champions League fixtures.",
+        "headline": "Messi delivered far more key passes across European competition.",
         "footnote": "*Final pass leading directly to a teammate shot attempt. Opta telemetry since 2009/10. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta Playmaking Archive & Transfermarkt Logs (2004\u20132026; N=774 career assists)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Key Passes Delivered (Opta)",
@@ -7679,7 +7679,7 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "answer": "Messi generates substantially higher Expected Assists (xA), key passes, and big chances created per match.",
+    "answer": "Messi generates far higher Expected Assists (xA), key passes & big chances created.",
     "metric_tags": [
       [
         "messi",
@@ -7712,7 +7712,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across Transfermarkt matches with passing data (412 Messi, 404 Ronaldo), Messi attempted 52.5 passes per match (83.3% completed) vs Ronaldo's 27.4 (83.3%). In StatsBomb's tournament sample, Messi was more accurate at every range.",
     "insights": [
       {
-        "headline": "Messi attempts and completes nearly twice as many passes per match as Ronaldo.",
+        "headline": "Messi attempts and completes nearly 2\u00d7 as many passes per match.",
         "footnote": "*Transfermarkt matches with passing data (412 Messi, 404 Ronaldo); StatsBomb = 14 Messi / 14 Ronaldo matches in supplementary StatsBomb H2H/tournament sample. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "Passing Volume per Match",
@@ -7753,7 +7753,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi completes a higher percentage of his passes across every distance range, especially medium passes.",
+        "headline": "Messi leads pass completion (%) across every distance range.",
         "footnote": "*StatsBomb pass length in yards: short <15, medium 15-30, long >=30. 14 Messi / 14 Ronaldo matches in supplementary StatsBomb H2H/tournament sample. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "Pass Completion by Range (%)",
@@ -7794,7 +7794,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi completes far more long passes and switches of play than Ronaldo.",
+        "headline": "Messi completes far more long passes and switches of play.",
         "footnote": "*Totals in the StatsBomb sample (14 Messi / 14 Ronaldo matches in supplementary StatsBomb H2H/tournament sample). Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "Long Passes & Switches (Totals)",
@@ -7832,7 +7832,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both predominantly play ground passes, with Messi keeping the ball on the ground slightly more often.",
+        "headline": "Both favour ground passes, Messi slightly more often.",
         "footnote": "*Share of all passes by height. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised H2H Sample))",
         "chart": {
           "title": "Pass Delivery Height Profile (%)",
@@ -7873,7 +7873,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi completes roughly five times as many progressive passes as Ronaldo.",
+        "headline": "Messi completes roughly 5\u00d7 more progressive passes.",
         "footnote": "*StatsBomb event telemetry across 27 shared head-to-head fixtures. Progressive pass definition: completed forward pass moving ball >=10 yards closer to goal from outside own defensive 40%. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Event Telemetry (2009\u20132018; N=32 H2H matches)</a> (Official Open Data Git Repository)",
         "chart": {
           "title": "Passing Volume & Progressive Counts (StatsBomb Sample)",
@@ -7914,7 +7914,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "A much larger share of Messi's passes move the ball significantly upfield compared to Ronaldo.",
+        "headline": "A far larger share of Messi's passes progress the ball upfield.",
         "footnote": "*Share of passes that successfully advance play towards the opponent's goal line. StatsBomb sample. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Event Telemetry (2009\u20132018; N=32 H2H matches)</a> (Official Open Data Git Repository)",
         "chart": {
           "title": "Passing Accuracy & Progressive Share (%)",
@@ -7955,7 +7955,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season, Messi completed passes per ninety above the Big-5 90th percentile for attackers & midfielders, whereas Ronaldo sat below positional playmakers.",
+        "headline": "Messi cleared the Big-5 90th percentile for passes/90; Ronaldo sat below playmakers.",
         "footnote": "*FBref Big-5 league match logs (2017/18\u20132024/25, >=5 matches & >=270 mins/season). Dashed lines: Top-10 & 90th percentile among all Big-5 attackers and midfielders (N=896\u2013980 players/season with >=900 mins). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Completed Passes per 90 Minutes by Season (2017/18\u20132024/25)",
@@ -8065,7 +8065,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi matched or exceeded the Big-5 Top 10 progressive passers per ninety in every European campaign.",
+        "headline": "Messi matched or beat Big-5 Top-10 progressive passers every European season.",
         "footnote": "*Progressive passes per 90 minutes across FBref Big-5 league match logs (2017/18\u20132024/25). Dashed lines: Top-10 & 90th percentile Big-5 attackers/midfielders (N=896\u2013980 players/season with >=900 mins). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Progressive Passes per 90 Minutes by Season (2017/18\u20132024/25)",
@@ -8177,7 +8177,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +25.1 Passes/Match",
-    "answer": "Messi attempts and completes far more passes per match across short, medium, and long ranges, accounting for a larger share of his team's total distribution.",
+    "answer": "Messi attempts & completes far more passes per match across every range.",
     "metric_tags": [
       [
         "messi",
@@ -8210,7 +8210,7 @@ window.INSIGHTS_DATA = [
     "summary": "Measures the share of total team passes, completed dribbles, and ball-carrying distance executed by each player.",
     "insights": [
       {
-        "headline": "Messi accounts for a noticeably larger share of his team's total passing volume than Ronaldo.",
+        "headline": "Messi accounts for a larger share of his team's total passes.",
         "footnote": "*Player passes attempted divided by total team passes attempted in the same matches (Messi N=195, Ronaldo N=165). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release) | <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Player Passes as % of Team Total Passes by Season (2017/18\u20132024/25)",
@@ -8298,7 +8298,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi accounts for a vastly larger share of his team's completed dribbles and ball-carrying distance than Ronaldo.",
+        "headline": "Messi accounts for a vastly larger share of team dribbles and carry distance.",
         "footnote": "*Player share of total team completed dribbles, total ball-carrying distance, and progressive ball-carrying distance in matched fixtures (Messi N=195, Ronaldo N=67). Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_advanced_match_stats\" target=\"_blank\" rel=\"noopener noreferrer\">FBref / Opta Advanced Team & Player Match Telemetry (2017\u20132025)</a> (Open Data Release) | <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "Player Share of Team Dribbles & Carry Distance (%)",
@@ -8339,7 +8339,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi assisted a noticeably broader set of teammates than Ronaldo across their European club careers.",
+        "headline": "Messi assisted a broader set of teammates across Europe.",
         "footnote": "*Computed from Transfermarkt European club match events, excluding self-won penalties (player_id == player_assist_id). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Unique Teammates Assisted (European Club Sample)",
@@ -8377,7 +8377,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's top assist partnerships produced far higher volume than Ronaldo's, led by his connection with Luis Su\u00e1rez.",
+        "headline": "Messi's top assist partnerships produced higher volume, led by Luis Su\u00e1rez.",
         "footnote": "*Top 10 teammates assisted by each player in Transfermarkt European club match events (excluding self-won penalties). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "type": "dual_bar",
@@ -8469,7 +8469,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi created substantially more assists across knockout rounds, especially from the Quarter-Finals through Finals.",
+        "headline": "Messi produced far more knockout assists, especially from QF to Finals.",
         "footnote": "*Senior knockout-stage assists (R16, Quarter-Finals, Semi-Finals, Final) across European club & cup matches from Transfermarkt datasets (2012/13\u20132024/25; Messi N=40 assists; Ronaldo N=15 assists). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Knockout-Stage Assists by Round (2012/13\u20132024/25)",
@@ -8513,7 +8513,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per ninety knockout minutes, Messi's assist rate rises sharply in Quarter-Finals, Semi-Finals, and Finals.",
+        "headline": "Messi's knockout assist rate per 90 rises sharply from QF to Finals.",
         "footnote": "*Knockout-stage assists per 90 minutes played across Round of 16, Quarter-Finals, Semi-Finals, and Finals (2012/13\u20132024/25). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Knockout-Stage Assists per 90 by Round (2012/13\u20132024/25)",
@@ -8557,7 +8557,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi recorded roughly twice as many league assists as Ronaldo against both eventual Top-4 and eventual Bottom-4 clubs.",
+        "headline": "Messi recorded ~2\u00d7 more league assists vs both Top-4 and Bottom-4 clubs.",
         "footnote": "*Assists vs clubs finishing in that season's eventual Top 4 (Messi N=61, Ronaldo N=57) and eventual Bottom 4 (Messi N=71, Ronaldo N=64) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Assists vs Eventual Season Top-4 & Bottom-4 Clubs (2012/13\u20132024/25)",
@@ -8595,7 +8595,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per match against both eventual Top-4 and eventual Bottom-4 league finishers, Messi's assist rate is nearly double Ronaldo's.",
+        "headline": "Per match vs Top-4 and Bottom-4 clubs, Messi's assist rate is nearly double.",
         "footnote": "*Assists per match vs eventual Top-4 (Messi N=61, Ronaldo N=57) and eventual Bottom-4 league clubs (Messi N=71, Ronaldo N=64) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Assists per Match vs Eventual Season Top-4 & Bottom-4 Clubs",
@@ -8633,7 +8633,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across tracked knockout campaigns, Messi delivered assists steadily across seasons while Ronaldo's knockout assist output remained sporadic.",
+        "headline": "Messi delivered knockout assists steadily; Ronaldo's output was more sporadic.",
         "footnote": "*Senior knockout-round assists per season across European club and cup ties in Transfermarkt datasets (2012/13\u20132022/23). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Knockout-Stage Assists per Season (2012/13\u20132022/23)",
@@ -8706,7 +8706,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across matched league seasons, Messi consistently supplied more assists against eventual Top-4 clubs than Ronaldo.",
+        "headline": "Messi supplied more seasonal assists vs eventual Top-4 clubs.",
         "footnote": "*Assists per season vs clubs finishing in that season's eventual Top 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Assists vs Eventual Season Top-4 Clubs by Season (2012/13\u20132022/23)",
@@ -8779,7 +8779,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across matched league seasons, Messi also supplied more assists against eventual Bottom-4 clubs than Ronaldo.",
+        "headline": "Messi also supplied more seasonal assists vs eventual Bottom-4 clubs.",
         "footnote": "*Assists per season vs clubs finishing in that season's eventual Bottom 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Assists vs Eventual Season Bottom-4 Clubs by Season (2012/13\u20132022/23)",
@@ -8852,7 +8852,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "As a % of total team goals scored in big matches, Messi directly assisted more than double Ronaldo's team share in Knockouts overall (17.8% vs 8.5%), Finals (22.0% vs 2.2%), and vs Top-4 clubs (14.3% vs 7.8%).",
+        "headline": "Messi assisted 2\u00d7+ Ronaldo's team-goal share in knockouts, Finals & vs Top-4.",
         "footnote": "*Player assists divided by total team goals scored in matches played across each knockout round and eventual Top-4 league fixtures (2012/13\u20132024/25). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Share of Team Goals Directly Assisted (%) in Knockouts & vs Top-4 Opponents",
@@ -8907,7 +8907,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +23.3% Team Dribbles",
-    "answer": "Messi accounted for a substantially larger share of his teams' passes, completed dribbles, and ball-carrying distance, while assisting a wider set of teammates across Europe.",
+    "answer": "Messi carried far more of his team's passes, dribbles & carry distance, and assisted a wider set of teammates.",
     "metric_tags": [
       [
         "messi",
@@ -8944,7 +8944,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi completed 3,093 successful European dribbles (4.58 per 90) vs Ronaldo's 1,655 (2.22 per 90), and led in every tracked Opta season from 2009/10 to 2023/24.",
     "insights": [
       {
-        "headline": "Messi completed nearly twice as many successful dribbles as Ronaldo across European league and Champions League play.",
+        "headline": "Messi completed nearly 2\u00d7 as many European dribbles.",
         "footnote": "*Opta / WhoScored all-time European League & UEFA Champions League records. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "All-Time Successful Dribbles (Opta)",
@@ -8985,7 +8985,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi averages more than double Ronaldo's successful dribbles per ninety minutes.",
+        "headline": "Messi averages 2\u00d7+ Ronaldo's successful dribbles per 90.",
         "footnote": "*Dribbles per 90 minutes across all instrumented European club minutes. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Successful Dribbles per 90 Minutes (Opta)",
@@ -9026,7 +9026,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi completed far more successful dribbles than Ronaldo in every tracked Opta season, clearing the Big-5 Top 10 dribblers average across Europe.",
+        "headline": "Messi led dribbles in every Opta season, clearing the Big-5 Top-10 average.",
         "footnote": "*Season-by-season successful take-ons across domestic league and European competition from Opta telemetry (2009/10\u20132023/24). Dashed lines (2017/18\u20132023/24): Big-5 domestic league Top-10 & 90th percentile among attackers/midfielders (N=923\u2013970 players/season with >=900 mins). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Successful Dribbles per Season (2009/10\u20132023/24)",
@@ -9171,7 +9171,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per ninety minutes, Messi consistently sat well above the Big-5 Top 10 dribbles/90 benchmark while Ronaldo hovered below the 90th percentile.",
+        "headline": "Messi stayed well above Big-5 Top-10 dribbles/90; Ronaldo sat below the 90th pct.",
         "footnote": "*Opta seasonal successful dribbles normalised by official Transfermarkt minutes played per season (2009/10\u20132023/24). Dashed benchmarks (2017/18\u20132023/24): Big-5 Top-10 & 90th percentile dribbles/90 (N=923\u2013970 players/season with >=900 mins). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download) | <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Successful Dribbles per 90 Minutes by Season (2009/10\u20132023/24)",
@@ -9318,7 +9318,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +1,438 Dribbles",
-    "answer": "Messi completed roughly twice as many successful dribbles as Ronaldo across European competition and sustained a much higher per-ninety rate across every tracked season.",
+    "answer": "Messi completed nearly twice as many European dribbles and led per-ninety take-ons in every tracked season.",
     "metric_tags": [
       [
         "messi",
@@ -9347,7 +9347,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi has 1404 goal contributions in 1184 matches (1.19 per match, 1.3 per 90) vs Ronaldo's 1286 in 1337 (0.96, 1.06).",
     "insights": [
       {
-        "headline": "Messi leads in combined goals and assists, though Ronaldo's scoring keeps the overall margin relatively close.",
+        "headline": "Messi leads combined Goals + Assists; Ronaldo's goals keep the gap relatively close.",
         "footnote": "*G+A = goals + assists per Transfermarkt match records. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Career Goals + Assists",
@@ -9385,7 +9385,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi leads in domestic league production, while Ronaldo leads in Champions League and international combined output.",
+        "headline": "Messi leads domestic league G+A; Ronaldo leads UCL and international G+A.",
         "footnote": "*Official competitions. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "G+A by Competition",
@@ -9429,7 +9429,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi produces combined goals and assists at a noticeably higher rate per match and per ninety minutes.",
+        "headline": "Messi posts a higher G+A rate per match and per 90 minutes.",
         "footnote": "*Played matches: 1184 Messi (97440 min), 1337 Ronaldo (109271 min). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "G+A Rate",
@@ -9467,7 +9467,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi reached a substantially higher single-season peak in combined goals and assists, while both towered above Top 10 European attackers across their peak decade.",
+        "headline": "Messi hit the higher G+A peak; both towered above Top-10 European attackers.",
         "footnote": "*Season = Aug-Jul, club + country. Dashed benchmarks (2012/13\u20132025/26): Transfermarkt Top-10 attackers & 90th percentile G+A across club competitions (N=909\u20131,066 attackers/season with >=900 mins). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint) Source: <a href=\"https://github.com/JaseZiv/worldfootballR_data/releases/tag/fb_big5_advanced_season_stats\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt European Attackers & FBref Big-5 Peer Benchmarks (2012\u20132026)</a> (Peer Benchmark Audit)",
         "chart": {
           "title": "Goals + Assists per Season",
@@ -9662,7 +9662,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi out-produced Ronaldo in combined goals and assists across the large majority of their campaigns.",
+        "headline": "Messi out-produced Ronaldo in G+A across most shared seasons.",
         "footnote": "*Bar = Messi G+A - Ronaldo G+A. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Season G+A Difference (Messi - Ronaldo)",
@@ -9857,7 +9857,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi produced more combined goals and assists across most biological ages, while Ronaldo led at his earliest and latest ages.",
+        "headline": "Messi led G+A across most biological ages; Ronaldo led at earliest & latest ages.",
         "footnote": "*G+A in matches played at each integer age. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "G+A at Each Biological Age",
@@ -10053,7 +10053,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi maintained a clear cumulative lead in combined goals and assists through the same biological age.",
+        "headline": "Messi held a clear cumulative G+A lead at every shared biological age.",
         "footnote": "Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Cumulative G+A by Biological Age",
@@ -10167,7 +10167,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +118 G+A",
-    "answer": "Messi leads in total combined Goals + Assists across both gross and official competitions, achieving higher output in fewer career appearances.",
+    "answer": "Messi leads combined Goals + Assists across gross & official play in fewer appearances.",
     "metric_tags": [
       [
         "messi",
@@ -10200,7 +10200,7 @@ window.INSIGHTS_DATA = [
     "summary": "Measures the percentage of team goals scored while on the pitch that were directly scored or assisted by the player.",
     "insights": [
       {
-        "headline": "Messi was directly involved in a higher share of his team's goals while on the pitch in most seasons.",
+        "headline": "Messi led on-pitch team goal involvement share in most seasons.",
         "footnote": "*(Goals + assists) \u00c3\u00b7 team goals scored while the player was on the pitch. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Share of Team Goals Involved In While On Pitch (%)",
@@ -10402,7 +10402,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Combining goals and assists, Messi leads modestly against eventual Top-4 clubs and more clearly against eventual Bottom-4 clubs.",
+        "headline": "Combined G+A: Messi edges Top-4 clubs and leads clearly vs Bottom-4.",
         "footnote": "*Combined G+A vs clubs finishing in that season's eventual Top 4 (Messi N=61, Ronaldo N=57) and eventual Bottom 4 (Messi N=71, Ronaldo N=64) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "G+A vs Eventual Season Top-4 & Bottom-4 Clubs (2012/13\u20132024/25)",
@@ -10440,7 +10440,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per match, Messi holds a lead in combined G+A against both eventual Top-4 and eventual Bottom-4 league opponents.",
+        "headline": "Per match, Messi leads G+A against both Top-4 and Bottom-4 clubs.",
         "footnote": "*Combined G+A per match vs eventual Top-4 (Messi N=61, Ronaldo N=57) and eventual Bottom-4 league clubs (Messi N=71, Ronaldo N=64) across 2012/13\u20132024/25. Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "G+A per Match vs Eventual Season Top-4 & Bottom-4 Clubs",
@@ -10478,7 +10478,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Combined goals and assists by season against eventual Top-4 clubs track closely, with Messi edging several campaigns via assists.",
+        "headline": "Seasonal G+A vs Top-4 clubs tracks closely; Messi edges via assists.",
         "footnote": "*Combined G+A per season vs clubs finishing in that season's eventual Top 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "G+A vs Eventual Season Top-4 Clubs by Season (2012/13\u20132022/23)",
@@ -10551,7 +10551,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Combined goals and assists by season against eventual Bottom-4 clubs show sustained high output from both across matched campaigns.",
+        "headline": "Both sustained high seasonal G+A against eventual Bottom-4 clubs.",
         "footnote": "*Combined G+A per season vs clubs finishing in that season's eventual Bottom 4 (2012/13\u20132022/23 paired European seasons). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "G+A vs Eventual Season Bottom-4 Clubs by Season (2012/13\u20132022/23)",
@@ -10624,7 +10624,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Measuring % of total team goals they scored or assisted (G+A Share), Ronaldo edges overall knockouts via Quarter-Finals/Semis while Messi leads sharply in Finals (54% vs 36%) and vs Top-4 league opponents (51% vs 48%).",
+        "headline": "Team G+A share: Ronaldo edges QF/SF; Messi leads Finals & Top-4 league matches.",
         "footnote": "*Combined player (Goals + Assists) divided by total team goals scored in matches played across each knockout round and eventual Top-4 league fixtures (2012/13\u20132024/25). Source: <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match-Level Datasets (dcaribou)</a> (Open Data Release Download)",
         "chart": {
           "title": "Share of Team Goals Involved In (G+A %) in Knockouts & vs Top-4 Opponents",
@@ -10679,7 +10679,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +11 Team Share Seasons",
-    "answer": "Messi was directly involved in a higher share of his team's goals while on the pitch across the vast majority of their shared seasons.",
+    "answer": "Messi accounted for a higher share of on-pitch team goals across most shared seasons.",
     "metric_tags": [
       [
         "messi",
@@ -10710,7 +10710,7 @@ window.INSIGHTS_DATA = [
     "summary": "In Opta's defensive tracking per 90 minutes across European club football, Messi leads in active ground pressing (10.04 pressures vs 7.94 per 90) and tackles (0.65 vs 0.38 per 90), while Ronaldo provides defensive clearance height inside the box (0.65 clearances vs 0.01 per 90).",
     "insights": [
       {
-        "headline": "Messi leads in tackles and pressures per ninety minutes, while Ronaldo leads decisively in clearances from defending set pieces.",
+        "headline": "Messi leads tackles & pressures/90; Ronaldo leads set-piece clearances/90.",
         "footnote": "*Opta / WhoScored defensive action telemetry across European league and continental competitions. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Defensive Actions per 90 Minutes (Opta)",
@@ -10757,7 +10757,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across European club seasons, Messi consistently recorded higher tackling rates per ninety minutes than Ronaldo.",
+        "headline": "Messi recorded higher European tackling rates/90 across seasons.",
         "footnote": "*Opta / WhoScored seasonal total tackles per 90 minutes across League and UEFA Champions League fixtures (2009/10\u20132022/23). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Total Tackles per 90 Minutes by Season (2009/10\u20132022/23)",
@@ -10839,7 +10839,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Through recent all-competition Transfermarkt tracking, Messi continued winning tackles more frequently per ninety minutes than Ronaldo.",
+        "headline": "In recent seasons, Messi continued winning more tackles per 90.",
         "footnote": "*Transfermarkt match logs with recorded duel statistics (all senior club & country fixtures tracked, 2018/19\u20132025/26; seasons with \u226510 tracked games). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Tackles Won per 90 Minutes by Season (2018/19\u20132025/26)",
@@ -10903,7 +10903,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi intercepted opponent passes more frequently in his earlier Barcelona seasons before both converged in their thirties.",
+        "headline": "Messi intercepted more passes in early Barcelona years before converging in their 30s.",
         "footnote": "*Opta / WhoScored seasonal interceptions per 90 minutes across League and UEFA Champions League fixtures (2009/10\u20132022/23). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Interceptions per 90 Minutes by Season (2009/10\u20132022/23)",
@@ -10985,7 +10985,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "In tracked league pressing seasons, Messi applied noticeably more defensive pressures per ninety minutes than Ronaldo every year.",
+        "headline": "Messi applied more defensive pressures/90 in every tracked season.",
         "footnote": "*Opta / StatsPerform domestic league defensive pressures per 90 minutes (2017/18\u20132021/22). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Defensive Pressures per 90 Minutes by Season (2017/18\u20132021/22)",
@@ -11040,7 +11040,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi blocked slightly more opponent passes per ninety minutes across most tracked European campaigns.",
+        "headline": "Messi blocked slightly more passes/90 across most European campaigns.",
         "footnote": "*Opta / WhoScored seasonal passes blocked per 90 minutes across League and UEFA Champions League fixtures (2013/14\u20132022/23). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Passes Blocked per 90 Minutes by Season (2013/14\u20132022/23)",
@@ -11110,7 +11110,7 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "answer": "Messi logs more tackles won, ball recoveries, and final-third pressures per match.",
+    "answer": "Messi logs more pressures, tackles, interceptions & pass blocks per ninety.",
     "metric_tags": [
       [
         "messi",
@@ -11145,7 +11145,7 @@ window.INSIGHTS_DATA = [
     "summary": "The statistical contrast reveals two distinct physical profiles: Messi dominates ground take-ons (3093 vs 1655 dribbles), while Ronaldo dominates the aerial battleground, winning 737 aerial duels (1.38 per 90) vs Messi's 121 (0.2 per 90) \u2014 a 6.9x margin for Ronaldo in the air.",
     "insights": [
       {
-        "headline": "Their physical profiles contrast sharply: Messi dominates ground take-ons, while Ronaldo dominates aerial duels.",
+        "headline": "Sharp physical contrast: Messi dominates ground take-ons vs Ronaldo in the air.",
         "footnote": "*Opta / WhoScored European League & Champions League records. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape) | <a href=\"https://www.messivsronaldo.app/detailed-stats/aerial-duels/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Aerial Duels Telemetry (2004\u20132023; N=858 aerials)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Ground Take-Ons vs Aerial Duels Won (Opta)",
@@ -11183,7 +11183,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per ninety minutes, Messi wins ground take-ons at over double Ronaldo's rate, while Ronaldo wins aerial duels at a far higher rate.",
+        "headline": "Per 90: Messi wins 2\u00d7+ ground take-ons vs Ronaldo's aerial dominance.",
         "footnote": "*Duels per 90 minutes across instrumented European club minutes. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/successful-dribbles/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Dribbling Telemetry (2004\u20132023; N=4,748 dribbles)</a> (Opta Telemetry Scrape) | <a href=\"https://www.messivsronaldo.app/detailed-stats/aerial-duels/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Aerial Duels Telemetry (2004\u20132023; N=858 aerials)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Duels Won per 90 Minutes (Opta)",
@@ -11221,7 +11221,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo won vastly more aerial duels than Messi in every single tracked campaign across sixteen seasons.",
+        "headline": "Ronaldo won far more aerial duels in every tracked season.",
         "footnote": "*Opta seasonal aerial duels won across domestic leagues and continental competition (2009/10\u20132024/25). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/aerial-duels/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Aerial Duels Telemetry (2004\u20132023; N=858 aerials)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Aerial Duels Won per Season (2009/10\u20132024/25)",
@@ -11309,7 +11309,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Normalised per ninety minutes, Ronaldo consistently cleared Messi's aerial duel rate several times over across every season.",
+        "headline": "Ronaldo's aerial duels/90 cleared Messi's rate several times over.",
         "footnote": "*Opta seasonal aerial duels won normalised by official Transfermarkt league + Champions League minutes played (2009/10\u20132024/25). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/aerial-duels/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Aerial Duels Telemetry (2004\u20132023; N=858 aerials)</a> (Opta Telemetry Scrape) | <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Aerial Duels Won per 90 Minutes by Season (2009/10\u20132024/25)",
@@ -11397,7 +11397,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "In defensive box clearances, Ronaldo contributed steady aerial and set-piece protection throughout his career while Messi virtually never dropped to clear.",
+        "headline": "Ronaldo contributed steady box clearances; Messi rarely dropped to clear.",
         "footnote": "*Opta / WhoScored seasonal defensive clearances per 90 minutes across League and UEFA Champions League fixtures (2009/10\u20132022/23). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/defensive-stats/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored European Defensive Telemetry (2004\u20132023)</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Defensive Clearances per 90 Minutes by Season (2009/10\u20132022/23)",
@@ -11479,7 +11479,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "On the ground, Messi consistently drew fouls at a higher per-ninety rate than Ronaldo in recent seasons.",
+        "headline": "Messi consistently drew more fouls per 90 in recent seasons.",
         "footnote": "*Transfermarkt match logs with recorded fouls gained (all senior club & country fixtures tracked, 2018/19\u20132025/26; seasons with \u226510 tracked games). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Fouls Drawn per 90 Minutes by Season (2018/19\u20132025/26)",
@@ -11543,7 +11543,7 @@ window.INSIGHTS_DATA = [
         }
       }
     ],
-    "answer": "Ronaldo wins far more aerial duels and contributes more defensive set-piece clearances inside his own box.",
+    "answer": "Ronaldo dominates aerial duels & box clearances; Messi draws more ground fouls.",
     "metric_tags": [
       [
         "ronaldo",
@@ -11576,7 +11576,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi's club teams averaged 2.22 points per game when he played (976 matches) vs 2.04 without him (265). Ronaldo's: 2.19 (1103) vs 2.17 (225).",
     "insights": [
       {
-        "headline": "Both teams earn nearly identical points per game when they play, though Messi's sides experience a noticeably larger drop when he is absent.",
+        "headline": "Near-identical team PPG when playing; Messi's absence causes a larger drop.",
         "footnote": "*Club matches only. 'Without' = injured, not in squad, absent or unused. Not adjusted for opponent or rotation. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club Points per Game: With vs Without",
@@ -11614,7 +11614,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Their season-by-season team points per game are closely matched, with Ronaldo holding a slight edge in campaigns led.",
+        "headline": "Seasonal on-pitch team PPG tracks closely; Ronaldo edges campaigns led.",
         "footnote": "*Senior club fixtures where the player featured on pitch from Transfermarkt match logs (N=2,521 senior club matches). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club Points per Game by Season (When Played)",
@@ -11816,7 +11816,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season, both squads frequently rotated or rested their star in easier cup ties, producing negative single-season with-versus-without gaps alongside sharp positive lifts during injury spells.",
+        "headline": "Cup rotation creates noisy single-season gaps; injury spells show sharp positive lifts.",
         "footnote": "*Club Points per Game when played minus Points per Game when absent per season (Transfermarkt match logs; seasons with \u22655 played and \u22653 absent club fixtures charted; * indicates <3 absent or <5 played sample excluded from curve). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club PPG Difference (With \u2212 Without) by Season",
@@ -12102,7 +12102,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Their team win rates when playing are virtually identical, but Messi's absence coincides with a larger drop in win rate.",
+        "headline": "Equal win rate when playing; Messi's absence coincides with a steeper drop.",
         "footnote": "Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club Win Rate: With vs Without (%)",
@@ -12140,7 +12140,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season-by-season club win rates are closely matched across their careers, with Ronaldo leading slightly more campaigns.",
+        "headline": "Seasonal club win rates match closely; Ronaldo edges campaigns led.",
         "footnote": "*Senior club fixtures win percentage where the player featured on pitch from Transfermarkt match logs. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club Win Rate (%) by Season (When Played)",
@@ -12342,7 +12342,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Seasonal win-rate differentials mirror rotation patterns, swinging positive during injury absences and post-peak transitions.",
+        "headline": "Seasonal win-rate gaps mirror cup rotation and injury absences.",
         "footnote": "*Club win rate (%) when played minus win rate (%) when absent per season (percentage points; seasons with \u22655 played and \u22653 absent club fixtures charted; * indicates <3 absent or <5 played sample excluded from curve). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Club Win Rate Difference (With \u2212 Without, pp) by Season",
@@ -12630,7 +12630,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +0.16 PPG Lift",
-    "answer": "Messi's teams experience a larger points-per-game and win-rate lift when he is on the pitch compared to matches he misses.",
+    "answer": "Messi's teams suffer a larger PPG & win-rate drop when he is absent.",
     "metric_tags": [
       [
         "messi",
@@ -12659,7 +12659,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across 18 tracked European league and Champions League seasons (2009/10 to 2026/27) compiled from Opta, WhoScored, and SofaScore algorithms, Messi averaged 8.43 vs Ronaldo's 7.81. Messi finished with the higher average match rating in 18 of 18 campaigns (100%). Peak seasons reached 8.88 (2011/12 Messi) vs 8.52 (2009/10 Ronaldo). In official Man of the Match (MOTM) awards across League and Champions League fixtures since 2009/10, Messi leads 333 to 168 (named MOTM in 51.0% of appearances vs 30.0% for Ronaldo).",
     "insights": [
       {
-        "headline": "Messi holds a higher average match rating than Ronaldo in every single shared season.",
+        "headline": "Messi holds the higher average match rating in every shared season.",
         "footnote": "*Algorithmic match ratings from Opta, WhoScored, and SofaScore across European league & Champions League fixtures. Pre-2009 uninstrumented. Note: Peer 90th-percentile league-wide seasonal ratings across all players (2009\u20132026) are unavailable because WhoScored/Opta rating archives are proprietary and omitted per zero-estimation policy. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/average-match-ratings/\" target=\"_blank\" rel=\"noopener noreferrer\">Opta / WhoScored / SofaScore Algorithmic Ratings (2009\u20132026; N=18 shared seasons)</a> (Algorithmic Rating Archive)",
         "chart": {
           "title": "Average Match Rating by Season (2009/10\u20132026/27)",
@@ -12753,7 +12753,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi has won nearly twice as many official Man of the Match awards across both league and Champions League competition.",
+        "headline": "Messi won nearly 2\u00d7 as many Man of the Match awards.",
         "footnote": "*Official Man of the Match awards recorded by WhoScored and Opta across European League and Champions League fixtures since 2009/10. Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/man-of-the-match-awards/\" target=\"_blank\" rel=\"noopener noreferrer\">WhoScored & Opta Official Man of the Match Awards</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Official Man of the Match (MOTM) Awards Since 2009/10",
@@ -12794,7 +12794,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Per match played, Messi won Man of the Match honours in over half of his appearances across both league and Champions League football.",
+        "headline": "Messi won MOTM in over half of his league and UCL appearances.",
         "footnote": "*Share (%) of tracked appearances in which the player was awarded Official Man of the Match (Opta / WhoScored since 2009/10). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/man-of-the-match-awards/\" target=\"_blank\" rel=\"noopener noreferrer\">WhoScored & Opta Official Man of the Match Awards</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Official MOTM Win Rate (% of Appearances) Since 2009/10",
@@ -12835,7 +12835,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Season by season, Messi collected more Man of the Match awards than Ronaldo in almost every tracked campaign since 2009/10.",
+        "headline": "Messi collected more MOTM awards in almost every season since 2009/10.",
         "footnote": "*Opta / WhoScored seasonal Man of the Match awards across domestic leagues and UEFA Champions League (2009/10\u20132024/25). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/man-of-the-match-awards/\" target=\"_blank\" rel=\"noopener noreferrer\">WhoScored & Opta Official Man of the Match Awards</a> (Opta Telemetry Scrape)",
         "chart": {
           "title": "Official MOTM Awards per Season (2009/10\u20132024/25)",
@@ -12923,7 +12923,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Normalised by appearances played each season, Messi claimed Man of the Match honours at roughly twice Ronaldo's match rate across most prime campaigns.",
+        "headline": "Messi claimed MOTM honours at roughly 2\u00d7 Ronaldo's rate in prime seasons.",
         "footnote": "*Seasonal MOTM awards divided by Transfermarkt domestic league + continental appearances per season (2009/10\u20132024/25). Source: <a href=\"https://www.messivsronaldo.app/detailed-stats/man-of-the-match-awards/\" target=\"_blank\" rel=\"noopener noreferrer\">WhoScored & Opta Official Man of the Match Awards</a> (Opta Telemetry Scrape) | <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "Official MOTM Rate (% of Matches) by Season (2009/10\u20132024/25)",
@@ -13013,7 +13013,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +0.62 Match Rating",
-    "answer": "Messi holds a higher career average algorithmic match rating and won Man-of-the-Match awards at a higher rate.",
+    "answer": "Messi holds higher algorithmic match ratings every season & nearly double the MOTM awards.",
     "metric_tags": [
       [
         "messi",
@@ -13044,7 +13044,7 @@ window.INSIGHTS_DATA = [
     "desc": "Combined analysis of Ballon d'Or / FIFA World Player voting consensus alongside Laureus multi-sport and major tournament MVP honours.",
     "insights": [
       {
-        "headline": "Messi leads decisively in Ballon d'Or and FIFA World Player wins, while both share a nearly identical number of podium finishes.",
+        "headline": "Messi leads Ballon d'Or & World Player wins; podiums are nearly even.",
         "footnote": "*Audited from France Football official voting records and FIFA The Best / World Player archives (1991\u20132024). Source: <a href=\"https://www.fifa.com/the-best-fifa-football-awards\" target=\"_blank\" rel=\"noopener noreferrer\">France Football Ballon d'Or & FIFA The Best Official Records (2007\u20132024; N=13 Ballon d'Or wins)</a> (Official Award Archive)",
         "chart": {
           "title": "Individual Voting Awards: Wins & Podiums",
@@ -13085,7 +13085,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi holds exclusive leads in Laureus Sportsman awards, World Cup Golden Balls, and Copa Am\u00e9rica MVP honours.",
+        "headline": "Messi holds exclusive leads in Laureus, World Cup Golden Ball & Copa MVP honours.",
         "footnote": "*Laureus World Sports Awards (voted by 71 members of Laureus World Sports Academy), FIFA World Cup Golden Ball, and CONMEBOL Copa Am\u00e9rica Best Player awards. Source: <a href=\"https://www.fifa.com/the-best-fifa-football-awards\" target=\"_blank\" rel=\"noopener noreferrer\">France Football Ballon d'Or & FIFA The Best Official Records (2007\u20132024; N=13 Ballon d'Or wins)</a> (Official Award Archive)",
         "chart": {
           "title": "Universal Multi-Sport & Tournament MVP Honours",
@@ -13126,7 +13126,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "They traded Ballon d'Or dominance for a decade before Messi pulled away to an all-time record.",
+        "headline": "They traded Ballons d'Or for a decade before Messi pulled away.",
         "footnote": "*Cumulative career Ballon d'Or wins tracked across each official award edition from 2007 to 2024. Source: <a href=\"https://www.fifa.com/the-best-fifa-football-awards\" target=\"_blank\" rel=\"noopener noreferrer\">France Football Ballon d'Or & FIFA The Best Official Records (2007\u20132024; N=13 Ballon d'Or wins)</a> (Official Award Archive)",
         "chart": {
           "title": "Cumulative Ballon d'Or Wins Evolution (2007\u20132024)",
@@ -13222,7 +13222,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +3 Ballons d'Or",
-    "answer": "Messi holds all-time records in Ballon d'Or wins, podium finishes, FIFA World Player awards, Laureus World Sportsman honours, and FIFA World Cup Golden Balls.",
+    "answer": "Messi leads Ballons d'Or, podiums, FIFA World Player, Laureus & World Cup Golden Balls.",
     "metric_tags": [
       [
         "messi",
@@ -13254,7 +13254,7 @@ window.INSIGHTS_DATA = [
     "desc": "Evaluation of official scoring crowns across Europe and a club-highlighted timeline of when each icon finished as national league top scorer.",
     "insights": [
       {
-        "headline": "Messi leads in European Golden Shoes and domestic top-scorer crowns, while Ronaldo holds a narrow edge in Champions League scoring titles.",
+        "headline": "Messi leads Golden Shoes & domestic crowns; Ronaldo edges UCL scoring titles.",
         "footnote": "*European Golden Shoe audited from ESM / UEFA; League Top Scorer includes Pichichi, Capocannoniere, Premier League Golden Boot, and Saudi Pro League Golden Boot. Source: <a href=\"https://www.fifa.com/the-best-fifa-football-awards\" target=\"_blank\" rel=\"noopener noreferrer\">France Football Ballon d'Or & FIFA The Best Official Records (2007\u20132024; N=13 Ballon d'Or wins)</a> (Official Award Archive)",
         "chart": {
           "title": "Continental & League Scoring Titles",
@@ -13295,7 +13295,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo's six league Golden Boots span four distinct clubs and nations (England, Spain, Italy, Saudi Arabia), while Messi's eight all came with Barcelona in La Liga.",
+        "headline": "Ronaldo's Golden Boots span four leagues & clubs; Messi's eight came in La Liga.",
         "footnote": "*Timeline highlights each calendar year the player won their domestic league's official Golden Boot, color-coded by club and league. Hover any block for the exact award. Source: <a href=\"https://www.fifa.com/the-best-fifa-football-awards\" target=\"_blank\" rel=\"noopener noreferrer\">France Football Ballon d'Or & FIFA The Best Official Records (2007\u20132024; N=13 Ballon d'Or wins)</a> (Official Award Archive)",
         "chart": {
           "type": "bar",
@@ -13504,7 +13504,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +2 Golden Shoes",
-    "answer": "Messi won more European Golden Shoes and Pichichi trophies with Barcelona, while Ronaldo topped the scoring charts across four distinct national leagues and clubs.",
+    "answer": "Messi: more Golden Shoes & Pichichis vs Ronaldo: top scorer across four distinct leagues.",
     "metric_tags": [
       [
         "messi",
@@ -13536,7 +13536,7 @@ window.INSIGHTS_DATA = [
     "desc": "Categorised summary of documented all-time football and cultural records across 8 arenas, with the full searchable ledger in Extra Analysis 6.",
     "insights": [
       {
-        "headline": "Both hold extensive documented records across global, World Cup, and Guinness arenas, with Messi's Wikipedia ledger itemising deeper sub-records.",
+        "headline": "Both hold vast career records; Messi's ledger itemises deeper sub-records.",
         "footnote": "*Counts parsed from Wikipedia Career Achievements Section 3 ledgers (Messi N=299, Ronaldo N=102). Note on editorial granularity: Messi's page lists granular bulleted sub-records (including Guinness World Records), whereas Ronaldo's Section 3 uses a consolidated summary table (and places Guinness social records outside Section 3). See Extra Analysis 6 for the complete searchable ledger. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
         "chart": {
           "title": "Documented Career Records: Overall, World, FIFA World Cup & Guinness",
@@ -13580,7 +13580,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Across specific competition arenas, Messi leads documented FIFA World Cup, La Liga, and club sub-records while Ronaldo leads UEFA and European records.",
+        "headline": "Messi leads World Cup, La Liga & club entries; Ronaldo leads UEFA & European records.",
         "footnote": "*All 401 parsed records classified into 8 standardised arenas from Wikipedia's Career Achievements ledgers. Full searchable item-by-item table in Extra Analysis 6. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
         "chart": {
           "title": "Documented Career Records Breakdown by Arena",
@@ -13638,7 +13638,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "split",
     "leader_badge": "Messi 299 vs Ronaldo 102 Listed Records",
-    "answer": "Both players hold extensive documented all-time records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas, with Messi's Wikipedia ledger itemising deeper sub-records (especially in World Cup, La Liga, and Guinness categories) while Ronaldo leads documented UEFA and European records.",
+    "answer": "Both hold vast career records; Messi leads World Cup, La Liga & Guinness entries vs Ronaldo: UEFA & European records.",
     "metric_tags": [
       [
         "messi",
@@ -13670,7 +13670,7 @@ window.INSIGHTS_DATA = [
     "desc": "Comprehensive senior trophy breakdown by competition type (side-by-side pies), FIFA/continental national titles, UCL & trebles, and cumulative trajectory.",
     "insights": [
       {
-        "headline": "Both won a majority of their silverware in domestic competitions, with Messi holding larger shares in leagues and senior international titles while Ronaldo carries a higher UCL share.",
+        "headline": "Both won mostly domestic trophies; Messi leads leagues & international, Ronaldo higher UCL share.",
         "footnote": "*Official senior trophies (Messi N=43, Ronaldo N=34) grouped by competition type. Olympic Gold (2008) & FIFA U20 World Cup (2005) excluded from senior totals. Source: <a href=\"https://www.uefa.com/uefachampionsleague/history/winners/\" target=\"_blank\" rel=\"noopener noreferrer\">Senior Career Silverware & Championship Registry (2003\u20132024; N=77 team titles)</a> (Official Competition Archives)",
         "chart": {
           "type": "dual_pie",
@@ -13752,7 +13752,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi holds the decisive edge internationally with a World Cup and two continental titles, while both share an intercontinental trophy.",
+        "headline": "Messi leads senior international titles (World Cup + two Copas Am\u00e9rica).",
         "footnote": "*Senior international titles: World Cup (2022), Copa Am\u00e9rica (2021, 2024), Finalissima (2022) vs Euro (2016), UEFA Nations League (2019). Source: <a href=\"https://www.uefa.com/uefachampionsleague/history/winners/\" target=\"_blank\" rel=\"noopener noreferrer\">Senior Career Silverware & Championship Registry (2003\u20132024; N=77 team titles)</a> (Official Competition Archives)",
         "chart": {
           "title": "Senior International Championships",
@@ -13793,7 +13793,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo holds a narrow edge in Champions League and Club World Cup titles, while Messi anchored two European Trebles to Ronaldo's none.",
+        "headline": "Ronaldo edges UCL & Club World Cup titles; Messi won two European Trebles.",
         "footnote": "*UEFA Champions League and FIFA Club World Cup official records. Trebles dynamically verified as winning Domestic League, Domestic Cup, and UCL in the same year. Source: <a href=\"https://www.uefa.com/uefachampionsleague/history/winners/\" target=\"_blank\" rel=\"noopener noreferrer\">Senior Career Silverware & Championship Registry (2003\u20132024; N=77 team titles)</a> (Official Competition Archives)",
         "chart": {
           "title": "European Apex Club Trophies & Trebles",
@@ -13834,7 +13834,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi steadily built a decisive cumulative lead in senior silverware over two decades.",
+        "headline": "Messi built a decisive cumulative lead in senior silverware over two decades.",
         "footnote": "*Cumulative senior career silverware progression by calendar year across all clubs and senior national teams. Source: <a href=\"https://www.uefa.com/uefachampionsleague/history/winners/\" target=\"_blank\" rel=\"noopener noreferrer\">Senior Career Silverware & Championship Registry (2003\u20132024; N=77 team titles)</a> (Official Competition Archives)",
         "chart": {
           "title": "Cumulative Senior Silverware Evolution (2003\u20132024)",
@@ -13942,7 +13942,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +9 Trophies",
-    "answer": "Messi holds the all-time senior career silverware record including domestic leagues, cups, FIFA World Cup, Copa Am\u00e9rica, and multiple European trebles, while Ronaldo leads in UEFA Champions League titles.",
+    "answer": "Messi: all-time senior silverware record incl. World Cup & trebles vs Ronaldo: UCL titles.",
     "metric_tags": [
       [
         "messi",
@@ -13978,7 +13978,7 @@ window.INSIGHTS_DATA = [
     "desc": "Verified cross-platform social media audience alongside peak all-time cultural engagement milestones.",
     "insights": [
       {
-        "headline": "Ronaldo leads across every major social media platform, with especially large gaps on X and YouTube.",
+        "headline": "Ronaldo leads every major social platform, especially X and YouTube.",
         "footnote": "*Audited verified social platform followers as of November 2024. Messi does not operate an official personal X account. Source: <a href=\"https://www.instagram.com/cristiano/\" target=\"_blank\" rel=\"noopener noreferrer\">Meta, X & YouTube Verified Platform Telemetry (2024\u20132026; N=4 platforms)</a> (Platform Audit)",
         "chart": {
           "title": "Social Media Audience by Platform (Millions)",
@@ -14022,7 +14022,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Ronaldo commands a substantially larger combined social media following than Messi.",
+        "headline": "Ronaldo commands a far larger combined social following.",
         "footnote": "*Sum of verified cross-platform follower accounts across Meta, X, and YouTube ecosystems. Source: <a href=\"https://www.instagram.com/cristiano/\" target=\"_blank\" rel=\"noopener noreferrer\">Meta, X & YouTube Verified Platform Telemetry (2024\u20132026; N=4 platforms)</a> (Platform Audit)",
         "chart": {
           "title": "Total Cross-Platform Digital Reach",
@@ -14057,7 +14057,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's 2022 World Cup celebration post holds the Guinness World Record as the single most-liked post in internet history.",
+        "headline": "Messi's 2022 World Cup post holds the all-time most-liked internet record.",
         "footnote": "*Official Guinness World Record for the most-liked Instagram post in social media history (Dec 2022) compared against Ronaldo's top post (Louis Vuitton Chess campaign). Source: <a href=\"https://en.wikipedia.org/wiki/List_of_most-liked_Instagram_posts\" target=\"_blank\" rel=\"noopener noreferrer\">Guinness World Records & Meta Engagement Telemetry (2022\u20132024; N=2 global records)</a> (Public Records Audit)",
         "chart": {
           "title": "Peak Cultural Moment: Most-Liked Post in Internet History",
@@ -14094,7 +14094,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "ronaldo",
     "leader_badge": "Ronaldo +373.4M Followers",
-    "answer": "Ronaldo commands the largest cross-platform social following on Earth, whereas Messi holds the world record for the most-liked social post in internet history.",
+    "answer": "Ronaldo: largest global social following vs Messi: most-liked post in internet history.",
     "metric_tags": [
       [
         "ronaldo",
@@ -14122,7 +14122,7 @@ window.INSIGHTS_DATA = [
     "desc": "Matchday stadium attendance (career overall, Home/Away, and season-by-season), before-vs-after post-arrival league turnstile change, and mega-venue peak crowds.",
     "insights": [
       {
-        "headline": "Across 892 audited club fixtures (2012\u20132023), Messi averaged higher home and overall stadium crowds (54,040 vs 52,743), while Ronaldo drew larger away crowds (39,008 vs 37,738).",
+        "headline": "Messi drew higher overall & home crowds; Ronaldo drew higher away averages.",
         "footnote": "*Computed from 466 Messi and 426 Ronaldo Transfermarkt match logs with official recorded turnstile attendance. Note: Audited seasonal per-game live TV/streaming viewership and confidential manufacturer (Adidas/Nike) shirt unit sales are unavailable across all club campaigns and are not estimated. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/leistungsdatendetails/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Matchday Stadium Attendance Audit (2012\u20132023; N=892 club fixtures)</a> (Transfermarkt Historical Match Archive)",
         "chart": {
           "title": "Career Matchday Turnstile Attendance: Overall, Home & Away (2012\u20132023)",
@@ -14163,7 +14163,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Camp Nou vs Santiago Bernab\u00e9u kept attendance between 52k\u201360k before stadium moves (Juventus 41k, PSG 47k) and COVID restrictions reshaped their curves.",
+        "headline": "Camp Nou & Bernab\u00e9u stayed 52k\u201360k before club moves and COVID reshaped curves.",
         "footnote": "*Seasonal mean stadium attendance across European club fixtures (gated at >=10 tracked fixtures/season; 2020/21 COVID closed-door season omitted). Source: <a href=\"https://www.transfermarkt.com/lionel-messi/leistungsdatendetails/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Matchday Stadium Attendance Audit (2012\u20132023; N=892 club fixtures)</a> (Transfermarkt Historical Match Archive)",
         "chart": {
           "title": "Average Matchday Attendance per Game by Season (2012/13\u20132022/23)",
@@ -14279,7 +14279,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "While Ronaldo posted a higher percentage lift (+149.1% vs +100.1%) off a much smaller Saudi baseline (8,750), Messi generated a far larger absolute road crowd gain (+22,139 vs +13,050 fans per match).",
+        "headline": "Messi added larger absolute MLS road gains; Ronaldo posted a higher SPL % lift.",
         "footnote": "*Before = league average road attendance baseline without player (22,111 MLS vs 8,750 SPL); After = road attendance with player (44,250 vs 21,800). Showing both Before vs After prevents low-baseline percentage distortion. Source: <a href=\"https://www.mlssoccer.com/news/lionel-messi-effect-inter-miami-ticket-surge\" target=\"_blank\" rel=\"noopener noreferrer\">MLS & Saudi Pro League Matchday Turnstile Telemetry (2023\u20132025; N=2 leagues)</a> (League Attendance Audit)",
         "chart": {
           "title": "Road Matchday Attendance: Before vs After Player Arrival (MLS vs SPL)",
@@ -14332,7 +14332,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi's peak single-match away crowd at Arrowhead Stadium slightly edged out Ronaldo's peak Saudi Pro League crowd.",
+        "headline": "Messi's peak MLS away crowd slightly edged Ronaldo's peak SPL crowd.",
         "footnote": "*Highest recorded single-match attendance in new domestic club competitions. Broadcast viewership & shirt sales caveat: audited multi-season TV ratings per fixture and confidential Adidas/Nike jersey unit logs are not publicly standardised. Source: <a href=\"https://www.mlssoccer.com/news/lionel-messi-effect-inter-miami-ticket-surge\" target=\"_blank\" rel=\"noopener noreferrer\">MLS & Saudi Pro League Matchday Turnstile Telemetry (2023\u20132025; N=2 leagues)</a> (League Attendance Audit)",
         "chart": {
           "title": "Peak Live Single-Match Attendance",
@@ -14369,7 +14369,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +1,297 Avg Crowd",
-    "answer": "Messi averaged higher overall and home matchday stadium crowds and added a larger absolute road attendance gain upon arriving in MLS, while Ronaldo drew larger away averages and a higher percentage lift off a lower Saudi baseline; audited seasonal TV viewership and manufacturer shirt unit logs remain unstandardized.",
+    "answer": "Messi: higher overall & home crowds + MLS road gain vs Ronaldo: higher away avg & SPL % lift.",
     "metric_tags": [
       [
         "messi",
@@ -14407,7 +14407,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across 6 World Cups for Messi (34 matches) and 6 for Ronaldo (27 matches), 2006\u20132026: Messi scored 21 (17 non-penalty; 7 in knockouts), Ronaldo 11 (7 non-penalty; 1 in knockouts).",
     "insights": [
       {
-        "headline": "Messi has scored nearly twice as many World Cup goals as Ronaldo, both overall and excluding penalties.",
+        "headline": "Messi scored nearly 2\u00d7 as many World Cup goals overall and non-penalty.",
         "footnote": "*World Cup finals tournaments only; qualifiers excluded. Source: <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "World Cup Goals",
@@ -14445,7 +14445,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi leads modestly in World Cup group-stage goals, but holds a commanding lead in knockout-stage goals.",
+        "headline": "Messi edges group goals and dominates World Cup knockout goals.",
         "footnote": "*Stage from match day in Transfermarkt records (group = match days 1\u20133). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Goals by Stage",
@@ -14483,7 +14483,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi scores at a much faster rate at the World Cup, particularly in the knockout rounds.",
+        "headline": "Messi scores far faster at the World Cup, especially in knockouts.",
         "footnote": "*Lower = more efficient. Knockout minutes: Messi 1716, Ronaldo 740. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Minutes per Goal (Lower = Better)",
@@ -14523,7 +14523,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +10 WC Goals",
-    "answer": "Messi leads decisively in FIFA World Cup goals and knockout-stage strikes, whereas Ronaldo never scored in a World Cup knockout fixture.",
+    "answer": "Messi leads decisively in World Cup goals overall, knockout goals & minutes per goal.",
     "metric_tags": [
       [
         "messi",
@@ -14552,7 +14552,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi has 12 World Cup assists (10 in knockouts) vs Ronaldo's 2 (0). In StatsBomb's World Cup data (11 Messi, 9 Ronaldo matches), Messi made 2.55 key passes per match vs 0.89.",
     "insights": [
       {
-        "headline": "Messi dominates World Cup playmaking, including all knockout assists compared to none for Ronaldo.",
+        "headline": "Messi dominates World Cup assists, including all knockout assists.",
         "footnote": "Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Assists",
@@ -14590,7 +14590,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi created far more key passes per match than Ronaldo at the World Cup.",
+        "headline": "Messi created far more World Cup key passes per match.",
         "footnote": "*StatsBomb World Cup matches (11 Messi, 9 Ronaldo). Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "World Cup Key Passes",
@@ -14628,7 +14628,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi generated vastly higher expected assists at the World Cup than Ronaldo.",
+        "headline": "Messi generated vastly higher World Cup Expected Assists (xA).",
         "footnote": "*xA = StatsBomb xG of shots created by the pass. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "World Cup Expected Assists (xA)",
@@ -14668,7 +14668,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +10 WC Assists",
-    "answer": "Messi leads in World Cup assists, knockout assists, key passes, and Expected Assists across tournament play.",
+    "answer": "Messi dominates World Cup playmaking across assists, knockout assists, key passes & xA.",
     "metric_tags": [
       [
         "messi",
@@ -14701,7 +14701,7 @@ window.INSIGHTS_DATA = [
     "summary": "In StatsBomb World Cup data, Messi completed 47 dribbles (73.4%) vs 8 (47.1%), and made 155 pressures vs 52. Transfermarkt records 902 Messi passes vs 303 across World Cup matches with passing data.",
     "insights": [
       {
-        "headline": "Messi completed far more dribbles at a much higher success rate than Ronaldo at the World Cup.",
+        "headline": "Messi completed far more World Cup dribbles at a higher success rate.",
         "footnote": "*StatsBomb World Cup matches (11 Messi, 9 Ronaldo). Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "World Cup Dribbles",
@@ -14739,7 +14739,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi was roughly three times as involved in World Cup passing build-up as Ronaldo.",
+        "headline": "Messi was ~3\u00d7 more involved in World Cup passing build-up.",
         "footnote": "*World Cup matches with Transfermarkt passing data. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Passes (Totals)",
@@ -14777,7 +14777,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi recorded roughly three times as many pressures and ball recoveries as Ronaldo at the World Cup.",
+        "headline": "Messi logged ~3\u00d7 more World Cup pressures and ball recoveries.",
         "footnote": "*StatsBomb World Cup event totals. Source: <a href=\"https://github.com/statsbomb/open-data\" target=\"_blank\" rel=\"noopener noreferrer\">StatsBomb Open Data (Supplementary Open Data Sample)</a> (Official Open Data Git Repository (Deprioritised Asymmetric Sample))",
         "chart": {
           "title": "World Cup Pressing (Totals)",
@@ -14815,7 +14815,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi won more than twice as many fouls and made far more tackles than Ronaldo at the World Cup.",
+        "headline": "Messi won 2\u00d7+ fouls and made far more World Cup tackles.",
         "footnote": "*World Cup matches with Transfermarkt duel data. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Tackles & Fouls Won (Totals)",
@@ -14855,7 +14855,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +39 WC Dribbles",
-    "answer": "Messi completed more dribbles, passes, pressures, tackles, and ball recoveries across World Cup matches.",
+    "answer": "Messi logged roughly three to six times Ronaldo's World Cup dribbles, passes, pressures, recoveries & tackles.",
     "metric_tags": [
       [
         "messi",
@@ -14888,7 +14888,7 @@ window.INSIGHTS_DATA = [
     "summary": "Across editions 2006\u20132026, Messi recorded 33 World Cup goal contributions (17 in knockouts) vs Ronaldo's 13 (1).",
     "insights": [
       {
-        "headline": "Messi's World Cup goal involvement peaked sharply in his later tournaments, whereas Ronaldo's output remained modest across editions.",
+        "headline": "Messi's World Cup G+A surged in later editions; Ronaldo's stayed modest.",
         "footnote": "Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup G+A by Edition",
@@ -14938,7 +14938,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Messi has been overwhelmingly more productive in World Cup knockout matches than Ronaldo.",
+        "headline": "Messi was overwhelmingly more productive in World Cup knockout matches.",
         "footnote": "*Knockout = match day \u22654 in Transfermarkt records. Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Knockout G+A by Edition",
@@ -14990,7 +14990,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +20 WC G+A",
-    "answer": "Ronaldo scored across more distinct World Cup editions, while Messi leads in total World Cup Goals + Assists and knockout contributions.",
+    "answer": "Messi's World Cup G+A surged in later editions & knockouts; Ronaldo scored across a record five tournaments.",
     "metric_tags": [
       [
         "messi",
@@ -15023,7 +15023,7 @@ window.INSIGHTS_DATA = [
     "summary": "Messi was directly involved in 55.0% of Argentina's World Cup goals while on the pitch vs Ronaldo's 37.1% for Portugal. His team won 76.5% of his World Cup matches (2.35 points per game) vs 44.4% (1.59).",
     "insights": [
       {
-        "headline": "Messi accounted for a substantially larger share of his national team's World Cup goals than Ronaldo.",
+        "headline": "Messi accounted for a far larger share of his nation's World Cup goals.",
         "footnote": "*G+A \u00f7 team goals (while on pitch / in all his World Cup matches). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Goal Involvement Share (%)",
@@ -15061,7 +15061,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Argentina's World Cup win rate and points per game with Messi far exceed Portugal's with Ronaldo.",
+        "headline": "Argentina's World Cup win rate and PPG with Messi far exceed Portugal's.",
         "footnote": "*Result at full time / after extra time as recorded by Transfermarkt (shoot-outs count as draws). Source: <a href=\"https://tmapi.transfermarkt.technology/player/28003/performance-game\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Match Performance API (2002\u20132026; N=3,260 appearances)</a> (Official JSON API Endpoint)",
         "chart": {
           "title": "World Cup Team Results",
@@ -15099,7 +15099,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Both scored similarly against top-twenty and lower-ranked World Cup sides, while Messi separated himself against mid-tier opponents.",
+        "headline": "Similar vs Top-20 & minnows; Messi separated against mid-tier World Cup sides.",
         "footnote": "*Opponent FIFA Men's World Ranking published immediately prior to match date (0 Messi, 0 Ronaldo unmapped). Source: <a href=\"https://www.fifa.com/fifa-world-ranking/men\" target=\"_blank\" rel=\"noopener noreferrer\">Historical FIFA Men's World Rankings (1992\u20132026)</a> (Official Release Download) | <a href=\"https://www.transfermarkt.com/lionel-messi/alletore/spieler/28003\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Official Goal Logs & International Results Archive (2002\u20132026; N=1,915 senior goals)</a> (Direct Web Scrape & Public Archive)",
         "chart": {
           "title": "World Cup Goals by Opponent FIFA Rank",
@@ -15142,7 +15142,7 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "messi",
     "leader_badge": "Messi +17.9% WC Share",
-    "answer": "Messi shouldered a larger share of his national team's World Cup goal involvement and achieved a higher tournament win rate.",
+    "answer": "Messi shouldered a higher share of national-team World Cup goals with a stronger tournament win rate.",
     "metric_tags": [
       [
         "messi",
@@ -15175,7 +15175,7 @@ window.INSIGHTS_DATA = [
     "summary": "Excluding Messi and Ronaldo themselves, both nations led 3 World Cup editions each in surrounding squad value (2006\u20132026): Argentina peaked ahead in 2018 (+\u20ac124.5M), whereas Portugal fielded the pricier supporting roster in 2006, 2022 (+\u20ac321.8M), and 2026. Both stars accounted for 20%\u201334% of their nation's entire squad value during their prime (2010\u20132018). Among all World Cup participants, Argentina averaged a #5.0 pre-tournament FIFA seed and #7.0 supporting squad-value rank vs Portugal's #5.7 and #7.0.",
     "insights": [
       {
-        "headline": "Excluding Messi and Ronaldo themselves, both nations still led three World Cups each in supporting squad valuation, with Portugal surging ahead in 2022 and 2026.",
+        "headline": "Excl. self: Argentina & Portugal split World Cup supporting squad value 3\u20133.",
         "footnote": "*2006\u20132022 rosters matched to official 23/26-man FIFA World Cup squads and valued via Transfermarkt prior to each tournament kickoff (plus archived 2005/06 & 2009/10 squad tables), strictly excluding Messi and Ronaldo. 2026 reflects tracked FIWC match-appeared teammates. Source: <a href=\"https://github.com/jfjelstul/worldcup\" target=\"_blank\" rel=\"noopener noreferrer\">Fjelstul World Cup Official Squads Archive (2006\u20132022)</a> (Academic Relational Dataset) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://www.transfermarkt.com/argentina/kader/verein/3437/saison_id/2005/plus/1\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical National Squad Valuations (2005/06 & 2009/10)</a> (Cached HTML Snapshot)",
         "chart": {
           "title": "Supporting Squad Value by World Cup Edition (Excl. Self \u00b7 \u20acM)",
@@ -15252,7 +15252,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Normalised per valued teammate (excluding themselves), Portugal's Golden Generation edge in 2022 and 2026 closely mirrors Argentina's 2010\u20132018 lead.",
+        "headline": "Per-teammate value (excl. self) mirrors Argentina's 2010\u201318 lead and Portugal's 2022\u201326 surge.",
         "footnote": "*Total pre-tournament supporting squad market value (excluding Messi & Ronaldo) divided by the number of valued teammates per edition. Source: <a href=\"https://github.com/jfjelstul/worldcup\" target=\"_blank\" rel=\"noopener noreferrer\">Fjelstul World Cup Official Squads Archive (2006\u20132022)</a> (Academic Relational Dataset) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://www.transfermarkt.com/argentina/kader/verein/3437/saison_id/2005/plus/1\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical National Squad Valuations (2005/06 & 2009/10)</a> (Cached HTML Snapshot)",
         "chart": {
           "title": "Mean Valuation per Valued Teammate by Edition (Excl. Self \u00b7 \u20acM)",
@@ -15340,7 +15340,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "During their 2010\u20132018 prime, Messi and Ronaldo each accounted for roughly a fifth to a third of their entire national squad's market value.",
+        "headline": "In 2010\u201318 prime, each accounted for roughly a fifth to a third of squad value.",
         "footnote": "*Player's own pre-tournament Transfermarkt market value as a percentage of his nation's total valued World Cup squad (self + teammates). Source: <a href=\"https://github.com/jfjelstul/worldcup\" target=\"_blank\" rel=\"noopener noreferrer\">Fjelstul World Cup Official Squads Archive (2006\u20132022)</a> (Academic Relational Dataset) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download) | <a href=\"https://www.transfermarkt.com/argentina/kader/verein/3437/saison_id/2005/plus/1\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical National Squad Valuations (2005/06 & 2009/10)</a> (Cached HTML Snapshot)",
         "chart": {
           "title": "Player's Own Share of National World Cup Squad Value (%)",
@@ -15390,7 +15390,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Among all World Cup participants, Portugal entered higher in the FIFA Rankings in 2006\u20132018, while Argentina arrived as the higher seed in 2022 and 2026.",
+        "headline": "Portugal seeded higher in 2006\u201318; Argentina seeded higher in 2022 & 2026.",
         "footnote": "*Pre-tournament FIFA Men's World Ranking ranked among the 32 participating nations (2006\u20132022) and 48 tracked FIWC nations (2026, *Sep 2024 snapshot). Lower rank = stronger seed. Source: <a href=\"https://www.fifa.com/fifa-world-ranking/men\" target=\"_blank\" rel=\"noopener noreferrer\">Historical FIFA Men's World Rankings (1992\u20132026)</a> (Official Release Download) | <a href=\"https://github.com/jfjelstul/worldcup\" target=\"_blank\" rel=\"noopener noreferrer\">Fjelstul World Cup Official Squads Archive (2006\u20132022)</a> (Academic Relational Dataset)",
         "chart": {
           "title": "Pre-Tournament FIFA World Ranking Among Participants (Lower = Better)",
@@ -15467,7 +15467,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Even excluding themselves, Argentina ranked top-seven among all World Cup nations in every edition while Portugal climbed from 8th\u20139th to 3rd\u20134th in 2022\u20132026.",
+        "headline": "Excl. self: Argentina stayed top-seven every edition; Portugal climbed to top-four in 2022\u201326.",
         "footnote": "*Rank of Argentina/Portugal's excluding-self supporting squad value against all other participating nations' full valued squads (32 teams in 2006\u20132022; 48 tracked FIWC teams in 2026). Note: 2006 cross-nation Transfermarkt coverage averages 47% (81.5% in 2010; 95\u201398% in 2014\u20132022). Lower rank = more valuable squad. Source: <a href=\"https://github.com/jfjelstul/worldcup\" target=\"_blank\" rel=\"noopener noreferrer\">Fjelstul World Cup Official Squads Archive (2006\u20132022)</a> (Academic Relational Dataset) | <a href=\"https://github.com/dcaribou/transfermarkt-datasets\" target=\"_blank\" rel=\"noopener noreferrer\">Transfermarkt Historical Market Valuations</a> (Open Data Release Download)",
         "chart": {
           "title": "Supporting Squad Value Rank Among All Participants (Excl. Self \u00b7 Lower = Higher Value)",
@@ -15544,7 +15544,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Entering form flipped repeatedly: Portugal arrived on stronger 10-match streaks in 2006 and 2018, while Argentina surged before winning Qatar 2022 and into 2026.",
+        "headline": "Pre-tournament form flipped: Portugal hotter in 2006 & 2018; Argentina surging into 2022 & 2026.",
         "footnote": "*Last 10 senior international A-matches strictly before each World Cup opening matchday computed from the martj42 international results archive. Pre-WC FIFA World Rankings trace official FIFA rankings (*2026 reflects latest Sep 2024 archive snapshot). Source: <a href=\"https://github.com/martj42/international_results\" target=\"_blank\" rel=\"noopener noreferrer\">martj42 International Football Results</a> (Public Git Archive Download) | <a href=\"https://www.fifa.com/fifa-world-ranking/men\" target=\"_blank\" rel=\"noopener noreferrer\">Historical FIFA Men's World Rankings (1992\u20132026)</a> (Official Release Download)",
         "chart": {
           "title": "Pre-Tournament Win Rate (%) Entering Each World Cup (Last 10 Matches)",
@@ -15621,7 +15621,7 @@ window.INSIGHTS_DATA = [
         }
       },
       {
-        "headline": "Points per game across the final ten warm-up and qualifying matches highlight Portugal's sharper early-era momentum and Argentina's elite late-era consistency.",
+        "headline": "Pre-WC PPG: Portugal sharper early; Argentina elite late-era consistency.",
         "footnote": "*Three points per win, one point per draw across the final 10 international A-matches strictly prior to each tournament opening date. Source: <a href=\"https://github.com/martj42/international_results\" target=\"_blank\" rel=\"noopener noreferrer\">martj42 International Football Results</a> (Public Git Archive Download)",
         "chart": {
           "title": "Pre-Tournament Points per Game (PPG) Entering Each World Cup",
@@ -15711,7 +15711,6 @@ window.INSIGHTS_DATA = [
     ],
     "leader": "tied",
     "leader_badge": "Tied 3-3 Squad Value",
-    "answer": "Excluding Messi and Ronaldo themselves, both nations split the six World Cup editions evenly in supporting squad market value, with both stars accounting for roughly a fifth to a third of their squad's value during their prime; Portugal entered higher in the FIFA Rankings in earlier editions while Argentina arrived as the higher seed in Qatar and North America.",
     "metric_tags": [
       [
         "tied",
