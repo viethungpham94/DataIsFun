@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>404 · Page Not Found — DataIsFun</title>
+  <meta name="description" content="Page not found on DataIsFun — return to Home, Issues catalogue, or Issue 01 telemetry.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="404 · Page Not Found — DataIsFun">
+  <meta property="og:description" content="Explore empirically verified DataIsFun investigations.">
+  <meta property="og:image" content="assets/og-card.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #000000;
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .box {
+      max-width: 540px;
+      width: 100%;
+      background: #050505;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 36px 32px;
+      text-align: left;
+    }
+    .code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #38bdf8;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 14.5px;
+      color: #a1a1aa;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-primary {
+      background: #ffffff;
+      color: #000000;
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+    .btn-secondary {
+      background: #09090b;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="box">
+    <div class="code">HTTP 404 · DataIsFun</div>
+    <h1>This route isn't in our raw archive.</h1>
+    <p>The page you requested doesn't exist or has moved into our multi-issue directory structure.</p>
+    <div class="actions">
+      <a href="index.html" data-rel="index.html" class="btn-primary">Return Home</a>
+      <a href="issues.html" data-rel="issues.html" class="btn-secondary">Browse Issues</a>
+      <a href="issues/01-messi-vs-ronaldo/insights.html" data-rel="issues/01-messi-vs-ronaldo/insights.html" class="btn-secondary">Open Issue 01 &rarr;</a>
+    </div>
+  </main>
+  <script>
+    (function () {
+      var p = (window.location.pathname || "/").replace(/^\/+/, "/");
+      var marker = "/issues/";
+      var idx = p.indexOf(marker);
+      if (idx !== -1) {
+        var rootBase = "/" + p.slice(0, idx + 1).replace(/^\/+/, "");
+        document.querySelectorAll("a[data-rel]").forEach(function (el) {
+          el.setAttribute("href", rootBase + el.getAttribute("data-rel"));
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

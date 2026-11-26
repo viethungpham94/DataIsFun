@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Appendix 0 · Interactive Mind Map & Problem Hierarchy | DataIsFun</title>
+  <meta name="description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 24 core MECE sub-dimensions (30 total audited including 6 World Cup deep-dives) for Issue 01.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="Appendix 0 · Interactive Mind Map & Problem Hierarchy | DataIsFun">
+  <meta property="og:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 24 core MECE sub-dimensions (30 total audited including 6 World Cup deep-dives) for Issue 01.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Appendix 0 · Interactive Mind Map & Problem Hierarchy | DataIsFun">
+  <meta name="twitter:description" content="Interactive MECE hierarchy canvas connecting 5 macro-pillars, 11 analytical criteria, and 24 core MECE sub-dimensions (30 total audited including 6 World Cup deep-dives) for Issue 01.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <style>
+    :root {
+      --bg-dark: #000000;
+      --card-bg: #09090b;
+      --card-hover: #121215;
+      --card-border: #1f1f23;
+      --border-hairline: rgba(255, 255, 255, 0.10);
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
+      --text-subtle: #71717a;
+      --messi-color: #38bdf8;
+      --ronaldo-color: #f97316;
+      --defence-color: #10b981;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1540px;
+      margin: 0 auto;
+      padding: 20px 24px 60px 24px;
+    }
+
+    /* Header Breadcrumb & Intro */
+    .mindmap-header {
+      margin-bottom: 24px;
+    }
+
+    .eyebrow-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .eyebrow-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.12);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .header-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .header-desc {
+      font-size: 13.5px;
+      color: #a1a1aa;
+      max-width: 960px;
+      line-height: 1.5;
+    }
+
+    /* Viewport Frame with Infinite Miro/Figma Experience */
+    .mindmap-viewport {
+      position: relative;
+      width: 100%;
+      height: 860px;
+      background: radial-gradient(circle at 50% 50%, #0d0d12 0%, #000000 100%);
+      border: 1px solid var(--border-hairline);
+      border-radius: 12px;
+      overflow: hidden;
+      user-select: none;
+      cursor: grab;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.85);
+    }
+
+    .mindmap-viewport.dragging {
+      cursor: grabbing;
+    }
+
+    /* Grid dot pattern for canvas feel */
+    .canvas-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    /* Transformable Canvas Layer */
+    .mindmap-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2850px;
+      min-height: 2800px;
+      transform-origin: 0 0;
+      will-change: transform;
+      pointer-events: auto;
+    }
+
+    /* SVG Connecting Curves Layer */
+    .mindmap-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2850px;
+      min-height: 2800px;
+      pointer-events: none;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .branch-path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke-width 0.2s ease, stroke-opacity 0.2s ease;
+    }
+
+    .branch-path:hover {
+      stroke-width: 4px !important;
+      stroke-opacity: 1 !important;
+    }
+
+    /* HTML Nodes Layer */
+    .nodes-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .map-node {
+      position: absolute;
+      pointer-events: auto;
+      border: 1px solid var(--border-hairline);
+      background: #09090b;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      border-radius: 10px;
+    }
+
+    .map-node:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.95);
+      z-index: 15;
+    }
+
+    /* Level 0: Central Root Node (Widened to 440px) */
+    .node-root {
+      width: 440px;
+      padding: 22px 24px;
+      background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      text-align: center;
+    }
+
+    .node-root-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #a1a1aa;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .node-root-title {
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .node-root-desc {
+      font-size: 12px;
+      color: #a1a1aa;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .node-root-meta {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #71717a;
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 10px;
+    }
+
+    /* Level 1: Macro Pillars (Widened to 380px) */
+    .node-pillar {
+      width: 380px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #09090b;
+    }
+
+    .node-pillar.attack {
+      border-left: 5px solid var(--messi-color);
+    }
+
+    .node-pillar.defence {
+      border-left: 5px solid var(--defence-color);
+    }
+
+    .node-pillar-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .node-pillar-title {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .node-pillar-desc {
+      font-size: 11.5px;
+      color: #a1a1aa;
+      line-height: 1.45;
+    }
+
+    /* Level 2: Analytical Criteria (Widened to 460px) */
+    .node-cat {
+      width: 460px;
+      padding: 14px 16px;
+      background: #0a0a0d;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left-width: 4px;
+      border-left-style: solid;
+    }
+
+    .node-cat-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .node-cat-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.02em;
+    }
+
+    .node-cat-engine {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: #71717a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .node-cat-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    .node-cat-who {
+      font-size: 11.5px;
+      color: #a1a1aa;
+      line-height: 1.4;
+    }
+
+    .node-cat-expand-cue {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: #71717a;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 2px;
+      transition: color 0.15s ease;
+    }
+
+    .node-cat:hover .node-cat-expand-cue {
+      color: #d4d4d8;
+    }
+
+    .node-cat-framework {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border-hairline);
+      font-size: 11px;
+      line-height: 1.4;
+      color: #a1a1aa;
+    }
+
+    .node-cat.is-expanded .node-cat-framework {
+      display: flex;
+    }
+
+    .nc-fw-row {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .nc-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #71717a;
+      text-transform: uppercase;
+      width: 70px;
+      flex-shrink: 0;
+    }
+
+    .nc-val {
+      color: #d4d4d8;
+      flex: 1;
+    }
+
+    /* Level 3: Leaf Tested Statements (Widened to 540px) */
+    .node-leaf {
+      width: 540px;
+      padding: 12px 16px;
+      background: #09090b;
+      border-radius: 9px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left-width: 3.5px;
+      border-left-style: solid;
+    }
+
+    .node-leaf-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .node-leaf-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .node-leaf-ref {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #a1a1aa;
+    }
+
+    .node-leaf-crit-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    .node-leaf-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .node-leaf-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .node-leaf-expand-icon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #71717a;
+      transition: transform 0.2s ease, color 0.15s ease;
+      flex-shrink: 0;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+
+    .node-leaf:hover .node-leaf-expand-icon {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .node-leaf.is-expanded .node-leaf-expand-icon {
+      transform: rotate(180deg);
+      color: #38bdf8;
+    }
+
+    /* Collapsed / Expanded Content Details */
+    .node-leaf-details {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+      padding-top: 8px;
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .node-leaf.is-expanded .node-leaf-details {
+      display: flex;
+    }
+
+    .node-leaf-framework {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      font-size: 11px;
+      line-height: 1.4;
+      color: #a1a1aa;
+      background: #050505;
+      padding: 6px 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nl-fw-row {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .nl-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #71717a;
+      text-transform: uppercase;
+      width: 70px;
+      flex-shrink: 0;
+    }
+
+    .nl-val {
+      color: #d4d4d8;
+      flex: 1;
+    }
+
+    .node-leaf-finding {
+      font-size: 11.5px;
+      color: #e4e4e7;
+      line-height: 1.45;
+      padding: 7px 10px;
+      background: #0d0d11;
+      border-radius: 5px;
+      border-left: 2px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .node-leaf-action {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 2px;
+    }
+
+    .node-leaf-link {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #a1a1aa;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s ease;
+      padding: 2px 4px;
+    }
+
+    .node-leaf-link:hover {
+      color: #38bdf8;
+      text-decoration: underline;
+    }
+
+    /* HUD Controls Toolbar */
+    .hud-controls {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      background: rgba(18, 18, 22, 0.88);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 4px;
+      gap: 3px;
+      z-index: 25;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .hud-btn {
+      background: transparent;
+      border: none;
+      color: #a1a1aa;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .hud-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    .hud-zoom-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: #d4d4d8;
+      padding: 0 8px;
+      min-width: 46px;
+      text-align: center;
+    }
+
+    /* Filter Pills & Branch Selector Toolbar */
+    .filter-hud {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: rgba(14, 14, 18, 0.90);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 8px 10px;
+      z-index: 25;
+      max-width: calc(100% - 32px);
+    }
+
+    .filter-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: #a1a1aa;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .filter-pill:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .filter-pill.active {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .branch-select {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 11.5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 600;
+      color: #ffffff;
+      outline: none;
+      cursor: pointer;
+      max-width: 210px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .branch-select:focus {
+      border-color: var(--messi-color);
+    }
+
+    .search-input {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 5px;
+      padding: 5px 10px;
+      font-size: 11px;
+      color: #ffffff;
+      width: 165px;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--messi-color);
+    }
+
+    .hud-toggle-all {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #a1a1aa;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .hud-toggle-all:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    /* Legend Bar at bottom-left opposite zoom HUD */
+    .legend-hud {
+      position: absolute;
+      top: auto;
+      bottom: 20px;
+      left: 20px;
+      right: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(14, 14, 18, 0.90);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+      padding: 6px 12px;
+      z-index: 25;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #a1a1aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 900px) {
+      .mindmap-viewport {
+        height: 68vh;
+        min-height: 520px;
+      }
+      .filter-hud {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 8px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .legend-hud {
+        top: auto;
+        bottom: 64px;
+        left: 10px;
+        right: auto;
+      }
+      .hud-controls {
+        bottom: 10px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 12px 14px 40px 14px;
+      }
+      .header-title {
+        font-size: 22px;
+      }
+      .mindmap-viewport {
+        height: 62vh;
+        min-height: 460px;
+      }
+      .legend-hud {
+        display: none;
+      }
+    }
+
+    footer {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-hairline);
+      text-align: center;
+      color: #52525b;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link ">Issues</a>
+        
+        
+        <a href="insights.html" class="nav-back-issue-btn" title="Return to Issue Deep-Dive">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back to Issue 01</span>
+        </a>
+        
+      </div>
+    </nav>
+    
+
+    <div class="mindmap-header">
+      <div class="eyebrow-row">
+        <span class="eyebrow-badge">MECE ISSUE TREE BREAKDOWN</span>
+        <span style="font-size: 12px; color: #71717a;">DataIsFun Sports Science Framework</span>
+      </div>
+      <h1 class="header-title">Appendix 0 · Problem Breakdown: The Outfield GOAT Mind Map</h1>
+      <p class="header-desc">
+        A completely MECE (Mutually Exclusive, Collectively Exhaustive) hierarchy breaking down the central question 
+        <strong>"Who is the Real Outfield GOAT?"</strong> across 5 Macro-Pillars, 11 Analytical Criteria, and all 24 core MECE sub-dimensions (30 total audited including 6 World Cup deep-dives).
+        Boxes default to headline and winner only; click any box to expand its summarised telemetry insights.
+      </p>
+    </div>
+
+    <!-- The Miro/Figma Interactive Canvas Viewport -->
+    <div class="mindmap-viewport" id="viewport">
+      <div class="canvas-grid-pattern"></div>
+
+      <!-- Filters & Branch Selector Toolbar -->
+      <div class="filter-hud">
+        <button class="filter-pill active" data-filter="all" onclick="setMacroFilter('all')">All (24)</button>
+        <button class="filter-pill" data-filter="pillar_context" onclick="setMacroFilter('pillar_context')">0.0 Context (3)</button>
+        <button class="filter-pill" data-filter="pillar_attack" onclick="setMacroFilter('pillar_attack')">1.0 Attack (11)</button>
+        <button class="filter-pill" data-filter="pillar_defence" onclick="setMacroFilter('pillar_defence')">2.0 Defence (2)</button>
+        <button class="filter-pill" data-filter="pillar_overall" onclick="setMacroFilter('pillar_overall')">3.0 Impact (2)</button>
+        <button class="filter-pill" data-filter="pillar_inspiration" onclick="setMacroFilter('pillar_inspiration')">4.0 Accolades (6)</button>
+        
+        <select id="branch-select" class="branch-select" onchange="setBranchSelect(this.value)">
+          <option value="all">⚡ Filter by Criteria Branch...</option>
+          <option value="cat_0_0">Criteria 0.0 · Context Setting: Operating Zones, Tactical Roles & Team Style (3)</option>
+            <option value="cat_1_1">Criteria 1.1 · Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance) (4)</option>
+            <option value="cat_1_2">Criteria 1.2 · Playmaking & Passing (Volume, Efficiency, Variety & Importance) (4)</option>
+            <option value="cat_1_3">Criteria 1.3 · Dribbling & 1v1 Ball Progression (Opta European Telemetry) (1)</option>
+            <option value="cat_1_4">Criteria 1.4 · Combined Attacking Output (G+A Aggregator of 1.1 & 1.2) (2)</option>
+            <option value="cat_2_1">Criteria 2.1 · Active Ground Defending & Pressing Disruptions (1)</option>
+            <option value="cat_2_2">Criteria 2.2 · Physical Contests & Aerial Box Defending (1)</option>
+            <option value="cat_3_1">Criteria 3.1 · Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance (2)</option>
+            <option value="cat_4_1">Criteria 4.1 · Institutional Accolades & Scoring Crowns (3)</option>
+            <option value="cat_4_2">Criteria 4.2 · Championship Pedigree & Collective Trophy Haul (1)</option>
+            <option value="cat_4_3">Criteria 4.3 · Cultural Reach, Live Attendance & Global Inspiration (2)</option>
+        </select>
+
+        <select id="layout-select" class="branch-select" onchange="setLayoutMode(this.value)" title="Choose last column leaf structuring mode">
+          <option value="stagger" selected>📐 Stagger by Criteria (1.1 Left · 1.2 Right)</option>
+          <option value="dual-grouped">📊 2-Column Grid (Inside 1.x)</option>
+          <option value="single">📋 Single Column</option>
+        </select>
+
+        <input type="text" id="node-search" class="search-input" placeholder="Search statements..." oninput="handleSearch(this.value)">
+      </div>
+
+      <!-- Legend Indicator -->
+      <div class="legend-hud">
+        <span style="color: #71717a; font-weight: 700;">WINNER:</span>
+        <div class="legend-item"><span class="legend-dot" style="background: var(--messi-color);"></span> Messi</div>
+        <div class="legend-item"><span class="legend-dot" style="background: var(--ronaldo-color);"></span> Ronaldo</div>
+        <div class="legend-item"><span class="legend-dot" style="background: #a1a1aa;"></span> Split / Tie</div>
+      </div>
+
+      <!-- HUD Controls -->
+      <div class="hud-controls">
+        <button class="hud-toggle-all" id="btn-toggle-all" onclick="toggleExpandAll()">Expand All</button>
+        <button class="hud-btn" onclick="zoomIn()" title="Zoom In">+</button>
+        <div class="hud-zoom-text" id="zoom-level">50%</div>
+        <button class="hud-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+        <button class="hud-btn" onclick="resetZoom()" title="Reset to 100%" style="font-size: 11px; min-width: 40px;">100%</button>
+        <button class="hud-btn" onclick="fitToView()" title="Fit to View" style="font-size: 11px; min-width: 44px;">⊡ Fit</button>
+        <button class="hud-btn" onclick="toggleFullscreen()" title="Fullscreen" style="font-size: 12px;">⛶</button>
+      </div>
+
+      <!-- Pannable / Zoomable Canvas -->
+      <div class="mindmap-canvas" id="canvas">
+        <svg class="mindmap-svg" id="mindmap-svg"></svg>
+        <div class="nodes-container" id="nodes-container"></div>
+      </div>
+    </div>
+
+    <footer>
+      DataIsFun Problem Breakdown Framework · 30 Sub-Dimensions (24 Core MECE)
+    </footer>
+  </div>
+
+  <script>
+    const TREE_DATA = [{"id": "pillar_context", "num": "0.0", "title": "Context Setting (Tactical Baseline)", "short_label": "Context Setting", "leader": "split", "so_what": "Messi evolved into a central playmaking hub while Ronaldo shifted into a box striker", "summary": "Maps where both players operated on the pitch, their roles, and team playing styles before comparing stats.", "remark": "", "key_question": "Did they play in different tactical roles, zones, and team systems?", "desc": "Establishing where both players operate on the ball, their starting tactical roles, and their teams' playing styles (possession vs counter-attack) before comparing output.", "accent": "#c084fc", "categories": [{"id": "cat_0_0", "num": "0.0", "title": "Context Setting: Operating Zones, Tactical Roles & Team Style", "leader": "split", "so_what": "Messi played in higher-possession setups; Ronaldo played more vertically on the break", "summary": "Compares career pitch positions, team possession style, and supporting cast value.", "key_question": "How different were their starting roles, team styles, and teammates?", "engine": "The Tactical Context Engine", "who_is": "Operated in different tactical zones, positional roles, and team playing styles?", "define_by": "Baseline pitch operating zones (on-ball centroid trajectory), starting positional roles (Right Wing, Centre-Forward, Left Wing, False 9/Second Striker, Attacking Midfield), and team tactical style (team vs opponent passes, goals scored vs conceded, and possession vs counter-attacking directness).", "metrics": "Seasonal on-ball (centroid_x, centroid_y), matches by position (RW, CF, LW, SS, AM/CM), team vs opponent passes/match, team pass share (%), team goals for vs against/match, vertical carry directness (%), progressive pass ratio (%), and fast-break counter-attack shot share (%).", "leaves": [{"qid": "q0_1", "ref": "0.0.1", "who_is": "Operated across which pitch zones and play which tactical positions over their careers?", "define_by": "Seasonal average normalised on-ball coordinates (centroid_x, centroid_y) and match-by-match tactical role indicated.", "metrics": "On-ball centroid trajectory (50%\u2013100%), career appearances by tactical role, by season.", "title": "Operating Zones (On-Ball Baseline) & Tactical Roles", "hypothesis": "How did their on-ball pitch zones and starting tactical roles evolve across 25 seasons?", "finding": "Messi split his career across Right Wing, False 9/Centre-Forward, and Second Striker/Attacking Midfield, dropping deeper into the right-central playmaking pocket; Ronaldo transitioned from Left/Right Wing into a dedicated penalty-box Centre-Forward.", "leader": "Split Verdict", "leader_badge": "Messi (RW / False 9 / Playmaker Hub) \u00b7 Ronaldo (LW \u2192 Pure Box CF)", "badge_type": "split"}, {"qid": "q0_2", "ref": "0.0.2", "who_is": "Played in which system? e.g. possession-based, direct/counter-attacking", "define_by": "Team passing volume relative to opponents, team goals scored versus conceded per match across 25 seasons, and tactical style indicators distinguishing possession control from vertical counter-attacking transitions.", "metrics": "Team vs opponent passes per match, team pass share (%), team goals scored vs conceded per match, vertical carry directness (%), progressive pass ratio (%), attacking-third touch share (%), and fast-break shot share (%).", "title": "Team Tactical Style: Possession Dominance vs Counter-Attacking & Goal Environment", "hypothesis": "How did their teams compare in pass dominance, defensive stability, and possession vs counter-attacking style?", "finding": "Messi's teams held higher pass dominance and passing volume per match alongside a slightly stronger net goal differential; Ronaldo's teams played slightly more vertically in transition with a higher share of fast-break counter-attack shots.", "leader": "Split Verdict", "leader_badge": "Messi Teams (Higher Pass Share) \u00b7 Ronaldo Teams (Higher Fast-Break Share)", "badge_type": "split"}, {"qid": "q0_3", "ref": "0.0.3", "who_is": "Played alongside what squad market valuation (both including and excluding themselves), which top teammates, and against what opponent squad values?", "define_by": "Contemporary match-date market value of the overall on-pitch team (including self) and supporting cast (excluding Messi and Ronaldo), each player's % contribution to squad value, the Top 3 most-valued Best XI teammates played with each season, and average opponent on-pitch squad market value faced by season.", "metrics": "Overall team value incl. self (\u20acM), supporting cast market value excl. self (\u20acM), player % contribution to squad value, seasonal Top 3 Best XI teammates table, and average opponent squad value faced (\u20acM).", "title": "Team, Supporting Cast & Opponent Squad Valuation Context", "hypothesis": "Did one player operate with a far more valuable squad or face stronger opponent squads?", "finding": "Both played alongside Europe's financial elite, with Messi's on-pitch teammates averaging a slightly higher contemporary valuation across shared European seasons while both faced comparable opponent squad values.", "leader": "Near Parity", "leader_badge": "Messi Edge (\u20ac37.5M vs \u20ac33.2M Average On-Pitch Teammate Value)", "badge_type": "neutral"}]}]}, {"id": "pillar_attack", "num": "1.0", "title": "Contribution to Attack (In Possession)", "short_label": "Attack", "leader": "split", "so_what": "Ronaldo holds the gross goal lead; Messi leads combined G+A, finishing efficiency, assists, and dribbling", "summary": "Measures everything they create on the ball: goals, finishing quality, assists, and dribbling.", "remark": "", "key_question": "Who creates and finishes more attacking value for their team?", "desc": "Generating positive goal differential (Expected Goals For / xGF) through scoring, playmaking, ball carrying, and robust execution across all environments.", "accent": "#38bdf8", "categories": [{"id": "cat_1_1", "num": "1.1", "title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)", "leader": "split", "so_what": "Ronaldo leads total goals and headers; Messi leads non-penalty goals, conversion rate, and pace by age", "summary": "Breaks down career goal totals, finishing efficiency, scoring variety, and clutch game-winners.", "key_question": "Who is the superior and more influential goalscorer?", "engine": "Scoring Dominance", "who_is": "Is the superior and more influential goalscorer?", "define_by": "Career scoring volume, age-aligned pace, finishing efficiency above Expected Goals (xG), multi-goal match feats, goal variety across body parts and set pieces, and match-winning team impact.", "metrics": "Gross/official goals, age-curve totals, shot conversion %, G/90, xG outperformance, hat-tricks/manitas, free-kick & penalty conversion, team goal share %, and game-winning goals.", "leaves": [{"qid": "q1", "ref": "1.1.1", "who_is": "Scores more goals across career volume and biological age?", "define_by": "Total career senior goals (gross and official FIFA-aligned competitions), peak seasonal output, and cumulative goals at identical biological ages.", "metrics": "Gross senior goals, official FIFA goals, seasonal peaks, and same-age cumulative goal pace.", "title": "Total Goalscoring Volume & Biological Age Pace", "hypothesis": "Does Ronaldo's higher career total settle the goalscoring debate?", "finding": "Ronaldo leads gross senior goals (979 vs 936) with earlier debut and late-career longevity; Messi stayed ahead at 22 of 22 matched biological ages.", "leader": "Split Verdict", "leader_badge": "Ronaldo (+43 Gross) \u00b7 Messi (22/22 Matched Ages)", "badge_type": "split"}, {"qid": "q2", "ref": "1.1.2", "who_is": "Is the more ruthless and efficient finisher relative to shot difficulty and multi-goal feats?", "define_by": "Converting scoring opportunities into goals above Expected Goals (xG) benchmarks, minimising shots required per goal scored, and producing multi-goal outbursts (hat-tricks, pokers, manitas).", "metrics": "Cumulative xG outperformance, shot conversion rate, club & country goals/match, low-xG screamers, and multi-goal match feats.", "title": "Finishing Efficiency, Shot Conversion (+xG) & Multi-Goal Feats", "hypothesis": "Are high goal tallies an artifact of shot volume or ruthless conversion?", "finding": "Messi converted 18.35% vs 15.55% (Opta European shots) and outperformed xG by +52.74 vs +14.79 in Opta's 13-season league model; Ronaldo leads 3+ goal matches (67 vs 62) while Messi leads non-penalty hat-tricks (45 vs 34).", "leader": "Messi Leads", "leader_badge": "Messi (18.35% vs 15.55% Conv \u00b7 +52.74 vs +14.79 xG Surplus)", "badge_type": "messi"}, {"qid": "q3", "ref": "1.1.3", "who_is": "Scores more diverse types of goals across body parts, zones, and set pieces?", "define_by": "Distribution of goals across left foot, right foot, headers, inside vs outside the box, direct free kicks, and penalties.", "metrics": "Body parts, scoring zones, non-penalty vs penalty totals, goal creation mix, top assister concentration, and set-piece conversion.", "title": "Goal Variety, Body Parts, Spatial Zones & Set Pieces", "hypothesis": "Who demonstrates greater versatility in how goals are scored?", "finding": "Ronaldo leads headers (134 vs 31), weak-foot goals (144 vs 97), and penalties (186 vs 119); Messi leads strong-foot goals (725 vs 549), direct free kicks (65 vs 55), and seasonal free-kick conversion.", "leader": "Split Verdict", "leader_badge": "Ronaldo (Headers & Weak Foot) \u00b7 Messi (Strong Foot & Free Kicks)", "badge_type": "split"}, {"qid": "q1_4_team", "ref": "1.1.4", "who_is": "Is more influential with their goals for their team's success?", "define_by": "Share of team's full-season goals, seasonal and career game-winning goals, knockout-round scoring and winners, and opponent strength across league (eventual Top-4 and Bottom-4) and international tiers.", "metrics": "Team goal share %, GWGs, knockout goals, G/90 & % of team goals by round, Top-6 GWGs, eventual Top-4 & Bottom-4 league goals, and international goals (% share & G/90) by FIFA rank.", "title": "Goal Importance, Game-Winners & Knockout Impact", "hypothesis": "Whose goals mattered most to deciding matches, knockouts, and team scoring share?", "finding": "Both peaked at 38.7% of team goals and stand locked 44\u201344 in career knockout game-winners; Ronaldo leads total GWGs (346 vs 287) and win-deciding share (47.2% vs 35.5%), while Messi leads total knockout goals (152 vs 133) and international G/90 vs lower-ranked tiers.", "leader": "Split Verdict", "leader_badge": "Dead Heat (44\u201344 KO GWG) \u00b7 Ronaldo (Total GWG) \u00b7 Messi (Total KO)", "badge_type": "split"}]}, {"id": "cat_1_2", "num": "1.2", "title": "Playmaking & Passing (Volume, Efficiency, Variety & Importance)", "leader": "messi", "so_what": "Messi dominates playmaking with +160 assists, 2.5x more xA, and 6.2x more throughballs", "summary": "Evaluates total assists, chance quality, passing range, and share of team build-up.", "key_question": "Who is the better creator and passer?", "engine": "Creative Dominance", "who_is": "Is the superior playmaker and passer?", "define_by": "Career assist volume and multi-assist feats, chance creation quality (xA, Big Chances, Throughballs, Key Passes), passing range, and team build-up share.", "metrics": "Total & official assists, assists/90, Expected Assists (xA), Big Chances created, throughballs, key passes, passing volume & accuracy by range, and % of team build-up & big-game assists.", "leaves": [{"qid": "q2_1", "ref": "1.2.1", "who_is": "Produces more total career assists and multi-assist match feats?", "define_by": "All-time career assists across gross senior fixtures and official competitions, seasonal assist totals, competition splits, and multi-assist match outbursts.", "metrics": "Gross & official career assists, seasonal assists, competition splits (League, UCL, International), and 2+ / 3+ assist matches.", "title": "Absolute Assist Volume & Multi-Assist Feats", "hypothesis": "Who delivered greater cumulative and peak assist output?", "finding": "Messi leads career assists 467\u2013307 (official 444\u2013295), out-assisting Ronaldo in 18 of 23 shared seasons and producing 85 multi-assist matches vs 37.", "leader": "Messi Leads", "leader_badge": "Messi (467 vs 307 Assists \u00b7 85 vs 37 Multi-Assist Games)", "badge_type": "messi"}, {"qid": "q2_3", "ref": "1.2.2", "who_is": "Generates higher chance-creation efficiency and creative pass quality?", "define_by": "Per-90 assist rate, Expected Assists (xA), defence-splitting throughballs, Big Chances Created, and Key Passes delivered.", "metrics": "Assists per 90, Expected Assists (xA), accurate throughballs, Big Chances Created, and Key Passes.", "title": "Creation Efficiency & Chance Quality (xA, Big Chances & Throughballs)", "hypothesis": "Is Messi's assist gap explained by finishing teammates or superior chance quality?", "finding": "Messi generated 129.86 xA vs Ronaldo's 52.08, created 419 vs 179 Big Chances, and delivered 505 vs 81 accurate throughballs at nearly double the assist rate per 90 (0.45 vs 0.25).", "leader": "Messi Leads", "leader_badge": "Messi (0.45 vs 0.25 A/90 \u00b7 129.86 vs 52.08 xA \u00b7 6.2\u00d7 Throughballs)", "badge_type": "messi"}, {"qid": "q2_2", "ref": "1.2.3", "who_is": "Exhibits broader passing mechanics and progressive range?", "define_by": "Passing volume, completion rates across short/medium/long ranges, switches of play, and progressive passing rates.", "metrics": "Passes/match, completion % by distance range, completed long passes & switches, and progressive pass volume & share.", "title": "Passing Mechanics & Progressive Distribution Variety", "hypothesis": "How do their ball distribution and passing range profiles compare?", "finding": "Messi attempts 52.5 passes/match vs Ronaldo's 27.4, leads accuracy across every distance range, and completes 5\u00d7 more progressive passes.", "leader": "Messi Leads", "leader_badge": "Messi (52.5 vs 27.4 Passes/Match \u00b7 5\u00d7 Progressive Passes)", "badge_type": "messi"}, {"qid": "q2_team", "ref": "1.2.4", "who_is": "Is more influential with their passing, build-up share, and big-game assists to team success?", "define_by": "Proportion of team total passes, dribbles, and carry distance executed, breadth of teammates assisted, knockout-round assists, and assists vs eventual Top-4 and Bottom-4 clubs.", "metrics": "Player % of team passes/dribbles/carry distance, unique teammates assisted, knockout assists (total & per 90), and assists vs eventual Top-4 & Bottom-4 clubs.", "title": "Team Build-Up Importance & Big-Game Knockout Assists", "hypothesis": "Who carried a larger share of squad build-up and delivered more assists in high-leverage knockout matches?", "finding": "Messi executed 8.5% of team passes (vs 5.2%), 30.9% of team dribbles (vs 7.6%), assisted 73 teammates vs 52, and produced 40 vs 15 tracked knockout assists.", "leader": "Messi Leads", "leader_badge": "Messi (30.9% Team Dribbles \u00b7 40 vs 15 Knockout Assists)", "badge_type": "messi"}]}, {"id": "cat_1_3", "num": "1.3", "title": "Dribbling & 1v1 Ball Progression (Opta European Telemetry)", "leader": "messi", "so_what": "Messi completed nearly twice as many European dribbles and led all 15 Opta seasons", "summary": "Tracks successful take-ons and per-90 ball carrying across 15 European seasons.", "key_question": "Who beats more defenders 1v1 and progresses the ball?", "engine": "1v1 Progression", "who_is": "Is the superior dribbler and more frequent 1v1 ball carrier?", "define_by": "Total and per-90 successful dribbles across European League and UEFA Champions League competition (2009/10\u20132023/24, Opta telemetry), benchmarked against Big-5 attackers/midfielders.", "metrics": "Opta career successful dribbles, dribbles/90, and seasonal dribble volume & per-90 trajectories.", "leaves": [{"qid": "q4_1", "ref": "1.3.1", "who_is": "Dribbles more across career volume and per-90 frequency?", "define_by": "Career successful take-ons, seasonal dribble totals, and dribbles per 90 minutes across European competition.", "metrics": "Opta career successful dribbles, dribbles per 90 minutes, and seasonal dribble volume & per-90 trajectories (2009/10\u20132023/24).", "title": "Who Dribbles More (Volume & Per-90 Frequency)", "hypothesis": "Who beat more defenders 1v1 and sustained higher dribbling frequency across seasons?", "finding": "Messi completed 3,093 vs 1,655 European dribbles (4.58 vs 2.22 per 90) and led in every single tracked Opta season from 2009/10 to 2023/24.", "leader": "Messi Leads", "leader_badge": "Messi (3,093 vs 1,655 Dribbles \u00b7 4.58 vs 2.22 per 90)", "badge_type": "messi"}]}, {"id": "cat_1_4", "num": "1.4", "title": "Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)", "leader": "messi", "so_what": "Messi leads combined Goals + Assists 1,404 to 1,286 and led 17 of 23 shared seasons", "summary": "Combines goals and assists across career totals, seasons, ages, and on-pitch team share.", "key_question": "Who delivers more combined Goals + Assists overall?", "engine": "Composite Attacking Output", "who_is": "Produces greater total direct goal involvement (Goals + Assists) and team offensive share?", "define_by": "Aggregating scoring (1.1) and playmaking (1.2) into combined Goals + Assists across career totals, competition tiers, seasons, biological ages, and on-pitch team goal share.", "metrics": "Career G+A, G+A per match & per 90, seasonal & age-matched G+A curves, competition splits, on-pitch team goal involvement %, and Top-4 G+A.", "leaves": [{"qid": "q3_1", "ref": "1.4.1", "who_is": "Contributes more combined Goals + Assists across careers, competitions, seasons, and ages?", "define_by": "Total direct goal contributions (Goals + Assists) across all senior levels, competitions, seasonal timelines, and biological ages.", "metrics": "Gross & official G+A, League/UCL/International G+A, G+A per match & per 90, seasonal G+A difference, and same-age cumulative G+A.", "title": "Absolute Combined Output (Goals + Assists)", "hypothesis": "When combining goals and assists, who generated greater total attacking output?", "finding": "Messi leads career G+A 1,404\u20131,286 (official 1,326\u20131,252), 1.30 vs 1.06 per 90, and led 17 campaigns to Ronaldo's 6; Ronaldo leads UCL and international combined G+A.", "leader": "Messi Leads", "leader_badge": "Messi (1,404 vs 1,286 G+A \u00b7 1.30 vs 1.06 per 90)", "badge_type": "messi"}, {"qid": "q3_team", "ref": "1.4.2", "who_is": "Is more influential with their combined goals and assists to team offensive output?", "define_by": "Percentage of team goals scored while the player was on the pitch that were directly scored or assisted by the player.", "metrics": "On-pitch team goal involvement share (%) and combined G+A vs eventual season Top-4 and Bottom-4 clubs.", "title": "Combined Team Offensive Importance (% of On-Pitch Team Goals)", "hypothesis": "Who accounted for a greater proportion of their team's scoring output while on the field?", "finding": "Messi led on-pitch goal involvement in 17 campaigns vs Ronaldo's 6.", "leader": "Messi Leads", "leader_badge": "Messi (17 vs 6 Seasons Leading On-Pitch G+A Share)", "badge_type": "messi"}]}]}, {"id": "pillar_defence", "num": "2.0", "title": "Contribution to Defence (Out of Possession)", "short_label": "Defence", "leader": "split", "so_what": "Messi presses and tackles more on the ground; Ronaldo dominates aerial box clearances", "summary": "Tracks out-of-possession work rate, pressing, tackles, aerial duels, and defensive clearances.", "remark": "", "key_question": "Who contributes more defensive work when their team does not have the ball?", "desc": "Suppressing negative goal differential (Expected Goals Against / xGA) through ground pressing disruptions, tackling, interceptions, aerial contests, and box clearances.", "accent": "#10b981", "categories": [{"id": "cat_2_1", "num": "2.1", "title": "Active Ground Defending & Pressing Disruptions", "leader": "messi", "so_what": "Messi leads pressures, tackles, interceptions, and pass blocks per 90 minutes", "summary": "Compares pressing, tackling, interceptions, and blocked passes per 90 minutes.", "key_question": "Who presses and disrupts opponents more on the ground?", "engine": "Disruption Engine", "who_is": "Provides greater ground disruption and out-of-possession defensive work rate?", "define_by": "Disrupting opponent possession build-up through active ground pressing, tackling, interceptions, and pass blocks across career totals and seasons.", "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m (Opta 2009\u20132023), and tackles won/90m (Transfermarkt 2018\u20132026).", "leaves": [{"qid": "q4_2", "ref": "2.1.1", "who_is": "Works harder without the ball across tackles, interceptions, pressures, and seasonal defensive tracking?", "define_by": "Out-of-possession work rate measured by Opta defensive actions per 90 minutes and seasonal trajectories across European & senior competition.", "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m, and Transfermarkt tackles won/90m by season.", "title": "Defensive Work Rate & Seasonal Ground Disruption", "hypothesis": "Does an attacker provide active pressing and possession disruption across campaigns?", "finding": "Across Opta European tracking, Messi leads in tackles (0.65 vs 0.38/90), pressures (10.04 vs 7.94/90), interceptions (0.35 vs 0.30/90), and passes blocked (0.25 vs 0.17/90) across most tracked campaigns.", "leader": "Messi Leads", "leader_badge": "Messi (0.65 vs 0.38 Tackles/90 \u00b7 10.04 vs 7.94 Pressures/90)", "badge_type": "messi"}]}, {"id": "cat_2_2", "num": "2.2", "title": "Physical Contests & Aerial Box Defending", "leader": "ronaldo", "so_what": "Ronaldo dominates aerial duels 737 to 121 and box clearances across every tracked season", "summary": "Covers aerial duels won, defensive box clearances, and fouls drawn per 90.", "key_question": "Who wins more aerial battles and physical contests?", "engine": "Box Presence", "who_is": "Contributes more aerial dominance, box clearances, and physical duel resistance?", "define_by": "Winning aerial duels across seasons, clearing dangerous balls inside the defensive penalty area, and drawing fouls in physical ground contests.", "metrics": "Aerial duels won (total & per 90m by season), defensive clearances/90m by season, and fouls drawn/90m by season.", "leaves": [{"qid": "q4_3", "ref": "2.2.1", "who_is": "Commands greater aerial duel dominance, defensive box clearances, and physical duels?", "define_by": "Seasonal Opta aerial duels won (total & per 90m), Opta defensive clearances per 90m, and Transfermarkt fouls won per 90m.", "metrics": "Aerial duels won/90m (2009\u20132025), clearances/90m (2009\u20132023), and fouls drawn/90m (2018\u20132026).", "title": "Aerial Duels, Clearances & Physical Contests by Season", "hypothesis": "Who dominates aerial duels, set-piece box clearances, and physical ground contests year over year?", "finding": "Ronaldo dominates aerial contests in every single tracked season (737 vs 121; 1.38 vs 0.20/90) and set-piece clearances (0.65 vs 0.01/90), whereas Messi leads ground take-ons and fouls drawn per 90m.", "leader": "Ronaldo Leads", "leader_badge": "Ronaldo (737 vs 121 Aerials \u00b7 0.65 vs 0.01 Clearances/90)", "badge_type": "ronaldo"}]}]}, {"id": "pillar_overall", "num": "3.0", "title": "Overall On-Pitch Impact", "short_label": "Overall Impact", "leader": "messi", "so_what": "Messi has a measurably higher overall on-pitch impact", "summary": "Measures net team win lift when playing versus absent alongside overall match ratings.", "remark": "", "key_question": "Does the team win more with Messi on-pitch? What are overall performance ratings for Messi vs Ronaldo?", "desc": "Measuring net collective pitch impact across all in- and out-of-possession phases: team win-rate and points-per-game lift (on vs off the pitch), algorithmic multi-event match ratings, and Man-of-the-Match honours.", "accent": "#f59e0b", "categories": [{"id": "cat_3_1", "num": "3.1", "title": "Net Two-Way Pitch Impact, Win Lift & Holistic Match Dominance", "leader": "messi", "so_what": "Teams lose more points when Messi sits out, and Messi holds higher ratings in all 18 tracked seasons", "summary": "Evaluates team PPG on/off differential, win-rate lift, match ratings, and MOTM share.", "key_question": "Who lifts team results and earns higher match ratings more consistently?", "engine": "The Bottom-Line Test", "who_is": "Provides greater holistic two-way match dominance and team win-rate impact?", "define_by": "The net holistic impact on match outcomes across all on-ball actions (shots, passes, dribbles, tackles, duels) and the team's record with the player on vs off the pitch.", "metrics": "Team on/off points-per-game (PPG) differential, team win % on vs off the pitch, Opta average match rating across 18 seasons, and Man-of-the-Match award percentage (%).", "leaves": [{"qid": "q4_4", "ref": "3.1.1", "who_is": "Provides greater on-pitch win rate lift and points-per-game impact?", "define_by": "Team performance differential comparing team points-per-game (PPG) and win percentage with the player on the pitch versus off the pitch.", "metrics": "Team PPG & win rate (with vs without), when-played seasonal curves, and seasonal With \u2212 Without PPG & win-rate differences.", "title": "Team On/Off Win % and Points-Per-Game Impact", "hypothesis": "Does the team actually win more when the player is on the pitch?", "finding": "Club teams experience a larger points-per-game and win-rate drop when Messi is absent than when Ronaldo is absent, while season-by-season on-pitch team PPG tracks closely.", "leader": "Messi Leads", "leader_badge": "Messi Larger On/Off Win & PPG Lift", "badge_type": "messi"}, {"qid": "q4_5", "ref": "3.1.2", "who_is": "Commands higher holistic match dominance and match rating supremacy?", "define_by": "Algorithmic composite match ratings aggregating every on-ball action (shots, key passes, dribbles, tackles, duels, turnovers) across 18 seasons of Opta / WhoScored / SofaScore data.", "metrics": "Algorithmic career average match ratings by season, Man-of-the-Match totals, MOTM % rate by competition, and seasonal MOTM totals & rates.", "title": "Holistic Pitch Dominance (Algorithmic Match Ratings)", "hypothesis": "When aggregating all on-ball events (shots, passes, dribbles, tackles, duels), who commands higher match dominance?", "finding": "Messi holds the higher average match rating in 18 of 18 tracked seasons and earned nearly twice as many official Man-of-the-Match awards.", "leader": "Messi Leads", "leader_badge": "Messi Higher Rating All 18 Seasons \u00b7 Nearly 2\u00d7 MOTMs", "badge_type": "messi"}]}]}, {"id": "pillar_inspiration", "num": "4.0", "title": "Accolades, Recognition & Ability to Inspire (Institutional & Cultural Legacy)", "short_label": "Accolades & Reach", "leader": "split", "so_what": "Messi leads Ballons d'Or and career trophies; Ronaldo leads Champions League titles and global following", "summary": "Compares major individual awards, collective silverware, global following, and live stadium draw.", "remark": "", "key_question": "Who left the bigger mark through trophies, awards, and global reach?", "desc": "Evaluating historical standing beyond match telemetry: peer and institutional voting consensus (Ballon d'Or, FIFA The Best), collective trophy pedigree, and global cultural inspiration (digital reach, world records, stadium draw).", "accent": "#ec4899", "categories": [{"id": "cat_4_1", "num": "4.1", "title": "Institutional Accolades & Scoring Crowns", "leader": "split", "so_what": "Messi won more Ballons d'Or and Golden Shoes; Ronaldo topped scoring across 4 distinct leagues", "summary": "Covers Ballon d'Or wins, World Cup Golden Balls, European Golden Shoes, and league crowns.", "key_question": "Who won more individual awards and scoring titles across leagues?", "engine": "The Institutional Consensus", "who_is": "Commands higher recognition in individual voting awards, scoring crowns, and universal honours?", "define_by": "Official global individual voting awards (Ballon d'Or, FIFA World Player), European Golden Shoes, league top-scorer crowns across distinct countries, FIFA World Cup Golden Balls, and Laureus multi-sport awards.", "metrics": "Ballon d'Or wins & podiums, FIFA World Player wins, Laureus & tournament MVPs, European Golden Shoes, and club-coded league top-scorer timeline.", "leaves": [{"qid": "q8_1", "ref": "4.1.1", "who_is": "Commands higher recognition in individual voting awards and universal tournament MVP honours?", "define_by": "Official global voting awards honouring single-season excellence alongside FIFA tournament MVP awards and multi-sport Laureus honours.", "metrics": "Ballon d'Or wins, Top-3 podiums, FIFA World Player / The Best wins, Laureus World Sportsman awards, FIFA World Cup Golden Balls, and Continental MVPs.", "title": "Ballon d'Or, World Player Voting & Universal Tournament MVPs", "hypothesis": "Who has earned greater peer, managerial, journalistic, and multi-sport consensus across global individual honours?", "finding": "Messi holds all-time records in Ballon d'Or wins (8 vs 5), Top-3 podiums (14 vs 12), FIFA World Player titles (8 vs 5), Laureus awards (2 vs 0), and FIFA World Cup Golden Balls (2 vs 0).", "leader": "Messi Leads", "leader_badge": "Messi Leads With +3 Ballons d'Or & +2 WC Golden Balls", "badge_type": "messi"}, {"qid": "q8_2", "ref": "4.1.2", "who_is": "Captured more continental and domestic top-scorer crowns across distinct leagues?", "define_by": "Official European Golden Shoes, UCL scoring titles, and a year-by-year club-coded timeline of domestic league Golden Boots.", "metrics": "European Golden Shoes, domestic league top-scorer trophies, UCL Golden Boots, and club-highlighted timeline by league.", "title": "European Golden Shoes & League Top-Scorer Timeline", "hypothesis": "Who accumulated more scoring crowns and demonstrated cross-league Golden Boot diversity over time?", "finding": "Messi won an all-time record 6 European Golden Shoes and 8 Spanish Pichichi crowns with Barcelona; Ronaldo won 4 Golden Shoes, led the UCL 7 times, and topped scoring in 4 distinct national leagues across 4 clubs.", "leader": "Split Verdict", "leader_badge": "Messi Leads With +2 Golden Shoes \u00b7 Ronaldo Leads With +3 Leagues", "badge_type": "split"}, {"qid": "q8_10", "ref": "4.1.3", "who_is": "Holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?", "define_by": "Categorised audit of documented all-time football and cultural records from Wikipedia's Career Achievements ledgers for both players across 8 standardised arenas (with full searchable ledger in Extra Analysis 6).", "metrics": "Total documented records, domain breakdown across World / Global, FIFA World Cup, Guinness World Records, UEFA & European, La Liga & Spain, Other Domestic Leagues, International & Continental, and Club Records.", "title": "All-Time Career Records Held (World, World Cup, Guinness, UEFA, La Liga & Club)", "hypothesis": "Who holds the broader and deeper ledger of documented all-time career records across global, tournament, and league competitions?", "finding": "Both hold extensive documented all-time records across World, World Cup, Guinness, UEFA, domestic, international, and club arenas, with Messi's ledger itemised in deeper granular detail and Ronaldo's consolidated into headline global milestones.", "leader": "Split Verdict", "leader_badge": "All-Time Record Holders Across Global, World Cup, Guinness & League Arenas", "badge_type": "split"}]}, {"id": "cat_4_2", "num": "4.2", "title": "Championship Pedigree & Collective Trophy Haul", "leader": "split", "so_what": "Messi leads senior silverware 43 to 34 including the World Cup; Ronaldo leads Champions League titles 5 to 4", "summary": "Breaks down senior team trophies across leagues, cups, UCL, trebles, and international titles.", "key_question": "Who built the deeper trophy cabinet for club and country?", "engine": "The Silverware Cabinet", "who_is": "Has accumulated the more decorated senior silverware collection across club and country?", "define_by": "Official team championships broken down by trophy category (domestic leagues, cups, supercups, UCL, CWC/Super Cups, and senior international trophies), European trebles, and cumulative trajectory.", "metrics": "Side-by-side trophy type distribution pies, senior international titles, UEFA Champions League titles, European trebles, and cumulative trophies (2003\u20132024).", "leaves": [{"qid": "q8_4", "ref": "4.2.1", "who_is": "Has accumulated the more decorated senior silverware collection across club and country?", "define_by": "Complete official senior team trophies broken down by competition type (leagues, cups, UCL, international, trebles) and cumulative evolution.", "metrics": "Trophy type composition (side-by-side pies), senior international titles, UEFA Champions League & treble sweeps, and cumulative career silverware.", "title": "Complete Senior Silverware Breakdown by Trophy Type & Era", "hypothesis": "Who built the deeper and more comprehensive championship cabinet across domestic, European, and senior international competition?", "finding": "Messi leads senior silverware 43-34 (excl. youth/Olympic; 45-34 incl. Olympics/U20), holding more domestic leagues, cups, and senior international titles (World Cup, 2 Copas Am\u00e9rica, Finalissima) plus 2 European Trebles; Ronaldo leads UEFA Champions League titles 5-4.", "leader": "Messi Leads", "leader_badge": "Messi Leads With +9 Senior Career Trophies", "badge_type": "messi"}]}, {"id": "cat_4_3", "num": "4.3", "title": "Cultural Reach, Live Attendance & Global Inspiration", "leader": "split", "so_what": "Ronaldo leads total social followers; Messi holds the record post and drew higher career avg crowds", "summary": "Compares social media reach, viral milestones, and live stadium attendance pull.", "key_question": "Who commands a bigger global audience online and in stadiums?", "engine": "The Cultural Footprint", "who_is": "Commands greater global cultural reach, live stadium draw, and matchday economic impact?", "define_by": "Verified cross-platform digital reach and peak social cultural moments, paired with matchday stadium turnstile attendance across European & late-career leagues (before vs after league baseline arrival crowds).", "metrics": "Cross-platform social followers, most-liked post record, career & seasonal match attendance (Home/Away), MLS vs SPL before-and-after road attendance, and peak stadium crowd.", "leaves": [{"qid": "q8_7", "ref": "4.3.1", "who_is": "Commands greater global digital reach, social media audience, and peak cultural resonance?", "define_by": "Verified social media followers across Instagram, Facebook, X, and YouTube alongside all-time single-post cultural engagement milestones.", "metrics": "Cross-platform total followers, per-platform breakdown, and Guinness World Record post likes.", "title": "Global Digital Reach, Social Following & Cultural Moments", "hypothesis": "Who commands the larger evergreen social ecosystem vs the single most engaged cultural moment online?", "finding": "Ronaldo dominates total cross-platform following (980.1M vs 606.7M) across every major network, while Messi's 2022 World Cup celebration holds the all-time Instagram post-likes record (75.7M vs 42.8M).", "leader": "Split Verdict", "leader_badge": "Ronaldo Leads With +373.4M Followers \u00b7 Messi Leads With +32.9M Post Record", "badge_type": "split"}, {"qid": "q8_9", "ref": "4.3.2", "who_is": "Generates greater live stadium attendance and matchday economic draw?", "define_by": "Verified matchday stadium attendance overall and by season (2012/13\u20132022/23, Home vs Away), post-move league before-vs-after road attendance (absolute & % gap), and peak stadium crowds (noting where seasonal TV viewership & confidential shirt sales lack auditable series).", "metrics": "Career & seasonal matchday attendance, Home vs Away attendance, MLS/SPL before-vs-after road crowds, and peak single-match crowd.", "title": "Live Match Attendance & Matchday Economics", "hypothesis": "Who drew larger live stadium crowds across seasons and added more absolute & relative road spectators upon arriving in new leagues?", "finding": "Across 892 Transfermarkt-audited club fixtures (2012\u20132023), Messi averaged higher overall/home attendance (54,040 vs 52,743) while Ronaldo drew higher away crowds (39,008 vs 37,738); post-arrival, Messi added +22,139 MLS road fans/game (+100.1%) vs Ronaldo's +13,050 SPL road fans/game (+149.1%).", "leader": "Split Verdict", "leader_badge": "Messi Leads Overall Avg & MLS Road Gain \u00b7 Ronaldo Leads Away Avg & SPL % Lift", "badge_type": "split"}]}]}];
+    const BRANCH_COLORS = {"0.0": {"color": "#94a3b8", "light": "rgba(148, 163, 184, 0.12)", "border": "rgba(148, 163, 184, 0.45)", "glow": "rgba(148, 163, 184, 0.25)"}, "1.1": {"color": "#38bdf8", "light": "rgba(56, 189, 248, 0.12)", "border": "rgba(56, 189, 248, 0.45)", "glow": "rgba(56, 189, 248, 0.25)"}, "1.2": {"color": "#818cf8", "light": "rgba(129, 140, 248, 0.12)", "border": "rgba(129, 140, 248, 0.45)", "glow": "rgba(129, 140, 248, 0.25)"}, "1.3": {"color": "#2dd4bf", "light": "rgba(45, 212, 191, 0.12)", "border": "rgba(45, 212, 191, 0.45)", "glow": "rgba(45, 212, 191, 0.25)"}, "1.4": {"color": "#fbbf24", "light": "rgba(251, 191, 36, 0.12)", "border": "rgba(251, 191, 36, 0.45)", "glow": "rgba(251, 191, 36, 0.25)"}, "2.1": {"color": "#34d399", "light": "rgba(52, 211, 153, 0.12)", "border": "rgba(52, 211, 153, 0.45)", "glow": "rgba(52, 211, 153, 0.25)"}, "2.2": {"color": "#a3e635", "light": "rgba(163, 230, 53, 0.12)", "border": "rgba(163, 230, 53, 0.45)", "glow": "rgba(163, 230, 53, 0.25)"}, "3.1": {"color": "#c084fc", "light": "rgba(192, 132, 252, 0.12)", "border": "rgba(192, 132, 252, 0.45)", "glow": "rgba(192, 132, 252, 0.25)"}, "4.1": {"color": "#f59e0b", "light": "rgba(245, 158, 11, 0.12)", "border": "rgba(245, 158, 11, 0.45)", "glow": "rgba(245, 158, 11, 0.25)"}, "4.2": {"color": "#fb923c", "light": "rgba(251, 146, 60, 0.12)", "border": "rgba(251, 146, 60, 0.45)", "glow": "rgba(251, 146, 60, 0.25)"}, "4.3": {"color": "#ec4899", "light": "rgba(236, 72, 153, 0.12)", "border": "rgba(236, 72, 153, 0.45)", "glow": "rgba(236, 72, 153, 0.25)"}};
+
+    // Widened Column Positions with 2-Column Staggered Leaves
+    const COL_X = {
+      root: 60,
+      pillar: 560,
+      cat: 1020,
+      leaf_col1: 1540,
+      leaf_col2: 2120
+    };
+
+    const WIDTHS = {
+      root: 420,
+      pillar: 380,
+      cat: 440,
+      leaf: 500
+    };
+
+    let scale = 0.50;
+    let panX = 40;
+    let panY = 40;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+
+    let activeFilter = 'all'; // 'all', 'pillar_attack', 'pillar_defence', or 'cat_X_Y'
+    let layoutMode = 'stagger'; // 'stagger' (1.1 Left · 1.2 Right), 'dual-grouped' (2-col inside 1.x), 'single' (1 col)
+    let searchQuery = '';
+    let expandedLeaves = new Set();
+    let expandedCats = new Set();
+    let allExpanded = false;
+
+    function setLayoutMode(mode) {
+      layoutMode = mode;
+      renderMindMap();
+    }
+
+    const viewport = document.getElementById('viewport');
+    const canvas = document.getElementById('canvas');
+    const svgLayer = document.getElementById('mindmap-svg');
+    const nodesContainer = document.getElementById('nodes-container');
+    const zoomLevelDisplay = document.getElementById('zoom-level');
+    const btnToggleAll = document.getElementById('btn-toggle-all');
+
+    function updateTransform() {
+      canvas.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+      zoomLevelDisplay.textContent = Math.round(scale * 100) + '%';
+    }
+
+    // Zoom Functions
+    function zoomIn() {
+      scale = Math.min(1.6, scale * 1.15);
+      updateTransform();
+    }
+
+    function zoomOut() {
+      scale = Math.max(0.12, scale / 1.15);
+      updateTransform();
+    }
+
+    function resetZoom() {
+      scale = 1.0;
+      panX = 40;
+      panY = 40;
+      updateTransform();
+    }
+
+    function fitToView() {
+      const vpW = viewport.clientWidth;
+      const vpH = viewport.clientHeight;
+      const canvasH = parseInt(canvas.style.height || '2600', 10);
+      const canvasW = 2760;
+
+      const scaleX = (vpW - 60) / canvasW;
+      const scaleY = (vpH - 60) / canvasH;
+      scale = Math.min(scaleX, scaleY);
+      scale = Math.max(0.18, Math.min(0.95, scale));
+
+      panX = 30;
+      panY = 30;
+      updateTransform();
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        viewport.requestFullscreen().catch(err => {
+          console.warn('Fullscreen request failed:', err);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    // Pan (Drag) Handlers
+    viewport.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.hud-controls') || e.target.closest('.filter-hud') || e.target.closest('.legend-hud') || e.target.closest('.node-leaf-action') || e.target.closest('a')) return;
+      isDragging = true;
+      startX = e.clientX - panX;
+      startY = e.clientY - panY;
+      viewport.classList.add('dragging');
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      panX = e.clientX - startX;
+      panY = e.clientY - startY;
+      updateTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (isDragging) {
+        isDragging = false;
+        viewport.classList.remove('dragging');
+      }
+    });
+
+    // Wheel Zoom (Center on cursor)
+    viewport.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const rect = viewport.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const zoomFactor = e.deltaY < 0 ? 1.08 : (1 / 1.08);
+      const newScale = Math.max(0.12, Math.min(1.8, scale * zoomFactor));
+
+      panX = mouseX - (mouseX - panX) * (newScale / scale);
+      panY = mouseY - (mouseY - panY) * (newScale / scale);
+      scale = newScale;
+
+      updateTransform();
+    }, { passive: false });
+
+    // Touch Support for Mobile / Tablets
+    let touchStartDist = 0;
+    viewport.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        startX = e.touches[0].clientX - panX;
+        startY = e.touches[0].clientY - panY;
+      } else if (e.touches.length === 2) {
+        touchStartDist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+      }
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && isDragging) {
+        panX = e.touches[0].clientX - startX;
+        panY = e.touches[0].clientY - startY;
+        updateTransform();
+      } else if (e.touches.length === 2) {
+        const dist = Math.hypot(
+          e.touches[0].clientX - e.touches[1].clientX,
+          e.touches[0].clientY - e.touches[1].clientY
+        );
+        const factor = dist / touchStartDist;
+        scale = Math.max(0.12, Math.min(1.8, scale * factor));
+        touchStartDist = dist;
+        updateTransform();
+      }
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    // Toggle Leaf Expansion (Strict Accordion: collapses previous box when another box is clicked)
+    function toggleLeaf(qid, event) {
+      if (event && (event.target.closest('a') || event.target.tagName === 'A')) return;
+      const wasExpanded = expandedLeaves.has(qid);
+      expandedLeaves.clear();
+      if (!wasExpanded) {
+        expandedLeaves.add(qid);
+      }
+      renderMindMap();
+    }
+
+    // Toggle Category Expansion (Strict Accordion: collapses previous box when another box is clicked)
+    function toggleCat(catId, event) {
+      if (event && (event.target.closest('a') || event.target.tagName === 'A')) return;
+      const wasExpanded = expandedCats.has(catId);
+      expandedCats.clear();
+      if (!wasExpanded) {
+        expandedCats.add(catId);
+      }
+      renderMindMap();
+    }
+
+    // Expand All / Collapse All
+    function toggleExpandAll() {
+      allExpanded = !allExpanded;
+      if (allExpanded) {
+        TREE_DATA.forEach(p => {
+          p.categories.forEach(c => {
+            expandedCats.add(c.id);
+            c.leaves.forEach(l => expandedLeaves.add(l.qid));
+          });
+        });
+        btnToggleAll.textContent = 'Collapse All';
+      } else {
+        expandedLeaves.clear();
+        expandedCats.clear();
+        btnToggleAll.textContent = 'Expand All';
+      }
+      renderMindMap();
+    }
+
+    // Filtering logic: True Branch Isolation
+    function setMacroFilter(type) {
+      activeFilter = type;
+      document.getElementById('branch-select').value = 'all';
+      updateFilterButtons();
+      renderMindMap();
+      fitToView();
+    }
+
+    function setBranchSelect(catId) {
+      activeFilter = catId;
+      updateFilterButtons();
+      renderMindMap();
+      fitToView();
+    }
+
+    function handleSearch(val) {
+      searchQuery = val.toLowerCase().trim();
+      renderMindMap();
+    }
+
+    function updateFilterButtons() {
+      document.querySelectorAll('.filter-pill[data-filter]').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === activeFilter);
+      });
+    }
+
+    // Filtered Tree Structure Generator
+    function getFilteredTree() {
+      const result = [];
+
+      TREE_DATA.forEach(pillar => {
+        if (activeFilter.startsWith('pillar_') && pillar.id !== activeFilter) return;
+
+        const filteredCats = [];
+        pillar.categories.forEach(cat => {
+          if (activeFilter.startsWith('cat_') && cat.id !== activeFilter) return;
+
+          // Search matching
+          let matchingLeaves = cat.leaves;
+          if (searchQuery) {
+            matchingLeaves = cat.leaves.filter(leaf => {
+              const text = (leaf.title + ' ' + leaf.who_is + ' ' + leaf.define_by + ' ' + leaf.metrics + ' ' + leaf.finding + ' ' + leaf.leader_badge).toLowerCase();
+              return text.includes(searchQuery);
+            });
+          }
+
+          if (matchingLeaves.length > 0) {
+            filteredCats.push({
+              ...cat,
+              leaves: matchingLeaves
+            });
+          }
+        });
+
+        if (filteredCats.length > 0) {
+          result.push({
+            ...pillar,
+            categories: filteredCats
+          });
+        }
+      });
+
+      return result;
+    }
+
+    // Core Rendering Routine
+    function renderMindMap() {
+      nodesContainer.innerHTML = '';
+      svgLayer.innerHTML = '';
+
+      const filteredTree = getFilteredTree();
+
+      if (filteredTree.length === 0) {
+        const emptyMsg = document.createElement('div');
+        emptyMsg.style.position = 'absolute';
+        emptyMsg.style.left = '100px';
+        emptyMsg.style.top = '100px';
+        emptyMsg.style.color = '#71717a';
+        emptyMsg.style.fontFamily = "'JetBrains Mono', monospace";
+        emptyMsg.style.fontSize = '14px';
+        emptyMsg.textContent = 'No statements match the active branch or search criteria.';
+        nodesContainer.appendChild(emptyMsg);
+        return;
+      }
+
+      const nodeCoords = {};
+      const pathsToDraw = [];
+
+      let currentY = 60;
+      const LEAF_GAP = 14;
+      const CHUNK_GAP = 54; // Clear gap between chunks of 1.x.y (level 3 columns)
+      const CAT_MIN_GAP = 28; // Slight readable gap between criteria boxes for ease of view
+      const PILLAR_GAP = 70;
+
+      // 1. Calculate Leaf & Category Positions according to layoutMode (stagger, dual-grouped, or single)
+      let prevCatTop = 0;
+      let prevCatBottom = 40;
+
+      filteredTree.forEach(pillar => {
+        let col1Y = currentY;
+        let col2Y = currentY;
+        let prevCatLeaves = [];
+
+        pillar.categories.forEach((cat, catIdx) => {
+          const leaves = cat.leaves;
+          const catLeavesCoords = [];
+
+          if (layoutMode === 'stagger') {
+            // Within each pillar: .1 in Col 1 (left), .2 in Col 2 (right), .3 in Col 1 (left)...
+            const targetCol = (catIdx % 2 === 1) ? 2 : 1;
+            const colX = (targetCol === 2) ? COL_X.leaf_col2 : COL_X.leaf_col1;
+            const rawColY = (targetCol === 2) ? col2Y : col1Y;
+
+            // Stagger Geometry:
+            // 1. "the begin of next (2.x+1.1) only start mid way of previous (2.x.max/2)"
+            // 2. "2.2.1 should be between 2.1.2 and 2.3.1 (end of previous criteria and begin of next) not between 2.1.1 and 2.1.2"
+            let startY = rawColY;
+            if (prevCatLeaves.length > 0) {
+              const prevN = prevCatLeaves.length;
+              if (prevN <= 2) {
+                // When previous criteria has 1 or 2 items (e.g. 2.1 with 2 leaves, 2.2 with 1 leaf):
+                // Next criteria starts AFTER previous finishes so 2.2.1 is strictly between 2.1.2 and 2.3.1
+                const prevEnd = prevCatLeaves[prevN - 1].y + prevCatLeaves[prevN - 1].h;
+                startY = Math.max(rawColY, prevEnd + 36);
+              } else {
+                // When previous criteria has >= 3 items (e.g. 1.1 with 4, 1.2 with 7):
+                // Next criteria starts midway through previous criteria (2.x.max / 2)
+                const midIdx = Math.floor(prevN / 2);
+                const prevMidY = prevCatLeaves[midIdx].y;
+                startY = Math.max(rawColY, prevMidY);
+              }
+            }
+            let currY = startY;
+
+            leaves.forEach(leaf => {
+              const isExpanded = expandedLeaves.has(leaf.qid);
+              const leafH = isExpanded ? 245 : 82;
+              const coord = {
+                x: colX,
+                y: currY,
+                w: WIDTHS.leaf,
+                h: leafH,
+                col: targetCol
+              };
+              nodeCoords[leaf.qid] = coord;
+              catLeavesCoords.push(coord);
+              currY += leafH + LEAF_GAP;
+            });
+
+            // Advance that column with clear chunk gap between criteria
+            if (targetCol === 2) {
+              col2Y = currY - LEAF_GAP + CHUNK_GAP;
+            } else {
+              col1Y = currY - LEAF_GAP + CHUNK_GAP;
+            }
+
+            prevCatLeaves = catLeavesCoords;
+
+            const isCatExpanded = expandedCats.has(cat.id);
+            const catH = isCatExpanded ? 190 : 105;
+            const minY = Math.min(...catLeavesCoords.map(c => c.y));
+            const maxY = Math.max(...catLeavesCoords.map(c => c.y + c.h));
+            const idealCatY = (minY + maxY) / 2 - (catH / 2);
+            const actualCatY = Math.max(idealCatY, prevCatBottom + 16);
+
+            nodeCoords[cat.id] = {
+              x: COL_X.cat,
+              y: actualCatY,
+              w: WIDTHS.cat,
+              h: catH
+            };
+            prevCatBottom = actualCatY + catH;
+
+          } else if (layoutMode === 'dual-grouped') {
+            // 2-Column Grid inside the criteria (1.1.y grouped as 2 columns)
+            const catStartY = Math.max(col1Y, col2Y);
+            let c1Y = catStartY;
+            let c2Y = catStartY + (leaves.length > 1 ? 46 : 0);
+
+            leaves.forEach((leaf, idx) => {
+              const isCol2 = (idx % 2 === 1);
+              const isExpanded = expandedLeaves.has(leaf.qid);
+              const leafH = isExpanded ? 245 : 82;
+              const targetCol = isCol2 ? 2 : 1;
+              const colX = isCol2 ? COL_X.leaf_col2 : COL_X.leaf_col1;
+              const currY = isCol2 ? c2Y : c1Y;
+
+              const coord = {
+                x: colX,
+                y: currY,
+                w: WIDTHS.leaf,
+                h: leafH,
+                col: targetCol
+              };
+              nodeCoords[leaf.qid] = coord;
+              catLeavesCoords.push(coord);
+
+              if (isCol2) c2Y += leafH + LEAF_GAP;
+              else c1Y += leafH + LEAF_GAP;
+            });
+
+            const maxCatY = Math.max(c1Y, c2Y);
+            col1Y = maxCatY - LEAF_GAP + CHUNK_GAP;
+            col2Y = col1Y;
+
+            const isCatExpanded = expandedCats.has(cat.id);
+            const catH = isCatExpanded ? 190 : 105;
+            const minY = Math.min(...catLeavesCoords.map(c => c.y));
+            const maxY = Math.max(...catLeavesCoords.map(c => c.y + c.h));
+            const actualCatY = Math.max((minY + maxY) / 2 - (catH / 2), prevCatBottom + 16);
+
+            nodeCoords[cat.id] = {
+              x: COL_X.cat,
+              y: actualCatY,
+              w: WIDTHS.cat,
+              h: catH
+            };
+            prevCatBottom = actualCatY + catH;
+
+          } else {
+            // Single column
+            let currY = col1Y;
+            leaves.forEach(leaf => {
+              const isExpanded = expandedLeaves.has(leaf.qid);
+              const leafH = isExpanded ? 245 : 82;
+              const coord = {
+                x: COL_X.leaf_col1,
+                y: currY,
+                w: WIDTHS.leaf,
+                h: leafH,
+                col: 1
+              };
+              nodeCoords[leaf.qid] = coord;
+              catLeavesCoords.push(coord);
+              currY += leafH + LEAF_GAP;
+            });
+
+            col1Y = currY - LEAF_GAP + CHUNK_GAP;
+            col2Y = col1Y;
+
+            const isCatExpanded = expandedCats.has(cat.id);
+            const catH = isCatExpanded ? 190 : 105;
+            const minY = Math.min(...catLeavesCoords.map(c => c.y));
+            const maxY = Math.max(...catLeavesCoords.map(c => c.y + c.h));
+            const actualCatY = Math.max((minY + maxY) / 2 - (catH / 2), prevCatBottom + 16);
+
+            nodeCoords[cat.id] = {
+              x: COL_X.cat,
+              y: actualCatY,
+              w: WIDTHS.cat,
+              h: catH
+            };
+            prevCatBottom = actualCatY + catH;
+          }
+
+          const branchStyle = BRANCH_COLORS[cat.num] || { color: '#38bdf8' };
+          cat.leaves.forEach(leaf => {
+            pathsToDraw.push({
+              from: cat.id,
+              to: leaf.qid,
+              color: branchStyle.color
+            });
+          });
+        });
+
+        // Synchronize next pillar to begin below both columns
+        currentY = Math.max(col1Y, col2Y) + PILLAR_GAP;
+      });
+
+      // 3. Calculate Pillar Positions (Centered to their categories)
+      filteredTree.forEach(pillar => {
+        const pillarH = 140;
+        const minY = Math.min(...pillar.categories.map(c => nodeCoords[c.id].y));
+        const maxY = Math.max(...pillar.categories.map(c => nodeCoords[c.id].y + nodeCoords[c.id].h));
+        const pillarY = (minY + maxY) / 2 - (pillarH / 2);
+
+        nodeCoords[pillar.id] = {
+          x: COL_X.pillar,
+          y: pillarY,
+          w: WIDTHS.pillar,
+          h: pillarH
+        };
+
+        // Queue connection from pillar to categories
+        pillar.categories.forEach(cat => {
+          const branchStyle = BRANCH_COLORS[cat.num] || { color: pillar.accent };
+          pathsToDraw.push({
+            from: pillar.id,
+            to: cat.id,
+            color: branchStyle.color
+          });
+        });
+      });
+
+      // 4. Calculate Root Position (Centered to visible pillars)
+      const rootH = 210;
+      const minY = Math.min(...filteredTree.map(p => nodeCoords[p.id].y));
+      const maxY = Math.max(...filteredTree.map(p => nodeCoords[p.id].y + nodeCoords[p.id].h));
+      const rootY = (minY + maxY) / 2 - (rootH / 2);
+
+      nodeCoords['root'] = {
+        x: COL_X.root,
+        y: rootY,
+        w: WIDTHS.root,
+        h: rootH
+      };
+
+      filteredTree.forEach(p => {
+        pathsToDraw.push({
+          from: 'root',
+          to: p.id,
+          color: p.accent
+        });
+      });
+
+      // Dynamically adjust Canvas & SVG bounds (2850px width for 2-column widescreen 16:9 display, 2150px for single)
+      const canvasHeight = Math.max(860, currentY + 60);
+      const canvasWidth = (layoutMode === 'single') ? 2150 : 2850;
+      canvas.style.height = canvasHeight + 'px';
+      svgLayer.style.height = canvasHeight + 'px';
+      svgLayer.setAttribute('viewBox', `0 0 ${canvasWidth} ${canvasHeight}`);
+
+      // 5. Draw High-Contrast SVG Connecting Curves
+      pathsToDraw.forEach(conn => {
+        const src = nodeCoords[conn.from];
+        const dst = nodeCoords[conn.to];
+        if (!src || !dst) return;
+
+        const x1 = src.x + src.w;
+        const y1 = src.y + (src.h / 2);
+        const x2 = dst.x;
+        const y2 = dst.y + (dst.h / 2);
+        const dx = (x2 - x1) * 0.5;
+
+        const pathD = `M ${x1},${y1} C ${x1 + dx},${y1} ${x2 - dx},${y2} ${x2},${y2}`;
+        const pathEl = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        pathEl.setAttribute('d', pathD);
+        pathEl.setAttribute('class', 'branch-path');
+        pathEl.style.stroke = conn.color;
+        pathEl.style.strokeWidth = '2.5px';
+        pathEl.style.strokeOpacity = '0.85';
+        pathEl.setAttribute('id', `path-${conn.from}-${conn.to}`);
+        svgLayer.appendChild(pathEl);
+      });
+
+      // 6. Render Root Node Box
+      const rootCoord = nodeCoords['root'];
+      const rootNode = document.createElement('div');
+      rootNode.className = 'map-node node-root';
+      rootNode.style.left = rootCoord.x + 'px';
+      rootNode.style.top = rootCoord.y + 'px';
+      rootNode.innerHTML = `
+        <span class="node-root-badge">CENTRAL HYPOTHESIS</span>
+        <h2 class="node-root-title">Who is the Real Outfield GOAT?</h2>
+        <p class="node-root-desc">Evaluating Lionel Messi and Cristiano Ronaldo across a mutually exclusive, collectively exhaustive (MECE) breakdown of context, attacking output, defensive contribution, net team impact, and honours/reach.</p>
+        <div class="node-root-meta">
+          <span>5 Macro Pillars</span>
+          <span>11 Criteria</span>
+          <span>24 Main (30 Total)</span>
+        </div>
+      `;
+      nodesContainer.appendChild(rootNode);
+
+      // 7. Render Pillar Nodes
+      filteredTree.forEach(pillar => {
+        const pCoord = nodeCoords[pillar.id];
+        const pClass = pillar.id.includes('attack') ? 'attack' : 'defence';
+        const pNode = document.createElement('div');
+        pNode.className = `map-node node-pillar ${pClass}`;
+        pNode.id = `node-${pillar.id}`;
+        pNode.style.left = pCoord.x + 'px';
+        pNode.style.top = pCoord.y + 'px';
+        pNode.style.borderLeft = '5px solid ' + (pillar.accent || '#38bdf8');
+        pNode.innerHTML = `
+          <span class="node-pillar-num" style="background: ${pillar.accent}; color: #000000;">${pillar.num}</span>
+          <h3 class="node-pillar-title">${pillar.title}</h3>
+          <p class="node-pillar-desc">${pillar.desc}</p>
+        `;
+        nodesContainer.appendChild(pNode);
+
+        // 8. Render Category Nodes (Analytical Criteria)
+        pillar.categories.forEach(cat => {
+          const cCoord = nodeCoords[cat.id];
+          const branchStyle = BRANCH_COLORS[cat.num] || { color: pillar.accent, light: 'rgba(255,255,255,0.06)', border: 'rgba(255,255,255,0.2)' };
+          const isCatExpanded = expandedCats.has(cat.id);
+
+          const cNode = document.createElement('div');
+          cNode.className = `map-node node-cat ${isCatExpanded ? 'is-expanded' : ''}`;
+          cNode.id = `node-${cat.id}`;
+          cNode.style.left = cCoord.x + 'px';
+          cNode.style.top = cCoord.y + 'px';
+          cNode.style.borderLeftColor = branchStyle.color;
+          cNode.onclick = (e) => toggleCat(cat.id, e);
+
+          cNode.innerHTML = `
+            <div class="node-cat-top">
+              <span class="node-cat-num" style="background: ${branchStyle.light}; color: ${branchStyle.color}; border: 1px solid ${branchStyle.border};">
+                CRITERIA ${cat.num}
+              </span>
+              <span class="node-cat-engine">${cat.engine}</span>
+            </div>
+            <h4 class="node-cat-title">${cat.title}</h4>
+            <div class="node-cat-who">${cat.who_is}</div>
+            <div class="node-cat-expand-cue">
+              <span>${isCatExpanded ? '▴ Collapse definition' : '▾ Click to view definition & metrics'}</span>
+            </div>
+            <div class="node-cat-framework">
+              <div class="nc-fw-row"><span class="nc-lbl">WHO</span> <span class="nc-val">${cat.who_is}</span></div>
+              <div class="nc-fw-row"><span class="nc-lbl">DEFINE BY</span> <span class="nc-val">${cat.define_by}</span></div>
+              <div class="nc-fw-row"><span class="nc-lbl">METRICS</span> <span class="nc-val">${cat.metrics}</span></div>
+            </div>
+          `;
+          nodesContainer.appendChild(cNode);
+
+          // 9. Render Leaf Nodes (Statements)
+          cat.leaves.forEach(leaf => {
+            const lCoord = nodeCoords[leaf.qid];
+            const isLeafExpanded = expandedLeaves.has(leaf.qid);
+
+            const badgeBg = leaf.badge_type === 'messi' ? 'rgba(56, 189, 248, 0.14)' : (
+              leaf.badge_type === 'ronaldo' ? 'rgba(249, 115, 22, 0.14)' : 'rgba(255, 255, 255, 0.08)'
+            );
+            const badgeColor = leaf.badge_type === 'messi' ? '#38bdf8' : (
+              leaf.badge_type === 'ronaldo' ? '#f97316' : '#e4e4e7'
+            );
+            const badgeBorder = leaf.badge_type === 'messi' ? 'rgba(56, 189, 248, 0.35)' : (
+              leaf.badge_type === 'ronaldo' ? 'rgba(249, 115, 22, 0.35)' : 'rgba(255, 255, 255, 0.18)'
+            );
+
+            const lNode = document.createElement('div');
+            lNode.className = `map-node node-leaf ${isLeafExpanded ? 'is-expanded' : ''}`;
+            lNode.id = `node-${leaf.qid}`;
+            lNode.style.left = lCoord.x + 'px';
+            lNode.style.top = lCoord.y + 'px';
+            lNode.style.borderLeftColor = branchStyle.color;
+            lNode.onclick = (e) => toggleLeaf(leaf.qid, e);
+
+            lNode.innerHTML = `
+              <div class="node-leaf-header">
+                <div class="node-leaf-left">
+                  <span class="node-leaf-ref">${leaf.ref}</span>
+                  <span class="node-leaf-crit-tag" style="background: ${branchStyle.light}; color: ${branchStyle.color};">
+                    C${cat.num}
+                  </span>
+                </div>
+                <span class="node-leaf-badge" style="background: ${badgeBg}; color: ${badgeColor}; border: 1px solid ${badgeBorder};">
+                  ${leaf.leader_badge}
+                </span>
+              </div>
+              <div class="node-leaf-title">
+                <span>Who ${leaf.who_is.toLowerCase().startsWith('who') ? leaf.who_is.slice(4) : (leaf.who_is.charAt(0).toLowerCase() + leaf.who_is.slice(1))}</span>
+                <span class="node-leaf-expand-icon">▾</span>
+              </div>
+              <div class="node-leaf-details">
+                <div class="node-leaf-framework">
+                  <div class="nl-fw-row"><span class="nl-lbl">WHO</span> <span class="nl-val">${leaf.who_is}</span></div>
+                  <div class="nl-fw-row"><span class="nl-lbl">DEFINE BY</span> <span class="nl-val">${leaf.define_by}</span></div>
+                  <div class="nl-fw-row"><span class="nl-lbl">METRICS</span> <span class="nl-val">${leaf.metrics}</span></div>
+                </div>
+                <div class="node-leaf-finding">
+                  <strong style="color: #ffffff;">Empirical Telemetry:</strong> ${leaf.finding}
+                </div>
+                <div class="node-leaf-action">
+                  <a href="insights.html#card-${leaf.qid}" target="_blank" rel="noopener noreferrer" class="node-leaf-link">
+                    <span>Jump to Verified Telemetry & Charts</span>
+                    <span>&rarr;</span>
+                  </a>
+                </div>
+              </div>
+            `;
+            nodesContainer.appendChild(lNode);
+          });
+        });
+      });
+    }
+
+    // Initial Execution
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMindMap();
+      fitToView();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DataIsFun: Appendix 3 Match Goal and Assist Tracker (Issue 01)</title>
+  <meta name="description" content="Interactive match-by-match goal, assist, xG, and performance tracker across 1,915 verified senior goals for Lionel Messi and Cristiano Ronaldo.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="DataIsFun: Appendix 3 Match Goal and Assist Tracker (Issue 01)">
+  <meta property="og:description" content="Interactive match-by-match goal, assist, xG, and performance tracker across 1,915 verified senior goals for Lionel Messi and Cristiano Ronaldo.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataIsFun: Appendix 3 Match Goal and Assist Tracker (Issue 01)">
+  <meta name="twitter:description" content="Interactive match-by-match goal, assist, xG, and performance tracker across 1,915 verified senior goals for Lionel Messi and Cristiano Ronaldo.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <style>
+
+    :root {
+      --bg-dark: #000000;
+      --card-bg: #060608;
+      --card-border: rgba(255, 255, 255, 0.10);
+      --border-hairline: rgba(255, 255, 255, 0.10);
+      --messi-color: #38bdf8;
+      --ronaldo-color: #f97316;
+      --accent-green: #10b981;
+      --accent-purple: #a855f7;
+      --accent-amber: #f59e0b;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .issue-date-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #818cf8;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .page-intro {
+      font-size: 14.5px;
+      color: #a1a1aa;
+      line-height: 1.6;
+      max-width: 760px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .dropdown-btn {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #a1a1aa;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 13px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .dropdown-btn:hover {
+      background: #111114;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .dropdown-btn.active {
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      font-weight: 700;
+    }
+
+    .kpi-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .kpi-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 13px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .kpi-lbl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #71717a;
+    }
+
+    .kpi-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .kpi-sub {
+      font-size: 11px;
+      color: #a1a1aa;
+    }
+
+    .control-panel {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 12px;
+      align-items: end;
+    }
+
+    .ctrl-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .ctrl-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #71717a;
+    }
+
+    .ctrl-input, .ctrl-select {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 12.5px;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    .ctrl-input:focus, .ctrl-select:focus {
+      outline: none;
+      border-color: #818cf8;
+    }
+
+    .match-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .match-card {
+      background: #050507;
+      border: 1px solid var(--border-hairline);
+      border-left: 3px solid rgba(255, 255, 255, 0.25);
+      border-radius: 6px;
+      padding: 16px 18px;
+      transition: border-color 0.15s ease;
+    }
+
+    .match-card.player-messi { border-left-color: var(--messi-color); }
+    .match-card.player-ronaldo { border-left-color: var(--ronaldo-color); }
+    .match-card:hover { border-color: rgba(255, 255, 255, 0.22); }
+
+    .match-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .match-meta-line {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #a1a1aa;
+    }
+
+    .player-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .player-pill.messi { background: rgba(56, 189, 248, 0.14); color: var(--messi-color); border: 1px solid rgba(56, 189, 248, 0.35); }
+    .player-pill.ronaldo { background: rgba(249, 115, 22, 0.14); color: var(--ronaldo-color); border: 1px solid rgba(249, 115, 22, 0.35); }
+
+    .res-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .res-W { background: rgba(16, 185, 129, 0.14); color: #34d399; }
+    .res-D { background: rgba(245, 158, 11, 0.14); color: #fbbf24; }
+    .res-L { background: rgba(239, 68, 68, 0.14); color: #f87171; }
+
+    .match-headline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .match-teams {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.015em;
+    }
+
+    .match-score-box {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 800;
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 5px;
+      margin: 0 8px;
+    }
+
+    .match-ga-badges {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .ga-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #e4e4e7;
+    }
+
+    .ga-badge.has-goals { background: rgba(16, 185, 129, 0.12); border-color: rgba(16, 185, 129, 0.35); color: #34d399; }
+    .ga-badge.has-assists { background: rgba(129, 140, 248, 0.14); border-color: rgba(129, 140, 248, 0.35); color: #a5b4fc; }
+
+    .events-block {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .events-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #71717a;
+      margin-bottom: 2px;
+    }
+
+    .event-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12.5px;
+      color: #e4e4e7;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .event-row:last-child { border-bottom: none; }
+
+    .ev-min {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      color: #ffffff;
+      min-width: 34px;
+    }
+
+    .spec-chip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      color: #d4d4d8;
+    }
+
+    .spec-chip.xg { background: rgba(16, 185, 129, 0.10); color: #34d399; border-color: rgba(16, 185, 129, 0.28); }
+    .spec-chip.dist { background: rgba(168, 85, 247, 0.10); color: #c084fc; border-color: rgba(168, 85, 247, 0.28); }
+    .spec-chip.tag-hi { background: rgba(245, 158, 11, 0.12); color: #fbbf24; border-color: rgba(245, 158, 11, 0.30); font-weight: 700; }
+
+    .telemetry-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tel-chip {
+      font-size: 11.5px;
+      color: #a1a1aa;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+
+    .tel-chip strong { color: #ffffff; font-weight: 600; }
+
+    .table-container {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      overflow-x: auto;
+      margin-bottom: 18px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      text-align: left;
+      min-width: 820px;
+    }
+
+    .data-table th {
+      background: #08080a;
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--border-hairline);
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .data-table th:hover { color: #ffffff; }
+    .data-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.04); color: #d4d4d8; }
+    .data-table tr:hover td { background: rgba(255, 255, 255, 0.04); cursor: pointer; }
+
+    .pagination-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #a1a1aa;
+    }
+
+    .nav-btn {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .nav-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+    @media (max-width: 640px) {
+      .page-title { font-size: 25px; }
+      .match-card { padding: 13px 12px; }
+      .match-teams { font-size: 15.5px; }
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link ">Issues</a>
+        
+        
+        <a href="insights.html" class="nav-back-issue-btn" title="Return to Issue Deep-Dive">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back to Issue 01</span>
+        </a>
+        
+      </div>
+    </nav>
+    
+
+    <div class="page-header">
+      <div style="flex: 1;">
+        <div class="issue-date-tag">Appendix 3</div>
+        <h1 class="page-title">Match Goal and Assist Tracker</h1>
+        <p class="page-intro">
+          Match-by-match telemetry combining verified senior goals, assists, minutes played, shot xG, distances, passes, cards, managers, attendance, and match reports.
+        </p>
+      </div>
+      <div class="header-actions">
+        <button id="btn-view-inspector" class="dropdown-btn active" onclick="setView('inspector')">Match Inspector</button>
+        <button id="btn-view-table" class="dropdown-btn" onclick="setView('table')">Full Match Table</button>
+        <button class="dropdown-btn" onclick="exportMatchesCSV()">Export CSV</button>
+      </div>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi-card">
+        <span class="kpi-lbl">Matches Shown</span>
+        <span class="kpi-val" id="kpi-matches">0</span>
+        <span class="kpi-sub" id="kpi-matches-sub">Loading...</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-lbl">Goals</span>
+        <span class="kpi-val" id="kpi-goals" style="color: #34d399;">0</span>
+        <span class="kpi-sub" id="kpi-goals-sub">Verified goal records</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-lbl">Assists</span>
+        <span class="kpi-val" id="kpi-assists" style="color: #a5b4fc;">0</span>
+        <span class="kpi-sub" id="kpi-assists-sub">Tracked match assists</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-lbl">G+A Combined</span>
+        <span class="kpi-val" id="kpi-ga">0</span>
+        <span class="kpi-sub" id="kpi-ga-sub">Direct goal involvements</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-lbl">Avg Minutes</span>
+        <span class="kpi-val" id="kpi-mins">0</span>
+        <span class="kpi-sub">Per played appearance</span>
+      </div>
+      <div class="kpi-card">
+        <span class="kpi-lbl">xG Tracked</span>
+        <span class="kpi-val" id="kpi-xg">0</span>
+        <span class="kpi-sub">Matches with shot xG</span>
+      </div>
+    </div>
+
+    <div class="control-panel">
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-player">Player</label>
+        <select id="flt-player" class="ctrl-select">
+          <option value="all">Both Players</option>
+          <option value="messi">Lionel Messi</option>
+          <option value="ronaldo">Cristiano Ronaldo</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-event">Goal / Assist Filter</label>
+        <select id="flt-event" class="ctrl-select">
+          <option value="all">All Played Matches</option>
+          <option value="ga_any">Any Goal or Assist (G+A &ge; 1)</option>
+          <option value="scored">Scored (1+ Goal)</option>
+          <option value="assisted">Assisted (1+ Assist)</option>
+          <option value="both">Goal + Assist in Match</option>
+          <option value="multi_g">Multi-Goal (2+ Goals)</option>
+          <option value="hat_trick">Hat-trick+ (3+ Goals)</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-scope">Match Scope</label>
+        <select id="flt-scope" class="ctrl-select">
+          <option value="all">All Matches</option>
+          <option value="official">Official Only</option>
+          <option value="friendly">Friendlies Only</option>
+          <option value="club">Club Only</option>
+          <option value="intl">International Only</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-comp">Competition</label>
+        <select id="flt-comp" class="ctrl-select">
+          <option value="all">All Competitions</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-season">Season</label>
+        <select id="flt-season" class="ctrl-select">
+          <option value="all">All Seasons</option>
+        </select>
+      </div>
+      <div class="ctrl-group">
+        <label class="ctrl-label" for="flt-search">Search Match / Manager / Assister</label>
+        <input id="flt-search" class="ctrl-input" type="text" placeholder="Opponent, date, manager, assister...">
+      </div>
+    </div>
+
+    <div id="inspector-view">
+      <div id="match-list" class="match-list"></div>
+    </div>
+
+    <div id="table-view" style="display: none;">
+      <div class="table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th onclick="sortBy('d')">Date</th>
+              <th onclick="sortBy('p')">Player</th>
+              <th>Matchup &amp; Score</th>
+              <th onclick="sortBy('c')">Competition</th>
+              <th onclick="sortBy('min')">Min</th>
+              <th onclick="sortBy('g')">G</th>
+              <th onclick="sortBy('a')">A</th>
+              <th onclick="sortBy('ga')">G+A</th>
+              <th onclick="sortBy('xg')">xG</th>
+              <th>Shots</th>
+              <th>Pass %</th>
+              <th>Cards</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="pagination-bar">
+      <span id="page-info">Showing 0 matches</span>
+      <div style="display: flex; gap: 8px;">
+        <button id="btn-prev" class="nav-btn" onclick="changePage(-1)">Prev</button>
+        <button id="btn-next" class="nav-btn" onclick="changePage(1)">Next</button>
+      </div>
+    </div>
+
+    <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center;">
+      <p style="font-size: 11.5px; color: #71717a;">DataIsFun · Deconstructing Popular Narratives · <a href="insights.html" style="color: #ffffff;">Back to Issue 01</a> · <a href="detail.html" style="color: #ffffff;">Appendix 2: Methodology &amp; Sources</a></p>
+    </footer>
+  </div>
+
+  <script src="data/matches_data.js"></script>
+  <script>
+    let allMatches = [];
+    let filteredMatches = [];
+    let currentView = 'inspector';
+    let currentPage = 1;
+    let sortCol = 'd';
+    let sortAsc = false;
+
+    function esc(v) {
+      if (v === null || v === undefined) return '';
+      return String(v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function getSortVal(m, col) {
+      if (col === 'ga') return (m.g || 0) + (m.a || 0);
+      return m[col];
+    }
+
+    function populateDropdowns() {
+      const comps = Array.from(new Set(allMatches.map(m => m.c).filter(Boolean))).sort();
+      const compSel = document.getElementById('flt-comp');
+      comps.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        compSel.appendChild(opt);
+      });
+
+      const seasons = Array.from(new Set(allMatches.map(m => m.s).filter(Boolean))).sort().reverse();
+      const seaSel = document.getElementById('flt-season');
+      seasons.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        seaSel.appendChild(opt);
+      });
+    }
+
+    function applyFilters(resetPage = true) {
+      const pVal = document.getElementById('flt-player').value;
+      const evVal = document.getElementById('flt-event').value;
+      const scVal = document.getElementById('flt-scope').value;
+      const cVal = document.getElementById('flt-comp').value;
+      const sVal = document.getElementById('flt-season').value;
+      const qVal = document.getElementById('flt-search').value.trim().toLowerCase();
+
+      filteredMatches = allMatches.filter(m => {
+        if (pVal !== 'all' && m.p !== pVal) return false;
+        if (evVal === 'ga_any' && (m.g + m.a) < 1) return false;
+        if (evVal === 'scored' && m.g < 1) return false;
+        if (evVal === 'assisted' && m.a < 1) return false;
+        if (evVal === 'both' && (m.g < 1 || m.a < 1)) return false;
+        if (evVal === 'multi_g' && m.g < 2) return false;
+        if (evVal === 'hat_trick' && m.g < 3) return false;
+
+        if (scVal === 'official' && m.fr) return false;
+        if (scVal === 'friendly' && !m.fr) return false;
+        if (scVal === 'club' && m.intl) return false;
+        if (scVal === 'intl' && !m.intl) return false;
+
+        if (cVal !== 'all' && m.c !== cVal) return false;
+        if (sVal !== 'all' && m.s !== sVal) return false;
+
+        if (qVal) {
+          const hay = [
+            m.d, m.t, m.o, m.c, m.r, m.mgr, m.omgr, m.stad, m.ref,
+            ...(m.gl || []).map(g => g.ab || '')
+          ].filter(Boolean).join(' ').toLowerCase();
+          if (!hay.includes(qVal)) return false;
+        }
+        return true;
+      });
+
+      filteredMatches.sort((a, b) => {
+        const va = getSortVal(a, sortCol);
+        const vb = getSortVal(b, sortCol);
+        if (va === undefined || va === null) return 1;
+        if (vb === undefined || vb === null) return -1;
+        if (typeof va === 'string') {
+          return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+        }
+        return sortAsc ? va - vb : vb - va;
+      });
+
+      if (resetPage) currentPage = 1;
+      updateKPIs();
+      renderCurrentView();
+    }
+
+    function updateKPIs() {
+      const n = filteredMatches.length;
+      let mN = 0, rN = 0, gSum = 0, aSum = 0, minSum = 0, minCnt = 0, xgCnt = 0;
+      filteredMatches.forEach(m => {
+        if (m.p === 'messi') mN++; else rN++;
+        gSum += (m.gl ? m.gl.length : m.g);
+        aSum += (m.a || 0);
+        if (m.min !== undefined && m.min !== null) {
+          minSum += m.min;
+          minCnt++;
+        }
+        if (m.xg !== undefined && m.xg !== null) xgCnt++;
+      });
+      document.getElementById('kpi-matches').textContent = n.toLocaleString();
+      document.getElementById('kpi-matches-sub').textContent = `Messi: ${mN.toLocaleString()} · Ronaldo: ${rN.toLocaleString()}`;
+      document.getElementById('kpi-goals').textContent = gSum.toLocaleString();
+      document.getElementById('kpi-assists').textContent = aSum.toLocaleString();
+      document.getElementById('kpi-ga').textContent = (gSum + aSum).toLocaleString();
+      document.getElementById('kpi-mins').textContent = minCnt ? Math.round(minSum / minCnt) + "'" : 'N/A';
+      document.getElementById('kpi-xg').textContent = xgCnt.toLocaleString();
+    }
+
+    function renderMatchCard(m) {
+      const pName = m.p === 'messi' ? 'Lionel Messi' : 'Cristiano Ronaldo';
+      const goalCount = m.gl ? m.gl.length : m.g;
+      const resClass = m.res === 'W' || m.res === 'D' || m.res === 'L' ? `res-${m.res}` : '';
+
+      let goalsHtml = '';
+      if (m.gl && m.gl.length > 0) {
+        const rows = m.gl.map(g => {
+          const chips = [];
+          if (g.sc) chips.push(`<span class="spec-chip">Score: ${esc(g.sc)}</span>`);
+          if (g.tp) chips.push(`<span class="spec-chip">${esc(g.tp)}</span>`);
+          else if (g.bp) chips.push(`<span class="spec-chip">${esc(g.bp)}</span>`);
+          if (g.sit && g.sit !== 'open_play') chips.push(`<span class="spec-chip">${esc(g.sit)}</span>`);
+          if (g.pen) chips.push(`<span class="spec-chip tag-hi">PEN</span>`);
+          if (g.fk) chips.push(`<span class="spec-chip tag-hi">FK</span>`);
+          if (g.gwg) chips.push(`<span class="spec-chip tag-hi">GWG</span>`);
+          if (g.xg !== undefined && g.xg !== null) chips.push(`<span class="spec-chip xg">xG: ${Number(g.xg).toFixed(2)}</span>`);
+          if (g.dist !== undefined && g.dist !== null) chips.push(`<span class="spec-chip dist">${g.dist}m</span>`);
+          if (g.ab) chips.push(`<span class="spec-chip">Assist: ${esc(g.ab)}</span>`);
+          return `<div class="event-row"><span class="ev-min">${g.m !== undefined ? g.m + "'" : '?'}</span>${chips.join('')}</div>`;
+        }).join('');
+        goalsHtml = `<div class="events-block"><div class="events-title">Goals (${m.gl.length})</div>${rows}</div>`;
+      }
+
+      let assistsHtml = '';
+      if (m.a > 0) {
+        let aRows = '';
+        if (m.al && m.al.length > 0) {
+          aRows = m.al.map(a => `<div class="event-row"><span class="ev-min">${a.m !== undefined && a.m !== null ? a.m + "'" : 'A'}</span><span class="spec-chip">${esc(a.desc)}</span></div>`).join('');
+        } else {
+          aRows = `<div class="event-row"><span class="spec-chip">${m.a} official assist${m.a > 1 ? 's' : ''} recorded in match telemetry</span></div>`;
+        }
+        assistsHtml = `<div class="events-block"><div class="events-title">Assists (${m.a})</div>${aRows}</div>`;
+      }
+
+      const chips = [];
+      if (m.st !== undefined) chips.push(`<span class="tel-chip">Role: <strong>${m.st ? 'Starter' : 'Sub'}</strong></span>`);
+      if (m.capt) chips.push(`<span class="tel-chip"><strong>Captain</strong></span>`);
+      if (m.sh) chips.push(`<span class="tel-chip">Shirt: <strong>#${m.sh}</strong></span>`);
+      if (m.xg !== undefined) chips.push(`<span class="tel-chip">Match xG: <strong>${Number(m.xg).toFixed(2)}</strong>${m.s_n ? ` (${m.s_n} shots${m.s_d ? ', ' + m.s_d + 'm avg' : ''})` : ''}</span>`);
+      else if (m.sho !== undefined) chips.push(`<span class="tel-chip">Shots: <strong>${m.sho}</strong>${m.sot !== undefined ? ` (${m.sot} on target)` : ''}</span>`);
+      if (m.pas !== undefined) chips.push(`<span class="tel-chip">Passes: <strong>${m.pas}</strong>${m.pa !== undefined ? ` (${m.pa}%)` : ''}</span>`);
+      if (m.tkl !== undefined) chips.push(`<span class="tel-chip">Tackles: <strong>${m.tkl}</strong></span>`);
+      if (m.fw !== undefined || m.fc !== undefined) chips.push(`<span class="tel-chip">Fouls: <strong>+${m.fw || 0} won / ${m.fc || 0} committed</strong></span>`);
+      if (m.off !== undefined && m.off > 0) chips.push(`<span class="tel-chip">Offsides: <strong>${m.off}</strong></span>`);
+      if (m.yc || m.rc) chips.push(`<span class="tel-chip">Cards: <strong>${m.yc ? m.yc + 'Y' : ''}${m.yc && m.rc ? ' ' : ''}${m.rc ? m.rc + 'R' : ''}</strong></span>`);
+      if (m.rk || m.ork) chips.push(`<span class="tel-chip">Rank: <strong>${m.rk || 'N/A'} vs ${m.ork || 'N/A'}</strong></span>`);
+      if (m.mgr || m.omgr) chips.push(`<span class="tel-chip">Managers: <strong>${esc(m.mgr || 'N/A')}</strong> vs ${esc(m.omgr || 'N/A')}</span>`);
+      if (m.frm || m.ofrm) chips.push(`<span class="tel-chip">Formations: <strong>${esc(m.frm || '?')}</strong> vs ${esc(m.ofrm || '?')}</span>`);
+      if (m.stad) chips.push(`<span class="tel-chip">Venue: <strong>${esc(m.stad)}</strong>${m.att ? ` (${Number(m.att).toLocaleString()} att.)` : ''}</span>`);
+      else if (m.att) chips.push(`<span class="tel-chip">Attendance: <strong>${Number(m.att).toLocaleString()}</strong></span>`);
+      if (m.ref) chips.push(`<span class="tel-chip">Ref: <strong>${esc(m.ref)}</strong></span>`);
+      if (m.url && /^https?:\/\//i.test(String(m.url).trim())) chips.push(`<a class="tel-chip" href="${esc(m.url)}" target="_blank" rel="noopener noreferrer" style="color:#a5b4fc;text-decoration:none;">Match Report &nearr;</a>`);
+
+      return `
+        <div class="match-card player-${m.p}">
+          <div class="match-top">
+            <div class="match-meta-line">
+              <span class="player-pill ${m.p}">${pName}</span>
+              <span>${esc(m.d)}</span>
+              <span>· ${esc(m.c)}${m.r ? ' (' + esc(m.r) + ')' : ''}</span>
+              <span>· ${esc(m.v)}</span>
+              ${m.fr ? '<span class="spec-chip">Friendly</span>' : ''}
+              ${resClass ? `<span class="res-pill ${resClass}">${m.res}</span>` : ''}
+            </div>
+            <div class="match-ga-badges">
+              <span class="ga-badge ${goalCount > 0 ? 'has-goals' : ''}">${goalCount} G</span>
+              <span class="ga-badge ${m.a > 0 ? 'has-assists' : ''}">${m.a} A</span>
+              ${m.min !== undefined ? `<span class="ga-badge">${m.min}'</span>` : ''}
+            </div>
+          </div>
+          <div class="match-headline">
+            <div class="match-teams">
+              ${esc(m.t)} <span class="match-score-box">${esc(m.sc)}</span> ${esc(m.o)}
+            </div>
+          </div>
+          ${goalsHtml}
+          ${assistsHtml}
+          ${chips.length ? `<div class="telemetry-grid">${chips.join('')}</div>` : ''}
+        </div>
+      `;
+    }
+
+    function renderCurrentView() {
+      const perPage = currentView === 'inspector' ? 20 : 50;
+      const total = filteredMatches.length;
+      const maxPage = Math.max(1, Math.ceil(total / perPage));
+      if (currentPage > maxPage) currentPage = maxPage;
+      const start = (currentPage - 1) * perPage;
+      const slice = filteredMatches.slice(start, start + perPage);
+
+      if (currentView === 'inspector') {
+        const listEl = document.getElementById('match-list');
+        listEl.innerHTML = slice.length
+          ? slice.map(renderMatchCard).join('')
+          : '<div class="match-card">No matches matched your active filters.</div>';
+      } else {
+        const tbody = document.getElementById('table-body');
+        tbody.innerHTML = slice.map(m => {
+          const gCount = m.gl ? m.gl.length : m.g;
+          const ga = gCount + (m.a || 0);
+          const cards = (m.yc || m.rc) ? `${m.yc ? m.yc + 'Y' : ''} ${m.rc ? m.rc + 'R' : ''}`.trim() : '-';
+          return `
+            <tr onclick="inspectSingleMatch('${esc(m.id)}')">
+              <td style="font-family:'JetBrains Mono',monospace;">${esc(m.d)}</td>
+              <td style="color:${m.p === 'messi' ? '#38bdf8' : '#f97316'};font-weight:700;">${m.p === 'messi' ? 'Messi' : 'Ronaldo'}</td>
+              <td><strong>${esc(m.t)}</strong> ${esc(m.sc)} ${esc(m.o)}</td>
+              <td>${esc(m.c)}</td>
+              <td style="font-family:'JetBrains Mono',monospace;">${m.min !== undefined ? m.min + "'" : '-'}</td>
+              <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:${gCount ? '#34d399' : '#71717a'};">${gCount}</td>
+              <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:${m.a ? '#a5b4fc' : '#71717a'};">${m.a}</td>
+              <td style="font-family:'JetBrains Mono',monospace;font-weight:700;">${ga}</td>
+              <td style="font-family:'JetBrains Mono',monospace;">${m.xg !== undefined ? Number(m.xg).toFixed(2) : '-'}</td>
+              <td style="font-family:'JetBrains Mono',monospace;">${m.sho !== undefined ? m.sho : (m.s_n || '-')}</td>
+              <td style="font-family:'JetBrains Mono',monospace;">${m.pa !== undefined ? m.pa + '%' : '-'}</td>
+              <td style="font-family:'JetBrains Mono',monospace;">${cards}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      const shownEnd = Math.min(start + slice.length, total);
+      document.getElementById('page-info').textContent = total
+        ? `Showing ${(start + 1).toLocaleString()}-${shownEnd.toLocaleString()} of ${total.toLocaleString()} matches (Page ${currentPage}/${maxPage})`
+        : 'Showing 0 matches';
+      document.getElementById('btn-prev').disabled = currentPage <= 1;
+      document.getElementById('btn-next').disabled = currentPage >= maxPage;
+    }
+
+    function inspectSingleMatch(matchId) {
+      const m = allMatches.find(x => x.id === matchId);
+      if (!m) return;
+      document.getElementById('flt-search').value = m.d;
+      setView('inspector');
+      applyFilters(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setView(v) {
+      currentView = v;
+      currentPage = 1;
+      document.getElementById('inspector-view').style.display = v === 'inspector' ? 'block' : 'none';
+      document.getElementById('table-view').style.display = v === 'table' ? 'block' : 'none';
+      document.getElementById('btn-view-inspector').classList.toggle('active', v === 'inspector');
+      document.getElementById('btn-view-table').classList.toggle('active', v === 'table');
+      renderCurrentView();
+    }
+
+    function changePage(delta) {
+      currentPage += delta;
+      renderCurrentView();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function sortBy(col) {
+      if (sortCol === col) sortAsc = !sortAsc;
+      else { sortCol = col; sortAsc = col === 'p' || col === 'c'; }
+      applyFilters(false);
+    }
+
+    function exportMatchesCSV() {
+      const cols = ['date', 'player', 'team', 'opponent', 'score', 'result', 'competition', 'round', 'venue', 'minutes', 'goals', 'assists', 'xg', 'shots', 'passes', 'pass_pct', 'yellow_cards', 'red_cards', 'stadium', 'attendance', 'manager', 'referee'];
+      const lines = [cols.join(',')];
+      filteredMatches.forEach(m => {
+        const row = [
+          m.d, m.p, m.t, m.o, m.sc, m.res, m.c, m.r || '', m.v, m.min ?? '',
+          m.gl ? m.gl.length : m.g, m.a, m.xg ?? '', m.sho ?? (m.s_n ?? ''), m.pas ?? '', m.pa ?? '',
+          m.yc ?? 0, m.rc ?? 0, m.stad || '', m.att ?? '', m.mgr || '', m.ref || ''
+        ];
+        lines.push(row.map(v => '"' + String(v).replace(/"/g, '""') + '"').join(','));
+      });
+      const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'dataisfun_match_goal_assist_tracker.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.MATCHES_DATA && Array.isArray(window.MATCHES_DATA.matches)) {
+        allMatches = window.MATCHES_DATA.matches;
+        populateDropdowns();
+        ['flt-player', 'flt-event', 'flt-scope', 'flt-comp', 'flt-season'].forEach(id => {
+          document.getElementById(id).addEventListener('change', () => applyFilters(true));
+        });
+        document.getElementById('flt-search').addEventListener('input', () => applyFilters(true));
+        applyFilters(true);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DataIsFun: An Interactive Deconstruction of Popular Narratives</title>
+  <meta name="description" content="An interactive and digestible deconstruction of popular narratives, starting with Issue 01: Messi and Ronaldo: Who Is the Real GOAT? (30 sub-dimensions, 175 charts).">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="DataIsFun: An Interactive Deconstruction of Popular Narratives">
+  <meta property="og:description" content="An interactive and digestible deconstruction of popular narratives, starting with Issue 01: Messi and Ronaldo: Who Is the Real GOAT? (30 sub-dimensions, 175 charts).">
+  <meta property="og:image" content="assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataIsFun: An Interactive Deconstruction of Popular Narratives">
+  <meta name="twitter:description" content="An interactive and digestible deconstruction of popular narratives, starting with Issue 01: Messi and Ronaldo: Who Is the Real GOAT? (30 sub-dimensions, 175 charts).">
+  <meta name="twitter:image" content="assets/og-card.png">
+  <link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+  <div class="container container-narrow">
+    
+    <nav class="navbar">
+      <a href="index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="issues.html" class="nav-link ">Issues</a>
+        
+        
+      </div>
+    </nav>
+    
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1 class="hero-title">Deconstructing Popular Narratives with Data</h1>
+      <p class="hero-subtitle">
+        We take polarising debates and fascinating questions across everyday topics, break them down into testable statements, and evaluate them visually against verified telemetry.
+      </p>
+      <div class="hero-actions">
+        <a href="issues/01-messi-vs-ronaldo/insights.html" class="btn-primary">Explore Latest Issue →</a>
+        <a href="issues.html" class="btn-secondary">View All Issues</a>
+      </div>
+    </div>
+
+    <!-- Foreword Section -->
+    <div class="foreword-section reveal-on-scroll" id="foreword">
+      <div class="section-eyebrow">Foreword</div>
+      <h2 class="foreword-title">Hey guys,</h2>
+      <div class="foreword-body">
+        <p>Having lived and worked across different corners of the world, I've noticed a recurring pattern in how we talk: we speak in hypotheses, but argue as if they're facts. We love reaching for data, but we aren't always well-equipped to handle data impartially.</p>
+        <p>Take sports: fans passionately quote expected goals, completion rates, or trophies won, carefully selecting metrics that validate their favourite player while discounting counter-evidence. When the stakes rise to social issues or policy debates, that blind spot can cause real damage.</p>
+        <p>This blog is an effort to cut through that noise. I want to unpack polarising questions and fascinating debates using transparent data, stripped of academic gatekeeping and heavy math so anyone interested in the topic can dig in.</p>
+        <p>Please consider this a collaborative sandbox. I can't claim to be an expert, I'm just a data enthusiast genuinely eager to see where the evidence leads. I'd love to hear your feedback or topics you would like us to explore together.</p>
+      </div>
+      <div class="foreword-feedback">
+        <span class="foreword-feedback-prompt">Have a question, feedback, or a debate you'd like to see tested?</span>
+        <a href="https://forms.gle/A6FMCd4BTk83qVPE6" target="_blank" rel="noopener noreferrer" class="btn-feedback" id="feedback-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          Share Feedback (Google Form) →
+        </a>
+      </div>
+    </div>
+
+    <!-- Active Issue Section -->
+    <div style="margin-top: 10px;">
+      <div class="section-eyebrow">Active Issue</div>
+      
+    <div class="issue-presentation-card reveal-on-scroll">
+      <div class="issue-date">November 2026</div>
+      <h2 class="issue-heading">
+        <a href="issues/01-messi-vs-ronaldo/insights.html">Messi and Ronaldo: Who Is the Real GOAT?</a>
+      </h2>
+
+      <!-- 4-Stat Hero Telemetry Strip (100% live computed) -->
+      <div class="hero-telemetry-strip" aria-label="Issue 01 Headline Telemetry">
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Senior Goals</span>
+          <span class="telemetry-val"><span style="color: var(--messi-color);">936</span> vs <span style="color: var(--ronaldo-color);">979</span></span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Career G+A</span>
+          <span class="telemetry-val"><span style="color: var(--messi-color);">1,404</span> vs <span style="color: var(--ronaldo-color);">1,286</span></span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Knockout GWGs</span>
+          <span class="telemetry-val">44-44 Dead Heat</span>
+        </div>
+        <div class="telemetry-pill">
+          <span class="telemetry-lbl">Audited Scope</span>
+          <span class="telemetry-val">30 Sub-Dims &middot; 175 Charts</span>
+        </div>
+      </div>
+
+      <!-- Prominent Issue Actions + AI Quick Insights Shortcut -->
+      <div class="issue-chat-shortcut-bar">
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <a href="issues/01-messi-vs-ronaldo/insights.html" class="btn-primary">Read Issue 01 &rarr;</a>
+          <a href="issues/01-messi-vs-ronaldo/insights.html#quick-insights" class="btn-chat-shortcut">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <span>Ask Issue 01 AI</span>
+          </a>
+        </div>
+        <div class="chat-shortcut-tagline">
+          1,915 verified senior goals &middot; Zero hardcoded claims
+        </div>
+      </div>
+
+      <details class="findings-details">
+        <summary>
+          <span>Summary</span>
+          <span style="font-size: 11px; color: #71717a; margin-left: auto;">(Click to view / hide)</span>
+        </summary>
+        <div class="findings-body">
+          <p>Across 1,915 senior goals, 774 assists, and 25 shared seasons across club and international football:</p>
+<ul>
+  <li><strong>Messi leads</strong> in all-round playmaking (+160 assists, 2.3&times; Big Chances Created), non-penalty scoring (+24 NPG), finishing efficiency (+37.95 Opta 13-season league xG surplus margin), total attacking volume (1,404 vs 1,286 G+A), ball progression (3,093 vs 1,655 dribbles), goals vs FIFA Top-20 nations (34 vs 29), and FIFA World Cup knockout delivery (7 vs 1 knockout goals; 21 vs 11 overall).</li>
+  <li><strong>Ronaldo leads</strong> in gross career volume (+43 gross goals: 979 vs 936), penalty execution (+67 converted PKs: 186 vs 119), aerial duel dominance (+616 Opta aerial duels won; +103 headers), UEFA Champions League scoring crowns (+1) &amp; titles (5 vs 4), and carried squads with lower average on-pitch teammate market value (&euro;33.2M vs &euro;37.5M).</li>
+  <li><strong>Knockout game-winners stand at an exact dead heat:</strong> 44&ndash;44 career game-winning goals in knockout matches (while Messi leads total knockout goals 152 vs 133).</li>
+</ul>
+        </div>
+      </details>
+
+      <details class="toc-details">
+        <summary>
+          <span>Full 23-Section Issue Outline</span>
+          <span style="font-size: 11px; color: #71717a; margin-left: auto;">(Click to expand / hide)</span>
+        </summary>
+        <div class="issue-toc" aria-label="Issue 01 Table of Contents">
+        <a href="issues/01-messi-vs-ronaldo/insights.html#foreword" class="toc-row">
+          <span class="toc-row-num">Section X</span>
+          <span class="toc-row-title">Foreword</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#quick-insights" class="toc-row">
+          <span class="toc-row-num">Section A</span>
+          <span class="toc-row-title">Q&amp;A Chatbot (Quick Insights)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#defining-your-answer" class="toc-row">
+          <span class="toc-row-num">Section B</span>
+          <span class="toc-row-title">Defining Your Answer</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#pillar-0-0" class="toc-row">
+          <span class="toc-row-num">Criteria 0.0</span>
+          <span class="toc-row-title">Context Setting: Operating Zones, Tactical Roles &amp; Team Style</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-1-1" class="toc-row">
+          <span class="toc-row-num">Criteria 1.1</span>
+          <span class="toc-row-title">Goalscoring Mastery (Volume, Efficiency, Variety &amp; Team Importance)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-1-2" class="toc-row">
+          <span class="toc-row-num">Criteria 1.2</span>
+          <span class="toc-row-title">Playmaking &amp; Passing (Volume, Efficiency, Variety &amp; Importance)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-1-3" class="toc-row">
+          <span class="toc-row-num">Criteria 1.3</span>
+          <span class="toc-row-title">Dribbling &amp; 1v1 Ball Progression (Opta European Telemetry)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-1-4" class="toc-row">
+          <span class="toc-row-num">Criteria 1.4</span>
+          <span class="toc-row-title">Combined Attacking Output (G+A Aggregator of 1.1 &amp; 1.2)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-2-1" class="toc-row">
+          <span class="toc-row-num">Criteria 2.1</span>
+          <span class="toc-row-title">Active Ground Defending &amp; Pressing Disruptions</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-2-2" class="toc-row">
+          <span class="toc-row-num">Criteria 2.2</span>
+          <span class="toc-row-title">Physical Contests &amp; Aerial Box Defending</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#pillar-3-0" class="toc-row">
+          <span class="toc-row-num">Criteria 3.1</span>
+          <span class="toc-row-title">Net Two-Way Pitch Impact, Win Lift &amp; Holistic Match Dominance</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-4-1" class="toc-row">
+          <span class="toc-row-num">Criteria 4.1</span>
+          <span class="toc-row-title">Institutional Accolades &amp; Scoring Crowns</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-4-2" class="toc-row">
+          <span class="toc-row-num">Criteria 4.2</span>
+          <span class="toc-row-title">Championship Pedigree &amp; Collective Trophy Haul</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-4-3" class="toc-row">
+          <span class="toc-row-num">Criteria 4.3</span>
+          <span class="toc-row-title">Cultural Reach, Live Attendance &amp; Global Inspiration</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-extra-1" class="toc-row">
+          <span class="toc-row-num">Extra 1</span>
+          <span class="toc-row-title">Mythbusting Lightning Rods</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-extra-2" class="toc-row">
+          <span class="toc-row-num">Extra 2</span>
+          <span class="toc-row-title">FIFA World Cup Arena</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-extra-3" class="toc-row">
+          <span class="toc-row-num">Extra 3</span>
+          <span class="toc-row-title">Spatial Heatmap Evolution</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-extra-4" class="toc-row">
+          <span class="toc-row-num">Extra 4</span>
+          <span class="toc-row-title">Virtual Ratings Arena (FIFA · PES · FM)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-dribble-arena" class="toc-row">
+          <span class="toc-row-num">Extra 5</span>
+          <span class="toc-row-title">Dribble Trajectories &amp; Vector Arena</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/insights.html#chapter-extra-6" class="toc-row">
+          <span class="toc-row-num">Extra 6</span>
+          <span class="toc-row-title">All-Time Career Records Ledger</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/appendix0.html" class="toc-row">
+          <span class="toc-row-num">Appendix 0</span>
+          <span class="toc-row-title">Problem Breakdown (Mind Map)</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/graphs.html" class="toc-row">
+          <span class="toc-row-num">Appendix 1</span>
+          <span class="toc-row-title">Interactive Key Graphs</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/detail.html" class="toc-row">
+          <span class="toc-row-num">Appendix 2</span>
+          <span class="toc-row-title">Methodology &amp; Sources</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        <a href="issues/01-messi-vs-ronaldo/matches.html" class="toc-row">
+          <span class="toc-row-num">Appendix 3</span>
+          <span class="toc-row-title">Match Goal and Assist Tracker</span>
+          <span class="toc-row-arrow">→</span>
+        </a>
+        </div>
+      </details>
+    </div>
+    
+    </div>
+
+    <!-- Analytical Framework & Core Principles -->
+    <div class="principles-section">
+      <div class="section-eyebrow">Approach</div>
+      <h2 class="section-heading">Applying four core principles to ensure validity, readability, and transparency</h2>
+
+      <div class="principles-grid">
+        <div class="principle-card card-slide-left">
+          <div class="principle-num">01 / TESTABLE</div>
+          <div class="principle-title">Broken-Down Assumptions</div>
+          <div class="principle-text">We believe any opinion can be broken into comprehensive sets of testable statements. This process lets us blueprint narratives into clear dimensions where variables can be isolated and evaluated.</div>
+        </div>
+
+        <div class="principle-card card-slide-right">
+          <div class="principle-num">02 / STORYLINED</div>
+          <div class="principle-title">Evidence-Backed Narratives</div>
+          <div class="principle-text">People think in stories, statements, and claims. We present our evidence and findings in a clear narrative sequence, making deep analysis accessible to everyone.</div>
+        </div>
+
+        <div class="principle-card card-slide-left">
+          <div class="principle-num">03 / VISUALISED</div>
+          <div class="principle-title">Easy-to-Read Graphics</div>
+          <div class="principle-text">The most effective presentation is the simplest one. We avoid academic jargon and heavy formulas, presenting each insight through approachable charts.</div>
+        </div>
+
+        <div class="principle-card card-slide-right">
+          <div class="principle-num">04 / TRACKABLE</div>
+          <div class="principle-title">Clear Audit Trail</div>
+          <div class="principle-text">Even data-driven work involves analytical choices. A complete audit trail accompanies every release, linking directly to raw data sources and methodological rules.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      DataIsFun Platform · Deconstructing Popular Narratives with Data · <a href="https://forms.gle/A6FMCd4BTk83qVPE6" target="_blank" rel="noopener noreferrer" style="color: #a1a1aa; text-decoration: underline;">Feedback</a>
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const els = document.querySelectorAll('.card-slide-left, .card-slide-right, .reveal-on-scroll, .issue-presentation-card, .foreword-section, .principle-card');
+      const revealVisible = (el) => {
+        const r = el.getBoundingClientRect();
+        if (r.top < (window.innerHeight || 900) + 40 && r.bottom > -20) {
+          el.classList.add('in-view');
+        }
+      };
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.02, rootMargin: '0px 0px 40px 0px' });
+        els.forEach(el => {
+          revealVisible(el);
+          if (!el.classList.contains('in-view')) observer.observe(el);
+        });
+      } else {
+        els.forEach(el => el.classList.add('in-view'));
+      }
+    });
+  </script>
+</body>
+</html>

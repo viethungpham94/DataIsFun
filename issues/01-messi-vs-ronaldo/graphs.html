@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DataIsFun: Appendix 1 Interactive Key Graphs (Issue 01)</title>
+  <meta name="description" content="Macro visual analytics across 1,915 senior goals: cumulative curves, biological age alignment, anatomical body silhouette filters, and team goal involvement shares.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="DataIsFun: Appendix 1 Interactive Key Graphs (Issue 01)">
+  <meta property="og:description" content="Macro visual analytics across 1,915 senior goals: cumulative curves, biological age alignment, anatomical body silhouette filters, and team goal involvement shares.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataIsFun: Appendix 1 Interactive Key Graphs (Issue 01)">
+  <meta name="twitter:description" content="Macro visual analytics across 1,915 senior goals: cumulative curves, biological age alignment, anatomical body silhouette filters, and team goal involvement shares.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <script src="../../assets/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #000000;
+      --card-bg: #09090c;
+      --card-hover: #101015;
+      --card-border: rgba(255, 255, 255, 0.10);
+      --card-border-active: #ffffff;
+      --border-hairline: rgba(255, 255, 255, 0.10);
+      --text-main: #ffffff;
+      --text-muted: #a1a1aa;
+      --text-subtle: #71717a;
+      --messi-color: #38bdf8;
+      --ronaldo-color: #f97316;
+      --tied-color: #ffffff;
+      --accent-green: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-purple: #a855f7;
+      --accent-cyan: #06b6d4;
+      --accent-blue: #3b82f6;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      animation: pageFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Page Header - Exactly identical to insights.html */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .issue-date-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .page-intro {
+      font-size: 14.5px;
+      color: #a1a1aa;
+      line-height: 1.6;
+      max-width: 780px;
+    }
+
+    .btn-back {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-back:hover {
+      background: #111114;
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    /* Scroll animations */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateX(-64px);
+      transition: opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1), transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.card-slide-right {
+      transform: translateX(64px);
+    }
+
+    .reveal-on-scroll.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Top KPI Strip */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .kpi-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .kpi-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .kpi-card .label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+    }
+
+    .kpi-card .duo-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 4px;
+    }
+
+    .kpi-card .player-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .kpi-card .player-val.messi { color: var(--messi-color); }
+    .kpi-card .player-val.ronaldo { color: var(--ronaldo-color); }
+
+    .kpi-card .diff-tag {
+      font-size: 11.5px;
+      color: #a1a1aa;
+      margin-top: 4px;
+    }
+
+    /* Macro Analytics Section Cards */
+    .section-card {
+      background: #050505;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 22px 24px;
+      margin-bottom: 28px;
+      transition: border-color 0.15s ease;
+    }
+
+    .section-card:hover {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.015em;
+    }
+
+    .section-subtitle {
+      font-size: 12.5px;
+      color: #a1a1aa;
+      margin-top: 3px;
+    }
+
+    /* Toggle Groups - Clean Monochrome */
+    .toggle-group {
+      display: inline-flex;
+      background: #000000;
+      padding: 3px;
+      border-radius: 6px;
+      border: 1px solid var(--border-hairline);
+      gap: 3px;
+    }
+
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      color: #a1a1aa;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .toggle-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .toggle-btn.active {
+      background: #ffffff;
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .chart-wrapper {
+      position: relative;
+      height: 400px;
+      width: 100%;
+    }
+
+    /* Body Silhouette Anatomy Section */
+    .silhouette-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 860px) {
+      .silhouette-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .silhouette-box {
+      background: #000000;
+      border: 1px solid var(--border-hairline);
+      border-radius: 6px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 380px;
+    }
+
+    .body-part-btn {
+      fill: #18181b;
+      stroke: rgba(255, 255, 255, 0.15);
+      stroke-width: 2;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .body-part-btn:hover {
+      fill: #27272a;
+      stroke: rgba(255, 255, 255, 0.4);
+    }
+
+    .body-part-btn.active {
+      fill: #ffffff;
+      stroke: #ffffff;
+    }
+
+    .silhouette-hint {
+      font-size: 11px;
+      color: #71717a;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .active-body-badge {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* 2 Column Grid for Seasons and Teams */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 860px) {
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .stat-row {
+      margin-bottom: 12px;
+    }
+
+    .bar-bg {
+      background: #18181b;
+      height: 6px;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      transition: width 0.4s ease;
+    }
+
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .nav-btn {
+      background: #000000;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #a1a1aa;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .nav-btn:hover {
+      background: #111114;
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link ">Issues</a>
+        
+        
+        <a href="insights.html" class="nav-back-issue-btn" title="Return to Issue Deep-Dive">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span>Back to Issue 01</span>
+        </a>
+        
+      </div>
+    </nav>
+    
+
+    <div class="page-header">
+      <div style="flex: 1;">
+        <div class="issue-date-tag">Appendix 1</div>
+        <h1 class="page-title">Interactive Key Graphs</h1>
+        <p class="page-intro">
+          Macro visual analytics: cumulative career curves, biological age alignment, anatomical body silhouette filters, and team goal involvement shares.
+        </p>
+      </div>
+    </div>
+
+    <!-- Top KPI Comparison Strip -->
+    <div class="kpi-grid reveal-on-scroll">
+      <div class="kpi-card">
+        <div class="label">Total Recorded Goals</div>
+        <div class="duo-row">
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-all">827</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-all">856</span></div>
+        </div>
+        <div class="diff-tag">Includes senior international friendlies</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="label">Non-Penalty Goals (NPG)</div>
+        <div class="duo-row">
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-npg">713</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-npg">698</span></div>
+        </div>
+        <div class="diff-tag">Messi +24 Non-Penalty Goal lead</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="label">Cumulative Expected Goals (xG)</div>
+        <div class="duo-row">
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-xg">214.6</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-xg">243.0</span></div>
+        </div>
+        <div class="diff-tag">Both icons massively outperform xG</div>
+      </div>
+
+      <div class="kpi-card">
+        <div class="label">Career Penalties Converted</div>
+        <div class="duo-row">
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-pens">114</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-pens">158</span></div>
+        </div>
+        <div class="diff-tag">Ronaldo +67 penalty goal margin</div>
+      </div>
+    </div>
+
+    <!-- SECTION 1 (Q1 & Q5): Career Progression Over Time & Goals vs xG -->
+    <div class="section-card reveal-on-scroll">
+      <div class="section-header">
+        <div>
+          <div class="section-title">
+            <span>Career Goals Progression & Cumulative Curves</span>
+          </div>
+          <p class="section-subtitle">Compare cumulative goals over chronological time vs. biological age curve, or inspect Expected Goals (xG) trajectory.</p>
+        </div>
+
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <div class="toggle-group">
+            <button class="toggle-btn active" id="btn-axis-date">Chronological Date</button>
+            <button class="toggle-btn" id="btn-axis-age">Biological Age Curve</button>
+          </div>
+          <div class="toggle-group">
+            <button class="toggle-btn active" id="btn-scope-all">All Goals</button>
+            <button class="toggle-btn" id="btn-scope-official">Official Only</button>
+            <button class="toggle-btn" id="btn-scope-npg">Non-Penalty (NPG)</button>
+            <button class="toggle-btn" id="btn-scope-xg" style="color: var(--accent-green);">Goals vs. xG</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas id="overtime-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- SECTION 2 (Q2): Goals by Body Part with Interactive Human Silhouette -->
+    <div class="section-card reveal-on-scroll">
+      <div class="section-header">
+        <div>
+          <div class="section-title">
+            <span>Interactive Goal Anatomy & Body-Part Silhouette</span>
+          </div>
+          <p class="section-subtitle">Click on the Head, Left Foot, Right Foot, or Torso to filter the goal distribution comparison.</p>
+        </div>
+        <div class="toggle-group" id="body-part-toggles">
+          <button class="toggle-btn active" id="btn-bp-all" onclick="selectBodyPart('all')">All</button>
+          <button class="toggle-btn" id="btn-bp-head" onclick="selectBodyPart('head')">Head</button>
+          <button class="toggle-btn" id="btn-bp-left_foot" onclick="selectBodyPart('left_foot')">Left Foot</button>
+          <button class="toggle-btn" id="btn-bp-right_foot" onclick="selectBodyPart('right_foot')">Right Foot</button>
+          <button class="toggle-btn" id="btn-bp-other" onclick="selectBodyPart('other')">Other</button>
+        </div>
+      </div>
+
+      <div class="silhouette-grid">
+        <!-- Interactive SVG Human Silhouette on the Left -->
+        <div class="silhouette-box">
+          <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px;">Interactive Anatomical Filter</span>
+          <svg viewBox="0 0 160 280" width="160" height="280">
+            <!-- Head (Clickable) -->
+            <ellipse id="body-head" class="body-part-btn" cx="80" cy="30" rx="18" ry="22" />
+            <!-- Torso / Chest (Clickable) -->
+            <path id="body-torso" class="body-part-btn" d="M 60 56 L 100 56 L 94 135 L 66 135 Z" />
+            <!-- Left Arm -->
+            <path class="body-part-btn" d="M 58 60 L 40 115 L 48 118 L 62 66 Z" />
+            <!-- Right Arm -->
+            <path class="body-part-btn" d="M 102 60 L 120 115 L 112 118 L 98 66 Z" />
+            <!-- Left Leg & Foot (Clickable) -->
+            <path id="body-left-leg" class="body-part-btn" d="M 66 138 L 52 245 L 42 248 L 40 262 L 60 262 L 76 138 Z" />
+            <!-- Right Leg & Foot (Clickable) -->
+            <path id="body-right-leg" class="body-part-btn" d="M 94 138 L 108 245 L 118 248 L 120 262 L 100 262 L 84 138 Z" />
+          </svg>
+          <div class="silhouette-hint">Click head, left leg, or right leg</div>
+          <div id="active-part-label" class="active-body-badge">Selected: All Body Parts</div>
+        </div>
+
+        <!-- Dynamic Distribution Chart on the Right -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
+            <span id="body-part-chart-title" style="font-size: 15px; font-weight: 700;">All Goals by Body Part</span>
+            <span id="body-part-stat-summary" class="mono" style="font-size: 13px; color: var(--accent-cyan);">Messi 827 vs Ronaldo 856</span>
+          </div>
+          <div style="height: 240px; position: relative;">
+            <canvas id="body-part-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3 (Q3 & Q4): Seasons & Team Spells -->
+    <div class="two-col-grid reveal-on-scroll">
+      <!-- Q3: Season-by-Season Peak Volume -->
+      <div class="section-card reveal-on-scroll">
+        <div class="section-header" style="margin-bottom: 14px; padding-bottom: 12px;">
+          <div>
+            <div class="section-title">
+              <span>Scoring Volume & Pace by Season</span>
+            </div>
+            <p class="section-subtitle">Peak scoring campaigns: 2011/12 Messi vs 2014/15 Ronaldo.</p>
+          </div>
+        </div>
+        <div style="height: 280px; position: relative;">
+          <canvas id="seasons-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- Q4: Club & Country Distribution -->
+      <div class="section-card reveal-on-scroll">
+        <div class="section-header" style="margin-bottom: 14px; padding-bottom: 12px;">
+          <div>
+            <div class="section-title">
+              <span>Goals by Club & International Country</span>
+            </div>
+            <p class="section-subtitle">Career distribution across clubs and national teams.</p>
+          </div>
+        </div>
+        <div class="stat-list" id="club-country-list">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 (Q6): % of Team Goals Share -->
+    <div class="section-card reveal-on-scroll">
+      <div class="section-header">
+        <div>
+          <div class="section-title">
+            <span>Share of Team Goals & Offensive Burden</span>
+          </div>
+          <p class="section-subtitle">Single-season dominance: player goals as a percentage of total team scoring.</p>
+        </div>
+      </div>
+      <div style="height: 280px; position: relative;">
+        <canvas id="team-share-chart"></canvas>
+      </div>
+    </div>
+
+    <!-- Section 5: Goal-Level Shot Telemetry Coverage (%) by Season -->
+    <div class="section-card reveal-on-scroll">
+      <div class="section-header">
+        <div>
+          <div class="section-title">
+            5. Goal-Level Shot Telemetry Coverage (%) by Season
+            <span class="info-tooltip-container">
+              <span class="info-icon">i</span>
+              <span class="info-tooltip-text">Percentage of all senior goals in each season backed by shot-level [X, Y] coordinates &amp; xG across Understat, FBref/Opta, FotMob, and StatsBomb. Seasons below 33% coverage are omitted from main xG/missed-shot seasonal curves in Criterion 1.1.3.</span>
+            </span>
+          </div>
+          <p class="section-subtitle">Share of senior goals per season backed by shot-level [X, Y] telemetry (33% threshold applied in main 1.1.3 xG curves).</p>
+        </div>
+      </div>
+      <div style="height: 280px; position: relative;">
+        <canvas id="telemetry-coverage-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load Analytics Data -->
+  <script src="data/analytics_data.js"></script>
+  <script>
+    const analytics = window.ANALYTICS_DATA;
+    let overtimeChartInstance = null;
+    let bodyChartInstance = null;
+    let seasonsChartInstance = null;
+    let shareChartInstance = null;
+
+    let currentAxis = 'date';
+    let currentScope = 'all';
+    let selectedBodyPart = 'all'; // 'all' | 'head' | 'left_foot' | 'right_foot' | 'other'
+
+    function init() {
+      if (!analytics) return;
+
+      // Bind Overtime controls
+      document.getElementById('btn-axis-date').addEventListener('click', () => switchAxis('date'));
+      document.getElementById('btn-axis-age').addEventListener('click', () => switchAxis('age'));
+      document.getElementById('btn-scope-all').addEventListener('click', () => switchScope('all'));
+      document.getElementById('btn-scope-official').addEventListener('click', () => switchScope('official'));
+      document.getElementById('btn-scope-npg').addEventListener('click', () => switchScope('npg'));
+      document.getElementById('btn-scope-xg').addEventListener('click', () => switchScope('xg'));
+
+      // Bind Silhouette body parts
+      document.getElementById('body-head')?.addEventListener('click', () => selectBodyPart('head'));
+      document.getElementById('body-left-leg')?.addEventListener('click', () => selectBodyPart('left_foot'));
+      document.getElementById('body-right-leg')?.addEventListener('click', () => selectBodyPart('right_foot'));
+      document.getElementById('body-torso')?.addEventListener('click', () => selectBodyPart('other'));
+      document.getElementById('reset-silhouette-btn')?.addEventListener('click', () => selectBodyPart('all'));
+
+      if (analytics.totals) {
+        const tm = analytics.totals.messi;
+        const tr = analytics.totals.ronaldo;
+        const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setTxt('kpi-m-all', tm.all);
+        setTxt('kpi-r-all', tr.all);
+        setTxt('kpi-m-npg', tm.npg);
+        setTxt('kpi-r-npg', tr.npg);
+        setTxt('kpi-m-xg', tm.xg);
+        setTxt('kpi-r-xg', tr.xg);
+        setTxt('kpi-m-pens', tm.penalties);
+        setTxt('kpi-r-pens', tr.penalties);
+      }
+
+      renderOvertimeChart();
+      renderBodyPartChart();
+      renderSeasonsChart();
+      renderClubCountryList();
+      renderTeamShareChart();
+    }
+
+    // --- Q1 & Q5: Overtime & xG Chart ---
+    function switchAxis(axis) {
+      currentAxis = axis;
+      document.getElementById('btn-axis-date').classList.toggle('active', axis === 'date');
+      document.getElementById('btn-axis-age').classList.toggle('active', axis === 'age');
+      if (analytics.totals) {
+        const tm = analytics.totals.messi;
+        const tr = analytics.totals.ronaldo;
+        const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setTxt('kpi-m-all', tm.all);
+        setTxt('kpi-r-all', tr.all);
+        setTxt('kpi-m-npg', tm.npg);
+        setTxt('kpi-r-npg', tr.npg);
+        setTxt('kpi-m-xg', tm.xg);
+        setTxt('kpi-r-xg', tr.xg);
+        setTxt('kpi-m-pens', tm.penalties);
+        setTxt('kpi-r-pens', tr.penalties);
+      }
+
+      renderOvertimeChart();
+    }
+
+    function switchScope(scope) {
+      currentScope = scope;
+      document.getElementById('btn-scope-all').classList.toggle('active', scope === 'all');
+      document.getElementById('btn-scope-official').classList.toggle('active', scope === 'official');
+      document.getElementById('btn-scope-npg').classList.toggle('active', scope === 'npg');
+      document.getElementById('btn-scope-xg').classList.toggle('active', scope === 'xg');
+      if (analytics.totals) {
+        const tm = analytics.totals.messi;
+        const tr = analytics.totals.ronaldo;
+        const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+        setTxt('kpi-m-all', tm.all);
+        setTxt('kpi-r-all', tr.all);
+        setTxt('kpi-m-npg', tm.npg);
+        setTxt('kpi-r-npg', tr.npg);
+        setTxt('kpi-m-xg', tm.xg);
+        setTxt('kpi-r-xg', tr.xg);
+        setTxt('kpi-m-pens', tm.penalties);
+        setTxt('kpi-r-pens', tr.penalties);
+      }
+
+      renderOvertimeChart();
+    }
+
+    function renderOvertimeChart() {
+      const ctx = document.getElementById('overtime-chart').getContext('2d');
+      if (overtimeChartInstance) overtimeChartInstance.destroy();
+
+      let labels = [];
+      let datasets = [];
+
+      if (currentAxis === 'date') {
+        labels = analytics.monthly.map(m => m.year_month);
+        if (currentScope === 'xg') {
+          // Matched Instrumented Goals vs Expected Goals (xG)
+          datasets = [
+            { label: 'Messi Instrumented Goals (Matched to xG)', data: analytics.monthly.map(m => m.messi_inst_goals), borderColor: '#38bdf8', borderWidth: 2.5, pointRadius: 0 },
+            { label: 'Messi Expected Goals (xG)', data: analytics.monthly.map(m => m.messi_xg), borderColor: '#0284c7', borderDash: [5, 5], borderWidth: 2, pointRadius: 0 },
+            { label: 'Ronaldo Instrumented Goals (Matched to xG)', data: analytics.monthly.map(m => m.ronaldo_inst_goals), borderColor: '#f97316', borderWidth: 2.5, pointRadius: 0 },
+            { label: 'Ronaldo Expected Goals (xG)', data: analytics.monthly.map(m => m.ronaldo_xg), borderColor: '#ea580c', borderDash: [5, 5], borderWidth: 2, pointRadius: 0 },
+          ];
+        } else {
+          const mKey = currentScope === 'all' ? 'messi_all' : currentScope === 'official' ? 'messi_official' : 'messi_npg';
+          const rKey = currentScope === 'all' ? 'ronaldo_all' : currentScope === 'official' ? 'ronaldo_official' : 'ronaldo_npg';
+          const title = currentScope === 'all' ? 'All Goals' : currentScope === 'official' ? 'Official Goals' : 'Non-Penalty Goals';
+          datasets = [
+            { label: `Lionel Messi (${title})`, data: analytics.monthly.map(m => m[mKey]), borderColor: '#38bdf8', backgroundColor: 'rgba(56, 189, 248, 0.08)', borderWidth: 2.5, fill: true, pointRadius: 0 },
+            { label: `Cristiano Ronaldo (${title})`, data: analytics.monthly.map(m => m[rKey]), borderColor: '#f97316', backgroundColor: 'rgba(249, 115, 22, 0.08)', borderWidth: 2.5, fill: true, pointRadius: 0 }
+          ];
+        }
+      } else {
+        labels = analytics.by_age.map(a => `Age ${a.age}`);
+        if (currentScope === 'xg') {
+          datasets = [
+            { label: 'Messi Instrumented Goals (Matched to xG)', data: analytics.by_age.map(a => a.messi_inst_goals), borderColor: '#38bdf8', borderWidth: 2.5, pointRadius: 0 },
+            { label: 'Messi Expected Goals (xG)', data: analytics.by_age.map(a => a.messi_xg), borderColor: '#0284c7', borderDash: [5, 5], borderWidth: 2, pointRadius: 0 },
+            { label: 'Ronaldo Instrumented Goals (Matched to xG)', data: analytics.by_age.map(a => a.ronaldo_inst_goals), borderColor: '#f97316', borderWidth: 2.5, pointRadius: 0 },
+            { label: 'Ronaldo Expected Goals (xG)', data: analytics.by_age.map(a => a.ronaldo_xg), borderColor: '#ea580c', borderDash: [5, 5], borderWidth: 2, pointRadius: 0 },
+          ];
+        } else {
+          const mKey = currentScope === 'all' ? 'messi_all' : currentScope === 'official' ? 'messi_official' : 'messi_npg';
+          const rKey = currentScope === 'all' ? 'ronaldo_all' : currentScope === 'official' ? 'ronaldo_official' : 'ronaldo_npg';
+          const title = currentScope === 'all' ? 'All Goals' : currentScope === 'official' ? 'Official Goals' : 'Non-Penalty Goals';
+          datasets = [
+            { label: `Lionel Messi (${title})`, data: analytics.by_age.map(a => a[mKey]), borderColor: '#38bdf8', backgroundColor: 'rgba(56, 189, 248, 0.08)', borderWidth: 2.5, fill: true, pointRadius: 0 },
+            { label: `Cristiano Ronaldo (${title})`, data: analytics.by_age.map(a => a[rKey]), borderColor: '#f97316', backgroundColor: 'rgba(249, 115, 22, 0.08)', borderWidth: 2.5, fill: true, pointRadius: 0 }
+          ];
+        }
+      }
+
+      overtimeChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          layout: { padding: { left: 6, right: 8, top: 8, bottom: 0 } },
+          interaction: { mode: 'index', intersect: false },
+          plugins: {
+            legend: { labels: { color: '#e5e7eb', font: { family: 'Inter', size: 12, weight: 600 } } }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255, 255, 255, 0.04)' }, ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } } },
+            y: { afterFit: (s) => { s.width = Math.max(s.width, 58); }, grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', padding: 6, font: { family: 'JetBrains Mono', size: 11 } } }
+          }
+        }
+      });
+    }
+
+    // --- Q2: Interactive Human Silhouette & Body Part Chart ---
+    function selectBodyPart(part) {
+      selectedBodyPart = part;
+      // Highlight SVG parts
+      ['body-head', 'body-left-leg', 'body-right-leg', 'body-torso'].forEach(id => {
+        document.getElementById(id).classList.remove('active');
+      });
+      if (part === 'head') document.getElementById('body-head').classList.add('active');
+      if (part === 'left_foot') document.getElementById('body-left-leg').classList.add('active');
+      if (part === 'right_foot') document.getElementById('body-right-leg').classList.add('active');
+      if (part === 'other') document.getElementById('body-torso').classList.add('active');
+
+      const labels = {
+        'all': 'Selected: All Body Parts',
+        'head': 'Selected: Head (Aerial Goals)',
+        'left_foot': 'Selected: Left Foot',
+        'right_foot': 'Selected: Right Foot',
+        'other': 'Selected: Torso & Other'
+      };
+      document.getElementById('active-part-label').textContent = labels[part];
+      renderBodyPartChart();
+    }
+
+    function renderBodyPartChart() {
+      const ctx = document.getElementById('body-part-chart').getContext('2d');
+      if (bodyChartInstance) bodyChartInstance.destroy();
+
+      const bp = analytics.body_parts;
+      let labels = [];
+      let mData = [];
+      let rData = [];
+
+      if (selectedBodyPart === 'all') {
+        document.getElementById('body-part-chart-title').textContent = 'All Goals by Anatomical Body Part';
+        document.getElementById('body-part-stat-summary').textContent = `Messi ${analytics.totals?.messi?.all ?? mData.reduce((a,b)=>a+b,0)} vs Ronaldo ${analytics.totals?.ronaldo?.all ?? rData.reduce((a,b)=>a+b,0)} Total`;
+        labels = ['Left Foot', 'Right Foot', 'Head (Aerial)', 'Other / Unspecified'];
+        mData = [bp.messi.left_foot, bp.messi.right_foot, bp.messi.head, bp.messi.other];
+        rData = [bp.ronaldo.left_foot, bp.ronaldo.right_foot, bp.ronaldo.head, bp.ronaldo.other];
+      } else {
+        const titleMap = {
+          'head': 'Header Goals Comparison',
+          'left_foot': 'Left-Footed Goals Comparison',
+          'right_foot': 'Right-Footed Goals Comparison',
+          'other': 'Other / Torso Finishes'
+        };
+        document.getElementById('body-part-chart-title').textContent = titleMap[selectedBodyPart];
+        const mVal = bp.messi[selectedBodyPart];
+        const rVal = bp.ronaldo[selectedBodyPart];
+        document.getElementById('body-part-stat-summary').textContent = `Messi: ${mVal} · Ronaldo: ${rVal}`;
+        labels = [titleMap[selectedBodyPart]];
+        mData = [mVal];
+        rData = [rVal];
+      }
+
+      bodyChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            { label: 'Lionel Messi', data: mData, backgroundColor: '#38bdf8', borderRadius: 6 },
+            { label: 'Cristiano Ronaldo', data: rData, backgroundColor: '#f97316', borderRadius: 6 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: '#e5e7eb', font: { family: 'Inter', size: 12 } } }
+          },
+          scales: {
+            x: { grid: { color: 'rgba(255, 255, 255, 0.04)' }, ticks: { color: '#9ca3af', font: { family: 'Inter', size: 11 } } },
+            y: { afterFit: (s) => { s.width = Math.max(s.width, 58); }, grid: { color: 'rgba(255, 255, 255, 0.06)' }, ticks: { color: '#9ca3af', padding: 6, font: { family: 'JetBrains Mono', size: 11 } } }
+          }
+        }
+      });
+    }
+
+    // --- Q3: Seasons Chart ---
+    function renderSeasonsChart() {
+      const ctx = document.getElementById('seasons-chart').getContext('2d');
+      if (seasonsChartInstance) seasonsChartInstance.destroy();
+
+      const labels = analytics.seasons.map(s => s.season);
+      const mGoals = analytics.seasons.map(s => s.messi);
+      const rGoals = analytics.seasons.map(s => s.ronaldo);
+
+      seasonsChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [
+            { label: 'Lionel Messi', data: mGoals, backgroundColor: '#38bdf8', borderRadius: 4 },
+            { label: 'Cristiano Ronaldo', data: rGoals, backgroundColor: '#f97316', borderRadius: 4 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#e5e7eb' } } },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: '#9ca3af', maxTicksLimit: 12 } },
+            y: { grid: { color: 'rgba(255, 255, 255, 0.05)' }, ticks: { color: '#9ca3af' } }
+          }
+        }
+      });
+    }
+
+    // --- Q4: Club & Country List ---
+    function renderClubCountryList() {
+      const container = document.getElementById('club-country-list');
+      const cc = analytics.club_country;
+      let html = '';
+
+      // Messi
+      html += `<div style="font-size: 11px; font-weight: 700; color: var(--messi-color); text-transform: uppercase; margin-top: 4px;">Lionel Messi</div>`;
+      for (const [team, goals] of Object.entries(cc.messi)) {
+        const pct = ((goals / Object.values(cc.messi).reduce((a, b) => a + b, 0)) * 100).toFixed(1);
+        html += `
+          <div class="stat-row">
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>${team}</span>
+                <span class="mono" style="color: var(--messi-color);">${goals} goals (${pct}%)</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: ${pct}%; background: var(--messi-color);"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      // Ronaldo
+      html += `<div style="font-size: 11px; font-weight: 700; color: var(--ronaldo-color); text-transform: uppercase; margin-top: 14px;">Cristiano Ronaldo</div>`;
+      for (const [team, goals] of Object.entries(cc.ronaldo)) {
+        const pct = ((goals / Object.values(cc.ronaldo).reduce((a, b) => a + b, 0)) * 100).toFixed(1);
+        html += `
+          <div class="stat-row">
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>${team}</span>
+                <span class="mono" style="color: var(--ronaldo-color);">${goals} goals (${pct}%)</span>
+              </div>
+              <div class="bar-bg">
+                <div class="bar-fill" style="width: ${pct}%; background: var(--ronaldo-color);"></div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      container.innerHTML = html;
+    }
+
+    // --- Q6: Team Goals Share Chart ---
+    function renderTeamShareChart() {
+      const ctx = document.getElementById('team-share-chart').getContext('2d');
+      if (shareChartInstance) shareChartInstance.destroy();
+
+      const topShares = analytics.team_shares.slice(0, 10);
+      const labels = topShares.map(t => `${t.player_name.split(' ').pop()} (${t.season} ${t.competition.split(' ')[0]})`);
+      const values = topShares.map(t => t.goal_share_pct);
+      const colors = topShares.map(t => t.player_id === 'messi' ? '#38bdf8' : '#f97316');
+
+      shareChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: 'Player % of Total Team Goals',
+            data: values,
+            backgroundColor: colors,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `Scored ${ctx.raw}% of entire team's goals in season`
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#9ca3af', callback: v => v + '%' },
+              max: 50
+            },
+            y: { grid: { display: false }, ticks: { color: '#e5e7eb' } }
+          }
+        }
+      });
+    }
+
+    function renderTelemetryCoverageChart() {
+      const el = document.getElementById('telemetry-coverage-chart');
+      if (!el || !analytics.shot_telemetry_coverage) return;
+      const cov = analytics.shot_telemetry_coverage;
+      new Chart(el.getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: cov.labels,
+          datasets: [
+            {
+              label: 'Messi (%)',
+              data: cov.messi_pct,
+              backgroundColor: 'rgba(56, 189, 248, 0.85)',
+              borderRadius: 4
+            },
+            {
+              label: 'Ronaldo (%)',
+              data: cov.ronaldo_pct,
+              backgroundColor: 'rgba(249, 115, 22, 0.85)',
+              borderRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: '#e5e7eb' } },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => `${ctx.dataset.label}: ${ctx.raw !== null ? ctx.raw + '%' : 'No goals'}`
+              }
+            }
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { color: '#9ca3af' } },
+            y: {
+              min: 0,
+              max: 100,
+              grid: { color: 'rgba(255, 255, 255, 0.05)' },
+              ticks: { color: '#9ca3af', callback: v => v + '%' }
+            }
+          }
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      init();
+      renderTelemetryCoverageChart();
+    });
+  </script>
+
+    <script>
+      // Priority #0 Dynamic KPI Computation and Animation Gate
+      window.addEventListener('DOMContentLoaded', () => {
+        // Dynamic KPI updates
+        if (window.GOALS_DATA && window.GOALS_DATA.goals) {
+          const goals = window.GOALS_DATA.goals;
+          const mGoals = goals.filter(g => g.player === 'messi');
+          const rGoals = goals.filter(g => g.player === 'ronaldo');
+          const mEl = document.getElementById('kpi-m-all');
+          const rEl = document.getElementById('kpi-r-all');
+          if (mEl) mEl.textContent = mGoals.length;
+          if (rEl) rEl.textContent = rGoals.length;
+
+          const mNpg = mGoals.filter(g => !g.is_penalty).length;
+          const rNpg = rGoals.filter(g => !g.is_penalty).length;
+          const mNpgEl = document.getElementById('kpi-m-npg');
+          const rNpgEl = document.getElementById('kpi-r-npg');
+          if (mNpgEl) mNpgEl.textContent = mNpg;
+          if (rNpgEl) rNpgEl.textContent = rNpg;
+
+          const bpStatEl = document.getElementById('body-part-stat-summary');
+          if (bpStatEl) {
+            bpStatEl.textContent = `Messi ${mGoals.length} vs Ronaldo ${rGoals.length}`;
+          }
+        }
+        if (window.ANALYTICS_DATA && window.ANALYTICS_DATA.totals) {
+          const tm = window.ANALYTICS_DATA.totals.messi;
+          const tr = window.ANALYTICS_DATA.totals.ronaldo;
+          const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+          setTxt('kpi-m-xg', tm.xg);
+          setTxt('kpi-r-xg', tr.xg);
+          setTxt('kpi-m-pens', tm.penalties);
+          setTxt('kpi-r-pens', tr.penalties);
+        }
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => {
+            [overtimeChartInstance, bodyChartInstance, seasonsChartInstance].forEach(inst => {
+              if (inst) inst.resize();
+            });
+          });
+        }
+
+        // Standardised Filter Handlers for Appendix 1 Cards
+        window.filterSeasons = function(mode) {
+          const btnAll = document.getElementById('btn-season-all');
+          const btnPrime = document.getElementById('btn-season-prime');
+          if (btnAll) btnAll.classList.toggle('active', mode === 'all');
+          if (btnPrime) btnPrime.classList.toggle('active', mode === 'prime');
+          if (!seasonsChartInstance || !analytics) return;
+          let list = analytics.seasons;
+          if (mode === 'prime') {
+            list = list.filter(s => {
+              const yr = parseInt(s.season.slice(0, 4));
+              return yr >= 2009 && yr <= 2018;
+            });
+          }
+          seasonsChartInstance.data.labels = list.map(s => s.season);
+          seasonsChartInstance.data.datasets[0].data = list.map(s => s.messi);
+          seasonsChartInstance.data.datasets[1].data = list.map(s => s.ronaldo);
+          seasonsChartInstance.update();
+        };
+
+        window.filterShare = function(mode) {
+          const btnAll = document.getElementById('btn-share-all');
+          const btnPrime = document.getElementById('btn-share-prime');
+          if (btnAll) btnAll.classList.toggle('active', mode === 'all');
+          if (btnPrime) btnPrime.classList.toggle('active', mode === 'prime');
+          if (!shareChartInstance || !analytics) return;
+          let list = analytics.team_shares.slice(0, 10);
+          if (mode === 'prime') {
+            list = analytics.team_shares.filter(s => {
+              const yr = parseInt(String(s.season).slice(0, 4));
+              return yr >= 2009 && yr <= 2018;
+            }).slice(0, 10);
+          }
+          shareChartInstance.data.labels = list.map(t => `${t.player_name.split(' ').pop()} (${t.season} ${t.competition.split(' ')[0]})`);
+          shareChartInstance.data.datasets[0].data = list.map(t => t.goal_share_pct);
+          shareChartInstance.data.datasets[0].backgroundColor = list.map(t => t.player_id === 'messi' ? '#38bdf8' : '#f97316');
+          shareChartInstance.update();
+        };
+
+        // Sync body part buttons when SVG silhouette or pills are clicked
+        if (typeof selectBodyPart === 'function') {
+          const origSelect = selectBodyPart;
+          window.selectBodyPart = function(part) {
+            origSelect(part);
+            ['all', 'head', 'left_foot', 'right_foot', 'other'].forEach(p => {
+              const b = document.getElementById(`btn-bp-${p}`);
+              if (b) b.classList.toggle('active', p === part);
+            });
+          };
+        }
+
+        // Scroll reveal observer matching insights.html (low threshold so tall cards always appear)
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+              } else {
+                entry.target.classList.remove('in-view');
+              }
+            });
+          }, { threshold: 0.02, rootMargin: '0px 0px -20px 0px' });
+
+          document.querySelectorAll('.reveal-on-scroll').forEach((el, idx) => {
+            if (!el.classList.contains('card-slide-left') && !el.classList.contains('card-slide-right')) {
+              const rect = el.getBoundingClientRect();
+              const mid = rect.left + rect.width / 2;
+              const isRight = el.offsetParent && rect.width < window.innerWidth * 0.7 ? mid > window.innerWidth / 2 : (idx % 2 === 1);
+              el.classList.add(isRight ? 'card-slide-right' : 'card-slide-left');
+            }
+            const r = el.getBoundingClientRect();
+            if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in-view');
+            observer.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('in-view'));
+        }
+      });
+    </script>
+    
+</body>
+</html>
