@@ -897,8 +897,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.75,
-      "coverage": "4 charts (3 High, 1 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.75/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Full 25-season Transfermarkt starting XI role logs + Understat/FotMob/StatsBomb shot coordinates (2014\u20132024).",
+      "why": "Starting positions cover 100% of both careers, while on-ball pitch-centroid heatmaps cover tracked 2014\u20132024 leagues (StatsBomb has asymmetric club coverage)."
     }
   },
   {
@@ -1778,8 +1778,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.29,
-      "coverage": "7 charts (4 High, 1 Medium, 2 Low).",
-      "why": "Average chart reliability score = 2.29/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Full 25-season Transfermarkt team goals + FBref/ESDB possession & passing telemetry (2008/09\u20132022/23 shared).",
+      "why": "Team scoring/conceding spans all 25 seasons, but possession share and pass-distance ranges only cover shared European seasons (2008/09\u20132022/23)."
     }
   },
   {
@@ -2395,8 +2395,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.0,
-      "coverage": "8 charts (0 High, 8 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Transfermarkt matchday squad & Best XI market valuations across shared European club seasons (2012/13\u20132022/23).",
+      "why": "Covers 11 shared European prime seasons only; Transfermarkt valuations are contemporary market estimates rather than on-pitch statistics."
     }
   },
   {
@@ -3207,8 +3207,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete senior career match & goal logs across club and country (25 seasons; 1,915 goals via Transfermarkt + martj42).",
+      "why": "100% full-career coverage across gross, official, seasonal, and age-matched scoring with zero sampling gaps."
     }
   },
   {
@@ -4392,8 +4392,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.5,
-      "coverage": "10 charts (5 High, 5 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.50/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Opta shot conversion (20 European seasons, 2005/06\u20132024/25) + Understat/FBref/FotMob xG (9\u201313 tracked seasons).",
+      "why": "Opta conversion covers 20 seasons (High), whereas shot-level xG only begins in 2014/15 and omits early-career peaks such as 2011/12."
     }
   },
   {
@@ -6153,8 +6153,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.4,
-      "coverage": "15 charts (10 High, 1 Medium, 4 Low).",
-      "why": "Average chart reliability score = 2.40/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Full 25-season career body-part, penalty & free-kick goal logs + 2014/15\u20132018/19 Understat shot-attempt rates.",
+      "why": "Career totals for NPG, penalties, headers, weak-foot, and free kicks are 100% complete; only attempt-rate sub-charts use the 5-season Understat window."
     }
   },
   {
@@ -7365,8 +7365,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.6,
-      "coverage": "15 charts (9 High, 6 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.60/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 25-season career match logs (2,521 appearances), knockout GWGs, and historical FIFA rankings + 2012/13\u20132024/25 Top-4/Bottom-4 splits.",
+      "why": "Career GWGs, knockouts, and international FIFA rank tiers cover 100% of both careers; league Top-4/Bottom-4 opponent splits cover 2012/13\u20132024/25."
     }
   },
   {
@@ -7961,8 +7961,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 25-season senior career assist logs (774 assists across Transfermarkt & official competition records).",
+      "why": "100% full-career coverage across gross, official, competition, and multi-assist match records."
     }
   },
   {
@@ -8278,8 +8278,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.67,
-      "coverage": "6 charts (4 High, 2 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.67/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Opta all-time European Big Chances, throughballs & key passes (15+ seasons) + 9-season Understat xA model.",
+      "why": "Opta chance-creation totals span 15+ European seasons, while Understat xA covers 9 tracked seasons (2014/15 onwards)."
     }
   },
   {
@@ -8838,8 +8838,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Low",
       "score": 1.25,
-      "coverage": "8 charts (0 High, 2 Medium, 6 Low).",
-      "why": "Average chart reliability score = 1.25/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Transfermarkt match passes + FBref/Opta seasonal passing (2017/18\u20132024/25) + StatsBomb Open Data progressive sample.",
+      "why": "Only 5\u20138 recent seasons have uniform FBref progressive/range tracking, and StatsBomb Open Data has asymmetric club coverage (19 Messi vs 9 Ronaldo seasons)."
     }
   },
   {
@@ -9662,8 +9662,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.0,
-      "coverage": "12 charts (0 High, 12 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Transfermarkt game-events assist recipients + 2012/13\u20132024/25 knockout/Top-4 splits + 2017/18\u20132024/25 FBref team pass share.",
+      "why": "Knockout and Top-4/Bottom-4 assist splits cover 11\u201313 European seasons, while team pass/dribble share relies on modern FBref/StatsBomb windows."
     }
   },
   {
@@ -10099,8 +10099,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "4 charts (4 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Opta European league & UCL dribbling telemetry across 15 consecutive seasons (2009/10\u20132023/24).",
+      "why": "Covers 15 consecutive European prime seasons (\u226566% threshold) with consistent Opta take-on definitions for both players."
     }
   },
   {
@@ -11007,8 +11007,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "7 charts (7 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 25-season senior career Goals + Assists across all club and international competitions.",
+      "why": "100% full-career coverage combining verified goal and assist logs across seasons, competitions, and matched ages."
     }
   },
   {
@@ -11563,8 +11563,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.17,
-      "coverage": "6 charts (1 High, 5 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.17/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Full-career team goal involvement (%) + 2012/13\u20132024/25 league Top-4/Bottom-4 and knockout G+A splits.",
+      "why": "Full-season team goal involvement spans all 25 seasons; opponent-tier G+A splits cover 2012/13\u20132024/25."
     }
   },
   {
@@ -12046,8 +12046,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 1.83,
-      "coverage": "6 charts (0 High, 5 Medium, 1 Low).",
-      "why": "Average chart reliability score = 1.83/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Opta European tackles/interceptions/blocks (2009/10\u20132022/23) + FBref pressures (2017/18\u20132021/22) + Transfermarkt tackles (2018/19\u20132025/26).",
+      "why": "Tackles and interceptions cover 14 European seasons (just under 15), while defensive pressures only exist in a 5-season FBref window."
     }
   },
   {
@@ -12527,8 +12527,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "6 charts (6 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Opta European aerial duels won & clearances (2009/10\u20132024/25, 16 seasons) + Transfermarkt fouls drawn.",
+      "why": "Covers 16 European seasons (\u226566% threshold) with uniform Opta aerial and box-clearance tracking."
     }
   },
   {
@@ -13658,8 +13658,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "6 charts (6 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Full 25-season club & international match-by-match fixture logs comparing team PPG & win % with vs without player.",
+      "why": "100% career fixture coverage (with sample-size tables shown so small-absence seasons are transparent)."
     }
   },
   {
@@ -14086,8 +14086,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "SofaScore/WhoScored/FotMob match ratings (18 seasons, 2009/10\u20132026/27) + official MOTM records.",
+      "why": "Exceeds 15+ seasons (18 consecutive campaigns) across independent algorithmic match-rating aggregators."
     }
   },
   {
@@ -14323,8 +14323,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete official Ballon d'Or, FIFA World Player/The Best, Golden Shoe, Laureus, and World Cup/Copa MVP archives.",
+      "why": "100% deterministic official award records with zero sampling gaps."
     }
   },
   {
@@ -14625,8 +14625,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "2 charts (2 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete official domestic & continental league Golden Boot records across England, Spain, Italy, France, Saudi Arabia, and MLS.",
+      "why": "100% verified official top-scorer and European Golden Shoe records."
     }
   },
   {
@@ -14779,8 +14779,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.0,
-      "coverage": "2 charts (0 High, 2 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Wikipedia Career Achievements records ledger (401 records across 8 arenas, parsed Nov 2026).",
+      "why": "Source-linked to official records, though Wikipedia's editorial itemisation is more granular on Messi's page (299 vs 102 entries)."
     }
   },
   {
@@ -15121,8 +15121,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "4 charts (4 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete official senior club & international trophy cabinet (43 Messi vs 34 Ronaldo senior; 45 vs 34 incl. youth/Olympic).",
+      "why": "100% verified official competition honours across all clubs and national teams."
     }
   },
   {
@@ -15292,8 +15292,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Low",
       "score": 1.0,
-      "coverage": "3 charts (0 High, 0 Medium, 3 Low).",
-      "why": "Average chart reliability score = 1.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Point-in-time cross-platform social media follower totals & single-post engagement snapshots.",
+      "why": "External snapshots fluctuate over time and reflect off-pitch marketing/era effects rather than longitudinal match data."
     }
   },
   {
@@ -15609,8 +15609,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.0,
-      "coverage": "4 charts (0 High, 4 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Transfermarkt matchday attendance logs (892 European club fixtures, 2012/13\u20132022/23) + MLS/SPL road splits.",
+      "why": "Covers 11 European seasons plus MLS/SPL arrival windows, with stadium capacity caps acting as a natural ceiling."
     }
   },
   {
@@ -15781,8 +15781,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 2006\u20132026 FIFA World Cup Finals match & goal logs.",
+      "why": "100% verified official FIFA World Cup Finals tournament records."
     }
   },
   {
@@ -15957,8 +15957,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 2.67,
-      "coverage": "3 charts (2 High, 1 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.67/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 2006\u20132026 FIFA World Cup Finals assist logs + Opta/StatsBomb key passes & xA.",
+      "why": "Tournament assists cover 100% of Finals matches; xA sub-metrics rely on tracked modern editions."
     }
   },
   {
@@ -16178,8 +16178,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Low",
       "score": 1.5,
-      "coverage": "4 charts (0 High, 2 Medium, 2 Low).",
-      "why": "Average chart reliability score = 1.50/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "StatsBomb/FBref FIFA World Cup event streams (dribbles, passes, pressures, tackles).",
+      "why": "Event-level pressing and dribble tracking is unavailable for earlier World Cup editions (2006\u20132014)."
     }
   },
   {
@@ -16333,8 +16333,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "2 charts (2 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete edition-by-edition Goals + Assists across 2006\u20132026 FIFA World Cup Finals.",
+      "why": "100% verified official FIFA World Cup Finals goal and assist records."
     }
   },
   {
@@ -16512,8 +16512,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "High",
       "score": 3.0,
-      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
-      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Complete 2006\u20132026 FIFA World Cup Finals national-team goal share, win rate & FIFA rank splits.",
+      "why": "100% verified official FIFA World Cup Finals match results and goal logs."
     }
   },
   {
@@ -17139,8 +17139,8 @@ window.INSIGHTS_DATA = [
     "reliability": {
       "level": "Medium",
       "score": 2.0,
-      "coverage": "7 charts (0 High, 7 Medium, 0 Low).",
-      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
+      "coverage": "Official pre-tournament FIFA World Rankings & Transfermarkt national-squad valuations (2006\u20132026).",
+      "why": "FIFA rankings cover all editions; Transfermarkt national-squad valuations are market estimates and less uniform in 2006\u20132010."
     }
   }
 ];
