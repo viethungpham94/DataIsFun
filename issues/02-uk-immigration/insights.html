@@ -131,7 +131,7 @@
         <li><strong>Age- &amp; Sex-Adjusted Crime / Custody Rates by Ethnicity &amp; Religion:</strong> MoJ and Home Office publish raw custody/arrest shares by ethnicity and religion without cross-tabulated age-sex standardised rates or visa-route breakdowns; comparisons in <a href="#hyp_culture" style="color:#38bdf8;">Section 2.2</a> are therefore unadjusted.</li>
         <li><strong>Annual Ethnicity &amp; Religion Resident Populations (Inter-Census):</strong> Official England &amp; Wales ethnicity and religion shares are collected decennially (Census 2011 and 2021), so annual 2015&ndash;2026 prison series cannot be divided by annual resident denominators.</li>
         <li><strong>Pre-2019 Route-Level Net Migration Breakdown:</strong> ONS LTIM Table 4b (Work Main, Study, Asylum) starts in YE Dec 2019, so workforce-filtered net migration in <a href="#ctx_macro" style="color:#38bdf8;">Section 1.2</a> begins in 2019 while total net migration as % of the 16&ndash;64 workforce spans 1971&ndash;2025.</li>
-        <li><strong>EU Settlement Scheme (EUSS) Pre-Settled Status vs Visa Stock:</strong> Home Office Migrant Journey valid-leave stock (<a href="#ctx_flows" style="color:#38bdf8;">1.1</a>, <a href="#ctx_macro" style="color:#38bdf8;">1.2</a>, <a href="#ctx_routes" style="color:#38bdf8;">1.3</a>) covers people granted visa leave from 2008 onwards who have not yet expired or settled (ILR), but excludes EU/EEA citizens holding temporary Pre-Settled Status under the separate EUSS register.</li>
+        <li><strong>EU Settlement Scheme (EUSS) Pre-Settled Status vs Visa Stock:</strong> Home Office Migrant Journey valid-leave stock (<a href="#ctx_flows" style="color:#38bdf8;">1.1</a>, <a href="#ctx_macro" style="color:#38bdf8;">3.1</a>, <a href="#ctx_routes" style="color:#38bdf8;">1.2</a>) covers 2008+ visa cohorts (excl. ILR), while EU/EEA citizens holding temporary Pre-Settled Status are tracked separately in Home Office EUSS statistics and combined alongside visa stock in <a href="#ctx_flows" style="color:#38bdf8;">Section 1.1</a>.</li>
       </ul>
     </details>
     <details open style="background:#060608;border:1px solid rgba(56,189,248,0.25);border-left:3px solid #38bdf8;border-radius:8px;padding:14px 16px;margin-bottom:26px;">
@@ -200,26 +200,38 @@
             </div>
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Post-2021 net migration was driven overwhelmingly by non-EU+ arrivals (net = inflows minus departures) as EU+ net migration turned negative.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Adding EUSS Pre-Settled Status (1.45M net excl. upgrades to Settled) brings combined temporary leave to 5.72M (8.24% of UK population), alongside 4.51M permanent EUSS Settled grants.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Complete Temporary Leave Picture: Active 'On Visa' Stock vs EUSS Pre-Settled Status (000s & % of UK Pop)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Combines end-2025 Migrant Journey Valid Leave stock (4.28M) with net remaining Home Office EUSS Pre-Settled Status as at Sep 2026 (2.90M cumulative Pre-Settled grants minus 1.46M repeat applicants later granted Settled Status in EUSS_RA_04). Source: <a href="https://www.gov.uk/government/statistics/migrant-journey-2025-report" target="_blank" rel="noopener">Home Office Migrant Journey 2025 Report</a> | <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office EU Settlement Scheme Quarterly Statistics (Sep 2026)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop" target="_blank" rel="noopener">ONS UK Population Mid-Year Estimates (UKPOP)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Post-2021 net migration was driven overwhelmingly by non-EU+ arrivals (net = inflows minus departures) as EU+ net migration turned negative.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 4)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
                 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">UK Net Migration by Nationality Group (YE Dec, 000s · 2012–2025)</div>
                 
               </div>
-              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_3"></canvas></div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_4"></canvas></div>
               <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Net migration = Inflows minus Outflows (incl. expiring visas & departing students/workers). Non-EU+ outflows tripled from 88k (2021) to 278k (2025). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a></div>
             </div>
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
                 <div style="font-size:14.5px;font-weight:700;color:#ffffff;">What drove the 2020–2021 break: Study, Health & Care (Feb 2022), and Humanitarian schemes (Ukraine / BN(O)) drove the step-change over 2019.</div>
-                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 4)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 5)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
                 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Anatomy of the Post-2020 Surge: Pre-COVID (2019) vs 2021–2025 (000s)</div>
                 
               </div>
-              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_4"></canvas></div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_5"></canvas></div>
               <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued non-visit entry-clearance visas comparing 2019, 2021, 2022, 2023, and 2025. Four drivers: Jan 2021 PBS (RQF 6->3), Feb 2022 Care expansion, Jul 2021 Graduate Route, and 2021–22 BN(O)/Ukraine schemes (468.2k visas). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
             </div>
         </section>
@@ -572,15 +584,39 @@
             </div>
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Wide spread across individual nationalities (Dec 2025): most top non-UK payrolled nationalities exceed the £2,576 UK median, while a few lower-wage groups sit below.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Against the overall UK PAYE RTI interquartile band (2014: £894–£2,605 → 2025: £1,507–£3,814), EU and Non-EU medians sit squarely in the upper-middle of UK pay.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 6)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">2014 vs 2025 UK-Wide Pay Distribution (P25–P75 Band) vs UK, EU & Non-EU Medians (£/month)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_6"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Shaded vertical bars show the overall UK-wide PAYE RTI P25–P75 monthly pay band (ONS Seasonally Adjusted Table 5, Nov 2026) in 2014 vs 2025; yellow dots show HMRC UK, EU, and Non-EU group medians. Source: <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/realtimeinformationstatisticsreferencetableseasonallyadjusted" target="_blank" rel="noopener">ONS / HMRC PAYE RTI Seasonally Adjusted Pay Distribution (Nov 2026)</a> | <a href="https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025" target="_blank" rel="noopener">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Wide spread across individual nationalities (Dec 2025): most top non-UK payrolled nationalities exceed the £2,576 UK median, while a few lower-wage groups sit below.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 7)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
                 <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Median Monthly Pay Across Top 15 Non-UK Nationalities vs UK Median (£/month · Dec 2025)</div>
                 
               </div>
-              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_6"></canvas></div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_7"></canvas></div>
               <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*HMRC PAYE RTI median monthly pay (£) in Dec 2025 across the 15 largest non-UK payrolled nationalities. Dashed yellow line = UK nationals median (£2,576). Green >= UK median, Amber < UK median. Source: <a href="https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025" target="_blank" rel="noopener">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Are migrants replacing UK workers? Across all sectors in 2025, UK nationals hold 80.2% of payrolled jobs vs 19.8% Non-UK — concentrated in Admin/Support (33.0%), Hospitality (30.4%), and Health &amp; Social Work (25.6%).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 8)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Are Migrants Replacing UK Workers? Payrolled Employment Share by Industry (UK vs EU vs Non-EU, 2025 %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_8"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*2025 annual mean of HMRC PAYE RTI monthly payrolled employments by SIC 2007 sector (UK vs EU vs Non-EU, % share). Ordered descending by combined Non-UK share. Source: <a href="https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025" target="_blank" rel="noopener">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a></div>
             </div>
         </section>
         
@@ -816,7 +852,7 @@
             </div>
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">British citizenship grants reached 236.2k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">British citizenship grants reached 235.9k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_retention', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
@@ -837,7 +873,7 @@
           
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Top 20 high-asylum councils (avg 42.2 supported per 10k vs 9.5 elsewhere) saw slightly higher rent rises (29.0% vs 27.8%) and higher 2016 Leave votes (59.8% vs 53.9%), despite similar population growth.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Top 20 high-asylum councils (avg 42.0 supported per 10k vs 9.5 elsewhere) saw slightly higher rent rises (28.7% vs 27.8%) and higher 2016 Leave votes (59.7% vs 53.9%), despite similar population growth.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_towns', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
@@ -861,7 +897,7 @@
             </div>
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Perspective vs Exposure (2): 2016 Leave vote % shows r = 0.15 (R² = 0.02) against local asylum dispersal per 10k residents.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Perspective vs Exposure (2): 2016 Leave vote % shows r = 0.18 (R² = 0.03) against local asylum dispersal per 10k residents.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_towns', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
@@ -877,12 +913,12 @@
           <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 4 · Are They Blending In or Causing Social Problems?</div>
           <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Media Narratives vs Reality (Headlines, Framing & Hansard)</h2>
           <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">Which immigration stories do major UK news outlets tell, how does coverage compare with actual arrival volumes, and how do framing biases differ?</p>
-          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;">Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.8%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).</div>
+          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;">Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.6%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).</div>
           
           
             <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
               <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
-                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Salience distortion: Small Boats & Asylum generate 38.8% of UK news headlines vs 8.4% of actual inflows.</div>
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Salience distortion: Small Boats & Asylum generate 38.6% of UK news headlines vs 8.4% of actual inflows.</div>
                 <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_media', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
               </div>
               <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">

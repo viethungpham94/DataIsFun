@@ -257,7 +257,7 @@ window.ISSUE02_GRAPHS = [
                 1398.0,
                 1441.0,
                 1012.0,
-                813.0
+                839.0
               ],
               "borderColor": "#38bdf8",
               "backgroundColor": "rgba(56,189,248,0.10)"
@@ -326,7 +326,7 @@ window.ISSUE02_GRAPHS = [
                 508.0,
                 593.0,
                 680.0,
-                642.0
+                672.0
               ],
               "borderColor": "#a1a1aa",
               "backgroundColor": "rgba(161,161,170,0.06)"
@@ -395,7 +395,7 @@ window.ISSUE02_GRAPHS = [
                 891.0,
                 848.0,
                 331.0,
-                171.0
+                167.0
               ],
               "borderColor": "#fbbf24",
               "backgroundColor": "rgba(251,191,36,0.14)"
@@ -644,7 +644,7 @@ window.ISSUE02_GRAPHS = [
                 1.32,
                 1.24,
                 0.48,
-                0.25
+                0.24
               ],
               "borderColor": "#fbbf24",
               "backgroundColor": "rgba(251,191,36,0.14)"
@@ -863,6 +863,60 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
+        "headline": "Adding EUSS Pre-Settled Status (1.45M net excl. upgrades to Settled) brings combined temporary leave to 5.72M (8.24% of UK population), alongside 4.51M permanent EUSS Settled grants.",
+        "footnote": "*Combines end-2025 Migrant Journey Valid Leave stock (4.28M) with net remaining Home Office EUSS Pre-Settled Status as at Sep 2026 (2.90M cumulative Pre-Settled grants minus 1.46M repeat applicants later granted Settled Status in EUSS_RA_04). Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a> | <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office EU Settlement Scheme Quarterly Statistics (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop\" target=\"_blank\" rel=\"noopener\">ONS UK Population Mid-Year Estimates (UKPOP)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Complete Temporary Leave Picture: Active 'On Visa' Stock vs EUSS Pre-Settled Status (000s & % of UK Pop)",
+          "labels": [
+            "Active 'On Visa' Stock (End-2025)",
+            "EUSS Pre-Settled (Net excl. Upgrades)",
+            "Combined Temporary Leave",
+            "EUSS Settled Status (Permanent Ref.)"
+          ],
+          "y_title": "People (000s)",
+          "y1_title": "% of UK Population",
+          "y1_suffix": "%",
+          "datasets": [
+            {
+              "label": "People (000s)",
+              "data": [
+                4278.2,
+                1445.0,
+                5723.2,
+                4508.1
+              ],
+              "backgroundColor": [
+                "#38bdf8",
+                "#a855f7",
+                "#fbbf24",
+                "#64748b"
+              ],
+              "yAxisID": "y"
+            },
+            {
+              "label": "% of UK Population",
+              "type": "line",
+              "data": [
+                6.16,
+                2.08,
+                8.24,
+                6.49
+              ],
+              "borderColor": "#fbbf24",
+              "backgroundColor": "#fbbf24",
+              "pointRadius": 5,
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "End-2025 Migrant Journey Valid Leave stock (4.28M) alongside net remaining EUSS Pre-Settled Status (cumulative Pre-Settled grants minus repeat applicants later granted Settled Status in EUSS_RA_04) and cumulative EUSS Settled grants.",
+          "scope": "UK-wide (Home Office Migrant Journey 2025 & EUSS Sep 2026).",
+          "nuance": "Pre-Settled counts exclude individuals who subsequently upgraded to Settled Status; physical presence is not guaranteed if an individual departed the UK."
+        }
+      },
+      {
         "headline": "Post-2021 net migration was driven overwhelmingly by non-EU+ arrivals (net = inflows minus departures) as EU+ net migration turned negative.",
         "footnote": "*Net migration = Inflows minus Outflows (incl. expiring visas & departing students/workers). Non-EU+ outflows tripled from 88k (2021) to 278k (2025). Source: <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional\" target=\"_blank\" rel=\"noopener\">ONS Long-Term International Migration</a>",
         "chart": {
@@ -1016,7 +1070,7 @@ window.ISSUE02_GRAPHS = [
                 981.0,
                 1005.0,
                 511.0,
-                350.0
+                341.0
               ],
               "backgroundColor": "#38bdf8"
             },
@@ -1036,7 +1090,7 @@ window.ISSUE02_GRAPHS = [
                 -9.0,
                 -53.0,
                 -63.0,
-                -42.0
+                -38.0
               ],
               "backgroundColor": "#a855f7"
             },
@@ -3196,8 +3250,8 @@ window.ISSUE02_GRAPHS = [
                 10.1,
                 14.8,
                 26.8,
-                35.0,
-                39.7
+                35.1,
+                40.0
               ],
               "borderColor": "#10b981",
               "backgroundColor": "rgba(16,185,129,0.12)"
@@ -4429,7 +4483,7 @@ window.ISSUE02_GRAPHS = [
                 891.0,
                 848.0,
                 331.0,
-                171.0
+                167.0
               ],
               "borderColor": "#fbbf24",
               "borderDash": [
@@ -4718,7 +4772,7 @@ window.ISSUE02_GRAPHS = [
                 891.0,
                 848.0,
                 331.0,
-                171.0
+                167.0
               ],
               "borderColor": "#fbbf24",
               "borderDash": [
@@ -4971,7 +5025,7 @@ window.ISSUE02_GRAPHS = [
                 2.82,
                 2.66,
                 1.03,
-                0.53
+                0.51
               ],
               "borderColor": "#fbbf24",
               "backgroundColor": "rgba(251,191,36,0.12)"
@@ -5095,7 +5149,7 @@ window.ISSUE02_GRAPHS = [
                 0.46,
                 0.64,
                 0.23,
-                0.1
+                0.07
               ],
               "borderColor": "#38bdf8",
               "backgroundColor": "rgba(56,189,248,0.12)"
@@ -5610,6 +5664,86 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
+        "headline": "Against the overall UK PAYE RTI interquartile band (2014: £894–£2,605 → 2025: £1,507–£3,814), EU and Non-EU medians sit squarely in the upper-middle of UK pay.",
+        "footnote": "*Shaded vertical bars show the overall UK-wide PAYE RTI P25–P75 monthly pay band (ONS Seasonally Adjusted Table 5, Nov 2026) in 2014 vs 2025; yellow dots show HMRC UK, EU, and Non-EU group medians. Source: <a href=\"https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/realtimeinformationstatisticsreferencetableseasonallyadjusted\" target=\"_blank\" rel=\"noopener\">ONS / HMRC PAYE RTI Seasonally Adjusted Pay Distribution (Nov 2026)</a> | <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "2014 vs 2025 UK-Wide Pay Distribution (P25–P75 Band) vs UK, EU & Non-EU Medians (£/month)",
+          "labels": [
+            "UK (2014)",
+            "EU (2014)",
+            "Non-EU (2014)",
+            "UK (2025)",
+            "EU (2025)",
+            "Non-EU (2025)"
+          ],
+          "y_title": "Monthly Pay (£)",
+          "datasets": [
+            {
+              "label": "Group Median Monthly Pay (£/mo)",
+              "type": "line",
+              "showLine": false,
+              "data": [
+                1621,
+                1463,
+                1623,
+                2512,
+                2622,
+                2557
+              ],
+              "borderColor": "#ffffff",
+              "backgroundColor": "#fbbf24",
+              "pointRadius": 7,
+              "pointHoverRadius": 9
+            },
+            {
+              "label": "Overall UK PAYE RTI P25–P75 Band (£/mo)",
+              "data": [
+                [
+                  894,
+                  2605
+                ],
+                [
+                  894,
+                  2605
+                ],
+                [
+                  894,
+                  2605
+                ],
+                [
+                  1507,
+                  3814
+                ],
+                [
+                  1507,
+                  3814
+                ],
+                [
+                  1507,
+                  3814
+                ]
+              ],
+              "backgroundColor": [
+                "rgba(148,163,184,0.32)",
+                "rgba(148,163,184,0.32)",
+                "rgba(148,163,184,0.32)",
+                "rgba(56,189,248,0.28)",
+                "rgba(56,189,248,0.28)",
+                "rgba(56,189,248,0.28)"
+              ],
+              "barThickness": 14,
+              "borderRadius": 4
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Floating bars show the overall UK-wide PAYE RTI P25–P75 monthly pay band (ONS Seasonally Adjusted Table 5) in 2014 vs 2025; yellow dots show HMRC UK, EU, and Non-EU group medians.",
+          "scope": "UK-wide payrolled employees (2014 vs 2025).",
+          "nuance": "Provides the true UK-wide interquartile reference band because HMRC open nationality tables do not publish within-group P25/P75 percentiles."
+        }
+      },
+      {
         "headline": "Wide spread across individual nationalities (Dec 2025): most top non-UK payrolled nationalities exceed the £2,576 UK median, while a few lower-wage groups sit below.",
         "footnote": "*HMRC PAYE RTI median monthly pay (£) in Dec 2025 across the 15 largest non-UK payrolled nationalities. Dashed yellow line = UK nationals median (£2,576). Green >= UK median, Amber < UK median. Source: <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
         "chart": {
@@ -5685,6 +5819,126 @@ window.ISSUE02_GRAPHS = [
           "metric": "Latest monthly median pay (£) for the 15 largest non-UK payrolled nationalities compared with the UK nationals median.",
           "scope": "UK-wide payrolled employees, latest month (Dec 2025).",
           "nuance": "Shows cross-nationality spread; within-nationality income percentiles are not published in HMRC open tables."
+        }
+      },
+      {
+        "headline": "Are migrants replacing UK workers? Across all sectors in 2025, UK nationals hold 80.2% of payrolled jobs vs 19.8% Non-UK — concentrated in Admin/Support (33.0%), Hospitality (30.4%), and Health &amp; Social Work (25.6%).",
+        "footnote": "*2025 annual mean of HMRC PAYE RTI monthly payrolled employments by SIC 2007 sector (UK vs EU vs Non-EU, % share). Ordered descending by combined Non-UK share. Source: <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "y_min": 0,
+          "y_max": 100,
+          "title": "Are Migrants Replacing UK Workers? Payrolled Employment Share by Industry (UK vs EU vs Non-EU, 2025 %)",
+          "labels": [
+            "Administrative and support services",
+            "Accommodation and food service activ...",
+            "Health and social work",
+            "Transportation and storage",
+            "Information and communication",
+            "Agriculture, Forestry and Fishing",
+            "All Sectors",
+            "Manufacturing",
+            "Other service activities",
+            "Professional, scientific and technical",
+            "Finance and insurance",
+            "Wholesale and retail; repair of moto...",
+            "Real estate",
+            "Construction",
+            "Education",
+            "Water supply, sewerage and waste",
+            "Energy production and supply",
+            "Mining and Quarrying",
+            "Arts, entertainment and recreation",
+            "Public administration and defence; s..."
+          ],
+          "y_title": "Share of Industry Payrolled Jobs (%)",
+          "datasets": [
+            {
+              "label": "UK Nationals (%)",
+              "data": [
+                67.0,
+                69.6,
+                74.4,
+                76.7,
+                78.0,
+                79.5,
+                80.2,
+                81.0,
+                81.0,
+                81.7,
+                83.1,
+                83.2,
+                87.0,
+                88.0,
+                88.1,
+                89.4,
+                89.5,
+                90.3,
+                90.6,
+                93.8
+              ],
+              "backgroundColor": "#64748b"
+            },
+            {
+              "label": "EU Nationals (%)",
+              "data": [
+                11.7,
+                10.3,
+                4.7,
+                11.8,
+                7.5,
+                11.4,
+                7.1,
+                11.3,
+                5.5,
+                7.0,
+                6.3,
+                6.5,
+                4.9,
+                6.8,
+                4.5,
+                6.5,
+                3.7,
+                4.2,
+                4.3,
+                2.2
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Non-EU Nationals (%)",
+              "data": [
+                21.2,
+                20.1,
+                20.9,
+                11.5,
+                14.5,
+                9.1,
+                12.7,
+                7.7,
+                13.5,
+                11.3,
+                10.7,
+                10.3,
+                8.1,
+                5.2,
+                7.4,
+                4.1,
+                6.8,
+                5.5,
+                5.1,
+                4.1
+              ],
+              "backgroundColor": "#10b981"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "2025 annual mean share (%) of UK payrolled employments held by UK, EU, and Non-EU nationals across SIC 2007 industries.",
+          "scope": "UK-wide payrolled employments, 2025 (HMRC PAYE RTI).",
+          "nuance": "Shows whether non-UK workers are replacing domestic labour broadly or concentrating in specific shortage/service sectors."
         }
       }
     ]
@@ -6022,7 +6276,7 @@ window.ISSUE02_GRAPHS = [
                 314.9,
                 291.5,
                 234.5,
-                246.6
+                247.3
               ],
               "backgroundColor": "#818cf8"
             },
@@ -6036,7 +6290,7 @@ window.ISSUE02_GRAPHS = [
                 109.6,
                 105.1,
                 105.6,
-                111.8
+                111.9
               ],
               "backgroundColor": "#38bdf8"
             },
@@ -6050,7 +6304,7 @@ window.ISSUE02_GRAPHS = [
                 23.5,
                 22.5,
                 20.4,
-                18.7
+                19.1
               ],
               "backgroundColor": "#10b981"
             },
@@ -6064,7 +6318,7 @@ window.ISSUE02_GRAPHS = [
                 19.5,
                 20.1,
                 18.1,
-                17.8
+                14.9
               ],
               "backgroundColor": "#a1a1aa"
             }
@@ -7977,7 +8231,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 16.18,
-                  "y": 3.75,
+                  "y": 3.82,
                   "label": "Leicester"
                 },
                 {
@@ -8012,7 +8266,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 23.98,
-                  "y": 6.64,
+                  "y": 6.81,
                   "label": "Bristol, City of"
                 },
                 {
@@ -8172,7 +8426,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 9.79,
-                  "y": 6.59,
+                  "y": 6.67,
                   "label": "Dorset"
                 },
                 {
@@ -8192,12 +8446,12 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 4.85,
-                  "y": 2.23,
+                  "y": 2.21,
                   "label": "Cambridge"
                 },
                 {
                   "x": 6.47,
-                  "y": 2.64,
+                  "y": 2.65,
                   "label": "East Cambridgeshire"
                 },
                 {
@@ -8212,7 +8466,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 11.6,
-                  "y": 5.63,
+                  "y": 5.57,
                   "label": "South Cambridgeshire"
                 },
                 {
@@ -8632,7 +8886,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 4.59,
-                  "y": 2.33,
+                  "y": 2.17,
                   "label": "Hinckley and Bosworth"
                 },
                 {
@@ -8857,7 +9111,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 7.92,
-                  "y": 2.14,
+                  "y": 2.12,
                   "label": "Reigate and Banstead"
                 },
                 {
@@ -8882,7 +9136,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 8.34,
-                  "y": 3.07,
+                  "y": 3.01,
                   "label": "Waverley"
                 },
                 {
@@ -8957,7 +9211,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 4.41,
-                  "y": 1.55,
+                  "y": 1.54,
                   "label": "Malvern Hills"
                 },
                 {
@@ -9077,7 +9331,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 7.89,
-                  "y": 3.05,
+                  "y": 3.06,
                   "label": "Sefton"
                 },
                 {
@@ -9354,7 +9608,7 @@ window.ISSUE02_GRAPHS = [
                 },
                 {
                   "x": 37.63,
-                  "y": 12.26
+                  "y": 12.27
                 }
               ],
               "borderColor": "#f97316",
@@ -10625,17 +10879,12 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
-        "headline": "British citizenship grants reached 236.2k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.",
+        "headline": "British citizenship grants reached 235.9k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.",
         "footnote": "*Home Office British Citizenship grants (Data_Cit_D02, 2005–2025) divided by ONS UKPOP mid-year population. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office British Citizenship Grants (Jun 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop\" target=\"_blank\" rel=\"noopener\">ONS UK Population Mid-Year Estimates (UKPOP)</a>",
         "chart": {
           "type": "bar",
           "title": "Annual British Citizenship Grants (000s) & % of UK Population (2005–2025)",
           "labels": [
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
             "2010",
             "2011",
             "2012",
@@ -10774,27 +11023,22 @@ window.ISSUE02_GRAPHS = [
             {
               "label": "Citizenship Grants (000s)",
               "data": [
-                161.7,
-                154.0,
-                164.6,
-                129.4,
-                203.8,
-                195.1,
-                177.9,
-                194.4,
-                208.1,
-                125.8,
-                118.1,
-                149.4,
-                123.2,
+                193.3,
+                176.6,
+                193.2,
+                206.5,
+                124.0,
+                117.1,
+                147.1,
+                121.1,
+                155.1,
                 157.0,
-                159.4,
-                130.6,
-                189.8,
-                176.0,
-                206.6,
-                269.8,
-                236.2
+                130.5,
+                189.3,
+                175.2,
+                202.1,
+                267.5,
+                235.9
               ],
               "backgroundColor": "rgba(56,189,248,0.72)",
               "yAxisID": "y"
@@ -10803,25 +11047,20 @@ window.ISSUE02_GRAPHS = [
               "label": "% of UK Population",
               "type": "line",
               "data": [
-                0.27,
-                0.25,
-                0.27,
-                0.21,
-                0.33,
                 0.31,
                 0.28,
                 0.3,
                 0.32,
-                0.2,
+                0.19,
+                0.18,
+                0.22,
                 0.18,
                 0.23,
-                0.19,
-                0.24,
                 0.24,
                 0.2,
                 0.28,
                 0.26,
-                0.3,
+                0.29,
                 0.39,
                 0.34
               ],
@@ -10847,7 +11086,7 @@ window.ISSUE02_GRAPHS = [
     "question": "How do the top 20 asylum-dispersal councils compare with the rest of the UK on population growth, rents, and 2016 Leave vote share?",
     "charts": [
       {
-        "headline": "Top 20 high-asylum councils (avg 42.2 supported per 10k vs 9.5 elsewhere) saw slightly higher rent rises (29.0% vs 27.8%) and higher 2016 Leave votes (59.8% vs 53.9%), despite similar population growth.",
+        "headline": "Top 20 high-asylum councils (avg 42.0 supported per 10k vs 9.5 elsewhere) saw slightly higher rent rises (28.7% vs 27.8%) and higher 2016 Leave votes (59.7% vs 53.9%), despite similar population growth.",
         "footnote": "*Compares the Top 20 Local Authorities by supported asylum seekers per 10,000 residents (Home Office Data_Asy_D11) against all other matched UK councils (ONS Nomis, ONS PIPR, Electoral Commission). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum Support by Local Authority (Jun 2026)</a> | <a href=\"https://www.nomisweb.co.uk/datasets/pestsnew\" target=\"_blank\" rel=\"noopener\">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a> | <a href=\"https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics\" target=\"_blank\" rel=\"noopener\">ONS Price Index of Private Rents (PIPR & IPHRP)</a> | <a href=\"https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum\" target=\"_blank\" rel=\"noopener\">Electoral Commission 2016 EU Referendum Results by LA</a>",
         "chart": {
           "type": "bar",
@@ -10862,9 +11101,9 @@ window.ISSUE02_GRAPHS = [
             {
               "label": "Top 20 High-Asylum Councils",
               "data": [
-                5.33,
-                28.97,
-                59.8
+                5.35,
+                28.73,
+                59.7
               ],
               "backgroundColor": "#ef4444"
             },
@@ -10872,7 +11111,7 @@ window.ISSUE02_GRAPHS = [
               "label": "Rest of UK Councils",
               "data": [
                 3.8,
-                27.77,
+                27.79,
                 53.9
               ],
               "backgroundColor": "#38bdf8"
@@ -12442,7 +12681,7 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
-        "headline": "Perspective vs Exposure (2): 2016 Leave vote % shows r = 0.15 (R² = 0.02) against local asylum dispersal per 10k residents.",
+        "headline": "Perspective vs Exposure (2): 2016 Leave vote % shows r = 0.18 (R² = 0.03) against local asylum dispersal per 10k residents.",
         "footnote": "*Electoral Commission 2016 Leave % vs latest Home Office supported asylum seekers per 10,000 residents (Data_Asy_D11). Source: <a href=\"https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum\" target=\"_blank\" rel=\"noopener\">Electoral Commission 2016 EU Referendum Results by LA</a> | <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum Support by Local Authority (Jun 2026)</a>",
         "chart": {
           "type": "scatter",
@@ -12454,107 +12693,107 @@ window.ISSUE02_GRAPHS = [
               "label": "Matched Councils",
               "data": [
                 {
-                  "x": 38.0,
+                  "x": 40.7,
                   "y": 69.6,
                   "label": "Hartlepool"
                 },
                 {
-                  "x": 43.9,
+                  "x": 45.8,
                   "y": 65.5,
                   "label": "Middlesbrough"
                 },
                 {
-                  "x": 17.4,
+                  "x": 17.6,
                   "y": 66.2,
                   "label": "Redcar and Cleveland"
                 },
                 {
-                  "x": 39.7,
+                  "x": 39.9,
                   "y": 61.7,
                   "label": "Stockton-on-Tees"
                 },
                 {
-                  "x": 18.9,
+                  "x": 19.1,
                   "y": 56.2,
                   "label": "Darlington"
                 },
                 {
-                  "x": 45.8,
+                  "x": 46.2,
                   "y": 57.4,
                   "label": "Halton"
                 },
                 {
-                  "x": 18.4,
+                  "x": 18.9,
                   "y": 54.3,
                   "label": "Warrington"
                 },
                 {
-                  "x": 46.4,
+                  "x": 46.8,
                   "y": 56.3,
                   "label": "Blackburn with Darwen"
                 },
                 {
-                  "x": 16.4,
+                  "x": 16.5,
                   "y": 67.5,
                   "label": "Blackpool"
                 },
                 {
-                  "x": 19.1,
+                  "x": 15.1,
                   "y": 67.6,
                   "label": "Kingston upon Hull, City of"
                 },
                 {
-                  "x": 1.5,
+                  "x": 2.2,
                   "y": 60.4,
                   "label": "East Riding of Yorkshire"
                 },
                 {
-                  "x": 16.7,
+                  "x": 15.9,
                   "y": 69.9,
                   "label": "North East Lincolnshire"
                 },
                 {
-                  "x": 5.1,
+                  "x": 5.0,
                   "y": 66.3,
                   "label": "North Lincolnshire"
                 },
                 {
-                  "x": 17.5,
+                  "x": 19.0,
                   "y": 42.0,
                   "label": "York"
                 },
                 {
-                  "x": 40.9,
+                  "x": 41.0,
                   "y": 57.2,
                   "label": "Derby"
                 },
                 {
-                  "x": 34.8,
+                  "x": 35.0,
                   "y": 48.9,
                   "label": "Leicester"
                 },
                 {
-                  "x": 1.9,
+                  "x": 1.7,
                   "y": 50.6,
                   "label": "Rutland"
                 },
                 {
-                  "x": 41.5,
+                  "x": 40.8,
                   "y": 50.8,
                   "label": "Nottingham"
                 },
                 {
-                  "x": 1.3,
+                  "x": 2.2,
                   "y": 59.2,
                   "label": "Herefordshire, County of"
                 },
                 {
-                  "x": 28.2,
+                  "x": 26.2,
                   "y": 63.2,
                   "label": "Telford and Wrekin"
                 },
                 {
-                  "x": 37.5,
+                  "x": 37.8,
                   "y": 69.4,
                   "label": "Stoke-on-Trent"
                 },
@@ -12564,57 +12803,57 @@ window.ISSUE02_GRAPHS = [
                   "label": "Bath and North East Somerset"
                 },
                 {
-                  "x": 13.9,
+                  "x": 10.2,
                   "y": 38.3,
                   "label": "Bristol, City of"
                 },
                 {
-                  "x": 3.6,
+                  "x": 3.9,
                   "y": 52.2,
                   "label": "North Somerset"
                 },
                 {
-                  "x": 4.9,
+                  "x": 6.3,
                   "y": 52.7,
                   "label": "South Gloucestershire"
                 },
                 {
-                  "x": 18.1,
+                  "x": 18.5,
                   "y": 59.9,
                   "label": "Plymouth"
                 },
                 {
-                  "x": 2.2,
+                  "x": 3.9,
                   "y": 63.2,
                   "label": "Torbay"
                 },
                 {
-                  "x": 20.8,
+                  "x": 20.6,
                   "y": 54.7,
                   "label": "Swindon"
                 },
                 {
-                  "x": 19.9,
+                  "x": 19.1,
                   "y": 60.9,
                   "label": "Peterborough"
                 },
                 {
-                  "x": 15.9,
+                  "x": 13.3,
                   "y": 56.5,
                   "label": "Luton"
                 },
                 {
-                  "x": 14.2,
+                  "x": 14.7,
                   "y": 58.1,
                   "label": "Southend-on-Sea"
                 },
                 {
-                  "x": 8.5,
+                  "x": 8.4,
                   "y": 72.3,
                   "label": "Thurrock"
                 },
                 {
-                  "x": 11.8,
+                  "x": 12.7,
                   "y": 64.1,
                   "label": "Medway"
                 },
@@ -12624,47 +12863,47 @@ window.ISSUE02_GRAPHS = [
                   "label": "Bracknell Forest"
                 },
                 {
-                  "x": 2.6,
+                  "x": 3.3,
                   "y": 48.2,
                   "label": "West Berkshire"
                 },
                 {
-                  "x": 28.5,
+                  "x": 27.4,
                   "y": 42.0,
                   "label": "Reading"
                 },
                 {
-                  "x": 19.0,
+                  "x": 19.1,
                   "y": 54.3,
                   "label": "Slough"
                 },
                 {
-                  "x": 23.0,
+                  "x": 23.1,
                   "y": 46.1,
                   "label": "Windsor and Maidenhead"
                 },
                 {
-                  "x": 6.6,
+                  "x": 5.8,
                   "y": 43.3,
                   "label": "Wokingham"
                 },
                 {
-                  "x": 14.3,
+                  "x": 15.8,
                   "y": 51.4,
                   "label": "Milton Keynes"
                 },
                 {
-                  "x": 6.6,
+                  "x": 4.7,
                   "y": 31.4,
                   "label": "Brighton and Hove"
                 },
                 {
-                  "x": 31.2,
+                  "x": 27.9,
                   "y": 58.1,
                   "label": "Portsmouth"
                 },
                 {
-                  "x": 12.2,
+                  "x": 13.2,
                   "y": 53.8,
                   "label": "Southampton"
                 },
@@ -12674,22 +12913,22 @@ window.ISSUE02_GRAPHS = [
                   "label": "Isle of Wight"
                 },
                 {
-                  "x": 11.8,
+                  "x": 11.6,
                   "y": 57.5,
                   "label": "County Durham"
                 },
                 {
-                  "x": 8.4,
+                  "x": 9.3,
                   "y": 51.2,
                   "label": "Cheshire East"
                 },
                 {
-                  "x": 17.5,
+                  "x": 17.7,
                   "y": 50.7,
                   "label": "Cheshire West and Chester"
                 },
                 {
-                  "x": 3.3,
+                  "x": 4.7,
                   "y": 56.9,
                   "label": "Shropshire"
                 },
@@ -12699,32 +12938,32 @@ window.ISSUE02_GRAPHS = [
                   "label": "Cornwall"
                 },
                 {
-                  "x": 3.7,
+                  "x": 4.4,
                   "y": 52.5,
                   "label": "Wiltshire"
                 },
                 {
-                  "x": 7.1,
+                  "x": 6.9,
                   "y": 51.8,
                   "label": "Bedford"
                 },
                 {
-                  "x": 2.3,
+                  "x": 1.6,
                   "y": 56.1,
                   "label": "Central Bedfordshire"
                 },
                 {
-                  "x": 20.3,
+                  "x": 20.7,
                   "y": 54.1,
                   "label": "Northumberland"
                 },
                 {
-                  "x": 0.9,
+                  "x": 1.0,
                   "y": 26.1,
                   "label": "Cambridge"
                 },
                 {
-                  "x": 2.1,
+                  "x": 2.2,
                   "y": 50.9,
                   "label": "East Cambridgeshire"
                 },
@@ -12734,7 +12973,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Fenland"
                 },
                 {
-                  "x": 1.2,
+                  "x": 2.1,
                   "y": 54.2,
                   "label": "Huntingdonshire"
                 },
@@ -12744,52 +12983,52 @@ window.ISSUE02_GRAPHS = [
                   "label": "South Cambridgeshire"
                 },
                 {
-                  "x": 9.4,
+                  "x": 13.6,
                   "y": 60.3,
                   "label": "Amber Valley"
                 },
                 {
-                  "x": 16.4,
+                  "x": 16.5,
                   "y": 70.8,
                   "label": "Bolsover"
                 },
                 {
-                  "x": 4.6,
+                  "x": 6.8,
                   "y": 60.0,
                   "label": "Chesterfield"
                 },
                 {
-                  "x": 0.0,
+                  "x": 0.8,
                   "y": 51.6,
                   "label": "Derbyshire Dales"
                 },
                 {
-                  "x": 7.9,
+                  "x": 9.3,
                   "y": 61.2,
                   "label": "Erewash"
                 },
                 {
-                  "x": 1.0,
+                  "x": 2.0,
                   "y": 50.5,
                   "label": "High Peak"
                 },
                 {
-                  "x": 5.6,
+                  "x": 6.2,
                   "y": 62.8,
                   "label": "North East Derbyshire"
                 },
                 {
-                  "x": 3.0,
+                  "x": 4.3,
                   "y": 60.4,
                   "label": "South Derbyshire"
                 },
                 {
-                  "x": 7.8,
+                  "x": 6.3,
                   "y": 54.1,
                   "label": "East Devon"
                 },
                 {
-                  "x": 1.9,
+                  "x": 2.3,
                   "y": 44.7,
                   "label": "Exeter"
                 },
@@ -12799,17 +13038,17 @@ window.ISSUE02_GRAPHS = [
                   "label": "Mid Devon"
                 },
                 {
-                  "x": 0.6,
+                  "x": 1.1,
                   "y": 57.0,
                   "label": "North Devon"
                 },
                 {
-                  "x": 1.9,
+                  "x": 2.0,
                   "y": 47.1,
                   "label": "South Hams"
                 },
                 {
-                  "x": 3.0,
+                  "x": 3.5,
                   "y": 53.9,
                   "label": "Teignbridge"
                 },
@@ -12824,67 +13063,67 @@ window.ISSUE02_GRAPHS = [
                   "label": "West Devon"
                 },
                 {
-                  "x": 3.9,
+                  "x": 3.8,
                   "y": 57.3,
                   "label": "Eastbourne"
                 },
                 {
-                  "x": 10.9,
+                  "x": 11.2,
                   "y": 54.9,
                   "label": "Hastings"
                 },
                 {
-                  "x": 0.0,
+                  "x": 0.6,
                   "y": 47.9,
                   "label": "Lewes"
                 },
                 {
-                  "x": 0.6,
+                  "x": 0.1,
                   "y": 58.5,
                   "label": "Rother"
                 },
                 {
-                  "x": 24.9,
+                  "x": 27.8,
                   "y": 54.5,
                   "label": "Wealden"
                 },
                 {
-                  "x": 18.2,
+                  "x": 19.1,
                   "y": 68.6,
                   "label": "Basildon"
                 },
                 {
-                  "x": 47.5,
+                  "x": 47.1,
                   "y": 61.1,
                   "label": "Braintree"
                 },
                 {
-                  "x": 2.8,
+                  "x": 1.6,
                   "y": 59.1,
                   "label": "Brentwood"
                 },
                 {
-                  "x": 2.8,
+                  "x": 3.2,
                   "y": 72.7,
                   "label": "Castle Point"
                 },
                 {
-                  "x": 7.5,
+                  "x": 5.9,
                   "y": 52.8,
                   "label": "Chelmsford"
                 },
                 {
-                  "x": 15.0,
+                  "x": 16.0,
                   "y": 53.6,
                   "label": "Colchester"
                 },
                 {
-                  "x": 5.8,
+                  "x": 2.4,
                   "y": 62.7,
                   "label": "Epping Forest"
                 },
                 {
-                  "x": 5.7,
+                  "x": 5.5,
                   "y": 68.1,
                   "label": "Harlow"
                 },
@@ -12894,22 +13133,22 @@ window.ISSUE02_GRAPHS = [
                   "label": "Maldon"
                 },
                 {
-                  "x": 15.5,
+                  "x": 12.7,
                   "y": 66.6,
                   "label": "Rochford"
                 },
                 {
-                  "x": 13.4,
+                  "x": 13.7,
                   "y": 69.5,
                   "label": "Tendring"
                 },
                 {
-                  "x": 2.2,
+                  "x": 4.7,
                   "y": 50.7,
                   "label": "Uttlesford"
                 },
                 {
-                  "x": 11.8,
+                  "x": 14.5,
                   "y": 43.8,
                   "label": "Cheltenham"
                 },
@@ -12919,17 +13158,17 @@ window.ISSUE02_GRAPHS = [
                   "label": "Cotswold"
                 },
                 {
-                  "x": 0.7,
+                  "x": 1.2,
                   "y": 58.6,
                   "label": "Forest of Dean"
                 },
                 {
-                  "x": 20.9,
+                  "x": 20.4,
                   "y": 58.5,
                   "label": "Gloucester"
                 },
                 {
-                  "x": 1.0,
+                  "x": 0.6,
                   "y": 45.4,
                   "label": "Stroud"
                 },
@@ -12939,7 +13178,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Tewkesbury"
                 },
                 {
-                  "x": 1.0,
+                  "x": 1.4,
                   "y": 51.9,
                   "label": "Basingstoke and Deane"
                 },
@@ -12954,12 +13193,12 @@ window.ISSUE02_GRAPHS = [
                   "label": "Eastleigh"
                 },
                 {
-                  "x": 2.1,
+                  "x": 2.2,
                   "y": 55.1,
                   "label": "Fareham"
                 },
                 {
-                  "x": 2.8,
+                  "x": 3.0,
                   "y": 63.9,
                   "label": "Gosport"
                 },
@@ -12969,7 +13208,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Hart"
                 },
                 {
-                  "x": 1.2,
+                  "x": 0.7,
                   "y": 62.4,
                   "label": "Havant"
                 },
@@ -12979,7 +13218,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "New Forest"
                 },
                 {
-                  "x": 7.2,
+                  "x": 2.7,
                   "y": 58.2,
                   "label": "Rushmoor"
                 },
@@ -12989,32 +13228,32 @@ window.ISSUE02_GRAPHS = [
                   "label": "Test Valley"
                 },
                 {
-                  "x": 4.9,
+                  "x": 5.5,
                   "y": 41.1,
                   "label": "Winchester"
                 },
                 {
-                  "x": 4.2,
+                  "x": 4.0,
                   "y": 66.3,
                   "label": "Broxbourne"
                 },
                 {
-                  "x": 16.9,
+                  "x": 12.4,
                   "y": 50.7,
                   "label": "Dacorum"
                 },
                 {
-                  "x": 5.3,
+                  "x": 6.3,
                   "y": 50.8,
                   "label": "Hertsmere"
                 },
                 {
-                  "x": 0.6,
+                  "x": 0.3,
                   "y": 45.6,
                   "label": "North Hertfordshire"
                 },
                 {
-                  "x": 0.5,
+                  "x": 2.1,
                   "y": 51.3,
                   "label": "Three Rivers"
                 },
@@ -13024,12 +13263,12 @@ window.ISSUE02_GRAPHS = [
                   "label": "Watford"
                 },
                 {
-                  "x": 2.7,
+                  "x": 2.5,
                   "y": 59.4,
                   "label": "Ashford"
                 },
                 {
-                  "x": 12.6,
+                  "x": 13.2,
                   "y": 51.0,
                   "label": "Canterbury"
                 },
@@ -13039,142 +13278,142 @@ window.ISSUE02_GRAPHS = [
                   "label": "Dartford"
                 },
                 {
-                  "x": 6.9,
+                  "x": 7.5,
                   "y": 62.1,
                   "label": "Dover"
                 },
                 {
-                  "x": 6.4,
+                  "x": 7.2,
                   "y": 65.4,
                   "label": "Gravesham"
                 },
                 {
-                  "x": 2.4,
+                  "x": 2.5,
                   "y": 58.8,
                   "label": "Maidstone"
                 },
                 {
-                  "x": 0.3,
+                  "x": 0.6,
                   "y": 54.4,
                   "label": "Sevenoaks"
                 },
                 {
-                  "x": 4.0,
+                  "x": 3.7,
                   "y": 62.2,
                   "label": "Folkestone and Hythe"
                 },
                 {
-                  "x": 4.8,
+                  "x": 4.4,
                   "y": 62.5,
                   "label": "Swale"
                 },
                 {
-                  "x": 6.5,
+                  "x": 5.2,
                   "y": 63.9,
                   "label": "Thanet"
                 },
                 {
-                  "x": 0.7,
+                  "x": 1.2,
                   "y": 55.7,
                   "label": "Tonbridge and Malling"
                 },
                 {
-                  "x": 0.1,
+                  "x": 0.0,
                   "y": 45.1,
                   "label": "Tunbridge Wells"
                 },
                 {
-                  "x": 46.7,
+                  "x": 45.7,
                   "y": 66.6,
                   "label": "Burnley"
                 },
                 {
-                  "x": 19.6,
+                  "x": 19.9,
                   "y": 56.8,
                   "label": "Chorley"
                 },
                 {
-                  "x": 10.2,
+                  "x": 11.1,
                   "y": 57.0,
                   "label": "Fylde"
                 },
                 {
-                  "x": 49.0,
+                  "x": 48.8,
                   "y": 66.2,
                   "label": "Hyndburn"
                 },
                 {
-                  "x": 16.4,
+                  "x": 17.3,
                   "y": 51.1,
                   "label": "Lancaster"
                 },
                 {
-                  "x": 44.0,
+                  "x": 45.0,
                   "y": 63.1,
                   "label": "Pendle"
                 },
                 {
-                  "x": 24.7,
+                  "x": 24.9,
                   "y": 53.3,
                   "label": "Preston"
                 },
                 {
-                  "x": 3.6,
+                  "x": 4.8,
                   "y": 56.4,
                   "label": "Ribble Valley"
                 },
                 {
-                  "x": 32.3,
+                  "x": 30.7,
                   "y": 60.7,
                   "label": "Rossendale"
                 },
                 {
-                  "x": 32.8,
+                  "x": 28.3,
                   "y": 58.6,
                   "label": "South Ribble"
                 },
                 {
-                  "x": 34.0,
+                  "x": 32.6,
                   "y": 55.3,
                   "label": "West Lancashire"
                 },
                 {
-                  "x": 29.9,
+                  "x": 31.4,
                   "y": 63.8,
                   "label": "Wyre"
                 },
                 {
-                  "x": 3.1,
+                  "x": 3.7,
                   "y": 59.5,
                   "label": "Blaby"
                 },
                 {
-                  "x": 5.4,
+                  "x": 6.5,
                   "y": 53.8,
                   "label": "Charnwood"
                 },
                 {
-                  "x": 0.1,
+                  "x": 1.0,
                   "y": 50.8,
                   "label": "Harborough"
                 },
                 {
-                  "x": 12.1,
+                  "x": 13.8,
                   "y": 60.3,
                   "label": "Hinckley and Bosworth"
                 },
                 {
-                  "x": 2.9,
+                  "x": 6.8,
                   "y": 58.1,
                   "label": "Melton"
                 },
                 {
-                  "x": 8.9,
+                  "x": 9.1,
                   "y": 60.7,
                   "label": "North West Leicestershire"
                 },
                 {
-                  "x": 5.2,
+                  "x": 6.7,
                   "y": 54.6,
                   "label": "Oadby and Wigston"
                 },
@@ -13184,72 +13423,72 @@ window.ISSUE02_GRAPHS = [
                   "label": "Boston"
                 },
                 {
-                  "x": 7.5,
+                  "x": 9.1,
                   "y": 70.7,
                   "label": "East Lindsey"
                 },
                 {
-                  "x": 2.9,
+                  "x": 6.8,
                   "y": 56.9,
                   "label": "Lincoln"
                 },
                 {
-                  "x": 2.8,
+                  "x": 3.2,
                   "y": 62.3,
                   "label": "North Kesteven"
                 },
                 {
-                  "x": 7.5,
+                  "x": 10.6,
                   "y": 73.6,
                   "label": "South Holland"
                 },
                 {
-                  "x": 19.1,
+                  "x": 19.5,
                   "y": 59.9,
                   "label": "South Kesteven"
                 },
                 {
-                  "x": 6.4,
+                  "x": 6.7,
                   "y": 61.8,
                   "label": "West Lindsey"
                 },
                 {
-                  "x": 3.8,
+                  "x": 3.5,
                   "y": 64.2,
                   "label": "Breckland"
                 },
                 {
-                  "x": 0.9,
+                  "x": 0.8,
                   "y": 54.4,
                   "label": "Broadland"
                 },
                 {
-                  "x": 1.2,
+                  "x": 1.5,
                   "y": 71.5,
                   "label": "Great Yarmouth"
                 },
                 {
-                  "x": 4.1,
+                  "x": 5.2,
                   "y": 66.4,
                   "label": "King's Lynn and West Norfolk"
                 },
                 {
-                  "x": 0.8,
+                  "x": 1.2,
                   "y": 58.9,
                   "label": "North Norfolk"
                 },
                 {
-                  "x": 14.5,
+                  "x": 14.7,
                   "y": 43.8,
                   "label": "Norwich"
                 },
                 {
-                  "x": 1.3,
+                  "x": 1.5,
                   "y": 51.7,
                   "label": "South Norfolk"
                 },
                 {
-                  "x": 14.2,
+                  "x": 19.3,
                   "y": 69.8,
                   "label": "Ashfield"
                 },
@@ -13259,37 +13498,37 @@ window.ISSUE02_GRAPHS = [
                   "label": "Bassetlaw"
                 },
                 {
-                  "x": 23.2,
+                  "x": 23.8,
                   "y": 54.6,
                   "label": "Broxtowe"
                 },
                 {
-                  "x": 10.0,
+                  "x": 12.1,
                   "y": 55.5,
                   "label": "Gedling"
                 },
                 {
-                  "x": 16.9,
+                  "x": 17.3,
                   "y": 70.9,
                   "label": "Mansfield"
                 },
                 {
-                  "x": 8.6,
+                  "x": 11.4,
                   "y": 60.4,
                   "label": "Newark and Sherwood"
                 },
                 {
-                  "x": 4.7,
+                  "x": 6.7,
                   "y": 42.5,
                   "label": "Rushcliffe"
                 },
                 {
-                  "x": 6.2,
+                  "x": 4.8,
                   "y": 50.3,
                   "label": "Cherwell"
                 },
                 {
-                  "x": 11.1,
+                  "x": 11.9,
                   "y": 29.7,
                   "label": "Oxford"
                 },
@@ -13299,22 +13538,22 @@ window.ISSUE02_GRAPHS = [
                   "label": "South Oxfordshire"
                 },
                 {
-                  "x": 5.6,
+                  "x": 5.7,
                   "y": 43.3,
                   "label": "Vale of White Horse"
                 },
                 {
-                  "x": 0.5,
+                  "x": 0.6,
                   "y": 46.3,
                   "label": "West Oxfordshire"
                 },
                 {
-                  "x": 2.8,
+                  "x": 3.7,
                   "y": 68.9,
                   "label": "Cannock Chase"
                 },
                 {
-                  "x": 11.3,
+                  "x": 13.5,
                   "y": 63.2,
                   "label": "East Staffordshire"
                 },
@@ -13324,27 +13563,27 @@ window.ISSUE02_GRAPHS = [
                   "label": "Lichfield"
                 },
                 {
-                  "x": 15.0,
+                  "x": 16.1,
                   "y": 63.0,
                   "label": "Newcastle-under-Lyme"
                 },
                 {
-                  "x": 1.9,
+                  "x": 1.1,
                   "y": 64.8,
                   "label": "South Staffordshire"
                 },
                 {
-                  "x": 5.3,
+                  "x": 8.5,
                   "y": 56.0,
                   "label": "Stafford"
                 },
                 {
-                  "x": 3.7,
+                  "x": 4.4,
                   "y": 64.7,
                   "label": "Staffordshire Moorlands"
                 },
                 {
-                  "x": 16.3,
+                  "x": 15.8,
                   "y": 67.5,
                   "label": "Tamworth"
                 },
@@ -13354,7 +13593,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Babergh"
                 },
                 {
-                  "x": 8.1,
+                  "x": 10.2,
                   "y": 58.3,
                   "label": "Ipswich"
                 },
@@ -13369,7 +13608,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Elmbridge"
                 },
                 {
-                  "x": 0.4,
+                  "x": 0.2,
                   "y": 47.9,
                   "label": "Epsom and Ewell"
                 },
@@ -13379,67 +13618,67 @@ window.ISSUE02_GRAPHS = [
                   "label": "Guildford"
                 },
                 {
-                  "x": 0.1,
+                  "x": 0.0,
                   "y": 46.9,
                   "label": "Mole Valley"
                 },
                 {
-                  "x": 15.6,
+                  "x": 13.6,
                   "y": 50.5,
                   "label": "Reigate and Banstead"
                 },
                 {
-                  "x": 3.0,
+                  "x": 5.4,
                   "y": 54.3,
                   "label": "Runnymede"
                 },
                 {
-                  "x": 6.5,
+                  "x": 7.7,
                   "y": 60.3,
                   "label": "Spelthorne"
                 },
                 {
-                  "x": 3.9,
+                  "x": 11.8,
                   "y": 51.0,
                   "label": "Surrey Heath"
                 },
                 {
-                  "x": 1.8,
+                  "x": 2.2,
                   "y": 52.8,
                   "label": "Tandridge"
                 },
                 {
-                  "x": 0.4,
+                  "x": 0.5,
                   "y": 41.6,
                   "label": "Waverley"
                 },
                 {
-                  "x": 0.7,
+                  "x": 1.0,
                   "y": 43.9,
                   "label": "Woking"
                 },
                 {
-                  "x": 9.9,
+                  "x": 10.6,
                   "y": 66.9,
                   "label": "North Warwickshire"
                 },
                 {
-                  "x": 22.1,
+                  "x": 21.9,
                   "y": 66.0,
                   "label": "Nuneaton and Bedworth"
                 },
                 {
-                  "x": 45.1,
+                  "x": 36.5,
                   "y": 56.7,
                   "label": "Rugby"
                 },
                 {
-                  "x": 4.2,
+                  "x": 0.2,
                   "y": 51.6,
                   "label": "Stratford-on-Avon"
                 },
                 {
-                  "x": 24.1,
+                  "x": 18.0,
                   "y": 41.2,
                   "label": "Warwick"
                 },
@@ -13449,32 +13688,32 @@ window.ISSUE02_GRAPHS = [
                   "label": "Adur"
                 },
                 {
-                  "x": 0.2,
+                  "x": 0.1,
                   "y": 62.5,
                   "label": "Arun"
                 },
                 {
-                  "x": 6.6,
+                  "x": 3.9,
                   "y": 50.9,
                   "label": "Chichester"
                 },
                 {
-                  "x": 24.2,
+                  "x": 16.8,
                   "y": 58.4,
                   "label": "Crawley"
                 },
                 {
-                  "x": 0.3,
+                  "x": 0.4,
                   "y": 48.5,
                   "label": "Horsham"
                 },
                 {
-                  "x": 19.9,
+                  "x": 13.1,
                   "y": 46.9,
                   "label": "Mid Sussex"
                 },
                 {
-                  "x": 1.7,
+                  "x": 1.5,
                   "y": 53.0,
                   "label": "Worthing"
                 },
@@ -13489,347 +13728,347 @@ window.ISSUE02_GRAPHS = [
                   "label": "Malvern Hills"
                 },
                 {
-                  "x": 1.5,
+                  "x": 2.2,
                   "y": 62.3,
                   "label": "Redditch"
                 },
                 {
-                  "x": 7.3,
+                  "x": 7.1,
                   "y": 53.7,
                   "label": "Worcester"
                 },
                 {
-                  "x": 3.0,
+                  "x": 3.1,
                   "y": 57.9,
                   "label": "Wychavon"
                 },
                 {
-                  "x": 5.4,
+                  "x": 8.7,
                   "y": 63.1,
                   "label": "Wyre Forest"
                 },
                 {
-                  "x": 1.6,
+                  "x": 1.5,
                   "y": 37.3,
                   "label": "St Albans"
                 },
                 {
-                  "x": 10.8,
+                  "x": 12.9,
                   "y": 53.0,
                   "label": "Welwyn Hatfield"
                 },
                 {
-                  "x": 0.1,
+                  "x": 0.3,
                   "y": 50.4,
                   "label": "East Hertfordshire"
                 },
                 {
-                  "x": 29.0,
+                  "x": 20.9,
                   "y": 59.2,
                   "label": "Stevenage"
                 },
                 {
-                  "x": 33.5,
+                  "x": 32.9,
                   "y": 58.3,
                   "label": "Bolton"
                 },
                 {
-                  "x": 18.5,
+                  "x": 18.8,
                   "y": 54.1,
                   "label": "Bury"
                 },
                 {
-                  "x": 25.6,
+                  "x": 29.1,
                   "y": 39.6,
                   "label": "Manchester"
                 },
                 {
-                  "x": 29.1,
+                  "x": 30.8,
                   "y": 60.9,
                   "label": "Oldham"
                 },
                 {
-                  "x": 30.6,
+                  "x": 31.9,
                   "y": 60.1,
                   "label": "Rochdale"
                 },
                 {
-                  "x": 22.1,
+                  "x": 23.1,
                   "y": 56.8,
                   "label": "Salford"
                 },
                 {
-                  "x": 21.8,
+                  "x": 16.8,
                   "y": 47.7,
                   "label": "Stockport"
                 },
                 {
-                  "x": 20.3,
+                  "x": 21.6,
                   "y": 61.1,
                   "label": "Tameside"
                 },
                 {
-                  "x": 6.8,
+                  "x": 8.5,
                   "y": 42.3,
                   "label": "Trafford"
                 },
                 {
-                  "x": 34.4,
+                  "x": 36.0,
                   "y": 63.9,
                   "label": "Wigan"
                 },
                 {
-                  "x": 18.9,
+                  "x": 18.0,
                   "y": 51.6,
                   "label": "Knowsley"
                 },
                 {
-                  "x": 38.6,
+                  "x": 40.8,
                   "y": 41.8,
                   "label": "Liverpool"
                 },
                 {
-                  "x": 29.5,
+                  "x": 30.2,
                   "y": 58.0,
                   "label": "St. Helens"
                 },
                 {
-                  "x": 14.3,
+                  "x": 15.4,
                   "y": 48.1,
                   "label": "Sefton"
                 },
                 {
-                  "x": 21.2,
+                  "x": 20.3,
                   "y": 48.3,
                   "label": "Wirral"
                 },
                 {
-                  "x": 16.7,
+                  "x": 14.4,
                   "y": 69.0,
                   "label": "Doncaster"
                 },
                 {
-                  "x": 13.9,
+                  "x": 13.5,
                   "y": 67.9,
                   "label": "Rotherham"
                 },
                 {
-                  "x": 28.5,
+                  "x": 27.0,
                   "y": 49.3,
                   "label": "Newcastle upon Tyne"
                 },
                 {
-                  "x": 20.2,
+                  "x": 20.5,
                   "y": 53.4,
                   "label": "North Tyneside"
                 },
                 {
-                  "x": 41.5,
+                  "x": 41.6,
                   "y": 62.0,
                   "label": "South Tyneside"
                 },
                 {
-                  "x": 28.7,
+                  "x": 28.0,
                   "y": 61.3,
                   "label": "Sunderland"
                 },
                 {
-                  "x": 18.1,
+                  "x": 18.3,
                   "y": 50.4,
                   "label": "Birmingham"
                 },
                 {
-                  "x": 46.6,
+                  "x": 46.0,
                   "y": 55.6,
                   "label": "Coventry"
                 },
                 {
-                  "x": 18.3,
+                  "x": 18.5,
                   "y": 67.6,
                   "label": "Dudley"
                 },
                 {
-                  "x": 41.6,
+                  "x": 42.9,
                   "y": 66.7,
                   "label": "Sandwell"
                 },
                 {
-                  "x": 9.3,
+                  "x": 12.0,
                   "y": 56.2,
                   "label": "Solihull"
                 },
                 {
-                  "x": 22.4,
+                  "x": 22.6,
                   "y": 67.9,
                   "label": "Walsall"
                 },
                 {
-                  "x": 36.2,
+                  "x": 35.1,
                   "y": 62.6,
                   "label": "Wolverhampton"
                 },
                 {
-                  "x": 19.7,
+                  "x": 18.4,
                   "y": 54.2,
                   "label": "Bradford"
                 },
                 {
-                  "x": 21.4,
+                  "x": 21.3,
                   "y": 55.7,
                   "label": "Calderdale"
                 },
                 {
-                  "x": 15.0,
+                  "x": 14.5,
                   "y": 54.7,
                   "label": "Kirklees"
                 },
                 {
-                  "x": 16.2,
+                  "x": 15.4,
                   "y": 49.7,
                   "label": "Leeds"
                 },
                 {
-                  "x": 19.6,
+                  "x": 16.8,
                   "y": 66.4,
                   "label": "Wakefield"
                 },
                 {
-                  "x": 29.9,
+                  "x": 31.2,
                   "y": 56.9,
                   "label": "Gateshead"
                 },
                 {
-                  "x": 11.4,
+                  "x": 11.9,
                   "y": 62.4,
                   "label": "Barking and Dagenham"
                 },
                 {
-                  "x": 21.5,
+                  "x": 16.5,
                   "y": 37.8,
                   "label": "Barnet"
                 },
                 {
-                  "x": 4.5,
+                  "x": 4.7,
                   "y": 63.0,
                   "label": "Bexley"
                 },
                 {
-                  "x": 22.4,
+                  "x": 20.4,
                   "y": 40.3,
                   "label": "Brent"
                 },
                 {
-                  "x": 4.3,
+                  "x": 4.2,
                   "y": 49.4,
                   "label": "Bromley"
                 },
                 {
-                  "x": 7.8,
+                  "x": 6.7,
                   "y": 25.1,
                   "label": "Camden"
                 },
                 {
-                  "x": 24.6,
+                  "x": 24.2,
                   "y": 45.7,
                   "label": "Croydon"
                 },
                 {
-                  "x": 27.7,
+                  "x": 26.4,
                   "y": 39.6,
                   "label": "Ealing"
                 },
                 {
-                  "x": 10.7,
+                  "x": 11.2,
                   "y": 44.2,
                   "label": "Enfield"
                 },
                 {
-                  "x": 5.1,
+                  "x": 6.2,
                   "y": 44.4,
                   "label": "Greenwich"
                 },
                 {
-                  "x": 14.0,
+                  "x": 12.1,
                   "y": 21.5,
                   "label": "Hackney"
                 },
                 {
-                  "x": 11.8,
+                  "x": 10.4,
                   "y": 30.0,
                   "label": "Hammersmith and Fulham"
                 },
                 {
-                  "x": 5.8,
+                  "x": 5.5,
                   "y": 24.4,
                   "label": "Haringey"
                 },
                 {
-                  "x": 12.6,
+                  "x": 12.9,
                   "y": 45.4,
                   "label": "Harrow"
                 },
                 {
-                  "x": 6.6,
+                  "x": 7.3,
                   "y": 69.7,
                   "label": "Havering"
                 },
                 {
-                  "x": 36.4,
+                  "x": 27.9,
                   "y": 56.4,
                   "label": "Hillingdon"
                 },
                 {
-                  "x": 38.0,
+                  "x": 34.7,
                   "y": 48.9,
                   "label": "Hounslow"
                 },
                 {
-                  "x": 2.9,
+                  "x": 3.4,
                   "y": 24.8,
                   "label": "Islington"
                 },
                 {
-                  "x": 12.3,
+                  "x": 9.5,
                   "y": 31.3,
                   "label": "Kensington and Chelsea"
                 },
                 {
-                  "x": 3.6,
+                  "x": 3.4,
                   "y": 38.4,
                   "label": "Kingston upon Thames"
                 },
                 {
-                  "x": 9.1,
+                  "x": 8.2,
                   "y": 21.4,
                   "label": "Lambeth"
                 },
                 {
-                  "x": 7.0,
+                  "x": 4.3,
                   "y": 30.1,
                   "label": "Lewisham"
                 },
                 {
-                  "x": 9.6,
+                  "x": 8.8,
                   "y": 37.1,
                   "label": "Merton"
                 },
                 {
-                  "x": 23.0,
+                  "x": 22.2,
                   "y": 47.2,
                   "label": "Newham"
                 },
                 {
-                  "x": 12.8,
+                  "x": 11.5,
                   "y": 46.0,
                   "label": "Redbridge"
                 },
                 {
-                  "x": 0.8,
+                  "x": 1.0,
                   "y": 30.7,
                   "label": "Richmond upon Thames"
                 },
                 {
-                  "x": 15.9,
+                  "x": 13.2,
                   "y": 27.2,
                   "label": "Southwark"
                 },
@@ -13839,52 +14078,52 @@ window.ISSUE02_GRAPHS = [
                   "label": "Sutton"
                 },
                 {
-                  "x": 14.2,
+                  "x": 13.9,
                   "y": 32.5,
                   "label": "Tower Hamlets"
                 },
                 {
-                  "x": 5.7,
+                  "x": 6.2,
                   "y": 40.9,
                   "label": "Waltham Forest"
                 },
                 {
-                  "x": 2.1,
+                  "x": 2.7,
                   "y": 25.0,
                   "label": "Wandsworth"
                 },
                 {
-                  "x": 2.0,
+                  "x": 2.1,
                   "y": 31.0,
                   "label": "Westminster"
                 },
                 {
-                  "x": 3.8,
+                  "x": 2.0,
                   "y": 50.9,
                   "label": "Isle of Anglesey"
                 },
                 {
-                  "x": 7.6,
+                  "x": 7.7,
                   "y": 42.0,
                   "label": "Gwynedd"
                 },
                 {
-                  "x": 1.9,
+                  "x": 2.2,
                   "y": 54.0,
                   "label": "Conwy"
                 },
                 {
-                  "x": 6.7,
+                  "x": 7.7,
                   "y": 54.0,
                   "label": "Denbighshire"
                 },
                 {
-                  "x": 5.0,
+                  "x": 5.2,
                   "y": 56.4,
                   "label": "Flintshire"
                 },
                 {
-                  "x": 8.5,
+                  "x": 10.1,
                   "y": 59.0,
                   "label": "Wrexham"
                 },
@@ -13894,52 +14133,52 @@ window.ISSUE02_GRAPHS = [
                   "label": "Ceredigion"
                 },
                 {
-                  "x": 1.3,
+                  "x": 0.5,
                   "y": 57.1,
                   "label": "Pembrokeshire"
                 },
                 {
-                  "x": 3.2,
+                  "x": 3.5,
                   "y": 53.8,
                   "label": "Carmarthenshire"
                 },
                 {
-                  "x": 24.8,
+                  "x": 25.7,
                   "y": 51.5,
                   "label": "Swansea"
                 },
                 {
-                  "x": 4.5,
+                  "x": 4.9,
                   "y": 56.8,
                   "label": "Neath Port Talbot"
                 },
                 {
-                  "x": 2.8,
+                  "x": 3.2,
                   "y": 54.6,
                   "label": "Bridgend"
                 },
                 {
-                  "x": 1.6,
+                  "x": 2.0,
                   "y": 49.3,
                   "label": "Vale of Glamorgan"
                 },
                 {
-                  "x": 34.4,
+                  "x": 36.1,
                   "y": 40.0,
                   "label": "Cardiff"
                 },
                 {
-                  "x": 7.8,
+                  "x": 9.1,
                   "y": 53.7,
                   "label": "Rhondda Cynon Taff"
                 },
                 {
-                  "x": 4.8,
+                  "x": 5.0,
                   "y": 57.6,
                   "label": "Caerphilly"
                 },
                 {
-                  "x": 6.2,
+                  "x": 6.7,
                   "y": 62.0,
                   "label": "Blaenau Gwent"
                 },
@@ -13954,7 +14193,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Monmouthshire"
                 },
                 {
-                  "x": 18.1,
+                  "x": 18.5,
                   "y": 56.0,
                   "label": "Newport"
                 },
@@ -13964,7 +14203,7 @@ window.ISSUE02_GRAPHS = [
                   "label": "Powys"
                 },
                 {
-                  "x": 9.2,
+                  "x": 7.0,
                   "y": 56.4,
                   "label": "Merthyr Tydfil"
                 }
@@ -13973,16 +14212,16 @@ window.ISSUE02_GRAPHS = [
               "pointRadius": 3.5
             },
             {
-              "label": "OLS Trendline (r=0.15)",
+              "label": "OLS Trendline (r=0.18)",
               "type": "line",
               "data": [
                 {
                   "x": 0.0,
-                  "y": 52.7
+                  "y": 52.5
                 },
                 {
-                  "x": 49.0,
-                  "y": 59.1
+                  "x": 48.8,
+                  "y": 59.9
                 }
               ],
               "borderColor": "#f97316",
@@ -14005,10 +14244,10 @@ window.ISSUE02_GRAPHS = [
     "ref": "4.4",
     "title": "Media Narratives vs Reality (Headlines, Framing & Hansard)",
     "question": "Which immigration stories do major UK news outlets tell, how does coverage compare with actual arrival volumes, and how do framing biases differ?",
-    "context_note": "Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.8%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).",
+    "context_note": "Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.6%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).",
     "charts": [
       {
-        "headline": "Salience distortion: Small Boats & Asylum generate 38.8% of UK news headlines vs 8.4% of actual inflows.",
+        "headline": "Salience distortion: Small Boats & Asylum generate 38.6% of UK news headlines vs 8.4% of actual inflows.",
         "footnote": "*Compares topic share across 900 recent UK news headlines (9 outlets x 100) vs 2023–2025 Home Office Small Boat detections, non-boat Asylum claims, and non-visit Legal Visas. Source: <a href=\"https://news.google.com/?hl=en-GB&gl=GB&ceid=GB:en\" target=\"_blank\" rel=\"noopener\">Google News UK RSS Corpus (9 Outlets · 900 Headlines)</a> | <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a> | <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
         "chart": {
           "type": "bar",
@@ -14023,9 +14262,9 @@ window.ISSUE02_GRAPHS = [
             {
               "label": "UK News Media Coverage (%)",
               "data": [
-                10.1,
-                28.7,
-                61.2
+                11.3,
+                27.3,
+                61.4
               ],
               "backgroundColor": "#ef4444"
             },
@@ -14058,13 +14297,13 @@ window.ISSUE02_GRAPHS = [
           "title": "Topic Mix by Major UK News Outlet (% of Headlines · 9 Outlets)",
           "labels": [
             "GB News",
-            "Sky News",
-            "Daily Express",
             "Daily Mail",
-            "BBC News",
+            "Daily Express",
+            "Sky News",
             "The Sun",
-            "Financial Times",
             "The Telegraph",
+            "BBC News",
+            "Financial Times",
             "The Guardian"
           ],
           "y_title": "Share of Outlet Headlines (%)",
@@ -14072,30 +14311,30 @@ window.ISSUE02_GRAPHS = [
             {
               "label": "Small Boats / Irregular (%)",
               "data": [
+                21.0,
+                9.0,
                 19.0,
-                14.0,
-                18.0,
-                13.2,
-                7.0,
-                11.0,
-                3.0,
+                12.0,
+                17.0,
+                12.0,
+                5.0,
                 4.0,
-                2.0
+                3.0
               ],
               "backgroundColor": "#ef4444"
             },
             {
               "label": "Asylum / Hotels / Deportation (%)",
               "data": [
-                48.0,
-                48.0,
-                44.0,
-                43.4,
+                43.0,
+                54.0,
+                42.0,
+                43.0,
                 23.0,
-                18.0,
-                17.0,
+                15.0,
                 11.0,
-                6.0
+                12.0,
+                3.0
               ],
               "backgroundColor": "#f97316"
             },
@@ -14106,11 +14345,11 @@ window.ISSUE02_GRAPHS = [
                 0.0,
                 0.0,
                 0.0,
-                1.0,
                 0.0,
                 1.0,
                 0.0,
-                1.0
+                0.0,
+                0.0
               ],
               "backgroundColor": "#38bdf8"
             },
@@ -14122,25 +14361,25 @@ window.ISSUE02_GRAPHS = [
                 0.0,
                 0.0,
                 0.0,
-                1.0,
                 0.0,
                 0.0,
-                1.0
+                0.0,
+                0.0
               ],
               "backgroundColor": "#818cf8"
             },
             {
               "label": "Net Migration / General Policy (%)",
               "data": [
-                33.0,
-                38.0,
-                38.0,
-                43.4,
-                69.0,
-                70.0,
-                79.0,
-                85.0,
-                90.0
+                36.0,
+                37.0,
+                39.0,
+                45.0,
+                60.0,
+                72.0,
+                84.0,
+                84.0,
+                94.0
               ],
               "backgroundColor": "#71717a"
             }
@@ -14160,13 +14399,13 @@ window.ISSUE02_GRAPHS = [
           "title": "Headline Framing Bias by UK Outlet: Threat/Crisis (%) vs Economic/Rights (%)",
           "labels": [
             "GB News",
-            "Sky News",
-            "Daily Express",
             "Daily Mail",
-            "BBC News",
+            "Daily Express",
+            "Sky News",
             "The Sun",
-            "Financial Times",
             "The Telegraph",
+            "BBC News",
+            "Financial Times",
             "The Guardian"
           ],
           "y_title": "% of Headlines",
@@ -14174,30 +14413,30 @@ window.ISSUE02_GRAPHS = [
             {
               "label": "Threat / Crisis / Enforcement Frame (%)",
               "data": [
-                38.0,
                 33.0,
-                29.0,
-                17.0,
-                13.0,
+                21.0,
+                27.0,
                 28.0,
-                4.0,
+                33.0,
+                17.0,
                 7.0,
-                6.0
+                4.0,
+                7.0
               ],
               "backgroundColor": "#ef4444"
             },
             {
               "label": "Economic / Skills / Rights Frame (%)",
               "data": [
-                7.0,
+                3.0,
+                8.0,
+                2.0,
+                6.0,
+                2.0,
                 5.0,
-                3.0,
-                3.8,
-                14.0,
-                3.0,
-                10.0,
-                4.0,
-                10.0
+                6.0,
+                8.0,
+                3.0
               ],
               "backgroundColor": "#10b981"
             }
