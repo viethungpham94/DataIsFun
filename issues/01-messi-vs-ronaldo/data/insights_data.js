@@ -2,7 +2,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q0_1",
     "chapter": 0,
-    "question": "Who operated across which pitch zones and play which tactical positions over their careers?",
+    "question": "Who operated in which pitch zones and starting roles over their careers?",
     "myth": "Both were simply forwards judged by the same positional baseline throughout their careers.",
     "insight_badge": "Messi: 569 RW / 578 CF+False 9 / 64 AM \u00b7 Ronaldo: 519 LW / 504 CF / 292 RW",
     "summary": "Across 1,229 Messi and 1,363 Ronaldo senior appearances with tactical role logs, Messi split his career between Right Wing (569 apps), Centre-Forward (365), Second Striker / False 9 (213), and Attacking/Central Midfield (64), with his average on-ball position migrating deeper into the right-central playmaking pocket. Ronaldo evolved from a touchline Right Winger (292 apps) and inside-left forward (519 LW apps) into a dedicated Centre-Forward (504 CF apps, 100% of appearances from 2022/23 onward).",
@@ -867,7 +867,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Context Setting: Operating Zones, Tactical Roles & Team Style",
     "pillar_num": "0.0",
     "pillar_title": "Context Setting (Tactical Baseline)",
-    "who_is": "Operated across which pitch zones and play which tactical positions over their careers?",
+    "who_is": "Operated in which pitch zones and starting roles over their careers?",
     "define_by": "Seasonal average normalised on-ball coordinates (centroid_x, centroid_y) and match-by-match tactical role indicated.",
     "metrics": "On-ball centroid trajectory (50%\u2013100%), career appearances by tactical role, by season.",
     "reliability": {
@@ -880,7 +880,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q0_2",
     "chapter": 0,
-    "question": "Who played in which system? e.g. possession-based, direct/counter-attacking",
+    "question": "Who played in more possession-dominant or direct counter-attacking teams?",
     "myth": "Both played in identical ultra-dominant teams with the same possession, pass volume, and defensive cushion.",
     "insight_badge": "Team Pass Share: Messi teams 63.7% (713.6 vs 405.9 opp) vs Ronaldo teams 56.6% (593.5 vs 455.1 opp)",
     "summary": "In 195 Messi and 165 Ronaldo league matches with paired team-vs-opponent passing telemetry (2017/18\u20132024/25), Messi's teams averaged 713.6 passes/match vs opponents' 405.9 (63.7% pass share), whereas Ronaldo's teams averaged 593.5 vs opponents' 455.1 (56.6% pass share). Across all 25 career seasons (1,229 Messi, 1,363 Ronaldo matches), Messi's teams averaged 2.39 goals scored vs 0.96 conceded (+1.43 GD/match), compared to Ronaldo's 2.26 scored vs 0.97 conceded (+1.29 GD/match). Counter-attacking vs possession indicators show Messi's teams held higher pass dominance (63.7% vs 56.6%), while Ronaldo generated nearly double the share of shots from fast-break counter-attacks (4.3% vs 2.4%).",
@@ -1706,7 +1706,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Context Setting: Operating Zones, Tactical Roles & Team Style",
     "pillar_num": "0.0",
     "pillar_title": "Context Setting (Tactical Baseline)",
-    "who_is": "Played in which system? e.g. possession-based, direct/counter-attacking",
+    "who_is": "Played in more possession-dominant or direct counter-attacking teams?",
     "define_by": "Team passing volume relative to opponents, team goals scored versus conceded per match across 25 seasons, and tactical style indicators distinguishing possession control from vertical counter-attacking transitions.",
     "metrics": "Team vs opponent passes per match, team pass share (%), team goals scored vs conceded per match, vertical carry directness (%), progressive pass ratio (%), attacking-third touch share (%), and fast-break shot share (%).",
     "reliability": {
@@ -1719,7 +1719,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q0_3",
     "chapter": 0,
-    "question": "Who played alongside what squad market valuation (both including and excluding themselves), which top teammates, and against what opponent squad values?",
+    "question": "Who played alongside higher-valued teammates and against stronger squads?",
     "myth": "One superstar carried an ordinary squad while the other played in a vastly superior galactico team.",
     "insight_badge": "Excl. Self: Messi \u20ac37.5M vs Ronaldo \u20ac33.2M \u00b7 Own Share: 20.7% vs 17.8%",
     "summary": "Excluding Messi and Ronaldo themselves, on-pitch teammates averaged \u20ac37.5M contemporary value for Messi vs \u20ac33.2M for Ronaldo across shared European club seasons (Best XI teammates: \u20ac45.2M vs \u20ac39.6M), while Messi accounted for 20.7% of his on-pitch club squad value vs 17.8% for Ronaldo.",
@@ -2275,7 +2275,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Context Setting: Operating Zones, Tactical Roles & Team Style",
     "pillar_num": "0.0",
     "pillar_title": "Context Setting (Tactical Baseline)",
-    "who_is": "Played alongside what squad market valuation (both including and excluding themselves), which top teammates, and against what opponent squad values?",
+    "who_is": "Played alongside higher-valued teammates and against stronger squads?",
     "define_by": "Contemporary match-date market value of the overall on-pitch team (including self) and supporting cast (excluding Messi and Ronaldo), each player's % contribution to squad value, the Top 3 most-valued Best XI teammates played with each season, and average opponent on-pitch squad market value faced by season.",
     "metrics": "Overall team value incl. self (\u20acM), supporting cast market value excl. self (\u20acM), player % contribution to squad value, seasonal Top 3 Best XI teammates table, and average opponent squad value faced (\u20acM).",
     "reliability": {
@@ -2288,7 +2288,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q1",
     "chapter": 1,
-    "question": "Who scores more goals across career volume and biological age?",
+    "question": "Who scores more goals across career volume and matched ages?",
     "myth": "Ronaldo has the most career goals, so he is the outright higher-volume goalscorer.",
     "insight_badge": "Ronaldo 979 vs Messi 936 gross; Messi ahead at 22 of 22 shared age marks",
     "summary": "Ronaldo leads gross senior goals 979-936 and official goals 957-881. He out-scored Messi in 16 of 25 charted campaigns (Messi 9; 2 campaigns pre-date Messi's debut). Aligned by age, Messi's cumulative tally was ahead at 22 of 22 age marks from 18 to 39 (936 vs 917 by age 39).",
@@ -3057,7 +3057,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Scores more goals across career volume and biological age?",
+    "who_is": "Scores more goals across career volume and matched ages?",
     "define_by": "Total career senior goals (gross and official FIFA-aligned competitions), peak seasonal output, and cumulative goals at identical biological ages.",
     "metrics": "Gross senior goals, official FIFA goals, seasonal peaks, and same-age cumulative goal pace.",
     "reliability": {
@@ -3070,7 +3070,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q2",
     "chapter": 1,
-    "question": "Who is the more ruthless and efficient finisher relative to shot difficulty and multi-goal feats?",
+    "question": "Who finishes more efficiently relative to shot difficulty and hat-tricks?",
     "myth": "High goal tallies are just a matter of taking more shots.",
     "insight_badge": "Career shot conversion: Messi 18.35% vs Ronaldo 15.55% (6586 shots)",
     "summary": "Across 6,586 all-time shots tracked by Opta in European league and Champions League matches, Messi converted 18.35% (576 goals / 3139 shots) vs Ronaldo's 15.55% (536 goals / 3447 shots) \u2014 scoring once every 5.45 shots compared to Ronaldo's 6.43. Across 814 shot-telemetry goals combining Understat, FBref/Opta, FotMob, and StatsBomb (19 instrumented Messi seasons vs 9 Ronaldo seasons), Messi's goals came from lower-probability chances (0.334 vs 0.427 mean xG/goal), while their missed-shot quality was virtually identical (0.104 xG across 2,317 Messi misses vs 0.104 across 1,475 Ronaldo misses). Across Opta's 13-season league xG model (2014/15\u20132026/27), Messi outperformed xG by +52.74 goals vs Ronaldo's +14.79.",
@@ -4182,7 +4182,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Is the more ruthless and efficient finisher relative to shot difficulty and multi-goal feats?",
+    "who_is": "Finishes more efficiently relative to shot difficulty and hat-tricks?",
     "define_by": "Converting scoring opportunities into goals above Expected Goals (xG) benchmarks, minimising shots required per goal scored, and producing multi-goal outbursts (hat-tricks, pokers, manitas).",
     "metrics": "Cumulative xG outperformance, shot conversion rate, club & country goals/match, low-xG screamers, and multi-goal match feats.",
     "reliability": {
@@ -4195,7 +4195,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q3",
     "chapter": 1,
-    "question": "Who scores more diverse types of goals across body parts, zones, and set pieces?",
+    "question": "Who scores a wider variety of goals across body parts, zones, and set pieces?",
     "myth": "Ronaldo is the more complete all-round scorer.",
     "insight_badge": "Ronaldo: 134 headers, 186 penalties; Messi: 65 free kicks vs 55",
     "summary": "Ronaldo scored 134 headers (Messi 31) and 186 penalties (Messi 119). Messi scored 65 direct free kicks (Ronaldo 55), a higher share of non-penalty inside-box goals (80.2% vs 74.5%), and averaged greater shooting distance on telemetry-tracked goals (13.12m across 540 goals vs Ronaldo's 11.77m across 274 goals).",
@@ -5853,7 +5853,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Scores more diverse types of goals across body parts, zones, and set pieces?",
+    "who_is": "Scores a wider variety of goals across body parts, zones, and set pieces?",
     "define_by": "Distribution of goals across left foot, right foot, headers, inside vs outside the box, direct free kicks, and penalties.",
     "metrics": "Body parts, scoring zones, non-penalty vs penalty totals, goal creation mix, top assister concentration, and set-piece conversion.",
     "reliability": {
@@ -5866,7 +5866,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q1_4_team",
     "chapter": 1,
-    "question": "Who is more influential with their goals for their team's success?",
+    "question": "Who delivers more decisive goals in wins, knockouts, and vs top opponents?",
     "myth": "Both carried identical shares of their team's scoring and match-winning outcomes.",
     "insight_badge": "Peak Team Goal Share: 38.7% vs 38.7%",
     "summary": "Measures each player's share of full-season team goals and the percentage of team victories decided by their game-winning goal.",
@@ -6975,7 +6975,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Goalscoring Mastery (Volume, Efficiency, Variety & Team Importance)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Is more influential with their goals for their team's success?",
+    "who_is": "Delivers more decisive goals in wins, knockouts, and vs top opponents?",
     "define_by": "Share of team's full-season goals, seasonal and career game-winning goals, knockout-round scoring and winners, and opponent strength across league (eventual Top-4 and Bottom-4) and international tiers.",
     "metrics": "Team goal share %, GWGs, knockout goals, G/90 & % of team goals by round, Top-6 GWGs, eventual Top-4 & Bottom-4 league goals, and international goals (% share & G/90) by FIFA rank.",
     "reliability": {
@@ -8347,7 +8347,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q2_team",
     "chapter": 2,
-    "question": "Who is more influential with their passing, build-up share, and big-game assists to team success?",
+    "question": "Who carries a larger share of team build-up and big-game assists?",
     "myth": "Both accounted for similar shares of their team's on-ball progression.",
     "insight_badge": "Messi leads team passing, dribbling, and carry-distance share",
     "summary": "Measures the share of total team passes, completed dribbles, and ball-carrying distance executed by each player.",
@@ -9086,7 +9086,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Playmaking & Passing (Volume, Efficiency, Variety & Importance)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Is more influential with their passing, build-up share, and big-game assists to team success?",
+    "who_is": "Carries a larger share of team build-up and big-game assists?",
     "define_by": "Proportion of team total passes, dribbles, and carry distance executed, breadth of teammates assisted, knockout-round assists, and assists vs eventual Top-4 and Bottom-4 clubs.",
     "metrics": "Player % of team passes/dribbles/carry distance, unique teammates assisted, knockout assists (total & per 90), and assists vs eventual Top-4 & Bottom-4 clubs.",
     "reliability": {
@@ -9512,7 +9512,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q3_1",
     "chapter": 3,
-    "question": "Who contributes more combined Goals + Assists across careers, competitions, seasons, and ages?",
+    "question": "Who produces more combined Goals + Assists across career, seasons, and ages?",
     "myth": "Ronaldo's goal lead makes him the bigger overall contributor.",
     "insight_badge": "G+A: Messi 1404 vs Ronaldo 1286",
     "summary": "Messi has 1404 goal contributions in 1184 matches (1.19 per match, 1.3 per 90) vs Ronaldo's 1286 in 1337 (0.96, 1.06).",
@@ -10365,7 +10365,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Contributes more combined Goals + Assists across careers, competitions, seasons, and ages?",
+    "who_is": "Produces more combined Goals + Assists across career, seasons, and ages?",
     "define_by": "Total direct goal contributions (Goals + Assists) across all senior levels, competitions, seasonal timelines, and biological ages.",
     "metrics": "Gross & official G+A, League/UCL/International G+A, G+A per match & per 90, seasonal G+A difference, and same-age cumulative G+A.",
     "reliability": {
@@ -10378,7 +10378,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "q3_team",
     "chapter": 3,
-    "question": "Who is more influential with their combined goals and assists to team offensive output?",
+    "question": "Who accounts for a higher share of team goals while on the pitch?",
     "myth": "Both were involved in roughly the same share of team goals while on the pitch.",
     "insight_badge": "Messi led on-pitch goal involvement in 17 seasons vs Ronaldo's 6",
     "summary": "Measures the percentage of team goals scored while on the pitch that were directly scored or assisted by the player.",
@@ -10885,7 +10885,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Combined Attacking Output (G+A Aggregator of 1.1 & 1.2)",
     "pillar_num": "1.0",
     "pillar_title": "Contribution to Attack (In Possession)",
-    "who_is": "Is more influential with their combined goals and assists to team offensive output?",
+    "who_is": "Accounts for a higher share of team goals while on the pitch?",
     "define_by": "Percentage of team goals scored while the player was on the pitch that were directly scored or assisted by the player.",
     "metrics": "On-pitch team goal involvement share (%) and combined G+A vs eventual season Top-4 and Bottom-4 clubs.",
     "reliability": {
@@ -10900,7 +10900,7 @@ window.INSIGHTS_DATA = [
     "chapter": 4,
     "leader": "messi",
     "leader_badge": "Messi +2.10 Pressures/90",
-    "question": "Who works harder without the ball across tackles, interceptions, pressures, and seasonal defensive tracking?",
+    "question": "Who works harder off the ball in pressures, tackles, and interceptions?",
     "myth": "Messi walks and never contributes defensively; Ronaldo presses continuously.",
     "insight_badge": "Pressures/90: Messi 10.04 vs Ronaldo 7.94; Tackles/90: Messi 0.65 vs Ronaldo 0.38",
     "summary": "In Opta's defensive tracking per 90 minutes across European club football, Messi leads in active ground pressing (10.04 pressures vs 7.94 per 90) and tackles (0.65 vs 0.38 per 90), while Ronaldo provides defensive clearance height inside the box (0.65 clearances vs 0.01 per 90).",
@@ -11332,7 +11332,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Active Ground Defending & Pressing Disruptions",
     "pillar_num": "2.0",
     "pillar_title": "Contribution to Defence (Out of Possession)",
-    "who_is": "Works harder without the ball across tackles, interceptions, pressures, and seasonal defensive tracking?",
+    "who_is": "Works harder off the ball in pressures, tackles, and interceptions?",
     "define_by": "Out-of-possession work rate measured by Opta defensive actions per 90 minutes and seasonal trajectories across European & senior competition.",
     "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m, and Transfermarkt tackles won/90m by season.",
     "reliability": {
@@ -11347,7 +11347,7 @@ window.INSIGHTS_DATA = [
     "chapter": 2,
     "leader": "ronaldo",
     "leader_badge": "Ronaldo +616 Aerials Won",
-    "question": "Who commands greater aerial duel dominance, defensive box clearances, and physical duels?",
+    "question": "Who wins more aerial duels, box clearances, and physical contests?",
     "myth": "Both players contest and win individual duels in identical areas of the pitch.",
     "insight_badge": "Aerial duels won: Ronaldo 737 (1.38/90m) vs Messi 121 (0.2/90m)",
     "summary": "The statistical contrast reveals two distinct physical profiles: Messi dominates ground take-ons (3093 vs 1655 dribbles), while Ronaldo dominates the aerial battleground, winning 737 aerial duels (1.38 per 90) vs Messi's 121 (0.2 per 90) \u2014 a 6.9x margin for Ronaldo in the air.",
@@ -11777,7 +11777,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "Physical Contests & Aerial Box Defending",
     "pillar_num": "2.0",
     "pillar_title": "Contribution to Defence (Out of Possession)",
-    "who_is": "Commands greater aerial duel dominance, defensive box clearances, and physical duels?",
+    "who_is": "Wins more aerial duels, box clearances, and physical contests?",
     "define_by": "Seasonal Opta aerial duels won (total & per 90m), Opta defensive clearances per 90m, and Transfermarkt fouls won per 90m.",
     "metrics": "Aerial duels won/90m (2009\u20132025), clearances/90m (2009\u20132023), and fouls drawn/90m (2018\u20132026).",
     "reliability": {
@@ -13920,10 +13920,10 @@ window.INSIGHTS_DATA = [
     "cat_title": "Institutional Accolades & Scoring Crowns",
     "pillar_num": "4.0",
     "pillar_title": "Accolades, Recognition & Ability to Inspire (Institutional & Cultural Legacy)",
-    "who_is": "Holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?",
+    "who_is": "Holds more documented all-time career records across major arenas?",
     "define_by": "Categorised audit of documented all-time football and cultural records from Wikipedia's Career Achievements ledgers for both players across 8 standardised arenas (with full searchable ledger in Extra Analysis 6).",
     "metrics": "Total documented records, domain breakdown across World / Global, FIFA World Cup, Guinness World Records, UEFA & European, La Liga & Spain, Other Domestic Leagues, International & Continental, and Club Records.",
-    "question": "Who holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?",
+    "question": "Who holds more documented all-time career records across major arenas?",
     "reliability": {
       "level": "Medium",
       "coverage_note": "Wikipedia Career Achievements ledgers + official trophy/honour archives.",
@@ -15511,7 +15511,7 @@ window.INSIGHTS_DATA = [
   {
     "id": "wc_6",
     "chapter": "wc",
-    "question": "Who entered each FIFA World Cup with higher supporting squad value (excl. self), higher tournament seeding, and stronger pre-tournament form?",
+    "question": "Who entered World Cups with stronger squads, seeding, and pre-tournament form?",
     "myth": "Argentina consistently arrived at World Cups with a superior squad and stronger form than Portugal.",
     "insight_badge": "Excl. Self: Portugal \u20ac473.3M vs Argentina \u20ac434.2M \u00b7 Avg WC FIFA Rank: #5.0 vs #5.7",
     "summary": "Excluding Messi and Ronaldo themselves, both nations led 3 World Cup editions each in surrounding squad value (2006\u20132026): Argentina peaked ahead in 2018 (+\u20ac124.5M), whereas Portugal fielded the pricier supporting roster in 2006, 2022 (+\u20ac321.8M), and 2026. Both stars accounted for 20%\u201334% of their nation's entire squad value during their prime (2010\u20132018). Among all World Cup participants, Argentina averaged a #5.0 pre-tournament FIFA seed and #7.0 supporting squad-value rank vs Portugal's #5.7 and #7.0.",
@@ -16083,7 +16083,7 @@ window.INSIGHTS_DATA = [
     "cat_title": "FIFA World Cup Arena",
     "pillar_num": "EA.2",
     "pillar_title": "FIFA World Cup Arena",
-    "who_is": "Entered each FIFA World Cup with higher supporting squad value (excl. self), higher tournament seeding, and stronger pre-tournament form?",
+    "who_is": "Entered World Cups with stronger squads, seeding, and pre-tournament form?",
     "define_by": "Pre-tournament national supporting squad Transfermarkt valuation excluding Messi and Ronaldo, each player's % contribution to national squad value, tournament squad value rank and pre-tournament FIFA World Ranking among all participants, plus last-10 international match form.",
     "metrics": "Supporting squad value excl. self (\u20acM), mean teammate value (\u20acM), player % share of squad value, WC squad value rank & FIFA rank among participants, Last-10 Win % & PPG.",
     "reliability": {
