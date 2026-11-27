@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Issue 03 · The Benefit and Cost of AI | DataIsFun</title>
+  <meta name="description" content="Graphs-first empirical analysis of AI benefits, circular capital risks, energy, and labour vs subsidised API costs.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="Issue 03 · The Benefit and Cost of AI | DataIsFun">
+  <meta property="og:description" content="Graphs-first empirical analysis of AI benefits, circular capital risks, energy, and labour vs subsidised API costs.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Issue 03 · The Benefit and Cost of AI | DataIsFun">
+  <meta name="twitter:description" content="Graphs-first empirical analysis of AI benefits, circular capital risks, energy, and labour vs subsidised API costs.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <script src="../../assets/chart.umd.min.js"></script>
+<style>
+  .insight-help-btn {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 999px;
+    border: 1px solid rgba(56, 189, 248, 0.45); background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8; font-size: 12px; font-weight: 800; font-family: 'JetBrains Mono', monospace;
+    display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  }
+  .insight-help-btn:hover { background: #38bdf8; color: #090d16; }
+  .insight-drawer-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.65); backdrop-filter: blur(3px);
+    z-index: 9998; opacity: 0; pointer-events: none; transition: opacity 0.24s ease;
+  }
+  .insight-drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  .insight-discussion-drawer {
+    position: fixed; top: 0; right: 0; width: min(440px, 92vw); height: 100vh;
+    background: #09090d; border-left: 1px solid rgba(56,189,248,0.28); z-index: 9999;
+    transform: translateX(100%); transition: transform 0.26s ease; display: flex; flex-direction: column;
+  }
+  .insight-discussion-drawer.open { transform: translateX(0); }
+  .calc-preset-btn {
+    background: rgba(255,255,255,0.05); color: #d4d4d8; border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 6px; padding: 6px 10px; font-size: 11.5px; font-weight: 600; cursor: pointer;
+  }
+  .calc-preset-btn.active {
+    background: rgba(168,85,247,0.22); color: #ffffff; border-color: #a855f7;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link active">Issues</a>
+        
+        <div class="nav-toc-wrap" id="nav-toc-wrap">
+          <button type="button" class="nav-toc-btn" id="nav-toc-btn" aria-expanded="false" aria-controls="nav-toc-dropdown" onclick="toggleNavToc(event)">
+            <span>ToC</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-toc-dropdown" id="nav-toc-dropdown" role="menu">
+            <a href="#ctx_scale" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ctx_scale', event)"><span class="nav-toc-prefix">0.0</span><span>Context Setting</span></a>
+<a href="#ctx_adoption" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ctx_adoption', event)"><span class="nav-toc-prefix">0.0B</span><span>Current AI Adoption Trends</span></a>
+<a href="#ben_science" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ben_science', event)"><span class="nav-toc-prefix">Part 1</span><span>Measurable Benefits</span></a>
+<a href="#cost_circular" class="nav-toc-item" role="menuitem" onclick="selectNavToc('cost_circular', event)"><span class="nav-toc-prefix">Part 2A</span><span>Financial & Circular Capital Risks</span></a>
+<a href="#cost_labour" class="nav-toc-item" role="menuitem" onclick="selectNavToc('cost_labour', event)"><span class="nav-toc-prefix">Part 2B</span><span>AI vs Human Resource Cost</span></a>
+<a href="#cost_concentration" class="nav-toc-item" role="menuitem" onclick="selectNavToc('cost_concentration', event)"><span class="nav-toc-prefix">Part 2C</span><span>Frontier Concentration & Vendor Scrutiny</span></a>
+<a href="#hist_evolution" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hist_evolution', event)"><span class="nav-toc-prefix">Part 3</span><span>Historical Industrial Evolution</span></a>
+          </div>
+        </div>
+        
+        
+      </div>
+    </nav>
+    
+    <div style="margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.10);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Issue 03 · Graphs-First Preview</div>
+      <h1 style="font-size:32px;font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:8px;">The Benefit and Cost of AI: Are the Gains Worth the Price?</h1>
+      <p style="font-size:14.5px;color:#a1a1aa;max-width:820px;">Testing AI compute scale, medical &amp; pricing benefits, circular hyperscaler capital risks, and human-vs-AI cost parity against audited SEC EDGAR, Epoch AI, OWID, US FDA, and US BLS datasets.</p>
+    </div>
+    <details open style="background:#090805;border:1px solid rgba(245,158,11,0.32);border-left:3px solid #f59e0b;border-radius:8px;padding:14px 16px;margin-bottom:24px;">
+      <summary style="cursor:pointer;font-size:14px;font-weight:700;color:#fbbf24;list-style:none;">Methodological Guardrail: First-Party AI Vendor Scrutiny &amp; Coverage Gaps</summary>
+      <ul style="margin:10px 0 0 18px;padding:0;font-size:12.5px;color:#d4d4d8;line-height:1.55;">
+        <li><strong>First-Party Vendor Scrutiny:</strong> Datasets published directly by AI labs (e.g., <em>Anthropic Economic Index</em>) carry commercial self-selection bias and are excluded as primary baselines here.</li>
+        <li><strong>Circular Economy &amp; Subsidy Reality:</strong> Commercial API token list prices are juxtaposed against audited SEC EDGAR hyperscaler CapEx, NVIDIA revenue, and Net PP&amp;E depreciation to distinguish unit efficiency from balance-sheet subsidies.</li>
+        <li><strong>Historical Case Study Lens (<a href="#hist_evolution" style="color:#06b6d4;">Part 3</a>):</strong> Electronic computers replacing human computers, the 1987 Solow Paradox productivity lag, and the 2000 dot-com IT CapEx peak provide empirical baselines for evaluating AI's current trajectory.</li>
+      </ul>
+    </details>
+    
+            <section id="ctx_scale" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:0.08em;">0.0</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Context Setting — Compute Scale, Country Concentration & Real-World Adoption</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">How fast has AI compute scaled, where is it concentrated, and how broadly is generative AI used?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #38bdf8;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Frontier training compute rose by orders of magnitude across the deep learning era</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_scale', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Training Compute of Notable AI Models (Log10 FLOPs, 2012–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_scale_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI Notable Models & LLM Benchmark Efficiency (CC BY 4.0)</a> · <code>data/raw/epoch_ai/*/notable_ai_models.csv</code> · 2012–2025 · N=852 notable models</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #38bdf8;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Large-scale AI system development remains heavily concentrated in the United States and China</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_scale', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Cumulative Large-Scale AI Systems by Country (2017–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_scale_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://ourworldindata.org/artificial-intelligence" target="_blank" rel="noopener">Our World in Data — Artificial Intelligence (CC BY 4.0)</a> · <code>data/raw/owid_ai/*/owid_large_scale_models_country.csv</code> · 2017–2025 · 4 leading jurisdictions</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #38bdf8;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Working-age generative AI usage correlates strongly with national GDP per capita</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_scale', 2)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Working-Age Generative AI Usage (%) vs GDP per Capita (PPP)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_scale_2"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://ourworldindata.org/artificial-intelligence" target="_blank" rel="noopener">Our World in Data — Artificial Intelligence (CC BY 4.0)</a> · <code>data/raw/owid_ai/*/owid_genai_usage.csv</code> · Latest cross-section · N=141 countries</div>
+                </div>
+                
+              
+            </section>
+            
+            <section id="ctx_adoption" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:0.08em;">0.0B</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Current AI Adoption Trends — By Industry Sector, Business Function & Firm Size</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">Which industries, business functions, and firm sizes are actually adopting AI according to official government surveys?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #22c55e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">US business AI adoption climbed steadily across 2024–2026 while planned 6-month adoption stayed even higher</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_adoption', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">US Business AI/SI Adoption Over Time: Current Use vs Planned Next 6 Months (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_adoption_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.census.gov/hfp/btos/" target="_blank" rel="noopener">US Census Bureau — Business Trends and Outlook Survey (BTOS)</a> · <code>data/raw/us_census_btos/*/btos_national.xlsx</code> · 2023–2026 (Biweekly) · N=75 waves (202521–23 shutdown gap)</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #22c55e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Information and Professional Services lead US AI adoption while Construction, Retail, and Hospitality trail</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_adoption', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">US Business AI Adoption by NAICS Industry Sector (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_adoption_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.census.gov/hfp/btos/" target="_blank" rel="noopener">US Census Bureau — Business Trends and Outlook Survey (BTOS)</a> · <code>data/raw/us_census_btos/*/btos_sector.xlsx</code> · Latest wave (2026-W23) · N=13 NAICS sectors</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #22c55e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Customer-facing marketing, chatbots, and text/data analytics lead functional AI deployment over robotics</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_adoption', 2)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Where Businesses Deploy AI: Adoption by Business Function & Technology Type (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_adoption_2"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.census.gov/hfp/btos/" target="_blank" rel="noopener">US Census Bureau — Business Trends and Outlook Survey (BTOS)</a> · <code>data/raw/us_census_btos/*/btos_ai_supplement.xlsx</code> · BTOS AI Supplement · N=17 functional categories</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #22c55e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Large enterprises (250+ staff) adopt AI at substantially higher rates than micro and small firms</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ctx_adoption', 3)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">US Business AI Adoption by Employment Size Class (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ctx_adoption_3"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.census.gov/hfp/btos/" target="_blank" rel="noopener">US Census Bureau — Business Trends and Outlook Survey (BTOS)</a> · <code>data/raw/us_census_btos/*/btos_emp_size.xlsx</code> · Latest wave (2026-W23) · 7 employment size classes</div>
+                </div>
+                
+              
+            </section>
+            
+            <section id="ben_science" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#10b981;text-transform:uppercase;letter-spacing:0.08em;">Part 1</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Measurable Benefits — Clinical Authorisations & Inference Price Collapse</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">Where are regulated clinical deployments and API price deflation producing verifiable gains?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #10b981;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">US FDA authorisations of AI/ML-enabled medical devices accelerated sharply after 2018</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ben_science', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">US FDA AI/ML-Enabled Medical Device Authorisations per Year (2012–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ben_science_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices" target="_blank" rel="noopener">US FDA AI/ML-Enabled Medical Devices List</a> · <code>data/raw/us_fda/*/fda_ai_ml_devices.xlsx</code> · 2012–2025 · N=1412 devices</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #10b981;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Regulated medical AI remains overwhelmingly concentrated in radiology and cardiovascular imaging</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ben_science', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">FDA AI/ML Medical Devices by Lead Clinical Panel (Top 8)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ben_science_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-and-machine-learning-aiml-enabled-medical-devices" target="_blank" rel="noopener">US FDA AI/ML-Enabled Medical Devices List</a> · <code>data/raw/us_fda/*/fda_ai_ml_devices.xlsx</code> · 1995–2026 · Top 8 FDA panels (N=1556)</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #10b981;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">API inference list prices per million tokens fell steeply between 2022 and 2025</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('ben_science', 2)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">LLM API Inference Price per 1M Tokens (Quarterly Median & Floor, USD)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_ben_science_2"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI Notable Models & LLM Benchmark Efficiency (CC BY 4.0)</a> · <code>data/raw/epoch_ai/*/aa_data_with_math5.csv</code> · 2022–2025 · N=72 model releases</div>
+                </div>
+                
+              
+            </section>
+            
+            <section id="cost_circular" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f97316;text-transform:uppercase;letter-spacing:0.08em;">Part 2A</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Financial & Circular Capital Risks — Hyperscaler CapEx, NVIDIA Feedback & Depreciation</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">Does the circular AI capital loop expose hyperscalers to a rising depreciation and free-cash-flow squeeze?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Hyperscaler capital expenditure surged dramatically from 2023 onward across all five platforms</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Annual Capital Expenditure by Hyperscaler (SEC EDGAR 10-K, USD Billions)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · Audited 10-K filings (5 firms)</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">NVIDIA's revenue expansion closely mirrors the aggregate hyperscaler CapEx surge in a circular loop</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Circular Capital Loop: Big-5 Hyperscaler CapEx vs NVIDIA Revenue (USD Billions)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · Big-5 CapEx vs NVDA 10-K Revenue</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Capital intensity as a share of total revenue climbed sharply across Meta, Microsoft, Alphabet, and Oracle</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 2)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">CapEx Intensity: Capital Expenditure as % of Total Revenue (2018–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_2"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · CapEx / Revenue (%)</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Aggregate hyperscaler CapEx is absorbing an expanding share of operating cash flow</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 3)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Big-5 Aggregate Operating Cash Flow, CapEx & Free Cash Flow (USD Billions)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_3"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · Big-5 OCF vs CapEx vs FCF</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Accumulated Net PP&E and annual depreciation charges are compounding into a multi-year earnings drag</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 4)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">The Depreciation Wall: Big-5 Net PP&E Stock vs Annual Depreciation (USD Billions)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_4"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · Big-5 Net PP&E & D&A</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f97316;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Maximum estimated training compute costs for frontier models escalated into the hundreds of millions</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_circular', 5)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Peak Estimated Frontier Training Compute Cost per Year (USD Millions, 2023 USD)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_circular_5"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI Notable Models & LLM Benchmark Efficiency (CC BY 4.0)</a> · <code>data/raw/epoch_ai/*/notable_ai_models.csv</code> · 2012–2025 · Models with estimated compute cost</div>
+                </div>
+                
+              
+            </section>
+            
+            <section id="cost_labour" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#a855f7;text-transform:uppercase;letter-spacing:0.08em;">Part 2B</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">AI vs Human Resource Cost — List Price vs Balance-Sheet Subsidy Reality</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">Are low API token prices cheaper than human labour due to efficiency, or unamortised CapEx and VC subsidies?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #a855f7;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Official US median hourly wages in exposed knowledge roles range from clerical rates to high-skill tiers</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_labour', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Official US Median Hourly Wage by Knowledge Occupation (BLS OEWS May 2025, USD/hr)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_labour_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener">US Bureau of Labor Statistics OEWS (May 2025)</a> · <code>data/raw/us_bls/*/oesm25nat.zip</code> · May 2025 · N=9 benchmark occupations</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #a855f7;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Cheap API token prices sit atop tens of billions in annual hyperscaler CapEx and R&D spend</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_labour', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">The Hidden Subsidy Base: Big-5 Combined Annual CapEx + R&D Spend (USD Billions)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_labour_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://data.sec.gov/api/xbrl/companyfacts/" target="_blank" rel="noopener">US SEC EDGAR XBRL CompanyFacts (10-K Filings)</a> · <code>data/raw/sec_edgar/*/large/*_companyfacts.json</code> · FY 2018–2025 · Big-5 Annual CapEx + R&D</div>
+                </div>
+                
+              
+            <div id="token-vs-human-tool" style="background:#08080b;border:1px solid rgba(168,85,247,0.35);border-left:3px solid #a855f7;border-radius:10px;padding:20px 22px;margin-top:20px;">
+              <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px;">
+                <div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;color:#c084fc;text-transform:uppercase;letter-spacing:0.08em;">Interactive Sensitivity Tool · Part 2B</div>
+                  <h3 style="font-size:18px;font-weight:800;color:#ffffff;margin:3px 0;">Daily Cost Calculator: AI Tokens vs Human Resource</h3>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:6px;" role="group" aria-label="Task complexity presets">
+                  <button type="button" class="calc-preset-btn" data-preset="low" onclick="applyCalcPreset('low')">Low Complexity</button>
+                  <button type="button" class="calc-preset-btn active" data-preset="medium" onclick="applyCalcPreset('medium')">Medium Complexity</button>
+                  <button type="button" class="calc-preset-btn" data-preset="high" onclick="applyCalcPreset('high')">High (Agentic)</button>
+                </div>
+              </div>
+              <p style="font-size:12.5px;color:#a1a1aa;margin-bottom:14px;line-height:1.5;">Adjust task complexity, required context window, prompt caching, human QA oversight, and unsubsidised CapEx reality multiplier. Wages and token prices load dynamically from <strong style="color:#e4e4e7;">US BLS OEWS (May 2025)</strong> and <strong style="color:#e4e4e7;">Epoch AI</strong>.</p>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px;">
+                <div>
+                  <label for="calc-occ" style="display:block;font-size:11px;font-weight:700;color:#d4d4d8;margin-bottom:4px;">Benchmark Occupation (US BLS)</label>
+                  <select id="calc-occ" onchange="updateTokenHumanCalc()" style="width:100%;background:#111116;color:#ffffff;border:1px solid rgba(255,255,255,0.16);border-radius:6px;padding:7px 9px;font-size:12.5px;"></select>
+                </div>
+                <div>
+                  <label for="calc-tier" style="display:block;font-size:11px;font-weight:700;color:#d4d4d8;margin-bottom:4px;">AI Model / Price Tier (Epoch AI)</label>
+                  <select id="calc-tier" onchange="updateTokenHumanCalc()" style="width:100%;background:#111116;color:#ffffff;border:1px solid rgba(255,255,255,0.16);border-radius:6px;padding:7px 9px;font-size:12.5px;"></select>
+                </div>
+                <div>
+                  <label for="calc-overhead" style="display:block;font-size:11px;font-weight:700;color:#d4d4d8;margin-bottom:4px;">Employer Overhead Multiplier</label>
+                  <select id="calc-overhead" onchange="updateTokenHumanCalc()" style="width:100%;background:#111116;color:#ffffff;border:1px solid rgba(255,255,255,0.16);border-radius:6px;padding:7px 9px;font-size:12.5px;">
+                    <option value="1.0">1.0&times; Gross Median Wage</option>
+                    <option value="1.3" selected>1.3&times; Fully Loaded (+30% Benefits/Tax)</option>
+                  </select>
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:16px;padding:12px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Context / Turn</span><strong id="lbl-ctx" style="color:#38bdf8;">24k tk</strong></div>
+                  <input id="sl-ctx" type="range" min="1" max="200" step="1" value="24" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#38bdf8;" />
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Turns / Day</span><strong id="lbl-turns" style="color:#38bdf8;">80</strong></div>
+                  <input id="sl-turns" type="range" min="5" max="400" step="5" value="80" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#38bdf8;" />
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Output + Reasoning / Turn</span><strong id="lbl-out" style="color:#38bdf8;">2.0k tk</strong></div>
+                  <input id="sl-out" type="range" min="0.2" max="20" step="0.2" value="2.0" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#38bdf8;" />
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Prompt Cache Hit Rate</span><strong id="lbl-cache" style="color:#10b981;">60%</strong></div>
+                  <input id="sl-cache" type="range" min="0" max="90" step="5" value="60" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#10b981;" />
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Human QA Oversight</span><strong id="lbl-qa" style="color:#a855f7;">30%</strong></div>
+                  <input id="sl-qa" type="range" min="0" max="60" step="5" value="30" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#a855f7;" />
+                </div>
+                <div>
+                  <div style="display:flex;justify-content:space-between;font-size:11.5px;color:#d4d4d8;margin-bottom:3px;"><span>Subsidy Reality Multiplier</span><strong id="lbl-sub" style="color:#f97316;">2.0&times;</strong></div>
+                  <input id="sl-sub" type="range" min="1.0" max="4.0" step="0.2" value="2.0" oninput="updateTokenHumanCalc()" style="width:100%;accent-color:#f97316;" />
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-bottom:14px;">
+                <div style="background:#0d0d12;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 12px;">
+                  <div style="font-size:10.5px;color:#a1a1aa;text-transform:uppercase;">Human Only (8h Day)</div>
+                  <div id="kpi-human" style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:#ffffff;margin-top:2px;">$0.00</div>
+                </div>
+                <div style="background:#0d0d12;border:1px solid rgba(56,189,248,0.22);border-radius:8px;padding:10px 12px;">
+                  <div style="font-size:10.5px;color:#a1a1aa;text-transform:uppercase;">AI Tokens (List Price)</div>
+                  <div id="kpi-tokens" style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:#38bdf8;margin-top:2px;">$0.00</div>
+                  <div id="kpi-vol" style="font-size:11px;color:#71717a;margin-top:1px;">0.0M effective tokens/day</div>
+                </div>
+                <div style="background:#0d0d12;border:1px solid rgba(168,85,247,0.25);border-radius:8px;padding:10px 12px;">
+                  <div style="font-size:10.5px;color:#a1a1aa;text-transform:uppercase;">Blended (Tokens&times;Sub + QA)</div>
+                  <div id="kpi-blended" style="font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:800;color:#c084fc;margin-top:2px;">$0.00</div>
+                  <div id="kpi-delta" style="font-size:11px;color:#10b981;margin-top:1px;">—</div>
+                </div>
+              </div>
+              <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:6px;">Daily Cost Comparison: Human Resource vs AI Tokens &amp; Blended Oversight (USD / 8-Hour Day)</div>
+              <div style="position:relative;height:230px;width:100%;margin-bottom:10px;">
+                <canvas id="i3_calc_chart"></canvas>
+              </div>
+              <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">
+                Formula: <code>Effective Input = Context &times; (1 &minus; 0.8 &times; Cache Hit)</code>; <code>Daily Tokens = Turns &times; (Effective Input + Output)</code>; <code>Blended = (Token Cost &times; Subsidy Multiplier) + (Human Daily Cost &times; QA%)</code>. Sources: <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener">US BLS OEWS May 2025</a> &amp; <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI (2024–2025 API Pricing)</a>.
+              </div>
+            </div>
+            
+            </section>
+            
+            <section id="cost_concentration" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:0.08em;">Part 2C</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Frontier Concentration & Vendor Scrutiny</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">How dominated is notable AI research by commercial industry rather than independent academia?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #ef4444;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Commercial industry has steadily displaced academia as the dominant producer of notable AI models</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('cost_concentration', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Share of Notable AI Models: Industry vs Academia (2012–2025, %)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_cost_concentration_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI Notable Models & LLM Benchmark Efficiency (CC BY 4.0)</a> · <code>data/raw/epoch_ai/*/notable_ai_models.csv</code> · 2012–2025 · Industry vs Academia share (%)</div>
+                </div>
+                
+              
+            </section>
+            
+            <section id="hist_evolution" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#06b6d4;text-transform:uppercase;letter-spacing:0.08em;">Part 3</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">Historical Industrial Evolution — Electronic Computers vs Human Computers & Past Waves</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">What do past computing and electrification transitions teach us about price collapse, job shifts, productivity lags, and CapEx booms?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #06b6d4;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Electronic computing triggered a multi-decade exponential collapse in memory and storage prices</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('hist_evolution', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Historical Price of Computer Memory (RAM) & Storage (Log10 USD per TB, 1957–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_hist_evolution_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://ourworldindata.org/technological-change" target="_blank" rel="noopener">Our World in Data — Technological Change & Historical Economics (CC BY 4.0)</a> · <code>data/raw/owid_history/*/owid_compute_storage_cost.csv</code> · 1957–2025 · Log10 USD per TB</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #06b6d4;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Electronic computers and spreadsheets expanded systems-design employment far faster than routine bookkeeping</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('hist_evolution', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Post-Computer Job Divergence: Computer Systems Design vs Accounting & Bookkeeping (1990 = 100)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_hist_evolution_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">Federal Reserve Economic Data (FRED · BLS & BEA)</a> · <code>data/raw/fred_macro/*/fred_emp_*.csv</code> · 1990–2025 · Index: 1990 = 100</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #06b6d4;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">The Solow Paradox: US productivity surged in the late 1990s only decades after computers entered offices</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('hist_evolution', 2)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">The Solow Paradox Test: US Nonfarm Labour Productivity 5-Year Annualised Growth (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_hist_evolution_2"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">Federal Reserve Economic Data (FRED · BLS & BEA)</a> · <code>data/raw/fred_macro/*/fred_us_labour_productivity.csv</code> · 1952–2025 · FRED OPHNFB 5-yr CAGR</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #06b6d4;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">US IT equipment and software investment peaked during the 2000 dot-com boom before settling into a higher plateau</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('hist_evolution', 3)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Historical CapEx Precedent: US IT Equipment & Software Investment as % of GDP (1960–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_hist_evolution_3"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">Federal Reserve Economic Data (FRED · BLS & BEA)</a> · <code>data/raw/fred_macro/*/fred_us_it_investment.csv</code> · 1960–2025 · BEA A679RC1Q027SBEA / GDP</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #06b6d4;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Each general-purpose technology diffused faster across US households than the industrial wave before it</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('hist_evolution', 4)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">US Household Adoption Curves Across Industrial Revolutions (%)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_hist_evolution_4"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://ourworldindata.org/technological-change" target="_blank" rel="noopener">Our World in Data — Technological Change & Historical Economics (CC BY 4.0)</a> · <code>data/raw/owid_history/*/owid_us_tech_adoption.csv</code> · 1900–2025 · US household adoption (%)</div>
+                </div>
+                
+              
+            </section>
+            
+    
+    <footer>
+      <p>DataIsFun · Issue 03 Graphs-First Preview · Primary sources: SEC EDGAR, Epoch AI, OWID, US FDA, US BLS</p>
+    </footer>
+  </div>
+  <div id="i3-drawer-backdrop" class="insight-drawer-backdrop" onclick="closeI3Drawer()"></div>
+  <aside id="i3-drawer" class="insight-discussion-drawer" aria-hidden="true">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div>
+        <div id="i3-drawer-kicker" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:0.08em;">Metric Definition</div>
+        <div id="i3-drawer-title" style="font-size:15px;font-weight:700;color:#ffffff;margin-top:3px;"></div>
+      </div>
+      <button type="button" onclick="closeI3Drawer()" aria-label="Close metric definition" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:#e4e4e7;width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:16px;line-height:1;">&times;</button>
+    </div>
+    <div id="i3-drawer-body" style="padding:18px;overflow-y:auto;font-size:13px;color:#d4d4d8;line-height:1.6;"></div>
+  </aside>
+  <script src="../../assets/charts_engine.js"></script>
+  <script src="data/insights_data.js"></script>
+  <script>
+    function openI3Drawer(secId, idx) {
+      const sec = (window.ISSUE03_GRAPHS || []).find(s => s.id === secId);
+      if (!sec || !sec.charts || !sec.charts[idx]) return;
+      const ins = sec.charts[idx];
+      const d = ins.definition || {};
+      document.getElementById('i3-drawer-kicker').textContent = `${sec.ref} · Metric Definition & Nuance`;
+      document.getElementById('i3-drawer-title').textContent = ins.chart.title || sec.title;
+      document.getElementById('i3-drawer-body').innerHTML = `
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#38bdf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Metric &amp; Formula</div><div>${d.metric || ins.headline}</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#818cf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Scope &amp; Coverage</div><div>${d.scope || sec.question}</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#f59e0b;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Reading Nuance / Caveat</div><div>${d.nuance || ins.footnote}</div></div>
+        <div style="padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#a1a1aa;">${ins.footnote}</div>
+      `;
+      document.getElementById('i3-drawer-backdrop').classList.add('open');
+      document.getElementById('i3-drawer').classList.add('open');
+      document.getElementById('i3-drawer').setAttribute('aria-hidden', 'false');
+    }
+    function closeI3Drawer() {
+      document.getElementById('i3-drawer-backdrop').classList.remove('open');
+      document.getElementById('i3-drawer').classList.remove('open');
+      document.getElementById('i3-drawer').setAttribute('aria-hidden', 'true');
+    }
+    function toggleNavToc(e) {
+      if (e) e.stopPropagation();
+      const dd = document.getElementById('nav-toc-dropdown');
+      const btn = document.getElementById('nav-toc-btn');
+      if (!dd || !btn) return;
+      const open = !dd.classList.contains('open');
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function selectNavToc(id, e) {
+      if (e) e.preventDefault();
+      const dd = document.getElementById('nav-toc-dropdown');
+      if (dd) dd.classList.remove('open');
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeI3Drawer(); });
+    const CALC_PRESETS = {
+      low:    { ctx: 4,   turns: 40,  out: 0.5, cache: 50, qa: 15 },
+      medium: { ctx: 24,  turns: 80,  out: 2.0, cache: 60, qa: 30 },
+      high:   { ctx: 100, turns: 150, out: 6.0, cache: 70, qa: 40 },
+    };
+    function applyCalcPreset(key) {
+      const p = CALC_PRESETS[key];
+      if (!p) return;
+      document.getElementById('sl-ctx').value = p.ctx;
+      document.getElementById('sl-turns').value = p.turns;
+      document.getElementById('sl-out').value = p.out;
+      document.getElementById('sl-cache').value = p.cache;
+      document.getElementById('sl-qa').value = p.qa;
+      document.querySelectorAll('.calc-preset-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-preset') === key);
+      });
+      updateTokenHumanCalc();
+    }
+    function initTokenHumanCalc() {
+      const cd = window.ISSUE03_CALC_DATA;
+      if (!cd) return;
+      const occSel = document.getElementById('calc-occ');
+      const tierSel = document.getElementById('calc-tier');
+      if (!occSel || !tierSel) return;
+      occSel.innerHTML = (cd.occupations || []).map((o, i) =>
+        `<option value="${o.median_hourly_usd}"${o.occupation.includes('Software') ? ' selected' : ''}>${o.occupation} ($${o.median_hourly_usd.toFixed(2)}/hr)</option>`
+      ).join('');
+      tierSel.innerHTML = (cd.model_tiers || []).map((m, i) =>
+        `<option value="${m.price_1m_usd}"${m.label.includes('Frontier') ? ' selected' : ''}>${m.label}</option>`
+      ).join('');
+      updateTokenHumanCalc();
+    }
+    function updateTokenHumanCalc() {
+      const occSel = document.getElementById('calc-occ');
+      const tierSel = document.getElementById('calc-tier');
+      const ohSel = document.getElementById('calc-overhead');
+      if (!occSel || !tierSel || !ohSel) return;
+      const hourly = parseFloat(occSel.value) || 0;
+      const price1m = parseFloat(tierSel.value) || 0;
+      const overhead = parseFloat(ohSel.value) || 1.0;
+      const ctxK = parseFloat(document.getElementById('sl-ctx').value) || 0;
+      const turns = parseFloat(document.getElementById('sl-turns').value) || 0;
+      const outK = parseFloat(document.getElementById('sl-out').value) || 0;
+      const cachePct = parseFloat(document.getElementById('sl-cache').value) || 0;
+      const qaPct = parseFloat(document.getElementById('sl-qa').value) || 0;
+      const subMult = parseFloat(document.getElementById('sl-sub').value) || 1.0;
+
+      document.getElementById('lbl-ctx').textContent = `${ctxK}k tk`;
+      document.getElementById('lbl-turns').textContent = `${turns}`;
+      document.getElementById('lbl-out').textContent = `${outK.toFixed(1)}k tk`;
+      document.getElementById('lbl-cache').textContent = `${cachePct}%`;
+      document.getElementById('lbl-qa').textContent = `${qaPct}%`;
+      document.getElementById('lbl-sub').textContent = `${subMult.toFixed(1)}×`;
+
+      const humanDaily = hourly * overhead * 8.0;
+      const effInputK = ctxK * (1.0 - 0.8 * (cachePct / 100.0));
+      const dailyTokensM = (turns * (effInputK + outK)) / 1000.0;
+      const tokenListCost = dailyTokensM * price1m;
+      const tokenSubCost = tokenListCost * subMult;
+      const qaHumanCost = humanDaily * (qaPct / 100.0);
+      const blendedTotal = tokenSubCost + qaHumanCost;
+
+      document.getElementById('kpi-human').textContent = `$${humanDaily.toFixed(2)}`;
+      document.getElementById('kpi-tokens').textContent = `$${tokenListCost.toFixed(2)}`;
+      document.getElementById('kpi-vol').textContent = `${dailyTokensM.toFixed(2)}M effective tokens/day`;
+      document.getElementById('kpi-blended').textContent = `$${blendedTotal.toFixed(2)}`;
+      const diffPct = humanDaily > 0 ? ((blendedTotal - humanDaily) / humanDaily) * 100 : 0;
+      const deltaEl = document.getElementById('kpi-delta');
+      deltaEl.textContent = diffPct <= 0 ? `${Math.abs(diffPct).toFixed(1)}% cheaper vs Human` : `+${diffPct.toFixed(1)}% costlier vs Human`;
+      deltaEl.style.color = diffPct <= 0 ? '#10b981' : '#ef4444';
+
+      if (typeof window.renderChartInstance === 'function') {
+        window.renderChartInstance('i3_calc_chart', {
+          type: 'bar',
+          index_axis: 'y',
+          show_labels: true,
+          labels: [
+            'Human Only (BLS 8h Day)',
+            'AI Tokens (API List Price)',
+            'AI Tokens × Subsidy Mult.',
+            'Blended Total (Tokens + QA)',
+          ],
+          x_title: 'Daily Cost (USD / 8-Hour Day)',
+          y_title: 'Cost Scenario',
+          datasets: [{
+            label: 'Daily Cost (USD)',
+            data: [
+              Number(humanDaily.toFixed(2)),
+              Number(tokenListCost.toFixed(2)),
+              Number(tokenSubCost.toFixed(2)),
+              Number(blendedTotal.toFixed(2)),
+            ],
+            backgroundColor: ['#a1a1aa', '#38bdf8', '#f97316', '#a855f7'],
+          }],
+        });
+      }
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const cards = window.ISSUE03_GRAPHS || [];
+      cards.forEach(c => {
+        (c.charts || []).forEach((ins, idx) => {
+          const cid = `i3_canvas_${c.id}_${idx}`;
+          if (typeof window.renderChartInstance === 'function') {
+            window.renderChartInstance(cid, ins.chart);
+          }
+        });
+      });
+      initTokenHumanCalc();
+    });
+  </script>
+</body>
+</html>

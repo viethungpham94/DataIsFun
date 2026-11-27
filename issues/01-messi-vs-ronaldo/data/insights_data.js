@@ -14,6 +14,12 @@ window.INSIGHTS_DATA = [
           "type": "spatial_baseline",
           "title": "Average On-Ball Position Migration (Opponent Half: 50%\u2013100%)"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": true
       },
       {
@@ -88,7 +94,13 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "25 seasons of Transfermarkt starting tactical role logs.",
+          "why": "Full-career coverage (\u226566% threshold met) of starting XI positions."
+        },
+        "hero": true
       },
       {
         "headline": "Messi: Right Wing to False Nine, then flexible between both.",
@@ -464,6 +476,12 @@ window.INSIGHTS_DATA = [
               "manager": "Kily Gonz\u00e1lez / Guillermo Hoyos"
             }
           ]
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "25 seasons of Transfermarkt starting tactical role logs.",
+          "why": "Full-career coverage (\u226566% threshold met) of starting XI positions."
         },
         "hero": false
       },
@@ -842,6 +860,12 @@ window.INSIGHTS_DATA = [
             }
           ]
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "25 seasons of Transfermarkt starting tactical role logs.",
+          "why": "Full-career coverage (\u226566% threshold met) of starting XI positions."
+        },
         "hero": false
       }
     ],
@@ -871,10 +895,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Seasonal average normalised on-ball coordinates (centroid_x, centroid_y) and match-by-match tactical role indicated.",
     "metrics": "On-ball centroid trajectory (50%\u2013100%), career appearances by tactical role, by season.",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Transfermarkt starting XI roles (25 seasons) + Understat/FotMob/StatsBomb shot coordinates (2014\u20132024).",
-      "narrative_weight": "Context-setting role & zone baseline; explains tactical differences without scoring a winner.",
-      "rationale": "Career starting-position logs cover all 25 seasons (High), while pitch-centroid heatmaps cover 2014\u20132024 tracked leagues (Medium). Combined rating: Medium."
+      "level": "High",
+      "score": 2.75,
+      "coverage": "4 charts (3 High, 1 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.75/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -927,6 +951,12 @@ window.INSIGHTS_DATA = [
               "#475569"
             ]
           }
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201325 seasons of team goal / possession records (2002/03\u20132026/27 or 2008/09\u20132022/23).",
+          "why": "Meets the 15+ season / \u226566% coverage threshold across shared European and career seasons."
         },
         "hero": true
       },
@@ -1014,6 +1044,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201325 seasons of team goal / possession records (2002/03\u20132026/27 or 2008/09\u20132022/23).",
+          "why": "Meets the 15+ season / \u226566% coverage threshold across shared European and career seasons."
+        },
         "hero": false
       },
       {
@@ -1073,6 +1109,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
+        },
         "hero": false
       },
       {
@@ -1131,6 +1173,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
+        },
         "hero": false
       },
       {
@@ -1182,7 +1230,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201325 seasons of team goal / possession records (2002/03\u20132026/27 or 2008/09\u20132022/23).",
+          "why": "Meets the 15+ season / \u226566% coverage threshold across shared European and career seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Season by season, their teams stayed closely matched in goals and defence.",
@@ -1612,6 +1666,12 @@ window.INSIGHTS_DATA = [
             }
           ]
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201325 seasons of team goal / possession records (2002/03\u20132026/27 or 2008/09\u20132022/23).",
+          "why": "Meets the 15+ season / \u226566% coverage threshold across shared European and career seasons."
+        },
         "hero": false
       },
       {
@@ -1681,7 +1741,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       }
     ],
     "leader": "split",
@@ -1711,9 +1777,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Team vs opponent passes per match, team pass share (%), team goals scored vs conceded per match, vertical carry directness (%), progressive pass ratio (%), attacking-third touch share (%), and fast-break shot share (%).",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Transfermarkt team goals (25 seasons) + FBref/ESDB possession & pass-range telemetry (2008/09\u20132022/23 shared).",
-      "narrative_weight": "Tactical system context; frames why per-player volume differs between possession and direct sides.",
-      "rationale": "Team scoring/conceding spans all 25 seasons, but possession and pass-distance telemetry only cover shared European seasons (2008/09\u20132022/23)."
+      "score": 2.29,
+      "coverage": "7 charts (4 High, 1 Medium, 2 Low).",
+      "why": "Average chart reliability score = 2.29/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -1764,6 +1830,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": true
       },
       {
@@ -1803,7 +1875,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's squad-value share peaked in late Barcelona years; Ronaldo's surged at Juventus.",
@@ -1922,6 +2000,12 @@ window.INSIGHTS_DATA = [
           "y_max": 12,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       },
       {
@@ -1960,6 +2044,12 @@ window.INSIGHTS_DATA = [
           "y_title": "\u20acM",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
         },
         "hero": false
       },
@@ -2035,6 +2125,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       },
       {
@@ -2109,6 +2205,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       },
       {
@@ -2179,6 +2281,12 @@ window.INSIGHTS_DATA = [
               "Bruno Fernandes (\u20ac84.3M), Jadon Sancho (\u20ac75.0M), Marcus Rashford (\u20ac59.3M)"
             ]
           ]
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
         },
         "hero": false
       },
@@ -2254,6 +2362,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       }
     ],
@@ -2280,9 +2394,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Overall team value incl. self (\u20acM), supporting cast market value excl. self (\u20acM), player % contribution to squad value, seasonal Top 3 Best XI teammates table, and average opponent squad value faced (\u20acM).",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Transfermarkt matchday squad & Best XI valuations across European club seasons (2012/13\u20132022/23).",
-      "narrative_weight": "Tests the 'better teammates' narrative across shared European prime years.",
-      "rationale": "Valuations are contemporary market estimates (not objective skill) and cover European leagues 2012/13\u20132022/23 rather than full 25-year careers."
+      "score": 2.0,
+      "coverage": "8 charts (0 High, 8 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -2329,6 +2443,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Senior Goals",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": true
       },
@@ -2526,6 +2646,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -2721,6 +2847,12 @@ window.INSIGHTS_DATA = [
           "y_min": -17,
           "y_max": 10,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": false
       },
@@ -2919,6 +3051,12 @@ window.INSIGHTS_DATA = [
           "y_max": 12,
           "unit": "Ages Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -3032,7 +3170,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "ronaldo",
@@ -3062,9 +3206,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Gross senior goals, official FIFA goals, seasonal peaks, and same-age cumulative goal pace.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Complete senior career match & goal logs across club and country (25 seasons; 1,915 goals).",
-      "narrative_weight": "Core Pillar 1.0 volume anchor: gross, official, and age-matched scoring.",
-      "rationale": "Cross-verified across Transfermarkt, martj42 international logs, and official competition records with 100% career coverage."
+      "score": 3.0,
+      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -3135,6 +3279,12 @@ window.INSIGHTS_DATA = [
               4
             ]
           }
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "20+ seasons of Opta conversion / full-career match logs (2005/06\u20132024/25+).",
+          "why": "Covers \u226515 seasons (\u226566% of career span) with verified match & shot totals."
         },
         "hero": true
       },
@@ -3306,6 +3456,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Shot Conversion (%)",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "20+ seasons of Opta conversion / full-career match logs (2005/06\u20132024/25+).",
+          "why": "Covers \u226515 seasons (\u226566% of career span) with verified match & shot totals."
         },
         "hero": false
       },
@@ -3590,6 +3746,12 @@ window.INSIGHTS_DATA = [
           "y_max": 13,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "20+ seasons of Opta conversion / full-career match logs (2005/06\u20132024/25+).",
+          "why": "Covers \u226515 seasons (\u226566% of career span) with verified match & shot totals."
+        },
         "hero": false
       },
       {
@@ -3696,6 +3858,12 @@ window.INSIGHTS_DATA = [
           "y_min": -2,
           "y_max": 9,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -3804,6 +3972,12 @@ window.INSIGHTS_DATA = [
           "y_max": 5,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -3861,7 +4035,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi consistently beat seasonal xG by a wide margin; Ronaldo tracked near expectation.",
@@ -3992,6 +4172,12 @@ window.INSIGHTS_DATA = [
           "y_max": 9,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -4031,7 +4217,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo: slight edge in total hat-tricks; Messi: clear lead in non-penalty hat-tricks.",
@@ -4093,6 +4285,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Matches",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "20+ seasons of Opta conversion / full-career match logs (2005/06\u20132024/25+).",
+          "why": "Covers \u226515 seasons (\u226566% of career span) with verified match & shot totals."
         },
         "hero": false
       },
@@ -4157,6 +4355,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "20+ seasons of Opta conversion / full-career match logs (2005/06\u20132024/25+).",
+          "why": "Covers \u226515 seasons (\u226566% of career span) with verified match & shot totals."
+        },
         "hero": false
       }
     ],
@@ -4186,10 +4390,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Converting scoring opportunities into goals above Expected Goals (xG) benchmarks, minimising shots required per goal scored, and producing multi-goal outbursts (hat-tricks, pokers, manitas).",
     "metrics": "Cumulative xG outperformance, shot conversion rate, club & country goals/match, low-xG screamers, and multi-goal match feats.",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Opta conversion (2005\u20132025 European leagues) + Understat/FBref/FotMob xG (9\u201313 tracked seasons).",
-      "narrative_weight": "Core efficiency & shot-difficulty test; separates clinical finishing from high shot volume.",
-      "rationale": "Opta conversion covers 20 European seasons, but shot-level xG is only available from 2014/15 onwards (omitting early-career peaks such as 2011/12)."
+      "level": "High",
+      "score": 2.5,
+      "coverage": "10 charts (5 High, 5 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.50/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -4242,6 +4446,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
         },
         "hero": true
       },
@@ -4306,7 +4516,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
+        "hero": true
       },
       {
         "headline": "Majority of goals for both are non-penalty inside the box, Messi slightly higher.",
@@ -4422,6 +4638,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
         "hero": false
       },
       {
@@ -4528,6 +4750,12 @@ window.INSIGHTS_DATA = [
           "y_min": -1,
           "y_max": 10,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -4732,6 +4960,12 @@ window.INSIGHTS_DATA = [
           "y_max": 8,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
         "hero": false
       },
       {
@@ -4788,6 +5022,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
+        },
         "hero": false
       },
       {
@@ -4843,6 +5083,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Conversion (%)",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
         },
         "hero": false
       },
@@ -5047,6 +5293,12 @@ window.INSIGHTS_DATA = [
           "y_max": 1,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
         "hero": false
       },
       {
@@ -5102,6 +5354,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Attempts",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
         },
         "hero": false
       },
@@ -5159,6 +5417,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
+        },
         "hero": false
       },
       {
@@ -5198,7 +5462,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's goals came consistently from ground build-up throughout his career.",
@@ -5422,6 +5692,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Season Goals (%)",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
         },
         "hero": false
       },
@@ -5648,6 +5924,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
         "hero": false
       },
       {
@@ -5722,6 +6004,12 @@ window.INSIGHTS_DATA = [
               "#eab308"
             ]
           }
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
         },
         "hero": false
       },
@@ -5824,6 +6112,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career goal logs (1,915 goals across 25 seasons).",
+          "why": "Complete career coverage across body parts, zones, penalties, free kicks, and goal creation."
+        },
         "hero": false
       }
     ],
@@ -5858,9 +6152,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Body parts, scoring zones, non-penalty vs penalty totals, goal creation mix, top assister concentration, and set-piece conversion.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Full-career body-part & penalty/free-kick logs (1,915 goals), with 2014/15\u20132018/19 shot-level attempt rates.",
-      "narrative_weight": "Core Pillar 1.0 diversity & penalty/NPG split; directly answers 'Penaldo' and 'one-foot' claims.",
-      "rationale": "Career totals for NPG, penalties, headers, weak-foot, and free-kick goals span 100% of senior careers; only attempt-rate sub-charts use the 5-season Understat window."
+      "score": 2.4,
+      "coverage": "15 charts (10 High, 1 Medium, 4 Low).",
+      "why": "Average chart reliability score = 2.40/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -6072,6 +6366,12 @@ window.INSIGHTS_DATA = [
           "y_max": 11,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
         "hero": true
       },
       {
@@ -6275,6 +6575,12 @@ window.INSIGHTS_DATA = [
           "y_max": 12,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
         "hero": false
       },
       {
@@ -6310,6 +6616,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Percent",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
         },
         "hero": false
       },
@@ -6356,7 +6668,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
+        "hero": true
       },
       {
         "headline": "Neck-and-neck in Round of 16; Ronaldo scores faster from Quarter-Finals onward.",
@@ -6400,6 +6718,12 @@ window.INSIGHTS_DATA = [
           "y_title": "G/90",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
         },
         "hero": false
       },
@@ -6475,6 +6799,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -6529,6 +6859,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -6574,7 +6910,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
+        "hero": true
       },
       {
         "headline": "Virtually tied in league Top-6 winners; Ronaldo leads in the Champions League.",
@@ -6616,6 +6958,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
         "hero": false
       },
       {
@@ -6655,6 +7003,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -6693,6 +7047,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals / Match",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -6768,6 +7128,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -6842,6 +7208,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -6897,6 +7269,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
         "hero": false
       },
       {
@@ -6942,6 +7320,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career match logs & tournament-date FIFA rankings (25 seasons).",
+          "why": "Complete career coverage for team goal share, GWGs, knockouts, and international FIFA tiers."
+        },
         "hero": false
       }
     ],
@@ -6980,9 +7364,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Team goal share %, GWGs, knockout goals, G/90 & % of team goals by round, Top-6 GWGs, eventual Top-4 & Bottom-4 league goals, and international goals (% share & G/90) by FIFA rank.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Full-career match logs (2,521 appearances), knockout ties, GWG, and tournament-date FIFA rankings.",
-      "narrative_weight": "Core big-game & opponent-quality test; resolves 'minnow padding' and 'knockout clutch' myths.",
-      "rationale": "Built directly from complete match-by-match goal/result logs and historical FIFA World Rankings across all senior club and international fixtures."
+      "score": 2.6,
+      "coverage": "15 charts (9 High, 6 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.60/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -7029,6 +7413,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": true
       },
@@ -7313,6 +7703,12 @@ window.INSIGHTS_DATA = [
           "y_max": 19,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -7429,6 +7825,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -7474,7 +7876,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Messi: 2\u00d7+ multi-assist matches and 3\u00d7 assist hat-tricks.",
@@ -7516,7 +7924,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -7546,9 +7960,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Gross & official career assists, seasonal assists, competition splits (League, UCL, International), and 2+ / 3+ assist matches.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Complete senior career assist logs (774 assists) + Transfermarkt game-events recipient mapping.",
-      "narrative_weight": "Primary Pillar 1.2 playmaking volume anchor.",
-      "rationale": "Full-career senior assist totals and match logs cover all 25 seasons across club and country."
+      "score": 3.0,
+      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -7595,6 +8009,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": true
       },
       {
@@ -7634,7 +8054,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi: 2\u00d7+ Big Chances and 6\u00d7+ accurate throughballs.",
@@ -7673,7 +8099,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15+ European seasons of Opta chance-creation tracking.",
+          "why": "Meets the 15+ season threshold for Big Chances, throughballs, and key passes."
+        },
+        "hero": true
       },
       {
         "headline": "Messi delivered 6\u00d7+ more accurate throughballs across Europe.",
@@ -7714,6 +8146,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Throughballs",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15+ European seasons of Opta chance-creation tracking.",
+          "why": "Meets the 15+ season threshold for Big Chances, throughballs, and key passes."
         },
         "hero": false
       },
@@ -7757,6 +8195,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15+ European seasons of Opta chance-creation tracking.",
+          "why": "Meets the 15+ season threshold for Big Chances, throughballs, and key passes."
+        },
         "hero": false
       },
       {
@@ -7799,6 +8243,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15+ European seasons of Opta chance-creation tracking.",
+          "why": "Meets the 15+ season threshold for Big Chances, throughballs, and key passes."
+        },
         "hero": false
       }
     ],
@@ -7826,10 +8276,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Per-90 assist rate, Expected Assists (xA), defence-splitting throughballs, Big Chances Created, and Key Passes delivered.",
     "metrics": "Assists per 90, Expected Assists (xA), accurate throughballs, Big Chances Created, and Key Passes.",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Opta/Understat/FBref xA, Big Chances Created, and throughballs across European league seasons.",
-      "narrative_weight": "Measures chance-creation quality beyond raw assists.",
-      "rationale": "Strong multi-season Opta/Understat European coverage, though pre-2014/15 seasons lack uniform shot-assisted xA tracking."
+      "level": "High",
+      "score": 2.67,
+      "coverage": "6 charts (4 High, 2 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.67/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -7880,6 +8330,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
+        },
         "hero": true
       },
       {
@@ -7922,7 +8378,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Messi completes far more long passes and switches of play.",
@@ -7960,6 +8422,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
         },
         "hero": false
       },
@@ -8003,6 +8471,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
+        },
         "hero": false
       },
       {
@@ -8044,6 +8518,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Passes",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
         },
         "hero": false
       },
@@ -8087,7 +8567,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "StatsBomb Open Data sample (asymmetric club coverage between players).",
+          "why": "StatsBomb open event data covers many more Messi Barcelona seasons than Ronaldo seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Messi cleared the Big-5 90th percentile for passes/90; Ronaldo sat below playmakers.",
@@ -8197,6 +8683,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Completed Passes / 90m",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -8309,6 +8801,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       }
     ],
@@ -8338,10 +8836,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Passing volume, completion rates across short/medium/long ranges, switches of play, and progressive passing rates.",
     "metrics": "Passes/match, completion % by distance range, completed long passes & switches, and progressive pass volume & share.",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Transfermarkt match passes + Opta/FBref progressive & range-split passing (European seasons).",
-      "narrative_weight": "Measures general-play tempo and progression.",
-      "rationale": "Total passes span broad career logs, while progressive passes and short/medium/long splits rely on European FBref/Opta windows."
+      "level": "Low",
+      "score": 1.25,
+      "coverage": "8 charts (0 High, 2 Medium, 6 Low).",
+      "why": "Average chart reliability score = 1.25/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -8439,7 +8937,13 @@ window.INSIGHTS_DATA = [
           "y_max": 7,
           "unit": "Seasons Led"
         },
-        "hero": true
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": false
       },
       {
         "headline": "Messi accounts for a vastly larger share of team dribbles and carry distance.",
@@ -8481,7 +8985,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi assisted a broader set of teammates across Europe.",
@@ -8520,7 +9030,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's top assist partnerships produced higher volume, led by Luis Su\u00e1rez.",
@@ -8613,6 +9129,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -8658,7 +9180,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's knockout assist rate per 90 rises sharply from QF to Finals.",
@@ -8703,6 +9231,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -8742,6 +9276,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -8780,6 +9320,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists / Match",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -8855,6 +9401,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -8928,6 +9480,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists vs Top 4",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -9003,6 +9561,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -9057,6 +9621,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       }
     ],
@@ -9091,9 +9661,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Player % of team passes/dribbles/carry distance, unique teammates assisted, knockout assists (total & per 90), and assists vs eventual Top-4 & Bottom-4 clubs.",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Transfermarkt assist-share logs + Opta/FBref team build-up & Top-4/Bottom-4 opponent splits.",
-      "narrative_weight": "Tests big-game playmaking and team reliance.",
-      "rationale": "Assist shares cover full careers, while progressive-carry and build-up share metrics cover instrumented European seasons."
+      "score": 2.0,
+      "coverage": "12 charts (0 High, 12 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -9144,6 +9714,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": true
       },
       {
@@ -9186,7 +9762,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
+        "hero": true
       },
       {
         "headline": "Messi led dribbles in every Opta season, clearing the Big-5 Top-10 average.",
@@ -9331,6 +9913,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Successful Dribbles",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
         },
         "hero": false
       },
@@ -9478,6 +10066,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": false
       }
     ],
@@ -9503,10 +10097,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Career successful take-ons, seasonal dribble totals, and dribbles per 90 minutes across European competition.",
     "metrics": "Opta career successful dribbles, dribbles per 90 minutes, and seasonal dribble volume & per-90 trajectories (2009/10\u20132023/24).",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Opta take-ons (2005\u20132025 European leagues) + StatsBomb progressive carry distance.",
-      "narrative_weight": "Core Pillar 1.3 1v1 dribbling & ball-progression criterion.",
-      "rationale": "Opta dribble totals cover 20 European league seasons reliably; StatsBomb carry-distance vectors have asymmetric club coverage."
+      "level": "High",
+      "score": 3.0,
+      "coverage": "4 charts (4 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -9554,6 +10148,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -9599,6 +10199,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -9638,7 +10244,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Messi hit the higher G+A peak; both towered above Top-10 European attackers.",
@@ -9833,6 +10445,12 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": false
       },
@@ -10029,6 +10647,12 @@ window.INSIGHTS_DATA = [
           "y_min": -7,
           "y_max": 18,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": false
       },
@@ -10227,6 +10851,12 @@ window.INSIGHTS_DATA = [
           "y_max": 15,
           "unit": "Ages Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -10340,7 +10970,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -10370,9 +11006,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Gross & official G+A, League/UCL/International G+A, G+A per match & per 90, seasonal G+A difference, and same-age cumulative G+A.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Full-career Goals + Assists across all senior club and international competitions (25 seasons).",
-      "narrative_weight": "Primary Pillar 1.4 combined attacking output anchor.",
-      "rationale": "Directly aggregates verified career goals and assists with 100% senior career coverage."
+      "score": 3.0,
+      "coverage": "7 charts (7 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -10584,6 +11220,12 @@ window.INSIGHTS_DATA = [
           "y_max": 18,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career team scoring & on-pitch involvement logs (25 seasons).",
+          "why": "Complete career match-by-match goal and assist share coverage."
+        },
         "hero": true
       },
       {
@@ -10623,7 +11265,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Per match, Messi leads G+A against both Top-4 and Bottom-4 clubs.",
@@ -10661,6 +11309,12 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A / Match",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -10736,6 +11390,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -10810,6 +11470,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       },
       {
@@ -10864,7 +11530,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -10889,10 +11561,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Percentage of team goals scored while the player was on the pitch that were directly scored or assisted by the player.",
     "metrics": "On-pitch team goal involvement share (%) and combined G+A vs eventual season Top-4 and Bottom-4 clubs.",
     "reliability": {
-      "level": "High",
-      "coverage_note": "Full-career G+A share of team goals + Top-4/Bottom-4 league opponent splits (2012/13\u20132024/25).",
-      "narrative_weight": "Measures combined offensive burden for club and country.",
-      "rationale": "Team goal involvement percentages are computed directly from complete match and season scoring logs."
+      "level": "Medium",
+      "score": 2.17,
+      "coverage": "6 charts (1 High, 5 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.17/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -10950,6 +11622,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Per 90 Minutes",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "14 seasons of Opta European defensive tracking (2009/10\u20132022/23).",
+          "why": "Strong 14-season European sample, just below the 15-season High threshold."
         },
         "hero": true
       },
@@ -11034,6 +11712,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "14 seasons of Opta European defensive tracking (2009/10\u20132022/23).",
+          "why": "Strong 14-season European sample, just below the 15-season High threshold."
+        },
         "hero": false
       },
       {
@@ -11098,6 +11782,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Tackles Won / 90m",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
         },
         "hero": false
       },
@@ -11182,6 +11872,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "14 seasons of Opta European defensive tracking (2009/10\u20132022/23).",
+          "why": "Strong 14-season European sample, just below the 15-season High threshold."
+        },
         "hero": false
       },
       {
@@ -11237,6 +11933,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Pressures / 90m",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "5\u20136 season European league telemetry window.",
+          "why": "Covers fewer than 7 seasons (<35% of career span) due to provider availability."
         },
         "hero": false
       },
@@ -11309,6 +12011,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       }
     ],
@@ -11337,9 +12045,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m, and Transfermarkt tackles won/90m by season.",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Opta/FBref defensive actions (pressures, tackles, interceptions, blocks) across tracked European seasons.",
-      "narrative_weight": "Core Pillar 2.1 off-ball work rate criterion.",
-      "rationale": "Pressures and defensive actions are only tracked in modern Opta/FBref European windows (post-2017/18 for pressures), missing early-career work rate."
+      "score": 1.83,
+      "coverage": "6 charts (0 High, 5 Medium, 1 Low).",
+      "why": "Average chart reliability score = 1.83/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -11389,6 +12097,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": true
       },
       {
@@ -11428,7 +12142,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo won far more aerial duels in every tracked season.",
@@ -11516,6 +12236,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Aerial Duels Won",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
         },
         "hero": false
       },
@@ -11606,6 +12332,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": false
       },
       {
@@ -11689,6 +12421,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": false
       },
       {
@@ -11754,6 +12492,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "15\u201316 European seasons of Opta tracking (2009/10\u20132024/25).",
+          "why": "Exceeds the 15-season / \u226566% threshold across consistent Opta European league telemetry."
+        },
         "hero": false
       }
     ],
@@ -11781,10 +12525,10 @@ window.INSIGHTS_DATA = [
     "define_by": "Seasonal Opta aerial duels won (total & per 90m), Opta defensive clearances per 90m, and Transfermarkt fouls won per 90m.",
     "metrics": "Aerial duels won/90m (2009\u20132025), clearances/90m (2009\u20132023), and fouls drawn/90m (2018\u20132026).",
     "reliability": {
-      "level": "Medium",
-      "coverage_note": "Opta aerial duels won & defensive clearances across tracked European league seasons.",
-      "narrative_weight": "Core Pillar 2.2 aerial & box-defending criterion.",
-      "rationale": "Consistent Opta European league telemetry across shared prime years, excluding non-European and early uninstrumented seasons."
+      "level": "High",
+      "score": 3.0,
+      "coverage": "6 charts (6 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -11831,6 +12575,12 @@ window.INSIGHTS_DATA = [
           "y_title": "PPG",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": true
       },
@@ -12034,6 +12784,12 @@ window.INSIGHTS_DATA = [
           "y_min": -14,
           "y_max": 11,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": false
       },
@@ -12322,6 +13078,12 @@ window.INSIGHTS_DATA = [
             "12/4"
           ]
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       },
       {
@@ -12361,7 +13123,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Seasonal club win rates match closely; Ronaldo edges campaigns led.",
@@ -12563,6 +13331,12 @@ window.INSIGHTS_DATA = [
           "y_min": -14,
           "y_max": 11,
           "unit": "Seasons Led"
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": false
       },
@@ -12851,6 +13625,12 @@ window.INSIGHTS_DATA = [
             "12/4"
           ]
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       }
     ],
@@ -12877,9 +13657,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Team PPG & win rate (with vs without), when-played seasonal curves, and seasonal With \u2212 Without PPG & win-rate differences.",
     "reliability": {
       "level": "High",
-      "coverage_note": "On/off match-by-match team PPG and win-rate lift across all club & international appearances (25 seasons).",
-      "narrative_weight": "Core Pillar 3.1 net team impact criterion.",
-      "rationale": "Computed across full-career team fixture logs comparing matches played vs missed (with sample-size tables shown)."
+      "score": 3.0,
+      "coverage": "6 charts (6 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -12983,6 +13763,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "18 consecutive seasons of match ratings & official MOTM records (2009/10\u20132026/27).",
+          "why": "Exceeds 15+ seasons (\u226566% of career span) across independent rating aggregators."
+        },
         "hero": true
       },
       {
@@ -13025,7 +13811,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "18 consecutive seasons of match ratings & official MOTM records (2009/10\u20132026/27).",
+          "why": "Exceeds 15+ seasons (\u226566% of career span) across independent rating aggregators."
+        },
+        "hero": true
       },
       {
         "headline": "Messi won MOTM in over half of his league and UCL appearances.",
@@ -13067,7 +13859,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "18 consecutive seasons of match ratings & official MOTM records (2009/10\u20132026/27).",
+          "why": "Exceeds 15+ seasons (\u226566% of career span) across independent rating aggregators."
+        },
+        "hero": true
       },
       {
         "headline": "Messi collected more MOTM awards in almost every season since 2009/10.",
@@ -13155,6 +13953,12 @@ window.INSIGHTS_DATA = [
           "y_title": "MOTM Awards",
           "hide_axes": false,
           "show_labels": false
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "18 consecutive seasons of match ratings & official MOTM records (2009/10\u20132026/27).",
+          "why": "Exceeds 15+ seasons (\u226566% of career span) across independent rating aggregators."
         },
         "hero": false
       },
@@ -13245,6 +14049,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "18 consecutive seasons of match ratings & official MOTM records (2009/10\u20132026/27).",
+          "why": "Exceeds 15+ seasons (\u226566% of career span) across independent rating aggregators."
+        },
         "hero": false
       }
     ],
@@ -13275,9 +14085,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Algorithmic career average match ratings by season, Man-of-the-Match totals, MOTM % rate by competition, and seasonal MOTM totals & rates.",
     "reliability": {
       "level": "High",
-      "coverage_note": "SofaScore/WhoScored/FotMob season match ratings (18 tracked seasons) + verified MOTM awards.",
-      "narrative_weight": "Core Pillar 3.1 holistic match-dominance criterion.",
-      "rationale": "18 consecutive seasons of independent match-rating data plus cross-checked Man of the Match logs."
+      "score": 3.0,
+      "coverage": "5 charts (5 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -13326,6 +14136,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -13368,7 +14184,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "They traded Ballons d'Or for a decade before Messi pulled away.",
@@ -13463,6 +14285,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       }
     ],
@@ -13494,9 +14322,9 @@ window.INSIGHTS_DATA = [
     "question": "Who commands higher recognition in individual voting awards and universal tournament MVP honours?",
     "reliability": {
       "level": "High",
-      "coverage_note": "Official Ballon d'Or, FIFA Player, Golden Shoe, Laureus, and World Cup/Copa MVP archives.",
-      "narrative_weight": "Core Pillar 4.1 individual prestige & voting accolades.",
-      "rationale": "100% deterministic official award records with zero sampling gaps."
+      "score": 3.0,
+      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -13544,6 +14372,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Titles Won",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
         },
         "hero": true
       },
@@ -13753,7 +14587,13 @@ window.INSIGHTS_DATA = [
             }
           ]
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -13784,9 +14624,9 @@ window.INSIGHTS_DATA = [
     "question": "Who captured more continental and domestic top-scorer crowns across distinct leagues?",
     "reliability": {
       "level": "High",
-      "coverage_note": "Official domestic and continental league top-scorer records across England, Spain, Italy, France, Saudi Arabia, and MLS.",
-      "narrative_weight": "Core Pillar 4.1 league-scoring adaptability criterion.",
-      "rationale": "100% verified official Golden Boot and league top-scorer records."
+      "score": 3.0,
+      "coverage": "2 charts (2 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -13837,6 +14677,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Documented Records",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Wikipedia Career Achievements records ledger (401 records across 8 arenas).",
+          "why": "Source-linked career records, though editorial granularity differs between player pages."
         },
         "hero": true
       },
@@ -13895,7 +14741,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Wikipedia Career Achievements records ledger (401 records across 8 arenas).",
+          "why": "Source-linked career records, though editorial granularity differs between player pages."
+        },
+        "hero": true
       }
     ],
     "leader": "split",
@@ -13926,9 +14778,9 @@ window.INSIGHTS_DATA = [
     "question": "Who holds more documented all-time career records across major arenas?",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Wikipedia Career Achievements ledgers + official trophy/honour archives.",
-      "narrative_weight": "Broad career-records tally across 8 arenas.",
-      "rationale": "Comprehensive and source-linked, though Wikipedia's curated record lists have asymmetric editorial granularity (299 Messi vs 102 Ronaldo entries)."
+      "score": 2.0,
+      "coverage": "2 charts (0 High, 2 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -14018,6 +14870,12 @@ window.INSIGHTS_DATA = [
             ]
           }
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -14060,7 +14918,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo edges UCL & Club World Cup titles; Messi won two European Trebles.",
@@ -14102,7 +14966,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Messi built a decisive cumulative lead in senior silverware over two decades.",
@@ -14209,6 +15079,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": false
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": false
       }
     ],
@@ -14244,9 +15120,9 @@ window.INSIGHTS_DATA = [
     "question": "Who has accumulated the more decorated senior silverware collection across club and country?",
     "reliability": {
       "level": "High",
-      "coverage_note": "Complete senior club and international trophy cabinet (45 Messi vs 34 Ronaldo incl. youth/senior; 43 vs 34 senior).",
-      "narrative_weight": "Core Pillar 4.2 championship pedigree & silverware criterion.",
-      "rationale": "100% verified official competition honours."
+      "score": 3.0,
+      "coverage": "4 charts (4 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -14298,6 +15174,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "Point-in-time cross-platform social media follower & post-likes snapshots.",
+          "why": "External social counts fluctuate over time and reflect off-pitch reach rather than longitudinal match logs."
+        },
         "hero": true
       },
       {
@@ -14334,7 +15216,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "Point-in-time cross-platform social media follower & post-likes snapshots.",
+          "why": "External social counts fluctuate over time and reflect off-pitch reach rather than longitudinal match logs."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's 2022 World Cup post holds the all-time most-liked internet record.",
@@ -14370,7 +15258,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "Point-in-time cross-platform social media follower & post-likes snapshots.",
+          "why": "External social counts fluctuate over time and reflect off-pitch reach rather than longitudinal match logs."
+        },
+        "hero": true
       }
     ],
     "leader": "ronaldo",
@@ -14397,9 +15291,9 @@ window.INSIGHTS_DATA = [
     "question": "Who commands greater global digital reach, social media audience, and peak cultural resonance?",
     "reliability": {
       "level": "Low",
-      "coverage_note": "Point-in-time social media follower counts & single-post engagement snapshots.",
-      "narrative_weight": "Pillar 4.3 cultural & digital reach indicator.",
-      "rationale": "External platform snapshots fluctuate over time and reflect off-pitch marketing/era effects rather than on-pitch telemetry."
+      "score": 1.0,
+      "coverage": "3 charts (0 High, 0 Medium, 3 Low).",
+      "why": "Average chart reliability score = 1.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -14447,6 +15341,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Average Attendance",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "11 seasons of matchday attendance logs (2012/13\u20132022/23) + MLS/SPL road splits.",
+          "why": "Strong fixture-level attendance sample (35\u201365% of career), with stadium capacity caps as a confounder."
         },
         "hero": true
       },
@@ -14565,6 +15465,12 @@ window.INSIGHTS_DATA = [
           ],
           "unit": "fans/game"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "11 seasons of matchday attendance logs (2012/13\u20132022/23) + MLS/SPL road splits.",
+          "why": "Strong fixture-level attendance sample (35\u201365% of career), with stadium capacity caps as a confounder."
+        },
         "hero": false
       },
       {
@@ -14619,7 +15525,13 @@ window.INSIGHTS_DATA = [
             }
           ]
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "11 seasons of matchday attendance logs (2012/13\u20132022/23) + MLS/SPL road splits.",
+          "why": "Strong fixture-level attendance sample (35\u201365% of career), with stadium capacity caps as a confounder."
+        },
+        "hero": true
       },
       {
         "headline": "Messi's peak MLS away crowd slightly edged Ronaldo's peak SPL crowd.",
@@ -14655,7 +15567,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "11 seasons of matchday attendance logs (2012/13\u20132022/23) + MLS/SPL road splits.",
+          "why": "Strong fixture-level attendance sample (35\u201365% of career), with stadium capacity caps as a confounder."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -14690,9 +15608,9 @@ window.INSIGHTS_DATA = [
     "question": "Who generates greater live stadium attendance and matchday economic draw?",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Matchday stadium attendance logs across domestic leagues, MLS, and Saudi Pro League.",
-      "narrative_weight": "Pillar 4.3 live box-office draw indicator.",
-      "rationale": "Strong fixture-level attendance records, though stadium capacity caps and league scheduling confound pure 'draw' attribution."
+      "score": 2.0,
+      "coverage": "4 charts (0 High, 4 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -14740,6 +15658,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -14779,7 +15703,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Messi scores far faster at the World Cup, especially in knockouts.",
@@ -14818,7 +15748,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -14844,9 +15780,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Total World Cup goals, non-penalty goals, knockout goals, and minutes per goal.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Complete 2006\u20132026 FIFA World Cup Finals match & goal logs.",
-      "narrative_weight": "Core World Cup scoring & knockout delivery verdict.",
-      "rationale": "100% verified official FIFA World Cup match records."
+      "score": 3.0,
+      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -14894,6 +15830,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Complete 2006\u20132026 FIFA World Cup Finals assist and playmaking logs.",
+          "why": "Official tournament match records covering all World Cup Finals appearances."
+        },
         "hero": true
       },
       {
@@ -14933,7 +15875,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Complete 2006\u20132026 FIFA World Cup Finals assist and playmaking logs.",
+          "why": "Official tournament match records covering all World Cup Finals appearances."
+        },
+        "hero": true
       },
       {
         "headline": "Messi generated vastly higher World Cup Expected Assists (xA).",
@@ -14972,7 +15920,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -15002,9 +15956,9 @@ window.INSIGHTS_DATA = [
     "metrics": "World Cup assists, knockout assists, key passes, and Expected Assists (xA).",
     "reliability": {
       "level": "High",
-      "coverage_note": "Complete 2006\u20132026 FIFA World Cup Finals assist logs + tournament creative stats.",
-      "narrative_weight": "Core World Cup playmaking verdict.",
-      "rationale": "Official tournament assist records cover 100% of matches; xA sub-metrics cover StatsBomb/Opta-tracked editions."
+      "score": 2.67,
+      "coverage": "3 charts (2 High, 1 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.67/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -15052,6 +16006,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "Tracked recent FIFA World Cup editions via StatsBomb/FBref event streams.",
+          "why": "Event-level pressing and dribble tracking is unavailable for earlier World Cup editions (<7 tournament editions)."
+        },
         "hero": true
       },
       {
@@ -15091,7 +16051,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
+        "hero": true
       },
       {
         "headline": "Messi logged ~3\u00d7 more World Cup pressures and ball recoveries.",
@@ -15130,7 +16096,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "Low",
+          "score": 1,
+          "coverage": "Tracked recent FIFA World Cup editions via StatsBomb/FBref event streams.",
+          "why": "Event-level pressing and dribble tracking is unavailable for earlier World Cup editions (<7 tournament editions)."
+        },
+        "hero": true
       },
       {
         "headline": "Messi won 2\u00d7+ fouls and made far more World Cup tackles.",
@@ -15169,6 +16141,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "Multi-season tracked European league window (7\u201314 seasons / 35\u201365% career coverage).",
+          "why": "Solid multi-season provider sample (Understat/Opta/FBref/Transfermarkt) covering shared prime years."
+        },
         "hero": false
       }
     ],
@@ -15199,9 +16177,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Completed dribbles, passes completed/attempted, pressures, recoveries, tackles, and fouls won.",
     "reliability": {
       "level": "Low",
-      "coverage_note": "StatsBomb/FBref World Cup event streams (pressures, dribbles, recoveries).",
-      "narrative_weight": "Supplementary World Cup on-ball & pressing detail.",
-      "rationale": "Event-level pressing and dribble coordinates are only instrumented for recent World Cup editions, leaving earlier tournaments incomplete."
+      "score": 1.5,
+      "coverage": "4 charts (0 High, 2 Medium, 2 Low).",
+      "why": "Average chart reliability score = 1.50/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -15261,6 +16239,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -15312,7 +16296,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -15342,9 +16332,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Edition-by-edition G+A and cumulative knockout G+A.",
     "reliability": {
       "level": "High",
-      "coverage_note": "Edition-by-edition cumulative Goals + Assists across 2006\u20132026 World Cup Finals.",
-      "narrative_weight": "Core World Cup career trajectory.",
-      "rationale": "100% verified official FIFA World Cup goal and assist records."
+      "score": 3.0,
+      "coverage": "2 charts (2 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -15392,6 +16382,12 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
         "hero": true
       },
       {
@@ -15431,7 +16427,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       },
       {
         "headline": "Similar vs Top-20 & minnows; Messi separated against mid-tier World Cup sides.",
@@ -15473,7 +16475,13 @@ window.INSIGHTS_DATA = [
           "hide_axes": false,
           "show_labels": true
         },
-        "hero": false
+        "reliability": {
+          "level": "High",
+          "score": 3,
+          "coverage": "Full senior career / complete official tournament or award records (20\u201325 seasons / 100% coverage).",
+          "why": "Cross-verified official match, goal, assist, or honours records covering \u226566% (up to 100%) of both careers."
+        },
+        "hero": true
       }
     ],
     "leader": "messi",
@@ -15503,9 +16511,9 @@ window.INSIGHTS_DATA = [
     "metrics": "On-pitch G+A share %, World Cup win rate & PPG, and goals by opponent FIFA rank.",
     "reliability": {
       "level": "High",
-      "coverage_note": "National-team World Cup Finals goal share and match win rates (2006\u20132026).",
-      "narrative_weight": "Core World Cup team-carrying metric.",
-      "rationale": "100% verified official tournament match results and goal logs."
+      "score": 3.0,
+      "coverage": "3 charts (3 High, 0 Medium, 0 Low).",
+      "why": "Average chart reliability score = 3.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   },
   {
@@ -15591,6 +16599,12 @@ window.INSIGHTS_DATA = [
             "\u20ac917.0M (25/25) \u00b7 Self 2.1%",
             "\u20ac939.0M (21 mates) \u00b7 Self 1.1%"
           ]
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
         },
         "hero": true
       },
@@ -15681,6 +16695,12 @@ window.INSIGHTS_DATA = [
           "y_max": 4,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       },
       {
@@ -15731,6 +16751,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Total Squad Value (%)",
           "hide_axes": false,
           "show_labels": true
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
         },
         "hero": false
       },
@@ -15810,7 +16836,13 @@ window.INSIGHTS_DATA = [
             "WC #8/44 \u00b7 Global #8*"
           ]
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Excl. self: Argentina stayed top-seven every edition; Portugal climbed to top-four in 2022\u201326.",
@@ -15888,7 +16920,13 @@ window.INSIGHTS_DATA = [
             "Excl #4/48 \u00b7 Full #3/48"
           ]
         },
-        "hero": false
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
+        "hero": true
       },
       {
         "headline": "Pre-tournament form flipped: Portugal hotter in 2006 & 2018; Argentina surging into 2022 & 2026.",
@@ -15965,6 +17003,12 @@ window.INSIGHTS_DATA = [
             "6W-1D-3L \u00b7 1.90 PPG \u00b7 #9",
             "7W-2D-1L \u00b7 2.30 PPG \u00b7 #8*"
           ]
+        },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
         },
         "hero": false
       },
@@ -16055,6 +17099,12 @@ window.INSIGHTS_DATA = [
           "y_max": 3,
           "unit": "Seasons Led"
         },
+        "reliability": {
+          "level": "Medium",
+          "score": 2,
+          "coverage": "10\u201311 European seasons / 6 World Cup editions of Transfermarkt squad valuations & FIFA ranks.",
+          "why": "Contemporary market valuations are estimates rather than on-pitch stats and cover ~11 shared European seasons."
+        },
         "hero": false
       }
     ],
@@ -16088,9 +17138,9 @@ window.INSIGHTS_DATA = [
     "metrics": "Supporting squad value excl. self (\u20acM), mean teammate value (\u20acM), player % share of squad value, WC squad value rank & FIFA rank among participants, Last-10 Win % & PPG.",
     "reliability": {
       "level": "Medium",
-      "coverage_note": "Pre-tournament FIFA World Rankings & Transfermarkt national-squad valuations (2006\u20132026).",
-      "narrative_weight": "Context on national-team supporting cast strength.",
-      "rationale": "Official FIFA rankings cover all editions; Transfermarkt squad valuations are market estimates and less uniform for 2006\u20132010."
+      "score": 2.0,
+      "coverage": "7 charts (0 High, 7 Medium, 0 Low).",
+      "why": "Average chart reliability score = 2.00/3.00 (High \u2265 2.35, Medium \u2265 1.65; lenient 15+ seasons / \u226566% threshold)."
     }
   }
 ];

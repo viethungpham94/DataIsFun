@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none';">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>DataIsFun: Immigration in the UK (Graphs Preview)</title>
+  <meta name="description" content="Graphs-first empirical analysis of UK immigration: Context Setting, Case for Change (Problems 1-3), and Levers for Change.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%222.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Crect%20width%3D%2224%22%20height%3D%2224%22%20rx%3D%225%22%20fill%3D%22%23000000%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%2218%22%20y1%3D%2219%22%20x2%3D%2218%22%20y2%3D%2210%22/%3E%3Cline%20x1%3D%2212%22%20y1%3D%2219%22%20x2%3D%2212%22%20y2%3D%225%22/%3E%3Cline%20x1%3D%226%22%20y1%3D%2219%22%20x2%3D%226%22%20y2%3D%2213%22/%3E%3C/svg%3E">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DataIsFun">
+  <meta property="og:title" content="DataIsFun: Immigration in the UK (Graphs Preview)">
+  <meta property="og:description" content="Graphs-first empirical analysis of UK immigration: Context Setting, Case for Change (Problems 1-3), and Levers for Change.">
+  <meta property="og:image" content="../../assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DataIsFun: Immigration in the UK (Graphs Preview)">
+  <meta name="twitter:description" content="Graphs-first empirical analysis of UK immigration: Context Setting, Case for Change (Problems 1-3), and Levers for Change.">
+  <meta name="twitter:image" content="../../assets/og-card.png">
+  <link rel="stylesheet" href="../../assets/theme.css">
+  <script src="../../assets/chart.umd.min.js"></script>
+<style>
+  .insight-help-btn {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    background: rgba(56, 189, 248, 0.1);
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    margin-top: 1px;
+  }
+  .insight-help-btn:hover {
+    background: #38bdf8;
+    color: #090d16;
+    border-color: #38bdf8;
+    transform: scale(1.08);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.45);
+  }
+  .insight-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.24s ease;
+  }
+  .insight-drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+  .insight-discussion-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(440px, 92vw);
+    height: 100vh;
+    background: #09090d;
+    border-left: 1px solid rgba(56, 189, 248, 0.28);
+    z-index: 9999;
+    transform: translateX(100%);
+    transition: transform 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: -12px 0 40px rgba(0, 0, 0, 0.7);
+  }
+  .insight-discussion-drawer.open { transform: translateX(0); }
+</style>
+</head>
+<body>
+  <div class="container">
+
+    <nav class="navbar">
+      <a href="../../index.html" class="brand-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span style="letter-spacing: -0.03em;">DataIsFun</span>
+        <span class="badge">LAB</span>
+      </a>
+
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link ">Home</a>
+        <a href="../../issues.html" class="nav-link active">Issues</a>
+        
+        <div class="nav-toc-wrap" id="nav-toc-wrap">
+          <button type="button" class="nav-toc-btn" id="nav-toc-btn" aria-expanded="false" aria-controls="nav-toc-dropdown" onclick="toggleNavToc(event)">
+            <span>ToC</span>
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-toc-dropdown" id="nav-toc-dropdown" role="menu">
+            <a href="#ctx_flows" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ctx_flows', event)"><span class="nav-toc-prefix">1.1</span><span>Immigration in the Past & What Drove It (1964–2025)</span></a>
+<a href="#ctx_macro" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ctx_macro', event)"><span class="nav-toc-prefix">1.2</span><span>Macro Context: GDP, GDP per Capita, Workforce Contribution & Migrant Pay (Pure Macro POV)</span></a>
+<a href="#ctx_routes" class="nav-toc-item" role="menuitem" onclick="selectNavToc('ctx_routes', event)"><span class="nav-toc-prefix">1.3</span><span>Breakdown by Visa Categories (Volume, % Mix & YoY Growth)</span></a>
+<a href="#hyp_housing" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_housing', event)"><span class="nav-toc-prefix">2.1</span><span>Hypothesis 1 · Effect on Housing (Council Rents & Supply)</span></a>
+<a href="#hyp_culture" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_culture', event)"><span class="nav-toc-prefix">2.2</span><span>Hypothesis 2 · Effect on Culture: Ethnicity, Perspective, Religion & Crime</span></a>
+<a href="#hyp_illegal" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_illegal', event)"><span class="nav-toc-prefix">2.3</span><span>Hypothesis 3 · Illegal & Undocumented Immigration (All Routes)</span></a>
+<a href="#hyp_retention" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_retention', event)"><span class="nav-toc-prefix">2.4</span><span>Hypothesis 4 · Actual Volume Staying Long-Term & Converting</span></a>
+<a href="#hyp_work" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_work', event)"><span class="nav-toc-prefix">2.5</span><span>Hypothesis 5 · Work Visa Deeper Dive (Skill Tiers & Dependants)</span></a>
+<a href="#hyp_study" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_study', event)"><span class="nav-toc-prefix">2.6</span><span>Hypothesis 6 · Study Visa Deeper Dive (Course Level & University Tier)</span></a>
+<a href="#hyp_media" class="nav-toc-item" role="menuitem" onclick="selectNavToc('hyp_media', event)"><span class="nav-toc-prefix">2.7</span><span>Hypothesis 7 · Do Media Narratives Reflect Reality?</span></a>
+<a href="#sol_curbs" class="nav-toc-item" role="menuitem" onclick="selectNavToc('sol_curbs', event)"><span class="nav-toc-prefix">3.1</span><span>Observed Impact of 2024–2025 Policy Curbs</span></a>
+          </div>
+        </div>
+        
+        
+      </div>
+    </nav>
+    
+    <div style="margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.10);">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Issue 02 · Exploratory Data Analysis</div>
+      <h1 style="font-size:32px;font-weight:800;color:#ffffff;letter-spacing:-0.025em;margin-bottom:8px;">Immigration in the UK: Exploratory Data Analysis &amp; Hypothesis Testing</h1>
+      <p style="font-size:14.5px;color:#a1a1aa;max-width:780px;">Part 1 · Baseline Context &rarr; Part 2 · Testing Hypotheses &rarr; Part 3 · Testing Solutions. Built dynamically from official ONS, Home Office, MHCLG &amp; MoJ releases (1964–2026).</p>
+    </div>
+    <details open style="background:#090805;border:1px solid rgba(245,158,11,0.32);border-left:3px solid #f59e0b;border-radius:8px;padding:14px 16px;margin-bottom:18px;">
+      <summary style="cursor:pointer;font-size:14px;font-weight:700;color:#fbbf24;list-style:none;">Data Availability Notes: Requested Metrics Without Public UK Open Data</summary>
+      <ul style="margin:10px 0 0 18px;padding:0;font-size:12px;color:#d4d4d8;line-height:1.55;">
+        <li><strong>Immigrant Income Percentiles &amp; Within-Group Range (P10 / P25 / P75 / P90):</strong> HMRC&rsquo;s public PAYE RTI nationality release publishes <em>median</em> monthly pay by nationality (UK, EU, Non-EU, and top 50 nationalities &mdash; charted in <a href="#ctx_macro" style="color:#38bdf8;">Section 1.2</a>), but does <strong>not</strong> publish within-group income percentiles or interquartile ranges by nationality in open tables (restricted to Secure Research Service / Integrated Data Service).</li>
+        <li><strong>Age- &amp; Sex-Adjusted Crime / Custody Rates by Ethnicity &amp; Religion:</strong> MoJ and Home Office publish raw custody/arrest shares by ethnicity and religion without cross-tabulated age-sex standardised rates or visa-route breakdowns; comparisons in <a href="#hyp_culture" style="color:#38bdf8;">Section 2.2</a> are therefore unadjusted.</li>
+        <li><strong>Annual Ethnicity &amp; Religion Resident Populations (Inter-Census):</strong> Official England &amp; Wales ethnicity and religion shares are collected decennially (Census 2011 and 2021), so annual 2015&ndash;2026 prison series cannot be divided by annual resident denominators.</li>
+        <li><strong>Pre-2019 Route-Level Net Migration Breakdown:</strong> ONS LTIM Table 4b (Work Main, Study, Asylum) starts in YE Dec 2019, so workforce-filtered net migration in <a href="#ctx_macro" style="color:#38bdf8;">Section 1.2</a> begins in 2019 while total net migration as % of the 16&ndash;64 workforce spans 1971&ndash;2025.</li>
+      </ul>
+    </details>
+    <details open style="background:#060608;border:1px solid rgba(56,189,248,0.25);border-left:3px solid #38bdf8;border-radius:8px;padding:14px 16px;margin-bottom:26px;">
+      <summary style="cursor:pointer;font-size:14px;font-weight:700;color:#ffffff;list-style:none;">15 Common Narratives Claimed to Be Problems With UK Migration &rarr; Where Each Is Tested</summary>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:8px;margin-top:12px;font-size:12px;color:#d4d4d8;line-height:1.45;">
+        <div><strong>1. &ldquo;Migration drove up local rents&rdquo;</strong> &rarr; <a href="#hyp_housing" style="color:#38bdf8;">2.1 Housing (310-Council Test: r=0.00)</a></div>
+        <div><strong>2. &ldquo;Housing supply didn&rsquo;t keep pace&rdquo;</strong> &rarr; <a href="#hyp_housing" style="color:#38bdf8;">2.1 Housing (Council Table 122 Test)</a></div>
+        <div><strong>3. &ldquo;Inflation &amp; wages, not migrants, drove rents&rdquo;</strong> &rarr; <a href="#ctx_macro" style="color:#38bdf8;">1.2 Macro Context (CPI &amp; Wages)</a></div>
+        <div><strong>4. &ldquo;Migration boosts GDP but lowers GDP per head&rdquo;</strong> &rarr; <a href="#ctx_macro" style="color:#38bdf8;">1.2 Macro Context (Net Mig + GDP/Head)</a></div>
+        <div><strong>5. &ldquo;Workforce relies on non-study/asylum flows&rdquo;</strong> &rarr; <a href="#ctx_macro" style="color:#38bdf8;">1.2 Macro Context (16&ndash;64 Workforce Test)</a></div>
+        <div><strong>6. &ldquo;Dependants surged far faster than workers&rdquo;</strong> &rarr; <a href="#hyp_work" style="color:#38bdf8;">2.5 Work Deep Dive (Main vs Dependants)</a></div>
+        <div><strong>7. &ldquo;2021 PBS opened the door to lower-skilled jobs&rdquo;</strong> &rarr; <a href="#hyp_work" style="color:#38bdf8;">2.5 Work Deep Dive (SOC 3–6 Roles)</a></div>
+        <div><strong>8. &ldquo;Universities used 1-yr Masters as a visa route&rdquo;</strong> &rarr; <a href="#hyp_study" style="color:#38bdf8;">2.6 Study Deep Dive (Masters &amp; Tier)</a></div>
+        <div><strong>9. &ldquo;Students &amp; temporary visas stay permanently&rdquo;</strong> &rarr; <a href="#hyp_retention" style="color:#38bdf8;">2.4 Staying &amp; Converting (5-Yr Cohort)</a></div>
+        <div><strong>10. &ldquo;Net migration ignores visa expiries&rdquo;</strong> &rarr; <a href="#ctx_flows" style="color:#38bdf8;">1.1 Baseline (Outflows &amp; Non-EU+ Exits)</a></div>
+        <div><strong>11. &ldquo;Small boats are the main migration route&rdquo;</strong> &rarr; <a href="#hyp_media" style="color:#38bdf8;">2.7 Media vs Reality (8.4% Actual)</a></div>
+        <div><strong>12. &ldquo;Asylum backlog grew while returns collapsed&rdquo;</strong> &rarr; <a href="#hyp_illegal" style="color:#38bdf8;">2.3 Illegal &amp; Undocumented (All Routes)</a></div>
+        <div><strong>13. &ldquo;Culture/Religion &amp; asylum dispersal mismatch&rdquo;</strong> &rarr; <a href="#hyp_culture" style="color:#38bdf8;">2.2 Culture (Leave % &amp; Religion)</a></div>
+        <div><strong>14. &ldquo;Rapid ethnic &amp; regional source shift&rdquo;</strong> &rarr; <a href="#hyp_culture" style="color:#38bdf8;">2.2 Culture (Regions &amp; Census 2011–21)</a></div>
+        <div><strong>15. &ldquo;Foreign nationals &amp; crime (prison &amp; petty)&rdquo;</strong> &rarr; <a href="#hyp_culture" style="color:#38bdf8;">2.2 Culture (MoJ Prison &amp; HO Arrests)</a></div>
+      </div>
+    </details>
+    
+        <section id="ctx_flows" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 1 · Baseline Context</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Immigration in the Past & What Drove It (1964–2025)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How has UK migration evolved over 62 years, does Non-EU+ net migration include visa expiries and departures, and what drove the 2020–2021 step-change?</p>
+          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;"><strong>Does Non-EU+ Net Migration include people leaving when visas expire or after study?</strong> <strong>Yes</strong> &mdash; Net Migration = Inflows minus Outflows (including departing students and workers whose visas expire). For Non-EU+ nationals, ONS LTIM records <strong>182k</strong> departures in 2019, dipping to <strong>88k</strong> in 2021 during COVID, then tripling to <strong>278k</strong> departures in 2025 as 2021–2023 cohorts left. <strong>Shaded chart bands</strong> show the UK governing party: <span style='color:#ef4444;font-weight:700;'>Red = Labour</span>, <span style='color:#3b82f6;font-weight:700;'>Blue = Conservative</span>, <span style='color:#818cf8;font-weight:700;'>Indigo = Coalition</span>.</div>
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Over 62 years (1964–2025), UK net migration swung from negative outflows (1964–1982) to ~200k–300k (2004–2019), before the post-2021 spike above 900k.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">62-Year UK Immigration, Emigration & Net Migration (000s · 1964–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Spliced ONS long-run series: 1964–1990 IPS, 1991–2011 LTIM, 2012–2025 Admin-Based (000s). Shaded bands = UK governing party. Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">As a share of total UK population, net migration peaked at 1.32% in 2022 — roughly triple the 2004–2019 average (~0.3%–0.5%).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">UK Net Migration as % of Total UK Population (1971–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Net Migration divided by ONS mid-year UK population estimate (UKPOP, 1971–2025). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop" target="_blank" rel="noopener">ONS UK Population Mid-Year Estimates (UKPOP)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Post-2021 net migration was driven overwhelmingly by non-EU+ arrivals (net = inflows minus departures) as EU+ net migration turned negative.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">UK Net Migration by Nationality Group (YE Dec, 000s · 2012–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Net migration = Inflows minus Outflows (incl. expiring visas & departing students/workers). Non-EU+ outflows tripled from 88k (2021) to 278k (2025). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">What drove the 2020–2021 break: Study, Health & Care (Feb 2022), and Humanitarian schemes (Ukraine / BN(O)) drove the step-change over 2019.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_flows', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Anatomy of the Post-2020 Surge: Pre-COVID (2019) vs 2021–2025 (000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_flows_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued non-visit entry-clearance visas comparing 2019, 2021, 2022, 2023, and 2025. Four drivers: Jan 2021 PBS (RQF 6->3), Feb 2022 Care expansion, Jul 2021 Graduate Route, and 2021–22 BN(O)/Ukraine schemes (468.2k visas). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+        </section>
+        
+        <section id="ctx_macro" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 1 · Baseline Context</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Macro Context: GDP, GDP per Capita, Workforce Contribution & Migrant Pay (Pure Macro POV)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How did UK Net Migration, Real GDP, Real GDP per Capita, CPI/wages/rents, working-age (16–64) workforce share, and immigrant pay move over the longest available timelines?</p>
+          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;"><strong>Pure Macro POV — No Causal Link Assumed Yet:</strong> Each indicator extends as far back as official ONS/HMRC series allow (Real GDP 1948+, GDP/head 1955+, Net Migration 1964+, Working-Age 16–64 Employment 1971+, CPI 1989+, AWE 2001+, Rents 2006+, HMRC Pay 2014+). <strong>% of Working-Age (16–64) Workforce</strong> is plotted separately from % of total population because students, children, and non-working dependants/asylum seekers are not all immediate workforce additions.</div>
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Full-history macro overlay (1948–2025): aggregate Real GDP climbed continuously since 1948 while Real GDP per Head flattened after 2021 during the migration spike.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Macro Overlay: UK Net Migration (000s), Real GDP & Real GDP per Capita (2019=100 · 1948–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Left axis: ONS Real GDP (ABMI, 1948–2025) & Real GDP per Head (IHXW, 1955–2025) indexed to 2019 = 100. Right axis: spliced UK Net Migration (000s, 1964–2025). Descriptive context only. Source: <a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp" target="_blank" rel="noopener">ONS UK Economic Accounts (ABMI & IHXW)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Macro confounders (1989–2025): CPI inflation peaked first in 2022 alongside the net migration surge, while rent growth kept rising into 2024 with nominal wage growth.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Macro Confounders: England Rent Growth, UK CPI, Wage Growth & Net Migration (1989–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Left axis: UK CPI (D7G7, 1989–2025), Whole Economy Wage Growth (KAC3, 2001–2025), and spliced England Private Rents (IPHRP/PIPR, 2006–2025). Right axis: UK Net Migration (000s, 1989–2025). Source: <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics" target="_blank" rel="noopener">ONS Price Index of Private Rents (PIPR & IPHRP)</a> | <a href="https://www.ons.gov.uk/economy/inflationandpriceindices" target="_blank" rel="noopener">ONS CPI (D7G7) & Average Weekly Earnings (KAC3)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Working-age (16–64) workforce test: total net migration peaked at 2.82% of the 16–64 workforce, but filtering out Non-EU Study & Asylum drops the peak to 1.42% and Work Main Applicants alone peak at just 0.64%.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Workforce Contribution: Net Migration (Total, Excl. Study/Asylum & Work Main) as % of UK 16–64 Workforce (1971–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Denominator = UK Employed Workforce Aged 16–64 (ONS LF2G, 1971–2025). Not all migration enters the labour force: Non-EU Study & Asylum (ONS Table 4b, 2019+) are excluded in the green line, and Non-EU Work Main Applicants alone are isolated in the blue line. Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a> | <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf2g/lms" target="_blank" rel="noopener">ONS UK Working-Age Employment 16–64 (LF2G)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Immigrant vs UK median monthly pay (2014–2025): EU and Non-EU payrolled employees overtook the UK national median after 2021.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Immigrant vs UK Pay: Median Monthly Pay by Nationality Group (£/month · 2014–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Annual mean of HMRC PAYE RTI monthly median pay (£/month) by nationality group (Jul 2014–Dec 2025). Note: HMRC open tables publish medians by nationality, not within-group P10/P25/P75/P90 percentiles (see Data Availability Notes at top). Source: <a href="https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025" target="_blank" rel="noopener">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Wide spread across individual nationalities (Dec 2025): most top non-UK payrolled nationalities exceed the £2,576 UK median, while a few lower-wage groups sit below.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_macro', 4)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Median Monthly Pay Across Top 15 Non-UK Nationalities vs UK Median (£/month · Dec 2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_macro_4"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*HMRC PAYE RTI median monthly pay (£) in Dec 2025 across the 15 largest non-UK payrolled nationalities. Dashed yellow line = UK nationals median (£2,576). Green >= UK median, Amber < UK median. Source: <a href="https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025" target="_blank" rel="noopener">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a></div>
+            </div>
+        </section>
+        
+        <section id="ctx_routes" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 1 · Baseline Context</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Breakdown by Visa Categories (Volume, % Mix & YoY Growth)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">Which legal visa categories drove entry-clearance grants across 2006–2025, and what were each category's year-on-year increments?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Work and Study visas (including dependants) drove the overwhelming majority of post-2021 legal grants.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Entry Clearance Visas Issued by Route (ex-Visitor, 000s · 2006–2025)</div>
+                <div style="display:inline-flex;gap:4px;margin-left:8px;"><button type="button" id="tog_i2_canvas_ctx_routes_0_bar" onclick="toggleI2ChartType('ctx_routes', 0, 'bar')" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid #38bdf8;background:rgba(56,189,248,0.2);color:#ffffff;cursor:pointer;">Columns</button><button type="button" id="tog_i2_canvas_ctx_routes_0_line" onclick="toggleI2ChartType('ctx_routes', 0, 'line')" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#a1a1aa;cursor:pointer;">Lines</button></div>
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Descriptive baseline: Issued entry-clearance visas excluding Visitor visas (main applicants + dependants, 000s). Hover for exact % share. Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">In percentage terms, Study dominated 2009–2021 before Work expanded to roughly half of all non-visit grants in 2023–2024.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Entry Clearance Visa Mix by Route (% Share · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*100% stacked share of issued non-visit entry-clearance visas by route (main + dependants, 2006–2025). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Health & Care: carved out of Tier 2 in Aug 2020 (blue), surged +149% YoY in 2022 and +121% YoY in 2023 after Care Workers became eligible (green), then fell after 2024 curbs (amber).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Category 1 · Health & Care Visas: Volume (000s) & YoY % Change (2018–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Bar colours denote route regime: Slate (2018–19, pre-route in Tier 2 General) | Blue (2020–21, Aug 2020 NHS clinical carve-out) | Green (2022–23, Feb 2022 Care Worker expansion) | Amber (2024–25, post-Mar 2024 dependant ban). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Other Work: transitioned from Tier 2 General (slate, incl. NHS clinical) to RQF 3+ Skilled Worker (blue, H&C carved out), before £38.7k threshold curbs in 2024 (amber).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Category 2 · Other Work Visas: Volume (000s) & YoY % Change (2018–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Bar colours denote route regime: Slate (2018–20, Tier 2 General) | Blue (2021–23, Skilled Worker RQF 3+) | Amber (2024–25, £38.7k salary floor). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Study: dipped in 2020 COVID, rebounded +74% in 2021 and +37% in 2022, then cooled after the Jan 2024 dependant ban.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 4)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Category 3 · Study Visas: Volume (000s) & YoY % Change (2018–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_4"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*All issued Study visas (main applicants + dependants + short-term study). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Humanitarian: spiked to 75.6k in 2021 (HK BN(O)) and 263.4k in 2022 (Ukraine War), then tapered sharply from 2023–2025.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 5)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Category 4 · Humanitarian Visas (Ukraine & BN(O)): Volume (000s) & YoY % Change (2018–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_5"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued Ukraine Sponsorship, Ukraine Family, BN(O), and Afghan scheme visas (classified under Home Office 'Other'). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Family: remained relatively stable around 40k–85k per year, with a modest 2023–2024 bump before the £29,000 threshold rise.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('ctx_routes', 6)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Category 5 · Family Visas: Volume (000s) & YoY % Change (2018–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_ctx_routes_6"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued Family visas (Partner, Child, Adult Dependant, and Refugee Family Reunion). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_housing" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 1 · Effect on Housing (Council Rents & Supply)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">Did local areas with higher population growth actually experience sharper private rent rises, and did council-level housing supply scale with population growth?</p>
+          
+          
+    <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #f97316;padding:14px 16px;margin-bottom:14px;">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+        <div style="font-size:14.5px;font-weight:700;color:#ffffff;">UK Local Authority Heatmaps: Population Growth vs Private Rent Rise (2021–2025)</div>
+        <button type="button" class="insight-help-btn" onclick="openI2MapDrawer()" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;margin-bottom:8px;">Hover any council on either map to inspect and highlight both metrics side by side.</div>
+      <div id="uk-map-readout" style="font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#38bdf8;background:#000;border:1px solid rgba(255,255,255,0.12);border-radius:5px;padding:7px 10px;margin-bottom:10px;">Hover over any UK council below...</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+        <div style="background:#000;border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#38bdf8;margin-bottom:6px;">Population Growth 2021–2025 (%)</div>
+          <svg id="uk-map-pop" style="width:100%;height:auto;display:block;"></svg>
+        </div>
+        <div style="background:#000;border:1px solid rgba(255,255,255,0.08);border-radius:6px;padding:10px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f97316;margin-bottom:6px;">Private Rent Rise 2021–2025 (%)</div>
+          <svg id="uk-map-rent" style="width:100%;height:auto;display:block;"></svg>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Local authority boundaries from ONS Open Geography Portal (May 2024 BUC, 361 UK councils). Population growth from ONS Nomis NM_2002_1 (2021–2025) &amp; rent rise from ONS PIPR (2021–2025) cover 310 matched England &amp; Wales councils; Scotland &amp; Northern Ireland are shaded grey where those series differ. Source: <a href="https://www.nomisweb.co.uk/datasets/pestsnew" target="_blank" rel="noopener">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a> | <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics" target="_blank" rel="noopener">ONS Price Index of Private Rents (PIPR & IPHRP)</a> | <a href="https://geoportal.statistics.gov.uk/" target="_blank" rel="noopener">ONS Open Geography Portal (LAD May 2024 BUC)</a></div>
+    </div>
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Cross-section test across 310 England &amp; Wales councils: local population growth (2021–2025) shows virtually zero linear correlation (r = 0.00, R² = 0.00) with local rent rises.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_housing', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Local Authority Test (N=310 Councils): Pop Growth % vs Rent Rise % (2021–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_housing_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Tests spatial link across N=310 matched UK Local Authorities (ONS Nomis NM_2002_1 population growth 2021–2025 vs ONS PIPR cumulative rent growth 2021–2025). Source: <a href="https://www.nomisweb.co.uk/datasets/pestsnew" target="_blank" rel="noopener">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a> | <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics" target="_blank" rel="noopener">ONS Price Index of Private Rents (PIPR & IPHRP)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Council housing supply vs population change (288 English councils): r = 0.83 (R² = 0.69), showing whether local housebuilding scaled with local growth.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_housing', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Council Housing Supply Test (N=288 English Councils): Net Dwellings Added vs Pop Change (000s · 2021–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_housing_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*MHCLG Live Table 122 cumulative net additional dwellings (2021–22 to 2024–25, 000s) vs ONS Nomis NM_2002_1 council population change (2021–2025, 000s). Source: <a href="https://www.gov.uk/government/statistical-data-sets/live-tables-on-net-supply-of-housing" target="_blank" rel="noopener">MHCLG Live Table 122 (LA Net Additional Dwellings)</a> | <a href="https://www.nomisweb.co.uk/datasets/pestsnew" target="_blank" rel="noopener">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">National context: England added ~220k–250k housing units (dwellings, not people — ~520k–590k capacity at 2.36 persons/household) while UK net migration jumped above 900k in 2022–2023.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_housing', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Context Overlay: UK Net Migration (People) vs England Net Dwellings (Housing Units · 000s · 2006–2024)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_housing_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Unit note: Net Dwellings counts housing units (houses/flats), NOT individual people (England & Wales Census 2021 average household size = 2.36 persons). Geography also differs: UK Net Migration (2006–2024 spliced LTIM) vs England Net Additional Dwellings. Descriptive context only. Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional" target="_blank" rel="noopener">ONS Long-Term International Migration</a> | <a href="https://www.gov.uk/government/statistics/housing-supply-net-additional-dwellings-england-2024-to-2025" target="_blank" rel="noopener">MHCLG Housing Supply: Net Additional Dwellings (England)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Regional context: London rents surged earliest and highest above 10% in 2024, though North East rents also rose sharply.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_housing', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Regional Rent Divergence: London vs England vs North East (% · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_housing_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Spliced regional rent inflation (IPHRP 2006–2015; PIPR 2016–2025) comparing London, England average, and North East. Source: <a href="https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics" target="_blank" rel="noopener">ONS Price Index of Private Rents (PIPR & IPHRP)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_culture" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 2 · Effect on Culture: Ethnicity, Perspective, Religion & Crime</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How have incoming visa regions, UK ethnicity (headline & sub-level), religious composition, local vote perspective, and crime (prison & petty arrests) changed?</p>
+          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;"><strong>Data Boundaries:</strong> (1) UK visas log <strong>world region/nationality</strong>, not ethnicity; overall ethnicity &amp; religion come from the ONS Census (2011 vs 2021); (2) Crime is tested across both <strong>Custody (MoJ Prison 2015–2026)</strong> and <strong>Petty/All Offences (Home Office Police Arrests per 1,000)</strong> — note that raw shares are unadjusted for age/sex and MoJ/Home Office do not publish crime by visa route.</div>
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">South Asia (32%→42%) and Sub-Saharan Africa (8%→23%) expanded sharply at the 2023 peak as East & SE Asia fell from 27% to 12%, while Europe spiked briefly in 2022 (Ukraine).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Incoming Non-Visit Visas by World Region (% Share · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*100% stacked share of issued non-visit entry-clearance visas by world region (2006–2025). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Overall England & Wales ethnic composition shifted from 86.0% White in 2011 to 81.7% White in 2021 as Asian (9.3%) and Black (4.0%) shares grew.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">England & Wales Ethnic Composition Over Time (ONS Census 2011 vs 2021, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*ONS Census 2011 and 2021 high-level ethnic group distribution (England & Wales, % of resident population). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Ethnic Group (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Sub-level Census breakdown: White: British fell from 80.5% to 74.4%, while Other White (4.4%→6.2%), Indian (2.5%→3.1%), Pakistani (2.0%→2.7%) & Black African (1.8%→2.5%) led growth.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">England & Wales Sub-Level Ethnic Composition (Top 12 Minority / Other-White Groups, 2011 vs 2021, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Top 12 non-White-British detailed ethnic groups in England & Wales (ONS Census 2011 vs 2021, %). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Ethnic Group (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Religion (ONS Census 2011 vs 2021): Christian share fell from 59.3% to 46.2% while No Religion surged from 25.2% to 37.2% and Muslim rose from 4.9% to 6.5%.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">England & Wales Religion Over Time (ONS Census 2011 vs 2021, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*ONS Census 2011 and 2021 religious composition (England & Wales, % of overall population). Source: <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Religion (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Prison population by religion (MoJ 2015–2026): Muslim share rose from ~14.6% to ~18.8% while Christian share declined from ~50% to ~43%.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 4)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Prison Population by Religion Over Time (MoJ 2015–2026, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_4"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*MoJ Annual Prison Population as at 30 June (2015–2026, Table 1.A.23). Unadjusted for age/sex. Source: <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">MoJ Offender Management Statistics Quarterly (Sep 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Perspective vs Exposure (1): across 303 councils, 2016 Leave vote % shows virtually zero linear correlation with 2021–2025 population growth (r = 0.07, R² = 0.01).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 5)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Perspective vs Exposure (1): Council Leave Vote % (2016) vs Pop Growth % (N=303 Councils)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_5"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Electoral Commission 2016 Leave % vs ONS Nomis 2021–2025 population growth %. Source: <a href="https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum" target="_blank" rel="noopener">Electoral Commission 2016 EU Referendum Results by LA</a> | <a href="https://www.nomisweb.co.uk/datasets/pestsnew" target="_blank" rel="noopener">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Perspective vs Exposure (2): 2016 Leave vote % shows r = 0.15 (R² = 0.02) against local asylum dispersal per 10k residents.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 6)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Perspective vs Exposure (2): Council Leave Vote % (2016) vs Asylum Support per 10k (N=303 Councils)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_6"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Electoral Commission 2016 Leave % vs latest Home Office supported asylum seekers per 10,000 residents (Data_Asy_D11). Source: <a href="https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum" target="_blank" rel="noopener">Electoral Commission 2016 EU Referendum Results by LA</a> | <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Asylum Support by Local Authority (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">MoJ Prison Population (Sep 2026): Foreign Nationals are 11.6% of prisoners; Black & Mixed shares exceed Census population shares (unadjusted for age/sex).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 7)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">England & Wales Prison Population vs Resident Population by Ethnicity (MoJ Sep 2026 vs Census 2021, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_7"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*MoJ Offender Management Statistics (30 Sept 2026, Table 1.Q.7 & 1.Q.9) vs ONS Census 2021 E&W population share. Source: <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Ethnic Group (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Prison demographics over time (2015–2026): Foreign-national share stayed steady near 11%–13% while minority ethnic shares edged gradually higher.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 8)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Prison Population Over Time: Foreign Nationals & Minority Ethnic Shares (2015–2026, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_8"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*MoJ Annual Prison Population as at 30 June (2015–2026, Tables 1.A.22 & 1.A.24). Unadjusted for age/sex. Source: <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">MoJ Offender Management Statistics Quarterly (Sep 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Petty & all notifiable offences (Home Office arrests per 1,000): Black arrest rates (~21–23 per 1,000) remain roughly 2.5x White & Asian rates (~8–9 per 1,000).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 9)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Petty & All Offences: Police Arrest Rate per 1,000 People by Ethnicity (England & Wales)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_9"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Home Office Police Arrests per 1,000 population in England & Wales (2020/21–2022/23+). Covers petty & indictable arrests by ethnicity (not visa status; unadjusted for age/sex). Source: <a href="https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/number-of-arrests/latest" target="_blank" rel="noopener">Home Office Police Arrests by Ethnicity (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Prison-to-population math is NOT parallel: Black (3.2x) and Muslim (2.7x) prison shares sit well above 1.0x parity, while White (0.89x), Asian (0.89x) and Christian (0.97x) sit below 1.0x (unadjusted for age/sex).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 10)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">2021 Prison-to-Population Parity Ratio by Ethnicity & Religion (Prison % ÷ Pop % · 1.0 = Equal Rate)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_10"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*2021 Parity Ratio = (Prison % in Jun 2021) ÷ (Census 2021 E&W Population %). Dashed yellow line = 1.00 (exact mathematical parity). Caveat: raw ratios are unadjusted for age and sex (prison is ~96% male and heavily 18–39; minority/Muslim populations are younger on average). Source: <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Religion (England & Wales)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Change over time is also non-parallel: Asian & Black prison shares barely moved (1.04x and 0.97x) despite ~1.2x population growth, whereas Muslim (1.29x vs 1.33x) and Mixed (1.22x vs 1.32x) tracked closer.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_culture', 11)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Did Prison Shares Move in Parallel with Population? (Pop Shift 2011→21 vs Prison Shift 2015→26, Multiplier)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_culture_11"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Compares Census 2011→2021 population share multiplier against MoJ 2015→2026 prison share multiplier. Unadjusted for age/sex or in-custody religious conversions. Source: <a href="https://www.gov.uk/government/collections/offender-management-statistics-quarterly" target="_blank" rel="noopener">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021" target="_blank" rel="noopener">ONS Census 2021 Religion (England & Wales)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_illegal" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 3 · Illegal & Undocumented Immigration (All Routes)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How did asylum claims, small boats, all-route irregular detections, returns, and total undocumented resident estimates evolve?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Asylum claims climbed above 100,000 in 2024–2025 after staying under 40,000 for most of 2006–2020.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_illegal', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Total Asylum Claims vs Small-Boat Arrivals (000s · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_illegal_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Annual asylum claims (all applicants, 2006–2025) vs detected small-boat Channel arrivals (tracked from 2018; strictly null pre-2018). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Asylum & Returns Datasets (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">All-route irregular detections: before 2020, lorries ('In UK') and inadequately documented air arrivals dominated; after 2019, smugglers shifted to small boats.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_illegal', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Detected Irregular Entries by ALL Routes (2018–2025, 000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_illegal_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*All detected irregular entries from Home Office Data_IER_D01 (2018–2025). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Asylum & Returns Datasets (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Total returns fell sharply from ~60k in 2006–2008 while the pending initial-decision backlog ballooned after 2019.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_illegal', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Asylum Pending Initial-Decision Backlog vs Total Returns (000s · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_illegal_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Cases pending initial decision as at 31 December (tracked from 2010) vs annual enforced + voluntary returns (000s · 2006–2025). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Asylum & Returns Datasets (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Published UK undocumented resident stock estimates range from 430k (2001 Home Office) to 674k (2017 GLA) and 1.0M (2017 Pew incl. pending asylum).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_illegal', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Estimated Undocumented Resident Population in the UK (Published Studies 2001–2017, 000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_illegal_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Published UK undocumented resident stock studies (000s). No official ONS annual count exists; Pew (2019) includes pending asylum applicants. Source: <a href="https://migrationobservatory.ox.ac.uk/resources/briefings/unauthorised-migration-in-the-uk/" target="_blank" rel="noopener">Migration Observatory / Home Office / LSE / GLA / Pew Undocumented Estimates</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_retention" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 4 · Actual Volume Staying Long-Term & Converting</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">What share of visa holders actually stay 5+ years, how has cohort retention changed since 2008, and how many naturalise each year?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Who stays long-term? After 5 years, 54.6% of the 2020 visa cohort still held valid leave or settlement — while 59.3% of Study visas had expired.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_retention', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">5-Year Retention & Settlement Rate by Initial Visa Route (2020 Cohort at End-2025, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_retention_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Home Office Migrant Journey 2025 (Table MJ_03): status at end-2025 of people issued initial leave in 2020. Hover for % share. Source: <a href="https://www.gov.uk/government/statistics/migrant-journey-2025-report" target="_blank" rel="noopener">Home Office Migrant Journey 2025 Report</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Retention over time (2008–2020 cohorts): Study 5-year retention jumped from 17.3% (2015 cohort) to 40.7% (2020 cohort) after Graduate Route launched.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_retention', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">5-Year Retention Rate Over Time by Initial Visa Route (2008–2020 Cohorts, %)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_retention_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Tracks each annual initial-leave cohort (2008–2020) exactly 5 years later (2013–2025). Dashed = individual routes; Solid = All Leave Types. Source: <a href="https://www.gov.uk/government/statistics/migrant-journey-2025-report" target="_blank" rel="noopener">Home Office Migrant Journey 2025 Report</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">British citizenship grants reached 236.2k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_retention', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Annual British Citizenship Grants (000s) & % of UK Population (2005–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_retention_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Home Office British Citizenship grants (Data_Cit_D02, 2005–2025) divided by ONS UKPOP mid-year population. Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office British Citizenship Grants (Jun 2026)</a> | <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop" target="_blank" rel="noopener">ONS UK Population Mid-Year Estimates (UKPOP)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_work" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 5 · Work Visa Deeper Dive (Skill Tiers & Dependants)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How many newly eligible SOC 3–6 roles entered under the 2021 Points-Based System, and how did dependants compare with main applicants?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Newly Eligible Roles (SOC 3–6) accounted for 244.2k main-applicant Skilled & Care grants across 2021–2025 — reaching 63.7% of main-applicant work grants at the 2023 peak.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_work', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Volume of Newly Eligible Roles: Work Visa Main Applicants by Skill Tier (2021–2025, 000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_work_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Main-applicant grants only across Skilled Worker + Health & Care Worker (Home Office Data_Occ_D02, SOC 2020). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Visas by Occupation SOC 2020 (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Main applicants drove overall volume, while dependants surged sharply in 2022–2023 before 2024 restrictions reversed the ratio.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_work', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Work & Study Visas: Main Applicants vs Dependants (000s · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_work_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s, 2006–2025). Hover for exact % share. Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_study" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 6 · Study Visa Deeper Dive (Course Level & University Tier)</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">Which course levels and university tiers drove the post-2020 international student expansion?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Student Supply (Level): 1-year Masters courses drove almost the entire post-2020 expansion, rising from ~121k pre-COVID to 315k in 2022.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_study', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Student Supply Breakdown 1 · Sponsored Study Visas by Course Level (2018–2025, 000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_study_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Sponsored Study visa grants (main applicants) by course level from Home Office Education Visas (Mar 2026, Data_Edu_D02). Hover for % share. Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Education Visas by Course Level (Mar 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Student Supply (University Tier): Non-Russell Group universities absorbed the bulk of the post-2020 expansion (+187% vs 2019).</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_study', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Student Supply Breakdown 2 · Study Visa Applications by University Tier (2010–2024, 000s)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_study_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Out-of-country Study visa applications (CAS acceptances) by institution tier (2010–2024, Home Office Study Sponsorship Dec 2024, CAS_D01). Hover for % share. Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Study Sponsorship by Institution Type (Dec 2024)</a></div>
+            </div>
+        </section>
+        
+        <section id="hyp_media" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 2 · Testing Hypotheses</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Hypothesis 7 · Do Media Narratives Reflect Reality?</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">Which immigration stories do major UK news outlets tell, how does coverage compare with actual arrival volumes, and how do framing biases differ?</p>
+          <div style="background:#09090d;border:1px solid rgba(56,189,248,0.22);border-left:2px solid #38bdf8;border-radius:6px;padding:12px 14px;margin-bottom:14px;font-size:13px;color:#d4d4d8;line-height:1.55;">Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.8%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).</div>
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Salience distortion: Small Boats & Asylum generate 38.8% of UK news headlines vs 8.4% of actual inflows.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_media', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Media Salience vs Official Reality: Headline Share (%) vs Actual Arrivals Share (%)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_media_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Compares topic share across 900 recent UK news headlines (9 outlets x 100) vs 2023–2025 Home Office Small Boat detections, non-boat Asylum claims, and non-visit Legal Visas. Source: <a href="https://news.google.com/?hl=en-GB&gl=GB&ceid=GB:en" target="_blank" rel="noopener">Google News UK RSS Corpus (9 Outlets · 900 Headlines)</a> | <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a> | <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Asylum & Returns Datasets (Jun 2026)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Outlet agenda: tabloid & right-leaning outlets concentrate heavily on Small Boats & Asylum, while FT/BBC/Guardian cover broader labour, university & policy angles.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_media', 1)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Topic Mix by Major UK News Outlet (% of Headlines · 9 Outlets)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_media_1"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*100% stacked topic classification across 900 recent UK headlines (100 per outlet). Ordered by combined Small Boats + Asylum share. Source: <a href="https://news.google.com/?hl=en-GB&gl=GB&ceid=GB:en" target="_blank" rel="noopener">Google News UK RSS Corpus (9 Outlets · 900 Headlines)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Framing bias: Threat/Crisis/Enforcement language dominates tabloid headlines, while Economic/Skills/Rights language is higher in FT and Guardian.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_media', 2)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Headline Framing Bias by UK Outlet: Threat/Crisis (%) vs Economic/Rights (%)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_media_2"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Lexicon audit of 900 headlines: % containing Threat/Enforcement terms vs Economic/Rights terms. Source: <a href="https://news.google.com/?hl=en-GB&gl=GB&ceid=GB:en" target="_blank" rel="noopener">Google News UK RSS Corpus (9 Outlets · 900 Headlines)</a></div>
+            </div>
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Westminster agenda (Hansard): Parliamentary mentions of 'small boats' exploded from near-zero pre-2020 to rival 'asylum' and 'net migration'.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('hyp_media', 3)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">UK Parliament Spoken Mentions by Immigration Frame (Hansard · 2006–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_hyp_media_3"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Annual spoken contributions in UK Parliament matching exact phrases (Hansard API, 2006–2025). Source: <a href="https://hansard.parliament.uk/" target="_blank" rel="noopener">UK Parliament Hansard API (2006–2025)</a></div>
+            </div>
+        </section>
+        
+        <section id="sol_curbs" style="margin-bottom:32px;scroll-margin-top:76px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#818cf8;margin-bottom:4px;">Part 3 · Testing Solutions</div>
+          <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin-bottom:4px;">Observed Impact of 2024–2025 Policy Curbs</h2>
+          <p style="font-size:13px;font-style:italic;color:#a1a1aa;margin-bottom:14px;">How sharply did Health & Care, Work, and Study visa grants fall after the 2024–2025 rule changes?</p>
+          
+          
+          
+            <div class="insight-box" style="width:100%;background:#060608;border:1px solid rgba(255,255,255,0.10);border-left:2px solid #38bdf8;padding:14px 16px;margin-bottom:14px;">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:8px;">
+                <div style="font-size:14.5px;font-weight:700;color:#ffffff;">Health & Care and overall Work visa grants contracted sharply in 2024–2025 following dependant bans and salary threshold rises.</div>
+                <button type="button" class="insight-help-btn" onclick="openI2Drawer('sol_curbs', 0)" title="Click for metric definitions, methodology &amp; reading nuances" aria-label="Open metric definition">?</button>
+              </div>
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px;margin-bottom:8px;">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#a1a1aa;">Post-2024 Contraction: Work, Health & Care, and Study Visas (000s · 2019–2025)</div>
+                
+              </div>
+              <div style="height:290px;position:relative;"><canvas id="i2_canvas_sol_curbs_0"></canvas></div>
+              <div style="font-size:11px;color:#71717a;margin-top:10px;line-height:1.5;">*Issued Work, Health & Care subgroup, and Study entry-clearance visas (000s, main + dependants, 2019–2025). Source: <a href="https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables" target="_blank" rel="noopener">Home Office Entry Clearance Visas (Jun 2026)</a></div>
+            </div>
+        </section>
+        
+    
+    <footer>
+      <p>DataIsFun · Issue 02 Graphs-First Preview · Primary sources: ONS, Home Office, MHCLG</p>
+    </footer>
+  </div>
+  <div id="uk-map-tooltip" style="display:none;position:fixed;pointer-events:none;z-index:9997;background:rgba(9,12,16,0.95);border:1px solid rgba(56,189,248,0.45);border-radius:6px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.45;color:#f4f4f5;box-shadow:0 6px 20px rgba(0,0,0,0.65);max-width:260px;"></div>
+  <div id="i2-drawer-backdrop" class="insight-drawer-backdrop" onclick="closeI2Drawer()"></div>
+  <aside id="i2-drawer" class="insight-discussion-drawer" aria-hidden="true">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div>
+        <div id="i2-drawer-kicker" style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:#38bdf8;text-transform:uppercase;letter-spacing:0.08em;">Metric Definition</div>
+        <div id="i2-drawer-title" style="font-size:15px;font-weight:700;color:#ffffff;margin-top:3px;"></div>
+      </div>
+      <button type="button" onclick="closeI2Drawer()" aria-label="Close metric definition" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:#e4e4e7;width:28px;height:28px;border-radius:6px;cursor:pointer;font-size:16px;line-height:1;">&times;</button>
+    </div>
+    <div id="i2-drawer-body" style="padding:18px;overflow-y:auto;font-size:13px;color:#d4d4d8;line-height:1.6;"></div>
+  </aside>
+  <script src="../../assets/charts_engine.js"></script>
+  <script src="data/insights_data.js"></script>
+  <script src="data/uk_lad_map.js"></script>
+  <script>
+    function openI2Drawer(secId, idx) {
+      const sec = (window.ISSUE02_GRAPHS || []).find(s => s.id === secId);
+      if (!sec || !sec.charts || !sec.charts[idx]) return;
+      const ins = sec.charts[idx];
+      const d = ins.definition || {};
+      document.getElementById('i2-drawer-kicker').textContent = `${sec.ref} · Metric Definition & Nuance`;
+      document.getElementById('i2-drawer-title').textContent = ins.chart.title || sec.title;
+      document.getElementById('i2-drawer-body').innerHTML = `
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#38bdf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Metric &amp; Formula</div><div>${d.metric || ins.headline}</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#818cf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Scope &amp; Coverage</div><div>${d.scope || sec.question}</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#f59e0b;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Reading Nuance / Caveat</div><div>${d.nuance || ins.footnote}</div></div>
+        <div style="padding-top:10px;border-top:1px solid rgba(255,255,255,0.08);font-size:11.5px;color:#a1a1aa;">${ins.footnote}</div>
+      `;
+      document.getElementById('i2-drawer-backdrop').classList.add('open');
+      document.getElementById('i2-drawer').classList.add('open');
+      document.getElementById('i2-drawer').setAttribute('aria-hidden', 'false');
+    }
+    function openI2MapDrawer() {
+      document.getElementById('i2-drawer-kicker').textContent = 'Problem 1 · Spatial Metric Definition';
+      document.getElementById('i2-drawer-title').textContent = 'UK Local Authority Heatmaps (2021–2025)';
+      document.getElementById('i2-drawer-body').innerHTML = `
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#38bdf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Metric &amp; Formula</div><div><strong>Population Growth (%)</strong> = (Mid-2025 Pop &minus; Mid-2021 Pop) / Mid-2021 Pop &times; 100. <strong>Rent Rise (%)</strong> = (2025 Mean PIPR Index &minus; 2021 Mean PIPR Index) / 2021 Mean PIPR Index &times; 100.</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#818cf8;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Scope &amp; Coverage</div><div>361 UK Local Authority District polygons (May 2024 BUC); 310 matched England &amp; Wales councils with both Nomis NM_2002_1 and ONS PIPR series.</div></div>
+        <div style="margin-bottom:14px;"><div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#f59e0b;font-weight:700;text-transform:uppercase;margin-bottom:4px;">Reading Nuance / Caveat</div><div>Total local population growth blends international migration, internal UK moves, and natural change. Scotland &amp; Northern Ireland are shaded dark grey where PIPR/Nomis LAD series differ.</div></div>
+      `;
+      document.getElementById('i2-drawer-backdrop').classList.add('open');
+      document.getElementById('i2-drawer').classList.add('open');
+      document.getElementById('i2-drawer').setAttribute('aria-hidden', 'false');
+    }
+    function closeI2Drawer() {
+      document.getElementById('i2-drawer-backdrop').classList.remove('open');
+      document.getElementById('i2-drawer').classList.remove('open');
+      document.getElementById('i2-drawer').setAttribute('aria-hidden', 'true');
+    }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeI2Drawer(); });
+    function toggleI2ChartType(secId, idx, mode) {
+      const sec = (window.ISSUE02_GRAPHS || []).find(s => s.id === secId);
+      if (!sec || !sec.charts || !sec.charts[idx]) return;
+      const cid = `i2_canvas_${secId}_${idx}`;
+      const base = sec.charts[idx].chart;
+      const cfg = JSON.parse(JSON.stringify(base));
+      if (mode === 'line') {
+        cfg.type = 'line';
+        cfg.stacked = false;
+        cfg.show_pct_tooltip = false;
+        cfg.datasets = (cfg.datasets || []).map(ds => ({
+          ...ds,
+          borderColor: ds.backgroundColor || ds.borderColor || '#38bdf8',
+          backgroundColor: 'transparent',
+          borderWidth: 2.2,
+          tension: 0.2,
+        }));
+      } else {
+        cfg.type = 'bar';
+        cfg.stacked = true;
+        cfg.show_pct_tooltip = true;
+      }
+      if (typeof window.renderChartInstance === 'function') {
+        window.renderChartInstance(cid, cfg);
+      }
+      const bBar = document.getElementById(`tog_${cid}_bar`);
+      const bLine = document.getElementById(`tog_${cid}_line`);
+      if (bBar && bLine) {
+        bBar.style.borderColor = mode === 'bar' ? '#38bdf8' : 'rgba(255,255,255,0.18)';
+        bBar.style.background = mode === 'bar' ? 'rgba(56,189,248,0.2)' : 'transparent';
+        bBar.style.color = mode === 'bar' ? '#ffffff' : '#a1a1aa';
+        bLine.style.borderColor = mode === 'line' ? '#38bdf8' : 'rgba(255,255,255,0.18)';
+        bLine.style.background = mode === 'line' ? 'rgba(56,189,248,0.2)' : 'transparent';
+        bLine.style.color = mode === 'line' ? '#ffffff' : '#a1a1aa';
+      }
+    }
+    function toggleNavToc(e) {
+      if (e) e.stopPropagation();
+      const dd = document.getElementById('nav-toc-dropdown');
+      const btn = document.getElementById('nav-toc-btn');
+      if (!dd || !btn) return;
+      const open = !dd.classList.contains('open');
+      dd.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    function selectNavToc(id, e) {
+      if (e) e.preventDefault();
+      const dd = document.getElementById('nav-toc-dropdown');
+      if (dd) dd.classList.remove('open');
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    function renderUkHeatmaps() {
+      const m = window.UK_LAD_MAP;
+      if (!m || !m.features) return;
+      const svgPop = document.getElementById('uk-map-pop');
+      const svgRent = document.getElementById('uk-map-rent');
+      const readout = document.getElementById('uk-map-readout');
+      if (!svgPop || !svgRent) return;
+      svgPop.setAttribute('viewBox', m.viewBox);
+      svgRent.setAttribute('viewBox', m.viewBox);
+
+      const popCol = (v) => {
+        if (v === null || v === undefined) return '#18181b';
+        const t = Math.max(0, Math.min(1, v / 8.0));
+        return `rgba(56, 189, 248, ${(0.15 + t * 0.85).toFixed(2)})`;
+      };
+      const rentCol = (v) => {
+        if (v === null || v === undefined) return '#18181b';
+        const t = Math.max(0, Math.min(1, (v - 10) / 35.0));
+        return `rgba(249, 115, 22, ${(0.15 + t * 0.85).toFixed(2)})`;
+      };
+
+      const ns = 'http://www.w3.org/2000/svg';
+      const byCode = {};
+      m.features.forEach(f => {
+        const mk = (fill) => {
+          const p = document.createElementNS(ns, 'path');
+          p.setAttribute('d', f.d);
+          p.setAttribute('fill', fill);
+          p.setAttribute('stroke', '#09090d');
+          p.setAttribute('stroke-width', '0.45');
+          p.style.cursor = 'pointer';
+          p.addEventListener('mouseenter', () => {
+            document.querySelectorAll('.uk-lad-hi').forEach(el => {
+              el.classList.remove('uk-lad-hi');
+              el.setAttribute('stroke', '#09090d');
+              el.setAttribute('stroke-width', '0.45');
+            });
+            (byCode[f.c] || []).forEach(el => {
+              el.classList.add('uk-lad-hi');
+              el.setAttribute('stroke', '#ffffff');
+              el.setAttribute('stroke-width', '1.4');
+            });
+            if (readout) {
+              const pgStr = f.pg !== null && f.pg !== undefined ? (f.pg >= 0 ? '+' : '') + f.pg + '%' : 'N/A';
+              const rrStr = f.rr !== null && f.rr !== undefined ? (f.rr >= 0 ? '+' : '') + f.rr + '%' : 'N/A';
+              readout.textContent = `${f.n} (${f.c}) · Pop Growth (2021–25): ${pgStr} · Rent Rise (2021–25): ${rrStr}`;
+            }
+            const tip = document.getElementById('uk-map-tooltip');
+            if (tip) {
+              const pgStr = f.pg !== null && f.pg !== undefined ? (f.pg >= 0 ? '+' : '') + f.pg + '%' : 'N/A';
+              const rrStr = f.rr !== null && f.rr !== undefined ? (f.rr >= 0 ? '+' : '') + f.rr + '%' : 'N/A';
+              const dwStr = f.dw !== null && f.dw !== undefined ? f.dw.toLocaleString() : 'N/A';
+              const asyStr = f.asy !== null && f.asy !== undefined ? f.asy.toLocaleString() : '0';
+              tip.innerHTML = `<div style="font-weight:700;color:#ffffff;margin-bottom:3px;">${f.n} (${f.c})</div><div>Pop Growth (21–25): <strong style="color:#38bdf8;">${pgStr}</strong></div><div>Rent Rise (21–25): <strong style="color:#f97316;">${rrStr}</strong></div><div>Dwellings Added: <strong style="color:#10b981;">${dwStr}</strong></div><div>Asylum Support: <strong style="color:#ef4444;">${asyStr}</strong></div>`;
+              tip.style.display = 'block';
+            }
+          });
+          p.addEventListener('mousemove', (ev) => {
+            const tip = document.getElementById('uk-map-tooltip');
+            if (tip) {
+              tip.style.left = Math.min(window.innerWidth - 270, ev.clientX + 14) + 'px';
+              tip.style.top = Math.min(window.innerHeight - 120, ev.clientY + 14) + 'px';
+            }
+          });
+          p.addEventListener('mouseleave', () => {
+            const tip = document.getElementById('uk-map-tooltip');
+            if (tip) tip.style.display = 'none';
+          });
+          return p;
+        };
+        const p1 = mk(popCol(f.pg));
+        const p2 = mk(rentCol(f.rr));
+        byCode[f.c] = [p1, p2];
+        svgPop.appendChild(p1);
+        svgRent.appendChild(p2);
+      });
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+      const cards = window.ISSUE02_GRAPHS || [];
+      cards.forEach(c => {
+        (c.charts || []).forEach((ins, idx) => {
+          const cid = `i2_canvas_${c.id}_${idx}`;
+          if (typeof window.renderChartInstance === 'function') {
+            window.renderChartInstance(cid, ins.chart);
+          }
+        });
+      });
+      renderUkHeatmaps();
+    });
+  </script>
+</body>
+</html>
