@@ -1,9 +1,9 @@
 window.ISSUE02_GRAPHS = [
   {
     "id": "ctx_flows",
-    "section": "Part 1 · Baseline Context",
+    "section": "Part 1 · Overall Trends (Flow & Stock)",
     "ref": "1.1",
-    "title": "Immigration in the Past & What Drove It (1964–2025)",
+    "title": "Immigration in the Past & Current 'On Visa' Stock (1964–2025)",
     "question": "How has UK migration evolved over 62 years, does Non-EU+ net migration include visa expiries and departures, and what drove the 2020–2021 step-change?",
     "context_note": "<strong>Does Non-EU+ Net Migration include people leaving when visas expire or after study?</strong> <strong>Yes</strong> &mdash; Net Migration = Inflows minus Outflows (including departing students and workers whose visas expire). For Non-EU+ nationals, ONS LTIM records <strong>182k</strong> departures in 2019, dipping to <strong>88k</strong> in 2021 during COVID, then tripling to <strong>278k</strong> departures in 2025 as 2021–2023 cohorts left. <strong>Shaded chart bands</strong> show the UK governing party: <span style='color:#ef4444;font-weight:700;'>Red = Labour</span>, <span style='color:#3b82f6;font-weight:700;'>Blue = Conservative</span>, <span style='color:#818cf8;font-weight:700;'>Indigo = Coalition</span>.",
     "charts": [
@@ -658,6 +658,211 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
+        "headline": "Population stock test ('on visa', not expired or settled): active valid-leave holders reached 4.28M (6.16% of UK population) by end-2025, up from 2.34% in 2019 — plateauing even as annual net flows fell.",
+        "footnote": "*Stock = people with Valid Leave to Remain (excluding ILR &amp; EUSS Pre-Settled Status) at year-end across 2008+ cohorts (Home Office Data_MJ_D01), divided by ONS UKPOP. 2013–2025 shown so pre-2008 cohorts have rolled off. Note: valid leave does not guarantee physical presence if an individual departed early. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop\" target=\"_blank\" rel=\"noopener\">ONS UK Population Mid-Year Estimates (UKPOP)</a>",
+        "chart": {
+          "type": "line",
+          "title": "People Currently 'On Visa' (Valid Leave Stock) as % of Total UK Population (2013–2025)",
+          "labels": [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "% of UK Population",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "All Active Valid-Leave Holders (% of UK Pop)",
+              "data": [
+                1.81,
+                1.83,
+                1.87,
+                1.92,
+                2.02,
+                2.15,
+                2.34,
+                2.34,
+                2.95,
+                4.38,
+                5.68,
+                6.13,
+                6.16
+              ],
+              "borderColor": "#fbbf24",
+              "backgroundColor": "rgba(251,191,36,0.14)"
+            },
+            {
+              "label": "Work Route Stock (% of UK Pop)",
+              "data": [
+                0.62,
+                0.62,
+                0.63,
+                0.64,
+                0.66,
+                0.7,
+                0.75,
+                0.72,
+                0.9,
+                1.47,
+                2.38,
+                2.78,
+                2.7
+              ],
+              "borderColor": "#38bdf8",
+              "backgroundColor": "rgba(56,189,248,0.10)"
+            },
+            {
+              "label": "Study Route Stock (% of UK Pop)",
+              "data": [
+                0.83,
+                0.82,
+                0.78,
+                0.76,
+                0.77,
+                0.8,
+                0.86,
+                0.85,
+                1.08,
+                1.49,
+                1.66,
+                1.4,
+                1.26
+              ],
+              "borderColor": "#818cf8",
+              "backgroundColor": "rgba(129,140,248,0.10)"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Annual Net Migration divided by ONS mid-year UK population estimate (UKPOP) × 100.",
+          "scope": "UK-wide, 1971–2025 (earliest year of UKPOP CSV).",
+          "nuance": "Expresses annual net additions relative to the resident population base (~55.9M in 1971 to ~69.5M in 2025)."
+        }
+      },
+      {
         "headline": "Post-2021 net migration was driven overwhelmingly by non-EU+ arrivals (net = inflows minus departures) as EU+ net migration turned negative.",
         "footnote": "*Net migration = Inflows minus Outflows (incl. expiring visas & departing students/workers). Non-EU+ outflows tripled from 88k (2021) to 278k (2025). Source: <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/internationalmigration/datasets/longterminternationalimmigrationemigrationandnetmigrationflowsprovisional\" target=\"_blank\" rel=\"noopener\">ONS Long-Term International Migration</a>",
         "chart": {
@@ -946,10 +1151,2825 @@ window.ISSUE02_GRAPHS = [
     ]
   },
   {
-    "id": "ctx_macro",
-    "section": "Part 1 · Baseline Context",
+    "id": "ctx_routes",
+    "section": "Part 1 · Overall Trends (Flow & Stock)",
     "ref": "1.2",
-    "title": "Macro Context: GDP, GDP per Capita, Workforce Contribution & Migrant Pay (Pure Macro POV)",
+    "title": "Breakdown by Visa Categories (Annual Flows & Active 'On Visa' Stock)",
+    "question": "Which legal visa categories drove entry-clearance grants across 2006–2025, and what were each category's year-on-year increments?",
+    "charts": [
+      {
+        "headline": "Work and Study visas (including dependants) drove the overwhelming majority of post-2021 legal grants.",
+        "footnote": "*Descriptive baseline: Issued entry-clearance visas excluding Visitor visas (main applicants + dependants, 000s). Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "toggleable_type": true,
+          "title": "Entry Clearance Visas Issued by Route (ex-Visitor, 000s · 2006–2025)",
+          "labels": [
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Work",
+              "data": [
+                249.6,
+                205.8,
+                184.6,
+                155.6,
+                160.7,
+                149.3,
+                145.1,
+                154.8,
+                167.1,
+                165.9,
+                163.9,
+                164.9,
+                175.8,
+                192.6,
+                114.5,
+                239.2,
+                421.6,
+                613.6,
+                368.1,
+                260.4
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Study",
+              "data": [
+                234.3,
+                246.2,
+                274.2,
+                341.1,
+                334.7,
+                323.3,
+                278.1,
+                296.2,
+                293.6,
+                272.9,
+                294.5,
+                330.1,
+                354.9,
+                404.4,
+                250.1,
+                435.1,
+                623.7,
+                604.3,
+                418.9,
+                427.3
+              ],
+              "backgroundColor": "#818cf8"
+            },
+            {
+              "label": "Family",
+              "data": [
+                70.2,
+                64.4,
+                53.6,
+                49.2,
+                52.4,
+                45.0,
+                40.2,
+                33.1,
+                34.9,
+                37.7,
+                37.8,
+                40.1,
+                43.6,
+                55.6,
+                37.1,
+                42.2,
+                47.1,
+                80.1,
+                85.2,
+                66.0
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Humanitarian",
+              "data": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                75.6,
+                263.4,
+                68.5,
+                37.0,
+                23.8
+              ],
+              "backgroundColor": "#f59e0b"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Out-of-country entry-clearance visas issued (ex-Visitor), covering both main applicants and dependants.",
+          "scope": "UK-wide, 2006–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Visas issued are gross inflows of permissions; not every visa holder stays long-term or arrives immediately."
+        }
+      },
+      {
+        "headline": "In percentage terms, Study dominated 2009–2021 before Work expanded to roughly half of all non-visit grants in 2023–2024.",
+        "footnote": "*100% stacked share of issued non-visit entry-clearance visas by route (main + dependants, 2006–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "y_min": 0,
+          "y_max": 100,
+          "title": "Entry Clearance Visa Mix by Route (% Share · 2006–2025)",
+          "labels": [
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Share of Non-Visit Grants (%)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Work (%)",
+              "data": [
+                45.0,
+                39.9,
+                36.0,
+                28.5,
+                29.3,
+                28.8,
+                31.3,
+                32.0,
+                33.7,
+                34.8,
+                33.0,
+                30.8,
+                30.6,
+                29.5,
+                28.5,
+                30.2,
+                31.1,
+                44.9,
+                40.5,
+                33.5
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Study (%)",
+              "data": [
+                42.3,
+                47.7,
+                53.5,
+                62.5,
+                61.1,
+                62.5,
+                60.0,
+                61.2,
+                59.2,
+                57.3,
+                59.4,
+                61.7,
+                61.8,
+                62.0,
+                62.3,
+                54.9,
+                46.0,
+                44.2,
+                46.1,
+                55.0
+              ],
+              "backgroundColor": "#818cf8"
+            },
+            {
+              "label": "Family (%)",
+              "data": [
+                12.7,
+                12.5,
+                10.5,
+                9.0,
+                9.6,
+                8.7,
+                8.7,
+                6.8,
+                7.0,
+                7.9,
+                7.6,
+                7.5,
+                7.6,
+                8.5,
+                9.2,
+                5.3,
+                3.5,
+                5.9,
+                9.4,
+                8.5
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Humanitarian (%)",
+              "data": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                9.5,
+                19.4,
+                5.0,
+                4.1,
+                3.1
+              ],
+              "backgroundColor": "#f59e0b"
+            }
+          ]
+        }
+      },
+      {
+        "headline": "Total 'on visa' stock (not expired or settled): 4.28M people held valid leave at end-2025 — led by Work (1.88M), Study (874k), Safe &amp; Legal (432k), and Dependants Joining (402k).",
+        "footnote": "*Cumulative year-end stock of people holding Valid Leave to Remain (excl. ILR &amp; EUSS Pre-Settled Status) across 2008+ cohorts, grouped by current end-of-year leave type (Home Office Data_MJ_D01, 2013–2025). Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "toggleable_type": true,
+          "title": "Active 'On Visa' Stock by Current Visa Type (Valid Leave excl. ILR, 000s · 2013–2025)",
+          "labels": [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Active Visa Holders (000s)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Work",
+              "data": [
+                400.4,
+                400.2,
+                412.0,
+                421.0,
+                435.4,
+                465.2,
+                496.8,
+                479.0,
+                605.8,
+                997.8,
+                1634.2,
+                1923.2,
+                1876.3
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Study",
+              "data": [
+                533.8,
+                531.6,
+                510.3,
+                495.5,
+                506.3,
+                528.3,
+                573.6,
+                568.9,
+                723.7,
+                1011.8,
+                1139.8,
+                972.9,
+                874.3
+              ],
+              "backgroundColor": "#818cf8"
+            },
+            {
+              "label": "Safe & Legal (Ukraine / BN(O))",
+              "data": [
+                0.0,
+                0.0,
+                0.0,
+                2.6,
+                1.9,
+                0.7,
+                0.5,
+                0.4,
+                91.5,
+                363.9,
+                447.9,
+                491.7,
+                431.9
+              ],
+              "backgroundColor": "#ef4444"
+            },
+            {
+              "label": "Dependants Joining / Accompanying",
+              "data": [
+                29.9,
+                28.5,
+                27.6,
+                26.0,
+                24.5,
+                20.8,
+                21.4,
+                20.2,
+                20.6,
+                21.0,
+                54.9,
+                198.2,
+                402.3
+              ],
+              "backgroundColor": "#f59e0b"
+            },
+            {
+              "label": "Family",
+              "data": [
+                101.7,
+                111.8,
+                135.4,
+                168.5,
+                204.8,
+                237.4,
+                273.2,
+                284.8,
+                286.5,
+                293.9,
+                332.2,
+                360.4,
+                312.3
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Asylum",
+              "data": [
+                75.9,
+                85.6,
+                93.7,
+                101.8,
+                108.7,
+                116.8,
+                134.0,
+                140.6,
+                174.3,
+                209.9,
+                233.7,
+                251.4,
+                268.2
+              ],
+              "backgroundColor": "#a855f7"
+            },
+            {
+              "label": "Other / EEA",
+              "data": [
+                22.0,
+                27.8,
+                35.7,
+                41.3,
+                49.9,
+                55.2,
+                61.2,
+                68.6,
+                73.0,
+                62.8,
+                54.8,
+                49.0,
+                113.0
+              ],
+              "backgroundColor": "#71717a"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Cumulative year-end Valid Leave stock (excl. ILR) grouped by current end-of-year leave category (000s).",
+          "scope": "UK-wide, 2013–2025 (2008+ cohorts, Home Office Data_MJ_D01).",
+          "nuance": "Reflects current leave category after any in-country switches (e.g. Study → Graduate/Skilled Worker), not initial entry visa."
+        }
+      },
+      {
+        "headline": "Stock by applicant type: 66.1% of end-2025 valid-leave holders are Main Applicants vs 26.6% Dependants (plus 7.3% Family/Asylum).",
+        "footnote": "*Active Valid Leave stock split by Applicant Type in Home Office Data_MJ_D01 (2013–2025). 'Unclassified / All' covers Family &amp; Asylum records where Main/Dependant is not separated. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "Active 'On Visa' Stock by Applicant Type: Main Applicants vs Dependants (000s · 2013–2025)",
+          "labels": [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Active Visa Holders (000s)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Main Applicants",
+              "data": [
+                852.7,
+                859.7,
+                872.1,
+                887.5,
+                922.6,
+                975.3,
+                1063.8,
+                1052.1,
+                1348.9,
+                2062.0,
+                2591.0,
+                2811.4,
+                2829.1
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Dependants",
+              "data": [
+                226.0,
+                235.5,
+                235.3,
+                235.6,
+                243.7,
+                256.5,
+                274.8,
+                279.7,
+                384.4,
+                660.6,
+                1033.1,
+                1138.3,
+                1136.1
+              ],
+              "backgroundColor": "#f59e0b"
+            },
+            {
+              "label": "Unclassified / All (Family & Asylum)",
+              "data": [
+                85.0,
+                90.3,
+                107.2,
+                133.6,
+                165.3,
+                192.6,
+                222.2,
+                230.7,
+                242.1,
+                238.5,
+                273.4,
+                297.2,
+                313.0
+              ],
+              "backgroundColor": "#71717a"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s).",
+          "scope": "UK-wide, 2006–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Captures the 2022–2023 dependant surge and the post-2024 contraction after dependant bans."
+        }
+      },
+      {
+        "headline": "End-2025 stock by detailed route &amp; age: 3.45M (80.6%) are working-age (18–69) led by Skilled Worker (890k) and Study (874k), while 815.3k (19.1%) are under 18.",
+        "footnote": "*Top 12 detailed sub-routes holding Valid Leave to Remain (excl. ILR) at end-2025 (Home Office Migrant Journey Table MJ_07), stacked by age at initial grant. Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "End-2025 Active 'On Visa' Stock by Detailed Route & Age Band (Working-Age 18–69 vs Under-18, 000s)",
+          "labels": [
+            "Skilled Worker",
+            "Study",
+            "Dependants joining or accompanying",
+            "Health and Care Worker",
+            "Graduate",
+            "Partner",
+            "Ukraine schemes",
+            "BN(O) route",
+            "Refugee and protection based leave",
+            "Worker (Other)",
+            "Other Asylum",
+            "Other"
+          ],
+          "y_title": "Active Visa Holders (000s)",
+          "datasets": [
+            {
+              "label": "Working Age (18–69)",
+              "data": [
+                767.8,
+                782.9,
+                234.5,
+                229.8,
+                309.9,
+                206.8,
+                153.5,
+                137.9,
+                120.5,
+                86.0,
+                71.4,
+                75.5
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Under 18",
+              "data": [
+                121.8,
+                91.4,
+                167.7,
+                120.4,
+                8.5,
+                5.9,
+                53.4,
+                55.5,
+                42.8,
+                44.1,
+                17.4,
+                13.7
+              ],
+              "backgroundColor": "#f59e0b"
+            },
+            {
+              "label": "70+ / Unknown",
+              "data": [
+                0.1,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.7,
+                5.9,
+                5.0,
+                0.8,
+                0.0,
+                1.2,
+                0.2
+              ],
+              "backgroundColor": "#71717a"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Top 12 detailed sub-routes holding Valid Leave (excl. ILR) at end-2025, stacked by Working Age (18–69), Under 18, and 70+/Unknown (000s).",
+          "scope": "UK-wide, end-2025 (2008+ cohorts, Home Office Migrant Journey Table MJ_07).",
+          "nuance": "Note 14: age is recorded at initial grant (or asylum claim), not current age at end-2025; excludes EUSS Pre-Settled Status."
+        }
+      },
+      {
+        "headline": "Health & Care: carved out of Tier 2 in Aug 2020 (blue), surged +149% YoY in 2022 and +121% YoY in 2023 after Care Workers became eligible (green), then fell after 2024 curbs (amber).",
+        "footnote": "*Bar colours denote route regime: Slate (2018–19, pre-route in Tier 2 General) | Blue (2020–21, Aug 2020 NHS clinical carve-out) | Green (2022–23, Feb 2022 Care Worker expansion) | Amber (2024–25, post-Mar 2024 dependant ban). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Category 1 · Health & Care Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "y1_title": "YoY % Change",
+          "y1_suffix": "%",
+          "macro_events": [
+            {
+              "label": "2020",
+              "text": "Aug 2020 Route",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Feb 2022 Care",
+              "color": "#10b981"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#f59e0b"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Health & Care (000s)",
+              "data": [
+                0.0,
+                0.0,
+                1.2,
+                63.3,
+                157.6,
+                348.2,
+                110.5,
+                48.5
+              ],
+              "backgroundColor": [
+                "#64748b",
+                "#64748b",
+                "#38bdf8",
+                "#38bdf8",
+                "#10b981",
+                "#10b981",
+                "#f59e0b",
+                "#f59e0b"
+              ],
+              "yAxisID": "y"
+            },
+            {
+              "label": "YoY Change (%)",
+              "type": "line",
+              "data": [
+                null,
+                null,
+                null,
+                null,
+                149.0,
+                120.9,
+                -68.3,
+                -56.1
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Issued Health & Care Worker visas (main + dependants, 000s) and YoY % change on the right axis.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Doctors and nurses entered under Tier 2 General before Aug 2020; Feb 2022 added Care Workers (SOC 6145)."
+        }
+      },
+      {
+        "headline": "Other Work: transitioned from Tier 2 General (slate, incl. NHS clinical) to RQF 3+ Skilled Worker (blue, H&C carved out), before £38.7k threshold curbs in 2024 (amber).",
+        "footnote": "*Bar colours denote route regime: Slate (2018–20, Tier 2 General) | Blue (2021–23, Skilled Worker RQF 3+) | Amber (2024–25, £38.7k salary floor). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Category 2 · Other Work Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "y1_title": "YoY % Change",
+          "y1_suffix": "%",
+          "macro_events": [
+            {
+              "label": "2020",
+              "text": "H&C Carved Out",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2021",
+              "text": "RQF 6->3",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2024",
+              "text": "£38.7k Floor",
+              "color": "#f59e0b"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Other Work (000s)",
+              "data": [
+                175.8,
+                192.6,
+                113.3,
+                175.9,
+                263.9,
+                265.5,
+                257.7,
+                211.9
+              ],
+              "backgroundColor": [
+                "#64748b",
+                "#64748b",
+                "#64748b",
+                "#38bdf8",
+                "#38bdf8",
+                "#38bdf8",
+                "#f59e0b",
+                "#f59e0b"
+              ],
+              "yAxisID": "y"
+            },
+            {
+              "label": "YoY Change (%)",
+              "type": "line",
+              "data": [
+                null,
+                9.6,
+                -41.2,
+                55.3,
+                50.0,
+                0.6,
+                -2.9,
+                -17.8
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "All issued Work visas excluding Health & Care (000s) and YoY % change on the right axis.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Reflects the Jan 2021 transition from Tier 2 (RQF 6+) to Skilled Worker (RQF 3+) with Health & Care carved out."
+        }
+      },
+      {
+        "headline": "Study: dipped in 2020 COVID, rebounded +74% in 2021 and +37% in 2022, then cooled after the Jan 2024 dependant ban.",
+        "footnote": "*All issued Study visas (main applicants + dependants + short-term study). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Category 3 · Study Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "y1_title": "YoY % Change",
+          "y1_suffix": "%",
+          "datasets": [
+            {
+              "label": "Study Visas (000s)",
+              "data": [
+                354.9,
+                404.4,
+                250.1,
+                435.1,
+                623.7,
+                604.3,
+                418.9,
+                427.3
+              ],
+              "backgroundColor": "rgba(129,140,248,0.75)",
+              "yAxisID": "y"
+            },
+            {
+              "label": "YoY Change (%)",
+              "type": "line",
+              "data": [
+                null,
+                13.9,
+                -38.2,
+                74.0,
+                43.3,
+                -3.1,
+                -30.7,
+                2.0
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "All issued Study visas (main applicants + dependants + short-term study, 000s) and YoY % change.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Jan 2024 rules removed dependant rights for most taught Postgraduate students."
+        }
+      },
+      {
+        "headline": "Humanitarian: spiked to 75.6k in 2021 (HK BN(O)) and 263.4k in 2022 (Ukraine War), then tapered sharply from 2023–2025.",
+        "footnote": "*Issued Ukraine Sponsorship, Ukraine Family, BN(O), and Afghan scheme visas (classified under Home Office 'Other'). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Category 4 · Humanitarian Visas (Ukraine & BN(O)): Volume (000s) & YoY % Change (2018–2025)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "y1_title": "YoY % Change",
+          "y1_suffix": "%",
+          "datasets": [
+            {
+              "label": "Humanitarian (000s)",
+              "data": [
+                0.0,
+                0.0,
+                0.0,
+                75.6,
+                263.4,
+                68.5,
+                37.0,
+                23.8
+              ],
+              "backgroundColor": "rgba(239,68,68,0.75)",
+              "yAxisID": "y"
+            },
+            {
+              "label": "YoY Change (%)",
+              "type": "line",
+              "data": [
+                null,
+                null,
+                null,
+                null,
+                248.4,
+                -74.0,
+                -46.0,
+                -35.7
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Issued Ukraine Sponsorship, Ukraine Family, BN(O), and Afghan visas (000s) and YoY % change.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02 subgroups).",
+          "nuance": "Extracted from Home Office 'Other' visa group; 2021 reflects BN(O) launch and 2022 reflects Ukraine schemes."
+        }
+      },
+      {
+        "headline": "Family: remained relatively stable around 40k–85k per year, with a modest 2023–2024 bump before the £29,000 threshold rise.",
+        "footnote": "*Issued Family visas (Partner, Child, Adult Dependant, and Refugee Family Reunion). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Category 5 · Family Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Visas Issued (000s)",
+          "y1_title": "YoY % Change",
+          "y1_suffix": "%",
+          "datasets": [
+            {
+              "label": "Family Visas (000s)",
+              "data": [
+                43.6,
+                55.6,
+                37.1,
+                42.2,
+                47.1,
+                80.1,
+                85.2,
+                66.0
+              ],
+              "backgroundColor": "rgba(245,158,11,0.75)",
+              "yAxisID": "y"
+            },
+            {
+              "label": "YoY Change (%)",
+              "type": "line",
+              "data": [
+                null,
+                27.5,
+                -33.3,
+                13.7,
+                11.6,
+                70.1,
+                6.4,
+                -22.5
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Issued Family visas (Partner, Child, Adult Dependant, Refugee Family Reunion, 000s) and YoY % change.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Minimum income threshold rose from £18,600 to £29,000 in April 2024."
+        }
+      }
+    ]
+  },
+  {
+    "id": "hyp_illegal",
+    "section": "Part 2 · Are They Causing Crime? (Legality & Custody)",
+    "ref": "2.1",
+    "title": "Are They Here Legally? Asylum, Small Boats, Returns & Undocumented Estimates",
+    "question": "How did asylum claims, small boats, all-route irregular detections, returns, and total undocumented resident estimates evolve?",
+    "charts": [
+      {
+        "headline": "Asylum claims climbed above 100,000 in 2024–2025 after staying under 40,000 for most of 2006–2020.",
+        "footnote": "*Annual asylum claims (all applicants, 2006–2025) vs detected small-boat Channel arrivals (tracked from 2018; strictly null pre-2018). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Total Asylum Claims vs Small-Boat Arrivals (000s · 2006–2025)",
+          "labels": [
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Thousands",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Total Asylum Claims",
+              "data": [
+                28.3,
+                28.3,
+                31.3,
+                30.7,
+                22.6,
+                25.9,
+                28.0,
+                29.9,
+                32.3,
+                40.0,
+                39.4,
+                34.4,
+                38.5,
+                45.5,
+                37.6,
+                57.9,
+                95.0,
+                87.4,
+                104.8,
+                101.9
+              ],
+              "backgroundColor": "#a855f7"
+            },
+            {
+              "label": "Small-Boat Arrivals (2018+)",
+              "data": [
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                0.3,
+                1.8,
+                8.5,
+                28.5,
+                45.8,
+                29.4,
+                36.8,
+                41.5
+              ],
+              "backgroundColor": "#ef4444"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Annual asylum claims (all applicants, 2006–2025) vs detected small-boat Channel arrivals (2018–2025).",
+          "scope": "UK-wide (Home Office Data_Asy_D01 & Data_IER_D01).",
+          "nuance": "Small-boat detections are strictly null before 2018 when systematic tracking began."
+        }
+      },
+      {
+        "headline": "All-route irregular detections: before 2020, lorries ('In UK') and inadequately documented air arrivals dominated; after 2019, smugglers shifted to small boats.",
+        "footnote": "*All detected irregular entries from Home Office Data_IER_D01 (2018–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "Detected Irregular Entries by ALL Routes (2018–2025, 000s)",
+          "labels": [
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Detections (000s)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Small Boat Arrivals",
+              "data": [
+                0.3,
+                1.8,
+                8.5,
+                28.5,
+                45.8,
+                29.4,
+                36.8,
+                41.5
+              ],
+              "backgroundColor": "#ef4444"
+            },
+            {
+              "label": "In-UK Clandestine / Lorry Detections",
+              "data": [
+                7.3,
+                8.5,
+                5.4,
+                5.0,
+                3.4,
+                2.8,
+                2.9,
+                1.8
+              ],
+              "backgroundColor": "#f59e0b"
+            },
+            {
+              "label": "Inadequately Documented Air Arrivals",
+              "data": [
+                4.8,
+                5.2,
+                2.3,
+                2.6,
+                5.1,
+                3.9,
+                3.3,
+                3.0
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "UK Port Detections",
+              "data": [
+                1.1,
+                1.0,
+                0.8,
+                0.7,
+                0.3,
+                0.2,
+                0.2,
+                0.2
+              ],
+              "backgroundColor": "#a855f7"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "All detected irregular entries across Small Boats, In-UK/Lorry detections, Inadequately Documented Air, and UK Ports (000s).",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_IER_D01).",
+          "nuance": "Shows the 2019–2020 route substitution from clandestine lorries to Channel small boats."
+        }
+      },
+      {
+        "headline": "Total returns fell sharply from ~60k in 2006–2008 while the pending initial-decision backlog ballooned after 2019.",
+        "footnote": "*Cases pending initial decision as at 31 December (tracked from 2010) vs annual enforced + voluntary returns (000s · 2006–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
+        "chart": {
+          "type": "line",
+          "title": "Asylum Pending Initial-Decision Backlog vs Total Returns (000s · 2006–2025)",
+          "labels": [
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Thousands",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Pending Initial Decision (2010+)",
+              "data": [
+                null,
+                null,
+                null,
+                null,
+                7.2,
+                8.9,
+                12.8,
+                18.2,
+                22.9,
+                22.1,
+                27.9,
+                29.5,
+                35.9,
+                51.2,
+                64.9,
+                100.6,
+                160.9,
+                128.8,
+                124.8,
+                64.4
+              ],
+              "borderColor": "#f59e0b",
+              "backgroundColor": "rgba(245,158,11,0.12)"
+            },
+            {
+              "label": "Enforced + Voluntary Returns",
+              "data": [
+                32.0,
+                34.3,
+                37.8,
+                42.3,
+                45.7,
+                44.7,
+                46.1,
+                46.5,
+                41.4,
+                43.1,
+                40.4,
+                32.7,
+                24.9,
+                19.8,
+                8.4,
+                10.1,
+                14.8,
+                26.8,
+                35.0,
+                39.7
+              ],
+              "borderColor": "#10b981",
+              "backgroundColor": "rgba(16,185,129,0.12)"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Asylum cases pending initial decision at 31 Dec (2010–2025) vs enforced + voluntary returns (2006–2025).",
+          "scope": "UK-wide (Home Office Data_Asy_D03 & Data_Ret_D01).",
+          "nuance": "Shows the structural divergence between falling returns and a rising decision backlog after 2019."
+        }
+      },
+      {
+        "headline": "Published UK undocumented resident stock estimates range from 430k (2001 Home Office) to 674k (2017 GLA) and 1.0M (2017 Pew incl. pending asylum).",
+        "footnote": "*Published UK undocumented resident stock studies (000s). No official ONS annual count exists; Pew (2019) includes pending asylum applicants. Source: <a href=\"https://migrationobservatory.ox.ac.uk/resources/briefings/unauthorised-migration-in-the-uk/\" target=\"_blank\" rel=\"noopener\">Migration Observatory / Home Office / LSE / GLA / Pew Undocumented Estimates</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Estimated Undocumented Resident Population in the UK (Published Studies 2001–2017, 000s)",
+          "labels": [
+            "Home Office (Woodbridge 2005)",
+            "LSE (Gordon et al. 2009)",
+            "GLA / Wolverhampton (Jolly et al. 2020)",
+            "Pew Research Center (2019)"
+          ],
+          "y_title": "Estimated Residents (000s)",
+          "datasets": [
+            {
+              "label": "Low Estimate (000s)",
+              "data": [
+                310,
+                417,
+                594,
+                800
+              ],
+              "backgroundColor": "#64748b"
+            },
+            {
+              "label": "Central Estimate (000s)",
+              "data": [
+                430,
+                618,
+                674,
+                1000
+              ],
+              "backgroundColor": "#f59e0b"
+            },
+            {
+              "label": "High Estimate (000s)",
+              "data": [
+                570,
+                863,
+                745,
+                1200
+              ],
+              "backgroundColor": "#ef4444"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Published academic and official residual estimates of the UK undocumented resident stock (Low / Central / High, 000s).",
+          "scope": "UK-wide studies covering 2001–2017.",
+          "nuance": "No official ONS annual count exists; Pew (2019) includes pending asylum applicants unlike GLA/LSE."
+        }
+      }
+    ]
+  },
+  {
+    "id": "hyp_crime",
+    "section": "Part 2 · Are They Causing Crime? (Legality & Custody)",
+    "ref": "2.2",
+    "title": "Are They Shifting Crime & Custody Rates? (Prison & Police Arrests)",
+    "question": "How have foreign-national, ethnic, and religious prison custody shares and police arrest rates evolved compared with resident population shifts?",
+    "context_note": "<strong>Data Boundaries:</strong> Crime is tested across both <strong>Custody (MoJ Prison 2015–2026)</strong> and <strong>Petty/All Offences (Home Office Police Arrests per 1,000)</strong>. Raw shares are unadjusted for age and sex (prison is ~96% male and heavily 18–39), and MoJ/Home Office do not publish crime rates by visa route.",
+    "charts": [
+      {
+        "headline": "Prison population by religion (MoJ 2015–2026): Muslim share rose from ~14.6% to ~18.8% while Christian share declined from ~50% to ~43%.",
+        "footnote": "*MoJ Annual Prison Population as at 30 June (2015–2026, Table 1.A.23). Unadjusted for age/sex. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a>",
+        "chart": {
+          "type": "line",
+          "title": "Prison Population by Religion Over Time (MoJ 2015–2026, %)",
+          "labels": [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ],
+          "y_title": "% of Prison Population",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Christian (All, %)",
+              "data": [
+                49.5,
+                48.9,
+                48.0,
+                47.8,
+                47.5,
+                46.5,
+                45.0,
+                45.0,
+                44.5,
+                44.4,
+                43.1,
+                43.4
+              ],
+              "borderColor": "#38bdf8"
+            },
+            {
+              "label": "No Religion (%)",
+              "data": [
+                30.3,
+                30.5,
+                30.6,
+                30.5,
+                30.1,
+                30.2,
+                31.2,
+                31.2,
+                31.1,
+                30.7,
+                30.3,
+                29.5
+              ],
+              "borderColor": "#a1a1aa"
+            },
+            {
+              "label": "Muslim (%)",
+              "data": [
+                14.6,
+                14.8,
+                15.4,
+                15.6,
+                16.1,
+                16.6,
+                17.5,
+                17.4,
+                17.8,
+                18.2,
+                18.4,
+                18.8
+              ],
+              "borderColor": "#10b981"
+            },
+            {
+              "label": "Hindu / Sikh / Other (%)",
+              "data": [
+                5.2,
+                5.4,
+                5.6,
+                5.8,
+                6.0,
+                6.2,
+                5.9,
+                6.1,
+                6.2,
+                6.4,
+                7.9,
+                8.1
+              ],
+              "borderColor": "#f59e0b"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
+          "scope": "England & Wales custody & resident population.",
+          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
+        }
+      },
+      {
+        "headline": "MoJ Prison Population (Sep 2026): Foreign Nationals are 11.6% of prisoners; Black & Mixed shares exceed Census population shares (unadjusted for age/sex).",
+        "footnote": "*MoJ Offender Management Statistics (30 Sept 2026, Table 1.Q.7 & 1.Q.9) vs ONS Census 2021 E&W population share. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "England & Wales Prison Population vs Resident Population by Ethnicity (MoJ Sep 2026 vs Census 2021, %)",
+          "labels": [
+            "White",
+            "Asian",
+            "Black",
+            "Mixed",
+            "Other"
+          ],
+          "y_title": "Share (%)",
+          "datasets": [
+            {
+              "label": "Prison Population (Sep 2026, %)",
+              "data": [
+                72.0,
+                8.4,
+                12.1,
+                5.0,
+                2.5
+              ],
+              "backgroundColor": "#ef4444"
+            },
+            {
+              "label": "E&W Resident Population (Census 2021, %)",
+              "data": [
+                81.7,
+                9.3,
+                4.0,
+                2.9,
+                2.1
+              ],
+              "backgroundColor": "#38bdf8"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
+          "scope": "England & Wales custody & resident population.",
+          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
+        }
+      },
+      {
+        "headline": "Prison demographics over time (2015–2026): Foreign-national share stayed steady near 11%–13% while minority ethnic shares edged gradually higher.",
+        "footnote": "*MoJ Annual Prison Population as at 30 June (2015–2026, Tables 1.A.22 & 1.A.24). Unadjusted for age/sex. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a>",
+        "chart": {
+          "type": "line",
+          "title": "Prison Population Over Time: Foreign Nationals & Minority Ethnic Shares (2015–2026, %)",
+          "labels": [
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026"
+          ],
+          "y_title": "% of Prison Population",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Foreign Nationals (%)",
+              "data": [
+                12.2,
+                11.6,
+                11.4,
+                11.0,
+                11.0,
+                11.7,
+                12.5,
+                12.0,
+                12.0,
+                11.9,
+                12.3,
+                11.8
+              ],
+              "borderColor": "#fbbf24",
+              "borderWidth": 2.6
+            },
+            {
+              "label": "Black / Black British (%)",
+              "data": [
+                12.5,
+                12.4,
+                12.5,
+                12.7,
+                12.8,
+                13.0,
+                12.9,
+                12.6,
+                12.3,
+                12.2,
+                11.9,
+                12.1
+              ],
+              "borderColor": "#ef4444"
+            },
+            {
+              "label": "Asian / Asian British (%)",
+              "data": [
+                8.2,
+                8.1,
+                8.2,
+                8.1,
+                8.1,
+                8.0,
+                8.3,
+                8.2,
+                8.0,
+                8.3,
+                8.0,
+                8.5
+              ],
+              "borderColor": "#38bdf8"
+            },
+            {
+              "label": "Mixed (%)",
+              "data": [
+                4.1,
+                4.3,
+                4.5,
+                4.6,
+                4.7,
+                4.9,
+                4.9,
+                5.0,
+                4.9,
+                4.8,
+                4.9,
+                5.0
+              ],
+              "borderColor": "#10b981"
+            },
+            {
+              "label": "Other Ethnic Group (%)",
+              "data": [
+                1.1,
+                1.2,
+                1.2,
+                1.4,
+                1.6,
+                1.5,
+                1.5,
+                1.6,
+                2.0,
+                2.2,
+                2.5,
+                2.4
+              ],
+              "borderColor": "#a855f7"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
+          "scope": "England & Wales custody & resident population.",
+          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
+        }
+      },
+      {
+        "headline": "Petty & all notifiable offences (Home Office arrests per 1,000): Black arrest rates (~21–23 per 1,000) remain roughly 2.5x White & Asian rates (~8–9 per 1,000).",
+        "footnote": "*Home Office Police Arrests per 1,000 population in England & Wales (2020/21–2022/23+). Covers petty & indictable arrests by ethnicity (not visa status; unadjusted for age/sex). Source: <a href=\"https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/number-of-arrests/latest\" target=\"_blank\" rel=\"noopener\">Home Office Police Arrests by Ethnicity (England & Wales)</a>",
+        "chart": {
+          "type": "line",
+          "title": "Petty & All Offences: Police Arrest Rate per 1,000 People by Ethnicity (England & Wales)",
+          "labels": [
+            "2020/21",
+            "2021/22",
+            "2022/23"
+          ],
+          "y_title": "Arrests per 1,000 Residents",
+          "datasets": [
+            {
+              "label": "Black",
+              "data": [
+                22.5,
+                21.3,
+                20.4
+              ],
+              "borderColor": "#ef4444"
+            },
+            {
+              "label": "Mixed",
+              "data": [
+                11.8,
+                11.7,
+                12.5
+              ],
+              "borderColor": "#10b981"
+            },
+            {
+              "label": "All Ethnicities",
+              "data": [
+                10.8,
+                11.0,
+                11.2
+              ],
+              "borderColor": "#fbbf24",
+              "borderDash": [
+                5,
+                4
+              ]
+            },
+            {
+              "label": "White",
+              "data": [
+                8.6,
+                8.9,
+                9.4
+              ],
+              "borderColor": "#38bdf8"
+            },
+            {
+              "label": "Asian",
+              "data": [
+                8.0,
+                7.7,
+                8.4
+              ],
+              "borderColor": "#a855f7"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Home Office arrests per 1,000 residents by ethnic group across all notifiable offences (England & Wales).",
+          "scope": "England & Wales police force areas, 2020/21–latest.",
+          "nuance": "Covers petty and indictable arrests by ethnicity, not visa status, and is unadjusted for age/sex."
+        }
+      },
+      {
+        "headline": "Prison-to-population math is NOT parallel: Black (3.2x) and Muslim (2.7x) prison shares sit well above 1.0x parity, while White (0.89x), Asian (0.89x) and Christian (0.97x) sit below 1.0x (unadjusted for age/sex).",
+        "footnote": "*2021 Parity Ratio = (Prison % in Jun 2021) ÷ (Census 2021 E&W Population %). Dashed yellow line = 1.00 (exact mathematical parity). Caveat: raw ratios are unadjusted for age and sex (prison is ~96% male and heavily 18–39; minority/Muslim populations are younger on average). Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Religion (England & Wales)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "2021 Prison-to-Population Parity Ratio by Ethnicity & Religion (Prison % ÷ Pop % · 1.0 = Equal Rate)",
+          "labels": [
+            "Ethnicity: White",
+            "Ethnicity: Asian",
+            "Ethnicity: Black",
+            "Ethnicity: Mixed",
+            "Ethnicity: Other",
+            "Religion: Christian",
+            "Religion: No religion",
+            "Religion: Muslim",
+            "Religion: Hindu/Sikh/Other"
+          ],
+          "y_title": "Parity Ratio (Prison % ÷ Pop %)",
+          "benchmark_line": {
+            "value": 1.0,
+            "color": "#facc15",
+            "dash": [
+              6,
+              4
+            ]
+          },
+          "datasets": [
+            {
+              "label": "2021 Parity Ratio (x)",
+              "data": [
+                0.89,
+                0.89,
+                3.23,
+                1.69,
+                0.71,
+                0.97,
+                0.84,
+                2.69,
+                1.4
+              ],
+              "backgroundColor": [
+                "#38bdf8",
+                "#38bdf8",
+                "#ef4444",
+                "#ef4444",
+                "#38bdf8",
+                "#38bdf8",
+                "#38bdf8",
+                "#ef4444",
+                "#ef4444"
+              ]
+            }
+          ]
+        },
+        "definition": {
+          "metric": "MoJ Prison Population % (Jun 2021) divided by ONS Census 2021 E&W Population % (1.00 = equal rate across groups).",
+          "scope": "England & Wales, 2021.",
+          "nuance": "Raw ratios are unadjusted for age and sex (prison is ~96% male and heavily 18–39; minority/Muslim populations are younger on average)."
+        }
+      },
+      {
+        "headline": "Change over time is also non-parallel: Asian & Black prison shares barely moved (1.04x and 0.97x) despite ~1.2x population growth, whereas Muslim (1.29x vs 1.33x) and Mixed (1.22x vs 1.32x) tracked closer.",
+        "footnote": "*Compares Census 2011→2021 population share multiplier against MoJ 2015→2026 prison share multiplier. Unadjusted for age/sex or in-custody religious conversions. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Religion (England & Wales)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Did Prison Shares Move in Parallel with Population? (Pop Shift 2011→21 vs Prison Shift 2015→26, Multiplier)",
+          "labels": [
+            "Ethnicity: White",
+            "Ethnicity: Asian",
+            "Ethnicity: Black",
+            "Ethnicity: Mixed",
+            "Ethnicity: Other",
+            "Religion: Christian",
+            "Religion: No religion",
+            "Religion: Muslim",
+            "Religion: Hindu/Sikh/Other"
+          ],
+          "y_title": "Share Multiplier (x)",
+          "benchmark_line": {
+            "value": 1.0,
+            "color": "#a1a1aa",
+            "dash": [
+              4,
+              4
+            ]
+          },
+          "datasets": [
+            {
+              "label": "Population Share Shift (2011→2021, x)",
+              "data": [
+                0.95,
+                1.24,
+                1.21,
+                1.32,
+                2.1,
+                0.78,
+                1.48,
+                1.33,
+                1.17
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Prison Share Shift (2015→2026, x)",
+              "data": [
+                0.97,
+                1.04,
+                0.97,
+                1.22,
+                2.18,
+                0.88,
+                0.97,
+                1.29,
+                1.56
+              ],
+              "backgroundColor": "#ef4444"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Compares Census 2011→2021 population share multiplier against MoJ 2015→2026 prison share multiplier.",
+          "scope": "England & Wales, 2011–2026.",
+          "nuance": "Tests whether prison shares moved proportionally with resident population shifts; unadjusted for age/sex or in-custody conversions."
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctx_macro",
+    "section": "Part 3 · Are They Causing an Economic Problem?",
+    "ref": "3.1",
+    "title": "Workforce Replacement, Pay Ranges & Macro Context (GDP, CPI & Rents)",
     "question": "How did UK Net Migration, Real GDP, Real GDP per Capita, CPI/wages/rents, working-age (16–64) workforce share, and immigrant pay move over the longest available timelines?",
     "context_note": "<strong>Pure Macro POV — No Causal Link Assumed Yet:</strong> Each indicator extends as far back as official ONS/HMRC series allow (Real GDP 1948+, GDP/head 1955+, Net Migration 1964+, Working-Age 16–64 Employment 1971+, CPI 1989+, AWE 2001+, Rents 2006+, HMRC Pay 2014+). <strong>% of Working-Age (16–64) Workforce</strong> is plotted separately from % of total population because students, children, and non-working dependants/asylum seekers are not all immediate workforce additions.",
     "charts": [
@@ -2089,6 +5109,231 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
+        "headline": "Working-age stock test ('on visa' stock vs 16–64 workforce): active valid-leave holders equalled 13.16% of the UK 16–64 workforce in 2025 (9.64% excl. Study &amp; Asylum; 3.87% Work Main Applicants; 80.6% aged 18–69).",
+        "footnote": "*Active Valid Leave Stock (2008+ cohorts, Home Office Data_MJ_D01) divided by UK Employed Workforce Aged 16–64 (ONS LF2G). By age at initial grant (MJ_07, end-2025): 3.45M (80.6%) are aged 18–69 and 815.3k (19.1%) are under 18. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a> | <a href=\"https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/timeseries/lf2g/lms\" target=\"_blank\" rel=\"noopener\">ONS UK Working-Age Employment 16–64 (LF2G)</a>",
+        "chart": {
+          "type": "line",
+          "title": "Working-Age Stock Test: Active 'On Visa' Holders as % of UK 16–64 Workforce (2013–2025)",
+          "labels": [
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "% of UK 16–64 Workforce",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "All Valid-Leave Stock (% of 16–64 Workforce)",
+              "data": [
+                4.0,
+                3.99,
+                4.03,
+                4.1,
+                4.3,
+                4.55,
+                4.94,
+                5.0,
+                6.32,
+                9.37,
+                12.21,
+                13.23,
+                13.16
+              ],
+              "borderColor": "#fbbf24",
+              "backgroundColor": "rgba(251,191,36,0.12)"
+            },
+            {
+              "label": "Stock Excl. Study & Asylum (% of 16–64 Workforce)",
+              "data": [
+                1.91,
+                1.91,
+                2.02,
+                2.15,
+                2.31,
+                2.49,
+                2.7,
+                2.73,
+                3.45,
+                5.5,
+                7.91,
+                9.42,
+                9.64
+              ],
+              "borderColor": "#10b981",
+              "backgroundColor": "rgba(16,185,129,0.14)"
+            },
+            {
+              "label": "Work Route Stock — Main + Dependants (% of 16–64 Workforce)",
+              "data": [
+                1.38,
+                1.35,
+                1.37,
+                1.38,
+                1.41,
+                1.49,
+                1.57,
+                1.53,
+                1.94,
+                3.16,
+                5.12,
+                5.99,
+                5.77
+              ],
+              "borderColor": "#38bdf8",
+              "backgroundColor": "rgba(56,189,248,0.12)"
+            },
+            {
+              "label": "Work Main Applicants Stock (% of 16–64 Workforce)",
+              "data": [
+                0.93,
+                0.89,
+                0.91,
+                0.92,
+                0.93,
+                0.97,
+                1.01,
+                0.97,
+                1.25,
+                2.01,
+                3.1,
+                3.73,
+                3.87
+              ],
+              "borderColor": "#a855f7",
+              "backgroundColor": "rgba(168,85,247,0.10)"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Active Valid Leave stock (All, Excl. Study & Asylum, Work Total, Work Main Applicants) divided by UK Employed Workforce Aged 16–64 (ONS LF2G) × 100.",
+          "scope": "UK-wide, 2013–2025 (Home Office Data_MJ_D01 & MJ_07).",
+          "nuance": "Captures cumulative multi-year visa holders rather than single-year flows. Excludes EUSS Pre-Settled Status."
+        }
+      },
+      {
         "headline": "Immigrant vs UK median monthly pay (2014–2025): EU and Non-EU payrolled employees overtook the UK national median after 2021.",
         "footnote": "*Annual mean of HMRC PAYE RTI monthly median pay (£/month) by nationality group (Jul 2014–Dec 2025). Note: HMRC open tables publish medians by nationality, not within-group P10/P25/P75/P90 percentiles (see Data Availability Notes at top). Source: <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
         "chart": {
@@ -2291,6 +5536,80 @@ window.ISSUE02_GRAPHS = [
         }
       },
       {
+        "headline": "2014 vs 2025 Pay Shift: Non-EU and EU group medians moved above the UK median by 2025, with Non-EU nationalities spanning a wider cross-country P25–P75 range.",
+        "footnote": "*Dots show exact HMRC group median monthly pay (£/mo) in 2014 vs 2025. Vertical bars show the employment-weighted P25–P75 range across individual EU / Non-EU nationalities (HMRC open tables do not publish within-UK percentiles). Source: <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "2014 vs 2025 Monthly Pay Comparison: Median Dot & Cross-Nationality P25–P75 Range (£/month)",
+          "labels": [
+            "UK (2014)",
+            "EU (2014)",
+            "Non-EU (2014)",
+            "UK (2025)",
+            "EU (2025)",
+            "Non-EU (2025)"
+          ],
+          "y_title": "Monthly Pay (£)",
+          "datasets": [
+            {
+              "label": "Group Median Monthly Pay (£/mo)",
+              "type": "line",
+              "showLine": false,
+              "data": [
+                1621,
+                1463,
+                1623,
+                2512,
+                2622,
+                2557
+              ],
+              "borderColor": "#ffffff",
+              "backgroundColor": "#fbbf24",
+              "pointRadius": 7,
+              "pointHoverRadius": 9
+            },
+            {
+              "label": "Cross-Nationality P25–P75 Range (£/mo)",
+              "data": [
+                null,
+                [
+                  1333,
+                  1588
+                ],
+                [
+                  1308,
+                  1834
+                ],
+                null,
+                [
+                  2449,
+                  2869
+                ],
+                [
+                  2259,
+                  2744
+                ]
+              ],
+              "backgroundColor": [
+                "rgba(161,161,170,0.4)",
+                "rgba(56,189,248,0.55)",
+                "rgba(16,185,129,0.55)",
+                "rgba(161,161,170,0.4)",
+                "rgba(56,189,248,0.55)",
+                "rgba(16,185,129,0.55)"
+              ],
+              "barThickness": 10,
+              "borderRadius": 4
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Dots show exact HMRC group median monthly pay (£/mo) for UK, EU, and Non-EU payrolled employees in 2014 vs 2025; vertical bars show the employment-weighted P25–P75 range across individual EU / Non-EU nationalities.",
+          "scope": "UK-wide HMRC PAYE RTI payrolled employments (2014 vs 2025).",
+          "nuance": "HMRC open tables do not publish within-group percentiles for UK nationals, so UK has a median dot only while EU/Non-EU show cross-nationality P25–P75 dispersion."
+        }
+      },
+      {
         "headline": "Wide spread across individual nationalities (Dec 2025): most top non-UK payrolled nationalities exceed the £2,576 UK median, while a few lower-wage groups sit below.",
         "footnote": "*HMRC PAYE RTI median monthly pay (£) in Dec 2025 across the 15 largest non-UK payrolled nationalities. Dashed yellow line = UK nationals median (£2,576). Green >= UK median, Amber < UK median. Source: <a href=\"https://www.gov.uk/government/statistics/uk-payrolled-employments-by-nationality-region-industry-age-and-sex-from-july-2014-to-december-2025\" target=\"_blank\" rel=\"noopener\">HMRC PAYE RTI Payrolled Employments & Median Pay by Nationality (Jul 2014–Dec 2025)</a>",
         "chart": {
@@ -2371,550 +5690,29 @@ window.ISSUE02_GRAPHS = [
     ]
   },
   {
-    "id": "ctx_routes",
-    "section": "Part 1 · Baseline Context",
-    "ref": "1.3",
-    "title": "Breakdown by Visa Categories (Volume, % Mix & YoY Growth)",
-    "question": "Which legal visa categories drove entry-clearance grants across 2006–2025, and what were each category's year-on-year increments?",
+    "id": "hyp_work",
+    "section": "Part 3 · Are They Causing an Economic Problem?",
+    "ref": "3.2",
+    "title": "Work Visa Deeper Dive: Skill Tiers (SOC 3–6) & Dependants",
+    "question": "How many newly eligible SOC 3–6 roles entered under the 2021 Points-Based System, and how did dependants compare with main applicants?",
     "charts": [
       {
-        "headline": "Work and Study visas (including dependants) drove the overwhelming majority of post-2021 legal grants.",
-        "footnote": "*Descriptive baseline: Issued entry-clearance visas excluding Visitor visas (main applicants + dependants, 000s). Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "headline": "Newly Eligible Roles (SOC 3–6) accounted for 244.2k main-applicant Skilled & Care grants across 2021–2025 — reaching 63.7% of main-applicant work grants at the 2023 peak.",
+        "footnote": "*Main-applicant grants only across Skilled Worker + Health & Care Worker (Home Office Data_Occ_D02, SOC 2020). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Visas by Occupation SOC 2020 (Jun 2026)</a>",
         "chart": {
           "type": "bar",
           "stacked": true,
           "show_pct_tooltip": true,
-          "toggleable_type": true,
-          "title": "Entry Clearance Visas Issued by Route (ex-Visitor, 000s · 2006–2025)",
+          "title": "Volume of Newly Eligible Roles: Work Visa Main Applicants by Skill Tier (2021–2025, 000s)",
           "labels": [
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
             "2021",
             "2022",
             "2023",
             "2024",
             "2025"
           ],
-          "y_title": "Visas Issued (000s)",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
+          "y_title": "Main-Applicant Grants (000s)",
           "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Work",
-              "data": [
-                249.6,
-                205.8,
-                184.6,
-                155.6,
-                160.7,
-                149.3,
-                145.1,
-                154.8,
-                167.1,
-                165.9,
-                163.9,
-                164.9,
-                175.8,
-                192.6,
-                114.5,
-                239.2,
-                421.6,
-                613.6,
-                368.1,
-                260.4
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Study",
-              "data": [
-                234.3,
-                246.2,
-                274.2,
-                341.1,
-                334.7,
-                323.3,
-                278.1,
-                296.2,
-                293.6,
-                272.9,
-                294.5,
-                330.1,
-                354.9,
-                404.4,
-                250.1,
-                435.1,
-                623.7,
-                604.3,
-                418.9,
-                427.3
-              ],
-              "backgroundColor": "#818cf8"
-            },
-            {
-              "label": "Family",
-              "data": [
-                70.2,
-                64.4,
-                53.6,
-                49.2,
-                52.4,
-                45.0,
-                40.2,
-                33.1,
-                34.9,
-                37.7,
-                37.8,
-                40.1,
-                43.6,
-                55.6,
-                37.1,
-                42.2,
-                47.1,
-                80.1,
-                85.2,
-                66.0
-              ],
-              "backgroundColor": "#10b981"
-            },
-            {
-              "label": "Humanitarian",
-              "data": [
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                75.6,
-                263.4,
-                68.5,
-                37.0,
-                23.8
-              ],
-              "backgroundColor": "#f59e0b"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Out-of-country entry-clearance visas issued (ex-Visitor), covering both main applicants and dependants.",
-          "scope": "UK-wide, 2006–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Visas issued are gross inflows of permissions; not every visa holder stays long-term or arrives immediately."
-        }
-      },
-      {
-        "headline": "In percentage terms, Study dominated 2009–2021 before Work expanded to roughly half of all non-visit grants in 2023–2024.",
-        "footnote": "*100% stacked share of issued non-visit entry-clearance visas by route (main + dependants, 2006–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "y_min": 0,
-          "y_max": 100,
-          "title": "Entry Clearance Visa Mix by Route (% Share · 2006–2025)",
-          "labels": [
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Share of Non-Visit Grants (%)",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Work (%)",
-              "data": [
-                45.0,
-                39.9,
-                36.0,
-                28.5,
-                29.3,
-                28.8,
-                31.3,
-                32.0,
-                33.7,
-                34.8,
-                33.0,
-                30.8,
-                30.6,
-                29.5,
-                28.5,
-                30.2,
-                31.1,
-                44.9,
-                40.5,
-                33.5
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Study (%)",
-              "data": [
-                42.3,
-                47.7,
-                53.5,
-                62.5,
-                61.1,
-                62.5,
-                60.0,
-                61.2,
-                59.2,
-                57.3,
-                59.4,
-                61.7,
-                61.8,
-                62.0,
-                62.3,
-                54.9,
-                46.0,
-                44.2,
-                46.1,
-                55.0
-              ],
-              "backgroundColor": "#818cf8"
-            },
-            {
-              "label": "Family (%)",
-              "data": [
-                12.7,
-                12.5,
-                10.5,
-                9.0,
-                9.6,
-                8.7,
-                8.7,
-                6.8,
-                7.0,
-                7.9,
-                7.6,
-                7.5,
-                7.6,
-                8.5,
-                9.2,
-                5.3,
-                3.5,
-                5.9,
-                9.4,
-                8.5
-              ],
-              "backgroundColor": "#10b981"
-            },
-            {
-              "label": "Humanitarian (%)",
-              "data": [
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                0.0,
-                9.5,
-                19.4,
-                5.0,
-                4.1,
-                3.1
-              ],
-              "backgroundColor": "#f59e0b"
-            }
-          ]
-        }
-      },
-      {
-        "headline": "Health & Care: carved out of Tier 2 in Aug 2020 (blue), surged +149% YoY in 2022 and +121% YoY in 2023 after Care Workers became eligible (green), then fell after 2024 curbs (amber).",
-        "footnote": "*Bar colours denote route regime: Slate (2018–19, pre-route in Tier 2 General) | Blue (2020–21, Aug 2020 NHS clinical carve-out) | Green (2022–23, Feb 2022 Care Worker expansion) | Amber (2024–25, post-Mar 2024 dependant ban). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Category 1 · Health & Care Visas: Volume (000s) & YoY % Change (2018–2025)",
-          "labels": [
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Visas Issued (000s)",
-          "y1_title": "YoY % Change",
-          "y1_suffix": "%",
-          "macro_events": [
-            {
-              "label": "2020",
-              "text": "Aug 2020 Route",
-              "color": "#38bdf8"
-            },
             {
               "label": "2022",
               "text": "Feb 2022 Care",
@@ -2928,61 +5726,78 @@ window.ISSUE02_GRAPHS = [
           ],
           "datasets": [
             {
-              "label": "Health & Care (000s)",
+              "label": "Graduate / Professional (SOC 1–2 · Pre-2021 Eligible)",
               "data": [
-                0.0,
-                0.0,
-                1.2,
-                63.3,
-                157.6,
-                348.2,
-                110.5,
-                48.5
+                58.0,
+                88.2,
+                75.1,
+                47.5,
+                31.8
               ],
-              "backgroundColor": [
-                "#64748b",
-                "#64748b",
-                "#38bdf8",
-                "#38bdf8",
-                "#10b981",
-                "#10b981",
-                "#f59e0b",
-                "#f59e0b"
-              ],
-              "yAxisID": "y"
+              "backgroundColor": "#64748b"
             },
             {
-              "label": "YoY Change (%)",
-              "type": "line",
+              "label": "Medium-Skilled RQF 3–5 (SOC 3–5 · Jan 2021 PBS)",
               "data": [
-                null,
-                null,
-                null,
-                null,
-                149.0,
-                120.9,
-                -68.3,
-                -56.1
+                5.3,
+                15.7,
+                24.5,
+                24.4,
+                9.6
               ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Caring Services / Care Workers (SOC 6 · Feb 2022)",
+              "data": [
+                3.5,
+                37.6,
+                109.3,
+                10.9,
+                3.4
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Sales / Elementary / Other (SOC 7–9)",
+              "data": [
+                0.1,
+                0.2,
+                1.0,
+                1.8,
+                0.6
+              ],
+              "backgroundColor": "#a1a1aa"
             }
           ]
         },
         "definition": {
-          "metric": "Issued Health & Care Worker visas (main + dependants, 000s) and YoY % change on the right axis.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Doctors and nurses entered under Tier 2 General before Aug 2020; Feb 2022 added Care Workers (SOC 6145)."
+          "metric": "Main-applicant grants in Skilled Worker & Health and Care Worker grouped by SOC 2020 major skill tier (000s).",
+          "scope": "UK-wide, 2021–2025 main applicants only (Home Office Data_Occ_D02).",
+          "nuance": "SOC 1–2 were largely eligible pre-2021; SOC 3–5 opened via Jan 2021 PBS; SOC 6 (Care Workers) opened Feb 2022."
         }
       },
       {
-        "headline": "Other Work: transitioned from Tier 2 General (slate, incl. NHS clinical) to RQF 3+ Skilled Worker (blue, H&C carved out), before £38.7k threshold curbs in 2024 (amber).",
-        "footnote": "*Bar colours denote route regime: Slate (2018–20, Tier 2 General) | Blue (2021–23, Skilled Worker RQF 3+) | Amber (2024–25, £38.7k salary floor). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "headline": "Main applicants drove overall volume, while dependants surged sharply in 2022–2023 before 2024 restrictions reversed the ratio.",
+        "footnote": "*Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s, 2006–2025). Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
         "chart": {
           "type": "bar",
-          "title": "Category 2 · Other Work Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "Work & Study Visas: Main Applicants vs Dependants (000s · 2006–2025)",
           "labels": [
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
             "2018",
             "2019",
             "2020",
@@ -2993,201 +5808,198 @@ window.ISSUE02_GRAPHS = [
             "2025"
           ],
           "y_title": "Visas Issued (000s)",
-          "y1_title": "YoY % Change",
-          "y1_suffix": "%",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
           "macro_events": [
             {
-              "label": "2020",
-              "text": "H&C Carved Out",
+              "label": "2008",
+              "text": "GFC",
               "color": "#a1a1aa"
             },
             {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
               "label": "2021",
-              "text": "RQF 6->3",
+              "text": "2021 Rules",
               "color": "#38bdf8"
             },
             {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
               "label": "2024",
-              "text": "£38.7k Floor",
-              "color": "#f59e0b"
+              "text": "2024 Curbs",
+              "color": "#10b981"
             }
           ],
           "datasets": [
             {
-              "label": "Other Work (000s)",
+              "label": "Main Applicants",
               "data": [
-                175.8,
-                192.6,
-                113.3,
-                175.9,
-                263.9,
-                265.5,
-                257.7,
-                211.9
+                405.3,
+                396.2,
+                404.3,
+                423.6,
+                416.9,
+                404.1,
+                364.3,
+                386.1,
+                393.8,
+                380.0,
+                402.6,
+                437.4,
+                466.6,
+                525.4,
+                307.4,
+                544.1,
+                755.9,
+                797.0,
+                606.3,
+                575.8
               ],
-              "backgroundColor": [
-                "#64748b",
-                "#64748b",
-                "#64748b",
-                "#38bdf8",
-                "#38bdf8",
-                "#38bdf8",
-                "#f59e0b",
-                "#f59e0b"
-              ],
-              "yAxisID": "y"
+              "backgroundColor": "#38bdf8"
             },
             {
-              "label": "YoY Change (%)",
-              "type": "line",
+              "label": "Dependants",
               "data": [
-                null,
-                9.6,
-                -41.2,
-                55.3,
-                50.0,
-                0.6,
-                -2.9,
-                -17.8
-              ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "All issued Work visas excluding Health & Care (000s) and YoY % change on the right axis.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Reflects the Jan 2021 transition from Tier 2 (RQF 6+) to Skilled Worker (RQF 3+) with Health & Care carved out."
-        }
-      },
-      {
-        "headline": "Study: dipped in 2020 COVID, rebounded +74% in 2021 and +37% in 2022, then cooled after the Jan 2024 dependant ban.",
-        "footnote": "*All issued Study visas (main applicants + dependants + short-term study). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Category 3 · Study Visas: Volume (000s) & YoY % Change (2018–2025)",
-          "labels": [
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Visas Issued (000s)",
-          "y1_title": "YoY % Change",
-          "y1_suffix": "%",
-          "datasets": [
-            {
-              "label": "Study Visas (000s)",
-              "data": [
-                354.9,
-                404.4,
-                250.1,
-                435.1,
-                623.7,
-                604.3,
-                418.9,
-                427.3
-              ],
-              "backgroundColor": "rgba(129,140,248,0.75)",
-              "yAxisID": "y"
-            },
-            {
-              "label": "YoY Change (%)",
-              "type": "line",
-              "data": [
-                null,
-                13.9,
-                -38.2,
-                74.0,
-                43.3,
-                -3.1,
-                -30.7,
-                2.0
-              ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "All issued Study visas (main applicants + dependants + short-term study, 000s) and YoY % change.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Jan 2024 rules removed dependant rights for most taught Postgraduate students."
-        }
-      },
-      {
-        "headline": "Humanitarian: spiked to 75.6k in 2021 (HK BN(O)) and 263.4k in 2022 (Ukraine War), then tapered sharply from 2023–2025.",
-        "footnote": "*Issued Ukraine Sponsorship, Ukraine Family, BN(O), and Afghan scheme visas (classified under Home Office 'Other'). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Category 4 · Humanitarian Visas (Ukraine & BN(O)): Volume (000s) & YoY % Change (2018–2025)",
-          "labels": [
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Visas Issued (000s)",
-          "y1_title": "YoY % Change",
-          "y1_suffix": "%",
-          "datasets": [
-            {
-              "label": "Humanitarian (000s)",
-              "data": [
-                0.0,
-                0.0,
-                0.0,
-                75.6,
-                263.4,
+                78.6,
+                55.8,
+                54.5,
+                73.1,
+                78.6,
                 68.5,
-                37.0,
-                23.8
+                58.9,
+                64.9,
+                67.0,
+                58.9,
+                55.8,
+                57.7,
+                64.1,
+                71.6,
+                57.3,
+                130.2,
+                289.4,
+                420.9,
+                180.8,
+                112.0
               ],
-              "backgroundColor": "rgba(239,68,68,0.75)",
-              "yAxisID": "y"
-            },
-            {
-              "label": "YoY Change (%)",
-              "type": "line",
-              "data": [
-                null,
-                null,
-                null,
-                null,
-                248.4,
-                -74.0,
-                -46.0,
-                -35.7
-              ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
+              "backgroundColor": "#f59e0b"
             }
           ]
         },
         "definition": {
-          "metric": "Issued Ukraine Sponsorship, Ukraine Family, BN(O), and Afghan visas (000s) and YoY % change.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02 subgroups).",
-          "nuance": "Extracted from Home Office 'Other' visa group; 2021 reflects BN(O) launch and 2022 reflects Ukraine schemes."
+          "metric": "Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s).",
+          "scope": "UK-wide, 2006–2025 (Home Office Data_Vis_D02).",
+          "nuance": "Captures the 2022–2023 dependant surge and the post-2024 contraction after dependant bans."
         }
-      },
+      }
+    ]
+  },
+  {
+    "id": "hyp_study",
+    "section": "Part 3 · Are They Causing an Economic Problem?",
+    "ref": "3.3",
+    "title": "Study Visa Deeper Dive: Course Level & University Tier",
+    "question": "Which course levels and university tiers drove the post-2020 international student expansion?",
+    "charts": [
       {
-        "headline": "Family: remained relatively stable around 40k–85k per year, with a modest 2023–2024 bump before the £29,000 threshold rise.",
-        "footnote": "*Issued Family visas (Partner, Child, Adult Dependant, and Refugee Family Reunion). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
+        "headline": "Student Supply (Level): 1-year Masters courses drove almost the entire post-2020 expansion, rising from ~121k pre-COVID to 315k in 2022.",
+        "footnote": "*Sponsored Study visa grants (main applicants) by course level from Home Office Education Visas (Mar 2026, Data_Edu_D02). Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Education Visas by Course Level (Mar 2026)</a>",
         "chart": {
           "type": "bar",
-          "title": "Category 5 · Family Visas: Volume (000s) & YoY % Change (2018–2025)",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "Student Supply Breakdown 1 · Sponsored Study Visas by Course Level (2018–2025, 000s)",
           "labels": [
             "2018",
             "2019",
@@ -3198,57 +6010,291 @@ window.ISSUE02_GRAPHS = [
             "2024",
             "2025"
           ],
-          "y_title": "Visas Issued (000s)",
-          "y1_title": "YoY % Change",
-          "y1_suffix": "%",
+          "y_title": "Sponsored Study Grants (000s)",
           "datasets": [
             {
-              "label": "Family Visas (000s)",
+              "label": "Masters (Postgraduate Taught)",
               "data": [
-                43.6,
-                55.6,
-                37.1,
-                42.2,
-                47.1,
-                80.1,
-                85.2,
-                66.0
+                95.6,
+                120.8,
+                126.1,
+                225.5,
+                314.9,
+                291.5,
+                234.5,
+                246.6
               ],
-              "backgroundColor": "rgba(245,158,11,0.75)",
-              "yAxisID": "y"
+              "backgroundColor": "#818cf8"
             },
             {
-              "label": "YoY Change (%)",
-              "type": "line",
+              "label": "Bachelors (Undergraduate)",
               "data": [
-                null,
-                27.5,
-                -33.3,
-                13.7,
-                11.6,
-                70.1,
-                6.4,
-                -22.5
+                63.5,
+                72.1,
+                54.0,
+                98.0,
+                109.6,
+                105.1,
+                105.6,
+                111.8
               ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Below Bachelors",
+              "data": [
+                21.1,
+                22.9,
+                10.9,
+                17.7,
+                23.5,
+                22.5,
+                20.4,
+                18.7
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Doctorate / Pre-sessional / Other",
+              "data": [
+                35.0,
+                38.1,
+                7.5,
+                14.9,
+                19.5,
+                20.1,
+                18.1,
+                17.8
+              ],
+              "backgroundColor": "#a1a1aa"
             }
           ]
         },
         "definition": {
-          "metric": "Issued Family visas (Partner, Child, Adult Dependant, Refugee Family Reunion, 000s) and YoY % change.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Minimum income threshold rose from £18,600 to £29,000 in April 2024."
+          "metric": "Sponsored Study visa grants (main applicants) split into Masters, Bachelors, Below Bachelors, and Doctorate/Other.",
+          "scope": "UK-wide, 2018–2025 (Home Office Data_Edu_D02).",
+          "nuance": "Shows demand/supply concentration in 1-year Postgraduate Taught (Masters) courses."
+        }
+      },
+      {
+        "headline": "Student Supply (University Tier): Non-Russell Group universities absorbed the bulk of the post-2020 expansion (+187% vs 2019).",
+        "footnote": "*Out-of-country Study visa applications (CAS acceptances) by institution tier (2010–2024, Home Office Study Sponsorship Dec 2024, CAS_D01). Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Study Sponsorship by Institution Type (Dec 2024)</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "title": "Student Supply Breakdown 2 · Study Visa Applications by University Tier (2010–2024, 000s)",
+          "labels": [
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024"
+          ],
+          "y_title": "CAS Visa Applications (000s)",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Non-Russell Group Universities",
+              "data": [
+                88.7,
+                94.3,
+                95.2,
+                99.6,
+                97.6,
+                90.7,
+                87.2,
+                90.5,
+                98.3,
+                104.5,
+                35.3,
+                185.1,
+                299.6,
+                279.2,
+                226.9
+              ],
+              "backgroundColor": "#f97316"
+            },
+            {
+              "label": "Russell Group Universities",
+              "data": [
+                54.5,
+                58.2,
+                61.5,
+                68.4,
+                71.0,
+                75.6,
+                80.4,
+                87.2,
+                96.6,
+                106.3,
+                30.5,
+                130.7,
+                139.8,
+                142.9,
+                136.2
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "FE / Schools / English Lang / Other",
+              "data": [
+                106.0,
+                118.1,
+                53.5,
+                42.1,
+                39.9,
+                35.4,
+                33.3,
+                34.5,
+                34.6,
+                31.1,
+                4.9,
+                33.7,
+                44.9,
+                45.9,
+                41.7
+              ],
+              "backgroundColor": "#71717a"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Out-of-country Study visa applications (CAS acceptances) by institution tier (000s).",
+          "scope": "UK-wide, 2010–2024 (Home Office Data_CAS_D01).",
+          "nuance": "Separates Russell Group universities from Non-Russell Group universities and FE/English language colleges."
         }
       }
     ]
   },
   {
     "id": "hyp_housing",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.1",
-    "title": "Hypothesis 1 · Effect on Housing (Council Rents & Supply)",
+    "section": "Part 3 · Are They Causing an Economic Problem?",
+    "ref": "3.4",
+    "title": "Housing Impact: Local Council Rents & Supply",
     "question": "Did local areas with higher population growth actually experience sharper private rent rises, and did council-level housing supply scale with population growth?",
     "charts": [
       {
@@ -6764,11 +9810,11 @@ window.ISSUE02_GRAPHS = [
   },
   {
     "id": "hyp_culture",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.2",
-    "title": "Hypothesis 2 · Effect on Culture: Ethnicity, Perspective, Religion & Crime",
-    "question": "How have incoming visa regions, UK ethnicity (headline & sub-level), religious composition, local vote perspective, and crime (prison & petty arrests) changed?",
-    "context_note": "<strong>Data Boundaries:</strong> (1) UK visas log <strong>world region/nationality</strong>, not ethnicity; overall ethnicity &amp; religion come from the ONS Census (2011 vs 2021); (2) Crime is tested across both <strong>Custody (MoJ Prison 2015–2026)</strong> and <strong>Petty/All Offences (Home Office Police Arrests per 1,000)</strong> — note that raw shares are unadjusted for age/sex and MoJ/Home Office do not publish crime by visa route.",
+    "section": "Part 4 · Are They Blending In or Causing Social Problems?",
+    "ref": "4.1",
+    "title": "Population Dynamics: Source Regions, Ethnicity & Religion",
+    "question": "How have incoming visa regions, UK ethnicity (headline & sub-level), and religious composition shifted over time?",
+    "context_note": "<strong>Data Boundaries:</strong> UK visas log <strong>world region/nationality</strong>, not ethnicity; overall UK resident ethnicity &amp; religion come from the decennial ONS Census (2011 vs 2021).",
     "charts": [
       {
         "headline": "South Asia (32%→42%) and Sub-Saharan Africa (8%→23%) expanded sharply at the 2023 peak as East & SE Asia fell from 27% to 12%, while Europe spiked briefly in 2022 (Ukraine).",
@@ -7246,28 +10292,98 @@ window.ISSUE02_GRAPHS = [
           "scope": "England & Wales, 2011 vs 2021.",
           "nuance": "Christian share declined from 59.3% to 46.2% while No Religion rose from 25.2% to 37.2%."
         }
+      }
+    ]
+  },
+  {
+    "id": "hyp_retention",
+    "section": "Part 4 · Are They Blending In or Causing Social Problems?",
+    "ref": "4.2",
+    "title": "Are They Staying Long-Term & Naturalising? (5-Year Retention & Citizenship)",
+    "question": "What share of visa holders actually stay 5+ years, how has cohort retention changed since 2008, and how many naturalise each year?",
+    "charts": [
+      {
+        "headline": "Who stays long-term? After 5 years, 54.6% of the 2020 visa cohort still held valid leave or settlement — while 59.3% of Study visas had expired.",
+        "footnote": "*Home Office Migrant Journey 2025 (Table MJ_03): status at end-2025 of people issued initial leave in 2020. Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
+        "chart": {
+          "type": "bar",
+          "stacked": true,
+          "show_pct_tooltip": true,
+          "y_min": 0,
+          "y_max": 100,
+          "title": "5-Year Retention & Settlement Rate by Initial Visa Route (2020 Cohort at End-2025, %)",
+          "labels": [
+            "All leave types",
+            "Study",
+            "Work",
+            "Family",
+            "Asylum"
+          ],
+          "y_title": "Share of Cohort (%)",
+          "datasets": [
+            {
+              "label": "Indefinite Leave to Remain (Settled, %)",
+              "data": [
+                14.3,
+                0.2,
+                30.5,
+                46.5,
+                2.8
+              ],
+              "backgroundColor": "#10b981"
+            },
+            {
+              "label": "Valid Leave to Remain (Still in UK, %)",
+              "data": [
+                40.4,
+                40.5,
+                27.7,
+                39.7,
+                96.2
+              ],
+              "backgroundColor": "#38bdf8"
+            },
+            {
+              "label": "Leave Expired (Left / Switched / Expired, %)",
+              "data": [
+                45.4,
+                59.3,
+                41.8,
+                13.8,
+                1.0
+              ],
+              "backgroundColor": "#64748b"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Share of the 2020 initial-leave cohort holding Indefinite Leave to Remain (ILR), Valid Leave, or Expired Leave at end-2025 (%).",
+          "scope": "All Home Office initial entry/leave grants in 2020 tracked longitudinally in Migrant Journey 2025 (Table MJ_03).",
+          "nuance": "Expired leave covers departures, non-renewals, and visa expiry; Valid Leave includes Graduate Route and in-country switchers."
+        }
       },
       {
-        "headline": "Prison population by religion (MoJ 2015–2026): Muslim share rose from ~14.6% to ~18.8% while Christian share declined from ~50% to ~43%.",
-        "footnote": "*MoJ Annual Prison Population as at 30 June (2015–2026, Table 1.A.23). Unadjusted for age/sex. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a>",
+        "headline": "Retention over time (2008–2020 cohorts): Study 5-year retention jumped from 17.3% (2015 cohort) to 40.7% (2020 cohort) after Graduate Route launched.",
+        "footnote": "*Tracks each annual initial-leave cohort (2008–2020) exactly 5 years later (2013–2025). Dashed = individual routes; Solid = All Leave Types. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
         "chart": {
           "type": "line",
-          "title": "Prison Population by Religion Over Time (MoJ 2015–2026, %)",
+          "title": "5-Year Retention Rate Over Time by Initial Visa Route (2008–2020 Cohorts, %)",
           "labels": [
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
             "2015",
             "2016",
             "2017",
             "2018",
             "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026"
+            "2020"
           ],
-          "y_title": "% of Prison Population",
+          "y_title": "% Still Holding Leave or ILR at Year 5",
           "political_eras": [
             {
               "start": 1945,
@@ -7384,83 +10500,389 @@ window.ISSUE02_GRAPHS = [
           ],
           "datasets": [
             {
-              "label": "Christian (All, %)",
+              "label": "Asylum (%)",
               "data": [
-                49.5,
-                48.9,
-                48.0,
-                47.8,
-                47.5,
-                46.5,
-                45.0,
-                45.0,
-                44.5,
-                44.4,
-                43.1,
-                43.4
+                94.5,
+                95.3,
+                96.5,
+                96.7,
+                96.9,
+                97.5,
+                97.8,
+                98.5,
+                98.7,
+                98.5,
+                98.4,
+                97.5,
+                99.0
               ],
-              "borderColor": "#38bdf8"
+              "borderColor": "#ef4444",
+              "backgroundColor": "rgba(239,68,68,0.10)",
+              "borderDash": [
+                5,
+                4
+              ]
             },
             {
-              "label": "No Religion (%)",
+              "label": "Family (%)",
               "data": [
-                30.3,
-                30.5,
-                30.6,
-                30.5,
-                30.1,
-                30.2,
-                31.2,
-                31.2,
+                87.4,
+                87.0,
+                89.0,
+                90.2,
+                91.0,
+                89.5,
+                89.9,
+                90.4,
+                91.1,
+                91.8,
+                91.2,
+                90.9,
+                86.2
+              ],
+              "borderColor": "#10b981",
+              "backgroundColor": "rgba(16,185,129,0.10)",
+              "borderDash": [
+                5,
+                4
+              ]
+            },
+            {
+              "label": "Work (%)",
+              "data": [
+                24.9,
+                31.6,
                 31.1,
-                30.7,
-                30.3,
-                29.5
+                26.3,
+                23.5,
+                24.0,
+                25.4,
+                25.7,
+                28.3,
+                32.8,
+                38.5,
+                45.7,
+                58.2
               ],
-              "borderColor": "#a1a1aa"
+              "borderColor": "#38bdf8",
+              "backgroundColor": "rgba(56,189,248,0.10)",
+              "borderDash": [
+                5,
+                4
+              ]
             },
             {
-              "label": "Muslim (%)",
+              "label": "All Leave Types (%)",
               "data": [
-                14.6,
-                14.8,
-                15.4,
-                15.6,
-                16.1,
-                16.6,
-                17.5,
-                17.4,
-                17.8,
-                18.2,
-                18.4,
-                18.8
+                35.3,
+                35.1,
+                34.3,
+                31.5,
+                30.6,
+                29.2,
+                30.8,
+                32.6,
+                34.7,
+                37.6,
+                40.9,
+                44.5,
+                54.6
               ],
-              "borderColor": "#10b981"
+              "borderColor": "#fbbf24",
+              "backgroundColor": "rgba(251,191,36,0.10)",
+              "borderWidth": 2.8
             },
             {
-              "label": "Hindu / Sikh / Other (%)",
+              "label": "Study (%)",
               "data": [
-                5.2,
-                5.4,
-                5.6,
-                5.8,
-                6.0,
-                6.2,
-                5.9,
-                6.1,
-                6.2,
-                6.4,
-                7.9,
-                8.1
+                23.4,
+                24.6,
+                23.7,
+                20.5,
+                18.3,
+                17.9,
+                17.9,
+                17.3,
+                18.0,
+                20.6,
+                22.8,
+                25.4,
+                40.7
               ],
-              "borderColor": "#f59e0b"
+              "borderColor": "#818cf8",
+              "backgroundColor": "rgba(129,140,248,0.12)",
+              "borderDash": [
+                5,
+                4
+              ]
             }
           ]
         },
         "definition": {
-          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
-          "scope": "England & Wales custody & resident population.",
-          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
+          "metric": "Cohort retention (%) = (ILR + Valid Leave at Year 5) / Initial Cohort Total × 100, evaluated 5 years after initial grant.",
+          "scope": "Annual cohorts 2008–2020 (observed at end of 2013–2025) from Home Office Data_MJ_D01.",
+          "nuance": "Shows how long-term stay behaviour shifted across policy regimes (e.g. Graduate Route introduction in July 2021 for the 2020 cohort)."
+        }
+      },
+      {
+        "headline": "British citizenship grants reached 236.2k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.",
+        "footnote": "*Home Office British Citizenship grants (Data_Cit_D02, 2005–2025) divided by ONS UKPOP mid-year population. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office British Citizenship Grants (Jun 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop\" target=\"_blank\" rel=\"noopener\">ONS UK Population Mid-Year Estimates (UKPOP)</a>",
+        "chart": {
+          "type": "bar",
+          "title": "Annual British Citizenship Grants (000s) & % of UK Population (2005–2025)",
+          "labels": [
+            "2005",
+            "2006",
+            "2007",
+            "2008",
+            "2009",
+            "2010",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025"
+          ],
+          "y_title": "Citizenship Grants (000s)",
+          "y1_title": "% of UK Population",
+          "y1_suffix": "%",
+          "political_eras": [
+            {
+              "start": 1945,
+              "end": 1951,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1951,
+              "end": 1964,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1964,
+              "end": 1970,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1970,
+              "end": 1974,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1974,
+              "end": 1979,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 1979,
+              "end": 1997,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 1997,
+              "end": 2010,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            },
+            {
+              "start": 2010,
+              "end": 2015,
+              "party": "Coalition",
+              "short": "COAL",
+              "color": "#818cf8",
+              "bg": "rgba(129,140,248,0.065)"
+            },
+            {
+              "start": 2015,
+              "end": 2024,
+              "party": "Conservative",
+              "short": "CON",
+              "color": "#3b82f6",
+              "bg": "rgba(59,130,246,0.055)"
+            },
+            {
+              "start": 2024,
+              "end": 2026,
+              "party": "Labour",
+              "short": "LAB",
+              "color": "#ef4444",
+              "bg": "rgba(239,68,68,0.055)"
+            }
+          ],
+          "macro_events": [
+            {
+              "label": "2008",
+              "text": "GFC",
+              "color": "#a1a1aa"
+            },
+            {
+              "label": "2016",
+              "text": "Brexit",
+              "color": "#a855f7"
+            },
+            {
+              "label": "2020",
+              "text": "COVID",
+              "color": "#f59e0b"
+            },
+            {
+              "label": "2021",
+              "text": "2021 Rules",
+              "color": "#38bdf8"
+            },
+            {
+              "label": "2022",
+              "text": "Ukraine War",
+              "color": "#ef4444"
+            },
+            {
+              "label": "2024",
+              "text": "2024 Curbs",
+              "color": "#10b981"
+            }
+          ],
+          "datasets": [
+            {
+              "label": "Citizenship Grants (000s)",
+              "data": [
+                161.7,
+                154.0,
+                164.6,
+                129.4,
+                203.8,
+                195.1,
+                177.9,
+                194.4,
+                208.1,
+                125.8,
+                118.1,
+                149.4,
+                123.2,
+                157.0,
+                159.4,
+                130.6,
+                189.8,
+                176.0,
+                206.6,
+                269.8,
+                236.2
+              ],
+              "backgroundColor": "rgba(56,189,248,0.72)",
+              "yAxisID": "y"
+            },
+            {
+              "label": "% of UK Population",
+              "type": "line",
+              "data": [
+                0.27,
+                0.25,
+                0.27,
+                0.21,
+                0.33,
+                0.31,
+                0.28,
+                0.3,
+                0.32,
+                0.2,
+                0.18,
+                0.23,
+                0.19,
+                0.24,
+                0.24,
+                0.2,
+                0.28,
+                0.26,
+                0.3,
+                0.39,
+                0.34
+              ],
+              "borderColor": "#f97316",
+              "backgroundColor": "rgba(249,115,22,0.15)",
+              "yAxisID": "y1"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Annual grants of British citizenship (naturalisation & registration) in thousands, and as % of ONS UKPOP.",
+          "scope": "UK-wide, 2005–2025 (Home Office Data_Cit_D02).",
+          "nuance": "Naturalisation typically occurs 5–6+ years after arrival (after ILR), so citizenship grants lag arrival waves."
+        }
+      }
+    ]
+  },
+  {
+    "id": "hyp_towns",
+    "section": "Part 4 · Are They Blending In or Causing Social Problems?",
+    "ref": "4.3",
+    "title": "What Happens in Towns With High Asylum Rates & Local Perspective?",
+    "question": "How do the top 20 asylum-dispersal councils compare with the rest of the UK on population growth, rents, and 2016 Leave vote share?",
+    "charts": [
+      {
+        "headline": "Top 20 high-asylum councils (avg 42.2 supported per 10k vs 9.5 elsewhere) saw slightly higher rent rises (29.0% vs 27.8%) and higher 2016 Leave votes (59.8% vs 53.9%), despite similar population growth.",
+        "footnote": "*Compares the Top 20 Local Authorities by supported asylum seekers per 10,000 residents (Home Office Data_Asy_D11) against all other matched UK councils (ONS Nomis, ONS PIPR, Electoral Commission). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum Support by Local Authority (Jun 2026)</a> | <a href=\"https://www.nomisweb.co.uk/datasets/pestsnew\" target=\"_blank\" rel=\"noopener\">ONS Mid-Year Population Estimates (Nomis NM_2002_1)</a> | <a href=\"https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics\" target=\"_blank\" rel=\"noopener\">ONS Price Index of Private Rents (PIPR & IPHRP)</a> | <a href=\"https://www.electoralcommission.org.uk/who-we-are-and-what-we-do/elections-and-referendums/past-elections-and-referendums/eu-referendum/results-and-turnout-eu-referendum\" target=\"_blank\" rel=\"noopener\">Electoral Commission 2016 EU Referendum Results by LA</a>",
+        "chart": {
+          "type": "bar",
+          "title": "What Happens in High-Asylum Towns? Top 20 Asylum-Dispersal Councils vs Rest of UK (%)",
+          "labels": [
+            "Pop Growth 2021–25 (%)",
+            "Private Rent Rise 2021–25 (%)",
+            "2016 Leave Vote (%)"
+          ],
+          "y_title": "Mean (%)",
+          "datasets": [
+            {
+              "label": "Top 20 High-Asylum Councils",
+              "data": [
+                5.33,
+                28.97,
+                59.8
+              ],
+              "backgroundColor": "#ef4444"
+            },
+            {
+              "label": "Rest of UK Councils",
+              "data": [
+                3.8,
+                27.77,
+                53.9
+              ],
+              "backgroundColor": "#38bdf8"
+            }
+          ]
+        },
+        "definition": {
+          "metric": "Compares the Top 20 Local Authorities by supported asylum seekers per 10,000 residents (Home Office Data_Asy_D11) against all other matched UK councils on Pop Growth (2021–25), Private Rent Rise (2021–25), and 2016 Leave Vote (%).",
+          "scope": "Matched UK Local Authorities (Home Office, ONS Nomis, ONS PIPR, Electoral Commission).",
+          "nuance": "Tests whether high-asylum dispersal towns experienced unusually fast population or rent growth compared with the rest of the UK."
         }
       },
       {
@@ -10574,2303 +13996,14 @@ window.ISSUE02_GRAPHS = [
           "scope": "Matched UK Local Authorities.",
           "nuance": "Tests whether restrictionist vote share correlates positively or negatively with local migration exposure."
         }
-      },
-      {
-        "headline": "MoJ Prison Population (Sep 2026): Foreign Nationals are 11.6% of prisoners; Black & Mixed shares exceed Census population shares (unadjusted for age/sex).",
-        "footnote": "*MoJ Offender Management Statistics (30 Sept 2026, Table 1.Q.7 & 1.Q.9) vs ONS Census 2021 E&W population share. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "England & Wales Prison Population vs Resident Population by Ethnicity (MoJ Sep 2026 vs Census 2021, %)",
-          "labels": [
-            "White",
-            "Asian",
-            "Black",
-            "Mixed",
-            "Other"
-          ],
-          "y_title": "Share (%)",
-          "datasets": [
-            {
-              "label": "Prison Population (Sep 2026, %)",
-              "data": [
-                72.0,
-                8.4,
-                12.1,
-                5.0,
-                2.5
-              ],
-              "backgroundColor": "#ef4444"
-            },
-            {
-              "label": "E&W Resident Population (Census 2021, %)",
-              "data": [
-                81.7,
-                9.3,
-                4.0,
-                2.9,
-                2.1
-              ],
-              "backgroundColor": "#38bdf8"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
-          "scope": "England & Wales custody & resident population.",
-          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
-        }
-      },
-      {
-        "headline": "Prison demographics over time (2015–2026): Foreign-national share stayed steady near 11%–13% while minority ethnic shares edged gradually higher.",
-        "footnote": "*MoJ Annual Prison Population as at 30 June (2015–2026, Tables 1.A.22 & 1.A.24). Unadjusted for age/sex. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a>",
-        "chart": {
-          "type": "line",
-          "title": "Prison Population Over Time: Foreign Nationals & Minority Ethnic Shares (2015–2026, %)",
-          "labels": [
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026"
-          ],
-          "y_title": "% of Prison Population",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Foreign Nationals (%)",
-              "data": [
-                12.2,
-                11.6,
-                11.4,
-                11.0,
-                11.0,
-                11.7,
-                12.5,
-                12.0,
-                12.0,
-                11.9,
-                12.3,
-                11.8
-              ],
-              "borderColor": "#fbbf24",
-              "borderWidth": 2.6
-            },
-            {
-              "label": "Black / Black British (%)",
-              "data": [
-                12.5,
-                12.4,
-                12.5,
-                12.7,
-                12.8,
-                13.0,
-                12.9,
-                12.6,
-                12.3,
-                12.2,
-                11.9,
-                12.1
-              ],
-              "borderColor": "#ef4444"
-            },
-            {
-              "label": "Asian / Asian British (%)",
-              "data": [
-                8.2,
-                8.1,
-                8.2,
-                8.1,
-                8.1,
-                8.0,
-                8.3,
-                8.2,
-                8.0,
-                8.3,
-                8.0,
-                8.5
-              ],
-              "borderColor": "#38bdf8"
-            },
-            {
-              "label": "Mixed (%)",
-              "data": [
-                4.1,
-                4.3,
-                4.5,
-                4.6,
-                4.7,
-                4.9,
-                4.9,
-                5.0,
-                4.9,
-                4.8,
-                4.9,
-                5.0
-              ],
-              "borderColor": "#10b981"
-            },
-            {
-              "label": "Other Ethnic Group (%)",
-              "data": [
-                1.1,
-                1.2,
-                1.2,
-                1.4,
-                1.6,
-                1.5,
-                1.5,
-                1.6,
-                2.0,
-                2.2,
-                2.5,
-                2.4
-              ],
-              "borderColor": "#a855f7"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "MoJ prison population share by ethnicity (30 Sept 2026, Table 1.Q.7) vs Census 2021 E&W resident share (%).",
-          "scope": "England & Wales custody & resident population.",
-          "nuance": "Raw shares are unadjusted for age/sex structure; MoJ does not publish crime rates by visa route."
-        }
-      },
-      {
-        "headline": "Petty & all notifiable offences (Home Office arrests per 1,000): Black arrest rates (~21–23 per 1,000) remain roughly 2.5x White & Asian rates (~8–9 per 1,000).",
-        "footnote": "*Home Office Police Arrests per 1,000 population in England & Wales (2020/21–2022/23+). Covers petty & indictable arrests by ethnicity (not visa status; unadjusted for age/sex). Source: <a href=\"https://www.ethnicity-facts-figures.service.gov.uk/crime-justice-and-the-law/policing/number-of-arrests/latest\" target=\"_blank\" rel=\"noopener\">Home Office Police Arrests by Ethnicity (England & Wales)</a>",
-        "chart": {
-          "type": "line",
-          "title": "Petty & All Offences: Police Arrest Rate per 1,000 People by Ethnicity (England & Wales)",
-          "labels": [
-            "2020/21",
-            "2021/22",
-            "2022/23"
-          ],
-          "y_title": "Arrests per 1,000 Residents",
-          "datasets": [
-            {
-              "label": "Black",
-              "data": [
-                22.5,
-                21.3,
-                20.4
-              ],
-              "borderColor": "#ef4444"
-            },
-            {
-              "label": "Mixed",
-              "data": [
-                11.8,
-                11.7,
-                12.5
-              ],
-              "borderColor": "#10b981"
-            },
-            {
-              "label": "All Ethnicities",
-              "data": [
-                10.8,
-                11.0,
-                11.2
-              ],
-              "borderColor": "#fbbf24",
-              "borderDash": [
-                5,
-                4
-              ]
-            },
-            {
-              "label": "White",
-              "data": [
-                8.6,
-                8.9,
-                9.4
-              ],
-              "borderColor": "#38bdf8"
-            },
-            {
-              "label": "Asian",
-              "data": [
-                8.0,
-                7.7,
-                8.4
-              ],
-              "borderColor": "#a855f7"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Home Office arrests per 1,000 residents by ethnic group across all notifiable offences (England & Wales).",
-          "scope": "England & Wales police force areas, 2020/21–latest.",
-          "nuance": "Covers petty and indictable arrests by ethnicity, not visa status, and is unadjusted for age/sex."
-        }
-      },
-      {
-        "headline": "Prison-to-population math is NOT parallel: Black (3.2x) and Muslim (2.7x) prison shares sit well above 1.0x parity, while White (0.89x), Asian (0.89x) and Christian (0.97x) sit below 1.0x (unadjusted for age/sex).",
-        "footnote": "*2021 Parity Ratio = (Prison % in Jun 2021) ÷ (Census 2021 E&W Population %). Dashed yellow line = 1.00 (exact mathematical parity). Caveat: raw ratios are unadjusted for age and sex (prison is ~96% male and heavily 18–39; minority/Muslim populations are younger on average). Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Religion (England & Wales)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "2021 Prison-to-Population Parity Ratio by Ethnicity & Religion (Prison % ÷ Pop % · 1.0 = Equal Rate)",
-          "labels": [
-            "Ethnicity: White",
-            "Ethnicity: Asian",
-            "Ethnicity: Black",
-            "Ethnicity: Mixed",
-            "Ethnicity: Other",
-            "Religion: Christian",
-            "Religion: No religion",
-            "Religion: Muslim",
-            "Religion: Hindu/Sikh/Other"
-          ],
-          "y_title": "Parity Ratio (Prison % ÷ Pop %)",
-          "benchmark_line": {
-            "value": 1.0,
-            "color": "#facc15",
-            "dash": [
-              6,
-              4
-            ]
-          },
-          "datasets": [
-            {
-              "label": "2021 Parity Ratio (x)",
-              "data": [
-                0.89,
-                0.89,
-                3.23,
-                1.69,
-                0.71,
-                0.97,
-                0.84,
-                2.69,
-                1.4
-              ],
-              "backgroundColor": [
-                "#38bdf8",
-                "#38bdf8",
-                "#ef4444",
-                "#ef4444",
-                "#38bdf8",
-                "#38bdf8",
-                "#38bdf8",
-                "#ef4444",
-                "#ef4444"
-              ]
-            }
-          ]
-        },
-        "definition": {
-          "metric": "MoJ Prison Population % (Jun 2021) divided by ONS Census 2021 E&W Population % (1.00 = equal rate across groups).",
-          "scope": "England & Wales, 2021.",
-          "nuance": "Raw ratios are unadjusted for age and sex (prison is ~96% male and heavily 18–39; minority/Muslim populations are younger on average)."
-        }
-      },
-      {
-        "headline": "Change over time is also non-parallel: Asian & Black prison shares barely moved (1.04x and 0.97x) despite ~1.2x population growth, whereas Muslim (1.29x vs 1.33x) and Mixed (1.22x vs 1.32x) tracked closer.",
-        "footnote": "*Compares Census 2011→2021 population share multiplier against MoJ 2015→2026 prison share multiplier. Unadjusted for age/sex or in-custody religious conversions. Source: <a href=\"https://www.gov.uk/government/collections/offender-management-statistics-quarterly\" target=\"_blank\" rel=\"noopener\">MoJ Offender Management Statistics Quarterly (Sep 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/bulletins/ethnicgroupenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Ethnic Group (England & Wales)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/religion/bulletins/religionenglandandwales/census2021\" target=\"_blank\" rel=\"noopener\">ONS Census 2021 Religion (England & Wales)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Did Prison Shares Move in Parallel with Population? (Pop Shift 2011→21 vs Prison Shift 2015→26, Multiplier)",
-          "labels": [
-            "Ethnicity: White",
-            "Ethnicity: Asian",
-            "Ethnicity: Black",
-            "Ethnicity: Mixed",
-            "Ethnicity: Other",
-            "Religion: Christian",
-            "Religion: No religion",
-            "Religion: Muslim",
-            "Religion: Hindu/Sikh/Other"
-          ],
-          "y_title": "Share Multiplier (x)",
-          "benchmark_line": {
-            "value": 1.0,
-            "color": "#a1a1aa",
-            "dash": [
-              4,
-              4
-            ]
-          },
-          "datasets": [
-            {
-              "label": "Population Share Shift (2011→2021, x)",
-              "data": [
-                0.95,
-                1.24,
-                1.21,
-                1.32,
-                2.1,
-                0.78,
-                1.48,
-                1.33,
-                1.17
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Prison Share Shift (2015→2026, x)",
-              "data": [
-                0.97,
-                1.04,
-                0.97,
-                1.22,
-                2.18,
-                0.88,
-                0.97,
-                1.29,
-                1.56
-              ],
-              "backgroundColor": "#ef4444"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Compares Census 2011→2021 population share multiplier against MoJ 2015→2026 prison share multiplier.",
-          "scope": "England & Wales, 2011–2026.",
-          "nuance": "Tests whether prison shares moved proportionally with resident population shifts; unadjusted for age/sex or in-custody conversions."
-        }
-      }
-    ]
-  },
-  {
-    "id": "hyp_illegal",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.3",
-    "title": "Hypothesis 3 · Illegal & Undocumented Immigration (All Routes)",
-    "question": "How did asylum claims, small boats, all-route irregular detections, returns, and total undocumented resident estimates evolve?",
-    "charts": [
-      {
-        "headline": "Asylum claims climbed above 100,000 in 2024–2025 after staying under 40,000 for most of 2006–2020.",
-        "footnote": "*Annual asylum claims (all applicants, 2006–2025) vs detected small-boat Channel arrivals (tracked from 2018; strictly null pre-2018). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Total Asylum Claims vs Small-Boat Arrivals (000s · 2006–2025)",
-          "labels": [
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Thousands",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Total Asylum Claims",
-              "data": [
-                28.3,
-                28.3,
-                31.3,
-                30.7,
-                22.6,
-                25.9,
-                28.0,
-                29.9,
-                32.3,
-                40.0,
-                39.4,
-                34.4,
-                38.5,
-                45.5,
-                37.6,
-                57.9,
-                95.0,
-                87.4,
-                104.8,
-                101.9
-              ],
-              "backgroundColor": "#a855f7"
-            },
-            {
-              "label": "Small-Boat Arrivals (2018+)",
-              "data": [
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                null,
-                0.3,
-                1.8,
-                8.5,
-                28.5,
-                45.8,
-                29.4,
-                36.8,
-                41.5
-              ],
-              "backgroundColor": "#ef4444"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Annual asylum claims (all applicants, 2006–2025) vs detected small-boat Channel arrivals (2018–2025).",
-          "scope": "UK-wide (Home Office Data_Asy_D01 & Data_IER_D01).",
-          "nuance": "Small-boat detections are strictly null before 2018 when systematic tracking began."
-        }
-      },
-      {
-        "headline": "All-route irregular detections: before 2020, lorries ('In UK') and inadequately documented air arrivals dominated; after 2019, smugglers shifted to small boats.",
-        "footnote": "*All detected irregular entries from Home Office Data_IER_D01 (2018–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "title": "Detected Irregular Entries by ALL Routes (2018–2025, 000s)",
-          "labels": [
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Detections (000s)",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Small Boat Arrivals",
-              "data": [
-                0.3,
-                1.8,
-                8.5,
-                28.5,
-                45.8,
-                29.4,
-                36.8,
-                41.5
-              ],
-              "backgroundColor": "#ef4444"
-            },
-            {
-              "label": "In-UK Clandestine / Lorry Detections",
-              "data": [
-                7.3,
-                8.5,
-                5.4,
-                5.0,
-                3.4,
-                2.8,
-                2.9,
-                1.8
-              ],
-              "backgroundColor": "#f59e0b"
-            },
-            {
-              "label": "Inadequately Documented Air Arrivals",
-              "data": [
-                4.8,
-                5.2,
-                2.3,
-                2.6,
-                5.1,
-                3.9,
-                3.3,
-                3.0
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "UK Port Detections",
-              "data": [
-                1.1,
-                1.0,
-                0.8,
-                0.7,
-                0.3,
-                0.2,
-                0.2,
-                0.2
-              ],
-              "backgroundColor": "#a855f7"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "All detected irregular entries across Small Boats, In-UK/Lorry detections, Inadequately Documented Air, and UK Ports (000s).",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_IER_D01).",
-          "nuance": "Shows the 2019–2020 route substitution from clandestine lorries to Channel small boats."
-        }
-      },
-      {
-        "headline": "Total returns fell sharply from ~60k in 2006–2008 while the pending initial-decision backlog ballooned after 2019.",
-        "footnote": "*Cases pending initial decision as at 31 December (tracked from 2010) vs annual enforced + voluntary returns (000s · 2006–2025). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Asylum & Returns Datasets (Jun 2026)</a>",
-        "chart": {
-          "type": "line",
-          "title": "Asylum Pending Initial-Decision Backlog vs Total Returns (000s · 2006–2025)",
-          "labels": [
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Thousands",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Pending Initial Decision (2010+)",
-              "data": [
-                null,
-                null,
-                null,
-                null,
-                7.2,
-                8.9,
-                12.8,
-                18.2,
-                22.9,
-                22.1,
-                27.9,
-                29.5,
-                35.9,
-                51.2,
-                64.9,
-                100.6,
-                160.9,
-                128.8,
-                124.8,
-                64.4
-              ],
-              "borderColor": "#f59e0b",
-              "backgroundColor": "rgba(245,158,11,0.12)"
-            },
-            {
-              "label": "Enforced + Voluntary Returns",
-              "data": [
-                32.0,
-                34.3,
-                37.8,
-                42.3,
-                45.7,
-                44.7,
-                46.1,
-                46.5,
-                41.4,
-                43.1,
-                40.4,
-                32.7,
-                24.9,
-                19.8,
-                8.4,
-                10.1,
-                14.8,
-                26.8,
-                35.0,
-                39.7
-              ],
-              "borderColor": "#10b981",
-              "backgroundColor": "rgba(16,185,129,0.12)"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Asylum cases pending initial decision at 31 Dec (2010–2025) vs enforced + voluntary returns (2006–2025).",
-          "scope": "UK-wide (Home Office Data_Asy_D03 & Data_Ret_D01).",
-          "nuance": "Shows the structural divergence between falling returns and a rising decision backlog after 2019."
-        }
-      },
-      {
-        "headline": "Published UK undocumented resident stock estimates range from 430k (2001 Home Office) to 674k (2017 GLA) and 1.0M (2017 Pew incl. pending asylum).",
-        "footnote": "*Published UK undocumented resident stock studies (000s). No official ONS annual count exists; Pew (2019) includes pending asylum applicants. Source: <a href=\"https://migrationobservatory.ox.ac.uk/resources/briefings/unauthorised-migration-in-the-uk/\" target=\"_blank\" rel=\"noopener\">Migration Observatory / Home Office / LSE / GLA / Pew Undocumented Estimates</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Estimated Undocumented Resident Population in the UK (Published Studies 2001–2017, 000s)",
-          "labels": [
-            "Home Office (Woodbridge 2005)",
-            "LSE (Gordon et al. 2009)",
-            "GLA / Wolverhampton (Jolly et al. 2020)",
-            "Pew Research Center (2019)"
-          ],
-          "y_title": "Estimated Residents (000s)",
-          "datasets": [
-            {
-              "label": "Low Estimate (000s)",
-              "data": [
-                310,
-                417,
-                594,
-                800
-              ],
-              "backgroundColor": "#64748b"
-            },
-            {
-              "label": "Central Estimate (000s)",
-              "data": [
-                430,
-                618,
-                674,
-                1000
-              ],
-              "backgroundColor": "#f59e0b"
-            },
-            {
-              "label": "High Estimate (000s)",
-              "data": [
-                570,
-                863,
-                745,
-                1200
-              ],
-              "backgroundColor": "#ef4444"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Published academic and official residual estimates of the UK undocumented resident stock (Low / Central / High, 000s).",
-          "scope": "UK-wide studies covering 2001–2017.",
-          "nuance": "No official ONS annual count exists; Pew (2019) includes pending asylum applicants unlike GLA/LSE."
-        }
-      }
-    ]
-  },
-  {
-    "id": "hyp_retention",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.4",
-    "title": "Hypothesis 4 · Actual Volume Staying Long-Term & Converting",
-    "question": "What share of visa holders actually stay 5+ years, how has cohort retention changed since 2008, and how many naturalise each year?",
-    "charts": [
-      {
-        "headline": "Who stays long-term? After 5 years, 54.6% of the 2020 visa cohort still held valid leave or settlement — while 59.3% of Study visas had expired.",
-        "footnote": "*Home Office Migrant Journey 2025 (Table MJ_03): status at end-2025 of people issued initial leave in 2020. Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "y_min": 0,
-          "y_max": 100,
-          "title": "5-Year Retention & Settlement Rate by Initial Visa Route (2020 Cohort at End-2025, %)",
-          "labels": [
-            "All leave types",
-            "Study",
-            "Work",
-            "Family",
-            "Asylum"
-          ],
-          "y_title": "Share of Cohort (%)",
-          "datasets": [
-            {
-              "label": "Indefinite Leave to Remain (Settled, %)",
-              "data": [
-                14.3,
-                0.2,
-                30.5,
-                46.5,
-                2.8
-              ],
-              "backgroundColor": "#10b981"
-            },
-            {
-              "label": "Valid Leave to Remain (Still in UK, %)",
-              "data": [
-                40.4,
-                40.5,
-                27.7,
-                39.7,
-                96.2
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Leave Expired (Left / Switched / Expired, %)",
-              "data": [
-                45.4,
-                59.3,
-                41.8,
-                13.8,
-                1.0
-              ],
-              "backgroundColor": "#64748b"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Share of the 2020 initial-leave cohort holding Indefinite Leave to Remain (ILR), Valid Leave, or Expired Leave at end-2025 (%).",
-          "scope": "All Home Office initial entry/leave grants in 2020 tracked longitudinally in Migrant Journey 2025 (Table MJ_03).",
-          "nuance": "Expired leave covers departures, non-renewals, and visa expiry; Valid Leave includes Graduate Route and in-country switchers."
-        }
-      },
-      {
-        "headline": "Retention over time (2008–2020 cohorts): Study 5-year retention jumped from 17.3% (2015 cohort) to 40.7% (2020 cohort) after Graduate Route launched.",
-        "footnote": "*Tracks each annual initial-leave cohort (2008–2020) exactly 5 years later (2013–2025). Dashed = individual routes; Solid = All Leave Types. Source: <a href=\"https://www.gov.uk/government/statistics/migrant-journey-2025-report\" target=\"_blank\" rel=\"noopener\">Home Office Migrant Journey 2025 Report</a>",
-        "chart": {
-          "type": "line",
-          "title": "5-Year Retention Rate Over Time by Initial Visa Route (2008–2020 Cohorts, %)",
-          "labels": [
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020"
-          ],
-          "y_title": "% Still Holding Leave or ILR at Year 5",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Asylum (%)",
-              "data": [
-                94.5,
-                95.3,
-                96.5,
-                96.7,
-                96.9,
-                97.5,
-                97.8,
-                98.5,
-                98.7,
-                98.5,
-                98.4,
-                97.5,
-                99.0
-              ],
-              "borderColor": "#ef4444",
-              "backgroundColor": "rgba(239,68,68,0.10)",
-              "borderDash": [
-                5,
-                4
-              ]
-            },
-            {
-              "label": "Family (%)",
-              "data": [
-                87.4,
-                87.0,
-                89.0,
-                90.2,
-                91.0,
-                89.5,
-                89.9,
-                90.4,
-                91.1,
-                91.8,
-                91.2,
-                90.9,
-                86.2
-              ],
-              "borderColor": "#10b981",
-              "backgroundColor": "rgba(16,185,129,0.10)",
-              "borderDash": [
-                5,
-                4
-              ]
-            },
-            {
-              "label": "Work (%)",
-              "data": [
-                24.9,
-                31.6,
-                31.1,
-                26.3,
-                23.5,
-                24.0,
-                25.4,
-                25.7,
-                28.3,
-                32.8,
-                38.5,
-                45.7,
-                58.2
-              ],
-              "borderColor": "#38bdf8",
-              "backgroundColor": "rgba(56,189,248,0.10)",
-              "borderDash": [
-                5,
-                4
-              ]
-            },
-            {
-              "label": "All Leave Types (%)",
-              "data": [
-                35.3,
-                35.1,
-                34.3,
-                31.5,
-                30.6,
-                29.2,
-                30.8,
-                32.6,
-                34.7,
-                37.6,
-                40.9,
-                44.5,
-                54.6
-              ],
-              "borderColor": "#fbbf24",
-              "backgroundColor": "rgba(251,191,36,0.10)",
-              "borderWidth": 2.8
-            },
-            {
-              "label": "Study (%)",
-              "data": [
-                23.4,
-                24.6,
-                23.7,
-                20.5,
-                18.3,
-                17.9,
-                17.9,
-                17.3,
-                18.0,
-                20.6,
-                22.8,
-                25.4,
-                40.7
-              ],
-              "borderColor": "#818cf8",
-              "backgroundColor": "rgba(129,140,248,0.12)",
-              "borderDash": [
-                5,
-                4
-              ]
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Cohort retention (%) = (ILR + Valid Leave at Year 5) / Initial Cohort Total × 100, evaluated 5 years after initial grant.",
-          "scope": "Annual cohorts 2008–2020 (observed at end of 2013–2025) from Home Office Data_MJ_D01.",
-          "nuance": "Shows how long-term stay behaviour shifted across policy regimes (e.g. Graduate Route introduction in July 2021 for the 2020 cohort)."
-        }
-      },
-      {
-        "headline": "British citizenship grants reached 236.2k in 2025 (0.34% of UK population), below the 2009–2013 peak above 200k.",
-        "footnote": "*Home Office British Citizenship grants (Data_Cit_D02, 2005–2025) divided by ONS UKPOP mid-year population. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office British Citizenship Grants (Jun 2026)</a> | <a href=\"https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/timeseries/ukpop/pop\" target=\"_blank\" rel=\"noopener\">ONS UK Population Mid-Year Estimates (UKPOP)</a>",
-        "chart": {
-          "type": "bar",
-          "title": "Annual British Citizenship Grants (000s) & % of UK Population (2005–2025)",
-          "labels": [
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Citizenship Grants (000s)",
-          "y1_title": "% of UK Population",
-          "y1_suffix": "%",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Citizenship Grants (000s)",
-              "data": [
-                161.7,
-                154.0,
-                164.6,
-                129.4,
-                203.8,
-                195.1,
-                177.9,
-                194.4,
-                208.1,
-                125.8,
-                118.1,
-                149.4,
-                123.2,
-                157.0,
-                159.4,
-                130.6,
-                189.8,
-                176.0,
-                206.6,
-                269.8,
-                236.2
-              ],
-              "backgroundColor": "rgba(56,189,248,0.72)",
-              "yAxisID": "y"
-            },
-            {
-              "label": "% of UK Population",
-              "type": "line",
-              "data": [
-                0.27,
-                0.25,
-                0.27,
-                0.21,
-                0.33,
-                0.31,
-                0.28,
-                0.3,
-                0.32,
-                0.2,
-                0.18,
-                0.23,
-                0.19,
-                0.24,
-                0.24,
-                0.2,
-                0.28,
-                0.26,
-                0.3,
-                0.39,
-                0.34
-              ],
-              "borderColor": "#f97316",
-              "backgroundColor": "rgba(249,115,22,0.15)",
-              "yAxisID": "y1"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Annual grants of British citizenship (naturalisation & registration) in thousands, and as % of ONS UKPOP.",
-          "scope": "UK-wide, 2005–2025 (Home Office Data_Cit_D02).",
-          "nuance": "Naturalisation typically occurs 5–6+ years after arrival (after ILR), so citizenship grants lag arrival waves."
-        }
-      }
-    ]
-  },
-  {
-    "id": "hyp_work",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.5",
-    "title": "Hypothesis 5 · Work Visa Deeper Dive (Skill Tiers & Dependants)",
-    "question": "How many newly eligible SOC 3–6 roles entered under the 2021 Points-Based System, and how did dependants compare with main applicants?",
-    "charts": [
-      {
-        "headline": "Newly Eligible Roles (SOC 3–6) accounted for 244.2k main-applicant Skilled & Care grants across 2021–2025 — reaching 63.7% of main-applicant work grants at the 2023 peak.",
-        "footnote": "*Main-applicant grants only across Skilled Worker + Health & Care Worker (Home Office Data_Occ_D02, SOC 2020). Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Visas by Occupation SOC 2020 (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "title": "Volume of Newly Eligible Roles: Work Visa Main Applicants by Skill Tier (2021–2025, 000s)",
-          "labels": [
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Main-Applicant Grants (000s)",
-          "macro_events": [
-            {
-              "label": "2022",
-              "text": "Feb 2022 Care",
-              "color": "#10b981"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#f59e0b"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Graduate / Professional (SOC 1–2 · Pre-2021 Eligible)",
-              "data": [
-                58.0,
-                88.2,
-                75.1,
-                47.5,
-                31.8
-              ],
-              "backgroundColor": "#64748b"
-            },
-            {
-              "label": "Medium-Skilled RQF 3–5 (SOC 3–5 · Jan 2021 PBS)",
-              "data": [
-                5.3,
-                15.7,
-                24.5,
-                24.4,
-                9.6
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Caring Services / Care Workers (SOC 6 · Feb 2022)",
-              "data": [
-                3.5,
-                37.6,
-                109.3,
-                10.9,
-                3.4
-              ],
-              "backgroundColor": "#10b981"
-            },
-            {
-              "label": "Sales / Elementary / Other (SOC 7–9)",
-              "data": [
-                0.1,
-                0.2,
-                1.0,
-                1.8,
-                0.6
-              ],
-              "backgroundColor": "#a1a1aa"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Main-applicant grants in Skilled Worker & Health and Care Worker grouped by SOC 2020 major skill tier (000s).",
-          "scope": "UK-wide, 2021–2025 main applicants only (Home Office Data_Occ_D02).",
-          "nuance": "SOC 1–2 were largely eligible pre-2021; SOC 3–5 opened via Jan 2021 PBS; SOC 6 (Care Workers) opened Feb 2022."
-        }
-      },
-      {
-        "headline": "Main applicants drove overall volume, while dependants surged sharply in 2022–2023 before 2024 restrictions reversed the ratio.",
-        "footnote": "*Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s, 2006–2025). Hover for exact % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Entry Clearance Visas (Jun 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "title": "Work & Study Visas: Main Applicants vs Dependants (000s · 2006–2025)",
-          "labels": [
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Visas Issued (000s)",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Main Applicants",
-              "data": [
-                405.3,
-                396.2,
-                404.3,
-                423.6,
-                416.9,
-                404.1,
-                364.3,
-                386.1,
-                393.8,
-                380.0,
-                402.6,
-                437.4,
-                466.6,
-                525.4,
-                307.4,
-                544.1,
-                755.9,
-                797.0,
-                606.3,
-                575.8
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Dependants",
-              "data": [
-                78.6,
-                55.8,
-                54.5,
-                73.1,
-                78.6,
-                68.5,
-                58.9,
-                64.9,
-                67.0,
-                58.9,
-                55.8,
-                57.7,
-                64.1,
-                71.6,
-                57.3,
-                130.2,
-                289.4,
-                420.9,
-                180.8,
-                112.0
-              ],
-              "backgroundColor": "#f59e0b"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Issued Work and Study entry-clearance visas split by Main Applicant vs Dependant (000s).",
-          "scope": "UK-wide, 2006–2025 (Home Office Data_Vis_D02).",
-          "nuance": "Captures the 2022–2023 dependant surge and the post-2024 contraction after dependant bans."
-        }
-      }
-    ]
-  },
-  {
-    "id": "hyp_study",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.6",
-    "title": "Hypothesis 6 · Study Visa Deeper Dive (Course Level & University Tier)",
-    "question": "Which course levels and university tiers drove the post-2020 international student expansion?",
-    "charts": [
-      {
-        "headline": "Student Supply (Level): 1-year Masters courses drove almost the entire post-2020 expansion, rising from ~121k pre-COVID to 315k in 2022.",
-        "footnote": "*Sponsored Study visa grants (main applicants) by course level from Home Office Education Visas (Mar 2026, Data_Edu_D02). Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Education Visas by Course Level (Mar 2026)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "title": "Student Supply Breakdown 1 · Sponsored Study Visas by Course Level (2018–2025, 000s)",
-          "labels": [
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025"
-          ],
-          "y_title": "Sponsored Study Grants (000s)",
-          "datasets": [
-            {
-              "label": "Masters (Postgraduate Taught)",
-              "data": [
-                95.6,
-                120.8,
-                126.1,
-                225.5,
-                314.9,
-                291.5,
-                234.5,
-                246.6
-              ],
-              "backgroundColor": "#818cf8"
-            },
-            {
-              "label": "Bachelors (Undergraduate)",
-              "data": [
-                63.5,
-                72.1,
-                54.0,
-                98.0,
-                109.6,
-                105.1,
-                105.6,
-                111.8
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "Below Bachelors",
-              "data": [
-                21.1,
-                22.9,
-                10.9,
-                17.7,
-                23.5,
-                22.5,
-                20.4,
-                18.7
-              ],
-              "backgroundColor": "#10b981"
-            },
-            {
-              "label": "Doctorate / Pre-sessional / Other",
-              "data": [
-                35.0,
-                38.1,
-                7.5,
-                14.9,
-                19.5,
-                20.1,
-                18.1,
-                17.8
-              ],
-              "backgroundColor": "#a1a1aa"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Sponsored Study visa grants (main applicants) split into Masters, Bachelors, Below Bachelors, and Doctorate/Other.",
-          "scope": "UK-wide, 2018–2025 (Home Office Data_Edu_D02).",
-          "nuance": "Shows demand/supply concentration in 1-year Postgraduate Taught (Masters) courses."
-        }
-      },
-      {
-        "headline": "Student Supply (University Tier): Non-Russell Group universities absorbed the bulk of the post-2020 expansion (+187% vs 2019).",
-        "footnote": "*Out-of-country Study visa applications (CAS acceptances) by institution tier (2010–2024, Home Office Study Sponsorship Dec 2024, CAS_D01). Hover for % share. Source: <a href=\"https://www.gov.uk/government/statistical-data-sets/immigration-system-statistics-data-tables\" target=\"_blank\" rel=\"noopener\">Home Office Study Sponsorship by Institution Type (Dec 2024)</a>",
-        "chart": {
-          "type": "bar",
-          "stacked": true,
-          "show_pct_tooltip": true,
-          "title": "Student Supply Breakdown 2 · Study Visa Applications by University Tier (2010–2024, 000s)",
-          "labels": [
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017",
-            "2018",
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024"
-          ],
-          "y_title": "CAS Visa Applications (000s)",
-          "political_eras": [
-            {
-              "start": 1945,
-              "end": 1951,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1951,
-              "end": 1964,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1964,
-              "end": 1970,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1970,
-              "end": 1974,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1974,
-              "end": 1979,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 1979,
-              "end": 1997,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 1997,
-              "end": 2010,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            },
-            {
-              "start": 2010,
-              "end": 2015,
-              "party": "Coalition",
-              "short": "COAL",
-              "color": "#818cf8",
-              "bg": "rgba(129,140,248,0.065)"
-            },
-            {
-              "start": 2015,
-              "end": 2024,
-              "party": "Conservative",
-              "short": "CON",
-              "color": "#3b82f6",
-              "bg": "rgba(59,130,246,0.055)"
-            },
-            {
-              "start": 2024,
-              "end": 2026,
-              "party": "Labour",
-              "short": "LAB",
-              "color": "#ef4444",
-              "bg": "rgba(239,68,68,0.055)"
-            }
-          ],
-          "macro_events": [
-            {
-              "label": "2008",
-              "text": "GFC",
-              "color": "#a1a1aa"
-            },
-            {
-              "label": "2016",
-              "text": "Brexit",
-              "color": "#a855f7"
-            },
-            {
-              "label": "2020",
-              "text": "COVID",
-              "color": "#f59e0b"
-            },
-            {
-              "label": "2021",
-              "text": "2021 Rules",
-              "color": "#38bdf8"
-            },
-            {
-              "label": "2022",
-              "text": "Ukraine War",
-              "color": "#ef4444"
-            },
-            {
-              "label": "2024",
-              "text": "2024 Curbs",
-              "color": "#10b981"
-            }
-          ],
-          "datasets": [
-            {
-              "label": "Non-Russell Group Universities",
-              "data": [
-                88.7,
-                94.3,
-                95.2,
-                99.6,
-                97.6,
-                90.7,
-                87.2,
-                90.5,
-                98.3,
-                104.5,
-                35.3,
-                185.1,
-                299.6,
-                279.2,
-                226.9
-              ],
-              "backgroundColor": "#f97316"
-            },
-            {
-              "label": "Russell Group Universities",
-              "data": [
-                54.5,
-                58.2,
-                61.5,
-                68.4,
-                71.0,
-                75.6,
-                80.4,
-                87.2,
-                96.6,
-                106.3,
-                30.5,
-                130.7,
-                139.8,
-                142.9,
-                136.2
-              ],
-              "backgroundColor": "#38bdf8"
-            },
-            {
-              "label": "FE / Schools / English Lang / Other",
-              "data": [
-                106.0,
-                118.1,
-                53.5,
-                42.1,
-                39.9,
-                35.4,
-                33.3,
-                34.5,
-                34.6,
-                31.1,
-                4.9,
-                33.7,
-                44.9,
-                45.9,
-                41.7
-              ],
-              "backgroundColor": "#71717a"
-            }
-          ]
-        },
-        "definition": {
-          "metric": "Out-of-country Study visa applications (CAS acceptances) by institution tier (000s).",
-          "scope": "UK-wide, 2010–2024 (Home Office Data_CAS_D01).",
-          "nuance": "Separates Russell Group universities from Non-Russell Group universities and FE/English language colleges."
-        }
       }
     ]
   },
   {
     "id": "hyp_media",
-    "section": "Part 2 · Testing Hypotheses",
-    "ref": "2.7",
-    "title": "Hypothesis 7 · Do Media Narratives Reflect Reality?",
+    "section": "Part 4 · Are They Blending In or Causing Social Problems?",
+    "ref": "4.4",
+    "title": "Media Narratives vs Reality (Headlines, Framing & Hansard)",
     "question": "Which immigration stories do major UK news outlets tell, how does coverage compare with actual arrival volumes, and how do framing biases differ?",
     "context_note": "Auditing <strong>900 recent headlines across 9 major UK outlets</strong> (100 per outlet via Google News UK RSS) alongside <strong>20 years of UK Parliament Hansard debates (2006–2025)</strong> reveals a sharp salience gap: <strong>Small Boats &amp; Asylum</strong> account for <strong>38.8%</strong> of UK press headlines despite representing <strong>8.4%</strong> of combined Home Office arrivals &amp; claims (2023–2025).",
     "charts": [
@@ -13367,8 +14500,8 @@ window.ISSUE02_GRAPHS = [
   },
   {
     "id": "sol_curbs",
-    "section": "Part 3 · Testing Solutions",
-    "ref": "3.1",
+    "section": "Part 5 · Do the Solutions Work?",
+    "ref": "5.1",
     "title": "Observed Impact of 2024–2025 Policy Curbs",
     "question": "How sharply did Health & Care, Work, and Study visa grants fall after the 2024–2025 rule changes?",
     "charts": [
