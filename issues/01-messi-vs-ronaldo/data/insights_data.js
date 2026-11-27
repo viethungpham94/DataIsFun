@@ -13,7 +13,8 @@ window.INSIGHTS_DATA = [
         "chart": {
           "type": "spatial_baseline",
           "title": "Average On-Ball Position Migration (Opponent Half: 50%\u2013100%)"
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo played across all three front roles; Messi mainly split RW and CF/SS.",
@@ -86,7 +87,8 @@ window.INSIGHTS_DATA = [
               "#eab308"
             ]
           }
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi: Right Wing to False Nine, then flexible between both.",
@@ -462,7 +464,8 @@ window.INSIGHTS_DATA = [
               "manager": "Kily Gonz\u00e1lez / Guillermo Hoyos"
             }
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo: three distinct eras \u2014 Right Wing, Left Wing Forward, then Central Striker.",
@@ -838,7 +841,8 @@ window.INSIGHTS_DATA = [
               "manager": "Ange Postecoglou"
             }
           ]
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "split",
@@ -865,7 +869,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Context Setting (Tactical Baseline)",
     "who_is": "Operated across which pitch zones and play which tactical positions over their careers?",
     "define_by": "Seasonal average normalised on-ball coordinates (centroid_x, centroid_y) and match-by-match tactical role indicated.",
-    "metrics": "On-ball centroid trajectory (50%\u2013100%), career appearances by tactical role, by season."
+    "metrics": "On-ball centroid trajectory (50%\u2013100%), career appearances by tactical role, by season.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Transfermarkt starting XI roles (25 seasons) + Understat/FotMob/StatsBomb shot coordinates (2014\u20132024).",
+      "narrative_weight": "Context-setting role & zone baseline; explains tactical differences without scoring a winner.",
+      "rationale": "Career starting-position logs cover all 25 seasons (High), while pitch-centroid heatmaps cover 2014\u20132024 tracked leagues (Medium). Combined rating: Medium."
+    }
   },
   {
     "id": "q0_2",
@@ -917,7 +927,8 @@ window.INSIGHTS_DATA = [
               "#475569"
             ]
           }
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi's clubs led seasonal possession; both dipped after leaving La Liga.",
@@ -1002,7 +1013,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Possession Share (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's teams circulated more passes per match.",
@@ -1060,7 +1072,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Team Passes / Match",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Pass-range splits are nearly identical; Barcelona leaned marginally shorter.",
@@ -1117,7 +1130,8 @@ window.INSIGHTS_DATA = [
               "#f97316"
             ]
           }
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Across 25 seasons, team scoring and defence averages are nearly identical.",
@@ -1167,7 +1181,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals per Match",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Season by season, their teams stayed closely matched in goals and defence.",
@@ -1596,7 +1611,8 @@ window.INSIGHTS_DATA = [
               ]
             }
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Modest tactical split: Messi teams slightly more possession-based; Ronaldo teams slightly faster on the break.",
@@ -1664,7 +1680,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "split",
@@ -1691,7 +1708,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Context Setting (Tactical Baseline)",
     "who_is": "Played in which system? e.g. possession-based, direct/counter-attacking",
     "define_by": "Team passing volume relative to opponents, team goals scored versus conceded per match across 25 seasons, and tactical style indicators distinguishing possession control from vertical counter-attacking transitions.",
-    "metrics": "Team vs opponent passes per match, team pass share (%), team goals scored vs conceded per match, vertical carry directness (%), progressive pass ratio (%), attacking-third touch share (%), and fast-break shot share (%)."
+    "metrics": "Team vs opponent passes per match, team pass share (%), team goals scored vs conceded per match, vertical carry directness (%), progressive pass ratio (%), attacking-third touch share (%), and fast-break shot share (%).",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Transfermarkt team goals (25 seasons) + FBref/ESDB possession & pass-range telemetry (2008/09\u20132022/23 shared).",
+      "narrative_weight": "Tactical system context; frames why per-player volume differs between possession and direct sides.",
+      "rationale": "Team scoring/conceding spans all 25 seasons, but possession and pass-distance telemetry only cover shared European seasons (2008/09\u20132022/23)."
+    }
   },
   {
     "id": "q0_3",
@@ -1740,7 +1763,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Value / Share (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Both represented a large share of club squad value, Messi slightly higher.",
@@ -1778,7 +1802,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Squad Value (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's squad-value share peaked in late Barcelona years; Ronaldo's surged at Juventus.",
@@ -1896,7 +1921,8 @@ window.INSIGHTS_DATA = [
           "y_min": -1,
           "y_max": 12,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Peak teammate values (excl. self) are close, tilting slightly to Messi.",
@@ -1934,7 +1960,8 @@ window.INSIGHTS_DATA = [
           "y_title": "\u20acM",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Incl. self: on-pitch team values climbed across European eras before converging.",
@@ -2007,7 +2034,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Avg Team Value Incl. Self (\u20acM)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Excl. self: teammate values rose across European eras before converging.",
@@ -2080,7 +2108,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Avg Teammate Value (\u20acM)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Elite Best XI casts: Messi with Neymar, Su\u00e1rez, Mbapp\u00e9; Ronaldo with Bale, Modri\u0107, Benzema.",
@@ -2150,7 +2179,8 @@ window.INSIGHTS_DATA = [
               "Bruno Fernandes (\u20ac84.3M), Jadon Sancho (\u20ac75.0M), Marcus Rashford (\u20ac59.3M)"
             ]
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both faced nearly identical average opponent squad values across Europe.",
@@ -2223,7 +2253,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Avg Opponent Squad Value (\u20acM)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -2246,7 +2277,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Context Setting (Tactical Baseline)",
     "who_is": "Played alongside what squad market valuation (both including and excluding themselves), which top teammates, and against what opponent squad values?",
     "define_by": "Contemporary match-date market value of the overall on-pitch team (including self) and supporting cast (excluding Messi and Ronaldo), each player's % contribution to squad value, the Top 3 most-valued Best XI teammates played with each season, and average opponent on-pitch squad market value faced by season.",
-    "metrics": "Overall team value incl. self (\u20acM), supporting cast market value excl. self (\u20acM), player % contribution to squad value, seasonal Top 3 Best XI teammates table, and average opponent squad value faced (\u20acM)."
+    "metrics": "Overall team value incl. self (\u20acM), supporting cast market value excl. self (\u20acM), player % contribution to squad value, seasonal Top 3 Best XI teammates table, and average opponent squad value faced (\u20acM).",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Transfermarkt matchday squad & Best XI valuations across European club seasons (2012/13\u20132022/23).",
+      "narrative_weight": "Tests the 'better teammates' narrative across shared European prime years.",
+      "rationale": "Valuations are contemporary market estimates (not objective skill) and cover European leagues 2012/13\u20132022/23 rather than full 25-year careers."
+    }
   },
   {
     "id": "q1",
@@ -2292,7 +2329,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Senior Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi hit the higher single-season peak; both cleared Top-10 forwards for a decade.",
@@ -2487,7 +2525,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo out-scored Messi in more seasons, aided by earlier debut and late-career volume.",
@@ -2682,7 +2721,8 @@ window.INSIGHTS_DATA = [
           "y_min": -17,
           "y_max": 10,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "By biological age, Messi peaked earlier and higher; Ronaldo peaked slightly later.",
@@ -2878,7 +2918,8 @@ window.INSIGHTS_DATA = [
           "y_min": -11,
           "y_max": 12,
           "unit": "Ages Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi led cumulative goals at every shared age; Ronaldo closed the gap later.",
@@ -2990,7 +3031,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Cumulative Goals",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "ronaldo",
@@ -3017,7 +3059,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Scores more goals across career volume and biological age?",
     "define_by": "Total career senior goals (gross and official FIFA-aligned competitions), peak seasonal output, and cumulative goals at identical biological ages.",
-    "metrics": "Gross senior goals, official FIFA goals, seasonal peaks, and same-age cumulative goal pace."
+    "metrics": "Gross senior goals, official FIFA goals, seasonal peaks, and same-age cumulative goal pace.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Complete senior career match & goal logs across club and country (25 seasons; 1,915 goals).",
+      "narrative_weight": "Core Pillar 1.0 volume anchor: gross, official, and age-matched scoring.",
+      "rationale": "Cross-verified across Transfermarkt, martj42 international logs, and official competition records with 100% career coverage."
+    }
   },
   {
     "id": "q2",
@@ -3087,7 +3135,8 @@ window.INSIGHTS_DATA = [
               4
             ]
           }
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi routinely matched or beat Top-10 shooters in seasonal conversion (%).",
@@ -3257,7 +3306,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Shot Conversion (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Career G/90 is a near dead heat, both above Top-10 strikers for a decade.",
@@ -3539,7 +3589,8 @@ window.INSIGHTS_DATA = [
           "y_min": -13,
           "y_max": 13,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's scored goals came from harder chances (lower avg xG) than Ronaldo's.",
@@ -3645,7 +3696,8 @@ window.INSIGHTS_DATA = [
           "y_min": -2,
           "y_max": 9,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both missed shots of virtually identical difficulty.",
@@ -3751,7 +3803,8 @@ window.INSIGHTS_DATA = [
           "y_min": -6,
           "y_max": 5,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi far outperformed xG and hit more low-xG screamers; Ronaldo finished near expectation.",
@@ -3807,7 +3860,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi consistently beat seasonal xG by a wide margin; Ronaldo tracked near expectation.",
@@ -3937,7 +3991,8 @@ window.INSIGHTS_DATA = [
           "y_min": -6,
           "y_max": 9,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Per shot and per goal, Messi's xG outperformance far exceeds Ronaldo's.",
@@ -3975,7 +4030,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Net (G - xG)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo: slight edge in total hat-tricks; Messi: clear lead in non-penalty hat-tricks.",
@@ -4037,7 +4093,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Matches",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both scored at elite rates across clubs; Ronaldo peaked at Real Madrid, Messi at Barcelona & Inter Miami.",
@@ -4099,7 +4156,8 @@ window.INSIGHTS_DATA = [
               "#f97316"
             ]
           }
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -4126,7 +4184,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Is the more ruthless and efficient finisher relative to shot difficulty and multi-goal feats?",
     "define_by": "Converting scoring opportunities into goals above Expected Goals (xG) benchmarks, minimising shots required per goal scored, and producing multi-goal outbursts (hat-tricks, pokers, manitas).",
-    "metrics": "Cumulative xG outperformance, shot conversion rate, club & country goals/match, low-xG screamers, and multi-goal match feats."
+    "metrics": "Cumulative xG outperformance, shot conversion rate, club & country goals/match, low-xG screamers, and multi-goal match feats.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Opta conversion (2005\u20132025 European leagues) + Understat/FBref/FotMob xG (9\u201313 tracked seasons).",
+      "narrative_weight": "Core efficiency & shot-difficulty test; separates clinical finishing from high shot volume.",
+      "rationale": "Opta conversion covers 20 European seasons, but shot-level xG is only available from 2014/15 onwards (omitting early-career peaks such as 2011/12)."
+    }
   },
   {
     "id": "q3",
@@ -4178,7 +4242,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Both scored mostly inside the box; Ronaldo leads penalties, Messi edges free kicks.",
@@ -4240,7 +4305,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Majority of goals for both are non-penalty inside the box, Messi slightly higher.",
@@ -4355,7 +4421,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Across tracked shots, Messi scored from slightly further out on average.",
@@ -4461,7 +4528,8 @@ window.INSIGHTS_DATA = [
           "y_min": -1,
           "y_max": 10,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo led free kicks early; Messi overtook him mid-to-late career.",
@@ -4663,7 +4731,8 @@ window.INSIGHTS_DATA = [
           "y_min": -18,
           "y_max": 8,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi took consistently more direct free-kick attempts per season.",
@@ -4718,7 +4787,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Attempts",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Crucially, Messi's free-kick conversion rose while Ronaldo's declined.",
@@ -4773,7 +4843,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Conversion (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo scored substantially more career penalties than Messi.",
@@ -4975,7 +5046,8 @@ window.INSIGHTS_DATA = [
           "y_min": -23,
           "y_max": 1,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo averaged slightly more league penalty attempts per season.",
@@ -5030,7 +5102,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Attempts",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo's league penalty conversion stayed steadier across tracked seasons.",
@@ -5085,7 +5158,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Conversion (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi edges non-penalty goals; Ronaldo's overall goal lead comes from penalties.",
@@ -5123,7 +5197,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's goals came consistently from ground build-up throughout his career.",
@@ -5347,7 +5422,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Season Goals (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo's goals rely more on crosses and penalties, rising over time.",
@@ -5571,7 +5647,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Season Goals (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi: ground passes & solo play vs Ronaldo: crosses & penalties.",
@@ -5645,7 +5722,8 @@ window.INSIGHTS_DATA = [
               "#eab308"
             ]
           }
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's assists came from fewer core partners; Ronaldo's from a wider cast.",
@@ -5745,7 +5823,8 @@ window.INSIGHTS_DATA = [
               "#334155"
             ]
           }
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "ronaldo",
@@ -5776,7 +5855,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Scores more diverse types of goals across body parts, zones, and set pieces?",
     "define_by": "Distribution of goals across left foot, right foot, headers, inside vs outside the box, direct free kicks, and penalties.",
-    "metrics": "Body parts, scoring zones, non-penalty vs penalty totals, goal creation mix, top assister concentration, and set-piece conversion."
+    "metrics": "Body parts, scoring zones, non-penalty vs penalty totals, goal creation mix, top assister concentration, and set-piece conversion.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Full-career body-part & penalty/free-kick logs (1,915 goals), with 2014/15\u20132018/19 shot-level attempt rates.",
+      "narrative_weight": "Core Pillar 1.0 diversity & penalty/NPG split; directly answers 'Penaldo' and 'one-foot' claims.",
+      "rationale": "Career totals for NPG, penalties, headers, weak-foot, and free-kick goals span 100% of senior careers; only attempt-rate sub-charts use the 5-season Understat window."
+    }
   },
   {
     "id": "q1_4_team",
@@ -5986,7 +6071,8 @@ window.INSIGHTS_DATA = [
           "y_min": -14,
           "y_max": 11,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo leads total game-winning goals; seasonal leads split evenly.",
@@ -6188,7 +6274,8 @@ window.INSIGHTS_DATA = [
           "y_min": -13,
           "y_max": 12,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo's goals decided a higher share of his teams' victories.",
@@ -6223,7 +6310,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Percent",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi holds a modest lead in total knockout goals.",
@@ -6267,7 +6355,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Neck-and-neck in Round of 16; Ronaldo scores faster from Quarter-Finals onward.",
@@ -6311,7 +6400,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G/90",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both produced knockout bursts; Ronaldo peaked in Real Madrid UCL runs.",
@@ -6384,7 +6474,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Knockout Goals",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo carried a larger team goal share in QF & SF; dead even in R16 & Finals.",
@@ -6437,7 +6528,8 @@ window.INSIGHTS_DATA = [
           "y_title": "% of Team Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Exact dead heat in career knockout game-winning goals.",
@@ -6481,7 +6573,8 @@ window.INSIGHTS_DATA = [
           "y_title": "GWG",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Virtually tied in league Top-6 winners; Ronaldo leads in the Champions League.",
@@ -6522,7 +6615,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Game-Winning Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Identical league goal totals vs Top-4 clubs; Messi slightly ahead vs Bottom-4.",
@@ -6560,7 +6654,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Per match: Ronaldo edges Top-4 scoring rate; Messi leads vs Bottom-4.",
@@ -6598,7 +6693,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals / Match",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Seasonal goals vs eventual Top-4 clubs tracked closely across matched campaigns.",
@@ -6671,7 +6767,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals vs Top 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both scored heavily against eventual Bottom-4 clubs across matched seasons.",
@@ -6744,7 +6841,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals vs Bottom 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi: more goals vs FIFA Top-20 nations; Ronaldo: nearly 2\u00d7 vs Rank 101+.",
@@ -6798,7 +6896,8 @@ window.INSIGHTS_DATA = [
               "#64748b"
             ]
           }
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Equal per-90 rate vs FIFA Top-20; Messi faster vs lower-ranked sides.",
@@ -6842,7 +6941,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals / 90",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "tied",
@@ -6877,7 +6977,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Is more influential with their goals for their team's success?",
     "define_by": "Share of team's full-season goals, seasonal and career game-winning goals, knockout-round scoring and winners, and opponent strength across league (eventual Top-4 and Bottom-4) and international tiers.",
-    "metrics": "Team goal share %, GWGs, knockout goals, G/90 & % of team goals by round, Top-6 GWGs, eventual Top-4 & Bottom-4 league goals, and international goals (% share & G/90) by FIFA rank."
+    "metrics": "Team goal share %, GWGs, knockout goals, G/90 & % of team goals by round, Top-6 GWGs, eventual Top-4 & Bottom-4 league goals, and international goals (% share & G/90) by FIFA rank.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Full-career match logs (2,521 appearances), knockout ties, GWG, and tournament-date FIFA rankings.",
+      "narrative_weight": "Core big-game & opponent-quality test; resolves 'minnow padding' and 'knockout clutch' myths.",
+      "rationale": "Built directly from complete match-by-match goal/result logs and historical FIFA World Rankings across all senior club and international fixtures."
+    }
   },
   {
     "id": "q2_1",
@@ -6923,7 +7029,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi led most shared seasons and routinely cleared Top-10 European creators.",
@@ -7205,7 +7312,8 @@ window.INSIGHTS_DATA = [
           "y_min": -6,
           "y_max": 19,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi pulled away in cumulative assists from early in their careers.",
@@ -7320,7 +7428,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi dominates league assists; Ronaldo edges Champions League assists.",
@@ -7364,7 +7473,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi: 2\u00d7+ multi-assist matches and 3\u00d7 assist hat-tricks.",
@@ -7405,7 +7515,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -7432,7 +7543,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Produces more total career assists and multi-assist match feats?",
     "define_by": "All-time career assists across gross senior fixtures and official competitions, seasonal assist totals, competition splits, and multi-assist match outbursts.",
-    "metrics": "Gross & official career assists, seasonal assists, competition splits (League, UCL, International), and 2+ / 3+ assist matches."
+    "metrics": "Gross & official career assists, seasonal assists, competition splits (League, UCL, International), and 2+ / 3+ assist matches.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Complete senior career assist logs (774 assists) + Transfermarkt game-events recipient mapping.",
+      "narrative_weight": "Primary Pillar 1.2 playmaking volume anchor.",
+      "rationale": "Full-career senior assist totals and match logs cover all 25 seasons across club and country."
+    }
   },
   {
     "id": "q2_3",
@@ -7477,7 +7594,8 @@ window.INSIGHTS_DATA = [
           "y_title": "A/90",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi generated 2\u00d7+ Ronaldo's Expected Assists (xA); both matched xA.",
@@ -7515,7 +7633,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists / xA",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi: 2\u00d7+ Big Chances and 6\u00d7+ accurate throughballs.",
@@ -7553,7 +7672,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi delivered 6\u00d7+ more accurate throughballs across Europe.",
@@ -7594,7 +7714,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Throughballs",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi created 2\u00d7+ more Big Chances in European club play.",
@@ -7635,7 +7756,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Big Chances Created",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi delivered far more key passes across European competition.",
@@ -7676,7 +7798,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Key Passes",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "answer": "Messi generates far higher Expected Assists (xA), key passes & big chances created.",
@@ -7701,7 +7824,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Generates higher chance-creation efficiency and creative pass quality?",
     "define_by": "Per-90 assist rate, Expected Assists (xA), defence-splitting throughballs, Big Chances Created, and Key Passes delivered.",
-    "metrics": "Assists per 90, Expected Assists (xA), accurate throughballs, Big Chances Created, and Key Passes."
+    "metrics": "Assists per 90, Expected Assists (xA), accurate throughballs, Big Chances Created, and Key Passes.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Opta/Understat/FBref xA, Big Chances Created, and throughballs across European league seasons.",
+      "narrative_weight": "Measures chance-creation quality beyond raw assists.",
+      "rationale": "Strong multi-season Opta/Understat European coverage, though pre-2014/15 seasons lack uniform shot-assisted xA tracking."
+    }
   },
   {
     "id": "q2_2",
@@ -7750,7 +7879,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Passes per Match",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi leads pass completion (%) across every distance range.",
@@ -7791,7 +7921,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Completion (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi completes far more long passes and switches of play.",
@@ -7829,7 +7960,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both favour ground passes, Messi slightly more often.",
@@ -7870,7 +8002,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Passes (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi completes roughly 5\u00d7 more progressive passes.",
@@ -7911,7 +8044,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Passes",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "A far larger share of Messi's passes progress the ball upfield.",
@@ -7952,7 +8086,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Percent",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi cleared the Big-5 90th percentile for passes/90; Ronaldo sat below playmakers.",
@@ -8062,7 +8197,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Completed Passes / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi matched or beat Big-5 Top-10 progressive passers every European season.",
@@ -8172,7 +8308,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Progressive Passes / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -8199,7 +8336,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Exhibits broader passing mechanics and progressive range?",
     "define_by": "Passing volume, completion rates across short/medium/long ranges, switches of play, and progressive passing rates.",
-    "metrics": "Passes/match, completion % by distance range, completed long passes & switches, and progressive pass volume & share."
+    "metrics": "Passes/match, completion % by distance range, completed long passes & switches, and progressive pass volume & share.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Transfermarkt match passes + Opta/FBref progressive & range-split passing (European seasons).",
+      "narrative_weight": "Measures general-play tempo and progression.",
+      "rationale": "Total passes span broad career logs, while progressive passes and short/medium/long splits rely on European FBref/Opta windows."
+    }
   },
   {
     "id": "q2_team",
@@ -8295,7 +8438,8 @@ window.INSIGHTS_DATA = [
           "y_min": -1,
           "y_max": 7,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi accounts for a vastly larger share of team dribbles and carry distance.",
@@ -8336,7 +8480,8 @@ window.INSIGHTS_DATA = [
           "y_title": "% of Team Total",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi assisted a broader set of teammates across Europe.",
@@ -8374,7 +8519,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's top assist partnerships produced higher volume, led by Luis Su\u00e1rez.",
@@ -8466,7 +8612,8 @@ window.INSIGHTS_DATA = [
               "#f97316"
             ]
           }
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi produced far more knockout assists, especially from QF to Finals.",
@@ -8510,7 +8657,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's knockout assist rate per 90 rises sharply from QF to Finals.",
@@ -8554,7 +8702,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists / 90",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi recorded ~2\u00d7 more league assists vs both Top-4 and Bottom-4 clubs.",
@@ -8592,7 +8741,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Per match vs Top-4 and Bottom-4 clubs, Messi's assist rate is nearly double.",
@@ -8630,7 +8780,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists / Match",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi delivered knockout assists steadily; Ronaldo's output was more sporadic.",
@@ -8703,7 +8854,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Knockout Assists",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi supplied more seasonal assists vs eventual Top-4 clubs.",
@@ -8776,7 +8928,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists vs Top 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi also supplied more seasonal assists vs eventual Bottom-4 clubs.",
@@ -8849,7 +9002,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists vs Bottom 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi assisted 2\u00d7+ Ronaldo's team-goal share in knockouts, Finals & vs Top-4.",
@@ -8902,7 +9056,8 @@ window.INSIGHTS_DATA = [
           "y_title": "% of Team Goals Assisted",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -8933,7 +9088,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Is more influential with their passing, build-up share, and big-game assists to team success?",
     "define_by": "Proportion of team total passes, dribbles, and carry distance executed, breadth of teammates assisted, knockout-round assists, and assists vs eventual Top-4 and Bottom-4 clubs.",
-    "metrics": "Player % of team passes/dribbles/carry distance, unique teammates assisted, knockout assists (total & per 90), and assists vs eventual Top-4 & Bottom-4 clubs."
+    "metrics": "Player % of team passes/dribbles/carry distance, unique teammates assisted, knockout assists (total & per 90), and assists vs eventual Top-4 & Bottom-4 clubs.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Transfermarkt assist-share logs + Opta/FBref team build-up & Top-4/Bottom-4 opponent splits.",
+      "narrative_weight": "Tests big-game playmaking and team reliance.",
+      "rationale": "Assist shares cover full careers, while progressive-carry and build-up share metrics cover instrumented European seasons."
+    }
   },
   {
     "id": "q4_1",
@@ -8982,7 +9143,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Successful Dribbles",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi averages 2\u00d7+ Ronaldo's successful dribbles per 90.",
@@ -9023,7 +9185,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Dribbles / 90m",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi led dribbles in every Opta season, clearing the Big-5 Top-10 average.",
@@ -9168,7 +9331,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Successful Dribbles",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi stayed well above Big-5 Top-10 dribbles/90; Ronaldo sat below the 90th pct.",
@@ -9313,7 +9477,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Dribbles / 90",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -9336,7 +9501,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Dribbles more across career volume and per-90 frequency?",
     "define_by": "Career successful take-ons, seasonal dribble totals, and dribbles per 90 minutes across European competition.",
-    "metrics": "Opta career successful dribbles, dribbles per 90 minutes, and seasonal dribble volume & per-90 trajectories (2009/10\u20132023/24)."
+    "metrics": "Opta career successful dribbles, dribbles per 90 minutes, and seasonal dribble volume & per-90 trajectories (2009/10\u20132023/24).",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Opta take-ons (2005\u20132025 European leagues) + StatsBomb progressive carry distance.",
+      "narrative_weight": "Core Pillar 1.3 1v1 dribbling & ball-progression criterion.",
+      "rationale": "Opta dribble totals cover 20 European league seasons reliably; StatsBomb carry-distance vectors have asymmetric club coverage."
+    }
   },
   {
     "id": "q3_1",
@@ -9382,7 +9553,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi leads domestic league G+A; Ronaldo leads UCL and international G+A.",
@@ -9426,7 +9598,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi posts a higher G+A rate per match and per 90 minutes.",
@@ -9464,7 +9637,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi hit the higher G+A peak; both towered above Top-10 European attackers.",
@@ -9659,7 +9833,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi out-produced Ronaldo in G+A across most shared seasons.",
@@ -9854,7 +10029,8 @@ window.INSIGHTS_DATA = [
           "y_min": -7,
           "y_max": 18,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi led G+A across most biological ages; Ronaldo led at earliest & latest ages.",
@@ -10050,7 +10226,8 @@ window.INSIGHTS_DATA = [
           "y_min": -9,
           "y_max": 15,
           "unit": "Ages Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi held a clear cumulative G+A lead at every shared biological age.",
@@ -10162,7 +10339,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Cumulative G+A",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -10189,7 +10367,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Contributes more combined Goals + Assists across careers, competitions, seasons, and ages?",
     "define_by": "Total direct goal contributions (Goals + Assists) across all senior levels, competitions, seasonal timelines, and biological ages.",
-    "metrics": "Gross & official G+A, League/UCL/International G+A, G+A per match & per 90, seasonal G+A difference, and same-age cumulative G+A."
+    "metrics": "Gross & official G+A, League/UCL/International G+A, G+A per match & per 90, seasonal G+A difference, and same-age cumulative G+A.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Full-career Goals + Assists across all senior club and international competitions (25 seasons).",
+      "narrative_weight": "Primary Pillar 1.4 combined attacking output anchor.",
+      "rationale": "Directly aggregates verified career goals and assists with 100% senior career coverage."
+    }
   },
   {
     "id": "q3_team",
@@ -10399,7 +10583,8 @@ window.INSIGHTS_DATA = [
           "y_min": -7,
           "y_max": 18,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Combined G+A: Messi edges Top-4 clubs and leads clearly vs Bottom-4.",
@@ -10437,7 +10622,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Per match, Messi leads G+A against both Top-4 and Bottom-4 clubs.",
@@ -10475,7 +10661,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A / Match",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Seasonal G+A vs Top-4 clubs tracks closely; Messi edges via assists.",
@@ -10548,7 +10735,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A vs Top 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Both sustained high seasonal G+A against eventual Bottom-4 clubs.",
@@ -10621,7 +10809,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A vs Bottom 4",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Team G+A share: Ronaldo edges QF/SF; Messi leads Finals & Top-4 league matches.",
@@ -10674,7 +10863,8 @@ window.INSIGHTS_DATA = [
           "y_title": "% of Team Goals (G+A Share)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -10697,7 +10887,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Attack (In Possession)",
     "who_is": "Is more influential with their combined goals and assists to team offensive output?",
     "define_by": "Percentage of team goals scored while the player was on the pitch that were directly scored or assisted by the player.",
-    "metrics": "On-pitch team goal involvement share (%) and combined G+A vs eventual season Top-4 and Bottom-4 clubs."
+    "metrics": "On-pitch team goal involvement share (%) and combined G+A vs eventual season Top-4 and Bottom-4 clubs.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Full-career G+A share of team goals + Top-4/Bottom-4 league opponent splits (2012/13\u20132024/25).",
+      "narrative_weight": "Measures combined offensive burden for club and country.",
+      "rationale": "Team goal involvement percentages are computed directly from complete match and season scoring logs."
+    }
   },
   {
     "id": "q4_2",
@@ -10754,7 +10950,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Per 90 Minutes",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi recorded higher European tackling rates/90 across seasons.",
@@ -10836,7 +11033,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Tackles / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "In recent seasons, Messi continued winning more tackles per 90.",
@@ -10900,7 +11098,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Tackles Won / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi intercepted more passes in early Barcelona years before converging in their 30s.",
@@ -10982,7 +11181,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Interceptions / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi applied more defensive pressures/90 in every tracked season.",
@@ -11037,7 +11237,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Pressures / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi blocked slightly more passes/90 across most European campaigns.",
@@ -11107,7 +11308,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Passes Blocked / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "answer": "Messi logs more pressures, tackles, interceptions & pass blocks per ninety.",
@@ -11132,7 +11334,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Defence (Out of Possession)",
     "who_is": "Works harder without the ball across tackles, interceptions, pressures, and seasonal defensive tracking?",
     "define_by": "Out-of-possession work rate measured by Opta defensive actions per 90 minutes and seasonal trajectories across European & senior competition.",
-    "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m, and Transfermarkt tackles won/90m by season."
+    "metrics": "Tackles/90m, interceptions/90m, pressures/90m, passes blocked/90m, and Transfermarkt tackles won/90m by season.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Opta/FBref defensive actions (pressures, tackles, interceptions, blocks) across tracked European seasons.",
+      "narrative_weight": "Core Pillar 2.1 off-ball work rate criterion.",
+      "rationale": "Pressures and defensive actions are only tracked in modern Opta/FBref European windows (post-2017/18 for pressures), missing early-career work rate."
+    }
   },
   {
     "id": "q4_3",
@@ -11180,7 +11388,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Total Duels Won",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Per 90: Messi wins 2\u00d7+ ground take-ons vs Ronaldo's aerial dominance.",
@@ -11218,7 +11427,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Duels / 90m",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo won far more aerial duels in every tracked season.",
@@ -11306,7 +11516,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Aerial Duels Won",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo's aerial duels/90 cleared Messi's rate several times over.",
@@ -11394,7 +11605,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Aerial Duels / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo contributed steady box clearances; Messi rarely dropped to clear.",
@@ -11476,7 +11688,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Clearances / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi consistently drew more fouls per 90 in recent seasons.",
@@ -11540,7 +11753,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Fouls Drawn / 90m",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "answer": "Ronaldo dominates aerial duels & box clearances; Messi draws more ground fouls.",
@@ -11565,7 +11779,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Contribution to Defence (Out of Possession)",
     "who_is": "Commands greater aerial duel dominance, defensive box clearances, and physical duels?",
     "define_by": "Seasonal Opta aerial duels won (total & per 90m), Opta defensive clearances per 90m, and Transfermarkt fouls won per 90m.",
-    "metrics": "Aerial duels won/90m (2009\u20132025), clearances/90m (2009\u20132023), and fouls drawn/90m (2018\u20132026)."
+    "metrics": "Aerial duels won/90m (2009\u20132025), clearances/90m (2009\u20132023), and fouls drawn/90m (2018\u20132026).",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Opta aerial duels won & defensive clearances across tracked European league seasons.",
+      "narrative_weight": "Core Pillar 2.2 aerial & box-defending criterion.",
+      "rationale": "Consistent Opta European league telemetry across shared prime years, excluding non-European and early uninstrumented seasons."
+    }
   },
   {
     "id": "q4_4",
@@ -11611,7 +11831,8 @@ window.INSIGHTS_DATA = [
           "y_title": "PPG",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Seasonal on-pitch team PPG tracks closely; Ronaldo edges campaigns led.",
@@ -11813,7 +12034,8 @@ window.INSIGHTS_DATA = [
           "y_min": -14,
           "y_max": 11,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Cup rotation creates noisy single-season gaps; injury spells show sharp positive lifts.",
@@ -12099,7 +12321,8 @@ window.INSIGHTS_DATA = [
             "37/12",
             "12/4"
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Equal win rate when playing; Messi's absence coincides with a steeper drop.",
@@ -12137,7 +12360,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Win Rate (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Seasonal club win rates match closely; Ronaldo edges campaigns led.",
@@ -12339,7 +12563,8 @@ window.INSIGHTS_DATA = [
           "y_min": -14,
           "y_max": 11,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Seasonal win-rate gaps mirror cup rotation and injury absences.",
@@ -12625,7 +12850,8 @@ window.INSIGHTS_DATA = [
             "37/12",
             "12/4"
           ]
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -12648,7 +12874,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Overall On-Pitch Impact",
     "who_is": "Provides greater on-pitch win rate lift and points-per-game impact?",
     "define_by": "Team performance differential comparing team points-per-game (PPG) and win percentage with the player on the pitch versus off the pitch.",
-    "metrics": "Team PPG & win rate (with vs without), when-played seasonal curves, and seasonal With \u2212 Without PPG & win-rate differences."
+    "metrics": "Team PPG & win rate (with vs without), when-played seasonal curves, and seasonal With \u2212 Without PPG & win-rate differences.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "On/off match-by-match team PPG and win-rate lift across all club & international appearances (25 seasons).",
+      "narrative_weight": "Core Pillar 3.1 net team impact criterion.",
+      "rationale": "Computed across full-career team fixture logs comparing matches played vs missed (with sample-size tables shown)."
+    }
   },
   {
     "id": "q4_5",
@@ -12750,7 +12982,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Average Match Rating (0\u201310)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi won nearly 2\u00d7 as many Man of the Match awards.",
@@ -12791,7 +13024,8 @@ window.INSIGHTS_DATA = [
           "y_title": "MOTM Awards",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi won MOTM in over half of his league and UCL appearances.",
@@ -12832,7 +13066,8 @@ window.INSIGHTS_DATA = [
           "y_title": "MOTM Rate (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi collected more MOTM awards in almost every season since 2009/10.",
@@ -12920,7 +13155,8 @@ window.INSIGHTS_DATA = [
           "y_title": "MOTM Awards",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi claimed MOTM honours at roughly 2\u00d7 Ronaldo's rate in prime seasons.",
@@ -13008,7 +13244,8 @@ window.INSIGHTS_DATA = [
           "y_title": "MOTM Rate (%)",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -13035,7 +13272,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "Overall On-Pitch Impact",
     "who_is": "Commands higher holistic match dominance and match rating supremacy?",
     "define_by": "Algorithmic composite match ratings aggregating every on-ball action (shots, key passes, dribbles, tackles, duels, turnovers) across 18 seasons of Opta / WhoScored / SofaScore data.",
-    "metrics": "Algorithmic career average match ratings by season, Man-of-the-Match totals, MOTM % rate by competition, and seasonal MOTM totals & rates."
+    "metrics": "Algorithmic career average match ratings by season, Man-of-the-Match totals, MOTM % rate by competition, and seasonal MOTM totals & rates.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "SofaScore/WhoScored/FotMob season match ratings (18 tracked seasons) + verified MOTM awards.",
+      "narrative_weight": "Core Pillar 3.1 holistic match-dominance criterion.",
+      "rationale": "18 consecutive seasons of independent match-rating data plus cross-checked Man of the Match logs."
+    }
   },
   {
     "id": "q8_1",
@@ -13082,7 +13325,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Honours Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi holds exclusive leads in Laureus, World Cup Golden Ball & Copa MVP honours.",
@@ -13123,7 +13367,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Honours Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "They traded Ballons d'Or for a decade before Messi pulled away.",
@@ -13217,7 +13462,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Cumulative Wins",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -13245,7 +13491,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Commands higher recognition in individual voting awards and universal tournament MVP honours?",
     "define_by": "Official global voting awards honouring single-season excellence alongside FIFA tournament MVP awards and multi-sport Laureus honours.",
     "metrics": "Ballon d'Or wins, Top-3 podiums, FIFA World Player / The Best wins, Laureus World Sportsman awards, FIFA World Cup Golden Balls, and Continental MVPs.",
-    "question": "Who commands higher recognition in individual voting awards and universal tournament MVP honours?"
+    "question": "Who commands higher recognition in individual voting awards and universal tournament MVP honours?",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Official Ballon d'Or, FIFA Player, Golden Shoe, Laureus, and World Cup/Copa MVP archives.",
+      "narrative_weight": "Core Pillar 4.1 individual prestige & voting accolades.",
+      "rationale": "100% deterministic official award records with zero sampling gaps."
+    }
   },
   {
     "id": "q8_2",
@@ -13292,7 +13544,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Titles Won",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo's Golden Boots span four leagues & clubs; Messi's eight came in La Liga.",
@@ -13499,7 +13752,8 @@ window.INSIGHTS_DATA = [
               "grouped": false
             }
           ]
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -13527,7 +13781,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Captured more continental and domestic top-scorer crowns across distinct leagues?",
     "define_by": "Official European Golden Shoes, UCL scoring titles, and a year-by-year club-coded timeline of domestic league Golden Boots.",
     "metrics": "European Golden Shoes, domestic league top-scorer trophies, UCL Golden Boots, and club-highlighted timeline by league.",
-    "question": "Who captured more continental and domestic top-scorer crowns across distinct leagues?"
+    "question": "Who captured more continental and domestic top-scorer crowns across distinct leagues?",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Official domestic and continental league top-scorer records across England, Spain, Italy, France, Saudi Arabia, and MLS.",
+      "narrative_weight": "Core Pillar 4.1 league-scoring adaptability criterion.",
+      "rationale": "100% verified official Golden Boot and league top-scorer records."
+    }
   },
   {
     "id": "q8_10",
@@ -13537,7 +13797,7 @@ window.INSIGHTS_DATA = [
     "insights": [
       {
         "headline": "Both hold vast career records; Messi's ledger itemises deeper sub-records.",
-        "footnote": "*Counts parsed from Wikipedia Career Achievements Section 3 ledgers (Messi N=299, Ronaldo N=102). Note on editorial granularity: Messi's page lists granular bulleted sub-records (including Guinness World Records), whereas Ronaldo's Section 3 uses a consolidated summary table (and places Guinness social records outside Section 3). See Extra Analysis 6 for the complete searchable ledger. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
+        "footnote": "*Counts parsed from Wikipedia Career Achievements Section 3 ledgers (Messi N=400, Ronaldo N=178). Note on editorial granularity: Messi's page lists granular bulleted sub-records (including Guinness World Records), whereas Ronaldo's Section 3 uses a consolidated summary table (and places Guinness social records outside Section 3). See Extra Analysis 6 for the complete searchable ledger. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
         "chart": {
           "title": "Documented Career Records: Overall, World, FIFA World Cup & Guinness",
           "type": "bar",
@@ -13551,7 +13811,7 @@ window.INSIGHTS_DATA = [
             {
               "label": "Messi",
               "data": [
-                299,
+                400,
                 45,
                 49,
                 29
@@ -13562,7 +13822,7 @@ window.INSIGHTS_DATA = [
             {
               "label": "Ronaldo",
               "data": [
-                102,
+                178,
                 12,
                 7,
                 0
@@ -13572,16 +13832,17 @@ window.INSIGHTS_DATA = [
             }
           ],
           "y_min": 0,
-          "y_max": 340.0,
+          "y_max": 450.0,
           "x_title": "Record Arena",
           "y_title": "Documented Records",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi leads World Cup, La Liga & club entries; Ronaldo leads UEFA & European records.",
-        "footnote": "*All 401 parsed records classified into 8 standardised arenas from Wikipedia's Career Achievements ledgers. Full searchable item-by-item table in Extra Analysis 6. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
+        "footnote": "*All 578 parsed records classified into 8 standardised arenas from Wikipedia's Career Achievements ledgers. Full searchable item-by-item table in Extra Analysis 6. Source: <a href=\"https://en.wikipedia.org/wiki/List_of_career_achievements_by_Lionel_Messi#Records\" target=\"_blank\" rel=\"noopener noreferrer\">Wikipedia Career Achievements & Records Ledgers (Messi & Ronaldo)</a> (MediaWiki API Audit)",
         "chart": {
           "title": "Documented Career Records Breakdown by Arena",
           "type": "bar",
@@ -13633,11 +13894,12 @@ window.INSIGHTS_DATA = [
           "y_title": "Documented Records",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "split",
-    "leader_badge": "Messi 299 vs Ronaldo 102 Listed Records",
+    "leader_badge": "Messi 400 vs Ronaldo 178 Listed Records",
     "answer": "Both hold vast career records; Messi leads World Cup, La Liga & Guinness entries vs Ronaldo: UEFA & European records.",
     "metric_tags": [
       [
@@ -13661,7 +13923,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?",
     "define_by": "Categorised audit of documented all-time football and cultural records from Wikipedia's Career Achievements ledgers for both players across 8 standardised arenas (with full searchable ledger in Extra Analysis 6).",
     "metrics": "Total documented records, domain breakdown across World / Global, FIFA World Cup, Guinness World Records, UEFA & European, La Liga & Spain, Other Domestic Leagues, International & Continental, and Club Records.",
-    "question": "Who holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?"
+    "question": "Who holds more documented all-time career records across World, FIFA World Cup, Guinness, European, domestic, international, and club arenas?",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Wikipedia Career Achievements ledgers + official trophy/honour archives.",
+      "narrative_weight": "Broad career-records tally across 8 arenas.",
+      "rationale": "Comprehensive and source-linked, though Wikipedia's curated record lists have asymmetric editorial granularity (299 Messi vs 102 Ronaldo entries)."
+    }
   },
   {
     "id": "q8_4",
@@ -13749,7 +14017,8 @@ window.INSIGHTS_DATA = [
               "#10b981"
             ]
           }
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi leads senior international titles (World Cup + two Copas Am\u00e9rica).",
@@ -13790,7 +14059,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Championships Won",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Ronaldo edges UCL & Club World Cup titles; Messi won two European Trebles.",
@@ -13831,7 +14101,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi built a decisive cumulative lead in senior silverware over two decades.",
@@ -13937,7 +14208,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Cumulative Trophies",
           "hide_axes": false,
           "show_labels": false
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -13969,7 +14241,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Has accumulated the more decorated senior silverware collection across club and country?",
     "define_by": "Complete official senior team trophies broken down by competition type (leagues, cups, UCL, international, trebles) and cumulative evolution.",
     "metrics": "Trophy type composition (side-by-side pies), senior international titles, UEFA Champions League & treble sweeps, and cumulative career silverware.",
-    "question": "Who has accumulated the more decorated senior silverware collection across club and country?"
+    "question": "Who has accumulated the more decorated senior silverware collection across club and country?",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Complete senior club and international trophy cabinet (45 Messi vs 34 Ronaldo incl. youth/senior; 43 vs 34 senior).",
+      "narrative_weight": "Core Pillar 4.2 championship pedigree & silverware criterion.",
+      "rationale": "100% verified official competition honours."
+    }
   },
   {
     "id": "q8_7",
@@ -14019,7 +14297,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Followers (Millions)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Ronaldo commands a far larger combined social following.",
@@ -14054,7 +14333,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Followers (Millions)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's 2022 World Cup post holds the all-time most-liked internet record.",
@@ -14089,7 +14369,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Likes (Millions)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "ronaldo",
@@ -14113,7 +14394,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Commands greater global digital reach, social media audience, and peak cultural resonance?",
     "define_by": "Verified social media followers across Instagram, Facebook, X, and YouTube alongside all-time single-post cultural engagement milestones.",
     "metrics": "Cross-platform total followers, per-platform breakdown, and Guinness World Record post likes.",
-    "question": "Who commands greater global digital reach, social media audience, and peak cultural resonance?"
+    "question": "Who commands greater global digital reach, social media audience, and peak cultural resonance?",
+    "reliability": {
+      "level": "Low",
+      "coverage_note": "Point-in-time social media follower counts & single-post engagement snapshots.",
+      "narrative_weight": "Pillar 4.3 cultural & digital reach indicator.",
+      "rationale": "External platform snapshots fluctuate over time and reflect off-pitch marketing/era effects rather than on-pitch telemetry."
+    }
   },
   {
     "id": "q8_9",
@@ -14160,7 +14447,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Average Attendance",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Camp Nou & Bernab\u00e9u stayed 52k\u201360k before club moves and COVID reshaped curves.",
@@ -14276,7 +14564,8 @@ window.INSIGHTS_DATA = [
             -6
           ],
           "unit": "fans/game"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi added larger absolute MLS road gains; Ronaldo posted a higher SPL % lift.",
@@ -14329,7 +14618,8 @@ window.INSIGHTS_DATA = [
               "text": "+13,050 fans/game (+149.1%)"
             }
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi's peak MLS away crowd slightly edged Ronaldo's peak SPL crowd.",
@@ -14364,7 +14654,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Official Attendance",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -14396,7 +14687,13 @@ window.INSIGHTS_DATA = [
     "who_is": "Generates greater live stadium attendance and matchday economic draw?",
     "define_by": "Verified matchday stadium attendance overall and by season (2012/13\u20132022/23, Home vs Away), post-move league before-vs-after road attendance (absolute & % gap), and peak stadium crowds (noting where seasonal TV viewership & confidential shirt sales lack auditable series).",
     "metrics": "Career & seasonal matchday attendance, Home vs Away attendance, MLS/SPL before-vs-after road crowds, and peak single-match crowd.",
-    "question": "Who generates greater live stadium attendance and matchday economic draw?"
+    "question": "Who generates greater live stadium attendance and matchday economic draw?",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Matchday stadium attendance logs across domestic leagues, MLS, and Saudi Pro League.",
+      "narrative_weight": "Pillar 4.3 live box-office draw indicator.",
+      "rationale": "Strong fixture-level attendance records, though stadium capacity caps and league scheduling confound pure 'draw' attribution."
+    }
   },
   {
     "id": "wc_1",
@@ -14442,7 +14739,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi edges group goals and dominates World Cup knockout goals.",
@@ -14480,7 +14778,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi scores far faster at the World Cup, especially in knockouts.",
@@ -14518,7 +14817,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Minutes per Goal",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -14541,7 +14841,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Scores more goals and knockout strikes at the FIFA World Cup?",
     "define_by": "All-time FIFA World Cup goals, group vs knockout splits, and minutes per goal across editions.",
-    "metrics": "Total World Cup goals, non-penalty goals, knockout goals, and minutes per goal."
+    "metrics": "Total World Cup goals, non-penalty goals, knockout goals, and minutes per goal.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Complete 2006\u20132026 FIFA World Cup Finals match & goal logs.",
+      "narrative_weight": "Core World Cup scoring & knockout delivery verdict.",
+      "rationale": "100% verified official FIFA World Cup match records."
+    }
   },
   {
     "id": "wc_2",
@@ -14587,7 +14893,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Assists",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi created far more World Cup key passes per match.",
@@ -14625,7 +14932,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Key Passes",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi generated vastly higher World Cup Expected Assists (xA).",
@@ -14663,7 +14971,8 @@ window.INSIGHTS_DATA = [
           "y_title": "xA",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -14690,7 +14999,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Creates more assists and chances at the FIFA World Cup?",
     "define_by": "World Cup assists, knockout assists, key passes per match, and Expected Assists (xA).",
-    "metrics": "World Cup assists, knockout assists, key passes, and Expected Assists (xA)."
+    "metrics": "World Cup assists, knockout assists, key passes, and Expected Assists (xA).",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Complete 2006\u20132026 FIFA World Cup Finals assist logs + tournament creative stats.",
+      "narrative_weight": "Core World Cup playmaking verdict.",
+      "rationale": "Official tournament assist records cover 100% of matches; xA sub-metrics cover StatsBomb/Opta-tracked editions."
+    }
   },
   {
     "id": "wc_3",
@@ -14736,7 +15051,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Value",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi was ~3\u00d7 more involved in World Cup passing build-up.",
@@ -14774,7 +15090,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Passes",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi logged ~3\u00d7 more World Cup pressures and ball recoveries.",
@@ -14812,7 +15129,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Events",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Messi won 2\u00d7+ fouls and made far more World Cup tackles.",
@@ -14850,7 +15168,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Count",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -14877,7 +15196,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Contributes more on-ball dribbles, passes, pressures, and tackles at the FIFA World Cup?",
     "define_by": "Open-play dribbles, passing volume, pressing actions, recoveries, tackles, and fouls won in tracked World Cups.",
-    "metrics": "Completed dribbles, passes completed/attempted, pressures, recoveries, tackles, and fouls won."
+    "metrics": "Completed dribbles, passes completed/attempted, pressures, recoveries, tackles, and fouls won.",
+    "reliability": {
+      "level": "Low",
+      "coverage_note": "StatsBomb/FBref World Cup event streams (pressures, dribbles, recoveries).",
+      "narrative_weight": "Supplementary World Cup on-ball & pressing detail.",
+      "rationale": "Event-level pressing and dribble coordinates are only instrumented for recent World Cup editions, leaving earlier tournaments incomplete."
+    }
   },
   {
     "id": "wc_4",
@@ -14935,7 +15260,8 @@ window.INSIGHTS_DATA = [
           "y_title": "G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Messi was overwhelmingly more productive in World Cup knockout matches.",
@@ -14985,7 +15311,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Knockout G+A",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -15012,7 +15339,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Produced greater cumulative G+A trajectory across World Cup editions?",
     "define_by": "Goals + Assists across each tournament edition (2006\u20132026) and knockout-round G+A totals.",
-    "metrics": "Edition-by-edition G+A and cumulative knockout G+A."
+    "metrics": "Edition-by-edition G+A and cumulative knockout G+A.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "Edition-by-edition cumulative Goals + Assists across 2006\u20132026 World Cup Finals.",
+      "narrative_weight": "Core World Cup career trajectory.",
+      "rationale": "100% verified official FIFA World Cup goal and assist records."
+    }
   },
   {
     "id": "wc_5",
@@ -15058,7 +15391,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Argentina's World Cup win rate and PPG with Messi far exceed Portugal's.",
@@ -15096,7 +15430,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Value",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Similar vs Top-20 & minnows; Messi separated against mid-tier World Cup sides.",
@@ -15137,7 +15472,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Goals",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "messi",
@@ -15164,7 +15500,13 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Carried a larger share of national team World Cup goals and match results?",
     "define_by": "Team goal share, World Cup win rate and PPG, and goals by opponent FIFA ranking tier.",
-    "metrics": "On-pitch G+A share %, World Cup win rate & PPG, and goals by opponent FIFA rank."
+    "metrics": "On-pitch G+A share %, World Cup win rate & PPG, and goals by opponent FIFA rank.",
+    "reliability": {
+      "level": "High",
+      "coverage_note": "National-team World Cup Finals goal share and match win rates (2006\u20132026).",
+      "narrative_weight": "Core World Cup team-carrying metric.",
+      "rationale": "100% verified official tournament match results and goal logs."
+    }
   },
   {
     "id": "wc_6",
@@ -15249,7 +15591,8 @@ window.INSIGHTS_DATA = [
             "\u20ac917.0M (25/25) \u00b7 Self 2.1%",
             "\u20ac939.0M (21 mates) \u00b7 Self 1.1%"
           ]
-        }
+        },
+        "hero": true
       },
       {
         "headline": "Per-teammate value (excl. self) mirrors Argentina's 2010\u201318 lead and Portugal's 2022\u201326 surge.",
@@ -15337,7 +15680,8 @@ window.INSIGHTS_DATA = [
           "y_min": -4,
           "y_max": 4,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       },
       {
         "headline": "In 2010\u201318 prime, each accounted for roughly a fifth to a third of squad value.",
@@ -15387,7 +15731,8 @@ window.INSIGHTS_DATA = [
           "y_title": "Share of Total Squad Value (%)",
           "hide_axes": false,
           "show_labels": true
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Portugal seeded higher in 2006\u201318; Argentina seeded higher in 2022 & 2026.",
@@ -15464,7 +15809,8 @@ window.INSIGHTS_DATA = [
             "WC #8/32 \u00b7 Global #9",
             "WC #8/44 \u00b7 Global #8*"
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Excl. self: Argentina stayed top-seven every edition; Portugal climbed to top-four in 2022\u201326.",
@@ -15541,7 +15887,8 @@ window.INSIGHTS_DATA = [
             "Excl #4/32 \u00b7 Full #4/32",
             "Excl #4/48 \u00b7 Full #3/48"
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Pre-tournament form flipped: Portugal hotter in 2006 & 2018; Argentina surging into 2022 & 2026.",
@@ -15618,7 +15965,8 @@ window.INSIGHTS_DATA = [
             "6W-1D-3L \u00b7 1.90 PPG \u00b7 #9",
             "7W-2D-1L \u00b7 2.30 PPG \u00b7 #8*"
           ]
-        }
+        },
+        "hero": false
       },
       {
         "headline": "Pre-WC PPG: Portugal sharper early; Argentina elite late-era consistency.",
@@ -15706,7 +16054,8 @@ window.INSIGHTS_DATA = [
           "y_min": -4,
           "y_max": 3,
           "unit": "Seasons Led"
-        }
+        },
+        "hero": false
       }
     ],
     "leader": "tied",
@@ -15736,6 +16085,12 @@ window.INSIGHTS_DATA = [
     "pillar_title": "FIFA World Cup Arena",
     "who_is": "Entered each FIFA World Cup with higher supporting squad value (excl. self), higher tournament seeding, and stronger pre-tournament form?",
     "define_by": "Pre-tournament national supporting squad Transfermarkt valuation excluding Messi and Ronaldo, each player's % contribution to national squad value, tournament squad value rank and pre-tournament FIFA World Ranking among all participants, plus last-10 international match form.",
-    "metrics": "Supporting squad value excl. self (\u20acM), mean teammate value (\u20acM), player % share of squad value, WC squad value rank & FIFA rank among participants, Last-10 Win % & PPG."
+    "metrics": "Supporting squad value excl. self (\u20acM), mean teammate value (\u20acM), player % share of squad value, WC squad value rank & FIFA rank among participants, Last-10 Win % & PPG.",
+    "reliability": {
+      "level": "Medium",
+      "coverage_note": "Pre-tournament FIFA World Rankings & Transfermarkt national-squad valuations (2006\u20132026).",
+      "narrative_weight": "Context on national-team supporting cast strength.",
+      "rationale": "Official FIFA rankings cover all editions; Transfermarkt squad valuations are market estimates and less uniform for 2006\u20132010."
+    }
   }
 ];

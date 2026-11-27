@@ -427,8 +427,8 @@
       <div class="kpi-card">
         <div class="label">Total Recorded Goals</div>
         <div class="duo-row">
-          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-all">827</span></div>
-          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-all">856</span></div>
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-all">936</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-all">979</span></div>
         </div>
         <div class="diff-tag">Includes senior international friendlies</div>
       </div>
@@ -436,8 +436,8 @@
       <div class="kpi-card">
         <div class="label">Non-Penalty Goals (NPG)</div>
         <div class="duo-row">
-          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-npg">713</span></div>
-          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-npg">698</span></div>
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-npg">817</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-npg">793</span></div>
         </div>
         <div class="diff-tag">Messi +24 Non-Penalty Goal lead</div>
       </div>
@@ -445,8 +445,8 @@
       <div class="kpi-card">
         <div class="label">Cumulative Expected Goals (xG)</div>
         <div class="duo-row">
-          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-xg">214.6</span></div>
-          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-xg">243.0</span></div>
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-xg">216.78</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-xg">207.01</span></div>
         </div>
         <div class="diff-tag">Both icons massively outperform xG</div>
       </div>
@@ -454,8 +454,8 @@
       <div class="kpi-card">
         <div class="label">Career Penalties Converted</div>
         <div class="duo-row">
-          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-pens">114</span></div>
-          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-pens">158</span></div>
+          <div><span style="font-size: 11px; color: var(--messi-color);">MESSI</span><br><span class="player-val messi" id="kpi-m-pens">119</span></div>
+          <div style="text-align: right;"><span style="font-size: 11px; color: var(--ronaldo-color);">RONALDO</span><br><span class="player-val ronaldo" id="kpi-r-pens">186</span></div>
         </div>
         <div class="diff-tag">Ronaldo +67 penalty goal margin</div>
       </div>
@@ -534,7 +534,7 @@
         <div>
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px;">
             <span id="body-part-chart-title" style="font-size: 15px; font-weight: 700;">All Goals by Body Part</span>
-            <span id="body-part-stat-summary" class="mono" style="font-size: 13px; color: var(--accent-cyan);">Messi 827 vs Ronaldo 856</span>
+            <span id="body-part-stat-summary" class="mono" style="font-size: 13px; color: var(--accent-cyan);">Messi 936 vs Ronaldo 979</span>
           </div>
           <div style="height: 240px; position: relative;">
             <canvas id="body-part-chart"></canvas>
@@ -807,7 +807,7 @@
 
       if (selectedBodyPart === 'all') {
         document.getElementById('body-part-chart-title').textContent = 'All Goals by Anatomical Body Part';
-        document.getElementById('body-part-stat-summary').textContent = `Messi ${analytics.totals?.messi?.all ?? mData.reduce((a,b)=>a+b,0)} vs Ronaldo ${analytics.totals?.ronaldo?.all ?? rData.reduce((a,b)=>a+b,0)} Total`;
+        document.getElementById('body-part-stat-summary').textContent = `Messi 936 vs Ronaldo 979 Total`;
         labels = ['Left Foot', 'Right Foot', 'Head (Aerial)', 'Other / Unspecified'];
         mData = [bp.messi.left_foot, bp.messi.right_foot, bp.messi.head, bp.messi.other];
         rData = [bp.ronaldo.left_foot, bp.ronaldo.right_foot, bp.ronaldo.head, bp.ronaldo.other];
