@@ -78,6 +78,8 @@
 <a href="#topic_cost_capital" class="nav-toc-item" role="menuitem" onclick="selectNavToc('topic_cost_capital', event)"><span class="nav-toc-prefix">Topic 3A · Dependency & Capital Risks</span><span>Circular Financing, Capital Intensity, Debt vs Income & Depreciation</span></a>
 <a href="#topic_cost_info_filter" class="nav-toc-item" role="menuitem" onclick="selectNavToc('topic_cost_info_filter', event)"><span class="nav-toc-prefix">Topic 3B · Information Filter</span><span>Information Filter</span></a>
 <a href="#topic_cost_jobs" class="nav-toc-item" role="menuitem" onclick="selectNavToc('topic_cost_jobs', event)"><span class="nav-toc-prefix">Topic 3C · Job Cost & IBM Case Study</span><span>Job Cost, AI Tokens vs Your Job & The IBM Computer Adaptation Case Study</span></a>
+<a href="#topic_case_computer" class="nav-toc-item" role="menuitem" onclick="selectNavToc('topic_case_computer', event)"><span class="nav-toc-prefix">Topic 4A · Case Study 1</span><span>The Computer Age (1970s–2000s)</span></a>
+<a href="#topic_case_dotcom" class="nav-toc-item" role="menuitem" onclick="selectNavToc('topic_case_dotcom', event)"><span class="nav-toc-prefix">Topic 4B · Case Study 2 & Guardrails</span><span>The Dot-Com Boom & Bust (1995–2005)</span></a>
           </div>
         </div>
         
@@ -633,6 +635,136 @@
               </div>
               <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">
                 Formula: <code>Effective Input = Context &times; (1 &minus; 0.8 &times; Cache Hit)</code>; <code>Daily Tokens = Turns &times; (Effective Input + Output)</code>; <code>Blended = (Token Cost &times; Subsidy Multiplier) + (Human Daily Cost &times; QA%)</code>. Sources: <a href="https://www.bls.gov/oes/tables.htm" target="_blank" rel="noopener">US BLS OEWS May 2025</a> &amp; <a href="https://epoch.ai/data/ai-models" target="_blank" rel="noopener">Epoch AI (2024–2025 API Pricing)</a>.
+              </div>
+            </div>
+            
+            </section>
+            
+            <section id="topic_case_computer" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#eab308;text-transform:uppercase;letter-spacing:0.08em;">Topic 4A · Case Study 1</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">The Computer Age (1970s–2000s) — Short-Term Friction, Long-Term Polarisation & Lessons</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">Was the transition to electronic computing smooth, and how did labour's share of income evolve from short-term lag to long-term polarisation?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #eab308;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">As electronic computing scaled from the 1980s onward, labour's share of US business output fell steadily</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('topic_case_computer', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Labour Share of US Nonfarm Business Output (1970–2025, Index 2017 = 100)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_topic_case_computer_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener noreferrer">Federal Reserve Economic Data (FRED · BLS & BEA)</a> &middot; 1970–2025 &middot; FRED PRS85006173 (Index: 2017 = 100)</div>
+                </div>
+                
+              
+            <div style="background:#0a0905;border:1px solid rgba(234,179,8,0.32);border-left:3px solid #eab308;border-radius:10px;padding:16px 20px;margin-top:8px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;color:#facc15;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Case Study 1 Synthesis · Was the Computer Age Smooth?</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;font-size:12.5px;color:#d4d4d8;line-height:1.55;">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Short-Term Impact (1970s–1980s)</div>
+                  Mainframes and PCs entered offices while aggregate productivity stayed flat (the 1987 <em>Solow Paradox</em>). Routine clerical, typing, and bookkeeping hiring began slowing well before output surged.
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Long-Term Impact (1990s–2010s)</div>
+                  Productivity accelerated in the late 1990s, but middle-skill clerical roles hollowed out. Adaptation happened largely <em>across generations</em> (new graduates entering IT), while labour's share of income slid.
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Lessons Learnt (and Missed)</div>
+                  <strong>Learnt:</strong> workflow redesign unlocks productivity. <strong>Missed:</strong> mid-career retraining programmes rarely closed earnings losses, and declining union/pension buffers were never rebuilt.
+                </div>
+              </div>
+            </div>
+            
+            </section>
+            
+            <section id="topic_case_dotcom" style="margin-bottom:38px;scroll-margin-top:74px;">
+              <div style="margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.12);">
+                <div style="font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:700;color:#f43f5e;text-transform:uppercase;letter-spacing:0.08em;">Topic 4B · Case Study 2 & Guardrails</div>
+                <h2 style="font-size:22px;font-weight:800;color:#ffffff;margin:4px 0;">The Dot-Com Boom & Bust (1995–2005) — Crash, Fiscal Cushion & Are We Ready Today?</h2>
+                <p style="font-size:13.5px;color:#a1a1aa;font-style:italic;">How rough was the Dot-Com bust on workers, what fiscal headroom cushioned it, and how do today's social guardrails compare?</p>
+              </div>
+              
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f43f5e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">The 2000–2002 NASDAQ crash was followed by a multi-year surge in long-term unemployment (27+ weeks)</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('topic_case_dotcom', 0)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Dot-Com Boom & Bust: NASDAQ Composite Index vs Long-Term Unemployment (1995–2010)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_topic_case_dotcom_0"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener noreferrer">Federal Reserve Economic Data (FRED · BLS & BEA)</a> &middot; 1995–2010 &middot; FRED NASDAQCOM & UEMP27OV (annual mean)</div>
+                </div>
+                
+                <div class="insight-card" style="background:#08080b;border:1px solid rgba(255,255,255,0.10);border-left:2.5px solid #f43f5e;border-radius:10px;padding:18px 20px;margin-bottom:18px;">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;">
+                    <div style="font-size:15px;font-weight:700;color:#ffffff;line-height:1.4;">Unlike the late-1990s low-debt surplus era, Western governments enter the AI transition with limited fiscal headroom</div>
+                    <button type="button" class="insight-help-btn" onclick="openI3Drawer('topic_case_dotcom', 1)" title="Metric Definition &amp; Nuance" aria-label="Metric Definition">?</button>
+                  </div>
+                  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:600;color:#a1a1aa;margin-bottom:8px;">Shrinking Fiscal Guardrail: US Federal Debt as % of GDP (1970–2025)</div>
+                  <div style="position:relative;height:350px;width:100%;margin:6px 0 10px;">
+                    <canvas id="i3_canvas_topic_case_dotcom_1"></canvas>
+                  </div>
+                  <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;">Source: <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener noreferrer">Federal Reserve Economic Data (FRED · BLS & BEA)</a> &middot; 1970–2025 &middot; FRED GFDEGDQ188S (% of Nominal GDP)</div>
+                </div>
+                
+              
+            <div style="background:#0d0709;border:1px solid rgba(244,63,94,0.34);border-left:3px solid #f43f5e;border-radius:10px;padding:16px 20px;margin-top:8px;">
+              <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:700;color:#fb7185;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Case Study 2 Synthesis · Dot-Com Transition &amp; Social Guardrail Readiness</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;font-size:12.5px;color:#d4d4d8;line-height:1.55;margin-bottom:14px;">
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Short-Term Impact (1999–2003)</div>
+                  Extreme capital boom-and-bust: the NASDAQ lost nearly 78% from peak to trough, telecom/IT CapEx collapsed, and long-term unemployment climbed for three years straight.
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Long-Term Impact (2004–2020s)</div>
+                  Overbuilt fibre-optic networks and web protocols became cheap public infrastructure, powering two decades of e-commerce, cloud, and mobile platforms.
+                </div>
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:12px;">
+                  <div style="font-weight:700;color:#ffffff;margin-bottom:4px;">Lessons Learnt (and Missed)</div>
+                  <strong>Learnt:</strong> physical infrastructure outlives financial bubbles. <strong>Missed:</strong> vendor-financed CapEx loops and winner-take-all concentration returned at an even larger scale in AI.
+                </div>
+              </div>
+              <div style="overflow-x:auto;">
+                <table style="width:100%;border-collapse:collapse;font-size:12px;color:#e4e4e7;">
+                  <thead>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.16);text-align:left;color:#a1a1aa;font-family:'JetBrains Mono',monospace;font-size:10.5px;">
+                      <th style="padding:7px 8px;">Social Guardrail</th>
+                      <th style="padding:7px 8px;">Computer &amp; Dot-Com Eras</th>
+                      <th style="padding:7px 8px;">AI Era (2024–Present)</th>
+                      <th style="padding:7px 8px;">Readiness</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+                      <td style="padding:7px 8px;font-weight:600;">Diffusion Lead Time</td>
+                      <td style="padding:7px 8px;">15–35 years (gradual)</td>
+                      <td style="padding:7px 8px;">2–5 years (compressed)</td>
+                      <td style="padding:7px 8px;color:#f87171;font-weight:700;">Weaker</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+                      <td style="padding:7px 8px;font-weight:600;">Fiscal Headroom</td>
+                      <td style="padding:7px 8px;">Low debt (~55–60% GDP in 1999)</td>
+                      <td style="padding:7px 8px;">High debt (&gt;115% GDP)</td>
+                      <td style="padding:7px 8px;color:#f87171;font-weight:700;">Weaker</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid rgba(255,255,255,0.07);">
+                      <td style="padding:7px 8px;font-weight:600;">Labour &amp; Career Ladder</td>
+                      <td style="padding:7px 8px;">Routine clerical displaced; junior entry intact</td>
+                      <td style="padding:7px 8px;">White-collar &amp; junior entry-level compressed</td>
+                      <td style="padding:7px 8px;color:#f87171;font-weight:700;">Weaker</td>
+                    </tr>
+                    <tr>
+                      <td style="padding:7px 8px;font-weight:600;">Regulatory Intervention</td>
+                      <td style="padding:7px 8px;">Hands-off (late ex-post rules)</td>
+                      <td style="padding:7px 8px;">Earlier (EU AI Act), but safety/IP-focused</td>
+                      <td style="padding:7px 8px;color:#fbbf24;font-weight:700;">Narrow</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
             
